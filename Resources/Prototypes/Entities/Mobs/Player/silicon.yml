@@ -319,6 +319,8 @@
     - state: base
     - state: ai
       shader: unshaded
+  - type: StealTarget # Corvax-Next-Api
+    stealGroup: Ai
 
 - type: entity
   id: PlayerStationAiEmpty

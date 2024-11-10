@@ -36,6 +36,11 @@ public sealed partial class AdminVerbSystem
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultThiefRule = "Thief";
 
+    // Corvax-Next-Api-Start
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string DefaultApiRule = "Api";
+    // Corvax-Next-Api-End
+
     [ValidatePrototypeId<StartingGearPrototype>]
     private const string PirateGearId = "PirateGear";
 
@@ -186,5 +191,21 @@ public sealed partial class AdminVerbSystem
 
         if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
+
+        // Corvax-Next-Api-Start
+        Verb api = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-api"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Mobs/Silicon/station_ai.rsi"), "ai"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<ThiefRuleComponent>(targetPlayer, DefaultApiRule);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-api"),
+        };
+        args.Verbs.Add(api);
+        // Corvax-Next-Api-End
     }
 }
