@@ -1,3 +1,4 @@
+using Content.Server._CorvaxNext.Api;
 using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking;
@@ -200,7 +201,7 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Mobs/Silicon/station_ai.rsi"), "ai"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<ThiefRuleComponent>(targetPlayer, DefaultApiRule);
+                _antag.ForceMakeAntag<ApiRuleComponent>(targetPlayer, DefaultApiRule);
             },
             Impact = LogImpact.High,
             Message = Loc.GetString("admin-verb-make-api"),
