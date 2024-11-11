@@ -19,6 +19,7 @@ using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
+using Content.Shared.Roles.Jobs;
 using Content.Shared.Station;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
@@ -71,7 +72,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <remarks>
     /// This only spawns the character, and does none of the mind-related setup you'd need for it to be playable.
     /// </remarks>
-    public EntityUid? SpawnPlayerCharacterOnStation(EntityUid? station, ProtoId<JobPrototype>? job, HumanoidCharacterProfile? profile, StationSpawningComponent? stationSpawning = null)
+    public EntityUid? SpawnPlayerCharacterOnStation(EntityUid? station, JobComponent? job, HumanoidCharacterProfile? profile, StationSpawningComponent? stationSpawning = null)
     {
         if (station != null && !Resolve(station.Value, ref stationSpawning))
             throw new ArgumentException("Tried to use a non-station entity as a station!", nameof(station));
@@ -267,7 +268,7 @@ public sealed class PlayerSpawningEvent : EntityEventArgs
     /// <summary>
     /// The job to use, if any.
     /// </summary>
-    public readonly ProtoId<JobPrototype>? Job;
+    public readonly JobComponent? Job;
     /// <summary>
     /// The profile to use, if any.
     /// </summary>
@@ -277,7 +278,7 @@ public sealed class PlayerSpawningEvent : EntityEventArgs
     /// </summary>
     public readonly EntityUid? Station;
 
-    public PlayerSpawningEvent(ProtoId<JobPrototype>? job, HumanoidCharacterProfile? humanoidCharacterProfile, EntityUid? station)
+    public PlayerSpawningEvent(JobComponent? job, HumanoidCharacterProfile? humanoidCharacterProfile, EntityUid? station)
     {
         Job = job;
         HumanoidCharacterProfile = humanoidCharacterProfile;

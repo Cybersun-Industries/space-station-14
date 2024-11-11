@@ -237,7 +237,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
         }
     }
 
-    private void OnChunkLoad(EntityUid uid, ShipwreckMapGridComponent component, MapInitEvent args)
+    public void OnChunkLoad(EntityUid uid, ShipwreckMapGridComponent component, MapInitEvent args)
     {
         var enumerator = new ChunkIndicesEnumerator(component.Area, SharedBiomeSystem.ChunkSize);
 
@@ -707,7 +707,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
         };
         _roleSystem.MindAddRole(mindId, job);
 
-        var mob = _stationSpawningSystem.SpawnPlayerMob(spawnPoint, job, profile, station: null);
+        var mob = _stationSpawningSystem.SpawnPlayerMob(spawnPoint, job?.Prototype, profile, station: null);
         var mobName = MetaData(mob).EntityName;
 
         manifest.AppendLine(Loc.GetString("passenger-manifest-passenger-line",

@@ -39,7 +39,7 @@ public sealed class SpawnPointSystem : EntitySystem
 
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
                 spawnPoint.SpawnType == SpawnPointType.Job &&
-                (args.Job == null || spawnPoint.Job == args.Job))
+                (args.Job == null || spawnPoint.Job == args.Job.Prototype))
             {
                 possiblePositions.Add(xform.Coordinates);
             }
@@ -66,7 +66,7 @@ public sealed class SpawnPointSystem : EntitySystem
 
         args.SpawnResult = _stationSpawning.SpawnPlayerMob(
             spawnLoc,
-            args.Job,
+            args.Job?.Prototype,
             args.HumanoidCharacterProfile,
             args.Station);
     }

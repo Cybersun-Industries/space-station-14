@@ -123,8 +123,6 @@ public sealed class SacrificialAltarSystem : EntitySystem
             i--;
         }
 
-        int reduction = _robustRandom.Next(component.GlimmerReductionMin, component.GlimmerReductionMax);
-        _glimmerSystem.Glimmer -= reduction;
 
         if (actor.PlayerSession.ContentData()?.Mind != null)
         {

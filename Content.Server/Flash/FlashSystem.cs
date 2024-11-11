@@ -114,9 +114,10 @@ namespace Content.Server.Flash
             float slowTo,
             bool displayPopup = true,
             bool melee = false,
-            TimeSpan? stunDuration = null)
+            TimeSpan? stunDuration = null,
+            bool forced = false)
         {
-            var attempt = new FlashAttemptEvent(target, user, used);
+            var attempt = new FlashAttemptEvent(target, user, used, forced);
             RaiseLocalEvent(target, attempt, true);
 
             if (attempt.Cancelled)
@@ -152,7 +153,7 @@ namespace Content.Server.Flash
             }
         }
 
-        public override void FlashArea(Entity<FlashComponent?> source, EntityUid? user, float range, float duration, float slowTo = 0.8f, bool displayPopup = false, float probability = 1f, SoundSpecifier? sound = null)
+        public void FlashArea(Entity<FlashComponent?> source, EntityUid? user, float range, float duration, float slowTo = 0.8f, bool displayPopup = false, float probability = 1f, SoundSpecifier? sound = null)
         {
             var transform = Transform(source);
             var mapPosition = _transform.GetMapCoordinates(transform);
@@ -193,6 +194,9 @@ namespace Content.Server.Flash
 
         private void OnFlashImmunityFlashAttempt(EntityUid uid, FlashImmunityComponent component, FlashAttemptEvent args)
         {
+            if (args.Forced)
+                return;
+
             if (component.Enabled)
                 args.Cancel();
         }
@@ -219,12 +223,14 @@ namespace Content.Server.Flash
         public readonly EntityUid Target;
         public readonly EntityUid? User;
         public readonly EntityUid? Used;
+        public readonly bool Forced = false;
 
-        public FlashAttemptEvent(EntityUid target, EntityUid? user, EntityUid? used)
+        public FlashAttemptEvent(EntityUid target, EntityUid? user, EntityUid? used, bool forced = false)
         {
             Target = target;
             User = user;
             Used = used;
+            Forced = forced;
         }
     }
     /// <summary>

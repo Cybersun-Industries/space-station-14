@@ -40,7 +40,5 @@ internal sealed class ESayCommand : IConsoleCommand
         if (string.IsNullOrEmpty(message))
             return;
 
-        _entityManager.System<ChatSystem>().TrySendInGameICMessage(playerEntity, message, InGameICChatType.Empathy, false, false,
-            shell, player, checkRadioPrefix: false);
     }
 }

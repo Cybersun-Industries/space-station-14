@@ -18,7 +18,7 @@ namespace Content.Server.GameTicking.Commands
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
 
-        public string Command => "joingame";
+        public string Command => "notice";
         public string Description => "";
         public string Help => "";
 

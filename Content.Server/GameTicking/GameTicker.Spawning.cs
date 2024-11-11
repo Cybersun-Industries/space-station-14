@@ -3,6 +3,8 @@ using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Managers;
 using Content.Server.GameTicking.Events;
+using Content.Server.Ghost;
+using Content.Server.Shuttles.Components;
 using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
 using Content.Server.Station.Components;
@@ -147,7 +149,7 @@ namespace Content.Server.GameTicking
             SpawnPlayer(player, character, station, jobId, lateJoin, silent);
         }
 
-        private void SpawnPlayer(ICommonSession player,
+        public void SpawnPlayer(ICommonSession player,
             HumanoidCharacterProfile character,
             EntityUid station,
             string? jobId = null,
@@ -222,12 +224,18 @@ namespace Content.Server.GameTicking
             _mind.SetUserId(newMind, data.UserId);
 
             var jobPrototype = _prototypeManager.Index<JobPrototype>(jobId);
-            _roles.MindAddJobRole(newMind, silent: silent, jobPrototype:jobId);
+            var job = new JobComponent {Prototype = jobId};
+            _roles.MindAddRole(newMind, job, silent: silent);
             var jobName = _jobs.MindTryGetJobName(newMind);
 
             _playTimeTrackings.PlayerRolesChanged(player);
 
-            var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(station, jobId, character);
+// start-backmen
+            if (jobPrototype.AlwaysUseSpawner)
+                lateJoin = false;
+// end-backmen
+
+            var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(station, job, character);
             DebugTools.AssertNotNull(mobMaybe);
             var mob = mobMaybe!.Value;
 
@@ -268,17 +276,13 @@ namespace Content.Server.GameTicking
             _stationJobs.TryAssignJob(station, jobPrototype, player.UserId);
 
             if (lateJoin)
-            {
                 _adminLogger.Add(LogType.LateJoin,
                     LogImpact.Medium,
                     $"Player {player.Name} late joined as {character.Name:characterName} on station {Name(station):stationName} with {ToPrettyString(mob):entity} as a {jobName:jobName}.");
-            }
             else
-            {
                 _adminLogger.Add(LogType.RoundStartJoin,
                     LogImpact.Medium,
                     $"Player {player.Name} joined as {character.Name:characterName} on station {Name(station):stationName} with {ToPrettyString(mob):entity} as a {jobName:jobName}.");
-            }
 
             // Make sure they're aware of extended access.
             if (Comp<StationJobsComponent>(station).ExtendedAccess
@@ -364,7 +368,7 @@ namespace Content.Server.GameTicking
                 var (mindId, mindComp) = _mind.CreateMind(player.UserId, name);
                 mind = (mindId, mindComp);
                 _mind.SetUserId(mind.Value, player.UserId);
-                _roles.MindAddRole(mind.Value, "MindRoleObserver");
+                _roles.MindAddRole(mind.Value, new ObserverRoleComponent());
             }
 
             var ghost = _ghost.SpawnGhost(mind.Value);

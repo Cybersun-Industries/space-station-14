@@ -24,6 +24,11 @@ namespace Content.Server.GameTicking
         ///     For access to CVars in status responses.
         /// </summary>
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+        // Corvax-Queue-Start
+        [Dependency] private readonly IServerJoinQueueManager _joinQueueManager = default!;
+        // Corvax-Queue-End
+
         /// <summary>
         ///     For access to the round ID in status responses.
         /// </summary>
@@ -42,9 +47,7 @@ namespace Content.Server.GameTicking
             lock (_statusShellLock)
             {
                 // Corvax-Queue-Start
-                var players = IoCManager.Instance?.TryResolveType<IServerJoinQueueManager>(out var joinQueueManager) ?? false
-                    ? joinQueueManager.ActualPlayersCount
-                    : _playerManager.PlayerCount;
+                var players = _joinQueueManager.ActualPlayersCount;
                 // Corvax-Queue-End
 
                 jObject["name"] = _baseServer.ServerName;

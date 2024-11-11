@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server.Ghost.Roles.Components;
 
 [RegisterComponent]
-[Access(typeof(GhostRoleSystem))]
+[Access(typeof(GhostRoleSystem),typeof(Content.Shared.Backmen.Reinforcement.SharedReinforcementSystem))]
 public sealed partial class GhostRoleComponent : Component
 {
     [DataField("name")] private string _roleName = "Unknown";
@@ -100,6 +100,13 @@ public sealed partial class GhostRoleComponent : Component
     [Access(typeof(GhostRoleSystem), Other = AccessPermissions.ReadWriteExecute)] // FIXME Friends
     public GhostRoleRaffleConfig? RaffleConfig { get; set; }
 
+    // start-backmen: whitelist
+    [ViewVariables(VVAccess.ReadWrite)]
+    [Access(typeof(GhostRoleSystem), Other = AccessPermissions.ReadWriteExecute)] // FIXME Friends
+    [DataField("whitelistRequired")]
+    public bool WhitelistRequired = false;
+    // end-backmen: whitelist
+    
     /// <summary>
     /// Job the entity will receive after adding the mind.
     /// </summary>

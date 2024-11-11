@@ -102,7 +102,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
     public IEnumerable<string> GetTimedRoles(EntityUid mindId)
     {
-        foreach (var role in _roles.MindGetAllRoleInfo(mindId))
+        foreach (var role in _roles.MindGetAllRoles(mindId))
         {
             if (string.IsNullOrWhiteSpace(role.PlayTimeTrackerId))
                 continue;

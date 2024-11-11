@@ -18,12 +18,12 @@ public sealed class RateLimitRegistration(
     /// <summary>
     /// CVar that controls the period over which the rate limit is counted, measured in seconds.
     /// </summary>
-    public readonly CVarDef<float> CVarLimitPeriodLength = cVarLimitPeriodLength;
+    public CVarDef<float> CVarLimitPeriodLength = cVarLimitPeriodLength;
 
     /// <summary>
     /// CVar that controls how many actions are allowed in a single rate limit period.
     /// </summary>
-    public readonly CVarDef<int> CVarLimitCount = cVarLimitCount;
+    public CVarDef<int> CVarLimitCount = cVarLimitCount;
 
     /// <summary>
     /// An action that gets invoked when this rate limit has been breached by a player.
@@ -31,7 +31,7 @@ public sealed class RateLimitRegistration(
     /// <remarks>
     /// This can be used for informing players or taking administrative action.
     /// </remarks>
-    public readonly Action<ICommonSession>? PlayerLimitedAction = playerLimitedAction;
+    public Action<ICommonSession>? PlayerLimitedAction = playerLimitedAction;
 
     /// <summary>
     /// CVar that controls the minimum delay between admin notifications, measured in seconds.
