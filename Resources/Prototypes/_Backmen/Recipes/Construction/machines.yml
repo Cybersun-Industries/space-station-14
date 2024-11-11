@@ -1,0 +1,84 @@
+- type: construction
+  id: GlimmerProber
+  name: ent-GlimmerProber
+  description: ent-GlimmerProber.desc
+  graph: GlimmerDevices
+  startNode: start
+  targetNode: glimmerProber
+  category: construction-category-machines
+  icon:
+    sprite: Backmen/Structures/Machines/glimmer_machines.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: GlimmerDrain
+  name: ent-GlimmerDrain
+  description: ent-GlimmerDrain.desc
+  graph: GlimmerDevices
+  startNode: start
+  targetNode: glimmerDrain
+  category: construction-category-machines
+  icon:
+    sprite: Backmen/Structures/Machines/glimmer_machines.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: Golem
+  name: ent-MobGolemCult
+  description: ent-MobGolemCult.desc
+  graph: Golem
+  startNode: start
+  targetNode: golem
+  category: construction-category-machines
+  icon:
+      sprite: Backmen/Mobs/Species/Golem/cult.rsi
+      state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: False
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: GolemWood
+  name: ent-MobGolemWood
+  description: ent-MobGolemWood.desc
+  graph: GolemWood
+  startNode: start
+  targetNode: golem
+  category: construction-category-machines
+  icon:
+      sprite: Mobs/Species/Diona/parts.rsi
+      state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: False
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: GolemSilver
+  name: ent-MobGolemSilver
+  description: ent-MobGolemSilver.desc
+  graph: GolemSilver
+  startNode: start
+  targetNode: golem
+  category: construction-category-machines
+  icon:
+      sprite: Backmen/Mobs/Species/Golem/silver.rsi
+      state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: False
+  conditions:
+    - !type:TileNotBlocked

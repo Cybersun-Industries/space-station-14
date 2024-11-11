@@ -1,0 +1,8 @@
+﻿- type: statusEffect
+  id: PsionicsDisabled
+
+- type: statusEffect
+  id: PsionicallyInsulated
+
+- type: statusEffect
+  id: SeeAll

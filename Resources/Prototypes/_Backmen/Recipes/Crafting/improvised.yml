@@ -1,0 +1,12 @@
+﻿- type: construction
+  name: ent-ClothingHeadTinfoil
+  id: tinfoilhat
+  graph: TinfoilHat
+  startNode: start
+  targetNode: tinfoilhat
+  category: construction-category-misc
+  description: ent-ClothingHeadTinfoil.desc
+  icon:
+    sprite: Backmen/Clothing/Head/Hats/tinfoil.rsi
+    state: icon
+  objectType: Item

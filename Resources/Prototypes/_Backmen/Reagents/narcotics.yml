@@ -1,0 +1,63 @@
+# Super Stimulants
+- type: reagent
+  id: StimulantsSuper
+  name: reagent-name-stimulants-super
+  group: Narcotics
+  desc: reagent-desc-stimulants-super
+  physicalDesc: reagent-physical-desc-energizing
+  flavor: sharp
+  color: "#DC143C"
+  boilingPoint: 212.0
+  meltingPoint: 170.0
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.5
+      effects:
+      - !type:MovespeedModifier # This is frickin' fast
+        walkSpeedModifier: 1.5
+        sprintSpeedModifier: 1.5
+      - !type:HealthChange
+        conditions:
+          - !type:ReagentThreshold
+            min: 16
+        damage: # If you get robust too much, you can go to hell!
+          types:
+            Poison: 4
+      - !type:GenericStatusEffect
+          key: Stutter
+          component: StutteringAccent
+      - !type:Jitter
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 5
+        type: Remove
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 5
+        type: Remove
+      - !type:GenericStatusEffect
+        key: StaminaModifier
+        component: StaminaModifier
+        time: 5
+        type: Add
+      - !type:PopupMessage
+        visualType: Medium
+        messages: ["ephedrine-effect-tight-pain", "ephedrine-effect-heart-pounds"]
+        type: Local
+        probability: 0.10
+    Medicine:
+      metabolismRate: 0.5
+      effects:
+        - !type:ResetNarcolepsy
+        - !type:SatiateHunger
+          factor: 1.0
+        - !type:SatiateThirst
+          factor: 1.0
+        - !type:ModifyBleedAmount # Tranexamic acid in recipe, so it's also stops bleeding, but not that efficient
+          amount: -1
+        - !type:HealthChange
+          damage:
+            groups:
+              Burn: -6
+              Brute: -6
+              Airloss: -4
