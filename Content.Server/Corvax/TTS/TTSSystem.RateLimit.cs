@@ -1,6 +1,7 @@
 ﻿using Content.Server.Chat.Managers;
 using Content.Server.Players.RateLimiting;
 using Content.Shared.Corvax.CCCVars;
+using Content.Shared.Players.RateLimiting;
 using Robust.Shared.Player;
 
 namespace Content.Server.Corvax.TTS;

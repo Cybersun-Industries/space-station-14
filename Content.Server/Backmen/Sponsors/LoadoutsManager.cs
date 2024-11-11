@@ -22,4 +22,9 @@ public sealed class LoadoutsManager : ISharedLoadoutsManager
 
         return true;
     }
+
+    public List<string> GetClientPrototypes()
+    {
+        throw new NotImplementedException();
+    }
 }

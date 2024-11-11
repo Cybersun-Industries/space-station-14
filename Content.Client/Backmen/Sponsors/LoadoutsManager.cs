@@ -1,4 +1,5 @@
 ﻿using Content.Corvax.Interfaces.Shared;
+using Robust.Shared.Network;
 
 namespace Content.Client.Backmen.Sponsors;
 
@@ -8,6 +9,11 @@ public sealed class LoadoutsManager : ISharedLoadoutsManager
 
     public void Initialize()
     {
+    }
+
+    public bool TryGetServerPrototypes(NetUserId userId, out List<string> prototypes)
+    {
+        throw new NotImplementedException();
     }
 
     public List<string> GetClientPrototypes()
