@@ -3,7 +3,6 @@ nukeops-description = Ядерные оперативники нацелилис
 nukeops-welcome =
     Вы - ядерный оперативник. Ваша задача - взорвать { $station } и убедиться, что от неё осталась лишь груда обломков. Ваше руководство, Синдикат, снабдило вас всем необходимым для выполнения этой задачи.
     Операция "{ $name }" началась! Смерть Nanotrasen!
-nukeops-briefing = Ваши задачи просты. Доставить бомбу и убедиться, что она взорвётся. Начинайте миссию.
 nukeops-opsmajor = [color=crimson]Крупная победа Синдиката![/color]
 nukeops-opsminor = [color=crimson]Малая победа Синдиката![/color]
 nukeops-neutral = [color=yellow]Ничейный исход![/color]
@@ -28,3 +27,7 @@ nukeops-no-one-ready = Нет готовых игроков! Нельзя зап
 nukeops-role-commander = Командир
 nukeops-role-agent = Агент
 nukeops-role-operator = Оператор
+
+
+
+nukeops-cond-nukeexplodedoncentcomlocation = Ядерным оперативникам удалось взорвать центральное командование.

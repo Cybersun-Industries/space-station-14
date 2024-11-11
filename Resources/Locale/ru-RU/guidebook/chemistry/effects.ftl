@@ -31,11 +31,6 @@ reagent-effect-guidebook-emp-reaction-effect =
         [1] Вызывает
        *[other] вызывают
     } электромагнитный импульс
-reagent-effect-guidebook-flash-reaction-effect =
-    { $chance ->
-        [1] Вызывает
-       *[other] вызывают
-    } ослепительную вспышку
 reagent-effect-guidebook-foam-area-reaction-effect =
     { $chance ->
         [1] Создаёт
@@ -315,11 +310,7 @@ reagent-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Регенерирует
        *[other] регенерируют
-    } { NATURALFIXED($time, 3) } { $time ->
-        [one] секунду
-        [few] секунды
-       *[other] секунд
-    } гниения
+    } { NATURALFIXED($time, 3) } { MANY("second", $time) } гниения
 reagent-effect-guidebook-innoculate-zombie-infection =
     { $chance ->
         [1] Лечит
@@ -329,11 +320,7 @@ reagent-effect-guidebook-area-reaction =
     { $chance ->
         [1] Вызывает
        *[other] вызывают
-    } дымовую или пенную реакцию на { NATURALFIXED($duration, 3) } { $duration ->
-        [one] секунду
-        [few] секунды
-       *[other] секунд
-    }
+    } дымовую или пенную реакцию на { NATURALFIXED($duration, 3) } { MANY("second", $duration) }
 reagent-effect-guidebook-add-to-solution-reaction =
     { $chance ->
         [1] Заставляет

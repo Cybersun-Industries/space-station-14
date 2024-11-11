@@ -1,7 +1,7 @@
 ent-ClothingShoesChef = chef shoes
     .desc = Sturdy shoes that minimize injury from falling objects or knives.
-ent-ClothingShoesClownBase = { ent-ClothingShoesBaseButcherable }
-    .desc = { ent-ClothingShoesBaseButcherable.desc }
+ent-ClothingShoesClownBase = { ent-ClothingSlotBase }
+  .desc = { ent-ClothingSlotBase.desc }
 ent-ClothingShoesClown = clown shoes
     .desc = The prankster's standard-issue clowning shoes. Damn they're huge!
 ent-ClothingShoesClownBanana = banana clown shoes
