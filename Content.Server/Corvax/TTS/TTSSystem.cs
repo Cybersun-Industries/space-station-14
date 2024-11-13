@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Content.Server.Chat.Systems;
+using Content.Server.Database.Migrations.Sqlite;
 using Content.Server.SS220.Chat.Systems;
 using Content.Server.Players.RateLimiting;
 using Content.Shared.Corvax.CCCVars;
@@ -54,7 +55,7 @@ public sealed partial class TTSSystem : EntitySystem
         RaiseLocalEvent(uid, voiceEv);
         voiceId = voiceEv.VoiceId;
 
-        if (voiceId == null || !_prototypeManager.TryIndex(voiceId.Value, out var protoVoice))
+        if (voiceId == null || !_prototypeManager.TryIndex<TTSVoicePrototype>(voiceId, out var protoVoice))
             return;
 
         if (args.ObfuscatedMessage != null)

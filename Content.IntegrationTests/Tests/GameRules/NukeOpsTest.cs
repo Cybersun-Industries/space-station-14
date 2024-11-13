@@ -121,7 +121,7 @@ public sealed class NukeOpsTest
         Assert.That(roleSys.MindHasRole<NukeopsRoleComponent>(mind));
         Assert.That(factionSys.IsMember(player, "Syndicate"), Is.True);
         Assert.That(factionSys.IsMember(player, "NanoTrasen"), Is.False);
-        var roles = roleSys.MindGetAllRoleInfo(mind);
+        var roles = roleSys.MindGetAllRoles(mind);
         var cmdRoles = roles.Where(x => x.Prototype == "NukeopsCommander");
         Assert.That(cmdRoles.Count(), Is.EqualTo(1));
 
@@ -132,7 +132,7 @@ public sealed class NukeOpsTest
         Assert.That(roleSys.MindHasRole<NukeopsRoleComponent>(dummyMind));
         Assert.That(factionSys.IsMember(dummyEnts[1], "Syndicate"), Is.True);
         Assert.That(factionSys.IsMember(dummyEnts[1], "NanoTrasen"), Is.False);
-        roles = roleSys.MindGetAllRoleInfo(dummyMind);
+        roles = roleSys.MindGetAllRoles(dummyMind);
         cmdRoles = roles.Where(x => x.Prototype == "NukeopsMedic");
         Assert.That(cmdRoles.Count(), Is.EqualTo(1));
 
@@ -149,7 +149,7 @@ public sealed class NukeOpsTest
             Assert.That(factionSys.IsMember(ent, "Syndicate"), Is.False);
             Assert.That(factionSys.IsMember(ent, "NanoTrasen"), Is.True);
             var nukeroles = new List<string>() { "Nukeops", "NukeopsMedic", "NukeopsCommander" };
-            Assert.That(roleSys.MindGetAllRoleInfo(mindCrew).Any(x => nukeroles.Contains(x.Prototype)), Is.False);
+            Assert.That(roleSys.MindGetAllRoles(mindCrew).Any(x => nukeroles.Contains(x.Prototype)), Is.False);
         }
 
         // The game rule exists, and all the stations/shuttles/maps are properly initialized

@@ -25,7 +25,7 @@ public partial class VoiceMaskSystem
 
         TrySetLastKnownVoice(uid, message.Voice);
 
-        UpdateUI(uid, component);
+        UpdateUI(uid);
     }
 
     private void TrySetLastKnownVoice(EntityUid maskWearer, string? voiceId)

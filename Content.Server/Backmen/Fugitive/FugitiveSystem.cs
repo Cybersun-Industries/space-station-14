@@ -174,7 +174,7 @@ public sealed class FugitiveSystem : EntitySystem
 
         args.SpawnResult = _stationSpawning.SpawnPlayerMob(
             spawnLoc.Item1,
-            args.Job,
+            args.Job?.Prototype,
             args.HumanoidCharacterProfile,
             args.Station);
     }

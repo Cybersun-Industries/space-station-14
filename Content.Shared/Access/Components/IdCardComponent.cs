@@ -19,6 +19,10 @@ public sealed partial class IdCardComponent : Component
 
     [DataField]
     [AutoNetworkedField]
+    public string? StoredBankAccountNumber;
+
+    [DataField]
+    [AutoNetworkedField]
     [Access(typeof(SharedIdCardSystem), typeof(SharedPdaSystem), typeof(SharedAgentIdCardSystem), Other = AccessPermissions.ReadWrite)]
     public LocId? JobTitle;
 

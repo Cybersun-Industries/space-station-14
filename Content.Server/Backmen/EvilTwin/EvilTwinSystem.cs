@@ -613,7 +613,7 @@ public sealed class EvilTwinSystem : EntitySystem
 
             _stationSpawning.SetPdaAndIdCardData(twinUid, pref!.Name, twinTargetMindJob, _stationSystem.GetOwningStation(target));
 
-            _stationSpawning.DoJobSpecials(jobComponent, twinUid);
+            _stationSpawning.DoJobSpecials(jobComponent.Prototype, twinUid);
             _identity.QueueIdentityUpdate(twinUid);
         }
 
