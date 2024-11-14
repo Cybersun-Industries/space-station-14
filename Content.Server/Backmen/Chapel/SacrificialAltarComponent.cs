@@ -18,9 +18,6 @@ public sealed partial class SacrificialAltarComponent : Component
 
     public Entity<AudioComponent>? SacrificeStingStream;
 
-    [DataField("rewardPool")]
-    public string RewardPool = "PsionicArtifactPool";
-
     [DataField("rewardPoolChance")]
     public float RewardPoolChance = 0.1f;
 

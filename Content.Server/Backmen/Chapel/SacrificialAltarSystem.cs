@@ -107,13 +107,7 @@ public sealed class SacrificialAltarSystem : EntitySystem
 
         _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(args.Args.User):player} sacrificed {ToPrettyString(args.Args.Target.Value):target} on {ToPrettyString(uid):altar}");
 
-        if (!_prototypeManager.TryIndex<WeightedRandomPrototype>(component.RewardPool, out var pool))
-            return;
-
         var chance = HasComp<BibleUserComponent>(args.Args.User) ? component.RewardPoolChanceBibleUser : component.RewardPoolChance;
-
-        if (_robustRandom.Prob(chance))
-            Spawn(pool.Pick(), Transform(uid).Coordinates);
 
         int i = _robustRandom.Next(component.BluespaceRewardMin, component.BlueSpaceRewardMax);
 
