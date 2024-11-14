@@ -27,9 +27,5 @@
   wage: 50
   #end-backmen: currency
   special:
-    - !type:AddComponentSpecial
-      components:
-        - type: PsionicBonusChance
-          flatBonus: 0.025
     - !type:AddImplantSpecial
       implants: [ MindShieldImplant ]

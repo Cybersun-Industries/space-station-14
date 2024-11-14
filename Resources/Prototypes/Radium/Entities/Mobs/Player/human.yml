@@ -3,16 +3,12 @@
   name: Репликант
   parent: BaseMobReplicant
   id: MobReplicant
-  components:
-    - type: PotentialPsionic
 
 - type: entity
   save: false
   name: Репликант
   parent: BaseMobReplicantGhostRole
   id: MobReplicantGhostRole
-  components:
-    - type: PotentialPsionic
 
 - type: entity
   parent: MobHuman
