@@ -32,27 +32,27 @@
   technologyPrerequisites:
   - Robotics
 
-- type: technology
-  id: HONKMech
-  name: ataraxia-research-technology-honk-mech
-  icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
-    state: honker
-  discipline: HONKMech
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
-  - HonkerHarness
-  - HonkerLArm
-  - HonkerRArm
-  - HonkerLLeg
-  - HonkerRLeg
-  - HonkerCentralElectronics
-  - HonkerPeripheralsElectronics
-  - HonkerTargetingElectronics
-  - MechEquipmentHorn
-  technologyPrerequisites:
-  - Robotics
+# - type: technology
+#   id: HONKMech
+#   name: ataraxia-research-technology-honk-mech
+#   icon:
+#     sprite: Objects/Specific/Mech/mecha.rsi
+#     state: honker
+#   discipline: HONKMech
+#   tier: 1
+#   cost: 7500
+#   recipeUnlocks:
+#   - HonkerHarness
+#   - HonkerLArm
+#   - HonkerRArm
+#   - HonkerLLeg
+#   - HonkerRLeg
+#   - HonkerCentralElectronics
+#   - HonkerPeripheralsElectronics
+#   - HonkerTargetingElectronics
+#   - MechEquipmentHorn
+#   technologyPrerequisites:
+#   - Robotics
 
 - type: technology
   id: RipleyAPLUMech

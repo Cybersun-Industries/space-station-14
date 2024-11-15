@@ -55,7 +55,6 @@
     - type: MindContainer
       showExamineInfo: true
     - type: Familiar
-    - type: Dispellable
     - type: Damageable
       damageContainer: CorporealSpirit
       damageModifierSet: CorporealSpirit
@@ -76,10 +75,7 @@
     - type: Hands
     - type: RandomMetadata
       nameSegments: [names_golem]
-    - type: PotentialPsionic
-    - type: Psionic
       removable: false
-    - type: PyrokinesisPower
     - type: Grammar
       attributes:
         proper: true
@@ -87,7 +83,6 @@
     - type: EyeProtection
     - type: NpcFactionMember
       factions:
-        - PsionicInterloper
         - NanoTrasen
 
 - type: entity

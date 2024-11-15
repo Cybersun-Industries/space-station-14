@@ -10,21 +10,21 @@
   recipeUnlocks:
     - SynthesizerInstrument
 
-- type: technology
-  id: FauxAstroTiles
-  name: ataraxia-research-technology-faux-astro-tiles
-  icon:
-    sprite: Objects/Tiles/tile.rsi
-    state: astroice
-  discipline: FauxAstroTiles
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - FauxTileAstroGrass
-  - FauxTileMowedAstroGrass
-  - FauxTileJungleAstroGrass
-  - FauxTileAstroIce
-  - FauxTileAstroSnow
+# - type: technology
+#   id: FauxAstroTiles
+#   name: ataraxia-research-technology-faux-astro-tiles
+#   icon:
+#     sprite: Objects/Tiles/tile.rsi
+#     state: astroice
+#   discipline: FauxAstroTiles
+#   tier: 1
+#   cost: 5000
+#   recipeUnlocks:
+#   - FauxTileAstroGrass
+#   - FauxTileMowedAstroGrass
+#   - FauxTileJungleAstroGrass
+#   - FauxTileAstroIce
+#   - FauxTileAstroSnow
 
 - type: technology
   id: CleaningAdvanced

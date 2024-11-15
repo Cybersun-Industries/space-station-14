@@ -1,38 +1,4 @@
 - type: construction
-  id: GlimmerProber
-  name: ent-GlimmerProber
-  description: ent-GlimmerProber.desc
-  graph: GlimmerDevices
-  startNode: start
-  targetNode: glimmerProber
-  category: construction-category-machines
-  icon:
-    sprite: Backmen/Structures/Machines/glimmer_machines.rsi
-    state: base
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: GlimmerDrain
-  name: ent-GlimmerDrain
-  description: ent-GlimmerDrain.desc
-  graph: GlimmerDevices
-  startNode: start
-  targetNode: glimmerDrain
-  category: construction-category-machines
-  icon:
-    sprite: Backmen/Structures/Machines/glimmer_machines.rsi
-    state: base
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
   id: Golem
   name: ent-MobGolemCult
   description: ent-MobGolemCult.desc

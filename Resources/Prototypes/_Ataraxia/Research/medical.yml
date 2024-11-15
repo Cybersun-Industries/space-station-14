@@ -10,18 +10,18 @@
   recipeUnlocks:
   - HandheldCrewMonitor
 
-- type: technology
-  id: BiochemicalStasis
-  name: ataraxia-research-technology-biochemical-stasis
-  icon:
-    sprite: Objects/Specific/Chemistry/beaker_cryostasis.rsi
-    state: beakernoreact
-  discipline: BiochemicalStasis
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
-  - CryostasisBeaker
-  - SyringeCryostasis
+# - type: technology
+#   id: BiochemicalStasis
+#   name: ataraxia-research-technology-biochemical-stasis
+#   icon:
+#     sprite: Objects/Specific/Chemistry/beaker_cryostasis.rsi
+#     state: beakernoreact
+#   discipline: BiochemicalStasis
+#   tier: 1
+#   cost: 7500
+#   recipeUnlocks:
+#   - CryostasisBeaker
+#   - SyringeCryostasis
 
 #- type: technology # Because need port
 #  id: BodyBags

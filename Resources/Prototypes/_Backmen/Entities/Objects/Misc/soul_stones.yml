@@ -16,7 +16,6 @@
     raffle:
       settings: default
   - type: Speech
-  - type: Psionic
   - type: SoulCrystal
   - type: SolutionContainerManager
     solutions:

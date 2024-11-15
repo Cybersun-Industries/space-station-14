@@ -36,17 +36,17 @@
   technologyPrerequisites:
   - ShuttleWeapon
 
-- type: technology
-  id: Shuttlecraft
-  name: ataraxia-research-technology-shuttlecraft
-  icon:
-    sprite: Structures/Shuttles/gyroscope.rsi
-    state: base
-  discipline: Shuttlecraft
-  tier: 1
-  cost: 10000
-  recipeUnlocks:
-  - ShuttleConsoleCircuitboard
-  - ThrusterMachineCircuitboard
-  - GyroscopeMachineCircuitboard
-  - MiniGravityGeneratorCircuitboard
+# - type: technology
+#   id: Shuttlecraft
+#   name: ataraxia-research-technology-shuttlecraft
+#   icon:
+#     sprite: Structures/Shuttles/gyroscope.rsi
+#     state: base
+#   discipline: Shuttlecraft
+#   tier: 1
+#   cost: 10000
+#   recipeUnlocks:
+#   - ShuttleConsoleCircuitboard
+#   - ThrusterMachineCircuitboard
+#   - GyroscopeMachineCircuitboard
+#   - MiniGravityGeneratorCircuitboard

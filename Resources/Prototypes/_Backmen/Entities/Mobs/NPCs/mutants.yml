@@ -143,15 +143,6 @@
     bloodReagent: DemonsBlood
   - type: Body
     prototype: VampiricAnimalLarge
-  - type: PotentialPsionic
-  - type: Psionic
-    removable: false
-  - type: MetapsionicPower
-  - type: AntiPsionicWeapon
-    punish: false
-    modifiers:
-      coefficients:
-        Piercing: 2.25
   - type: MeleeWeapon
     hidden: true
     angle: 0
@@ -177,18 +168,12 @@
       - ForcedSleep
       - TemporaryBlindness
       - Pacified
-      - PsionicsDisabled
-      - PsionicallyInsulated
       - SeeAll
   - type: Tag
     tags:
       - Oneirophage
       - FootstepSound
   - type: MovementAlwaysTouching
-  - type: PsionicInvisibleContacts
-    whitelist:
-      tags:
-        - ArachneWeb
   - type: SpiderVampire
     spawnEgg: FoodEggSpiderVampire
   - type: NightVision

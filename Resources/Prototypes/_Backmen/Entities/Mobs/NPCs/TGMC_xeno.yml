@@ -697,9 +697,6 @@
       150: Dead
   - type: Stamina
     critThreshold: 250
-  - type: PsionicInvisibilityPower
-    actionPsionicInvisibility: ActionHunterInvisibility
-    stunSecond: 0
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 5.5
@@ -728,7 +725,6 @@
     - type: InstantAction
       useDelay: 30
       icon: Backmen/Interface/VerbIcons/psionic_invisibility.png
-      event: !type:PsionicInvisibilityPowerActionEvent
 
 # RAVAGER #
 

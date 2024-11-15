@@ -1,11 +1,11 @@
-﻿- type: startingGear
-  id: BrigmedicGear
-  equipment:
-    shoes: ClothingShoesBootsJackSec # Corvax-Resprite
-    gloves: ClothingHandsGlovesNitrile
-    eyes: ClothingEyesHudMedSec
-    id: BrigmedicPDA
-    belt: ClothingBeltMedicalFilled
+﻿# - type: startingGear
+#   id: BrigmedicGear
+#   equipment:
+#     shoes: ClothingShoesBootsJackSec # Corvax-Resprite
+#     gloves: ClothingHandsGlovesNitrile
+#     eyes: ClothingEyesHudMedSec
+#     id: BrigmedicPDA
+#     belt: ClothingBeltMedicalFilled
 
 #Suit
 - type: loadout

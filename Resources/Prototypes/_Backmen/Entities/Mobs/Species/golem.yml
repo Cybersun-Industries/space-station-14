@@ -237,7 +237,6 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
-    - PsionicInterloper
   - type: ItemSlots
     slots:
       crystal_slot:
@@ -254,8 +253,6 @@
         clownedon:
           True: {visible: true}
           False: {visible: false}
-  - type: Psionic
-    removable: false
   - type: SiliconLawBound
   - type: GuideHelp
     guides:
@@ -458,7 +455,6 @@
           Holy: 8
     - type: Inventory
       templateId: golem_silver
-    - type: PsychokinesisPower
     - type: Construction
       graph: GolemSilver
       node: golem

@@ -297,7 +297,7 @@
             acts: [ "Destruction" ]
   - type: Sprite
     sprite: Backmen/Mobs/Aliens/blob.rsi
-    drawdepth: BlobTiles
+#    drawdepth: BlobTiles
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: blob
@@ -383,7 +383,7 @@
     pointsPerPulsed: 5
   - type: Sprite
     sprite: Backmen/Mobs/Aliens/blob.rsi
-    drawdepth: BlobTiles
+#    drawdepth: BlobTiles
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: blob_core
@@ -439,7 +439,7 @@
     - type: BlobFactory
     - type: Sprite
       sprite: Backmen/Mobs/Aliens/blob.rsi
-      drawdepth: BlobTiles
+#      drawdepth: BlobTiles
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_factory
@@ -478,7 +478,7 @@
     - type: BlobResource
     - type: Sprite
       sprite: Backmen/Mobs/Aliens/blob.rsi
-      drawdepth: BlobTiles
+#      drawdepth: BlobTiles
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_resource
@@ -518,7 +518,7 @@
     - type: BlobNode
     - type: Sprite
       sprite: Backmen/Mobs/Aliens/blob.rsi
-      drawdepth: BlobTiles
+#      drawdepth: BlobTiles
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_node
@@ -548,7 +548,7 @@
               acts: [ "Destruction" ]
     - type: Sprite
       sprite: Backmen/Mobs/Aliens/blob.rsi
-      drawdepth: BlobTiles
+#      drawdepth: BlobTiles
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_glow
@@ -585,7 +585,7 @@
     - type: Airtight
     - type: Sprite
       sprite: Backmen/Mobs/Aliens/blob.rsi
-      drawdepth: BlobTiles
+#      drawdepth: BlobTiles
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: blob_shield

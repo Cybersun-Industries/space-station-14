@@ -134,9 +134,6 @@
     - 0,0,15,5
   - type: ClothingGrant
     component:
-    - type: PsionicInvisibilityPower
-      actionPsionicInvisibility: ActionToggleSuitInvisiblePower
-      stunSecond: 0
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot
@@ -160,4 +157,3 @@
       sprite: Backmen/Clothing/Back/RIGs/chrono.rsi
       state: icon
     useDelay: 2
-    event: !type:PsionicInvisibilityPowerActionEvent
