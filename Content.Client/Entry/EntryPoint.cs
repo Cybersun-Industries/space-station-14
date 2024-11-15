@@ -125,6 +125,14 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("stationGoal"); // Corvax-StationGoal
             _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
 
+            // Begin Backmen: our ignored prototypes.
+            _prototypeManager.RegisterIgnore("npcConversationTree");
+            _prototypeManager.RegisterIgnore("shipwreckDestination");
+            _prototypeManager.RegisterIgnore("shipwreckFaction");
+            _prototypeManager.RegisterIgnore("bkmloadout");
+            _prototypeManager.RegisterIgnore("specForceTeam");
+            // End Backmen.
+
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
             _screenshotHook.Initialize();
