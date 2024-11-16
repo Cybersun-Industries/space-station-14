@@ -120,30 +120,30 @@
     grid:
     - 0,0,10,5
 
-- type: entity
-  parent: ClothingBackpack
-  id: ClothingBackpackRIGChronoLegionnaire
-  name: chrono legionnaire RIG
-  description: An advanced and stylish RIG right from the future.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Back/RIGs/chrono.rsi
-  - type: Storage
-    maxItemSize: Huge
-    grid:
-    - 0,0,15,5
-  - type: ClothingGrant
-    component:
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot
-        showEnts: False
-        occludes: True
-        ent: null
-      storagebase: !type:Container
-        showEnts: False
-        occludes: True
-        ents: [ ]
+#- type: entity
+#  parent: ClothingBackpack
+#  id: ClothingBackpackRIGChronoLegionnaire
+#  name: chrono legionnaire RIG
+#  description: An advanced and stylish RIG right from the future.
+#  components:
+#  - type: Sprite
+#    sprite: Backmen/Clothing/Back/RIGs/chrono.rsi
+#  - type: Storage
+#    maxItemSize: Huge
+#    grid:
+#    - 0,0,15,5
+#  - type: ClothingGrant
+#    component:
+#  - type: ContainerContainer
+#    containers:
+#      toggleable-clothing: !type:ContainerSlot
+#        showEnts: False
+#        occludes: True
+#        ent: null
+#      storagebase: !type:Container
+#        showEnts: False
+#        occludes: True
+#        ents: [ ]
 
 - type: entity
   id: ActionToggleSuitInvisiblePower

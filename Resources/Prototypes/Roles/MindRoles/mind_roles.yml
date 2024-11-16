@@ -38,16 +38,16 @@
 #  description:
   # MindRoleComponent.JobPrototype is filled by SharedJobSystem
 
-# Subverted Silicon
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleSubvertedSilicon
-  name: Subverted Silicon Role
-  description:
-  components:
-  - type: SubvertedSiliconRole
-  - type: MindRole
-    antagPrototype: SubvertedSilicon
+## Subverted Silicon
+#- type: entity
+#  parent: BaseMindRoleAntag
+#  id: MindRoleSubvertedSilicon
+#  name: Subverted Silicon Role
+#  description:
+#  components:
+#  - type: SubvertedSiliconRole
+#  - type: MindRole
+#    antagPrototype: SubvertedSilicon
 
 # Dragon
 - type: entity
@@ -105,26 +105,26 @@
   - type: MindRole
     antagPrototype: NukeopsCommander
 
-# Revolutionaries
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleHeadRevolutionary
-  name: Head Revolutionary Role
-#  description: mind-role-head-revolutionary-description
-  components:
-  - type: MindRole
-    antagPrototype: HeadRev
-    exclusiveAntag: true
-  - type: RevolutionaryRole
+## Revolutionaries
+#- type: entity
+#  parent: BaseMindRoleAntag
+#  id: MindRoleHeadRevolutionary
+#  name: Head Revolutionary Role
+##  description: mind-role-head-revolutionary-description
+#  components:
+#  - type: MindRole
+#    antagPrototype: HeadRev
+#    exclusiveAntag: true
+#  - type: RevolutionaryRole
 
-- type: entity
-  parent: MindRoleHeadRevolutionary
-  id: MindRoleRevolutionary
-  name: Revolutionary Role
-#  description: mind-role-revolutionary-description
-  components:
-  - type: MindRole
-    antagPrototype: Rev
+#- type: entity
+#  parent: MindRoleHeadRevolutionary
+#  id: MindRoleRevolutionary
+#  name: Revolutionary Role
+##  description: mind-role-revolutionary-description
+#  components:
+#  - type: MindRole
+#    antagPrototype: Rev
 
 # Thief
 - type: entity
@@ -169,14 +169,14 @@
     antagPrototype: InitialInfected
     exclusiveAntag: true
   - type: InitialInfectedRole
-
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleZombie
-  name: Zombie Role
-#  description: mind-role-zombie-description
-  components:
-  - type: MindRole
-    antagPrototype: Zombie
-    exclusiveAntag: true
-  - type: ZombieRole
+#
+#- type: entity
+#  parent: BaseMindRoleAntag
+#  id: MindRoleZombie
+#  name: Zombie Role
+##  description: mind-role-zombie-description
+#  components:
+#  - type: MindRole
+#    antagPrototype: Zombie
+#    exclusiveAntag: true
+#  - type: ZombieRole

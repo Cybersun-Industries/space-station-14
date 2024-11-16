@@ -45,6 +45,15 @@
         },
         {
             "name": "fax-machine"
+        },
+        {
+        	"name": "sophie"
+        },
+        {
+        	"name": "oracle"
+        },
+        {
+        	"name": "supermatter"
         }
     ]
 }

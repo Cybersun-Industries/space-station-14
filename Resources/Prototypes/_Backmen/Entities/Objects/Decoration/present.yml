@@ -3,12 +3,12 @@
   parent: BaseFlatpack
   name: пакет пандоры
   suffix: Оракул
-  components:
-  - type: Sprite
-    layers:
-    - state: oracle
-  - type: Flatpack
-    entity: Oracle
+#  components:
+#  - type: Sprite
+#    layers:
+#    - state: oracle
+#  - type: Flatpack
+#    entity: Oracle
 
 - type: entity
   id: FlatpackSophie

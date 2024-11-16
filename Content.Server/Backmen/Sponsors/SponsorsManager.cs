@@ -37,10 +37,10 @@ public sealed class SponsorsManager : ISharedSponsorsManager
         _sawmill = Logger.GetSawmill("sponsors");
         _cfg.OnValueChanged(CCVars.SponsorsApiUrl, s => _apiUrl = s, true);
 
-        _netMgr.RegisterNetMessage<MsgSponsorInfo>();
+        // _netMgr.RegisterNetMessage<MsgSponsorInfo>();
 
-        _netMgr.Connecting += OnConnecting;
-        _netMgr.Connected += OnConnected;
+        // _netMgr.Connecting += OnConnecting;
+        // _netMgr.Connected += OnConnected;
     }
 
     public bool TryGetServerPrototypes(NetUserId userId, [NotNullWhen(true)] out List<string>? prototypes)
@@ -77,7 +77,7 @@ public sealed class SponsorsManager : ISharedSponsorsManager
         return _cachedSponsors.TryGetValue(userId, out var sponsor) && sponsor.HavePriorityJoin;
     }
 
-    private async Task OnConnecting(NetConnectingArgs e)
+    /*private async Task OnConnecting(NetConnectingArgs e)
     {
         SponsorInfo? info;
         try
@@ -121,7 +121,7 @@ public sealed class SponsorsManager : ISharedSponsorsManager
         {
             _lock.ExitReadLock();
         }
-    }
+    }*/
 
     public void Cleanup()
     {

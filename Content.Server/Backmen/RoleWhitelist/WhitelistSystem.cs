@@ -30,8 +30,8 @@ public sealed class WhitelistSystem  : SharedWhitelistSystem
 
         _net.RegisterNetMessage<MsgWhitelist>();
 
-        _net.Connecting += NetOnConnecting;
-        _net.Connected += NetOnConnected;
+        // _net.Connecting += NetOnConnecting;
+        // _net.Connected += NetOnConnected;
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete, after: new []{ typeof(TraitSystem) });
     }
@@ -77,12 +77,12 @@ public sealed class WhitelistSystem  : SharedWhitelistSystem
 
     }
 
-    private void NetOnConnected(object? sender, NetChannelArgs e)
+    /*private void NetOnConnected(object? sender, NetChannelArgs e)
     {
         SendWhitelistCached(e.Channel.UserId);
-    }
+    }*/
 
-    private async Task NetOnConnecting(NetConnectingArgs session)
+    /*private async Task NetOnConnecting(NetConnectingArgs session)
     {
         if (await _db.GetWhitelistStatusAsync(session.UserId))
         {
@@ -92,7 +92,7 @@ public sealed class WhitelistSystem  : SharedWhitelistSystem
         {
             _whitelisted.Remove(session.UserId);
         }
-    }
+    }*/
 
     public bool IsInWhitelist(NetUserId p)
     {
@@ -154,7 +154,7 @@ public sealed class WhitelistSystem  : SharedWhitelistSystem
     public override void Shutdown()
     {
         base.Shutdown();
-        _net.Connecting -= NetOnConnecting;
-        _net.Connected -= NetOnConnected;
+        // _net.Connecting -= NetOnConnecting;
+        // _net.Connected -= NetOnConnected;
     }
 }

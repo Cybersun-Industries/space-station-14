@@ -13,6 +13,9 @@
     {
       "name": "equipped-EARS",
       "directions": 4
+    },
+    {
+    	"name": "icon-alt"
     }
   ]
 }
