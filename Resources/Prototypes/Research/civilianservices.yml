@@ -130,6 +130,9 @@
   - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
+  - NTBodyBag # Corvax-Next-AdvancedBodyBags
+  - PrisonerBodyBag # Corvax-Next-AdvancedBodyBags
+  - RadiationBodyBag # Corvax-Next-AdvancedBodyBags
 
 - type: technology
   id: MechanizedTreatment
@@ -228,3 +231,4 @@
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
+  - BluespaceBodyBag # Corvax-Next-AdvancedBodyBags
