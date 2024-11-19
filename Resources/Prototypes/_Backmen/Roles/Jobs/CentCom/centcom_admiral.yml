@@ -16,9 +16,9 @@
     - !type:RoleTimeRequirement
       role: JobCentralCommandOperator
       time: 21600
-    - !type:RoleTimeRequirement
-      role: JobCentralCommandOfficial
-      time: 21600
+#    - !type:RoleTimeRequirement
+#      role: JobCentralCommandOfficial
+#      time: 21600
     - !type:DepartmentTimeRequirement
       department: CentCom
       time: 31600

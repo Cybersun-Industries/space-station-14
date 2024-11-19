@@ -393,6 +393,7 @@ public sealed partial class ChangelingSystem
 
         if (HasComp<StealthComponent>(uid) && HasComp<StealthOnMoveComponent>(uid))
         {
+            RemComp<StealthOnMoveComponent>(uid);
             RemComp<StealthComponent>(uid);
             _popup.PopupEntity(Loc.GetString("changeling-chameleon-end"), uid, uid);
             return;
