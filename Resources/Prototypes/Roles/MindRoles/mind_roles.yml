@@ -207,6 +207,7 @@
     antagPrototype: Thief
     roleType: SoloAntagonist
   - type: ThiefRole
+  - type: ThiefBeaconAccess # Corvax-Next-Api
 
 # Traitors
 - type: entity
