@@ -6,6 +6,7 @@ using Content.Shared.Thief;
 using Robust.Server.GameObjects;
 using Robust.Server.Audio;
 using Robust.Shared.Prototypes;
+using Content.Shared.Implants.Components;
 
 namespace Content.Server.Thief.Systems;
 
@@ -38,6 +39,13 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
 
     private void OnApprove(Entity<ThiefUndeterminedBackpackComponent> backpack, ref ThiefBackpackApproveMessage args)
     {
+        // Corvax-Next-Api-Start
+        var entity = backpack.Owner;
+
+        if (TryComp<SubdermalImplantComponent>(Transform(entity).ParentUid, out var implant) && implant.ImplantedEntity is not null)
+            entity = implant.ImplantedEntity.Value;
+        // Corvax-Next-Api-End
+
         if (backpack.Comp.SelectedSets.Count != backpack.Comp.MaxSelectedSets)
             return;
 
@@ -50,7 +58,7 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
             var set = _proto.Index(backpack.Comp.PossibleSets[i]);
             foreach (var item in set.Content)
             {
-                var ent = Spawn(item, _transform.GetMapCoordinates(backpack.Owner));
+                var ent = Spawn(item, _transform.GetMapCoordinates(entity)); // Corvax-Next-Api
                 if (TryComp<ItemComponent>(ent, out var itemComponent))
                 {
                     if (spawnedStorage != null)
