@@ -10,9 +10,9 @@
     sprite: Backmen/Clothing/OuterClothing/ERPStuff/dresses/wedding.rsi
   - type: Clothing
     sprite: Backmen/Clothing/OuterClothing/ERPStuff/dresses/wedding.rsi
-  - type: Tag
-    tags:
-      - FullBodyOuter
+#  - type: Tag
+#    tags:
+#      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBase
@@ -24,9 +24,9 @@
     sprite: Backmen/Clothing/OuterClothing/ERPStuff/dresses/dress.rsi
   - type: Clothing
     sprite: Backmen/Clothing/OuterClothing/ERPStuff/dresses/dress.rsi
-  - type: Tag
-    tags:
-      - FullBodyOuter
+#  - type: Tag
+#    tags:
+#      - FullBodyOuter
 
 - type: entity
   parent: ClothingRedSexyDress
@@ -69,9 +69,9 @@
       - state: equipped-OUTERCLOTHING-belt
       - state: equipped-OUTERCLOTHING
         color: "#9c0dff"
-  - type: Tag
-    tags:
-      - FullBodyOuter
+#  - type: Tag
+#    tags:
+#      - FullBodyOuter
 
 - type: entity
   parent: ClothingTangpDress

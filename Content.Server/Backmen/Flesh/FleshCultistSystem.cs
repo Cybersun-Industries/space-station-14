@@ -197,8 +197,8 @@ public sealed partial class FleshCultistSystem : EntitySystem
             return;
         if (metaData.EntityPrototype.ID != component.SpiderLegsSpawnId)
             return;
-        if (!_tagSystem.HasTag(args.Equipment, "FullBodyOuter"))
-            return;
+        // if (!_tagSystem.HasTag(args.Equipment, "FullBodyOuter"))
+        //     return;
         _popup.PopupEntity(Loc.GetString("flesh-cultist-equiped-outer-clothing-blocked",
             ("Entity", uid)), uid, PopupType.LargeCaution);
         args.Cancel();
