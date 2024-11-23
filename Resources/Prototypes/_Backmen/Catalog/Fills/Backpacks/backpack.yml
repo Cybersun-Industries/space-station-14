@@ -25,7 +25,7 @@
     - type: StorageFill
       contents:
         - id: BoxFlare
-          amount: 2
+          amount: 1
         - id: BattleMedipen
           amount: 2
         - id: WeaponDisabler

@@ -357,7 +357,7 @@
 
 - type: construction
   name: ent-ComfyDarkChair
-  id: ChairDarkComfy
+  id: chairDarkComfy
   graph: Seat
   startNode: start
   targetNode: chairDarkComfy

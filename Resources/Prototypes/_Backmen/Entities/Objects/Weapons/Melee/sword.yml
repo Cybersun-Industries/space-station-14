@@ -198,6 +198,3 @@
   - type: Item
     sprite: Backmen/Objects/Weapons/Melee/yamato.rsi
   - type: DisarmMalus
-  - type: Tag
-    tags:
-    - YamatoSabre

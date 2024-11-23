@@ -452,9 +452,8 @@ BaseAdvancedPen: Pen
 SheetPrinter: SheetPaper
 SheetPrinter1: SheetPaper1
 
-# 2024-11-11
+# 2024-11-11 - Radium
 Shower: null
-#
 RandomPsionicPowerPool: null
 PsionicsDisabled: null
 PsionicallyInsulated: null
@@ -477,3 +476,4 @@ LotophagoiOil: null
 SoulbreakerToxin: null
 CreateNormalityCrystal: null
 Ectoplasm: null
+TableWoodReinforced: null

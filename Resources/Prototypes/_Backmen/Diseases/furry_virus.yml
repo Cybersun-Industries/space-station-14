@@ -100,11 +100,3 @@
       min: 20
       stages:
         - 0
-    - !type:DiseaseReagentCure
-      reagent:
-        ReagentId: LotophagoiOil
-      min: 20
-      stages:
-        - 0
-        - 1
-        - 2
