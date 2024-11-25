@@ -1,3 +1,5 @@
+using Content.Shared.Buckle;
+using Content.Shared.Buckle.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Physics;
@@ -13,9 +15,10 @@ public sealed class StandingStateSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!; // _CorvaxNext EDIT
 
     // If StandingCollisionLayer value is ever changed to more than one layer, the logic needs to be edited.
-    private const int StandingCollisionLayer = (int) CollisionGroup.MidImpassable;
+    private const int StandingCollisionLayer = (int)CollisionGroup.MidImpassable;
 
     public override void Initialize()
     {
@@ -38,9 +41,7 @@ public sealed class StandingStateSystem : EntitySystem
         {
             args.Cancelled = true;
         }
-    }
-
-    public bool IsDown(EntityUid uid, StandingStateComponent? standingState = null)
+    }public bool IsDown(EntityUid uid, StandingStateComponent? standingState = null)
     {
         if (!Resolve(uid, ref standingState, false))
             return false;
@@ -76,6 +77,9 @@ public sealed class StandingStateSystem : EntitySystem
             RaiseLocalEvent(uid, ref ev, false);
         }
 
+        //if (TryComp(uid, out BuckleComponent? buckle) && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle)) // WD EDIT
+        //    return false;
+
         if (!force)
         {
             var msg = new DownAttemptEvent();
@@ -85,7 +89,7 @@ public sealed class StandingStateSystem : EntitySystem
                 return false;
         }
 
-        standingState.Standing = false;
+        standingState.CurrentState = StandingState.Lying;
         Dirty(uid, standingState);
         RaiseLocalEvent(uid, new DownedEvent(), false);
 
@@ -112,9 +116,10 @@ public sealed class StandingStateSystem : EntitySystem
 
         if (playSound)
         {
-            _audio.PlayPredicted(standingState.DownSound, uid, uid);
+            _audio.PlayPredicted(standingState.DownSound, uid, null);
         }
 
+        _movement.RefreshMovementSpeedModifiers(uid); // _CorvaxNext EDIT
         return true;
     }
 
@@ -133,6 +138,9 @@ public sealed class StandingStateSystem : EntitySystem
         if (standingState.Standing)
             return true;
 
+        //if (TryComp(uid, out BuckleComponent? buckle) && buckle.Buckled && !_buckle.TryUnbuckle(uid, uid, buckleComp: buckle)) // WD EDIT
+        //    return false;
+
         if (!force)
         {
             var msg = new StandAttemptEvent();
@@ -142,7 +150,7 @@ public sealed class StandingStateSystem : EntitySystem
                 return false;
         }
 
-        standingState.Standing = true;
+        standingState.CurrentState = StandingState.Standing;
         Dirty(uid, standingState);
         RaiseLocalEvent(uid, new StoodEvent(), false);
 
@@ -157,6 +165,7 @@ public sealed class StandingStateSystem : EntitySystem
             }
         }
         standingState.ChangedFixtures.Clear();
+        _movement.RefreshMovementSpeedModifiers(uid); // _CorvaxNext EDIT
 
         return true;
     }

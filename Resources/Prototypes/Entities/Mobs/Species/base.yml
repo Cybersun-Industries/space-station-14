@@ -189,7 +189,7 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUiKey.Key:
+      enum.SurgeryUiKey.Key: # RADIUM: SURGERY
         type: SurgeryBoundUserInterface
   - type: Puller
   - type: Speech
@@ -215,6 +215,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: LayingDown # _CorvaxNext: LayingDown Laying Down
 
 - type: entity
   save: false
