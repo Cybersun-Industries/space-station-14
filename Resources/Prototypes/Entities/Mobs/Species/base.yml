@@ -166,6 +166,7 @@
   - type: SleepEmitSound
   - type: SSDIndicator
   - type: StandingState
+  - type: LayingDown
   - type: Dna
   - type: MindContainer
     showExamineInfo: true

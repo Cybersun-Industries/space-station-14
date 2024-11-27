@@ -167,8 +167,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return false;
         }
 
-        _standing.Down(uid, true, behavior != DropHeldItemsBehavior.NoDrop, true); // изначально тут было force: standingState.
-                                                                                                             // похуй, заменим на true, хуле нам?
+        _standing.Down(uid, true, behavior != DropHeldItemsBehavior.NoDrop, standingState);
         return true;
     }
 }
