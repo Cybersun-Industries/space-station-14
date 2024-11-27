@@ -5,3 +5,9 @@
 - type: storeCategory
   id: ChangelingOffensive
   name: store-category-changeling-offensive
+
+# Actually backmen (probably) but who cares
+- type: storeCategory
+  id: UplinkBundles
+  name: store-category-bundles
+  priority: 11 
