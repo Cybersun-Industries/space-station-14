@@ -3,7 +3,7 @@
   alias:
     - survival
   name: survival-title
-  showInVote: false # secret
+  showInVote: true # Corvax-Next-Democracy
   description: survival-description
   rules:
     - MeteorSwarmScheduler
@@ -19,7 +19,7 @@
     - junk
     - meteorhell
   name: kessler-syndrome-title
-  showInVote: false # secret
+  showInVote: true # Corvax-Next-Democracy
   description: kessler-syndrome-description
   rules:
     - KesslerSyndromeScheduler
@@ -74,7 +74,7 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: false #2boring2vote
+  showInVote: true # Corvax-Next-Democracy
   description: extended-description
   rules:
   - BasicStationEventScheduler
@@ -88,7 +88,7 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: false #4boring4vote
+  showInVote: true # Corvax-Next-Democracy
   description: greenshift-description
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
@@ -147,7 +147,7 @@
     - tator
   name: traitor-title
   description: traitor-description
-  showInVote: false
+  showInVote: true # Corvax-Next-Democracy
   rules:
   - DummyNonAntagChance
   - Traitor
@@ -165,7 +165,7 @@
   name: death-match-title
   description: death-match-description
   maxPlayers: 15
-  showInVote: true
+  showInVote: false # Corvax-Next-NoDemocracy
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31
@@ -176,7 +176,7 @@
     - nukeops
   name: nukeops-title
   description: nukeops-description
-  showInVote: false
+  showInVote: true # Corvax-Next-Democracy
   rules:
   - Nukeops
   - DummyNonAntagChance
@@ -194,7 +194,7 @@
     - revolutionaries
   name: rev-title
   description: rev-description
-  showInVote: false
+  showInVote: true # Corvax-Next-Democracy
   rules:
   - DummyNonAntagChance
   - Revolutionary
@@ -230,7 +230,7 @@
   - zomber
   name: zombie-title
   description: zombie-description
-  showInVote: false
+  showInVote: true # Corvax-Next-Democracy
   rules:
   - Zombie
   - BasicStationEventScheduler
@@ -246,7 +246,7 @@
   - meteombies
   name: zombieteors-title
   description: zombieteors-description
-  showInVote: false
+  showInVote: true # Corvax-Next-Democracy
   rules:
   - Zombie
   - BasicStationEventScheduler
