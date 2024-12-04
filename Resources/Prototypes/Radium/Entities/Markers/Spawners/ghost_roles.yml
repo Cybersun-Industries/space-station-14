@@ -3,6 +3,8 @@
   parent: BaseAntagSpawner
   id: SpawnPointThiefVoxes
   components:
+  - type: GhostRoleAntagSpawner
+    prototype: MobThiefVox
   - type: GhostRole
     name: ghost-role-information-thiefvox-name
     description: ghost-role-information-thiefvox-description
@@ -13,5 +15,3 @@
       - state: green
       - sprite: Structures/Wallmounts/signs.rsi
         state: radiation
-  - type: GhostRoleMobSpawner
-    prototype: MobThiefVox

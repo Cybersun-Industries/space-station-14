@@ -2,7 +2,17 @@
   parent: BaseGameRule
   id: ThiefVoxesSpawn
   components:
-  - type: ThiefVoxesRule
+  - type: StationEvent
+    earliestStart: 35
+    weight: 5.5
+    minimumPlayers: 15
+    duration: null
+  - type: AntagLoadProfileRule
+#shuttle
+  - type: RuleGrids
+  - type: LoadMapRule
+    mapPath: "/Maps/Shuttles/pirate.yml"
+#objectives
   - type: AntagObjectives
     objectives:
     - EscapeThiefShuttleObjective
@@ -21,6 +31,7 @@
       roleLoadout:
       - RoleSurvivalNukie #TODO - vox
       components:
+      - type: ThiefVoxesRule
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -28,12 +39,3 @@
       - MindRoleThiefVoxes
       briefing:
         sound: "/Audio/Misc/thief_greeting.ogg"
-
-  - type: StationEvent
-    earliestStart: 35
-    weight: 5.5
-    minimumPlayers: 15
-    duration: 1
-  - type: RuleGrids
-  - type: LoadMapRule
-    mapPath: /Maps/Shuttles/pirate.yml
