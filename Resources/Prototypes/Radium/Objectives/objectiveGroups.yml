@@ -1,0 +1,36 @@
+
+#VoxThief groups
+- type: weightedRandom
+  id: VoxThiefObjectiveGroups
+  weights:
+    VoxThiefObjectiveGroupCollection: 1
+    VoxThiefObjectiveGroupItem: 1
+    VoxThiefObjectiveGroupStructure: 1
+
+- type: weightedRandom
+  id: VoxThiefObjectiveGroupCollection
+  weights:
+    VoxStampStealCollectionObjective: 1
+    VoxDoorRemoteStealCollectionObjective: 1
+    VoxTechnologyDiskStealCollectionObjective: 1        #rnd
+    VoxIDCardsStealCollectionObjective: 1
+
+- type: weightedRandom
+  id: VoxThiefObjectiveGroupItem
+  weights:
+    VoxForensicScannerStealObjective: 1                    #sec
+    VoxWantedListCartridgeStealObjective: 1
+    VoxClothingOuterHardsuitVoidParamedStealObjective: 1   #med
+    VoxMedicalTechFabCircuitboardStealObjective: 1
+    VoxAmePartFlatpackStealObjective: 1
+    VoxCargoShuttleCircuitboardStealObjective: 1
+    VoxClothingNeckGoldmedalStealObjective: 1              #other
+
+- type: weightedRandom
+  id: VoxThiefObjectiveGroupStructure
+  weights:
+    VoxNuclearBombStealObjective: 0.5
+    VoxFaxMachineCaptainStealObjective: 1
+    VoxChemDispenserStealObjective: 1
+    VoxXenoArtifactStealObjective: 1
+    VoxTegStealObjective: 1

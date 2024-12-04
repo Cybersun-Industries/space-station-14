@@ -1,0 +1,10 @@
+- type: antag
+  id: ThiefVoxes
+  name: roles-antag-thiefvox-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-thiefvox-objective
+  guides: [ Thieves ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 108000 # 30h # Corvax-RoleTime
