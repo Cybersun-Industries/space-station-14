@@ -62,6 +62,12 @@
   - TowelColorSilver
   - TowelColorWhite
   - TowelColorYellow
+   # Corvax-Next-Start
+  - WristwatchBlack
+  - WristwatchPocket
+  - WristwatchLeather
+  - Wristwatch
+   # Corvax-Next-End
 
 - type: loadoutGroup
   id: Glasses
