@@ -8,6 +8,9 @@
     minimumPlayers: 15
     duration: null
   - type: AntagLoadProfileRule
+  - type: ThiefVoxesRule
+  - type: AntagSpawner
+    prototype: MobThiefVox
 #shuttle
   - type: RuleGrids
   - type: LoadMapRule
@@ -24,14 +27,13 @@
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointThiefVoxes
-      min: 2
+      min: 3
       max: 4
       pickPlayer: false
       startingGear: SyndicateLoneOperativeGearFull
       roleLoadout:
       - RoleSurvivalNukie #TODO - vox
       components:
-      - type: ThiefVoxesRule
       - type: NpcFactionMember
         factions:
         - Syndicate
