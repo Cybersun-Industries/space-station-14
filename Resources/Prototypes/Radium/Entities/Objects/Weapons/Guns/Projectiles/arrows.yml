@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseArrow
+  id: ArrowHeated
+  name: heated arrow
+  description: The greyshirt's preferred projectile. Now with added radiation!
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/arrows.rsi
+    layers:
+    - state: tail
+      color: white
+    - state: rod
+      color: darkgray
+    - state: tip
+      color: orange
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+        Heat: 5
