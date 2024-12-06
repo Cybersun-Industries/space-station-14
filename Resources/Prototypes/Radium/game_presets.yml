@@ -1,0 +1,16 @@
+- type: gamePreset
+  id: RaiderVoxes
+  alias:
+  - thiefvoxes
+  - voxraiders
+  - voxthieves
+  name: voxraiders-title
+  description: voxraiders-description
+  showInVote: false
+  minimumPlayers: 15
+  rules:
+  - ThiefVoxesSpawn
+  - BasicStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+#random time when

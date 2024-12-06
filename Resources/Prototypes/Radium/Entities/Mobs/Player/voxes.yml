@@ -1,12 +1,10 @@
 - type: entity
   parent: MobVox
   id: MobThiefVox
+  categories: [ HideSpawnMenu ]
   name: Thief Vox
   components:
   - type: RandomHumanoidAppearance
-  - type: Loadout
-    prototypes: [SyndicateLoneOperativeGearFull]
-    roleLoadout: [ RoleSurvivalSyndicate ]
   - type: NpcFactionMember
     factions:
     - Syndicate

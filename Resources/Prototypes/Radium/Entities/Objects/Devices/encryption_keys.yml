@@ -1,0 +1,14 @@
+- type: entity
+  parent: [ EncryptionKey, BaseSyndicateContraband ]
+  id: EncryptionKeyVox
+  name: blood-red encryption key
+  description: An encryption key used by... wait... Who is the owner of this chip?
+  components:
+  - type: EncryptionKey
+    channels:
+    - Vox
+    defaultChannel: Vox
+  - type: Sprite
+    layers:
+    - state: crypt_red
+    - state: cargo_label

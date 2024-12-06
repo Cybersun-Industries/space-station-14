@@ -1,7 +1,0 @@
-- type: antag
-  id: ThiefVoxes
-  name: roles-antag-thiefvox-name
-  antagonist: true
-  setPreference: false
-  objective: roles-antag-thiefvox-objective
-  guides: [ Thieves ]

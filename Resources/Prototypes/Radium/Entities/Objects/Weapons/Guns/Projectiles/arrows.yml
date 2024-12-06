@@ -2,6 +2,7 @@
   parent: BaseArrow
   id: ArrowHeated
   name: heated arrow
+  suffix: Vox
   description: The greyshirt's preferred projectile. Now with added radiation!
   components:
   - type: Sprite

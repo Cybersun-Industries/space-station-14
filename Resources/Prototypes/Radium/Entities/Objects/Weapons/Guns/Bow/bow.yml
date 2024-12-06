@@ -1,6 +1,7 @@
 - type: entity
   id: PowerCrossbow
   parent: BaseBow
+  suffix: Vox
   components:
   - type: Sprite
     sprite: Objects/Fun/toys.rsi
@@ -11,15 +12,4 @@
   # arrow is removed -> itemmapper sets layer with map `arrow` to invisible
   - type: Appearance
   - type: ItemMapper
-    spriteLayers:
-    - arrow
-    - plunger
-    mapLayers:
-      arrow:
-        whitelist:
-          tags:
-          - Arrow
-      plunger:
-        whitelist:
-          tags:
-          - Plunger
+

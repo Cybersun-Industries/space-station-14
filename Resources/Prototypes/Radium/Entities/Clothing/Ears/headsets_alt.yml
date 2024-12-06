@@ -1,0 +1,18 @@
+﻿- type: entity
+  parent: [ClothingHeadsetAlt, BaseSyndicateContraband]
+  id: ClothingHeadsetAltVox
+  suffix: Vox
+  name: blood-red over-ear headset
+  description: An updated, modular vox intercom that fits over the head and takes encryption keys (there are 5 key slots.).
+  components:
+  - type: Headset
+  - type: EncryptionKeyHolder
+    keySlots: 5
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyVox
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi

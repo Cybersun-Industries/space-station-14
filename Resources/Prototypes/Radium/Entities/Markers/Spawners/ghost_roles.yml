@@ -1,5 +1,5 @@
 - type: entity
-  categories: [ Spawner ]
+  categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
   id: SpawnPointThiefVoxes
   components:
@@ -12,4 +12,4 @@
     layers:
       - state: green
       - sprite: Structures/Wallmounts/signs.rsi
-        state: radiation
+        state: vox

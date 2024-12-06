@@ -1,0 +1,24 @@
+- type: antag
+  id: ThiefVoxes
+  name: roles-antag-thiefvox-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-thiefvox-objective
+  guides: [ Thieves ]
+
+- type: startingGear
+  id: ThiefVoxesGearFull
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    back: ClothingBackpackDuffelMilitary
+    ears: ClothingHeadsetAltVox
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterVoxThief
+    shoes: ClothingShoesBootsCombatFilled
+    id: PiratePDA
+    pocket2: AgentIDCard
+  storage:
+    back:
+    - ChameleonProjector
+    - Truncheon
+    - HypoDartBox

@@ -5,7 +5,7 @@
   - type: StationEvent
     earliestStart: 35
     weight: 5.5
-    minimumPlayers: 15
+    minimumPlayers: 10
     duration: null
   - type: AntagLoadProfileRule
   - type: ThiefVoxesRule
@@ -14,7 +14,7 @@
 #shuttle
   - type: RuleGrids
   - type: LoadMapRule
-    mapPath: "/Maps/Shuttles/pirate.yml"
+    mapPath: "/Maps/Radium/voxshuttle.yml"
 #objectives
   - type: AntagObjectives
     objectives:
@@ -22,7 +22,7 @@
   - type: AntagRandomObjectives
     sets:
     - groups: VoxThiefObjectiveGroups
-      maxPicks: 10
+      maxPicks: 15
     maxDifficulty: 2.5
   - type: AntagSelection
     definitions:
@@ -30,7 +30,7 @@
       min: 3
       max: 4
       pickPlayer: false
-      startingGear: SyndicateLoneOperativeGearFull
+      startingGear: ThiefVoxesGearFull
       roleLoadout:
       - RoleSurvivalNukie #TODO - vox
       components:

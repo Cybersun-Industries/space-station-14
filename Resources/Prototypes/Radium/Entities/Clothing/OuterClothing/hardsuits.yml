@@ -1,6 +1,7 @@
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseMajorContraband]
   id: ClothingOuterVoxThief
+  suffix: Vox
   name: raiders vox suit
   description: This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation.
   components:
