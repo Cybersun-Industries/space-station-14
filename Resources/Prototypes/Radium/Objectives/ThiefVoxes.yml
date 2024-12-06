@@ -17,7 +17,7 @@
   components:
   - type: StealCondition
     verifyMapExistence: false
-    descriptionText: objective-condition-thief-description
+    descriptionText: objective-condition-voxthief-description
     checkStealAreas: true
 
 - type: entity

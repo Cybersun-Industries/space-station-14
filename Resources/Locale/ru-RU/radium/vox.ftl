@@ -26,3 +26,4 @@ ghost-role-information-rules-thiefvox = Вы [color=red][bold]Командный
     Чтобы выполнить все цели команды, [bold]работайте в команде[/bold].
 thiefvoxes-role-greeting-human = Вы пробудились от гиперсна. Стая выдала вам задачи, которые вы должны выполнить, минимизируя потери среди обеих сторон.
 thiefvoxes-role-greeting-equipment = В вашем распоряжении есть корабль, стеллс снаряжение и оружие самозащиты. Используйте его с умом и не допустите ПОТЕРИ ДОРОГОСТОЯЩЕГО ОБОРУДОВАНИЯ!
+objective-condition-voxthief-description = { CAPITALIZE($itemName) } станет отличным пополнением коллекции Стаи! 
