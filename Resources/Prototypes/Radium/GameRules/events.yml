@@ -14,15 +14,12 @@
 #shuttle
   - type: RuleGrids
   - type: LoadMapRule
-    mapPath: "/Maps/Radium/voxshuttle.yml"
+    mapPath: "/Maps/Radium/voxbase.yml"
 #objectives
-  - type: AntagObjectives
-    objectives:
-    - EscapeThiefShuttleObjective
   - type: AntagRandomObjectives
     sets:
     - groups: VoxThiefObjectiveGroups
-      maxPicks: 15
+      maxPicks: 30
     maxDifficulty: 2.5
   - type: AntagSelection
     definitions:
