@@ -101,7 +101,7 @@
   - type: CanEscapeInventory
   - type: NpcFactionMember
     factions:
-    - Nanotrasen
+    - NanoTrasen
   - type: Body
     prototype: Mothroach
   - type: TypingIndicator
@@ -167,7 +167,7 @@
   #   - HEAD
   - type: NpcFactionMember
     factions:
-      - Nanotrasen
+      - NanoTrasen
   - type: HTN
     rootTask:
       task: MouseCompound
