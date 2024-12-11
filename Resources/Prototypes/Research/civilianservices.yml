@@ -15,7 +15,6 @@
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
-  - PlantAnalyzer # Corvax-Next-PlantAnalyzer
 
 - type: technology
   id: CritterMechs
