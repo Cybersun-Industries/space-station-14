@@ -46,7 +46,6 @@
 - type: entity
   parent: CardStackBase
   id: CardHandBase
-  abstract: true
   categories: [ HideSpawnMenu ]
   name: hand of cards
   components:
