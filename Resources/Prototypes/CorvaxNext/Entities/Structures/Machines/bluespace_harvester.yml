@@ -64,7 +64,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Explosive
-    explosionType: Bluespace
+    explosionType: Cryo
     deleteAfterExplosion: false
     totalIntensity: 5000
     intensitySlope: 20
@@ -98,11 +98,6 @@
     energy: 0.5
     castShadows: false
   - type: LitOnPowered
-  - type: WiresPanel
-  - type: Wires
-    boardName: wires-board-name-bluespace-harvester
-    layoutId: BluespaceHarvester
-  - type: WiresVisuals
   - type: AccessReader
     access: [["Engineering"], ["Research"]]
   - type: GuideHelp
