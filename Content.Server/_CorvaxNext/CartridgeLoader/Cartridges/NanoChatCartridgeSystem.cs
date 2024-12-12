@@ -12,7 +12,6 @@ using Content.Shared._CorvaxNext.CartridgeLoader.Cartridges;
 using Content.Shared._CorvaxNext.NanoChat;
 using Content.Shared.PDA;
 using Content.Shared.Radio.Components;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -25,7 +24,6 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedNanoChatSystem _nanoChat = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly StationSystem _station = default!;
 
     // Messages in notifications get cut off after this point
@@ -40,20 +38,6 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         SubscribeLocalEvent<NanoChatCartridgeComponent, CartridgeMessageEvent>(OnMessage);
     }
 
-    private void UpdateClosed(Entity<NanoChatCartridgeComponent> ent)
-    {
-        if (!TryComp<CartridgeComponent>(ent, out var cartridge) ||
-            cartridge.LoaderUid is not {} pda ||
-            !TryComp<CartridgeLoaderComponent>(pda, out var loader) ||
-            !GetCardEntity(pda, out var card))
-        {
-            return;
-        }
-
-        // if you switch to another program or close the pda UI, allow notifications for the selected chat
-        _nanoChat.SetClosed((card, card.Comp), loader.ActiveProgram != ent.Owner || !_ui.IsUiOpen(pda, PdaUiKey.Key));
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -64,9 +48,6 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         {
             if (cartridge.LoaderUid == null)
                 continue;
-
-            // keep it up to date without handling ui open/close events on the pda or adding code when changing active program
-            UpdateClosed((uid, nanoChat));
 
             // Check if we need to update our card reference
             if (!TryComp<PdaComponent>(cartridge.LoaderUid, out var pda))
@@ -258,7 +239,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         // Log message attempt
         var recipientsText = recipients.Count > 0
-            ? string.Join(", ", recipients.Select((Entity<NanoChatCardComponent> r) => ToPrettyString(r)))
+            ? string.Join(", ", recipients.Select(r => ToPrettyString(r)))
             : $"#{msg.RecipientNumber:D4}";
 
         _adminLogger.Add(LogType.Chat,
@@ -331,19 +312,21 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                 if (receiverCart.Card != recipient.Owner)
                     continue;
 
-                // Check if devices are on same map
-                var recipientMap = Transform(receiverUid).MapID;
-                var senderMap = Transform(sender).MapID;
-                
-                // Must be on the same map/station unless long-range is allowed
-                if (!channel.LongRange && recipientMap != senderMap)
-                {
-                    break;
-                }
+                // Check if devices are on same station/map
+                var recipientStation = _station.GetOwningStation(receiverUid);
+                var senderStation = _station.GetOwningStation(sender);
 
-                /* Must have an active common server
-                if (HasActiveServer(senderMap))
-                    continue;*/
+                // Both entities must be on a station
+                if (recipientStation == null || senderStation == null)
+                    continue;
+
+                // Must be on same map/station unless long range allowed
+                if (!channel.LongRange && recipientStation != senderStation)
+                    continue;
+
+                // Needs telecomms
+                if (!HasActiveServer(senderStation.Value) || !HasActiveServer(recipientStation.Value))
+                    continue;
 
                 // Check if recipient can receive
                 var receiveAttemptEv = new RadioReceiveAttemptEvent(channel, sender, receiverUid);
@@ -363,7 +346,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
     /// <summary>
     ///     Checks if there are any active telecomms servers on the given station
     /// </summary>
-    private bool HasActiveServer(MapId mapId)
+    private bool HasActiveServer(EntityUid station)
     {
         // I have no idea why this isn't public in the RadioSystem
         var query =
@@ -371,7 +354,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         while (query.MoveNext(out var uid, out _, out _, out var power))
         {
-            if (Transform(uid).MapID == mapId && power.Powered)
+            if (_station.GetOwningStation(uid) == station && power.Powered)
                 return true;
         }
 
@@ -398,7 +381,8 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         _nanoChat.AddMessage((recipient, recipient.Comp), senderNumber.Value, message with { DeliveryFailed = false });
 
-        if (recipient.Comp.IsClosed || _nanoChat.GetCurrentChat((recipient, recipient.Comp)) != senderNumber)
+
+        if (_nanoChat.GetCurrentChat((recipient, recipient.Comp)) != senderNumber)
             HandleUnreadNotification(recipient, message);
 
         var msgEv = new NanoChatMessageReceivedEvent(recipient);
