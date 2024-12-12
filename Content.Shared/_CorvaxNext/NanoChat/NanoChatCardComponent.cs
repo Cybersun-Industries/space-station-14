@@ -15,13 +15,6 @@ public sealed partial class NanoChatCardComponent : Component
     public uint? Number;
 
     /// <summary>
-    ///     Whether a PDA has this card's UI closed.
-    ///     Used for notifications.
-    /// </summary>
-    [DataField]
-    public bool IsClosed;
-
-    /// <summary>
     ///     All chat recipients stored on this card.
     /// </summary>
     [DataField]
