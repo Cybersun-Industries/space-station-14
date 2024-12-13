@@ -9,7 +9,7 @@ namespace Content.Client.Radiation.UI
     {
         private ControlRodConsoleWindow? _window;
 
-        public ControlRodConsoleBoundUserInterface(UserInterfaceComponent owner, Enum uiKey) : base(owner, uiKey)
+        public ControlRodConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
         }
 

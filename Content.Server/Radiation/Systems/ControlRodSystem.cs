@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using Content.Server.DeviceLinking.Components;
 using Content.Server.Power.Components;
-using Content.Server.DeviceLinking.System;
+using Content.Server.DeviceLinking.Systems;
 using Content.Server.DeviceLinking.Events;
 using Content.Server.UserInterface;
 using Content.Server.Power.EntitySystems;
@@ -15,7 +15,7 @@ namespace Content.Server.Radiation.Systems
     [UsedImplicitly]
     public sealed class ControlRodSystem : EntitySystem
     {
-        [Dependency] private readonly SignalLinkerSystem _signalSystem = default!;
+        [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
         [Dependency] private readonly ControlRodConsoleSystem _controlRodConsoleSystem = default!;
         [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
@@ -25,7 +25,7 @@ namespace Content.Server.Radiation.Systems
         {
             base.Initialize();
 
-            SubscribeLocalEvent<ControlRodComponent, ComponentInit>(OnComponentInit);     
+            SubscribeLocalEvent<ControlRodComponent, ComponentInit>(OnComponentInit);
             SubscribeLocalEvent<ControlRodComponent, PortDisconnectedEvent>(OnPortDisconnected);
             SubscribeLocalEvent<ControlRodComponent, AnchorStateChangedEvent>(OnAnchor);
         }
@@ -79,7 +79,7 @@ namespace Content.Server.Radiation.Systems
 
         private void OnComponentInit(EntityUid uid, ControlRodComponent component, ComponentInit args)
         {
-            _signalSystem.EnsureReceiverPorts(uid, ControlRodComponent.ControlRodPort);
+            _signalSystem.EnsureSinkPorts(uid, ControlRodComponent.ControlRodPort);
         }
 
         private void OnPortDisconnected(EntityUid uid, ControlRodComponent component, PortDisconnectedEvent args)
@@ -101,7 +101,7 @@ namespace Content.Server.Radiation.Systems
                 _controlRodConsoleSystem.UpdateUserInterface(console);
             }
 
-            
+
             component.ConnectedConsole = null;
         }
 
@@ -141,7 +141,7 @@ namespace Content.Server.Radiation.Systems
 
         public void ExtendRodCommand(EntityUid? uid)
         {
-            
+
             if (!(uid is null))
             {
                 //check power
@@ -162,7 +162,7 @@ namespace Content.Server.Radiation.Systems
 
         public void RetractRodCommand(EntityUid? uid)
         {
-      
+
             if (!(uid is null))
             {
                 //check power
@@ -186,7 +186,7 @@ namespace Content.Server.Radiation.Systems
             //cancel queue
             if (uid is null)
             {
-                _commandQueueDict.Clear();              
+                _commandQueueDict.Clear();
             }
             else
             {
@@ -230,7 +230,7 @@ namespace Content.Server.Radiation.Systems
             if (controlRod.ConnectedConsole != null)
                 if (TryComp<ControlRodConsoleComponent>(controlRod.ConnectedConsole.Value, out var console))
                     _controlRodConsoleSystem.UpdateUserInterface(console);
-            
+
         }
 
         private void ExtendRod(EntityUid uid)

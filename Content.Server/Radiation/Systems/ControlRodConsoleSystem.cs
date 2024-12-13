@@ -2,14 +2,17 @@ using System.Linq;
 using JetBrains.Annotations;
 using Content.Server.DeviceLinking.Components;
 using Content.Server.Power.Components;
-using Content.Server.DeviceLinking.System;
+using Content.Server.DeviceLinking.Systems;
 using Content.Server.DeviceLinking.Events;
 using Content.Server.UserInterface;
 using Content.Server.Power.EntitySystems;
 using Robust.Server.GameObjects;
 using Content.Shared.DeviceLinking.Events;
 using Content.Server.Radiation.Components;
+using Content.Shared.DeviceLinking;
+using Content.Shared.Power;
 using Content.Shared.Radiation.Components;
+using Content.Shared.UserInterface;
 
 namespace Content.Server.Radiation.Systems
 {
@@ -66,14 +69,14 @@ namespace Content.Server.Radiation.Systems
 
         private void OnMapInit(EntityUid uid, ControlRodConsoleComponent component, MapInitEvent args)
         {
-            if (!TryComp<SignalTransmitterComponent>(uid, out var receiver))
+            if (!TryComp<DeviceLinkSinkComponent>(uid, out var receiver))
                 return;
 
-            foreach (var port in receiver.Outputs.Values.SelectMany(ports => ports))
+            foreach (var port in receiver.Ports.SelectMany(ports => ports))
             {
-                if (TryComp<ControlRodComponent>(port.Uid, out var rod))
+                if (TryComp<ControlRodComponent>(EntityUid, out var rod))
                 {
-                    _deviceLinkSystem.EnsureTransmitterPorts(uid, "ControlRodSender"); //add port as we go
+                    _deviceLinkSystem.EnsureSinkPorts(uid, "ControlRodSender"); //add port as we go
                     component.ControlRods.Add(port.Uid);
                     component.RodsInRange.Add(component.ControlRods.Count()-1,true);
                     if (rod.ConnectedConsole != null)
@@ -99,10 +102,10 @@ namespace Content.Server.Radiation.Systems
         private void OnNewLink(EntityUid uid, ControlRodConsoleComponent component, NewLinkEvent args)
         {
 
-            if (TryComp<ControlRodComponent>(args.Receiver, out var rod))
+            if (TryComp<ControlRodComponent>(args.Sink, out var rod))
             {
-                _deviceLinkSystem.EnsureTransmitterPorts(uid, "ControlRodSender"); //add port as we go
-                component.ControlRods.Add(args.Receiver);
+                _deviceLinkSystem.EnsureSinkPorts(uid, "ControlRodSender"); //add port as we go
+                component.ControlRods.Add(args.Sink);
                 component.RodsInRange.Add(component.ControlRods.Count() - 1, true);
                 if (rod.ConnectedConsole != null)
                 {
@@ -110,7 +113,7 @@ namespace Content.Server.Radiation.Systems
                     {
                         for (var i = 0; i < oldConsole.ControlRods.Count; i++)
                         {
-                            if (oldConsole.ControlRods[i] == args.Receiver)
+                            if (oldConsole.ControlRods[i] == args.Sink)
                             {
                                 oldConsole.ControlRods.RemoveAt(i);
                                 oldConsole.RodsInRange.Remove(i);
@@ -148,12 +151,12 @@ namespace Content.Server.Radiation.Systems
 
         public void UpdateUserInterface(ControlRodConsoleComponent consoleComponent)
         {
-            var ui = _uiSystem.GetUiOrNull(consoleComponent.Owner, ControlRodConsoleUiKey.Key);
+            var ui = _uiSystem.IsUiOpen(Entity<UserInterfaceComponent?>, Enum)(consoleComponent.Owner, ControlRodConsoleUiKey.Key);
             if (ui == null)
                 return;
             if (!_powerReceiverSystem.IsPowered(consoleComponent.Owner))
             {
-                _uiSystem.CloseAll(ui);
+                _uiSystem.CloseUis(Entity<UserInterfaceComponent?>)(ui);
                 return;
             }
 
