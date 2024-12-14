@@ -1,0 +1,13 @@
+- type: entity
+  id: StarSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncementColor: "#18abf5"
+    startAudio:
+      path: /Audio/Corvax/Announcements/flux.ogg # Corvax-Announcements
+      params:
+        volume: -4
+    weight: 8
+    duration: 35
+  - type: AnomalySpawnRule
