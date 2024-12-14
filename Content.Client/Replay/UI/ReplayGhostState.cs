@@ -1,3 +1,4 @@
+using Content.Client.Radium.UserInterface.Systems.Hotbar.Widgets;
 using Content.Client.UserInterface.Systems.Actions.Widgets;
 using Content.Client.UserInterface.Systems.Alerts.Widgets;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;

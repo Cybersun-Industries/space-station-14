@@ -12,7 +12,7 @@ using Robust.Shared.Utility;
 namespace Content.Client.UserInterface.Systems.Inventory.Controls;
 
 [GenerateTypedNameReferences]
-public sealed partial class ItemStatusPanel : Control
+public sealed partial class RemovedItemStatusPanel : Control
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
@@ -21,7 +21,7 @@ public sealed partial class ItemStatusPanel : Control
     // Tracked so we can re-run SetSide() if the theme changes.
     private HandUILocation _side;
 
-    public ItemStatusPanel()
+    public RemovedItemStatusPanel()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
