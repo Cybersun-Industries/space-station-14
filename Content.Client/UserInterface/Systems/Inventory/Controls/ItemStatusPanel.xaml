@@ -1,7 +1,8 @@
-<controls1:ItemStatusPanel
+<!-- //RADIUM: REVERT HAND STATE SYSTEM -->
+<controls:ItemStatusPanel
     xmlns="https://spacestation14.io"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-    xmlns:controls1="clr-namespace:Content.Client.Radium.UserInterface.Systems.Inventory.Controls"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Systems.Inventory.Controls"
     VerticalAlignment="Bottom"
     HorizontalAlignment="Center"
     MinSize="150 0">
@@ -21,4 +22,4 @@
             <Label Name="ItemNameLabel" StyleClasses="ItemStatus" />
         </BoxContainer>
     </PanelContainer>
-</controls1:ItemStatusPanel>
+</controls:ItemStatusPanel>

@@ -11,7 +11,9 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using static Content.Client.IoC.StaticIoC;
 
-namespace Content.Client.Radium.UserInterface.Systems.Inventory.Controls;
+namespace Content.Client.UserInterface.Systems.Inventory.Controls;
+
+//RADIUM: REVERT HAND STATE SYSTEM
 
 [GenerateTypedNameReferences]
 public sealed partial class ItemStatusPanel : BoxContainer
