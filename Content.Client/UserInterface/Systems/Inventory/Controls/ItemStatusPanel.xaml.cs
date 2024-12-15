@@ -13,6 +13,8 @@ using static Content.Client.IoC.StaticIoC;
 
 namespace Content.Client.UserInterface.Systems.Inventory.Controls;
 
+//RADIUM: REVERT HAND STATE SYSTEM
+
 [GenerateTypedNameReferences]
 public sealed partial class ItemStatusPanel : BoxContainer
 {
