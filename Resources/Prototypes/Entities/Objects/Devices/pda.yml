@@ -132,6 +132,8 @@
     - NotekeeperCartridge
     - NewsReaderCartridge
     - WantedListCartridge
+    - CrimeAssistCartridge # Corvax-Next-CrimeAssist
+    - NanoChatCartridge # Corvax-Next-PDAChat
 
 - type: entity
   parent: BasePDA
@@ -842,6 +844,7 @@
     - NotekeeperCartridge
     - NewsReaderCartridge
     - WantedListCartridge
+    - CrimeAssistCartridge # Corvax-Next-CrimeAssist
     - LogProbeCartridge
 
 - type: entity
@@ -1252,6 +1255,7 @@
     - NotekeeperCartridge
     - NewsReaderCartridge
     - WantedListCartridge
+    - CrimeAssistCartridge # Corvax-Next-CrimeAssist
     - LogProbeCartridge
 
 - type: entity
