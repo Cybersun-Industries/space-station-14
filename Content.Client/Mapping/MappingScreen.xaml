@@ -5,6 +5,7 @@
     xmlns:hotbar="clr-namespace:Content.Client.UserInterface.Systems.Hotbar.Widgets"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:mapping="clr-namespace:Content.Client.Mapping"
+    xmlns:widgets1="clr-namespace:Content.Client.Radium.UserInterface.Systems.Hotbar.Widgets"
     VerticalExpand="False"
     VerticalAlignment="Bottom"
     HorizontalAlignment="Center">
@@ -59,7 +60,7 @@
         </BoxContainer>
         <LayoutContainer Name="ViewportContainer" HorizontalExpand="True" VerticalExpand="True">
             <controls:MainViewport Name="MainViewport"/>
-            <hotbar:HotbarGui Name="Hotbar" />
+            <widgets1:HotbarGui Name="Hotbar" />
             <PanelContainer Name="Actions" VerticalExpand="True" HorizontalExpand="True"
                             MaxHeight="48">
                 <PanelContainer.PanelOverride>

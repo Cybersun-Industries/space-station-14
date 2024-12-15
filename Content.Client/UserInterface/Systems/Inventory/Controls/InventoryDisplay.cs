@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.UserInterface.Systems.Inventory.Controls;
 
-public sealed class InventoryDisplay : LayoutContainer
+public sealed class RemovedInventoryDisplay : LayoutContainer
 {
     private int Columns = 0;
     private int Rows = 0;
@@ -16,7 +16,7 @@ public sealed class InventoryDisplay : LayoutContainer
 
     private readonly Dictionary<string, (SlotControl, Vector2i)> _buttons = new();
 
-    public InventoryDisplay()
+    public RemovedInventoryDisplay()
     {
         resizer = new Control();
         AddChild(resizer);
