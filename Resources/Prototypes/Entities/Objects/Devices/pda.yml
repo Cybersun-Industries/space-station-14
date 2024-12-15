@@ -153,6 +153,8 @@
     - NanoTaskCartridge
     - NewsReaderCartridge
     - WantedListCartridge
+    - CrimeAssistCartridge # Corvax-Next-CrimeAssist
+    - NanoChatCartridge # Corvax-Next-PDAChat
 
 - type: entity
   parent: BasePDA
@@ -866,6 +868,7 @@
     - NanoTaskCartridge
     - NewsReaderCartridge
     - WantedListCartridge
+    - CrimeAssistCartridge # Corvax-Next-CrimeAssist
     - LogProbeCartridge
 
 - type: entity
@@ -1282,6 +1285,7 @@
     - NanoTaskCartridge
     - NewsReaderCartridge
     - WantedListCartridge
+    - CrimeAssistCartridge # Corvax-Next-CrimeAssist
     - LogProbeCartridge
 
 - type: entity
