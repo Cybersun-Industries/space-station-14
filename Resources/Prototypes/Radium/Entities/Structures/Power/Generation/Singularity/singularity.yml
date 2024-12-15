@@ -1,8 +1,14 @@
 - type: entity
   id: OrangeStar
   name: orange star
-  description: A mesmerizing swirl of darkness that sucks in everything. If it's moving towards you, run.
+  description: Big fukin sun
   components:
+  - type: AnnounceOnSpawn
+    message: orange-star-appeared
+    sender: chat-manager-sender-announcement
+    sound:
+      path: /Audio/Misc/narsie_rises.ogg
+    color: red
   - type: Clickable
   - type: AmbientSound
     volume: -4
@@ -60,3 +66,4 @@
     layers:
     - map: [ "VisualLevel" ]
       state: sun_ripple
+  - type: FTLBeacon
