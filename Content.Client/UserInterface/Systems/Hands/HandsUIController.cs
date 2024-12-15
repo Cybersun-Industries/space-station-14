@@ -17,7 +17,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Systems.Hands;
 
-public sealed class HandsUIController : UIController, IOnStateEntered<GameplayState>, IOnSystemChanged<HandsSystem> //RADIUM: REVERT HAND STATE SYSTEM
+public sealed class HandsUIController : UIController, IOnStateEntered<GameplayState>, IOnSystemChanged<HandsSystem>
 {
     [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private readonly IPlayerManager _player = default!;

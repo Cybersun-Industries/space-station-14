@@ -1,4 +1,3 @@
-using Content.Client.Radium.UserInterface.Systems.Hotbar.Widgets;
 using Content.Client.UserInterface.Systems.Hotbar.Widgets;
 using Content.Client.UserInterface.Systems.Storage.Controls;
 using Content.IntegrationTests.Tests.Interaction;
