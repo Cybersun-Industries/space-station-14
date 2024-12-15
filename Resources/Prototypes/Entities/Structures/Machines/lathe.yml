@@ -349,6 +349,7 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
+      - ArtificialBluespaceCrystal
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -519,6 +520,7 @@
       - MassMediaCircuitboard
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
+      - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
