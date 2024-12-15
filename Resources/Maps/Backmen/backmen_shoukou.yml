@@ -58849,13 +58849,6 @@ entities:
     - type: Transform
       pos: -51.5,-17.5
       parent: 34
-- proto: Oracle
-  entities:
-  - uid: 592
-    components:
-    - type: Transform
-      pos: -25.5,-13.5
-      parent: 34
 - proto: OreBox
   entities:
   - uid: 11347
@@ -68447,13 +68440,6 @@ entities:
     components:
     - type: Transform
       pos: 25.5,-45.5
-      parent: 34
-- proto: SophicScribe
-  entities:
-  - uid: 388
-    components:
-    - type: Transform
-      pos: -27.5,-13.5
       parent: 34
 - proto: SpaceCash
   entities:

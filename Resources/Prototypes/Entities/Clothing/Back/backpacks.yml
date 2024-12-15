@@ -201,7 +201,7 @@
     sprite: Clothing/Back/Backpacks/ertleader.rsi
   - type: Storage
     grid:
-    - 0,0,10,4 # Radium (was 0 0 10 3)
+    - 0,0,10,6 # Radium (was 0 0 10 3)
 
 - type: entity
   parent: ClothingBackpackERTLeader

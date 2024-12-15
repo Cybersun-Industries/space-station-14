@@ -11207,29 +11207,6 @@ entities:
     - type: Transform
       pos: -11.492702,-77.37663
       parent: 104
-- proto: ClothingHeadCage
-  entities:
-  - uid: 1333
-    components:
-    - type: Transform
-      parent: 898
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 3335
-    components:
-    - type: Transform
-      parent: 895
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 3337
-    components:
-    - type: Transform
-      parent: 896
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingHeadHatHardhatOrange
   entities:
   - uid: 2096

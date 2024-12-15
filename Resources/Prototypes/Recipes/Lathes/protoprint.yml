@@ -213,13 +213,3 @@
   completetime: 2
   materials:
     Wood: 30
-
-- type: latheRecipe
-  id: CashMachineCircuitboard
-  result: ProtolatheCashMachineCircuitboard
-  category: Circuitry
-  completetime: 4
-  materials:
-     Steel: 500
-     Glass: 500
-     Plastic: 100

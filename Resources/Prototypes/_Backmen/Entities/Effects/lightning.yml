@@ -130,15 +130,3 @@
       softness: 1
       autoRot: true
       castShadows: false
-
-- type: entity
-  parent: BaseLightning
-  id: LightningNoospheric
-  save: false
-  name: noospheric lightning
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Electrified
-      enabled: false
-    - type: Lightning
-      canArc: false
