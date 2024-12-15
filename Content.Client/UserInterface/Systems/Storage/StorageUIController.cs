@@ -2,8 +2,8 @@ using System.Numerics;
 using Content.Client.Examine;
 using Content.Client.Hands.Systems;
 using Content.Client.Interaction;
+using Content.Client.Radium.UserInterface.Systems.Hotbar.Widgets;
 using Content.Client.Storage.Systems;
-using Content.Client.UserInterface.Systems.Hotbar.Widgets;
 using Content.Client.UserInterface.Systems.Storage.Controls;
 using Content.Client.Verbs.UI;
 using Content.Shared.CCVar;
@@ -85,10 +85,10 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
             // center it if we knock it off screen somehow.
             if (!StaticStorageUIEnabled &&
                 (_lastContainerPosition == null ||
-                _lastContainerPosition.Value.X < 0 ||
-                _lastContainerPosition.Value.Y < 0 ||
-                _lastContainerPosition.Value.X > _ui.WindowRoot.Width ||
-                _lastContainerPosition.Value.Y > _ui.WindowRoot.Height))
+                 _lastContainerPosition.Value.X < 0 ||
+                 _lastContainerPosition.Value.Y < 0 ||
+                 _lastContainerPosition.Value.X > _ui.WindowRoot.Width ||
+                 _lastContainerPosition.Value.Y > _ui.WindowRoot.Height))
             {
                 _container.OpenCenteredAt(new Vector2(0.5f, 0.75f));
             }
@@ -109,6 +109,7 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
                 _container.Orphan();
                 Hotbar?.StorageContainer.AddChild(_container);
             }
+
             _lastContainerPosition = _container.GlobalPosition;
         }
         else
@@ -242,7 +243,7 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
         }
         else if (args.Function == ContentKeyFunctions.SaveItemLocation)
         {
-            if (_container?.StorageEntity is not {} storage)
+            if (_container?.StorageEntity is not { } storage)
                 return;
 
             _entity.RaisePredictiveEvent(new StorageSaveItemLocationEvent(
@@ -268,7 +269,8 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
         }
         else if (args.Function == ContentKeyFunctions.AltActivateItemInWorld)
         {
-            _entity.RaisePredictiveEvent(new InteractInventorySlotEvent(_entity.GetNetEntity(control.Entity), altInteract: true));
+            _entity.RaisePredictiveEvent(new InteractInventorySlotEvent(_entity.GetNetEntity(control.Entity),
+                altInteract: true));
             args.Handle();
         }
     }
@@ -278,7 +280,8 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
         if (args.Function != ContentKeyFunctions.MoveStoredItem)
             return;
 
-        if (_container?.StorageEntity is not { } storageEnt|| !_entity.TryGetComponent<StorageComponent>(storageEnt, out var storageComp))
+        if (_container?.StorageEntity is not { } storageEnt ||
+            !_entity.TryGetComponent<StorageComponent>(storageEnt, out var storageComp))
             return;
 
         if (DraggingGhost is { } draggingGhost)
@@ -324,6 +327,7 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
                 _entity.GetNetEntity(control.Entity),
                 _entity.GetNetEntity(storageEnt)));
         }
+
         args.Handle();
     }
 
@@ -365,7 +369,7 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
             _entity);
 
         // I don't know why it divides the position by 2. Hope this helps! -emo
-        LayoutContainer.SetPosition(DraggingGhost, UIManager.MousePositionScaled.Position / 2 - offset );
+        LayoutContainer.SetPosition(DraggingGhost, UIManager.MousePositionScaled.Position / 2 - offset);
     }
 
     private void OnMenuEndDrag()

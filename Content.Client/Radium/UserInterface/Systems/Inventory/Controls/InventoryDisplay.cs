@@ -3,9 +3,9 @@ using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
-namespace Content.Client.UserInterface.Systems.Inventory.Controls;
+namespace Content.Client.Radium.UserInterface.Systems.Inventory.Controls;
 
-public sealed class RemovedInventoryDisplay : LayoutContainer
+public sealed class InventoryDisplay : LayoutContainer
 {
     private int Columns = 0;
     private int Rows = 0;
@@ -16,7 +16,7 @@ public sealed class RemovedInventoryDisplay : LayoutContainer
 
     private readonly Dictionary<string, (SlotControl, Vector2i)> _buttons = new();
 
-    public RemovedInventoryDisplay()
+    public InventoryDisplay()
     {
         resizer = new Control();
         AddChild(resizer);

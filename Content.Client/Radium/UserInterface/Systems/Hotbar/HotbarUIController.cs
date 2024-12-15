@@ -1,4 +1,4 @@
-﻿using Content.Client.Radium.UserInterface.Systems.Hands;
+using Content.Client.Radium.UserInterface.Systems.Hands;
 using Content.Client.Radium.UserInterface.Systems.Hotbar.Widgets;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Hands.Controls;
@@ -9,8 +9,9 @@ using Content.Client.UserInterface.Systems.Storage;
 using Content.Client.UserInterface.Systems.Storage.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using ItemStatusPanel = Content.Client.Radium.UserInterface.Systems.Inventory.Controls.ItemStatusPanel;
 
-namespace Content.Client.UserInterface.Systems.Hotbar;
+namespace Content.Client.Radium.UserInterface.Systems.Hotbar;
 
 public sealed class HotbarUIController : UIController
 {
@@ -31,7 +32,7 @@ public sealed class HotbarUIController : UIController
         ReloadHotbar();
     }
 
-    public void Setup(HandsContainer handsContainer, StorageContainer storageContainer)
+    public void Setup(HandsContainer handsContainer, ItemStatusPanel handStatus, StorageContainer storageContainer)
     {
         _inventory = UIManager.GetUIController<InventoryUIController>();
         _hands = UIManager.GetUIController<HandsUIController>();
