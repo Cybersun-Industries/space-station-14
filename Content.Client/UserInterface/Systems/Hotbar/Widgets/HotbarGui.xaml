@@ -1,5 +1,4 @@
-﻿<!-- //RADIUM: REVERT HAND STATE SYSTEM -->
-<widgets:HotbarGui
+﻿<widgets:HotbarGui
     xmlns="https://spacestation14.io"
     xmlns:inventory="clr-namespace:Content.Client.UserInterface.Systems.Inventory.Controls"
     xmlns:storage="clr-namespace:Content.Client.UserInterface.Systems.Storage.Controls"

@@ -1,4 +1,3 @@
-<!-- //RADIUM: REVERT HAND STATE SYSTEM -->
 <controls:ItemStatusPanel
     xmlns="https://spacestation14.io"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
