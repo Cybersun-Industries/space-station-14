@@ -1,30 +1,30 @@
 - type: entity
   id: OrangeStar
   name: orange star
-  description: Big fukin sun
+  description: Big fukin star
   components:
   - type: AnnounceOnSpawn
     message: orange-star-appeared
     sender: chat-manager-sender-announcement
     sound:
-      path: /Audio/Misc/narsie_rises.ogg
+      path: /Audio/Misc/bluealert.ogg
     color: red
   - type: Clickable
   - type: AmbientSound
-    volume: -4
+    volume: -3
     range: 14
     sound:
-      path: /Audio/Effects/singularity.ogg
+      path: /Audio/Effects/tesla.ogg
   - type: Physics
     bodyType: Dynamic
     bodyStatus: InAir
   - type: CanMoveInAir
-  - type: EventHorizon # To make the singularity consume things.
-    radius: 1
+  - type: EventHorizon # To make the star consume things.
+    radius: 2
     canBreachContainment: false
     colliderFixtureId: EventHorizonCollider
     consumerFixtureId: EventHorizonConsumer
-  - type: GravityWell # To make the singularity attract things.
+  - type: GravityWell # To make the star attract things.
     baseRadialAcceleration: 10
     maxRange: 15
   - type: Fixtures
@@ -65,5 +65,44 @@
     shader: unshaded
     layers:
     - map: [ "VisualLevel" ]
-      state: sun_ripple
+      state: sun
+    scale: 1.2,1.2
   - type: FTLBeacon
+  - type: GhostRoleAntagSpawner
+
+- type: entity
+  parent: OrangeStar
+  id: RedStar
+  name: red star
+  components:
+  - type: AnnounceOnSpawn
+    message: red-star-appeared
+    sender: chat-manager-sender-announcement
+    sound:
+      path: /Audio/Misc/gamma.ogg
+    color: violet
+  - type: PointLight
+    color: "red"
+    enabled: true
+    radius: 10
+  - type: RadiationSource
+    slope: 0.1 # its emit really far away
+    intensity: 20
+  - type: Sprite
+    sprite: Radium/Gigantic/suns.rsi
+    shader: unshaded
+    layers:
+    - map: [ "VisualLevel" ]
+      state: sun_red
+    scale: 2.0,2.0
+  - type: EventHorizon # To make the star consume things.
+    radius: 4
+    canBreachContainment: false
+    colliderFixtureId: EventHorizonCollider
+    consumerFixtureId: EventHorizonConsumer
+  - type: AmbientSound
+    volume: -3
+    range: 20
+    sound:
+      path: /Audio/Effects/tesla.ogg
+  - type: GhostRoleAntagSpawner

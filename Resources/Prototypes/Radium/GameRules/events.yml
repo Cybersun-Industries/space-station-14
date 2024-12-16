@@ -4,12 +4,36 @@
   components:
   - type: StationEvent
     weight: 6.5
-    earliestStart: 10
-    reoccurrenceDelay: 40
-    minimumPlayers: 9
+    earliestStart: 15
+    reoccurrenceDelay: 60
+    minimumPlayers: 5
     duration: null
+    startAudio:
+      path: /Audio/Misc/bluealert.ogg
+      params:
+        volume: -4
   - type: SpaceSpawnRule
-    spawnDistance: 30
+    spawnDistance: 40
   - type: AntagSelection
     definitions:
     - spawnerPrototype: OrangeStar
+
+- type: entity
+  parent: StarSpawn
+  id: RedStarSpawn
+  components:
+  - type: StationEvent
+    weight: 6.5
+    earliestStart: 30
+    reoccurrenceDelay: 60
+    minimumPlayers: 5
+    duration: null
+    startAudio:
+      path: /Audio/Misc/gamma.ogg
+      params:
+        volume: -4
+  - type: SpaceSpawnRule
+    spawnDistance: 60
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: RedStar
