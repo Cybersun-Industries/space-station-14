@@ -474,6 +474,13 @@
     accentVColor: "#a23e3e"
   - type: Icon
     state: pda-qm
+  - type: CartridgeLoader # Corvax-Next
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - NanoChatCartridge # Corvax-Next-PDAChat
+      - StockTradingCartridge # Corvax-Next-StockTrading
 
 - type: entity
   parent: BasePDA
@@ -649,6 +656,14 @@
     borderColor: "#7C5D00"
   - type: Icon
     state: pda-captain
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - WantedListCartridge
+    - NanoChatCartridge # Corvax-Next-PDAChat
+    - StockTradingCartridge # Corvax-Next-StockTrading
 
 - type: entity
   parent: BasePDA
@@ -966,7 +981,7 @@
       - LogProbeCartridge
       - WantedListCartridge
       - MedTekCartridge
-      - AstroNavCartridge
+      - StockTradingCartridge # Corvax-Next-StockTrading
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -1223,6 +1238,13 @@
     borderColor: "#3f3f74"
   - type: Icon
     state: pda-reporter
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge # Corvax-Next-PDAChat
+    - StockTradingCartridge # Corvax-Next-StockTrading
 
 - type: entity
   parent: BasePDA

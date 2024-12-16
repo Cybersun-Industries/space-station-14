@@ -20,6 +20,7 @@
     - id: AstroNavCartridge
     - id: MailTeleporterMachineCircuitboard
     - id: PrinterDocFlatpack # Corvax-Printer
+    - id: StockTradingCartridge # Corvax-Next-StockTrading
 
 - type: entity
   id: LockerQuarterMasterFilled
