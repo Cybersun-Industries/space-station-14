@@ -83,3 +83,8 @@ card-sc-king-spades-black = Король пики
 card-sc-queen-spades-black = Королева пики
 
 card-sc-joker-black = Джокер
+
+ent-CardHandBase = Рука карт
+ent-CardDeckBase = Колода карт
+ent-CardDeckBlack = Колода карт
+ent-CardBoxBlack = Коробка карт
