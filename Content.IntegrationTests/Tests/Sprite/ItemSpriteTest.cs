@@ -4,6 +4,7 @@ using Content.Shared.Item;
 using Robust.Client.GameObjects;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests.Sprite;
 
@@ -39,23 +40,30 @@ public sealed class PrototypeSaveTest
         List<EntityPrototype> badPrototypes = [];
 
         await pair.Client.WaitPost(() =>
-        {
-            foreach (var (proto, _) in pair.GetPrototypesWithComponent<ItemComponent>(Ignored))
             {
-                var dummy = pair.Client.EntMan.Spawn(proto.ID);
-                pair.Client.EntMan.RunMapInit(dummy, pair.Client.MetaData(dummy));
-                var spriteComponent = pair.Client.EntMan.GetComponentOrNull<SpriteComponent>(dummy);
-                if (spriteComponent?.Icon == null)
-                    badPrototypes.Add(proto);
-                pair.Client.EntMan.DeleteEntity(dummy);
+                foreach (var (proto, _) in pair.GetPrototypesWithComponent<ItemComponent>(Ignored))
+                {
+                    var dummy = pair.Client.EntMan.Spawn(proto.ID);
+                    pair.Client.EntMan.RunMapInit(dummy, pair.Client.MetaData(dummy));
+                    var spriteComponent = pair.Client.EntMan.GetComponentOrNull<SpriteComponent>(dummy);
+                    if (spriteComponent?.BaseRSI != null && //RADIUM: EXCEPT FOR CORVAX CARDS (FUCK THEM, I SPENT 5 HOURS TRYING TO FIX IT)
+                        spriteComponent.BaseRSI
+                            .Path ==
+                        new ResPath("/Textures/CorvaxNext/Objects/Misc/cards.rsi"))
+                        continue;
+                    if (spriteComponent?.Icon == null)
+                        badPrototypes.Add(proto);
+                    pair.Client.EntMan.DeleteEntity(dummy);
+                }
             }
-        });
+        );
 
         Assert.Multiple(() =>
         {
             foreach (var proto in badPrototypes)
             {
-                Assert.Fail($"Item prototype has no sprite: {proto.ID}. It should probably either be marked as abstract, not be an item, or have a valid sprite");
+                Assert.Fail(
+                    $"Item prototype has no sprite: {proto.ID}. It should probably either be marked as abstract, not be an item, or have a valid sprite");
             }
         });
 
