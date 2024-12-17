@@ -117,6 +117,10 @@ namespace Content.Server.Flash
             TimeSpan? stunDuration = null,
             bool forced = false)
         {
+            if (TryComp<FlashModifierComponent>(target, out var flashModifier))
+            {
+                flashDuration *= flashModifier.Modifier;
+            }
             var attempt = new FlashAttemptEvent(target, user, used, forced);
             RaiseLocalEvent(target, attempt, true);
 
