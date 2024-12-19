@@ -1,6 +1,7 @@
 ﻿- type: entity
   name: lightning
   id: BaseLightning_Backmen
+  categories: [ HideSpawnMenu ]
   abstract: true
   components:
   - type: Sprite
@@ -31,7 +32,6 @@
   name: lightning
   id: Lightning_Backmen
   parent: BaseLightning_Backmen
-  noSpawn: false
   components:
     - type: Lightning
       canArc: true
@@ -40,7 +40,6 @@
   name: spooky lightning
   id: LightningRevenant_Backmen
   parent: BaseLightning_Backmen
-  noSpawn: false
   components:
     - type: Sprite
       sprite: /Textures/Effects/lightning.rsi

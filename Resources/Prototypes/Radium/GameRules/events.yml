@@ -1,7 +1,7 @@
 ﻿#- type: entity
 #  id: ClownBadMigration
 #  parent: BaseGameRule
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: StationEvent
 #    startAnnouncement: station-event-vent-creatures-badclown-start-announcement
@@ -19,7 +19,7 @@
 #- type: entity
 #  id: ClownPepeMigration
 #  parent: BaseGameRule
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: StationEvent
 #    startAnnouncement: station-event-vent-creatures-badclown-start-announcement
@@ -37,7 +37,7 @@
 #- type: entity
 #  id: ClownPepeBallMigration
 #  parent: BaseGameRule
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: StationEvent
 #    startAnnouncement: station-event-vent-creatures-badclown-start-announcement
@@ -55,7 +55,7 @@
 #- type: entity
 #  id: RealTysonMigration
 #  parent: BaseGameRule
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: StationEvent
 #    startAnnouncement: station-event-vent-creatures-tyson-start-announcement
@@ -73,7 +73,7 @@
 - type: entity
   id: ChangelingSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 10

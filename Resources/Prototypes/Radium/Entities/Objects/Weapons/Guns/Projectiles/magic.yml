@@ -3,7 +3,7 @@
   parent: ProjectilePolyboltBase
   name: полизаряд таракамоли
   description: Нееет, я не хочу быть таракамолью!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: PolymorphOnCollide
     polymorph: WizardForcedMothroach

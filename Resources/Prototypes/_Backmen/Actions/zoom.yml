@@ -12,7 +12,7 @@
   id: ActionToggleCamera # Do not change me!
   name: Переключить камеру
   description: Переключает камеру следующую за мышкой.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false

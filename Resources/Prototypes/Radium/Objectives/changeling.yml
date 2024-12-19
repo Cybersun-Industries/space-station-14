@@ -11,7 +11,7 @@
         components:
           - ChangelingRole
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent:
     - BaseChangelingObjective
   id: GenesObjectiveChangeling
@@ -31,7 +31,7 @@
       description: objective-condition-genes-description
     - type: GenesCondition
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent:
     - BaseChangelingObjective
     - BaseLivingObjective

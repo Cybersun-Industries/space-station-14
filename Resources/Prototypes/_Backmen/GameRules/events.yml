@@ -11,7 +11,7 @@
 - type: entity
   id: EvilTwinSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 10
@@ -22,7 +22,7 @@
 - type: entity
   id: FugitiveSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       weight: 2
@@ -33,14 +33,14 @@
 - type: entity
   id: WageScheduler
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WageSchedulerRule
 
 - type: entity
   id: BlobSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 6.5
@@ -57,7 +57,7 @@
 - type: entity
   id: BluespaceGoat
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     weight: 5
@@ -68,7 +68,7 @@
 - type: entity
   id: SpiderSpiderVampireSpawn
   parent: BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
       startAnnouncement: station-event-vent-creatures-start-announcement
