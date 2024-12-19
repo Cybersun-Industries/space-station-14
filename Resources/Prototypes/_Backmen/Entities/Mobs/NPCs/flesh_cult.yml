@@ -86,9 +86,6 @@
       layers:
         - map: [ "enum.DamageStateVisualLayers.Base" ]
           state: spider
-    - type: Vocal
-      sounds:
-        Unsexed: FleshWormEmote
     - type: DamageStateVisuals
       states:
         Alive:
@@ -148,9 +145,6 @@
       actionThrowWorm: ActionThrowWorm
       actionAcidSpit: ActionAcidSpit
       actionAbsorbBloodPool: ActionAbsorbBloodPool
-    - type: Vocal
-      sounds:
-        Unsexed: FleshPudgeEmote
     - type: FleshMob
       soundDeath: "/Audio/Animals/Flesh/flesh_pudge_dead.ogg"
       deathMobSpawnId: "MobFleshWorm"
@@ -246,9 +240,6 @@
       actionThrowWorm: ActionThrowWorm
       actionAcidSpit: ActionAcidSpit
       actionAbsorbBloodPool: ActionAbsorbBloodPool
-    - type: Vocal
-      sounds:
-        Unsexed: FleshAbomEmote
     - type: MobState
       allowedStates:
         - Alive
@@ -421,9 +412,6 @@
     - type: Bloodstream
       bloodMaxVolume: 50
       bloodReagent: Blood
-    - type: Vocal
-      sounds:
-        Unsexed: FleshWormEmote
     - type: Fixtures
       fixtures:
         fix1:
@@ -496,9 +484,6 @@
           Base: worm_dead
         Dead:
           Base: worm_dead
-    - type: Vocal
-      sounds:
-        Unsexed: FleshWormEmote
     - type: Item
       sprite: Mobs/Aliens/FleshCult/flesh_cult_mobs.rsi
       heldPrefix: worm
