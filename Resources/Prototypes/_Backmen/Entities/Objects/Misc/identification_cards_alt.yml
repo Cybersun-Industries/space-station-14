@@ -165,7 +165,7 @@
   - type: Clothing
     equippedState: equipped-unter
   - type: IdCard
-    jobTitle: Младший унтер-офицер
+    jobTitle: job-title-junior_unter_officer
     jobIcon: JobIconShtab
   - type: Access
     tags:

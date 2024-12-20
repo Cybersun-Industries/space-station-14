@@ -32,3 +32,4 @@ job-title-sierra_6_chemical_troops = Войска РХБЗЗ Sierra-6
 job-title-visitor = Посетитель
 job-title-cluwne = Клувень
 job-title-universal = Универсал
+job-title-junior_unter_officer = Младший Унтер-офицер
