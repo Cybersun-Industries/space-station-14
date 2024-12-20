@@ -117,9 +117,6 @@
       drawdepth: Mobs
       sprite: Backmen/Mobs/Aliens/blob.rsi
       state: blobpod
-    - type: GuideHelp
-      guides:
-      - Blob
 
 
 - type: entity
