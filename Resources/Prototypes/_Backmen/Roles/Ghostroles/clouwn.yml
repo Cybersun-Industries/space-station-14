@@ -14,10 +14,6 @@
     description: Живой хаос на станции
     raffle:
       settings: short
-  - type: CloningAppearance
-    gear: CluwneGear
-    components:
-    - type: Cluwne
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
