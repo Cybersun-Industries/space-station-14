@@ -1,13 +1,13 @@
-- type: entity
-  name: Antag Vehicle Spawner
-  id: SpawnVehicleAntagVehicle
-  parent: MarkerBase
-  components:
-  - type: Sprite
-    layers:
-      - state: green
-      - sprite: Objects/Vehicles/syndicatesegway.rsi
-        state: keys
+#- type: entity
+#  name: Antag Vehicle Spawner
+#  id: SpawnVehicleAntagVehicle
+#  parent: MarkerBase
+#  components:
+#  - type: Sprite
+#    layers:
+#      - state: green
+#      - sprite: Objects/Vehicles/#syndicatesegway.rsi
+#        state: keys
 #  - type: RandomSpawner
 #    prototypes:
 #      - VehicleSyndicateSegway
