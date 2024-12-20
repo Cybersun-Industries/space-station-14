@@ -3,7 +3,6 @@ using System.Linq;
 using System.Text;
 using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
-using Content.Server.Backmen.Cloning;
 using Content.Server.Backmen.Economy;
 using Content.Server.Backmen.Fugitive;
 using Content.Server.CartridgeLoader.Cartridges;
@@ -476,10 +475,10 @@ public sealed class EvilTwinSystem : EntitySystem
             return false;
         }
 
-        return !(HasComp<MetempsychosisKarmaComponent>(uid) ||
-                 HasComp<FugitiveComponent>(uid) ||
+        return !(HasComp<FugitiveComponent>(uid) ||
                  HasComp<EvilTwinComponent>(uid) ||
                  HasComp<NukeOperativeComponent>(uid));
+
     }
 
     private bool TryGetEligibleHumanoid([NotNullWhen(true)] out EntityUid? uid)

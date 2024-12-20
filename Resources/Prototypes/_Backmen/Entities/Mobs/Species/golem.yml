@@ -254,11 +254,6 @@
           True: {visible: true}
           False: {visible: false}
   - type: SiliconLawBound
-  - type: GuideHelp
-    guides:
-    - AltarsGolemancy
-  - type: TTS
-    voice: Oleg
 
 - type: emoteSounds
   id: GolemEmote
