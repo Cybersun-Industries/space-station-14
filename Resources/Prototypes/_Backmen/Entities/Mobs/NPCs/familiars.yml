@@ -75,7 +75,6 @@
     - type: Hands
     - type: RandomMetadata
       nameSegments: [names_golem]
-      removable: false
     - type: Grammar
       attributes:
         proper: true
