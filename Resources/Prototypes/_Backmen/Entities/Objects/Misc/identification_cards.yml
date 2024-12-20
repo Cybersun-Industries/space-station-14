@@ -1,4 +1,4 @@
-﻿﻿- type: entity
+﻿- type: entity
   parent: IDCardStandard
   id: PrisonerIDCard
   name: prisoner ID card
