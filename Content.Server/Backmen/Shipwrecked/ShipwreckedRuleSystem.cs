@@ -548,7 +548,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
     }
 
     [ValidatePrototypeId<GameMapPrototype>]
-    private const string DefaultShuttle = "ShwrAdventurer";
+    private const string DefaultShuttle = "Reach";
     private bool AttachMap(EntityUid gridId, ShipwreckedRuleComponent component, bool force = false)
     {
         var mapId = component.SpaceMapId ?? _gameTicker.DefaultMap;

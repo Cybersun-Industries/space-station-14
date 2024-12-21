@@ -80,17 +80,7 @@ namespace Content.IntegrationTests.Tests
             "Reach",
             "Train",
             "Oasis",
-            "Cog",
-            "BackmenAspid",
-            "BackmenDelta",
-            "BackmenHive",
-            "BackmenKettle",
-            "BackmenRook",
-            "BackmenShoukou",
-            "BackmenTortuga",
-            "ShwrAdventurer",
-            "ShwrBig",
-            "shwrDust"
+            "Cog"
         };
 
         /// <summary>
