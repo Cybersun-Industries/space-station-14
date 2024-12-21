@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseGameRule
+  id: StarSpawn
+  components:
+  - type: StationEvent
+    weight: 6.5
+    earliestStart: 15
+    reoccurrenceDelay: 60
+    minimumPlayers: 5
+    duration: null
+    startAudio:
+      path: /Audio/Misc/bluealert.ogg
+      params:
+        volume: -4
+  - type: SpaceSpawnRule
+    spawnDistance: 40
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: OrangeStar
+
+- type: entity
+  parent: StarSpawn
+  id: RedStarSpawn
+  components:
+  - type: StationEvent
+    weight: 5.5
+    earliestStart: 30
+    reoccurrenceDelay: 70
+    minimumPlayers: 8
+    duration: null
+    startAudio:
+      path: /Audio/Misc/gamma.ogg
+      params:
+        volume: -4
+  - type: SpaceSpawnRule
+    spawnDistance: 60
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: RedStar
