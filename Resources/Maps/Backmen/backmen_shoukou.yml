@@ -81175,7 +81175,7 @@ entities:
     - type: Transform
       pos: 28.521717,4.5260506
       parent: 34
-- proto: WeaponTurretLaserNanoTrasenAI
+- proto: WeaponTurretLaserNanoTrasen
   entities:
   - uid: 6014
     components:

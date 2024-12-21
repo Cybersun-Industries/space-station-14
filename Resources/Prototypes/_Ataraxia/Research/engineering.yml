@@ -60,6 +60,7 @@
   recipeUnlocks:
     - WelderExperimental
     - PowerDrill
+    - MechEquipmentDrill
     - JawsOfLife
 
 - type: technology

@@ -15330,20 +15330,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,29.5
       parent: 2
-- proto: ComputerShipyard
-  entities:
-  - uid: 3471
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 6.5,-14.5
-      parent: 2
-  - uid: 4043
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 10.5,29.5
-      parent: 2
 - proto: ComputerShuttleCargo
   entities:
   - uid: 4097
