@@ -19,6 +19,7 @@ using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Damage.Components;
 using Content.Shared.DeviceNetwork;
+using Content.Shared.GameTicking;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Parallax.Biomes;
@@ -367,7 +368,7 @@ public sealed class ArrivalsSystem : EntitySystem
         var spawnLoc = _random.Pick(possiblePositions);
         ev.SpawnResult = _stationSpawning.SpawnPlayerMob(
             spawnLoc,
-            ev.Job?.Prototype,
+            ev.Job?.Id,
             ev.HumanoidCharacterProfile,
             ev.Station);
 

@@ -4,6 +4,7 @@ using Content.Shared.Actions;
 using Content.Shared.Antag;
 using Content.Shared.Backmen.Blob.Components;
 using Content.Shared.Backmen.CCVar;
+using Content.Shared.GameTicking;
 using Content.Shared.Roles;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;

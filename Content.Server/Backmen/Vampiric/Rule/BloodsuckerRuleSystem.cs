@@ -11,6 +11,7 @@ using Content.Server.Objectives;
 using Content.Shared.Antag;
 using Content.Shared.Backmen.CCVar;
 using Content.Shared.Backmen.Vampiric;
+using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;

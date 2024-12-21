@@ -54,6 +54,7 @@ using Content.Shared.Damage;
 using Content.Shared.Dataset;
 using Content.Shared.Doors.Components;
 using Content.Shared.FixedPoint;
+using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Gravity;
@@ -705,7 +706,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
         {
             Prototype = jobProtoId
         };
-        _roleSystem.MindAddRole(mindId, job);
+        _roleSystem.MindAddRole(mindId, jobProtoId.Id);
 
         var mob = _stationSpawningSystem.SpawnPlayerMob(spawnPoint, job?.Prototype, profile, station: null);
         var mobName = MetaData(mob).EntityName;

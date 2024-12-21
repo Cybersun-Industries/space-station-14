@@ -19,6 +19,7 @@ using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
+using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
@@ -193,14 +194,8 @@ public sealed partial class ChangelingSystem : EntitySystem
 
                 if (!_roles.MindHasRole<ChangelingRoleComponent>(mindId.Value))
                 {
-                    _roles.MindAddRole(mindId.Value,
-                        new ChangelingRoleComponent
-                            { PrototypeId = component.ChangelingRole });
-                    _roles.MindAddRole(mindId.Value,
-                        new RoleBriefingComponent
-                        {
-                            Briefing = briefingShort,
-                        });
+                    _roles.MindAddRole(mindId.Value, component.ChangelingRole, mind: null, silent: true);
+                    _antag.SendBriefing(mindId.Value, briefingShort, Color.Yellow, component.BriefingSound);
                 }
 
                 _mindSystem.TryAddObjective(mindId.Value, mind, GenesObjective);
@@ -284,7 +279,6 @@ public sealed partial class ChangelingSystem : EntitySystem
                     // Handle any extra data here.
                     _stationSpawning.EquipStartingGear(changelingUid, startingGear.ID, raiseEvent: false);
                 }
-
             }
         }
 

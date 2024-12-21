@@ -171,16 +171,16 @@ public sealed class GhostReJoinSystem : SharedGhostReJoinSystem
     {
         _deathTime.Remove(player.UserId);
 
-        var jobPrototype = _prototype.Index<JobPrototype>(station.Comp.OverflowJobs.First());
+        var jobPrototype = _prototype.Index(station.Comp.OverflowJobs.First());
         var job = new JobComponent { Prototype = jobPrototype.ID };
 
         var newMind = _mind.CreateMind(player.UserId, character.Name);
         _mind.SetUserId(newMind, player.UserId);
-        _roles.MindAddRole(newMind, job, silent: false);
+        _roles.MindAddRole(newMind, jobPrototype.ID, silent: false);
 
         _playTimeTrackings.PlayerRolesChanged(player);
 
-        var spawnEv = new PlayerSpawningEvent(job, character, station);
+        var spawnEv = new PlayerSpawningEvent(job.Prototype, character, station);
         RaiseLocalEvent(spawnEv);
         DebugTools.Assert(spawnEv.SpawnResult is { Valid: true } or null);
 

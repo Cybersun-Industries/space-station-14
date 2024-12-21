@@ -1,6 +1,5 @@
 ﻿#nullable enable
 using System.Linq;
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Mind.Commands;
@@ -288,12 +287,7 @@ public sealed partial class MindTests
                 Assert.That(roleSystem.MindHasRole<JobRoleComponent>(mindId), Is.False);
             });
 
-            // var traitorRole = "MindRoleTraitor";
-            // this is really fucked up
-            // radium
-            // start
-            var traitorRole = entMan.EnsureComponent<TraitorRoleComponent>(mindId);
-            //end
+            var traitorRole = "MindRoleTraitor";
 
             roleSystem.MindAddRole(mindId, traitorRole);
 
@@ -305,9 +299,7 @@ public sealed partial class MindTests
 
             var jobRole = "";
 
-            // roleSystem.MindAddJobRole(mindId, jobPrototype:jobRole);
-            // expect things to fuck up
-            // radium
+            roleSystem.MindAddJobRole(mindId, jobPrototype:jobRole);
 
             Assert.Multiple(() =>
             {

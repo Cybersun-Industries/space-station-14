@@ -24,7 +24,7 @@
     damageContainer: Biological
   - type: NoSlip
   - type: TTS # Corvax-TTS
-    voice: Kelthuzad
+    voice: Oleg #Kelthuzad
   - type: Eye
     drawFov: false
     visMask:

@@ -181,7 +181,11 @@ public sealed class EvilTwinSystem : EntitySystem
 
                             if (!_roles.MindHasRole<JobComponent>(mindId))
                             {
-                                _roles.MindAddRole(mindId, new JobComponent() { Prototype = currentJob?.Prototype });
+                                if (currentJob?.Prototype?.Id != null)
+                                {
+                                    if (currentJob.Prototype != null)
+                                        _roles.MindAddRole(mindId, currentJob.Prototype.Value.Id);
+                                }
                             }
 
                             if (_inventory.TryGetSlotEntity(targetUid.Value, "id", out var targetPda) &&
@@ -351,11 +355,15 @@ public sealed class EvilTwinSystem : EntitySystem
         }
 
         _roles.MindAddRole(mindId,
-            new EvilTwinRoleComponent
+            /*new EvilTwinRoleComponent
             {
-                PrototypeId = EvilTwinRole, TargetMindId = component.TwinMindId, TargetMind = component.TwinMind,
+                PrototypeId = EvilTwinRole,
+                TargetMindId = component.TwinMindId,
+                TargetMind = component.TwinMind,
                 Target = component.TwinEntity
-            });
+            }*/
+            EvilTwinRole
+            );
 
         _mindSystem.TryAddObjective(mindId, mind, KillObjective);
         _mindSystem.TryAddObjective(mindId, mind, EscapeObjective);

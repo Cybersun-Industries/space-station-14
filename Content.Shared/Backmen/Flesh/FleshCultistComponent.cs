@@ -28,7 +28,7 @@ public sealed partial class FleshCultistComponent : Component
 
     [ViewVariables(VVAccess.ReadWrite),
      DataField("bulletAcidSpawnId", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string BulletAcidSpawnId = "BulletSplashAcid";
+    public string BulletAcidSpawnId = "BulletAcid";
 
     [ViewVariables(VVAccess.ReadWrite), DataField("speciesWhitelist")]
     public List<string> SpeciesWhitelist = new()

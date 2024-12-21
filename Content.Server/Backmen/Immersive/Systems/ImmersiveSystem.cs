@@ -6,6 +6,7 @@ using Content.Shared._White.Telescope;
 using Content.Shared.Administration;
 using Content.Shared.Backmen.CCVar;
 using Content.Shared.Database;
+using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;

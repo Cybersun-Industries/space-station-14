@@ -16,10 +16,10 @@ using Content.Shared.Backmen.Cryostorage;
 using Content.Shared.Backmen.Reinforcement;
 using Content.Shared.Backmen.Reinforcement.Components;
 using Content.Shared.Database;
+using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -28,8 +28,6 @@ using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Backmen.Reinforcement;
 
@@ -156,16 +154,16 @@ public sealed class ReinforcementSystem : SharedReinforcementSystem
         var newMind = _mind.CreateMind(args.Player.UserId, character.Name);
         _mind.SetUserId(newMind, args.Player.UserId);
 
-        var jobPrototype = _prototype.Index<JobPrototype>(args.Proto.Job);
+        var jobPrototype = _prototype.Index(args.Proto.Job);
         var job = new JobComponent { Prototype = args.Proto.Job };
-        _roles.MindAddRole(newMind, job, silent: false);
+        _roles.MindAddRole(newMind, jobPrototype.ID, silent: false);
         EnsureComp<ReinforcementMindComponent>(newMind).Linked = ent.Comp.Linked;
         var jobName = _jobs.MindTryGetJobName(newMind);
 
         _playTimeTrackings.PlayerRolesChanged(args.Player);
 
         //var mob = Spawn(proto.Spawn);
-        var spawnEv = new PlayerSpawningEvent(job, character, station);
+        var spawnEv = new PlayerSpawningEvent(job.Prototype, character, station);
         RaiseLocalEvent(spawnEv);
 
         var mob = spawnEv.SpawnResult ?? Spawn("MobHuman", Transform(ent).Coordinates);

@@ -14,6 +14,7 @@ using Content.Shared.Damage;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
+using Content.Shared.GameTicking;
 using Content.Shared.Interaction;
 using Content.Shared.Medical.SuitSensor;
 using Content.Shared.Mobs.Components;

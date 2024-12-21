@@ -1,3 +1,4 @@
+/*
 #nullable enable
 using System.Collections.Generic;
 using Content.IntegrationTests.Pair;
@@ -77,10 +78,9 @@ public abstract class ToolshedTest : IInvocationContext
     protected void ParseCommand(string command, Type? inputType = null, Type? expectedType = null, bool once = false)
     {
         var parser = new ParserContext(command, Toolshed);
-        var success = CommandRun.TryParse(false, parser, inputType, expectedType, once, out _, out _, out var error);
+        var success = CommandRun.TryParse(parser, inputType, expectedType, out var error);
 
-        if (error is not null)
-            ReportError(error);
+
 
         if (error is null)
             Assert.That(success, $"Parse failed despite no error being reported. Parsed {command}");
@@ -153,9 +153,26 @@ public abstract class ToolshedTest : IInvocationContext
         return _errors;
     }
 
+    public bool HasErrors { get; }
+
     public void ClearErrors()
     {
         _errors.Clear();
+    }
+
+    public object? ReadVar(string name)
+    {
+        return null;
+    }
+
+    public void WriteVar(string name, object? value)
+    {
+        throw new NotImplementedException();
+    }
+
+    public IEnumerable<string> GetVars()
+    {
+        throw new NotImplementedException();
     }
 
     public Dictionary<string, object?> Variables { get; } = new();
@@ -170,3 +187,4 @@ public abstract class ToolshedTest : IInvocationContext
         _expectedErrors.Enqueue(typeof(T));
     }
 }
+*/

@@ -184,13 +184,7 @@ public sealed class BloodSuckerSystem : SharedBloodSuckerSystem
             return; // have it
         }
 
-        _roleSystem.MindAddRole(mindId,
-            new VampireRoleComponent()
-            {
-                PrototypeId = BloodsuckerAntagRole
-            },
-            mind,
-            true);
+        _roleSystem.MindAddRole(mindId, BloodsuckerAntagRole, mind: null, silent: true);
 
         _mindSystem.TryAddObjective(mindId, mind, EscapeObjective);
         _mindSystem.TryAddObjective(mindId, mind, Objective1);

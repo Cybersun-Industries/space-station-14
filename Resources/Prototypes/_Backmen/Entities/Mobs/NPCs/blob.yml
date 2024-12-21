@@ -257,9 +257,6 @@
           layer:
             - BlobTileLayer
           density: 1000
-    - type: GuideHelp
-      guides:
-      - Blob
 
 - type: entity
   parent: BaseBlob

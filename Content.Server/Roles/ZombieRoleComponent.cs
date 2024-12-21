@@ -2,7 +2,7 @@ using Content.Shared.Roles;
 
 namespace Content.Server.Roles;
 
-[RegisterComponent, ExclusiveAntagonist]
-public sealed partial class ZombieRoleComponent : AntagonistRoleComponent
+[RegisterComponent]
+public sealed partial class ZombieRoleComponent : BaseMindRoleComponent
 {
 }

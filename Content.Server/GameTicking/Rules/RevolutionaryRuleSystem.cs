@@ -153,7 +153,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
 
         if (mindId == default || !_role.MindHasRole<RevolutionaryRoleComponent>(mindId))
         {
-            _role.MindAddRole(mindId, new RevolutionaryRoleComponent { PrototypeId = RevPrototypeId });
+            _role.MindAddRole(mindId, RevPrototypeId.Id);
         }
 
         if (mind?.Session != null)

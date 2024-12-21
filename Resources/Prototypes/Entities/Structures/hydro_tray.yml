@@ -88,7 +88,7 @@
   - type: Machine
     board: HydroponicsTrayMachineCircuitboard
   - type: TTS # Corvax-TTS
-    voice: TrainingRobot
+    voice: Oleg #TrainingRobot
   - type: WiresPanel
   - type: AmbientSound
     volume: -9

@@ -53,8 +53,6 @@ public sealed class GhostRoleSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
-    [Dependency] private readonly Backmen.RoleWhitelist.WhitelistSystem _roleWhitelist = default!; // backmen: whitelist
-
     private uint _nextRoleIdentifier;
     private bool _needsUpdateGhostRoleCount = true;
 
@@ -73,18 +71,22 @@ public sealed class GhostRoleSystem : EntitySystem
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(Reset);
         SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
+
         SubscribeLocalEvent<GhostTakeoverAvailableComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<GhostTakeoverAvailableComponent, MindRemovedMessage>(OnMindRemoved);
         SubscribeLocalEvent<GhostTakeoverAvailableComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<GhostTakeoverAvailableComponent, TakeGhostRoleEvent>(OnTakeoverTakeRole);
+
         SubscribeLocalEvent<GhostRoleComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<GhostRoleComponent, ComponentStartup>(OnRoleStartup);
         SubscribeLocalEvent<GhostRoleComponent, ComponentShutdown>(OnRoleShutdown);
         SubscribeLocalEvent<GhostRoleComponent, EntityPausedEvent>(OnPaused);
         SubscribeLocalEvent<GhostRoleComponent, EntityUnpausedEvent>(OnUnpaused);
+
         SubscribeLocalEvent<GhostRoleRaffleComponent, ComponentInit>(OnRaffleInit);
         SubscribeLocalEvent<GhostRoleRaffleComponent, ComponentShutdown>(OnRaffleShutdown);
+
         SubscribeLocalEvent<GhostRoleMobSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeRole);
-        SubscribeLocalEvent<GhostTakeoverAvailableComponent, TakeGhostRoleEvent>(OnTakeoverTakeRole);
         SubscribeLocalEvent<GhostRoleMobSpawnerComponent, GetVerbsEvent<Verb>>(OnVerb);
         SubscribeLocalEvent<GhostRoleMobSpawnerComponent, GhostRoleRadioMessage>(OnGhostRoleRadioMessage);
         _playerManager.PlayerStatusChanged += PlayerStatusChanged;
@@ -478,11 +480,6 @@ public sealed class GhostRoleSystem : EntitySystem
         if (!_ghostRoles.TryGetValue(identifier, out var role))
             return false;
 
-        // start-backmen: whitelist
-        if (role.Comp.WhitelistRequired && _cfg.GetCVar(Shared.Backmen.CCVar.CCVars.WhitelistRolesEnabled) && !_roleWhitelist.IsInWhitelist(player))
-            return false;
-        // end-backmen: whitelist
-
         var ev = new TakeGhostRoleEvent(player);
         RaiseLocalEvent(role, ref ev);
 
@@ -516,7 +513,11 @@ public sealed class GhostRoleSystem : EntitySystem
 
         var newMind = _mindSystem.CreateMind(player.UserId,
             EntityManager.GetComponent<MetaDataComponent>(mob).EntityName);
-        _roleSystem.MindAddRole(newMind, new GhostRoleMarkerRoleComponent { Name = role.RoleName });
+
+        _roleSystem.MindAddRole(newMind, "MindRoleGhostMarker");
+
+        if(_roleSystem.MindHasRole<GhostRoleMarkerRoleComponent>(newMind!, out var markerRole))
+            markerRole.Value.Comp2.Name = role.RoleName;
 
         _mindSystem.SetUserId(newMind, player.UserId);
         _mindSystem.TransferTo(newMind, mob);
@@ -579,8 +580,7 @@ public sealed class GhostRoleSystem : EntitySystem
                 Requirements = role.Requirements,
                 Kind = kind,
                 RafflePlayerCount = rafflePlayerCount,
-                RaffleEndTime = raffleEndTime,
-                WhitelistRequired = role.WhitelistRequired // backmen: whitelist
+                RaffleEndTime = raffleEndTime
             });
         }
 
@@ -610,10 +610,7 @@ public sealed class GhostRoleSystem : EntitySystem
 
         if (ghostRole.JobProto != null)
         {
-            if (HasComp<JobComponent>(args.Mind))
-                _roleSystem.MindRemoveRole<JobComponent>(args.Mind);
-
-            _roleSystem.MindAddRole(args.Mind, new JobComponent { Prototype = ghostRole.JobProto });
+            _roleSystem.MindAddJobRole(args.Mind, args.Mind, silent:false,ghostRole.JobProto);
         }
 
         ghostRole.Taken = true;
@@ -732,13 +729,6 @@ public sealed class GhostRoleSystem : EntitySystem
             args.TookRole = false;
             return;
         }
-
-        // start-backmen: ghost timers
-        if (args.TookRole)
-        {
-            return;
-        }
-        // end-backmen: ghost timers
 
         ghostRole.Taken = true;
 
