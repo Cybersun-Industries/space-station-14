@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -65,6 +65,7 @@ using Content.Shared.Maps;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
+using Content.Shared.Nutrition.Components;
 using Content.Shared.Paper;
 using Content.Shared.Parallax;
 using Content.Shared.Parallax.Biomes;
@@ -239,7 +240,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
         }
     }
 
-    public void OnChunkLoad(EntityUid uid, ShipwreckMapGridComponent component, MapInitEvent args)
+    private void OnChunkLoad(EntityUid uid, ShipwreckMapGridComponent component, MapInitEvent args)
     {
         var enumerator = new ChunkIndicesEnumerator(component.Area, SharedBiomeSystem.ChunkSize);
 
@@ -343,8 +344,8 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
         }
     }
 */
-    [ValidatePrototypeId<DatasetPrototype>]
-    private const string PlanetNames = "names_borer";
+    [ValidatePrototypeId<LocalizedDatasetPrototype>]
+    private const string PlanetNames = "NamesBorer";
 
     private const int MaxPreloadOffset  = 200;
 
@@ -549,7 +550,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
     }
 
     [ValidatePrototypeId<GameMapPrototype>]
-    private const string DefaultShuttle = "Reach";
+    private const string DefaultShuttle = "ShwrAdventurer";
     private bool AttachMap(EntityUid gridId, ShipwreckedRuleComponent component, bool force = false)
     {
         var mapId = component.SpaceMapId ?? _gameTicker.DefaultMap;
@@ -698,23 +699,17 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
 
         var jobProtoId = _random.Pick(component.AvailableJobPrototypes);
 
-        if (!_prototypeManager.TryIndex(jobProtoId, out var jobPrototype))
-            throw new ArgumentException($"Invalid JobPrototype: {jobProtoId}");
-
         var mindId = _mindSystem.CreateMind(player.UserId, profile.Name);
 
-        var job = new JobComponent
-        {
-            Prototype = jobProtoId
-        };
-        _roleSystem.MindAddRole(mindId, jobProtoId.Id);
+        _roleSystem.MindAddJobRole(mindId, jobPrototype:jobProtoId);
+        _roleSystem.MindHasRole<JobRoleComponent>(mindId!, out var job);
 
-        var mob = _stationSpawningSystem.SpawnPlayerMob(spawnPoint, job?.Prototype, profile, station: null);
+        var mob = _stationSpawningSystem.SpawnPlayerMob(spawnPoint, job!.Value.Comp1.JobPrototype, profile, station: null);
         var mobName = MetaData(mob).EntityName;
 
         manifest.AppendLine(Loc.GetString("passenger-manifest-passenger-line",
                 ("name", mobName),
-                ("details", jobPrototype.LocalizedName)));
+                ("details", job.Value.Comp1.JobPrototype!.Value.Id)));
 
         // SpawnPlayerMob requires a PDA to setup the ID details,
         // and PDAs are a bit too posh for our rugged travellers.
@@ -722,8 +717,19 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
             TryComp<IdCardComponent>(idUid, out var idCardComponent))
         {
             _cardSystem.TryChangeFullName(idUid.Value, mobName, idCardComponent);
-            _cardSystem.TryChangeJobTitle(idUid.Value, jobPrototype.LocalizedName, idCardComponent);
+            _cardSystem.TryChangeJobTitle(idUid.Value, job.Value.Comp1.JobPrototype, idCardComponent);
         }
+
+        //var hunger = EnsureComp<HungerComponent>(mob);
+        //hunger.StarvationDamage = new()
+        //{
+        //    DamageDict = new()
+        //    {
+        //        { "Cold", 0.5f },
+        //        { "Bloodloss", 0.5f }
+        //    },
+        //};
+        //Dirty(mob, hunger);
 
         EnsureComp<ZombieImmuneComponent>(mob);
 
@@ -1799,7 +1805,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
                 continue;
             if (TryComp<AirlockComponent>(row, out var airlock) && !airlock.EmergencyAccess)
             {
-                _airlockSystem.SetEmergencyAccess((row, airlock), !airlock.EmergencyAccess);
+                _airlockSystem.SetEmergencyAccess((row, airlock), true);
                 continue;
             }
             _lockSystem.Unlock(row, uid);
@@ -1835,7 +1841,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
             }
             if (TryComp<AirlockComponent>(row, out var airlock) && !airlock.EmergencyAccess)
             {
-                _airlockSystem.SetEmergencyAccess((row, airlock), !airlock.EmergencyAccess);
+                _airlockSystem.SetEmergencyAccess((row, airlock), true);
                 continue;
             }
             _lockSystem.Unlock(row, uid);

@@ -90,20 +90,20 @@
   technologyPrerequisites:
   - Robotics
 
-- type: technology
-  id: GrapplingModules
-  name: ataraxia-research-technology-grappling-modules
-  icon:
-    sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
-    state: base
-  discipline: GrapplingModules
-  tier: 1
-  cost: 8000
-  recipeUnlocks:
-  - BorgModuleGrapplingGun
-  technologyPrerequisites:
-  - Robotics
-  - Grappling
+#- type: technology
+#  id: GrapplingModules
+#  name: ataraxia-research-technology-grappling-modules
+#  icon:
+#    sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
+#    state: base
+#  discipline: GrapplingModules
+#  tier: 1
+#  cost: 8000
+#  recipeUnlocks:
+#  - BorgModuleGrapplingGun
+#  technologyPrerequisites:
+#  - Robotics
+#  - Grappling
 
 - type: technology
   id: SpaceScanningModules
@@ -131,7 +131,7 @@
   cost: 10000
   recipeUnlocks:
     - BorgModuleAdvancedTool
-    - BorgModuleRCD
+#   - BorgModuleRCD
   technologyPrerequisites:
   - Robotics
   - EngineeringAdvancedTools
@@ -151,21 +151,21 @@
   technologyPrerequisites:
   - Robotics
 
-- type: technology
-  id: EntertainmentAdvancedModules
-  name: ataraxia-research-technology-entertainment-advanced-modules
-  icon:
-    sprite: Structures/Machines/computers.rsi
-    state: television
-  discipline: EntertainmentAdvancedModules
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
-    - BorgModuleMusique
-    - BorgModuleClowning
-  technologyPrerequisites:
-  - Robotics
-  - EntertainmentAdvanced
+#- type: technology
+#  id: EntertainmentAdvancedModules
+#  name: ataraxia-research-technology-entertainment-advanced-modules
+#  icon:
+#    sprite: Structures/Machines/computers.rsi
+#    state: television
+#  discipline: EntertainmentAdvancedModules
+#  tier: 1
+#  cost: 7500
+#  recipeUnlocks:
+#    - BorgModuleMusique
+#    - BorgModuleClowning
+#  technologyPrerequisites:
+#  - Robotics
+#  - EntertainmentAdvanced
 
 - type: technology
   id: SalvageEquipmentModules
@@ -177,7 +177,7 @@
   tier: 1
   cost: 10000
   recipeUnlocks:
-  - BorgModuleMining
+#  - BorgModuleMining
   - MechEquipmentDrill
   technologyPrerequisites:
   - Robotics
@@ -193,7 +193,7 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - BorgModuleLightReplacer
+#  - BorgModuleLightReplacer
   - BorgModuleAdvancedCleaning
   technologyPrerequisites:
   - Robotics
