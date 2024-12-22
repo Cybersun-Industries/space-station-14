@@ -1,3 +1,4 @@
+using Content.Server.GameTicking;
 using Content.Server.Popups;
 using Content.Shared.Administration;
 using Content.Shared.Mind;
@@ -30,6 +31,12 @@ namespace Content.Server.Ghost
                 shell.WriteLine(deniedMessage);
                 _entities.System<PopupSystem>()
                     .PopupEntity(deniedMessage, frozen, frozen);
+                return;
+            }
+
+            if(!_entities.System<GameTicker>().PlayerGameStatuses.TryGetValue(player.UserId, out var playerGameStatus) || playerGameStatus != Shared.GameTicking.PlayerGameStatus.JoinedGame)
+            {
+                shell.WriteLine("You have no JoinedGame, you can't ghost.");
                 return;
             }
 

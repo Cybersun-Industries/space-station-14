@@ -1,11 +1,11 @@
 ent-BaseChemistryEmptyVial = пробирка
     .desc = Маленькая пробирка.
-ent-VestineChemistryVial = { ent-BaseChemistryEmptyVial }
+ent-VestineChemistryVial = пробирка вестина
+    .desc = { ent-BaseChemistryEmptyVial.desc }
     .suffix = Вестин
+ent-RadiumChemistryVial = пробирка радиума
     .desc = { ent-BaseChemistryEmptyVial.desc }
-ent-RadiumChemistryVial = { ent-BaseChemistryEmptyVial }
-    .suffix = Радий
+    .suffix = Радиум
+ent-ChlorineChemistryVial = пробирка хлорина
     .desc = { ent-BaseChemistryEmptyVial.desc }
-ent-ChlorineChemistryVial = { ent-BaseChemistryEmptyVial }
-    .suffix = Хлор
-    .desc = { ent-BaseChemistryEmptyVial.desc }
+    .suffix = Хлорин

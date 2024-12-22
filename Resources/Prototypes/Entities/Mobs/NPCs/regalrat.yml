@@ -123,7 +123,7 @@
       gender: male
   - type: Sharp
   - type: TTS # Corvax-TTS
-    voice: Rat
+    voice: Oleg #Rat
 
 - type: entity
   id: MobRatKingBuff

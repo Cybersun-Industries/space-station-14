@@ -186,6 +186,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.SaveItemLocation);
 
             AddHeader("ui-options-header-interaction-adv");
+            AddButton(ContentKeyFunctions.ToggleStanding);
             AddButton(ContentKeyFunctions.SmartEquipBackpack);
             AddButton(ContentKeyFunctions.SmartEquipBelt);
             AddButton(ContentKeyFunctions.OpenBackpack);

@@ -1,7 +1,5 @@
 ent-AiHeld = { "" }
     .desc = Components added / removed from an entity that gets inserted into an AI core.
-ent-AiHeldIntellicard = { "" }
-    .desc = Components added / removed from an entity that gets inserted into an Intellicard.
 ent-AiHolder = { "" }
     .desc = Handles AI interactions across holocards + AI cores
 ent-AsimovCircuitBoard = law board (Crewsimov)
@@ -30,7 +28,7 @@ ent-AntimovCircuitBoard = law board (Antimov)
     .desc = An electronics board containing the Antimov lawset.
 ent-NutimovCircuitBoard = law board (Nutimov)
     .desc = An electronics board containing the Nutimov lawset.
-ent-Intellicard = intellicard
+ent-Intellicard = Intellicard
     .desc = A storage device for AIs.
     .suffix = Empty
 ent-PlayerStationAiEmpty = AI Core

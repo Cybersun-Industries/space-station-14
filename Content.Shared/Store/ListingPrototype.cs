@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.Actions;
 using Content.Shared.FixedPoint;
 using Content.Shared.Store.Components;
 using Content.Shared.StoreDiscount.Components;
@@ -173,7 +174,7 @@ public partial class ListingData : IEquatable<ListingData>
     [DataField]
     public object? ProductEvent;
 
-    [DataField]
+    [DataField("raiseProductEventOnUser")]
     public bool RaiseProductEventOnUser;
 
     /// <summary>
@@ -197,6 +198,10 @@ public partial class ListingData : IEquatable<ListingData>
     public bool Equals(ListingData? listing)
     {
         if (listing == null)
+            return false;
+
+        //simple conditions
+        if (ID != listing.ID)
             return false;
 
         //simple conditions
@@ -227,6 +232,33 @@ public partial class ListingData : IEquatable<ListingData>
         return true;
     }
 
+    /// <summary>
+    /// Creates a unique instance of a listing. ALWAWYS USE THIS WHEN ENUMERATING LISTING PROTOTYPES
+    /// DON'T BE DUMB AND MODIFY THE PROTOTYPES
+    /// </summary>
+    /// <returns>A unique copy of the listing data.</returns>
+    /*public object Clone()
+    {
+        return new ListingData
+        {
+            ID = ID,
+            Name = Name,
+            Description = Description,
+            Categories = Categories,
+            Cost = Cost,
+            Conditions = Conditions,
+            Icon = Icon,
+            Priority = Priority,
+            ProductEntity = ProductEntity,
+            ProductAction = ProductAction,
+            ProductUpgradeId = ProductUpgradeId,
+            ProductActionEntity = ProductActionEntity,
+            ProductEvent = ProductEvent,
+            PurchaseAmount = PurchaseAmount,
+            RestockTime = RestockTime,
+            RaiseProductEventOnUser = RaiseProductEventOnUser // backmen: vampires
+        };
+    }*/
 }
 
 /// <summary>

@@ -12,6 +12,7 @@
   recipeUnlocks:
   - WeaponProtoKineticAccelerator
   - ShuttleGunKineticCircuitboard
+  - WeaponGrapplingGun
   # These are roundstart but not replenishable for salvage
 
 - type: technology
@@ -172,6 +173,7 @@
   - ShuttleGunSvalinnMachineGunCircuitboard
   - ShuttleGunPerforatorCircuitboard
   - ShuttleGunFriendshipCircuitboard
+  - SalvageExpeditionsComputerCircuitboard
   technologyPrerequisites:
   - SalvageWeapons
 

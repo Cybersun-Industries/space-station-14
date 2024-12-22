@@ -1,4 +1,5 @@
 using Content.Server.GameTicking;
+using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Roles;

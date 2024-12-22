@@ -1,3 +1,3 @@
 ent-PlayerStationAiPilgrim = { ent-PlayerStationAi }
-    .suffix = Спавнер должности, Пилигрим
+    .suffix = Job spawn, Pilgrim
     .desc = { ent-PlayerStationAi.desc }

@@ -247,6 +247,7 @@ namespace Content.Shared.Preferences
             // Corvax-TTS-Start
             var voiceId = random.Pick(prototypeManager
                 .EnumeratePrototypes<TTSVoicePrototype>()
+                .Where(x=>x.RoundStart)
                 .Where(o => CanHaveVoice(o, sex)).ToArray()
             ).ID;
             // Corvax-TTS-End
@@ -479,6 +480,7 @@ namespace Content.Shared.Preferences
         {
             if (maybeOther is not HumanoidCharacterProfile other) return false;
             if (Name != other.Name) return false;
+            if (Voice != other.Voice) return false;
             if (Age != other.Age) return false;
             if (Sex != other.Sex) return false;
             if (Gender != other.Gender) return false;
@@ -736,7 +738,7 @@ namespace Content.Shared.Preferences
 
         public override bool Equals(object? obj)
         {
-            return ReferenceEquals(this, obj) || obj is HumanoidCharacterProfile other && Equals(other);
+            return ReferenceEquals(this, obj) || (obj is HumanoidCharacterProfile other && MemberwiseEquals(other));
         }
 
         public override int GetHashCode()
@@ -749,6 +751,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
             hashCode.Add(Species);
+            hashCode.Add(Voice);
             hashCode.Add(Age);
             hashCode.Add((int)Sex);
             hashCode.Add((int)Gender);

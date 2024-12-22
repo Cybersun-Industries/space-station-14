@@ -35,7 +35,7 @@
   parent: BaseMindRole
   id: MindRoleJob
   name: Job Role
-#  description:
+  #  description:
   # MindRoleComponent.JobPrototype is filled by SharedJobSystem
 
 # Subverted Silicon
@@ -54,7 +54,7 @@
   parent: BaseMindRoleAntag
   id: MindRoleDragon
   name: Dragon Role
-#  description:
+  #  description:
   components:
   - type: MindRole
     antagPrototype: Dragon
@@ -68,7 +68,7 @@
   parent: BaseMindRoleAntag
   id: MindRoleNinja
   name: Space Ninja Role
-#  description: mind-role-ninja-description
+  #  description: mind-role-ninja-description
   components:
   - type: MindRole
     antagPrototype: SpaceNinja
@@ -80,7 +80,7 @@
   parent: BaseMindRoleAntag
   id: MindRoleNukeops
   name: Nukeops Operative Role
-#  description: mind-role-nukeops-description
+  #  description: mind-role-nukeops-description
   components:
   - type: MindRole
     exclusiveAntag: true
@@ -91,7 +91,7 @@
   parent: MindRoleNukeops
   id: MindRoleNukeopsMedic
   name: Nukeops Medic Role
-#  description: mind-role-nukeops-medic-description
+  #  description: mind-role-nukeops-medic-description
   components:
   - type: MindRole
     antagPrototype: NukeopsMedic
@@ -100,7 +100,7 @@
   parent: MindRoleNukeops
   id: MindRoleNukeopsCommander
   name: Nukeops Commander Role
-#  description: mind-role-nukeops-commander-description
+  #  description: mind-role-nukeops-commander-description
   components:
   - type: MindRole
     antagPrototype: NukeopsCommander
@@ -110,7 +110,7 @@
   parent: BaseMindRoleAntag
   id: MindRoleHeadRevolutionary
   name: Head Revolutionary Role
-#  description: mind-role-head-revolutionary-description
+  #  description: mind-role-head-revolutionary-description
   components:
   - type: MindRole
     antagPrototype: HeadRev
@@ -121,7 +121,7 @@
   parent: MindRoleHeadRevolutionary
   id: MindRoleRevolutionary
   name: Revolutionary Role
-#  description: mind-role-revolutionary-description
+  #  description: mind-role-revolutionary-description
   components:
   - type: MindRole
     antagPrototype: Rev
@@ -131,7 +131,7 @@
   parent: BaseMindRoleAntag
   id: MindRoleThief
   name: Thief Role
-#  description: mind-role-thief-description
+  #  description: mind-role-thief-description
   components:
   - type: MindRole
     antagPrototype: Thief
@@ -142,7 +142,7 @@
   parent: BaseMindRoleAntag
   id: MindRoleTraitor
   name: Traitor Role
-#  description: mind-role-traitor-description
+  #  description: mind-role-traitor-description
   components:
   - type: MindRole
     antagPrototype: Traitor
@@ -153,7 +153,7 @@
   parent: MindRoleTraitor
   id: MindRoleTraitorSleeper
   name: Sleeper Agent Role
-#  description: mind-role-traitor-sleeper-description
+  #  description: mind-role-traitor-sleeper-description
   components:
   - type: MindRole
     antagPrototype: TraitorSleeper
@@ -163,7 +163,7 @@
   parent: BaseMindRoleAntag
   id: MindRoleInitialInfected
   name: Initial Infected Role
-#  description: mind-role-initial-infected-description
+  #  description: mind-role-initial-infected-description
   components:
   - type: MindRole
     antagPrototype: InitialInfected
@@ -174,7 +174,7 @@
   parent: BaseMindRoleAntag
   id: MindRoleZombie
   name: Zombie Role
-#  description: mind-role-zombie-description
+  #  description: mind-role-zombie-description
   components:
   - type: MindRole
     antagPrototype: Zombie

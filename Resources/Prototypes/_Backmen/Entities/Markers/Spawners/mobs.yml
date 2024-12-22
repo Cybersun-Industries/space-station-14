@@ -1,0 +1,30 @@
+- type: entity
+  name: Space Carp Spawner
+  id: SpawnMobCarpSyndicate
+  suffix: Syndicate
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: icon
+      sprite: Mobs/Aliens/Carps/space.rsi
+    - state: syndicate
+      sprite: Backmen/Markers/factions.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCarpFactionSyndicate
+
+- type: entity
+  name: Bluespace Goat Spawner
+  id: SpawnMobBluespaceGoat
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: goat
+      sprite: Backmen/Mobs/Animals/bluespacegoat.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGoatBluespace

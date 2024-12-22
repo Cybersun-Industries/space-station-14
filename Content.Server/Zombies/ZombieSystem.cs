@@ -229,6 +229,8 @@ namespace Content.Server.Zombies
 
                 if (!TryComp<MobStateComponent>(entity, out var mobState))
                     continue;
+                if (HasComp<Backmen.Drone.BSSDroneComponent>(entity)) //Backmen
+                    continue;
 
                 if (HasComp<ZombieComponent>(entity))
                 {

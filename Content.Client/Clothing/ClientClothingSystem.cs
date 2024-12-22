@@ -37,7 +37,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         {"ears", "EARS"},
         {"mask", "MASK"},
         {"outerClothing", "OUTERCLOTHING"},
-        {Jumpsuit, "INNERCLOTHING"},
+        {"jumpsuit", "INNERCLOTHING"},
         {"neck", "NECK"},
         {"back", "BACKPACK"},
         {"belt", "BELT"},
@@ -47,6 +47,9 @@ public sealed class ClientClothingSystem : ClothingSystem
         {"pocket1", "POCKET1"},
         {"pocket2", "POCKET2"},
         {"suitstorage", "SUITSTORAGE"},
+        {"underpants", "UNDERPANTS"}, //backmen:underclothing
+        {"undershirt", "UNDERSHIRT"}, //backmen:underclothing
+        {"socks", "SOCKS"}, //backmen:underclothing
     };
 
     [Dependency] private readonly IResourceCache _cache = default!;
@@ -79,9 +82,12 @@ public sealed class ClientClothingSystem : ClothingSystem
         // No clothing equipped -> make sure the layer is hidden, though this should already be handled by on-unequip.
         if (args.Sprite.LayerMapTryGet(HumanoidVisualLayers.StencilMask, out var layer))
         {
-            DebugTools.Assert(!args.Sprite[layer].Visible);
             args.Sprite.LayerSetVisible(layer, false);
         }
+        //if (args.Sprite.LayerMapTryGet(HumanoidVisualLayers.LegsMask, out var jumpsuitLayer))
+        //{
+        //    args.Sprite.LayerSetVisible(jumpsuitLayer, clothing.HidePants);
+        //}
     }
 
     private void OnGetVisuals(EntityUid uid, ClothingComponent item, GetEquipmentVisualsEvent args)
@@ -320,8 +326,7 @@ public sealed class ClientClothingSystem : ClothingSystem
                 if (layerData.State is not null && inventory.SpeciesId is not null && layerData.State.EndsWith(inventory.SpeciesId))
                     continue;
 
-                if (_displacement.TryAddDisplacement(displacementData, sprite, index, key, revealedLayers))
-                    index++;
+                _displacement.TryAddDisplacement(displacementData, sprite, index, key, revealedLayers);
             }
         }
 

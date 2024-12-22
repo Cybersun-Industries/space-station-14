@@ -27,6 +27,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using System.Globalization;
+using Content.Shared.GameTicking;
 
 namespace Content.Server.Bed.Cryostorage;
 

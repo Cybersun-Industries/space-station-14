@@ -50,6 +50,18 @@ public sealed class CCCVars
         CVarDef.Create("tts.volume", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
+    /// VoiceId for Announcement TTS
+    /// </summary>
+    public static readonly CVarDef<string> TTSAnnounceVoiceId =
+        CVarDef.Create("tts.announce_voice", "Announcer", CVar.SERVERONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Default volume setting of TTS Announce sound
+    /// </summary>
+    public static readonly CVarDef<float> TTSAnnounceVolume =
+        CVarDef.Create("tts.announce_volume", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
     /// Count of in-memory cached tts voice lines.
     /// </summary>
     public static readonly CVarDef<int> TTSMaxCache =

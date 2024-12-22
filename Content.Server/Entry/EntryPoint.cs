@@ -1,3 +1,4 @@
+using Content.Corvax.Interfaces.Server;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -6,6 +7,7 @@ using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.Corvax.GuideGenerator;
+using Content.Server.Corvax;
 using Content.Server.Corvax.TTS;
 using Content.Server.Database;
 using Content.Server.EUI;
@@ -109,6 +111,14 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<TTSManager>().Initialize(); // Corvax-TTS
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
                 IoCManager.Resolve<ServerApi>().Initialize();
+
+                // start-backmen: IoC
+                //IoCManager.Resolve<Content.Corvax.Interfaces.Server.IServerSponsorsManager>().Initialize();
+                IoCManager.Resolve<IServerDiscordAuthManager>().Initialize();
+                IoCManager.Resolve<Content.Corvax.Interfaces.Shared.ISharedSponsorsManager>().Initialize();
+                IoCManager.Resolve<Content.Corvax.Interfaces.Server.IServerJoinQueueManager>().Initialize();
+                IoCManager.Resolve<Content.Corvax.Interfaces.Shared.ISharedLoadoutsManager>().Initialize();
+                // end-backmen: IoC
 
                 _voteManager.Initialize();
                 _updateManager.Initialize();
