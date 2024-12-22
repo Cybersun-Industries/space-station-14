@@ -125,5 +125,5 @@ public enum LogType
     /// <summary>
     /// A ghost warped to an entity through the ghost warp menu.
     /// </summary>
-    GhostWarp = 95,
+    GhostWarp = 96,
 }
