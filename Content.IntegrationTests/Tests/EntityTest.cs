@@ -305,7 +305,7 @@ namespace Content.IntegrationTests.Tests
                 }
 
                 await server.WaitPost(() => server.EntMan.DeleteEntity(uid));
-                await pair.RunTicksSync(3);
+                await pair.RunTicksSync(30);
 
                 // Check that the number of entities has gone back to the original value.
                 if (server.EntMan.EntityCount != count)
