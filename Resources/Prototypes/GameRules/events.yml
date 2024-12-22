@@ -23,6 +23,8 @@
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: VentClog
+    - id: StarSpawn #Radium gigaobjects
+    - id: RedStarSpawn #Radium gigaobjects
 
 - type: entityTable
   id: BasicAntagEventsTable
