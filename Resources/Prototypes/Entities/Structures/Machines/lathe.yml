@@ -350,6 +350,10 @@
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
       - ArtificialBluespaceCrystal
+      # RADIUM-FIX:
+      - WeaponGrapplingGun
+      - HandTeleporter1
+      - CoreSilver
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -521,6 +525,8 @@
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
       - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
+      # RADIUM-FIX:
+      - SalvageExpeditionsComputerCircuitboard
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
@@ -651,6 +657,8 @@
     - HamtrLLeg
     - HamtrRLeg
     - VimHarness
+    # RADIUM-FIX:
+    - MechEquipmentDrill
   - type: MaterialStorage
     whitelist:
       tags:
@@ -947,6 +955,9 @@
       - BluespaceBeaker
       - SyringeBluespace
       - SyringeCryostasis
+      # RADIUM-FIX:
+      - BluespacePillCanister
+      - HandheldCrewMonitor
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
