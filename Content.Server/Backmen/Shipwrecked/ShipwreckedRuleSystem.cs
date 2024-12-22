@@ -147,6 +147,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly SharedPinpointerSystem _pinpointerSystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly SharedSalvageSystem _salvageSystem = default!;
 
     public override void Initialize()
     {
@@ -427,7 +428,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
         }
 
         // planetName
-        var planetName = SharedSalvageSystem.GetFTLName(_prototypeManager.Index<DatasetPrototype>(PlanetNames), seed);
+        var planetName = _salvageSystem.GetFTLName(_prototypeManager.Index<LocalizedDatasetPrototype>(PlanetNames), seed);
         _metadata.SetEntityName(planetMapUid, planetName);
 
         // Позиция карта (точка начала)
@@ -1798,7 +1799,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
                 continue;
             if (TryComp<AirlockComponent>(row, out var airlock) && !airlock.EmergencyAccess)
             {
-                _airlockSystem.ToggleEmergencyAccess(row, airlock);
+                _airlockSystem.SetEmergencyAccess((row, airlock), !airlock.EmergencyAccess);
                 continue;
             }
             _lockSystem.Unlock(row, uid);
@@ -1834,7 +1835,7 @@ public sealed class ShipwreckedRuleSystem : GameRuleSystem<ShipwreckedRuleCompon
             }
             if (TryComp<AirlockComponent>(row, out var airlock) && !airlock.EmergencyAccess)
             {
-                _airlockSystem.ToggleEmergencyAccess(row, airlock);
+                _airlockSystem.SetEmergencyAccess((row, airlock), !airlock.EmergencyAccess);
                 continue;
             }
             _lockSystem.Unlock(row, uid);
