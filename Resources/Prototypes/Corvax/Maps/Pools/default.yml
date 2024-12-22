@@ -6,15 +6,16 @@
   - CorvaxAvrite
   - CorvaxAstra
   - CorvaxPilgrim
-  #- CorvaxGlacier
+  - CorvaxGlacier
   - Box
   # Midpop
   - CorvaxPaper
-  - CorvaxPearl
+  #- CorvaxPearl — До реворка
+  - CorvaxOutpost
   - CorvaxAwesome
   - Bagel
   - Marathon
-  #- Train
+  #- Train — До реворка оффами
   # Lowpop
   - CorvaxSilly
   - CorvaxMaus
