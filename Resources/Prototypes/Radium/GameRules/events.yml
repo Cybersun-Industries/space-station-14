@@ -14,7 +14,7 @@
 #shuttle
   - type: RuleGrids
   - type: LoadMapRule
-    mapPath: "/Maps/Radium/voxbase.yml"
+    mapPath: "/Maps/Radium/voxshuttle.yml"
 #objectives
   - type: AntagRandomObjectives
     sets:

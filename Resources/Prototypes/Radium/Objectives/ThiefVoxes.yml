@@ -1,17 +1,17 @@
 - type: entity
-  abstract: true
+  categories: [ HideSpawnMenu ]
   parent: BaseObjective
   id: VoxBaseThiefObjective
   components:
   - type: Objective
     issuer: objective-issuer-thief
   - type: RoleRequirement
-    roles:
-      mindRoles:
-      - ThiefVoxesRole
+      roles:
+        components:
+          - ThiefVoxesRole
 
 - type: entity
-  abstract: true
+  categories: [ HideSpawnMenu ]
   parent: [VoxBaseThiefObjective, BaseStealObjective]
   id: VoxBaseThiefStealObjective
   components:
@@ -21,7 +21,7 @@
     checkStealAreas: true
 
 - type: entity
-  abstract: true
+  categories: [ HideSpawnMenu ]
   parent: [VoxBaseThiefObjective, VoxBaseThiefStealObjective]
   id: VoxBaseThiefStealCollectionObjective
   components:
@@ -29,7 +29,7 @@
     verifyMapExistence: true
 
 - type: entity
-  abstract: true
+  categories: [ HideSpawnMenu ]
   parent: [VoxBaseThiefObjective, VoxBaseThiefStealObjective]
   id: VoxBaseThiefStealStructureObjective
   components:
@@ -39,7 +39,7 @@
     difficulty: 2 # it's hard to hide
 
 - type: entity
-  abstract: true
+  categories: [ HideSpawnMenu ]
   parent: [VoxBaseThiefObjective, VoxBaseThiefStealObjective]
   id: VoxBaseThiefStealAnimalObjective
   components:
