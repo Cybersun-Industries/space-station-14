@@ -18,7 +18,7 @@ public abstract class SharedBiomeSystem : EntitySystem
     [Dependency] protected readonly ITileDefinitionManager TileDefManager = default!;
     [Dependency] private readonly TileSystem _tile = default!;
 
-    protected const byte ChunkSize = 8;
+    public const byte ChunkSize = 8;
 
     private T Pick<T>(List<T> collection, float value)
     {
@@ -183,7 +183,7 @@ public abstract class SharedBiomeSystem : EntitySystem
     }
 
 
-    private bool TryGetEntity(Vector2i indices, List<IBiomeLayer> layers, Tile tileRef, int seed, MapGridComponent grid,
+    public bool TryGetEntity(Vector2i indices, List<IBiomeLayer> layers, Tile tileRef, int seed, MapGridComponent grid,
         [NotNullWhen(true)] out string? entity)
     {
         var tileId = TileDefManager[tileRef.TypeId].ID;

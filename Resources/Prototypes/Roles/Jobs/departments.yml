@@ -39,7 +39,7 @@
   description: department-CentralCommand-description
   color: "#0c344d"
   roles:
-  - CentralCommandOfficial
+#  - JobCentralCommandOfficial
   - CBURN
   - ERTLeader
   - ERTChaplain
@@ -65,7 +65,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
-  - CentralCommandOfficial
+#  - JobCentralCommandOfficial
   - CBURN
   - ERTLeader
   - ERTChaplain

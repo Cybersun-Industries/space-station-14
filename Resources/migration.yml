@@ -451,3 +451,91 @@ BaseAdvancedPen: Pen
 # 2024-10-05 - Corvax
 SheetPrinter: SheetPaper
 SheetPrinter1: SheetPaper1
+
+# 2024-10-09
+# Removal of separate borg chassis parts, replace them with generic borg parts.
+LeftArmBorgEngineer: LeftArmBorg
+RightArmBorgEngineer: RightArmBorg
+LeftLegBorgEngineer: LeftLegBorg
+RightLegBorgEngineer: RightLegBorg
+HeadBorgEngineer: LightHeadBorg
+TorsoBorgEngineer: TorsoBorg
+
+LeftArmBorgMedical: LeftArmBorg
+RightArmBorgMedical: RightArmBorg
+LeftLegBorgMedical: LeftLegBorg
+RightLegBorgMedical: RightLegBorg
+HeadBorgMedical: LightHeadBorg
+TorsoBorgMedical: TorsoBorg
+
+LeftArmBorgMining: LeftArmBorg
+RightArmBorgMining: RightArmBorg
+LeftLegBorgMining: LeftLegBorg
+RightLegBorgMining: RightLegBorg
+HeadBorgMining: LightHeadBorg
+TorsoBorgMining: TorsoBorg
+
+LeftArmBorgService: LeftArmBorg
+RightArmBorgService: RightArmBorg
+LeftLegBorgService: LeftLegBorg
+RightLegBorgService: RightLegBorg
+HeadBorgService: LightHeadBorg
+TorsoBorgService: TorsoBorg
+
+LeftLegBorgJanitor: LeftLegBorg
+RightLegBorgJanitor: RightLegBorg
+HeadBorgJanitor: LightHeadBorg
+TorsoBorgJanitor: TorsoBorg
+
+# 2024-11-17
+PresentRandomAsh: PresentRandomCoal
+
+# 2024-11-19
+CrateCrewMonitoringBoards: CrateCrewMonitoring
+
+# 2024-11-25
+CrateSlimepersonLifeSupport: CrateNitrogenInternals
+
+# 2024-11-11 - Radium
+Shower: null
+RandomPsionicPowerPool: null
+PsionicsDisabled: null
+PsionicallyInsulated: null
+SeeAll: null
+ActionMetapsionicPulse: null
+ActionPsionicInvisibility: null
+ActionPsionicInvisibilityOff: null
+ActionMindSwap: null
+ActionMindSwapReturn: null
+ActionDispel: null
+ActionMassSleep: null
+ActionTelegnosis: null
+ActionTelegnosisReturn: null
+ActionPsionicRegeneration: null
+ActionNoosphericZap: null
+ActionPyrokinesis: null
+ActionPsychokinesis: null
+PsionicRegenerationEssence: null
+LotophagoiOil: null
+SoulbreakerToxin: null
+CreateNormalityCrystal: null
+Ectoplasm: null
+TableWoodReinforced: null
+ComfyDarkChair: null
+chairDarkComfy: null
+ClothingHeadCage: null
+MetempsychoticMachineCircuitboard: null
+AntiPsychicKnife: null
+ClothingHeadHelmetInsulated: null
+ProtolatheCashMachineCircuitboard: null
+LightningNoospheric: null
+
+Eftpos: null
+EftposCargo: null
+EftposCivilian: null
+EftposCommand: null
+EftposEngineering: null
+EftposMedical: null
+EftposSecurity: null
+EftposScience: null
+EftposSpecific: null

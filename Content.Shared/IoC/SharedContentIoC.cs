@@ -1,5 +1,7 @@
-﻿using Content.Shared.Humanoid.Markings;
+﻿using Content.Corvax.Interfaces.Shared;
+using Content.Shared.Humanoid.Markings;
 using Content.Shared.Localizations;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.IoC
 {

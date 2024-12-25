@@ -1,6 +1,6 @@
 ent-Window = окно
     .desc = Смотри не заляпай.
-ent-TintedWindow = матовое окно
+ent-TintedWindow = тонированное окно
     .desc = { ent-Window.desc }
 ent-WindowRCDResistant = { ent-Window }
     .desc = { ent-Window.desc }

@@ -17,10 +17,11 @@ public sealed partial class TTSSystem
     {
         _rateLimitManager.Register(RateLimitKey,
             new RateLimitRegistration(
+
                 CCCVars.TTSRateLimitPeriod,
                 CCCVars.TTSRateLimitCount,
-                RateLimitPlayerLimited)
-            );
+                RateLimitPlayerLimited
+            ));
     }
 
     private void RateLimitPlayerLimited(ICommonSession player)

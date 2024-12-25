@@ -9,6 +9,7 @@ using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Components;
+using Content.Server.Store.Components;
 using Content.Server.Store.Systems;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mobs;
@@ -31,13 +32,15 @@ namespace Content.Server.GameTicking.Rules;
 
 public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 {
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly EmergencyShuttleSystem _emergency = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
+    [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+
+    [Dependency] private readonly Backmen.Arrivals.CentcommSystem _centcommSystem = default!; // backmen: centcom
 
     [ValidatePrototypeId<CurrencyPrototype>]
     private const string TelecrystalCurrencyPrototype = "Telecrystal";
@@ -57,8 +60,6 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         SubscribeLocalEvent<NukeOperativeComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<NukeOperativeComponent, EntityZombifiedEvent>(OnOperativeZombified);
 
-        SubscribeLocalEvent<NukeopsRoleComponent, GetBriefingEvent>(OnGetBriefing);
-
         SubscribeLocalEvent<ConsoleFTLAttemptEvent>(OnShuttleFTLAttempt);
         SubscribeLocalEvent<WarDeclaredEvent>(OnWarDeclared);
         SubscribeLocalEvent<CommunicationConsoleCallShuttleAttemptEvent>(OnShuttleCallAttempt);
@@ -67,9 +68,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
         SubscribeLocalEvent<NukeopsRuleComponent, RuleLoadedGridsEvent>(OnRuleLoadedGrids);
     }
 
-    protected override void Started(EntityUid uid,
-        NukeopsRuleComponent component,
-        GameRuleComponent gameRule,
+    protected override void Started(EntityUid uid, NukeopsRuleComponent component, GameRuleComponent gameRule,
         GameRuleStartedEvent args)
     {
         var eligible = new List<Entity<StationEventEligibleComponent, NpcFactionMemberComponent>>();
@@ -89,9 +88,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     }
 
     #region Event Handlers
-    protected override void AppendRoundEndText(EntityUid uid,
-        NukeopsRuleComponent component,
-        GameRuleComponent gameRule,
+    protected override void AppendRoundEndText(EntityUid uid, NukeopsRuleComponent component, GameRuleComponent gameRule,
         ref RoundEndTextAppendEvent args)
     {
         var winText = Loc.GetString($"nukeops-{component.WinType.ToString().ToLower()}");
@@ -130,8 +127,19 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
                 if (TryComp(nukeops.TargetStation, out StationDataComponent? data))
                 {
                     var correctStation = false;
+                    var centcomStation = false; // backmen: centcom
                     foreach (var grid in data.Grids)
                     {
+                        // start-backmen: centcom
+                        if (_centcommSystem.CentComGrid == grid)
+                        {
+                            nukeops.WinConditions.Add(WinCondition.NukeExplodedOnCentComLocation);
+                            SetWinType((uid,nukeops), WinType.OpsMajor, true);
+                            centcomStation = true;
+                            break;
+                        }
+                        // end-backmen: centcom
+
                         if (grid != ev.OwningStation)
                         {
                             continue;
@@ -142,9 +150,11 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
                         correctStation = true;
                     }
 
-                    if (correctStation)
+                    if (correctStation || centcomStation) // backmen: centcom
                         continue;
                 }
+
+
 
                 nukeops.WinConditions.Add(WinCondition.NukeExplodedOnIncorrectLocation);
             }
@@ -233,8 +243,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
         // If the disk is currently at Central Command, the crew wins - just slightly.
         // This also implies that some nuclear operatives have died.
-        SetWinType(ent,
-            diskAtCentCom
+        SetWinType(ent, diskAtCentCom
             ? WinType.CrewMinor
             : WinType.OpsMinor);
         ent.Comp.WinConditions.Add(diskAtCentCom
@@ -463,11 +472,8 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             : WinCondition.AllNukiesDead);
 
         SetWinType(ent, WinType.CrewMajor, false);
-        _roundEndSystem.DoRoundEndBehavior(nukeops.RoundEndBehavior,
-            nukeops.EvacShuttleTime,
-            nukeops.RoundEndTextSender,
-            nukeops.RoundEndTextShuttleCall,
-            nukeops.RoundEndTextAnnouncement);
+        _roundEndSystem.DoRoundEndBehavior(
+            nukeops.RoundEndBehavior, nukeops.EvacShuttleTime, nukeops.RoundEndTextSender, nukeops.RoundEndTextShuttleCall, nukeops.RoundEndTextAnnouncement);
 
         // prevent it called multiple times
         nukeops.RoundEndBehavior = RoundEndBehavior.Nothing;
@@ -475,21 +481,15 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 
     private void OnAfterAntagEntSelected(Entity<NukeopsRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
     {
-        var target = (ent.Comp.TargetStation is not null) ? Name(ent.Comp.TargetStation.Value) : "the target";
+        if (ent.Comp.TargetStation is not { } station)
+            return;
 
         RemComp<PacifiedComponent>(args.EntityUid); // Corvax-DionaPacifist: Allow dionas nukes to harm
-        _antag.SendBriefing(args.Session,
-            Loc.GetString("nukeops-welcome",
-                ("station", target),
+        _antag.SendBriefing(args.Session, Loc.GetString("nukeops-welcome",
+                ("station", station),
                 ("name", Name(ent))),
             Color.Red,
             ent.Comp.GreetSoundNotification);
-    }
-
-    private void OnGetBriefing(Entity<NukeopsRoleComponent> role, ref GetBriefingEvent args)
-    {
-        // TODO Different character screen briefing for the 3 nukie types
-        args.Append(Loc.GetString("nukeops-briefing"));
     }
 
     /// <remarks>

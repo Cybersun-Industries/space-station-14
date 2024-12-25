@@ -1,0 +1,19 @@
+- type: entity
+  id: BecomeGolemObjective
+  parent: BaseTraitorObjective
+  name: Get golemized
+  description: We'd like to understand more of the golemization process. Become a golem, survive, and we'll debrief you.
+  components:
+  # - type: NotJobsRequirement
+    # jobs:
+      # - ResearchDirector
+      # - ResearchAssistant
+      # - Scientist
+      # - Chaplain
+  - type: Objective
+    difficulty: 1
+    #unique: false
+    icon:
+      sprite: Backmen/Mobs/Species/Golem/cult.rsi
+      state: full
+  - type: BecomeGolemCondition

@@ -27,6 +27,9 @@ alerts-weightless-desc =
     Gravity has ceased affecting you, and you're floating around aimlessly. Find something sturdy to hold onto, or throw or shoot something in a direction opposite of you.
     Mag-boots or jetpacks would help you move with more control.
 
+alerts-walking-name = Walking
+alerts-walking-desc = You are walking, moving at a slow pace.
+
 alerts-stunned-name = [color=yellow]Stunned[/color]
 alerts-stunned-desc = You're [color=yellow]stunned[/color]! Something is impairing your ability to move or interact with objects.
 
@@ -110,3 +113,10 @@ alerts-revenant-essence-desc = The power of souls. It sustains you and is used f
 
 alerts-revenant-corporeal-name = Corporeal
 alerts-revenant-corporeal-desc = You have manifested physically. People around you can see and hurt you.
+
+alerts-changeling-chemicals-name = Chemicals
+alerts-changeling-chemicals-desc = Spend chemicals to use your abilities. Slowly regenerates.
+
+alerts-changeling-biomass-name = Biomass
+alerts-changeling-biomass-desc =
+    This is your health. If it reaches 0 - it's [color=red]game over[/color]. Absorb humanoids to recover some of it.

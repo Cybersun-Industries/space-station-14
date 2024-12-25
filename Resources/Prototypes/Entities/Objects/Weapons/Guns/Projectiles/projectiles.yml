@@ -5,7 +5,7 @@
   - type: TimedDespawn
     lifetime: 0.4
   - type: Sprite
-    drawdepth: Effects
+    drawdepth: BelowMobs
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
@@ -466,6 +466,29 @@
     lifetime: 0.4
 
 - type: entity
+  id: BulletSpike
+  name: spike
+  parent: BaseBulletHighVelocity
+  categories: [ HideSpawnMenu ]
+  description:
+  components:
+    - type: Sprite
+      netsync: false
+      noRot: false
+      sprite: Objects/Weapons/Guns/Projectiles/spike.rsi
+      layers:
+        - state: spike
+          shader: unshaded
+    - type: Projectile
+      impactEffect: BulletImpactEffectKinetic
+      damage:
+        types:
+          Piercing: 19
+    # Short lifespan
+    - type: TimedDespawn
+      lifetime: 1
+
+- type: entity
   parent: BaseBullet
   id: AnomalousParticleDelta
   name: delta particles
@@ -906,6 +929,41 @@
             - HighImpassable
     - type: GrapplingProjectile
 
+#BackmenCultOfFlash-start
+- type: entity
+  id: BaseBulletHighVelocity
+  name: base bullet high-velocity
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Projectile
+      damage:
+        types:
+          Piercing: 17
+#BackmenCultOfFlash-end
+
+- type: entity
+  id: BulletRobotBall
+  name: rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: ball
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: DemolitionCharge
+    maxIntensity: 9
+    intensitySlope: 3
+    totalIntensity: 10
+    maxTileBreak: 0
+  - type: PointLight
+    radius: 1
+    color: orange
+    energy: 0.5
+
 - type: entity
   name : disabler bolt smg
   id: BulletDisablerSmg
@@ -983,7 +1041,7 @@
       - HideContextMenu
 
 - type: entity
-  name: laser bolt 
+  name: laser bolt
   id: BulletLaser
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
@@ -1029,7 +1087,7 @@
   - type: ProjectileSpread
     proto: BulletLaser
     count: 5 #65 heat damage if you hit all your shots, but wide spread
-    spread: 30 
+    spread: 30
 
 - type: entity
   name: narrow laser barrage
@@ -1051,4 +1109,4 @@
   - type: ProjectileSpread
     proto: BulletDisablerSmg
     count: 3 #bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
-    spread: 9 
+    spread: 9

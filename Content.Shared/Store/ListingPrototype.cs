@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.Actions;
 using Content.Shared.FixedPoint;
 using Content.Shared.Store.Components;
 using Content.Shared.StoreDiscount.Components;
@@ -39,7 +40,8 @@ public partial class ListingData : IEquatable<ListingData>
         other.Categories,
         other.OriginalCost,
         other.RestockTime,
-        other.DiscountDownTo
+        other.DiscountDownTo,
+        other.DisableRefund
     )
     {
 
@@ -63,7 +65,8 @@ public partial class ListingData : IEquatable<ListingData>
         HashSet<ProtoId<StoreCategoryPrototype>> categories,
         IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2> originalCost,
         TimeSpan restockTime,
-        Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> dataDiscountDownTo
+        Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> dataDiscountDownTo,
+        bool disableRefund
     )
     {
         Name = name;
@@ -84,6 +87,7 @@ public partial class ListingData : IEquatable<ListingData>
         OriginalCost = originalCost;
         RestockTime = restockTime;
         DiscountDownTo = new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>(dataDiscountDownTo);
+        DisableRefund = disableRefund;
     }
 
     [ViewVariables]
@@ -173,7 +177,7 @@ public partial class ListingData : IEquatable<ListingData>
     [DataField]
     public object? ProductEvent;
 
-    [DataField]
+    [DataField("raiseProductEventOnUser")]
     public bool RaiseProductEventOnUser;
 
     /// <summary>
@@ -194,9 +198,19 @@ public partial class ListingData : IEquatable<ListingData>
     [DataField]
     public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> DiscountDownTo = new();
 
+    /// <summary>
+    /// Whether or not to disable refunding for the store when the listing is purchased from it.
+    /// </summary>
+    [DataField]
+    public bool DisableRefund = false;
+
     public bool Equals(ListingData? listing)
     {
         if (listing == null)
+            return false;
+
+        //simple conditions
+        if (ID != listing.ID)
             return false;
 
         //simple conditions
@@ -227,6 +241,33 @@ public partial class ListingData : IEquatable<ListingData>
         return true;
     }
 
+    /// <summary>
+    /// Creates a unique instance of a listing. ALWAWYS USE THIS WHEN ENUMERATING LISTING PROTOTYPES
+    /// DON'T BE DUMB AND MODIFY THE PROTOTYPES
+    /// </summary>
+    /// <returns>A unique copy of the listing data.</returns>
+    /*public object Clone()
+    {
+        return new ListingData
+        {
+            ID = ID,
+            Name = Name,
+            Description = Description,
+            Categories = Categories,
+            Cost = Cost,
+            Conditions = Conditions,
+            Icon = Icon,
+            Priority = Priority,
+            ProductEntity = ProductEntity,
+            ProductAction = ProductAction,
+            ProductUpgradeId = ProductUpgradeId,
+            ProductActionEntity = ProductActionEntity,
+            ProductEvent = ProductEvent,
+            PurchaseAmount = PurchaseAmount,
+            RestockTime = RestockTime,
+            RaiseProductEventOnUser = RaiseProductEventOnUser // backmen: vampires
+        };
+    }*/
 }
 
 /// <summary>
@@ -287,7 +328,8 @@ public sealed partial class ListingDataWithCostModifiers : ListingData
             listingData.Categories,
             listingData.OriginalCost,
             listingData.RestockTime,
-            listingData.DiscountDownTo
+            listingData.DiscountDownTo,
+            listingData.DisableRefund
         )
     {
     }

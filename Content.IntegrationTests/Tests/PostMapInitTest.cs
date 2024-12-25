@@ -52,9 +52,9 @@ namespace Content.IntegrationTests.Tests
             "CorvaxOutpost",
             "CorvaxAstra",
             "CorvaxGelta",
-			"CorvaxMaus",
-			"CorvaxIshimura",
-			"CorvaxPaper",
+            "CorvaxMaus",
+            "CorvaxIshimura",
+            "CorvaxPaper",
             "CorvaxPilgrim",
             "CorvaxSplit",
             "CorvaxTerra",
@@ -80,7 +80,8 @@ namespace Content.IntegrationTests.Tests
             "Reach",
             "Train",
             "Oasis",
-            "Cog"
+            "Cog",
+            "Amber"
         };
 
         /// <summary>
@@ -138,7 +139,8 @@ namespace Content.IntegrationTests.Tests
             var mapFolder = new ResPath("/Maps");
             var maps = resourceManager
                 .ContentFindFiles(mapFolder)
-                .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
+                .Where(filePath =>
+                    filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
                 .ToArray();
 
             foreach (var map in maps)
@@ -167,6 +169,7 @@ namespace Content.IntegrationTests.Tests
 
                 Assert.That(postMapInit, Is.False, $"Map {map.Filename} was saved postmapinit");
             }
+
             await pair.CleanReturnAsync();
         }
 
@@ -236,12 +239,14 @@ namespace Content.IntegrationTests.Tests
                     Assert.That(mapLoader.TryLoad(shuttleMap, shuttlePath.ToString(), out var roots));
                     EntityUid shuttle = default!;
                     Assert.DoesNotThrow(() =>
-                    {
-                        shuttle = roots.First(uid => entManager.HasComponent<MapGridComponent>(uid));
-                    }, $"Failed to load {shuttlePath}");
+                        {
+                            shuttle = roots.First(uid => entManager.HasComponent<MapGridComponent>(uid));
+                        },
+                        $"Failed to load {shuttlePath}");
                     Assert.That(
                         shuttleSystem.TryFTLDock(shuttle,
-                            entManager.GetComponent<ShuttleComponent>(shuttle), targetGrid.Value),
+                            entManager.GetComponent<ShuttleComponent>(shuttle),
+                            targetGrid.Value),
                         $"Unable to dock {shuttlePath} to {mapProto}");
 #pragma warning restore NUnit2045
                 }
@@ -278,7 +283,9 @@ namespace Content.IntegrationTests.Tests
 
                     jobs.ExceptWith(spawnPoints);
 
-                    Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
+                    Assert.That(jobs,
+                        Is.Empty,
+                        $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
                 }
 
                 try
@@ -296,7 +303,6 @@ namespace Content.IntegrationTests.Tests
         }
 
 
-
         private static int GetCountLateSpawn<T>(List<EntityUid> gridUids, IEntityManager entManager)
             where T : ISpawnPoint, IComponent
         {
@@ -305,11 +311,11 @@ namespace Content.IntegrationTests.Tests
 #nullable enable
             while (queryPoint.MoveNext(out T? comp, out var xform))
             {
-                var spawner = (ISpawnPoint) comp;
+                var spawner = (ISpawnPoint)comp;
 
                 if (spawner.SpawnType is not SpawnPointType.LateJoin
-                || xform.GridUid == null
-                || !gridUids.Contains(xform.GridUid.Value))
+                    || xform.GridUid == null
+                    || !gridUids.Contains(xform.GridUid.Value))
                 {
                     continue;
                 }
@@ -359,7 +365,8 @@ namespace Content.IntegrationTests.Tests
             var mapFolder = new ResPath("/Maps");
             var maps = resourceManager
                 .ContentFindFiles(mapFolder)
-                .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
+                .Where(filePath =>
+                    filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
                 .ToArray();
 
             var mapNames = new List<string>();
@@ -373,6 +380,7 @@ namespace Content.IntegrationTests.Tests
                 {
                     continue;
                 }
+
                 mapNames.Add(rootedPath.ToString());
             }
 
