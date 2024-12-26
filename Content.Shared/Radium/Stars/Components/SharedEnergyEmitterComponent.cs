@@ -102,19 +102,19 @@ public sealed partial class EnergyEmitterComponent : Component
 }
 
 [NetSerializable, Serializable]
-public enum EmitterVisuals : byte
+public enum EnergyEmitterVisuals : byte
 {
     VisualState
 }
 
 [Serializable, NetSerializable]
-public enum EmitterVisualLayers : byte
+public enum EnergyEmitterVisualLayers : byte
 {
     Lights
 }
 
 [NetSerializable, Serializable]
-public enum EmitterVisualState
+public enum EnergyEmitterVisualState
 {
     On,
     Underpowered,

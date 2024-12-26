@@ -8,3 +8,14 @@
   cost: 10000
   category: cargoproduct-category-name-engineering
   group: market
+
+- type: cargoProduct
+  name: Улучшенный коллектор радиации
+  id: EngineeringAdvancedRadiationCollectorNoTank
+  icon:
+    sprite: Structures/Power/Generation/rtg.rsi
+    state: rtg
+  product: AdvancedRadiationCollectorNoTank
+  cost: 10000
+  category: cargoproduct-category-name-engineering
+  group: market

@@ -30,7 +30,7 @@
     - state: beam
       shader: unshaded
       visible: false
-      map: ["enum.EmitterVisualLayers.Lights"]
+      map: ["enum.EnergyEmitterVisualLayers.Lights"]
     - state: unlocked # Corvax-Resprite
       shader: unshaded
       # visible: false # Corvax-Resprite
@@ -102,3 +102,17 @@
     - On
     - Off
     - Toggle
+
+- type: entity
+  id: EnergyEmitterCircuitboard
+  parent: BaseMachineCircuitboard
+  name: energy emitter machine board
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: EnergyEmitter
+    stackRequirements:
+      Capacitor: 2
+      CableHV: 5
+      Glass: 2

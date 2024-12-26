@@ -528,6 +528,7 @@
       - JukeboxCircuitBoard
       - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
+      - EnergyEmitterCircuitboard
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
