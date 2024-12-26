@@ -6,6 +6,8 @@
 [![Wiki](https://img.shields.io/badge/Wiki-SS14%20RADIUM-blue)](https://radium-station.space)
 [![GitHub](https://img.shields.io/github/stars/Cybersun-Industries/space-station-14?style=social)](https://github.com/Cybersun-Industries/space-station-14)
 
+</div>
+
 # Space Station 14 - RADIUM
 
 ## Документация
@@ -16,14 +18,17 @@
 
 ## Лицензия
 
-> [!CAUTION]
-> Код репозитория лицензирован под MIT - это касается кода Space Wizards Federation, AGPLv3 - применяется к изменениям из тех источников, которые распространяющихся под данной лицензией и CLA - это касается наших изменений, определение которых дано в тексте CLA. Мы не стремимся к полному разграничению нашего кода и кода Space Wizards Federation, поэтому во избежание инцидентов рекомендуется брать их код из их репозитория. Ниже приведена таблица коммитов, к которым была применена AGPLv3.
+>[!CAUTION]
+> 
+> Код репозитория лицензирован под MIT - это касается кода Space Wizards Federation, AGPLv3 - применяется к изменениям из тех источников, которые распространяются под данной лицензией  и CLA - касается наших изменений, определение которых дано в тексте CLA. Мы не стремимся к полному разграничению нашего кода и кода Space Wizards Federation, поэтому во избежание  инцидентов рекомендуется брать их код из их репозитория. Ниже приведена таблица коммитов, к которым была применена AGPLv3.
 
 <details>
   <summary>Таблица AGPLv3</summary>
+    
   | Название | Дата | Коммит | PR | Источник |
   | -------- | ---- | ------ | -- | -------- |
-  | null | null | null | null | 
+  | null | null | null | null | null |
+  
 </details>
 
 ---
