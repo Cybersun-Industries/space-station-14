@@ -6,9 +6,9 @@
   - type: Objective
     issuer: objective-issuer-thief
   - type: RoleRequirement
-      roles:
-        components:
-          - ThiefVoxesRole
+    roles:
+      components:
+        - ThiefVoxesRole
 
 - type: entity
   categories: [ HideSpawnMenu ]
