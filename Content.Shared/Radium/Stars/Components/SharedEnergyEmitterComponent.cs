@@ -10,7 +10,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Shared.Radium.Stars.Components;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class EmitterComponent : Component
+public sealed partial class EnergyEmitterComponent : Component
 {
     public CancellationTokenSource? TimerCancel;
 
