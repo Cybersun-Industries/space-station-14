@@ -108,8 +108,3 @@
 - type: stationGoal
   id: AstraRepair
   text: station-goal-astra-repair
-
-
-- type: stationGoal # Corvax-Next
-  id: BluespaceHarvest
-  text: station-goal-bluespace-harvest

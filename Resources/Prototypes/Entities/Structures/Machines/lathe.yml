@@ -351,7 +351,6 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
-      - ArtificialBluespaceCrystal
       # RADIUM-FIX:
       - WeaponGrapplingGun
       - HandTeleporter1
@@ -526,7 +525,6 @@
       - MassMediaCircuitboard
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
-      - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
   - type: EmagLatheRecipes
     emagDynamicRecipes:
