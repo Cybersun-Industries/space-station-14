@@ -440,6 +440,7 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
+  - type: TurretController # Corvax-Next-TurretControl
   - type: Tag
     tags:
     - HideContextMenu
