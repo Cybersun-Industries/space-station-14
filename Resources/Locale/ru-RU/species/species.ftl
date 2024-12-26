@@ -11,6 +11,4 @@ species-name-skeleton = Скелет
 species-name-vox = Вокс
 species-name-gingerbread = вкуснейшая выпечка
 snail-hurt-by-salt-popup = Солевой раствор жжёт как кислота!
-# Corvax-Next-Resomi-Start
-species-name-resomi = Резоми
-# Corvax-Next-Resomi-End
+
