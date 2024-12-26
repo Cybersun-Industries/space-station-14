@@ -200,5 +200,12 @@ namespace Content.Client.Ghost
         {
             GhostVisibility = visibility ?? !GhostVisibility;
         }
+		
+		// Corvax-Next-GhostBar-Start
+        public void GhostBarSpawn()
+        {
+            RaiseNetworkEvent(new GhostBarSpawnEvent());
+        }
+		// Corvax-Next-GhostBar-End
     }
 }
