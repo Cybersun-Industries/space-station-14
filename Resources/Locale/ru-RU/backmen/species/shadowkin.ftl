@@ -9,4 +9,4 @@ shadowkin-power-tired = истощены
 shadowkin-power-min = опустошены
 
 shadowkin-blackeye = Вы чувствуете, как ваша сила исчезает, вы опустошены!
-species-name-shadowkin = Азуэлит
+species-name-shadowkin = Лумелеа

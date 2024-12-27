@@ -1,8 +1,8 @@
-﻿action-name-shadowkin-teleport=Тропа Азуэлитов
-action-description-shadowkin-teleport=Врожденная способность Азуэлитов к пространственному перемещению.
+﻿action-name-shadowkin-teleport=Тропа Лумелеа
+action-description-shadowkin-teleport=Врожденная способность Лумелеа к пространственному перемещению.
 
-action-name-shadowkin-darkswap=Путешествие в Азуэлит
-action-description-shadowkin-darkswap=Переход в общее подпространство Азуэлитов.
+action-name-shadowkin-darkswap=Путешествие в Лумелеа
+action-description-shadowkin-darkswap=Переход в общее подпространство Лумелеа.
 
 action-name-shadowkin-rest=Медитация
 action-description-shadowkin-rest=ZZZ...
