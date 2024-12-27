@@ -12,7 +12,7 @@ jobs:
           # Custom size configuration
           sizes: >
             {
-              "100": "XS",
+              "0": "XS",
               "200": "S",
               "500": "M",
               "1000": "L",
