@@ -526,9 +526,10 @@
       - MassMediaCircuitboard
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
+      - SMESAdvancedMachineCircuitboard
+      - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
       - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
       - MachineBluespaceTransitorCircuitboard # Corvax-Next-BluespaceHarvester
-      - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
       - EnergyEmitterCircuitboard #Radium-stars
       - StationAnchorCircuitboard #Radium-stars
   - type: EmagLatheRecipes
@@ -1236,7 +1237,7 @@
       staticRecipes:
         - SheetSteel
         - SheetGlass1
-        - SheetRGlass
+        - SheetRGlassRaw
         - SheetPlasma1
         - SheetPGlass1
         - SheetRPGlass1
@@ -1262,7 +1263,7 @@
     staticRecipes:
       - SheetSteel
       - SheetGlass1
-      - SheetRGlass
+      - SheetRGlassRaw
       - SheetPlasma1
       - SheetPGlass1
       - SheetRPGlass1

@@ -66490,21 +66490,21 @@ entities:
     - type: Transform
       pos: -32.562675,-77.786354
       parent: 2
-- proto: FloraTreeSnow01
+- proto: FloraTreeSnow
   entities:
   - uid: 10267
     components:
     - type: Transform
       pos: -70.04553,-26.336075
       parent: 2
-- proto: FloraTreeSnow02
+- proto: FloraTreeSnow
   entities:
   - uid: 14214
     components:
     - type: Transform
       pos: -35.517467,4.708497
       parent: 2
-- proto: FloraTreeSnow03
+- proto: FloraTreeSnow
   entities:
   - uid: 449
     components:

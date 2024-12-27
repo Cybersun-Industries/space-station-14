@@ -78,7 +78,7 @@ public sealed class WageConsoleSystem : SharedWageConsoleSystem
             return;
         }
 
-        _adminLogger.Add(LogType.Transactions, LogImpact.Extreme,
+        _adminLogger.Add(LogType.Action, LogImpact.Extreme,
             $"wage, player {ToPrettyString(args.Actor):player} use bonus on accountId {wagePayout.ToAccountNumber.Comp.AccountNumber} with name {wagePayout.ToAccountNumber:entity} and add {args.Wage}");
 
         QueueLocalEvent(new WagePaydayEvent()
@@ -141,7 +141,7 @@ public sealed class WageConsoleSystem : SharedWageConsoleSystem
             return;
         }
 
-        _adminLogger.Add(LogType.Transactions, LogImpact.Extreme,
+        _adminLogger.Add(LogType.Action, LogImpact.Extreme,
             $"wage, player {ToPrettyString(args.Actor):player} use edit on accountId {wagePayout.ToAccountNumber.Comp.AccountNumber} with name {wagePayout.ToAccountNumber.Owner:entity} and set payout to {args.Wage}");
 
         wagePayout.PayoutAmount = args.Wage;
