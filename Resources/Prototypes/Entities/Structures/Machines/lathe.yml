@@ -528,7 +528,8 @@
       - JukeboxCircuitBoard
       - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
-      - EnergyEmitterCircuitboard
+      - EnergyEmitterCircuitboard #Radium-stars
+      - StationAnchorCircuitboard #Radium-stars
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
