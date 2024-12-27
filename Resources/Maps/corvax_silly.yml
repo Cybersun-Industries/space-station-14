@@ -24755,7 +24755,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 29.886478,-8.789006
       parent: 2
-- proto: FloraTreeSnow01
+- proto: FloraTreeSnow
   entities:
   - uid: 2478
     components:
@@ -24778,7 +24778,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -8.302155,-8.77597
       parent: 5654
-- proto: FloraTreeSnow02
+- proto: FloraTreeSnow
   entities:
   - uid: 6143
     components:
@@ -24792,7 +24792,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.676361,12.397369
       parent: 5654
-- proto: FloraTreeSnow03
+- proto: FloraTreeSnow
   entities:
   - uid: 2481
     components:
@@ -24805,7 +24805,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.8744507,-17.837097
       parent: 5654
-- proto: FloraTreeSnow04
+- proto: FloraTreeSnow
   entities:
   - uid: 6146
     components:
@@ -24819,7 +24819,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 17.631882,-6.705353
       parent: 5654
-- proto: FloraTreeSnow05
+- proto: FloraTreeSnow
   entities:
   - uid: 2482
     components:
@@ -24862,7 +24862,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -6.9085693,11.348236
       parent: 5654
-- proto: FloraTreeSnow06
+- proto: FloraTreeSnow
   entities:
   - uid: 2483
     components:

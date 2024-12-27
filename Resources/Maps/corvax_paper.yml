@@ -62056,14 +62056,14 @@ entities:
     - type: Transform
       pos: 76.18449,48.718914
       parent: 2
-- proto: FloraTreeSnow03
+- proto: FloraTreeSnow
   entities:
   - uid: 8037
     components:
     - type: Transform
       pos: 76.48694,46.088165
       parent: 2
-- proto: FloraTreeSnow05
+- proto: FloraTreeSnow
   entities:
   - uid: 8038
     components:
@@ -91080,7 +91080,7 @@ entities:
       parent: 2
     - type: Paper
       content: >-
-        блять я нажрался в хламину... 
+        блять я нажрался в хламину...
 
 
 
@@ -91109,7 +91109,7 @@ entities:
 
         Откуда у меня Оппорозидон и как я узнал его рецепт?
 
-        Всё очень просто! 
+        Всё очень просто!
 
                   [head=2]ГЛУПЕНЬКИЙ ХОНК-ХОООНК!!![/head]
   - uid: 11385

@@ -7654,14 +7654,14 @@ entities:
       parent: 1653
     - type: Fixtures
       fixtures: {}
-- proto: FloraTreeSnow01
+- proto: FloraTreeSnow
   entities:
   - uid: 1133
     components:
     - type: Transform
       pos: 34.488148,39.383087
       parent: 1653
-- proto: FloraTreeSnow03
+- proto: FloraTreeSnow
   entities:
   - uid: 405
     components:
@@ -7673,7 +7673,7 @@ entities:
     - type: Transform
       pos: 16.778654,4.6426454
       parent: 1653
-- proto: FloraTreeSnow04
+- proto: FloraTreeSnow
   entities:
   - uid: 420
     components:
@@ -7681,7 +7681,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.352256,20.196136
       parent: 1653
-- proto: FloraTreeSnow05
+- proto: FloraTreeSnow
   entities:
   - uid: 1198
     components:

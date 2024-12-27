@@ -51,11 +51,6 @@
   result: LedLightBulb
 
 - type: latheRecipe
-  parent: BaseLightRecipe
-  id: DimLightBulb
-  result: DimLightBulb
-
-- type: latheRecipe
   id: DimLightBulb
   result: DimLightBulb
   category: Lights

@@ -8,9 +8,13 @@
     sprite: Objects/Specific/Janitorial/soap.rsi
     state: soap-4
   - type: Appearance
-  - type: ClusterGrenade
+  - type: ScatteringGrenade
     fillPrototype: Soap
-    maxGrenadesCount: 6
+    capacity: 6
+    delayBeforeTriggerContents: 60
+    randomDistance: true
+    randomThrowDistanceMax: 3
+  - type: LandAtCursor
   - type: DamageOnLand
     damage:
       types:
