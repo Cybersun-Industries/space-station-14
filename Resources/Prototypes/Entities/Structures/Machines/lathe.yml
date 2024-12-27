@@ -529,6 +529,9 @@
       - SMESAdvancedMachineCircuitboard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
       - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
+      - MachineBluespaceTransitorCircuitboard # Corvax-Next-BluespaceHarvester
+      - EnergyEmitterCircuitboard #Radium-stars
+      - StationAnchorCircuitboard #Radium-stars
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard

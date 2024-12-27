@@ -1,10 +1,10 @@
-﻿action-name-shadowkin-teleport=Телепорт
-action-description-shadowkin-teleport=Аарамрра!
+﻿action-name-shadowkin-teleport=Тропа Азуэлитов
+action-description-shadowkin-teleport=Врожденная способность Азуэлитов к пространственному перемещению.
 
-action-name-shadowkin-darkswap=Темный Обмен
-action-description-shadowkin-darkswap=Ммра Маммм!
+action-name-shadowkin-darkswap=Путешествие в Азуэлит
+action-description-shadowkin-darkswap=Переход в общее подпространство Азуэлитов.
 
-action-name-shadowkin-rest=Отдых
-action-description-shadowkin-rest=Рама
+action-name-shadowkin-rest=Медитация
+action-description-shadowkin-rest=ZZZ...
 
-ethereal-pickup-fail=Ваша рука шипит, проходя сквозь...
+ethereal-pickup-fail=Ваша рука искажается множеством движений, проходя сквозь...
