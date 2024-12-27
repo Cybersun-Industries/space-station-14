@@ -16,7 +16,7 @@
     sprite: Structures/Power/Generation/Singularity/collector.rsi
     state: ca_on
   product: CrateEngineeringAdvancedCollector
-  cost: 5000
+  cost: 9000
   category: cargoproduct-category-name-engineering
   group: market
 
