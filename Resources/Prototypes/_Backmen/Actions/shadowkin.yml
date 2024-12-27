@@ -10,7 +10,6 @@
       event: !type:ShadowkinTeleportEvent
         powerCost: 40
         staminaCost: 20
-        speech: action-description-shadowkin-teleport
       checkCanAccess: true
       useDelay: 15
       range: 32
@@ -35,7 +34,6 @@
         powerCostOff: 45
         staminaCostOn: 1
         staminaCostOff: 1
-        speech: action-description-shadowkin-darkswap
 
 - type: entity
   id: ShadowkinRest
