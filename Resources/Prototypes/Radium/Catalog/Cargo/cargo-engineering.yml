@@ -10,12 +10,23 @@
   group: market
 
 - type: cargoProduct
-  name: Улучшенный коллектор радиации
-  id: EngineeringAdvancedRadiationCollectorNoTank
+  name: ящик улучшенного коллектора радиации
+  id: EngineeringAdvancedRadiationCollectorFlatpack
   icon:
-    sprite: Structures/Power/Generation/rtg.rsi
-    state: rtg
-  product: AdvancedRadiationCollectorNoTank
-  cost: 10000
+    sprite: Structures/Power/Generation/Singularity/collector.rsi
+    state: ca_on
+  product: CrateEngineeringAdvancedCollector
+  cost: 5000
+  category: cargoproduct-category-name-engineering
+  group: market
+
+- type: cargoProduct
+  name: ящик с энергоэмиттером
+  id: EngineeringEnergyEmitterFlatpack
+  icon:
+    sprite: Structures/Power/Generation/Tesla/energy_miniball.rsi
+    state: tesla_projectile
+  product: CrateEngineeringEnergyEmitter
+  cost: 8000
   category: cargoproduct-category-name-engineering
   group: market
