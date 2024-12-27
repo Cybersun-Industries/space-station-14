@@ -527,6 +527,7 @@
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
       - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
+      - MachineBluespaceTransitorCircuitboard # Corvax-Next-BluespaceHarvester
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
       - EnergyEmitterCircuitboard #Radium-stars
       - StationAnchorCircuitboard #Radium-stars
