@@ -1,7 +1,6 @@
 name: Build & Test Debug
 
 on:
-  workflow_dispatch:
   push:
     branches: [ master, staging, trying ]
   merge_group:
@@ -16,7 +15,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
 
-    runs-on: self-hosted # ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Checkout Master

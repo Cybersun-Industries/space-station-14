@@ -1,7 +1,6 @@
 name: YAML Linter
 
 on:
-  workflow_dispatch:
   push:
     branches: [ master, staging, trying ]
   merge_group:
@@ -12,7 +11,7 @@ jobs:
   build:
     name: YAML Linter
     if: github.actor != 'IanComradeBot' && github.event.pull_request.draft == false
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.6.0
       - name: Setup submodule
