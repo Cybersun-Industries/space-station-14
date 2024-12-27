@@ -100,13 +100,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.5
-  - type: Respirator
-    damage:
-      types:
-        Asphyxiation: 2.0
-    damageRecovery:
-      types:
-        Asphyxiation: -1.0
 
 
 - type: entity

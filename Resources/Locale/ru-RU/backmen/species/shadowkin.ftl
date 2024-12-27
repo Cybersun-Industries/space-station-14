@@ -6,7 +6,7 @@ shadowkin-power-great = отлично
 shadowkin-power-good = хорошо
 shadowkin-power-okay = нормально
 shadowkin-power-tired = истощены
-shadowkin-power-min = синяк
+shadowkin-power-min = опустошены
 
 shadowkin-blackeye = Вы чувствуете, как ваша сила исчезает, вы истощены!
-species-name-shadowkin = Шадовкин
+species-name-shadowkin = Азуэлит
