@@ -120,6 +120,7 @@
   - MechEquipmentGrabber
 
 # Tier 2
+#Radium-start
 - type: technology
   id: StarPowerGenerationMachines
   name: radium-research-technology-star-power-generation-machines
@@ -131,6 +132,8 @@
   cost: 12500
   recipeUnlocks:
   - EnergyEmitterCircuitboard
+  - MachineBluespaceTransitorCircuitboard
+#Radium-end
 
 - type: technology
   id: Shuttlecraft
