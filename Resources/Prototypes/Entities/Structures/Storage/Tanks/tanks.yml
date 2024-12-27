@@ -152,7 +152,7 @@
     - DrinkWaterCup
     - DrinkWaterCup
     whitelist:
-      requireAll: true
+      requireAll: false
       components:
       - FitsInDispenser
       tags:
