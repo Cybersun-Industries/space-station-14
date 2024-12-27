@@ -2,12 +2,14 @@
 
 <div class="header" align="center">
     
-# Space Station 14 - RADIUM
-    
 [![Discord](https://img.shields.io/discord/831352358520725506?label=Discord&logo=discord&logoColor=white)](https://discord.gg/H6bjbKPXfM)
 [![Wiki](https://img.shields.io/badge/Wiki-SS14%20RADIUM-blue)](https://radium-station.space)
 [![GitHub](https://img.shields.io/github/stars/Cybersun-Industries/space-station-14?style=social)](https://github.com/Cybersun-Industries/space-station-14)
 
+# Space Station 14 - RADIUM
+
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/Cybersun-Industries/space-station-14)
+![GitHub Pull Requests](https://img.shields.io/github/issues-pr-closed/Cybersun-Industries/space-station-14)
 </div>
 
 Space Station 14 — это ролевая игра, вдохновлённая культовой классикой Space Station 13. Space Station 14 наполнена весельем и хаосом. С первого взгляда игра кажется сложной, и это так, но мы поможем тебе освоиться в этой игре и найти своё место. Игра работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
