@@ -344,6 +344,7 @@
   description: A paper water cup.
   components:
   - type: Drink
+  - type: FitsInDispenser
   - type: Sprite
     sprite: Objects/Consumable/Drinks/water_cup.rsi
     layers:
