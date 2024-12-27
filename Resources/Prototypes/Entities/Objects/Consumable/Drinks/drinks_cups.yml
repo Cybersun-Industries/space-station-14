@@ -64,10 +64,10 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/mug.rsi
     layers:
-      - state: icon-0
-      - map: ["enum.SolutionContainerLayers.Fill"]
-        state: icon-3
-        visible: false
+    - state: icon-0
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: icon-3
+      visible: false
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 3
@@ -197,9 +197,9 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/hot_coco.rsi
     layers:
-      - state: icon-0
-      - map: ["enum.SolutionContainerLayers.Fill"]
-        state: icon-4
+    - state: icon-0
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: icon-4
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 4
@@ -225,9 +225,9 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/hot_coffee.rsi
     layers:
-      - state: icon-0
-      - map: ["enum.SolutionContainerLayers.Fill"]
-        state: icon-4
+    - state: icon-0
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: icon-4
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 4
@@ -250,9 +250,9 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/cafe_latte.rsi
     layers:
-      - state: icon_empty
-      - state: fill-1
-        map: ["enum.SolutionContainerLayers.Fill"]
+    - state: icon_empty
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 1
@@ -279,9 +279,9 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/teacup.rsi
     layers:
-      - state: icon-0
-      - map: ["enum.SolutionContainerLayers.Fill"]
-        state: icon-4
+    - state: icon-0
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: icon-4
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 4
@@ -307,9 +307,9 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/teacup.rsi
     layers:
-      - state: icon-0
-      - map: ["enum.SolutionContainerLayers.Fill"]
-        state: icon-4
+    - state: icon-0
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: icon-4
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 4
@@ -347,9 +347,9 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/water_cup.rsi
     layers:
-      - state: icon-0
-      - map: ["enum.SolutionContainerLayers.Fill"]
-        state: icon-1
+    - state: icon-0
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: icon-1
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 1
