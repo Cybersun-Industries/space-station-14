@@ -104,9 +104,7 @@ namespace Content.Client.HealthAnalyzer.UI
             }
 
             patientDamageAmount.Text = Loc.GetString(
-                "health-analyzer-window-entity-damage-total-text",
-                ("amount", damageable.TotalDamage)
-            );
+                "health-analyzer-window-entity-damage-total-text") +  " " + damageable.TotalDamage;
 
             var damageSortedGroups =
                 damageable.DamagePerGroup.OrderBy(damage => damage.Value)
