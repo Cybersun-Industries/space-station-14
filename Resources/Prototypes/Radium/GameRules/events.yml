@@ -87,7 +87,7 @@
   - type: StationEvent
     weight: 4.5
     earliestStart: 30
-    reoccurrenceDelay: 60
+    reoccurrenceDelay: 6000
     minimumPlayers: 5
     duration: null
     startAnnouncementColor: red
@@ -109,7 +109,7 @@
   - type: StationEvent
     weight: 1.5
     earliestStart: 60
-    reoccurrenceDelay: 70
+    reoccurrenceDelay: 7000
     minimumPlayers: 5
     duration: null
     startAnnouncementColor: violet
