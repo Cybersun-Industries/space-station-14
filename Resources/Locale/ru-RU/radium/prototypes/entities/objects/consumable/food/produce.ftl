@@ -16,9 +16,6 @@ ent-FoodPolypnium = полипень
 ent-FoodFoodAmbrosiaGaia = амброзия гайа
     .desc = Лекарственное растение в котором течёт кровь богов.
 
-ent-FoodHolymelon = святой арбуз
-    .desc = Святой арбуз прямиком из ботаники или из церкви.
-
 ent-FoodHolymelonSlice = ломтик святого арбуза
     .desc = Божественно.
 
