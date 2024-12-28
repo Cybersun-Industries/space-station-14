@@ -56,6 +56,18 @@
     inventory: Transfer
 
 - type: polymorph
+  id: BFoxMorph
+  configuration:
+    entity: MobHumanoidFox
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: false
+    revertOnCrit: false
+    revertOnDeath: false
+    inventory: Transfer
+    allowRepeatedMorphs: true
+
+- type: polymorph
   id: BNekoMorph
   configuration:
     entity: MobFelinid
