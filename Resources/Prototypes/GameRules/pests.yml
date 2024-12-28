@@ -42,11 +42,11 @@
     - id: MobMouseRemi
       prob: 0.001
     - id: MobJetpackMouseBrown
-      prob: 0.005
+      prob: 0.001
     - id: MobJetpackMouseGray
-      prob: 0.005
+      prob: 0.001
     - id: MobJetpackMouseWhite
-      prob: 0.005
+      prob: 0.001
     - id: MobClockworkMouse
       prob: 0.001
 #radium end
