@@ -187,6 +187,10 @@ SpawnVehicleWheelchair: null
 SpawnVehicleWheelchairFolded: null
 VehicleWheelchair: null
 VehicleWheelchairFolded: null
+# SpawnVehicleWheelchair: null
+# SpawnVehicleWheelchairFolded: null
+# VehicleWheelchair: null
+# VehicleWheelchairFolded: null
 VehicleSecwayStealObjective: null
 VehicleKeyJanicart: null
 VehicleKeySecway: null
@@ -198,11 +202,23 @@ VehicleSecway: null
 VehicleATV: null
 VehicleSyndicateSegway: null
 VehicleSkeletonMotorcycle: null
+# VehicleKeyJanicart: null
+# VehicleKeySecway: null
+# VehicleKeyATV: null
+# VehicleKeySkeleton: null
+# VehicleKeySyndicateSegway: null
+# VehicleKeySkeletonMotorcycle: null
+# VehicleSecway: null
+# VehicleATV: null
+# VehicleSyndicateSegway: null
+# VehicleSkeletonMotorcycle: null
 VehicleUnicycle: null
 VehicleUnicycleFolded: null
 ActionVehicleHorn: null
 CrateFunATV: null
 CrateFunSyndicateSegway: null
+# CrateFunATV: null
+# CrateFunSyndicateSegway: null
 MobTaxiBot: null
 # MobSupplyBot: null
 SpawnVehicleMotobike: null
@@ -210,6 +226,9 @@ SpawnVehicleATV: null
 SpawnVehicleSecway: null
 SpawnVehicleJanicart: null
 VehicleJanicart: null
+# SpawnVehicleSecway: null
+# SpawnVehicleJanicart: null
+# VehicleJanicart: null
 VehicleJanicartDestroyed: null
 
 # 2024-02-01
