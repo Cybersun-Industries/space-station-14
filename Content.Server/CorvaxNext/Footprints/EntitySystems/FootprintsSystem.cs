@@ -57,7 +57,7 @@ public sealed class FootprintsSystem : EntitySystem
         if (!_map.TryFindGridAt(_transform.GetMapCoordinates((uid, transform)), out var gridUid, out _))
             return;
 
-        if (!_standingQuery.TryComp(uid, out var standingState) || standingState.CurrentState != StandingState.Lying)
+        if (!_standingQuery.TryComp(uid, out var standingState) || (standingState.CurrentState != StandingState.Lying && standingState.CurrentState != StandingState.Standing))
             return;
 
         var dragging = (mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead)||
