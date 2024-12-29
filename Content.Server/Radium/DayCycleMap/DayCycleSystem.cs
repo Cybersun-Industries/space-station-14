@@ -13,12 +13,12 @@ public sealed class TimedMapLightChangingSystem : EntitySystem
         base.Update(frameTime);
 
         var query = EntityQueryEnumerator<DayCycleComponent, MapLightComponent>();
-        while (query.MoveNext(out var uid, out var timedMapLight, out var mapLight))
+        while (query.MoveNext(out var uid, out var dayCycleComponent, out var mapLight))
         {
-            var morningDuration = timedMapLight.MorningDuration;
-            var dayDuration = timedMapLight.DayDuration;
-            var eveningDuration = timedMapLight.EveningDuration;
-            var nightDuration = timedMapLight.NightDuration;
+            var morningDuration = Math.Max(1, dayCycleComponent.MorningDuration);
+            var dayDuration = Math.Max(1, dayCycleComponent.DayDuration);
+            var eveningDuration = Math.Max(1, dayCycleComponent.EveningDuration);
+            var nightDuration = Math.Max(1, dayCycleComponent.NightDuration);
             var cycleDuration = morningDuration + dayDuration + eveningDuration + nightDuration;
             var transitionDuration = cycleDuration / 2f;
 
@@ -29,12 +29,12 @@ public sealed class TimedMapLightChangingSystem : EntitySystem
                 // Morning
                 case <= 0.25f:
                 {
-                    var morningColor = timedMapLight.MorningColor;
+                    var morningColor = dayCycleComponent.MorningColor;
                     if (t >= 0.25f - transitionDuration / morningDuration)
                     {
                         var transitionT = (0.25f - t) / (transitionDuration / morningDuration);
-                        morningColor = Color.InterpolateBetween(timedMapLight.NightColor,
-                            timedMapLight.MorningColor,
+                        morningColor = Color.InterpolateBetween(dayCycleComponent.NightColor,
+                            dayCycleComponent.MorningColor,
                             transitionT);
                     }
 
@@ -44,12 +44,12 @@ public sealed class TimedMapLightChangingSystem : EntitySystem
                 // Day
                 case <= 0.5f:
                 {
-                    var dayColor = timedMapLight.DayColor;
+                    var dayColor = dayCycleComponent.DayColor;
                     if (t >= 0.5f - transitionDuration / dayDuration)
                     {
                         var transitionT = (0.5f - t) / (transitionDuration / dayDuration);
-                        dayColor = Color.InterpolateBetween(timedMapLight.NightColor,
-                            timedMapLight.DayColor,
+                        dayColor = Color.InterpolateBetween(dayCycleComponent.NightColor,
+                            dayCycleComponent.DayColor,
                             transitionT);
                     }
 
@@ -59,12 +59,12 @@ public sealed class TimedMapLightChangingSystem : EntitySystem
                 // Evening
                 case <= 0.75f:
                 {
-                    var eveningColor = timedMapLight.EveningColor;
+                    var eveningColor = dayCycleComponent.EveningColor;
                     if (t <= 0.5f + transitionDuration / eveningDuration)
                     {
                         var transitionT = (t - 0.5f) / (transitionDuration / eveningDuration);
-                        eveningColor = Color.InterpolateBetween(timedMapLight.DayColor,
-                            timedMapLight.EveningColor,
+                        eveningColor = Color.InterpolateBetween(dayCycleComponent.DayColor,
+                            dayCycleComponent.EveningColor,
                             transitionT);
                     }
 
@@ -74,12 +74,12 @@ public sealed class TimedMapLightChangingSystem : EntitySystem
                 // Night
                 default:
                 {
-                    var nightColor = timedMapLight.NightColor;
+                    var nightColor = dayCycleComponent.NightColor;
                     if (t <= 1f - transitionDuration / nightDuration)
                     {
                         var transitionT = (t - 0.75f) / (transitionDuration / nightDuration);
-                        nightColor = Color.InterpolateBetween(timedMapLight.EveningColor,
-                            timedMapLight.NightColor,
+                        nightColor = Color.InterpolateBetween(dayCycleComponent.EveningColor,
+                            dayCycleComponent.NightColor,
                             transitionT);
                     }
 
