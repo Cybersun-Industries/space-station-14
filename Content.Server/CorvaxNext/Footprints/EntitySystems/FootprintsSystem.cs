@@ -25,12 +25,14 @@ public sealed class FootprintsSystem : EntitySystem
     private EntityQuery<TransformComponent> _transformQuery;
     private EntityQuery<MobThresholdsComponent> _mobThresholdQuery;
     private EntityQuery<AppearanceComponent> _appearanceQuery;
+    private EntityQuery<StandingStateComponent> _standingQuery;
 
     public override void Initialize()
     {
         _transformQuery = GetEntityQuery<TransformComponent>();
         _mobThresholdQuery = GetEntityQuery<MobThresholdsComponent>();
         _appearanceQuery = GetEntityQuery<AppearanceComponent>();
+        _standingQuery = GetEntityQuery<StandingStateComponent>();
 
         SubscribeLocalEvent<FootprintVisualizerComponent, ComponentStartup>(OnStartupComponent);
         SubscribeLocalEvent<FootprintVisualizerComponent, MoveEvent>(OnMove);
@@ -55,8 +57,11 @@ public sealed class FootprintsSystem : EntitySystem
         if (!_map.TryFindGridAt(_transform.GetMapCoordinates((uid, transform)), out var gridUid, out _))
             return;
 
-        var dragging = (mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead)
-            && (EntityManager.GetComponent<StandingStateComponent>(uid).CurrentState == StandingState.Lying);
+        if (!_standingQuery.TryComp(uid, out var standingState) || standingState.CurrentState != StandingState.Lying)
+            return;
+
+        var dragging = (mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead)||
+             (standingState.CurrentState == StandingState.Lying);
         var distance = (transform.LocalPosition - component.StepPos).Length();
         var stepSize = dragging ? component.DragSize : component.StepSize;
 
