@@ -72,7 +72,7 @@
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
-
+  - type: FootprintVisualizer
 
 - type: entity
   save: false
