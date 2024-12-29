@@ -1,5 +1,5 @@
 ﻿- type: damageGroup
   id: Immaterial
-  name: damage-group-immaterial
+  name: health-analyzer-window-damage-group-Immaterial
   damageTypes:
     - Holy

@@ -10636,14 +10636,14 @@ entities:
     - type: Transform
       pos: 8.497473,19.862019
       parent: 104
-- proto: FloraTreeSnow01
+- proto: FloraTreeSnow
   entities:
   - uid: 262
     components:
     - type: Transform
       pos: 9.630766,6.7434845
       parent: 104
-- proto: FloraTreeSnow02
+- proto: FloraTreeSnow
   entities:
   - uid: 270
     components:
@@ -10655,7 +10655,7 @@ entities:
     - type: Transform
       pos: 4.558771,16.696045
       parent: 104
-- proto: FloraTreeSnow03
+- proto: FloraTreeSnow
   entities:
   - uid: 274
     components:
@@ -10667,7 +10667,7 @@ entities:
     - type: Transform
       pos: 9.924105,15.382175
       parent: 104
-- proto: FloraTreeSnow04
+- proto: FloraTreeSnow
   entities:
   - uid: 265
     components:
@@ -10684,7 +10684,7 @@ entities:
     - type: Transform
       pos: -3.1344147,13.722986
       parent: 104
-- proto: FloraTreeSnow05
+- proto: FloraTreeSnow
   entities:
   - uid: 269
     components:

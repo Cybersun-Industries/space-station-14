@@ -58932,7 +58932,7 @@ entities:
     - type: Transform
       pos: 56.481674,-11.007644
       parent: 2
-- proto: FloraTreeSnow06
+- proto: FloraTreeSnow
   entities:
   - uid: 7763
     components:

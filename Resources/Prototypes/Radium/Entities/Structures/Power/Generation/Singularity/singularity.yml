@@ -3,12 +3,12 @@
   name: orange star
   description: Big fukin star
   components:
-  - type: AnnounceOnSpawn
-    message: orange-star-appeared
-    sender: chat-manager-sender-announcement
-    sound:
-      path: /Audio/Misc/bluealert.ogg
-    color: red
+  # - type: AnnounceOnSpawn
+  #   message: orange-star-appeared
+  #   sender: chat-manager-sender-announcement
+  #   sound:
+  #     path: /Audio/Misc/bluealert.ogg
+  #   color: red
   - type: Clickable
   - type: AmbientSound
     volume: -3
@@ -75,12 +75,12 @@
   id: RedStar
   name: red star
   components:
-  - type: AnnounceOnSpawn
-    message: red-star-appeared
-    sender: chat-manager-sender-announcement
-    sound:
-      path: /Audio/Misc/gamma.ogg
-    color: violet
+  # - type: AnnounceOnSpawn
+  #   message: red-star-appeared
+  #   sender: chat-manager-sender-announcement
+  #   sound:
+  #     path: /Audio/Misc/gamma.ogg
+  #   color: violet
   - type: PointLight
     color: "red"
     enabled: true

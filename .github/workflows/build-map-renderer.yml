@@ -2,11 +2,11 @@
 
 on:
   push:
-    branches: [ master, staging, trying ]
+    branches: [ master, staging, stable ]
   merge_group:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ master ]
+    branches: [ master, staging, stable ]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
 
-    runs-on: self-hosted #${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout Master

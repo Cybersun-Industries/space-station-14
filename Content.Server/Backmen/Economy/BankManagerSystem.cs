@@ -194,7 +194,7 @@ namespace Content.Server.Backmen.Economy;
             if (result)
             {
                 _adminLogger.Add(
-                    LogType.Transactions,
+                    LogType.Action,
                     LogImpact.Low,
                     $"Account {bankAccount.Comp.AccountNumber} ({bankAccount.Comp.AccountName ?? "??"})  balance was changed by {-currency.Value}, from {oldBalance} to {bankAccount.Comp.Balance}");
             }
@@ -231,7 +231,7 @@ namespace Content.Server.Backmen.Economy;
             if (result)
             {
                 _adminLogger.Add(
-                    LogType.Transactions,
+                    LogType.Action,
                     LogImpact.Low,
                     $"Account {bankAccount.Comp.AccountNumber} ({bankAccount.Comp.AccountName ?? "??"})  balance was changed by {-currency.Value}, from {oldBalance} to {bankAccount.Comp.Balance}");
             }
@@ -257,7 +257,7 @@ namespace Content.Server.Backmen.Economy;
             if (result)
             {
                 _adminLogger.Add(
-                    LogType.Transactions,
+                    LogType.Action,
                     LogImpact.Low,
                     $"Account {bankAccountFrom.Comp.AccountNumber} ({bankAccountFrom.Comp.AccountName ?? "??"})  transfered {amount} to account {bankAccountTo.Comp.AccountNumber} ({bankAccountTo.Comp.AccountName ?? "??"})");
             }

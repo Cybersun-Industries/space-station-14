@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Backmen.Magic;
 using Content.Server.Ghost.Components;
 using Content.Server.Magic;
 using Content.Server.NPC.Components;
@@ -17,6 +18,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Eye;
 using Content.Shared.Ghost;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Magic;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.StatusEffect;
@@ -155,7 +157,7 @@ public sealed class ShadowkinDarkSwapSystem : EntitySystem
             args
         );
 
-        _magic.Speak(args);
+        //_magic.Speak(args); FUCK IT
     }
 
 

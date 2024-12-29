@@ -58,7 +58,7 @@
 - type: polymorph
   id: BFoxMorph
   configuration:
-    entity: MobHumanoidFox
+    entity: MobVulpkanin
     forced: true
     transferName: true
     transferHumanoidAppearance: false
