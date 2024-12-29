@@ -23,8 +23,8 @@ public sealed class TimedMapLightChangingSystem : EntitySystem
             var dayDuration = timedMapLight.DayDuration;
             var eveningDuration = timedMapLight.EveningDuration;
             var nightDuration = timedMapLight.NightDuration;
-            var transitionDuration = dayDuration / 2f;
             var daycycleDuration = morningDuration + dayDuration + eveningDuration + nightDuration;
+            var transitionDuration = daycycleDuration / 2f;
 
             var t = (float)_gameTiming.CurTime.TotalSeconds % daycycleDuration / daycycleDuration;
 
