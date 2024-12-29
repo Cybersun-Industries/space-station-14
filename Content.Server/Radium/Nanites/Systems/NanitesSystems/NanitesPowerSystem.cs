@@ -18,7 +18,7 @@ public sealed class NanitesPowerSystem : EntitySystem
     {
         base.Initialize();
 
-        _powerDictionary.Add(NanitesThreshold.Max, Loc.GetString("shadowkin-power-max"));
+        _powerDictionary.Add(NanitesThreshold.Max, Loc.GetString("shadowkin-power-max"));       // shadowkin locale as temp
         _powerDictionary.Add(NanitesThreshold.Great, Loc.GetString("shadowkin-power-great"));
         _powerDictionary.Add(NanitesThreshold.Good, Loc.GetString("shadowkin-power-good"));
         _powerDictionary.Add(NanitesThreshold.Okay, Loc.GetString("shadowkin-power-okay"));
@@ -78,7 +78,7 @@ public sealed class NanitesPowerSystem : EntitySystem
 
 
     /// <summary>
-    ///     Tries to update the power level of a shadowkin based on an amount of seconds.
+    ///     Tries to update the power level an amount of seconds.
     /// </summary>
     public bool TryUpdatePowerLevel(EntityUid uid, float frameTime)
     {

@@ -36,15 +36,23 @@ public abstract class NanitesServerPrograms : SharedNanitesSystem
 
     private DamageSpecifier? _damageSpec;
 
-    private void RegenerateHealthByNanites(EntityUid uid, EntityUid user, DamageSpecifier dmgTypes)
+    private void RegenerateHealthByNanites(EntityUid uid, DamageSpecifier dmgTypes)
     {
             _damage.TryChangeDamage(uid, dmgTypes);
     }
 
-    public bool TryRegenerateHealthByNanites(EntityUid uid, EntityUid user, NanitesComponent component, float damage, string[]? specifier)
+    // I just deleted "EntityUid user" from this.
+    // let's hope I didnt mess this up.
+    // after careful consideration this is a real unused variable.
+    // dunno what i was thinking back in the days
+    /// <summary>
+    ///     Name speaks for itself. Currently damage == heal == nanites consumption.
+    ///     Probably will change it in a future. Totally not foreshadowing.
+    /// </summary>
+    public bool TryRegenerateHealthByNanites(EntityUid uid, NanitesComponent component, float damage, string[]? specifier)
     {
         var damageable = EnsureComp<DamageableComponent>(uid);
-        if (uid == null || user == null || component == null || damageable == null)
+        if (uid == null || component == null || damageable == null)
         {
             _logger.Debug("NanitesSystem: not enough arguments");
             return false;
@@ -83,13 +91,18 @@ public abstract class NanitesServerPrograms : SharedNanitesSystem
 
         if (_nanitesSystem.TryTakeNanites(uid, damage, component))
         {
-            RegenerateHealthByNanites(uid, user, _damageSpec);
+            RegenerateHealthByNanites(uid, _damageSpec);
             return true;
         }
 
         return false;
     }
 
+    /// <summary>
+    ///     Depended on specifier, it returns damage types.
+    ///     if specifier is an array then parse through protoman
+    ///     and index all damage groups/types
+    /// </summary>
     private DamageSpecifier CreateDamageSpecifier(float damage, string[]? specifier)
     {
         if (specifier == null)

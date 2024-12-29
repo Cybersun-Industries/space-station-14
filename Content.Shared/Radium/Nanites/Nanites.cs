@@ -4,3 +4,4 @@ namespace Content.Shared.Radium.Nanites;
 
 [Serializable, NetSerializable]
 public sealed class Nanites;
+// placeholder
