@@ -2,7 +2,7 @@
 
 <div class="header" align="center">
     
-[![Discord](https://img.shields.io/discord/831352358520725506?label=Discord&logo=discord&logoColor=white)](https://discord.gg/H6bjbKPXfM)
+[![Discord](https://img.shields.io/discord/1175402675899224094?label=Discord&logo=discord&logoColor=white)](https://discord.gg/H6bjbKPXfM)
 [![Wiki](https://img.shields.io/badge/Wiki-SS14%20RADIUM-blue)](https://radium-station.space)
 [![GitHub](https://img.shields.io/github/stars/Cybersun-Industries/space-station-14?style=social)](https://github.com/Cybersun-Industries/space-station-14)
 
