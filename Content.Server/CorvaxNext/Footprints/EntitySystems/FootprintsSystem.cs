@@ -8,6 +8,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Content.Shared.CorvaxNext.Footprints;
 using Content.Shared.CorvaxNext.Footprints.Components;
+using Content.Shared.Standing;
 
 namespace Content.Server.CorvaxNext.Footprints.EntitySystems;
 
@@ -54,7 +55,8 @@ public sealed class FootprintsSystem : EntitySystem
         if (!_map.TryFindGridAt(_transform.GetMapCoordinates((uid, transform)), out var gridUid, out _))
             return;
 
-        var dragging = mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead;
+        var dragging = (mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead)
+            && (EntityManager.GetComponent<StandingStateComponent>(uid).CurrentState == StandingState.Lying);
         var distance = (transform.LocalPosition - component.StepPos).Length();
         var stepSize = dragging ? component.DragSize : component.StepSize;
 
