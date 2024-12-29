@@ -1,7 +1,7 @@
-namespace Content.Server.Radium.TimedMapLightChanging.Components
+namespace Content.Server.Radium.DayCycleMap.Components
 {
     [RegisterComponent]
-    public sealed partial class TimedMapLightChangingComponent : Component
+    public sealed partial class DayLightComponent : Component
     {
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField]

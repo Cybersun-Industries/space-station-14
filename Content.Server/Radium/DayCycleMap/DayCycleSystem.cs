@@ -1,6 +1,7 @@
 using Content.Server.Radium.TimedMapLightChanging.Components;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
+using TimedMapLightChangingComponent = Content.Server.Radium.DayCycleMap.Components.TimedMapLightChangingComponent;
 
 namespace Content.Server.Radium.TimedMapLightChanging;
 
