@@ -30,7 +30,7 @@ public sealed class TimedMapLightChangingSystem : EntitySystem
 
             if (t <= 0.25f) // Утро
             {
-                var morningColor = timedMapLight.DayColor;
+                var morningColor = timedMapLight.MorningColor;
                 if (t >= 0.25f - (transitionDuration / morningDuration))
                 {
                     var transitionT = (0.25f - t) / (transitionDuration / morningDuration);
