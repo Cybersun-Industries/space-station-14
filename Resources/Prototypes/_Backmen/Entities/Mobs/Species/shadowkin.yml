@@ -104,7 +104,7 @@
     damage:
       types:
         Asphyxiation: 0.0
-
+ - type: FootprintVisualizer
 
 - type: entity
   save: false
