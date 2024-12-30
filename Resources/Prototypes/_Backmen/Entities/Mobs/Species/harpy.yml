@@ -121,6 +121,9 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 5.0
+    - type: FootprintVisualizer
+      leftBarePrint: "footprint-left-bare-diona"
+      rightBarePrint: "footprint-right-bare-diona"
 
 - type: entity
   save: false
