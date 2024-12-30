@@ -4,7 +4,6 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
 using Content.Server.Radium.GameTicking.Rules.Components;
-using Content.Server.Radium.Roles;
 using Content.Server.Roles;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
