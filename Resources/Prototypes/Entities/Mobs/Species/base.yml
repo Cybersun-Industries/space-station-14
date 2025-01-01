@@ -216,6 +216,7 @@
     - DoorBumpOpener
     - AnomalyHost
   - type: LayingDown # _CorvaxNext: LayingDown Laying Down
+  - type: AutoCryoSleepable # Corvax-Next-AutoCryo
 
 - type: entity
   save: false
