@@ -58,3 +58,17 @@
         Shock: 0.1
         Cold: 0.4
         Radiation: 0.2
+
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingHeadHardsuitWithLightBase ] # Corvax-Resprite
+  id: ClothingHeadHelmetHardsuitVoxStealth
+  suffix: Vox
+  name: Vox Raiders helmet
+  description: A robust helmet for special operations.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite:  Radium/Clothing/Head/Hardsuits/helmstealth.rsi
+  - type: Clothing
+    sprite:  Radium/Clothing/Head/Hardsuits/helmstealth.rsi
+  - type: PointLight 

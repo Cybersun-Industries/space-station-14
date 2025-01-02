@@ -15,3 +15,19 @@
     layers:
       - state: green
       - state: passenger
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointThiefVoxes
+  components:
+  - type: GhostRole
+    name: ghost-role-information-thiefvox-name
+    description: ghost-role-information-thiefvox-description
+    rules: ghost-role-information-rules-thiefvox
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Structures/Wallmounts/signs.rsi
+        state: vox

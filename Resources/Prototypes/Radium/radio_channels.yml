@@ -1,0 +1,7 @@
+- type: radioChannel
+  id: Vox
+  name: chat-radio-vox
+  keycode: 'v' 
+  frequency: 1338
+  color: "purple"
+  longRange: true

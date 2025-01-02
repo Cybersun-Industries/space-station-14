@@ -124,3 +124,43 @@
     definitions:
     - spawnerPrototype: RedStar
 
+- type: entity
+  parent: BaseGameRule
+  id: ThiefVoxesSpawn
+  components:
+  - type: StationEvent
+    earliestStart: 35
+    weight: 5.5
+    minimumPlayers: 10
+    duration: null
+  - type: AntagLoadProfileRule
+  - type: ThiefVoxesRule
+  - type: AntagSpawner
+    prototype: MobThiefVox
+  #shuttle
+  - type: RuleGrids
+  - type: LoadMapRule
+    mapPath: "/Maps/Radium/voxshuttle.yml"
+  #objectives
+  - type: AntagRandomObjectives
+    sets:
+    - groups: VoxThiefObjectiveGroups
+      maxPicks: 30
+    maxDifficulty: 2.5
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointThiefVoxes
+      min: 3
+      max: 4
+      pickPlayer: false
+      startingGear: ThiefVoxesGearFull
+      roleLoadout:
+      - RoleSurvivalNukie #TODO - vox
+      components:
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRoleThiefVoxes
+      briefing:
+        sound: "/Audio/Misc/thief_greeting.ogg"
