@@ -19,6 +19,6 @@
     pocket2: AgentIDCard
   storage:
     back:
-    - ChameleonProjector
     - Truncheon
     - HypoDartBox
+    - ThiefBeacon

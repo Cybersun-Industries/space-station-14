@@ -71,4 +71,11 @@
     sprite:  Radium/Clothing/Head/Hardsuits/helmstealth.rsi
   - type: Clothing
     sprite:  Radium/Clothing/Head/Hardsuits/helmstealth.rsi
-  - type: PointLight 
+  - type: PointLight
+    color: violet
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01

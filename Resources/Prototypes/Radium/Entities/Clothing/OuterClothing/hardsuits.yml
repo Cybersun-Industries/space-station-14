@@ -98,10 +98,10 @@
     parent: true
     components:
     - type: Stealth
-      minVisibility: 0.1
-      lastVisibility: 0.1
+      minVisibility: 0.25
+      lastVisibility: 0.25
   - type: PowerCellDraw
-    drawRate: 0 
+    drawRate: 1 
   - type: ToggleCellDraw
   - type: PowerCellSlot
     cellSlotId: cell_slot
