@@ -5,7 +5,7 @@
   id: VoxBaseThiefObjective
   components:
   - type: Objective
-    issuer: objective-issuer-thief
+    issuer: objective-issuer-voxthief
   - type: RoleRequirement
     roles:
       components:
