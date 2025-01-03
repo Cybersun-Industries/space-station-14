@@ -1,5 +1,6 @@
 ﻿- type: entity
   categories: [ HideSpawnMenu ]
+  abstract: true
   parent: BaseObjective
   id: VoxBaseThiefObjective
   components:
@@ -12,6 +13,7 @@
 
 - type: entity
   categories: [ HideSpawnMenu ]
+  abstract: true
   parent: [VoxBaseThiefObjective, BaseStealObjective]
   id: VoxBaseThiefStealObjective
   components:
@@ -22,6 +24,7 @@
 
 - type: entity
   categories: [ HideSpawnMenu ]
+  abstract: true
   parent: [VoxBaseThiefObjective, VoxBaseThiefStealObjective]
   id: VoxBaseThiefStealCollectionObjective
   components:
@@ -30,6 +33,7 @@
 
 - type: entity
   categories: [ HideSpawnMenu ]
+  abstract: true
   parent: [VoxBaseThiefObjective, VoxBaseThiefStealObjective]
   id: VoxBaseThiefStealStructureObjective
   components:
@@ -40,6 +44,7 @@
 
 - type: entity
   categories: [ HideSpawnMenu ]
+  abstract: true
   parent: [VoxBaseThiefObjective, VoxBaseThiefStealObjective]
   id: VoxBaseThiefStealAnimalObjective
   components:
@@ -73,7 +78,7 @@
     minCollectionSize: 5
     maxCollectionSize: 8
   - type: Objective
-    difficulty: 1.0
+    difficulty: 1
 
 - type: entity
   parent: BaseThiefStealCollectionObjective
