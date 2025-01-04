@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Radium.Medical.Surgery.Components;
 using Content.Shared.Body.Components;
@@ -122,10 +123,12 @@ public sealed partial class SurgerySystem
         if (!TryComp<SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
             return;
         var operation = _prototypeManager.Index<SurgeryOperationPrototype>(ev.PrototypeId);
-        var damagedParts = _bodySystem.GetBodyChildren(ev.Uid).Where(g =>
-            g.Component.Wounds.Count > 0 &&
-            g.Component.PartType == Enum.Parse<BodyPartType>(operation.BodyPart) &&
-            g.Component.Symmetry == ev.Symmetry).ToList();
+        var damagedParts = _bodySystem.GetBodyChildren(ev.Uid)
+            .Where(g =>
+                g.Component.Wounds.Count > 0 &&
+                g.Component.PartType == Enum.Parse<BodyPartType>(operation.BodyPart) &&
+                g.Component.Symmetry == ev.Symmetry)
+            .ToList();
         if (damagedParts.ToList().Count == 0)
         {
             if (surgeryInProgressComponent.CurrentStep != null)
@@ -158,10 +161,12 @@ public sealed partial class SurgerySystem
     private void OnBurnSurgeryPostAction(BurnSurgeryEvent ev)
     {
         var operation = _prototypeManager.Index<SurgeryOperationPrototype>(ev.PrototypeId);
-        var damagedParts = _bodySystem.GetBodyChildren(ev.Uid).Where(g =>
-            g.Component.Wounds.Count is > 0 &&
-            g.Component.PartType == Enum.Parse<BodyPartType>(operation.BodyPart) &&
-            g.Component.Symmetry == ev.Symmetry).ToList();
+        var damagedParts = _bodySystem.GetBodyChildren(ev.Uid)
+            .Where(g =>
+                g.Component.Wounds.Count is > 0 &&
+                g.Component.PartType == Enum.Parse<BodyPartType>(operation.BodyPart) &&
+                g.Component.Symmetry == ev.Symmetry)
+            .ToList();
         if (damagedParts.ToList().Count == 0)
         {
             if (!TryComp<SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
@@ -196,10 +201,12 @@ public sealed partial class SurgerySystem
     private void OnLRepairCompFSurgeryPostAction(RepairCompFSurgeryEvent ev)
     {
         var operation = _prototypeManager.Index<SurgeryOperationPrototype>(ev.PrototypeId);
-        var damagedParts = _bodySystem.GetBodyChildren(ev.Uid).Where(g =>
-            g.Component.Wounds.Count > 0 &&
-            g.Component.PartType == Enum.Parse<BodyPartType>(operation.BodyPart) &&
-            g.Component.Symmetry == ev.Symmetry).ToList();
+        var damagedParts = _bodySystem.GetBodyChildren(ev.Uid)
+            .Where(g =>
+                g.Component.Wounds.Count > 0 &&
+                g.Component.PartType == Enum.Parse<BodyPartType>(operation.BodyPart) &&
+                g.Component.Symmetry == ev.Symmetry)
+            .ToList();
         if (damagedParts.ToList().Count == 0)
         {
             if (!TryComp<SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
@@ -234,11 +241,13 @@ public sealed partial class SurgerySystem
     private void OnRepairBoneFSurgeryPostAction(RepairBoneFSurgeryEvent ev)
     {
         var operation = _prototypeManager.Index<SurgeryOperationPrototype>(ev.PrototypeId);
-        var damagedParts = _bodySystem.GetBodyChildren(ev.Uid).Where(g =>
-            g.Component.Wounds.Count is > 0 and < 5 &&
-            g.Component.Wounds.Where(i => i.Type == WoundTypeEnum.Blunt).ToList().Count != 0 &&
-            g.Component.PartType == Enum.Parse<BodyPartType>(operation.BodyPart) &&
-            g.Component.Symmetry == ev.Symmetry).ToList();
+        var damagedParts = _bodySystem.GetBodyChildren(ev.Uid)
+            .Where(g =>
+                g.Component.Wounds.Count is > 0 and < 5 &&
+                g.Component.Wounds.Where(i => i.Type == WoundTypeEnum.Blunt).ToList().Count != 0 &&
+                g.Component.PartType == Enum.Parse<BodyPartType>(operation.BodyPart) &&
+                g.Component.Symmetry == ev.Symmetry)
+            .ToList();
         if (damagedParts.ToList().Count == 0)
         {
             if (!TryComp<SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
@@ -430,6 +439,50 @@ public sealed partial class SurgerySystem
         Logger.GetSawmill("DEBUG").Error("Luma event raised");
         RemComp<SurgeryInProgressComponent>(ev.Uid);
     }
+
+    #endregion
+
+
+    #region OnOrganManipHSurgeryPostAction
+
+    private void OnOrganManipHSurgeryPostAction(OrganManipHSurgeryEvent ev)
+    {
+        RemComp<SurgeryInProgressComponent>(ev.Uid);
+        if (!TryGetOperationPrototype(ev.PrototypeId, out var operationPrototype))
+            return;
+        if (!TryComp<BodyComponent>(ev.Uid, out var bodyComponent))
+            return;
+        var list = _bodySystem.GetBodyChildren(ev.Uid);
+        var valueTuples = list as (EntityUid Id, BodyPartComponent Component)[] ?? list.ToArray();
+        foreach (var entity in _bodySystem.GetBodyOrganEntityComps<BrainComponent>((ev.Uid, bodyComponent)))
+        {
+            _xformSystem.AttachToGridOrMap(entity);
+        }
+
+        RaiseNetworkEvent(new SyncPartsEvent(GetNetEntity(ev.Uid)), ev.Uid);
+    }
+
+
+    #endregion
+
+    #region OnOrganManipESurgeryPostAction
+
+    private void OnOrganManipESurgeryPostAction(OrganManipESurgeryEvent ev)
+    {
+        if (TryComp<BodyComponent>(ev.Uid, out var body))
+        {
+            var organs = _bodySystem.GetBodyOrganEntityComps<TransformComponent>((ev.Uid, body));
+            var baseXform = Transform(ev.Uid);
+            foreach (var organ in organs)
+            {
+                if (HasComp<BrainComponent>(organ.Owner) || HasComp<EyeComponent>(organ.Owner))
+                    continue;
+
+                _xformSystem.PlaceNextTo((organ.Owner, organ), (ev.Uid, baseXform));
+            }
+        }
+    }
+
 
     #endregion
 }

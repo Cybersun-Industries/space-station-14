@@ -75,6 +75,43 @@ public sealed class OrganManipSurgeryEvent : EntityEventArgs, ISurgeryEvent
 
 #endregion
 
+#region OrganManipSurgeryEvent
+
+public sealed class OrganManipHSurgeryEvent : EntityEventArgs, ISurgeryEvent
+{
+    public EntityUid Uid { get; set; }
+    public string PrototypeId { get; set; }
+
+    public Enum Symmetry { get; set; }
+
+    public OrganManipHSurgeryEvent(EntityUid uid, string prototypeId, Enum symmetry)
+    {
+        Uid = uid;
+        PrototypeId = prototypeId;
+        Symmetry = symmetry;
+    }
+}
+
+#endregion
+
+#region OrganManipSurgeryEvent
+
+public sealed class OrganManipESurgeryEvent : EntityEventArgs, ISurgeryEvent
+{
+    public EntityUid Uid { get; set; }
+    public string PrototypeId { get; set; }
+
+    public Enum Symmetry { get; set; }
+
+    public OrganManipESurgeryEvent(EntityUid uid, string prototypeId, Enum symmetry)
+    {
+        Uid = uid;
+        PrototypeId = prototypeId;
+        Symmetry = symmetry;
+    }
+}
+
+#endregion
 #region FeatureManipSurgeryEvent
 
 public sealed class FeatureManipSurgeryEvent : EntityEventArgs, ISurgeryEvent
