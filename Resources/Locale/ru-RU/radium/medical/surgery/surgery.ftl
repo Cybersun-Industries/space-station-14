@@ -61,7 +61,7 @@ surgery-addOperationL-desc = Эта операция позволяет верн
 surgery-addOperationA-name = Пришить руку
 surgery-addOperationA-desc = Эта операция позволяет вернуть утраченную конечность на место.
 
-surgery-scalpelAction-name = Надрежьте
+surgery-scalpelAction-name = Скальпель(Аналоги)
 surgery-incisionAction-desc = Сделайте надрез.
 surgery-exciseLungAction-desc = Вырежьте повреждённую часть лёгкого.
 surgery-inciseHeartAction-desc = Надрежьте сердце.
@@ -69,14 +69,14 @@ surgery-exciseLiverAction-desc = Вырежьте повреждённую ча�
 surgery-removeDuodenumAction-desc = Удалите нижнюю часть двенадцатиперстной кишки.
 surgery-exciseInfectionAction-desc = Удалите инфекцию.
 
-surgery-retractorAction-name = Раздвиньте
+surgery-retractorAction-name = Ретрактор(Аналоги)
 surgery-retractAction-desc = Раздвиньте кожу.
 
-surgery-sawAction-name = Распилите
+surgery-sawAction-name = Циркулярная пила(Аналоги)
 surgery-sawAction-desc = Распилите кость.
 surgery-severLimbAction-desc = Отрубите конечность.
 
-surgery-hemostatAction-name = Зажмите
+surgery-hemostatAction-name = Гемостат(Аналоги)
 surgery-clampAction-desc = Зажмите сосуды.
 surgery-removeAction-desc = Удалите что-либо.
 surgery-attachHeartAction-desc = Прикрепите сердечный трансплантат.
@@ -93,7 +93,7 @@ surgery-handsInsAction-desc = Вставьте что-либо.
 surgery-cavityAction-desc = Вставьте или достаньте что-либо из полости
 surgery-pumpAction-desc = Промойте желудок.
 
-surgery-CauteryAction-name = Прижгите
+surgery-CauteryAction-name = Прижигатель (Аналоги)
 surgery-sealAction-desc = Прижгите разрез.
 surgery-mendAction-desc = Закройте надрез.
 surgery-bypassCautAction-desc = Зашунтируйте сосуды.
@@ -101,7 +101,7 @@ surgery-bypassCautAction-desc = Зашунтируйте сосуды.
 surgery-reviveAction-name = Дефибриллятор
 surgery-reviveAction-desc = Реанимируйте пациента
 
-surgery-filterAction-name = Фильтр крови
+surgery-filterAction-name = Фильтр крови(Аналоги)
 surgery-filterAction-desc = Профильтруйте кровь.
 
 surgery-BBgStAction-name = Корректирующая сеть
@@ -111,7 +111,7 @@ surgery-reapirAction-desc = Восстановите кость.
 surgery-bonesetterAction-name = Корректирующая сеть
 surgery-resetBoneAction-desc = Верните кость в исходное положение.
 
-surgery-MgStAction-name = Бинтуйте
+surgery-MgStAction-name = Бинты(Аналоги)
 surgery-bandageAction-desc = Перевяжите ожоги.
 
 surgery-addFirstPartL-name = Нога
