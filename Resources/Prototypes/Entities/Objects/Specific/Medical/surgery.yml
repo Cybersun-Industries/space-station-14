@@ -162,6 +162,22 @@
     modifier: 2.2
 
 - type: entity
+  name: organ setter
+  id: OrganSetter
+  parent: BaseToolSurgery
+  description: A surgical tool used to hold organs.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    state: setter
+  - type: Item
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
+    storedRotation: 90
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Hands
+    modifier: 2.2
+
+- type: entity
   name: hemostat
   id: Hemostat
   parent: Retractor

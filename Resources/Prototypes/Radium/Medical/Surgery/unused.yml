@@ -13,84 +13,85 @@
 #      desc: Luma2
 #      action: enum.SurgeryTypeEnum.Cut
 #  key: LumaSurgeryEvent
-#- type: surgeryOperation
-#  id: OrganManipHOperation
-#  name: surgery-organOperation-name
-#  desc: surgery-organOperation-desc
-#  bodyPart: Head
-#  steps:
-#    - type: SurgeryStep
-#      name: surgery-scalpelAction-name
-#      desc: surgery-incisionAction-desc
-#      action: enum.SurgeryTypeEnum.Incise
-#    - type: SurgeryStep
-#      name: surgery-retractorAction-name
-#      desc: surgery-retractAction-desc
-#      action: enum.SurgeryTypeEnum.Retract
-#    - type: SurgeryStep
-#      name: surgery-sawAction-name
-#      desc: surgery-sawAction-desc
-#      action: enum.SurgeryTypeEnum.Cut
-#    - type: SurgeryStep
-#      name: surgery-hemostatAction-name
-#      desc: surgery-clampAction-desc
-#      action: enum.SurgeryTypeEnum.Clamp
-#    - type: SurgeryStep
-#      name: surgery-scalpelAction-name
-#      desc: surgery-incisionAction-desc
-#      action: enum.SurgeryTypeEnum.Incise
-#    - type: SurgeryStep
-#      name: surgery-hemostatAction-name
-#      desc: surgery-removeAction-desc
-#      action: enum.SurgeryTypeEnum.Hands
-#    - type: SurgeryStep
-#      name: surgery-handsAction-name
-#      desc: surgery-handsInsAction-desc
-#      action: enum.SurgeryTypeEnum.Hands
-#    - type: SurgeryStep
-#      name: surgery-CauteryAction-name
-#      desc: surgery-sealAction-desc
-#      action: enum.SurgeryTypeEnum.Burn
-#  key: OrganManipHSurgeryEvent
-#- type: surgeryOperation
-#  id: OrganManipEOperation
-#  name: surgery-organOperation-name
-#  desc: surgery-organOperation-desc
-#  bodyPart: Eyes
-#  steps:
-#    - type: SurgeryStep
-#      name: surgery-scalpelAction-name
-#      desc: surgery-incisionAction-desc
-#      action: enum.SurgeryTypeEnum.Incise
-#    - type: SurgeryStep
-#      name: surgery-retractorAction-name
-#      desc: surgery-retractAction-desc
-#      action: enum.SurgeryTypeEnum.Retract
-#    - type: SurgeryStep
-#      name: surgery-sawAction-name
-#      desc: surgery-sawAction-desc
-#      action: enum.SurgeryTypeEnum.Cut
-#    - type: SurgeryStep
-#      name: surgery-hemostatAction-name
-#      desc: surgery-clampAction-desc
-#      action: enum.SurgeryTypeEnum.Clamp
-#    - type: SurgeryStep
-#      name: surgery-scalpelAction-name
-#      desc: surgery-incisionAction-desc
-#      action: enum.SurgeryTypeEnum.Incise
-#    - type: SurgeryStep
-#      name: surgery-hemostatAction-name
-#      desc: surgery-removeAction-desc
-#      action: enum.SurgeryTypeEnum.Hands
-#    - type: SurgeryStep
-#      name: surgery-handsAction-name
-#      desc: surgery-handsInsAction-desc
-#      action: enum.SurgeryTypeEnum.Hands
-#    - type: SurgeryStep
-#      name: surgery-CauteryAction-name
-#      desc: surgery-sealAction-desc
-#      action: enum.SurgeryTypeEnum.Burn
-#  key: OrganManipESurgeryEvent
+- type: surgeryOperation
+  id: OrganManipHOperation
+  name: surgery-organOperation-name
+  desc: surgery-organOperation-desc
+  bodyPart: Head
+  steps:
+    - type: SurgeryStep
+      name: surgery-scalpelAction-name
+      desc: surgery-incisionAction-desc
+      action: enum.SurgeryTypeEnum.Incise
+    - type: SurgeryStep
+      name: surgery-retractorAction-name
+      desc: surgery-retractAction-desc
+      action: enum.SurgeryTypeEnum.Retract
+    - type: SurgeryStep
+      name: surgery-sawAction-name
+      desc: surgery-sawAction-desc
+      action: enum.SurgeryTypeEnum.Cut
+    - type: SurgeryStep
+      name: surgery-hemostatAction-name
+      desc: surgery-clampAction-desc
+      action: enum.SurgeryTypeEnum.Clamp
+    - type: SurgeryStep
+      name: surgery-scalpelAction-name
+      desc: surgery-incisionAction-desc
+      action: enum.SurgeryTypeEnum.Incise
+    - type: SurgeryStep
+      name: surgery-hemostatAction-name
+      desc: surgery-removeAction-desc
+      action: enum.SurgeryTypeEnum.Hands
+    - type: SurgeryStep
+      name: surgery-handsAction-name
+      desc: surgery-handsInsAction-desc
+      action: enum.SurgeryTypeEnum.Hands
+    - type: SurgeryStep
+      name: surgery-CauteryAction-name
+      desc: surgery-sealAction-desc
+      action: enum.SurgeryTypeEnum.Burn
+  key: OrganManipHSurgeryEvent
+
+- type: surgeryOperation
+  id: OrganManipEOperation
+  name: surgery-organOperation-name
+  desc: surgery-organOperation-desc
+  bodyPart: Eyes
+  steps:
+    - type: SurgeryStep
+      name: surgery-scalpelAction-name
+      desc: surgery-incisionAction-desc
+      action: enum.SurgeryTypeEnum.Incise
+    - type: SurgeryStep
+      name: surgery-retractorAction-name
+      desc: surgery-retractAction-desc
+      action: enum.SurgeryTypeEnum.Retract
+    - type: SurgeryStep
+      name: surgery-sawAction-name
+      desc: surgery-sawAction-desc
+      action: enum.SurgeryTypeEnum.Cut
+    - type: SurgeryStep
+      name: surgery-hemostatAction-name
+      desc: surgery-clampAction-desc
+      action: enum.SurgeryTypeEnum.Clamp
+    - type: SurgeryStep
+      name: surgery-scalpelAction-name
+      desc: surgery-incisionAction-desc
+      action: enum.SurgeryTypeEnum.Incise
+    - type: SurgeryStep
+      name: surgery-hemostatAction-name
+      desc: surgery-removeAction-desc
+      action: enum.SurgeryTypeEnum.Hands
+    - type: SurgeryStep
+      name: surgery-handsAction-name
+      desc: surgery-handsInsAction-desc
+      action: enum.SurgeryTypeEnum.Hands
+    - type: SurgeryStep
+      name: surgery-CauteryAction-name
+      desc: surgery-sealAction-desc
+      action: enum.SurgeryTypeEnum.Burn
+  key: OrganManipESurgeryEvent
 #- type: surgeryOperation
 #  id: OrganManipMOperation
 #  name: surgery-organOperation-name
