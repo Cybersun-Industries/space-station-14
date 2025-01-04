@@ -69,10 +69,10 @@ surgery-exciseLiverAction-desc = Вырежьте повреждённую ча�
 surgery-removeDuodenumAction-desc = Удалите нижнюю часть двенадцатиперстной кишки.
 surgery-exciseInfectionAction-desc = Удалите инфекцию.
 
-surgery-retractorAction-name = Раздвигайте
+surgery-retractorAction-name = Раздвиньте
 surgery-retractAction-desc = Раздвиньте кожу.
 
-surgery-sawAction-name = Пилите
+surgery-sawAction-name = Распилите
 surgery-sawAction-desc = Распилите кость.
 surgery-severLimbAction-desc = Отрубите конечность.
 
