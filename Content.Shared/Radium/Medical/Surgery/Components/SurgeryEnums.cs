@@ -22,7 +22,6 @@ public enum SurgeryTypeEnum : byte
     AddAdditionalPart,
     Repair, //Bonesetter/bone gel/surgical tape
     Bandage,
-    Hands, //Huh... Maybe we add an Organ ejector?
 
 }
 
@@ -35,17 +34,6 @@ public enum SurgeryPartEnum : byte
     Torso,
     Leg
 }
-[NetSerializable, Serializable]
-public enum SurgeryOrganEnum : byte
-{
-    None,
-    Brain,
-    Eyes,
-    Stomach,
-    Lungs,
-    
-}
-
 
 [NetSerializable, Serializable]
 public enum WoundTypeEnum : byte
