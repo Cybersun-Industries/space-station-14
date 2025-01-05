@@ -45,6 +45,7 @@
   - type: TTS # Corvax-TTS
   - type: RequireProjectileTarget
     active: False
+  - type: AnimatedEmotes # Corvax-Next-AutoAnimate
 
 - type: entity
   save: false
