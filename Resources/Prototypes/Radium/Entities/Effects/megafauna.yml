@@ -1,0 +1,45 @@
+- type: entity
+  id: EffectAshDrakeLavaSpawn
+  name: lavapool
+  components:
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+    blacklist:
+      tags:
+        - Catwalk
+  - type: TileEntityEffect
+    effects:
+    - !type:FlammableReaction
+      multiplier: 3.75
+      multiplierOnExisting: 0.75
+    - !type:Ignite
+  - type: Transform
+    anchored: True
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: Tiles/Planet/lava.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: lava
+        shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: TimedDespawn #do this shit by hand because of fucking course.
+    lifetime: 10
