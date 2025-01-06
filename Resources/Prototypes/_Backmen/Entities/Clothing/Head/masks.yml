@@ -80,6 +80,24 @@
   - type: IdentityBlocker
 
 - type: entity
+  parent: ClothingMaskGas
+  id: ClothingGermanGasMask
+  name: Немецкий противогаз
+  description: Противогаз немецких войск, потрепано временем но свою работу выполняет.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Masks/germangasmaskbel.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Masks/germangasmaskbel.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.95
+
+- type: entity
   parent: ClothingMaskBase
   id: ClothingBalaclavaSwat
   name: Балаклава
