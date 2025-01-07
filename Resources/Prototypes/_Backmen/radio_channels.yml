@@ -1,12 +1,4 @@
 - type: radioChannel
-  id: CSH
-  name: bkm-radio-csh
-  keycode: 'в'
-  frequency: 8118
-  color: "#8f09b0"
-  longRange: true
-
-- type: radioChannel
   id: Fleet
   name: bkm-radio-fleet
   keycode: 'х'
@@ -28,14 +20,6 @@
   keycode: 'з'
   frequency: 8121
   color: "#228B22"
-  longRange: true
-
-- type: radioChannel
-  id: AID
-  name: bkm-radio-AID
-  keycode: 'ж'
-  frequency: 1301
-  color: "#aae8f2"
   longRange: true
 
 - type: radioChannel

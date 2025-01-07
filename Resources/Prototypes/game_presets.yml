@@ -1,33 +1,4 @@
 - type: gamePreset
-  id: Survival
-  alias:
-    - survival
-  name: survival-title
-  showInVote: false # secret
-  description: survival-description
-  rules:
-    - MeteorSwarmScheduler
-    - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
-    - BasicRoundstartVariation
-
-- type: gamePreset
-  id: KesslerSyndrome
-  alias:
-    - kessler
-    - junk
-    - meteorhell
-  name: kessler-syndrome-title
-  showInVote: false # secret
-  description: kessler-syndrome-description
-  rules:
-    - KesslerSyndromeScheduler
-    - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - BasicRoundstartVariation
-
-- type: gamePreset
   id: AllAtOnce
   alias:
   - all
@@ -91,7 +62,7 @@
   showInVote: false #4boring4vote
   description: greenshift-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler 
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -126,7 +97,7 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler 
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
 
 - type: gamePreset

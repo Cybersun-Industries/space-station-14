@@ -40,7 +40,6 @@ public sealed partial class FleshCultistComponent : Component
         "Vox",
         "HumanoidFoxes",
         "Shadowkin",
-        "Harpy",
     };
 
     [DataField("adrenalinReagents")] public List<ReagentQuantity> AdrenalinReagents = new()

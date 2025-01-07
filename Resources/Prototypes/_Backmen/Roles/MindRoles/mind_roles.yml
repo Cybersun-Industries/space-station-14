@@ -46,17 +46,18 @@
     exclusiveAntag: true
   - type: VampireRole
 
+# Radium | Comment it due our own changeling
 # Changeling
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleChangeling
-  name: Changeling Role
+#- type: entity
+ # parent: BaseMindRoleAntag
+ # id: MindRoleChangeling
+ # name: Changeling Role
   #  description: mind-role-changeling-description
-  components:
-  - type: MindRole
-    antagPrototype: Changeling
-    exclusiveAntag: true
-  - type: ChangelingRole
+#  components:
+#  - type: MindRole
+ #   antagPrototype: Changeling
+ #   exclusiveAntag: true
+ #- type: ChangelingRole
 
 # EvilTwin
 - type: entity
@@ -69,18 +70,6 @@
     antagPrototype: EvilTwin
     exclusiveAntag: true
   - type: EvilTwinRole
-
-# Fugitive
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleFugitive
-  name: Fugitive Role
-  #  description: mind-role-fugitive-description
-  components:
-  - type: MindRole
-    antagPrototype: Fugitive
-    exclusiveAntag: true
-  - type: FugitiveRole
 
 # Bank
 - type: entity

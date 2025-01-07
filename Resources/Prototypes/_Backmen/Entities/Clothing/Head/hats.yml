@@ -1,40 +1,5 @@
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatUshankaSSSP
-  name: Ушанка СССП
-  description: "Отлично подходит для Сибири, да?"
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/ushankaSSSP.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/ushankaSSSP.rsi
-  - type: AddAccentClothing
-    accent: RussianAccent
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatCapGerman
-  name: Фуражка немецкого офицера
-  description: Довольно старая фуражка офицера руководящего немецкими войсками
-  components:
-    - type: Sprite
-      sprite: Backmen/Clothing/Head/Hats/germancapofficerbel.rsi
-    - type: Clothing
-      sprite: Backmen/Clothing/Head/Hats/germancapofficerbel.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatCapOfficerSoviet
-  name: Фуражка Советского Офицера
-  description: Современная версия фуражки офицера руководящего войсками СССП
-  components:
-    - type: Sprite
-      sprite: Backmen/Clothing/Head/Hats/sovietcapbel.rsi
-    - type: Clothing
-      sprite: Backmen/Clothing/Head/Hats/sovietcapbel.rsi
-
-- type: entity
-  parent: ClothingHeadBase
   id: ClothingWhitsHunter
   name: Шляпа охотника за ведьмами
   description: Шляпа охотника за мифическими существами, а именно ведьмами в стиле средневековья
@@ -57,17 +22,6 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadMailCarrier
-  name: mail carrier's hat
-  description: Smells like a good pension.
-  components:
-    - type: Sprite
-      sprite: Backmen/Clothing/Head/Hats/mailman.rsi
-    - type: Clothing
-      sprite: Backmen/Clothing/Head/Hats/mailman.rsi
-
-- type: entity
-  parent: ClothingHeadBase
   id: ClothingHeadHatStetson
   name: Stetson
   description: Feel like a cowboy!
@@ -84,38 +38,6 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHelmetKendoMen
-  name: men
-  description: The quintessential head armor of the kendo practitioner.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Helmets/men.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Helmets/men.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.80
-        Slash: 0.95
-        Piercing: 0.95
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatSoldier
-  name: фуражка солдата СССП
-  description: Гласит приказ "Ни шагу назад"!
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/capsssp.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/capsssp.rsi
-  - type: Tag
-    tags:
-    - ClothMade
-    - HamsterWearable
-
-- type: entity
-  parent: ClothingHeadBase
   id: ClothingHeadHatCapSec
   name: Фуражка офицера СБ
   description: Фуражка сотрудника СБ, имеет эмблему НТ.
@@ -127,17 +49,6 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatBeretVet
-  name: Берет ветерана
-  description: Зелёный берет ветерана, в милитарическом стиле.
-  components:
-    - type: Sprite
-      sprite: Backmen/Clothing/Head/Hats/beretvet.rsi
-    - type: Clothing
-      sprite: Backmen/Clothing/Head/Hats/beretvet.rsi
-
-- type: entity
-  parent: ClothingHeadBase
   id: ClothingHeadHatChapa
   name: Камилавка
   description: Шляпа из верблюжьей шерсти, крайне похожа на древний головной убор священника.
@@ -146,101 +57,6 @@
       sprite: Backmen/Clothing/Head/Hats/headchap.rsi
     - type: Clothing
       sprite: Backmen/Clothing/Head/Hats/headchap.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatEgovNavyOfficerCap
-  name: navy officer cap #имеется ввиду фуражка :humanTorch:
-  description: Navy officer cap. Better than any stripes will emphasize your importance and rank.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/officer_cap.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/officer_cap.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatEgovShtabCap
-  name: staff officer cap #имеется ввиду фуражка :humanTorch:
-  description: Officer cap. Better than any stripes will emphasize your importance and rank.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/shtab.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/shtab.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatEgovShtabGuardCap
-  name: staff guard cap #имеется ввиду кепка :humanTorch:
-  description: Officer cap. Better than any stripes will emphasize your importance and rank.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/shtabguard.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/shtabguard.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatEgovOfficerCap
-  name: officer cap
-  description: Officer cap. Better than any stripes will emphasize your importance and rank.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/officer.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/officer.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatEgovFlotOfficerCap
-  name: flot officer cap
-  description: Officer cap. Better than any stripes will emphasize your importance and rank.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/flot.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/flot.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatMarineBeret
-  name: marine navy beret
-  description: Beret made of dense camouflage fabric. Doesn't make you invisible.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/beret.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/beret.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatMVDBeret
-  name: берет полиции ОПЗ
-  description: Берет офицеров полиции ОПЗ, имеет эмблему министерства внутренних дел ОПЗ.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/mvdberet.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/mvdberet.rsi
-
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatMVDOfficerCap
-  name: фуражка ОПЗ
-  description: Фуражка полиции ОПЗ, имеет какарду с винками министерства внутренних дел ОПЗ.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/mvdcapofficer.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/mvdcapofficer.rsi
-
-- type: entity
-  parent: ClothingHeadHatPlaguedoctor
-  id: ClothingHeadHatPlaguedoctorUnremoveable
-  suffix: Unremoveable
-  components:
-  - type: Unremoveable
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -326,17 +142,6 @@
    - type: IdentityBlocker
 
 - type: entity # backmen
-  parent: ClothingMaskBase
-  id: ClothingMaskBal
-  name: баллаклава SWAT
-  description: аааа!
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Masks/balaclawa.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Masks/balaclawa.rsi
-
-- type: entity # backmen
   parent: ClothingHeadBase
   id: ClothingHeadJeester
   name: шляпа Джестера
@@ -346,17 +151,6 @@
     sprite: Backmen/Clothing/Head/Hats/jeester.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Head/Hats/jeester.rsi
-
-- type: entity # backmen
-  parent: ClothingHeadBase
-  id: ClothingHeadPlet
-  name: плетенная шляпа
-  description: Шляпа прямиком с восточной части земли, где она популярна среди туристов и земляков
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/hatfriz.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/hatfriz.rsi
 
 - type: entity
   parent: ClothingHeadBase

@@ -6,7 +6,6 @@
     - id: FugitiveSpawn
     - id: BlobSpawn
     - id: BluespaceGoat
-    - id: SpiderSpiderVampireSpawn
 
 - type: entity
   id: EvilTwinSpawn
@@ -18,17 +17,6 @@
     earliestStart: 15
     minimumPlayers: 5
   - type: EvilTwinRule
-
-- type: entity
-  id: FugitiveSpawn
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: StationEvent
-      weight: 2
-      earliestStart: 20
-      minimumPlayers: 15
-    - type: FugitiveRule
 
 - type: entity
   id: WageScheduler
@@ -64,23 +52,3 @@
     earliestStart: 30
     duration: 35
   - type: BluespaceGoatRule
-
-- type: entity
-  id: SpiderSpiderVampireSpawn
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: StationEvent
-      startAnnouncement: station-event-vent-creatures-start-announcement
-      startAudio:
-        path: /Audio/Announcements/attention.ogg
-      earliestStart: 20
-      minimumPlayers: 15
-      weight: 2
-      duration: 60
-    - type: VentCrittersRule
-      entries:
-        - id: MobGiantSpiderVampireAngry
-          prob: 0.02
-        - id: MobGiantSpiderVampireBoss
-          prob: 0.001

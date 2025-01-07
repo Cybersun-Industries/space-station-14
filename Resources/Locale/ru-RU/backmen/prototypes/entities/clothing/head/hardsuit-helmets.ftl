@@ -1,9 +1,5 @@
 ent-ClothingHeadHelmetHardsuitBerserk = шлем берсерка
     .desc = Хоть в нем ничего не видно, но лучшему мазиле это и не надо!
-ent-ClothingHeadHelmetHardsuitOrden = шлем скафандра элитного спецназа Красного ордена.
-    .desc = Незаменимая деталь костюма, на нем есть небольшие царапины.
-ent-ClothingHeadHelmetHardsuitOrdinaryOrden = шлем космического скафандра Красного ордена.
-    .desc = Незаменимая деталь костюма, на нем есть небольшие царапины.
 ent-ClothingHeadHelmetHardsuitCentcomCarporate = шлем скафандра ЦК (Корпорат)
     .desc = Специальный космический шлем Корпорат сделаный для различных ситуация с хорошим фанариком лоялиста НаноТрайзен.
 ent-ClothingHeadHelmetHardsuitMystagogue = шлем защитного костюма мистагогов

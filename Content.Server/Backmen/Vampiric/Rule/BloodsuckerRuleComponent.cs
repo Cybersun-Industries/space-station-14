@@ -16,8 +16,7 @@ public sealed partial class BloodsuckerRuleComponent : Component
         "Dwarf",
         "Oni",
         "Vox",
-        "HumanoidFoxes",
-        "Harpy"
+        "HumanoidFoxes" ,
     };
 
     [DataField]

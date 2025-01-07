@@ -1,18 +1,4 @@
 - type: entity
-  parent: ClothingShoesBaseButcherable
-  id: ClothingShoesBootsIHScombat
-  name: Боевая обувь IHS
-  description: Удобная обувь наемников IHS, защищает от взрывов
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Shoes/Boots/ihscombatbootsbel.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Shoes/Boots/ihscombatbootsbel.rsi
-  - type: FootstepModifier # Corvax-Sounds
-    footstepSoundCollection:
-      collection: FootstepBoots
-
-- type: entity
   parent: ClothingShoesBase
   id: ClothingShoesBootsSpetsnaz
   name: обувь спецназа
@@ -81,17 +67,3 @@
       params:
         volume: -999
   - type: NoSlip
-  
-- type: entity  
-  parent: ClothingShoesBaseButcherable
-  id: ClothingShoesBootsBerrci
-  name: Шнурованные берцы
-  description: Удобная обувь с шнурками.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Shoes/Boots/berrci.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Shoes/Boots/berrci.rsi
-  - type: FootstepModifier # Corvax-Sounds
-    footstepSoundCollection:
-      collection: FootstepBoots

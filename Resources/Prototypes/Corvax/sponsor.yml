@@ -225,18 +225,6 @@
       sprite: Corvax/Sponsor/jesuisunfou/Clothing/OuterClothing/Coats/ussp.rsi
 
 - type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitUSSPBlack
-  name: old ussp jumpsuit
-  description: Pretty old stuff from USSP
-  suffix: Sponsor
-  components:
-    - type: Sprite
-      sprite: Backmen/Clothing/Uniforms/jumpsuit/sponsorUSSP.rsi # backmen-sprite
-    - type: Clothing
-      sprite: Backmen/Clothing/Uniforms/jumpsuit/sponsorUSSP.rsi # backmen-sprite
-
-- type: entity
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesUSSPBlack
   name: old ussp boots

@@ -1,9 +1,4 @@
 - type: flavor
-  id: RedOrdenDrinkFlavour
-  flavorType: Complex
-  description: flavor-complex-RedOrdenDrinkFlavour
-
-- type: flavor
   id: enthralling
   flavorType: Complex
   description: flavor-complex-enthralling
@@ -32,11 +27,6 @@
   id: vanilla
   flavorType: Complex
   description: flavor-complex-vanilla
-
-- type: flavor
-  id: soju
-  flavorType: Complex
-  description: flavor-complex-soju
 
 - type: flavor
   id: orangecreamcicle

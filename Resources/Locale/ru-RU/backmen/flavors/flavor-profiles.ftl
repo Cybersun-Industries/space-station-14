@@ -1,5 +1,3 @@
-flavor-complex-RedOrdenDrinkFlavour = триумф красного ордена
-
 ## Nyano???
 
 flavor-complex-enthralling = заворажывающе

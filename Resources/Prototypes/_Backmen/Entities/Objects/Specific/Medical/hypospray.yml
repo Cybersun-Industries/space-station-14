@@ -22,14 +22,12 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 55
+        maxVol: 45
         reagents:
         - ReagentId: Omnizine
           Quantity: 20
         - ReagentId: Epinephrine
           Quantity: 12
-        - ReagentId: THC
-          Quantity: 10
         - ReagentId: TranexamicAcid
           Quantity: 3
         - ReagentId: DexalinPlus
@@ -54,7 +52,7 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 80
+        maxVol: 70
         reagents:
         - ReagentId: Omnizine
           Quantity: 20
@@ -62,8 +60,6 @@
           Quantity: 20
         - ReagentId: Epinephrine
           Quantity: 15
-        - ReagentId: THC
-          Quantity: 10
         - ReagentId: TranexamicAcid
           Quantity: 5
         - ReagentId: DexalinPlus
@@ -71,30 +67,6 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 80
-  - type: Sprite
-    sprite: Objects/Specific/Medical/medipen.rsi
-    netsync: false
-    layers:
-    - state: hypovolemic
-      map: [ "enum.SolutionContainerLayers.Fill" ]
-
-- type: entity
-  name: боевой космический стимулятор
-  parent: ChemicalMedipen
-  id: BattleSpaceMedipen
-  save: false
-  description: Боевой медипен для более менее безопастного хождения по космосу без скафандра, осторожно, после использования обратиться к настоящему врачу.
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      pen:
-        maxVol: 90
-        reagents:
-        - ReagentId: Baroleporazine
-          Quantity: 90
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 90
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
     netsync: false

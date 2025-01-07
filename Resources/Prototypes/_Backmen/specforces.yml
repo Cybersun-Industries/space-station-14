@@ -99,26 +99,6 @@
     - id: SpawnMobHumanERTEngineerEpsilon
     - id: SpawnMobHumanERTJanitorEpsilon
 
-# ERT Tay
-- type: specForceTeam
-  id: ERTTay
-  specForceName: spec-forces-system-tay-name
-  shuttlePath: Maps/Backmen/Shuttles/SpecForces/NT-QRF-TH39.yml
-  spawnMarker: MarkerSpecforce
-  announcementText: spec-forces-system-ertcall-annonce
-  announcementTitle: spec-forces-system-ertTay-title
-  announcementSoundPath: !type:SoundPathSpecifier
-    path: /Audio/Corvax/Adminbuse/yesert.ogg
-  maxRolesAmount: 2
-  raffleConfig:
-    settings: short
-  guaranteedSpawn:
-    - id: SpawnMobHumanERTLeaderTay39
-    - id: SpawnMobHumanERTMedicTay39
-      amount: 2
-  specForceSpawn:
-    - id: SpawnMobHumanERTSecurityTay39
-
 # RXBZZ teams
 - type: specForceTeam
   id: RXBZZ
