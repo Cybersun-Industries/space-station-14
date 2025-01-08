@@ -43,10 +43,8 @@ public sealed class AshDrakeLavajumpSystem : EntitySystem
         if (args.Handled || args.Coords is not { } coords)
             return;
 
-        // Add delay before executing the action
-        Timer.Spawn(TimeSpan.FromSeconds(1),
-            () =>
-        {
+
+
             // TODO: animation
 
             _popup.PopupPredicted(Loc.GetString("lavajump-ability-use-popup", ("entity", args.Performer)),
@@ -87,10 +85,10 @@ public sealed class AshDrakeLavajumpSystem : EntitySystem
 
             // Start lava jump
             StartLavajump(args.Performer, coords);
-        });
+        ;
     }
 
-    public void StartLavajump(EntityUid performer, EntityCoordinates coords, bool playSound = true)
+    private void StartLavajump(EntityUid performer, EntityCoordinates coords, bool playSound = true)
     {
         var lavajumping = AddComp<AshDrakeLavajumpingComponent>(performer);
 

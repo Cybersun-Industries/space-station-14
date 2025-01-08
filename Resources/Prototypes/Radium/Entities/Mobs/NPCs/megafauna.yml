@@ -7,14 +7,14 @@
   id: MobAshDrake
   description: An unstoppable force of carnage.
   components:
-  - type: GhostRole
-    allowMovement: true
-    makeSentient: true
-    name: ghost-role-information-hellspawn-name
-    description: ghost-role-information-hellspawn-description
-    rules: ghost-role-information-antagonist-rules
-    raffle:
-      settings: default
+  # - type: GhostRole
+  #   allowMovement: true
+  #   makeSentient: true
+  #   name: ghost-role-information-hellspawn-name
+  #   description: ghost-role-information-hellspawn-description
+  #   rules: ghost-role-information-antagonist-rules
+  #   raffle:
+  #     settings: default
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
@@ -101,7 +101,14 @@
     castShadows: false
   - type: NPCUseActionOnTarget
     actionId: ActionAshDrakeLavajump
+  - type: ActionGun
+    action: ActionDragonsBreath
+    gunProto: DragonsBreathGun
+  - type: AshDrakeGun
+    action: ActionDragonsConeBreath
+    gunProto: DrakesShotgunBreathGun
 
+#ACTIONS
 - type: entity
   id: ActionAshDrakeLavajump
   name: "[color=red]Lava jump[/color]"
@@ -120,3 +127,117 @@
     event: !type:AshDrakeLavajumpAction
     useDelay: 30
     range: 10
+
+- type: entity
+  id: ActionDragonsConeBreath
+  name: "[color=orange]Cone Dragon's Breath[/color]"
+  description: Spew out flames at anyone foolish enough to attack you!
+  components:
+  - type: WorldTargetAction
+    # TODO: actual sprite
+    icon: { sprite : Objects/Weapons/Guns/Projectiles/magic.rsi, state: fireball }
+    event: !type:AshDrakeGunShootEvent
+    priority: 2
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+
+#Guns
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: DrakesBreathGun
+  name: ash dragon's lung
+  description: For ash drake's breathing.
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+    rechargeSound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileDrakeBreath
+    capacity: 1
+    count: 1
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Animals/space_dragon_roar.ogg
+    soundEmpty: null
+    projectileSpeed: 5
+
+- type: entity
+  parent: DrakesBreathGun
+  categories: [ HideSpawnMenu ]
+  id: DrakesShotgunBreathGun
+  name: ash dragon's lung
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 5
+    rechargeSound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileDrakeBreathSpread
+    capacity: 1
+    count: 1
+
+#Projectiles
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBulletTrigger
+  id: ProjectileDrakeBreath
+  name: drakes's breath
+  description: Try not to get toasted.
+  components:
+  - type: PointLight
+    color: "#E25822"
+    radius: 3.0
+    energy: 5.0
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: fireball
+      shader: unshaded
+  - type: IgnitionSource
+    temperature: 1000
+    ignited: true
+  - type: RepeatingTrigger
+    delay: 0.5 # line of fire as well as if it hits something
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: FireBomb
+    totalIntensity: 5 # low intensity, the point is to burn attackers not to break open walls, dragons can just eat them
+    intensitySlope: 1
+    maxIntensity: 3
+    canCreateVacuum: false
+    deleteAfterExplosion: false
+    repeatable: true
+  - type: TimedDespawn
+    lifetime: 6
+
+- type: entity
+  name: wide laser barrage
+  id: ProjectileDrakeBreathSpread
+  categories: [ HideSpawnMenu ]
+  parent: ProjectileDrakeBreath
+  components:
+  - type: ProjectileSpread
+    proto: ProjectileDrakeBreath
+    count: 5 
+    spread: 30
+  
+# - type: entity
+#   id: AshDrakeMeteorRainAction
+#   name: "[color=red]Meteor Rain[/color]"
+#   description: Fuck!
+#   components:
+#   - type: EntityWorldTargetAction
+#     raiseOnUser: true
+#     icon:
+#       sprite: Mobs/Aliens/Asteroid/goliath.rsi
+#       state: goliath_tentacle_spawn
+#     iconOn:
+#       sprite: Mobs/Aliens/Asteroid/goliath.rsi
+#       state: goliath_tentacle_wiggle
+#     sound:
+#       path: "/Audio/Animals/space_dragon_roar.ogg"
+#     event: !type:AshDrakeMeteorRainAction
+#     useDelay: 30
+#     range: 10
