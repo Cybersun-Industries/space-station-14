@@ -43,52 +43,49 @@ public sealed class AshDrakeLavajumpSystem : EntitySystem
         if (args.Handled || args.Coords is not { } coords)
             return;
 
+        // TODO: animation
 
+        _popup.PopupPredicted(Loc.GetString("lavajump-ability-use-popup", ("entity", args.Performer)),
+            args.Performer,
+            args.Performer,
+            type: PopupType.SmallCaution);
+        _stun.TryStun(args.Performer, TimeSpan.FromSeconds(0.8f), false);
 
-            // TODO: animation
+        List<EntityCoordinates> spawnPos = new();
+        spawnPos.Add(coords);
 
-            _popup.PopupPredicted(Loc.GetString("lavajump-ability-use-popup", ("entity", args.Performer)),
-                args.Performer,
-                args.Performer,
-                type: PopupType.SmallCaution);
-            _stun.TryStun(args.Performer, TimeSpan.FromSeconds(0.8f), false);
+        var dirs = new List<Direction>();
+        dirs.AddRange(args.OffsetDirections);
 
-            List<EntityCoordinates> spawnPos = new();
-            spawnPos.Add(coords);
+        for (var i = 0; i < 4; i++)
+        {
+            var dir = _random.PickAndTake(dirs);
+            spawnPos.Add(coords.Offset(dir));
+        }
 
-            var dirs = new List<Direction>();
-            dirs.AddRange(args.OffsetDirections);
+        if (_transform.GetGrid(coords) is not { } grid || !TryComp<MapGridComponent>(grid, out var gridComp))
+            return;
 
-            for (var i = 0; i < 4; i++)
+        foreach (var pos in spawnPos)
+        {
+            if (!_map.TryGetTileRef(grid, gridComp, pos, out var tileRef) ||
+                tileRef.IsSpace() ||
+                _turf.IsTileBlocked(tileRef, CollisionGroup.Impassable))
             {
-                var dir = _random.PickAndTake(dirs);
-                spawnPos.Add(coords.Offset(dir));
+                continue;
             }
 
-            if (_transform.GetGrid(coords) is not { } grid || !TryComp<MapGridComponent>(grid, out var gridComp))
-                return;
+            if (_net.IsServer)
+                Spawn(args.EntityId, pos);
+        }
 
-            foreach (var pos in spawnPos)
-            {
-                if (!_map.TryGetTileRef(grid, gridComp, pos, out var tileRef) ||
-                    tileRef.IsSpace() ||
-                    _turf.IsTileBlocked(tileRef, CollisionGroup.Impassable))
-                {
-                    continue;
-                }
+        args.Handled = true;
 
-                if (_net.IsServer)
-                    Spawn(args.EntityId, pos);
-            }
-
-            args.Handled = true;
-
-            // Start lava jump
-            StartLavajump(args.Performer, coords);
-        ;
+        // Start lava jump
+        StartLavajump(args.Performer, coords);
     }
 
-    private void StartLavajump(EntityUid performer, EntityCoordinates coords, bool playSound = true)
+    public void StartLavajump(EntityUid performer, EntityCoordinates coords, bool playSound = true)
     {
         var lavajumping = AddComp<AshDrakeLavajumpingComponent>(performer);
 
@@ -98,7 +95,7 @@ public sealed class AshDrakeLavajumpSystem : EntitySystem
             _audio.PlayPredicted("/Audio/Effects/lavajump.ogg", performer, performer);*/
 
         // Schedule removal of the component after a delay
-        Timer.Spawn(TimeSpan.FromSeconds(4),
+        Timer.Spawn(TimeSpan.FromSeconds(5),
             () =>
         {
             if (Deleted(performer))

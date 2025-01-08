@@ -7,14 +7,14 @@
   id: MobAshDrake
   description: An unstoppable force of carnage.
   components:
-  # - type: GhostRole
-  #   allowMovement: true
-  #   makeSentient: true
-  #   name: ghost-role-information-hellspawn-name
-  #   description: ghost-role-information-hellspawn-description
-  #   rules: ghost-role-information-antagonist-rules
-  #   raffle:
-  #     settings: default
+  - type: GhostRole
+    allowMovement: true
+    makeSentient: true
+    name: ghost-role-information-hellspawn-name
+    description: ghost-role-information-hellspawn-description
+    rules: ghost-role-information-antagonist-rules
+    raffle:
+      settings: default
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
@@ -77,7 +77,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      450: Dead
+      1450: Dead
   - type: Butcherable
     spawned:
       - id: ArtifactFragment
