@@ -117,11 +117,11 @@
   - type: EntityWorldTargetAction
     raiseOnUser: true
     icon:
-      sprite: Mobs/Aliens/Asteroid/goliath.rsi
-      state: goliath_tentacle_spawn
+      sprite: Tiles/Planet/lava.rsi
+      state: full
     iconOn:
-      sprite: Mobs/Aliens/Asteroid/goliath.rsi
-      state: goliath_tentacle_wiggle
+      sprite: Tiles/Planet/lava.rsi
+      state: lava
     sound:
       path: "/Audio/Animals/space_dragon_roar.ogg"
     event: !type:AshDrakeLavajumpAction
@@ -137,6 +137,7 @@
     # TODO: actual sprite
     icon: { sprite : Objects/Weapons/Guns/Projectiles/magic.rsi, state: fireball }
     event: !type:AshDrakeGunShootEvent
+    useDelay: 60
     priority: 2
     checkCanAccess: false
     range: 0
