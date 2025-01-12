@@ -58,7 +58,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomMilitary
     back: ClothingBackpackSecurity
-    shoes: ClothingShoesBootsNedoSpetsnaz
+    shoes: ClothingShoesBootsCombat
     mask: ClothingMaskGasSecurity
     neck: CombatKnifeSpetsnaz
     eyes: ClothingEyesGlassesSecurity

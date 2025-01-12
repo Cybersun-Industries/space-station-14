@@ -105,7 +105,7 @@
     factions:
       - CentralCommand
   - type: Loadout
-    prototypes: [SFOForma]
+    prototypes: [CentComCorvax] #placeholder# #radium#
   - type: RandomHumanoidAppearance
     randomizeName: False
   - type: AntagImmune

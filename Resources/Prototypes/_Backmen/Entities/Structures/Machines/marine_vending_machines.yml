@@ -26,10 +26,7 @@
 - type: vendingMachineInventory
   id: EGMCDrobeInventoryMarine
   startingInventory:
-    ClothingUniformJumpsuitEgov: 10
     ClothingHeadHelmetRiot: 10
-    ClothingHeadHatEgovCap: 20
-    ClothingMaskTacticalGas: 20
     ClothingBeltShellShotgunFill: 20
     ClothingBeltPistolHolster: 20
     ClothingBeltMedicalMarine: 20
@@ -40,7 +37,6 @@
     ClothingMedicalPounch: 40
     ClothingAmmoPounch: 40
     ClothingPounchMTF: 40
-    ClothingHeadHelmetEGov: 10
     ClothingOuterNavyVest: 10
     ClothingOuterArmorBasic: 10
     ClothingOuterArmorBulletproof: 10
@@ -238,39 +234,6 @@
   - type: AccessReader
     access: [["EarthGovCommand"]]
 
-- type: vendingMachineInventory
-  id: EGMCDrobeInventoryMarineOfficer
-  startingInventory:
-    ClothingUniformJumpsuitEgov: 2
-    ClothingUniformEGovShtab: 2
-    ClothingHeadHatEgovCap: 2
-    ClothingMaskTacticalGas: 2
-    ClothingBeltShellShotgunFill: 2
-    ClothingBeltPistolHolster: 2
-    ClothingBeltMedicalMarine: 2
-    ClothingBeltGeneralG6: 2
-    ClothingBeltAmmo: 2
-    ClothingShellPounch: 4
-    ClothingPistolPounch: 4
-    ClothingMedicalPounch: 4
-    ClothingAmmoPounch: 4
-    ClothingPounchMTF: 4
-    ClothingHeadHatEgovShtabCap: 2
-    ClothingHeadHatMarineBeret: 2
-    ClothingHeadHatBeretCentcomNaval: 2
-    ClothingHeadHatERTLeaderBeret: 2
-    ClothingHeadHatBeretMerc: 2
-    ClothingOuterNavyVest: 2
-    ClothingOuterArmorBasic: 2
-    ClothingOuterArmorBulletproof: 2
-    ClothingHandsGlovesCombat: 2
-    ClothingShoesBootsCombatFilled: 2
-    ClothingShoesBootsLaceup: 2
-    FlashlightSeclite: 2
-    ClothingBackpackMilitarySatchel: 2
-    ClothingHeadsetEarthGov: 2
-    ClothingEyesHudSecurity: 2
-
 - type: entity
   parent: VendingMachine
   id: VendingMachineEGMCMedic
@@ -299,9 +262,6 @@
 - type: vendingMachineInventory
   id: EGMCDrobeInventoryMarineMedic
   startingInventory:
-    ClothingUniformJumpsuitEgov: 2
-    ClothingHeadHatEgovCap: 2
-    ClothingMaskTacticalGas: 2
     ClothingBeltShellShotgunFill: 2
     ClothingBeltPistolHolster: 2
     ClothingBeltMedicalMarine: 2
@@ -353,10 +313,7 @@
 - type: vendingMachineInventory
   id: EGMCDrobeInventoryMarineSpecialits
   startingInventory:
-    ClothingUniformEGovSpecial: 2
     ClothingHeadHelmetRiot: 2
-    ClothingHeadHatEgovCap: 2
-    ClothingMaskTacticalGas: 2
     ClothingBeltShellShotgunFill: 2
     ClothingBeltPistolHolster: 2
     ClothingBeltMedicalMarine: 2
@@ -367,12 +324,6 @@
     ClothingMedicalPounch: 4
     ClothingAmmoPounch: 4
     ClothingPounchMTF: 4
-    ClothingHeadHatMarineBeret: 2
-    ClothingHeadHelmetXenonauten: 2
-    ClothingOuterNavyVest: 2
-    ClothingOuterXenonautenLight: 2
-    ClothingOuterXenonautenMedium: 2
-    ClothingOuterXenonautenHeavy: 2
     ClothingHandsGlovesCombat: 2
     ClothingShoesBootsCombatFilled: 2
     FlashlightSeclite: 2

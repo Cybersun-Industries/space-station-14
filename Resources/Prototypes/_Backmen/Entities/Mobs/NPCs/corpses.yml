@@ -11,24 +11,3 @@
       state: full
     - type: RandomHumanoidSpawner
       settings: CorpseUnaffiliated
-
-- type: randomHumanoidSettings
-  id: CorpseUnaffiliated
-  components:
-    - type: Loadout
-      prototypes:
-        - UnaffiliatedChaplainGear
-        - UnaffiliatedChefGear
-        - UnaffiliatedDoctorGear
-        - UnaffiliatedJanitorGear
-        - UnaffiliatedLawyerGear
-        - UnaffiliatedMailCarrierGear
-        - UnaffiliatedPsychologistGear
-    - type: Damageable
-      # Same values as the salvage corpses.
-      damage:
-        types:
-          Bloodloss: 49
-          Asphyxiation: 76
-          Slash: 56
-          Blunt: 19
