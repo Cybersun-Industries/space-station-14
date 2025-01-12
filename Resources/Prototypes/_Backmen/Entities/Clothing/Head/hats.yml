@@ -1,28 +1,28 @@
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatUshankaSSSP
-  name: Ушанка СССП
-  description: "Отлично подходит для Сибири, да?"
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/ushankaSSSP.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/Head/Hats/ushankaSSSP.rsi
-  - type: AddAccentClothing
-    accent: RussianAccent
-  - type: Foldable
-    canFoldInsideContainer: true
-  - type: FoldableClothing
-    foldedEquippedPrefix: up
-    foldedHeldPrefix: up
-  - type: Sprite
-    sprite: Backmen/Clothing/Head/Hats/ushankaSSSP.rsi
-    layers:
-    - state: icon
-      map: [ "unfoldedLayer" ]
-    - state: icon-up
-      map: ["foldedLayer"]
-      visible: false
+#- type: entity
+  #parent: ClothingHeadBase
+  #id: ClothingHeadHatUshankaSSSP
+  #name: Ушанка СССП
+  #description: "Отлично подходит для Сибири, да?"
+  #components:
+  #- type: Sprite
+  #  sprite: Backmen/Clothing/Head/Hats/ushankaSSSP.rsi
+  #- type: Clothing
+  #  sprite: Backmen/Clothing/Head/Hats/ushankaSSSP.rsi
+  #- type: AddAccentClothing
+  #  accent: RussianAccent
+  #- type: Foldable
+  #  canFoldInsideContainer: true
+  #- type: FoldableClothing
+  #  foldedEquippedPrefix: up
+  #  foldedHeldPrefix: up
+  #- type: Sprite
+  #  sprite: Backmen/Clothing/Head/Hats/ushankaSSSP.rsi
+  #  layers:
+  #  - state: icon
+  #    map: [ "unfoldedLayer" ]
+  #  - state: icon-up
+  #    map: ["foldedLayer"]
+  #    visible: false
       #Test this thing and add ushanka as parent#
       #I don't delete this because it's looks really good, except other USSP items#
 
