@@ -354,8 +354,6 @@
       - ArtificialBluespaceCrystal
       # RADIUM-FIX:
       - WeaponGrapplingGun
-      - HandTeleporter1
-      - CoreSilver
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
