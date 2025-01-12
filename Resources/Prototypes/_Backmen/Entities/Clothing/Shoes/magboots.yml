@@ -2,7 +2,7 @@
   parent: [ClothingShoesBootsMagSyndie, BaseToggleClothing]
   id: ClothingShoesBootsMagArmy
   name: армейские магнитные сапоги
-  description: Армейский образец магнитных сапог, дешевый и более массовый вариант продвинутых магниток, имеет встроенный джетпак.
+  description: Армейский образец магнитных сапог, дешевый и более массовый вариант продвинутых магнитных ботинок. Имеют встроенные ускорители.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Shoes/Boots/magboots-army.rsi
