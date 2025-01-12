@@ -1,40 +1,3 @@
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakPirate
-  name: Плащ пирата
-  description: Когда нету флагштока, ты сам становишься флагштоком!
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/pirate.rsi
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakOrden
-  name: Cloak of the Red Order
-  description: Cloak of the Order of the Red Dragon! This cloak was created by an ancient cult, and to this day no one knows how it got to the station.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/orden.rsi
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakSssp
-  name: SSSP Officer's Cloak
-  description: Awarded for merit to the SSSP. You are the best. You can't hide it.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/SSSP.rsi
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakmeibe
-  name: Плащ лучшего инженера
-  description: Выдаётся за особые заслуги перед Атмосией. Гордитесь собой ведь такой плащ есть только у единиц !
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/cloak_best_engineer_meibe.rsi
-
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakchess
@@ -43,42 +6,7 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/chess.rsi
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckBelovOPG
-  name: Накидка ОПГ
-  description: Плащ главы знаменитой ОПГ, Александра Белова.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/whitebelov.rsi
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakarbitr
-  name: Плащ Арбитра
-  description: Плащ арбитра идущий в комплекте с его костюмом. Настолько же ценен.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/arbitr.rsi
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckLeatherCoat
-  name: Кожаный плащ
-  description: Как у дедушки...
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/leather_coat.rsi
-
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakUEG
-  name: Плащ ОПЗ
-  description: Выдаётся только верхушке ОПЗ.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/eug-cloak.rsi
+#Yay, chess#
 
 - type: entity
   parent: ClothingNeckBase
@@ -88,6 +16,7 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/emptiness.rsi
+#Badass#
 
 - type: entity
   parent: ClothingNeckBase
@@ -97,25 +26,8 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/TGMCcloak.rsi
-    
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakPoncho
-  name: Пончо милитарист
-  description: Ваш верный друг в борьбе с дождём и вьюгой
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/poncho.rsi
-    
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakGreenMantie
-  name: Мантия милитариста
-  description: Удобство и скрытность, то что и важно для обладателя этой мантии
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/mantie.rsi
-    
+    #Freakin' cool#
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakBlackCloak
@@ -124,8 +36,8 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/black.rsi
-    
-    
+
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakWhiteCloak
@@ -134,7 +46,7 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/white.rsi
-    
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakSanabi
@@ -143,12 +55,4 @@
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Neck/Cloaks/sanabi.rsi
-    
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckCloakTGMCwhite
-  name: белый боевой плащ
-  description: Белый боевой плащ из лёгкой ткани.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/Neck/Cloaks/tgmcwhite.rsi
+    #Heck ye#
