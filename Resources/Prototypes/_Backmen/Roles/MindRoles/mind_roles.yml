@@ -34,18 +34,6 @@
   - type: FleshCultistRole
     isLeader: true
 
-# Bloodsucker
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleBloodsucker
-  name: Bloodsucker Role
-  #  description: mind-role-bloodsucker-description
-  components:
-  - type: MindRole
-    antagPrototype: Bloodsucker
-    exclusiveAntag: true
-  - type: VampireRole
-
 # Changeling
 - type: entity
   parent: BaseMindRoleAntag
@@ -69,18 +57,6 @@
     antagPrototype: EvilTwin
     exclusiveAntag: true
   - type: EvilTwinRole
-
-# Fugitive
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleFugitive
-  name: Fugitive Role
-  #  description: mind-role-fugitive-description
-  components:
-  - type: MindRole
-    antagPrototype: Fugitive
-    exclusiveAntag: true
-  - type: FugitiveRole
 
 # Bank
 - type: entity
