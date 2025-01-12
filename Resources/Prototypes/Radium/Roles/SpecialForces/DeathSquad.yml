@@ -1,0 +1,34 @@
+#Death Squad#
+- type: startingGear
+  id: SpecialForceGearCommanderFull
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSpetsnaz
+    back: ClothingBackpackSpecialForce
+    shoes: ClothingShoesBootsMagDeathSquad
+    mask: ClothingMaskGasDeathSquad
+    neck: CombatKnifeSpetsnaz
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesSpetsnazcombat
+    outerClothing: ClothingOuterHardsuitDeathsquad
+    id: DeathSquadLeaderIDCard
+    ears: ClothingHeadsetCentComCCAltDeath
+    belt: WeaponRevolverMateba
+    pocket1: EnergySword
+    pocket2: WeaponPulsePistol
+
+- type: startingGear
+  id: SpecialForceGearFull
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSpetsnaz
+    back: ClothingBackpackSpecialForce
+    shoes: ClothingShoesBootsMagDeathSquad
+    mask: ClothingMaskGasDeathSquad
+    neck: CombatKnifeSpetsnaz
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesSpetsnazcombat
+    outerClothing: ClothingOuterHardsuitDeathsquad
+    id: DeathSquadIDCard
+    ears: ClothingHeadsetCentComCCAltDeath
+    belt: WeaponRevolverMateba
+    pocket1: EnergySword
+    pocket2: WeaponPulsePistol
