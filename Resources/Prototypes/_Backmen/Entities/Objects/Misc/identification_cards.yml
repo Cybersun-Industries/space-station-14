@@ -166,8 +166,8 @@
 
 - type: entity
   name: ID карта Броне-Пехотного Оперативника Спецвойск
-  id: DedSquadronGavnaIDCardMarauder
-  parent: DedSquadronGavnaIDCard
+  id: DeathSquadIDCardMarauder
+  parent: DeathSquadIDCard
   components:
   - type: IdCard
     jobTitle: job-title-omicron_3
@@ -290,50 +290,6 @@
   components:
   - type: IdCard
     jobTitle: job-title-tay_39
-
-- type: entity
-  parent: CentcomIDCard
-  id: DedSquadronGavnaIDCard
-  name: ID карта оперативника специальных операций
-  components:
-  - type: Sprite
-    layers:
-    - state: syndie
-    - state: idcaptain
-    - state: idcentcom
-  - type: Item
-    heldPrefix: blue
-  - type: IdCard
-    jobTitle: job-title-omega_0
-    fullName: Оперативник СпецВойск
-    jobIcon: JobIconDeathSquadron
-  - type: Access
-    groups:
-    - AllAccess
-    - MTFLeader
-    - CentCom
-
-- type: entity
-  parent: CentcomIDCard
-  id: DedSquadronLeaderGavnaIDCard
-  name: ID карта Коммандера Специальных Операций
-  components:
-  - type: Sprite
-    layers:
-    - state: syndie
-    - state: idcaptain
-    - state: idcentcom
-  - type: Item
-    heldPrefix: blue
-  - type: IdCard
-    jobTitle: job-title-omega_0
-    fullName: Коммандер СпецВойск
-    jobIcon: JobIconDeathSquadron
-  - type: Access
-    groups:
-    - AllAccess
-    - MTFLeader
-    - CentCom
 
 - type: entity
   parent: CentcomIDCard

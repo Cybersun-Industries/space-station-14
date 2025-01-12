@@ -10,3 +10,47 @@
     - state: idsurgeon
 #  - type: PresetIdCard
 #    job: Surgeon
+
+- type: entity
+  parent: CentcomIDCard
+  id: DeathSquadIDCard
+  name: ID карта оперативника Эскадрона Смерти
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idcaptain
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: job-title-omega_0
+    fullName: Оперативник Эскадрона Смерти
+    jobIcon: JobIconDeathSquadron
+  - type: Access
+    groups:
+    - AllAccess
+    - MTFLeader
+    - CentCom
+
+- type: entity
+  parent: CentcomIDCard
+  id: DeathSquadLeaderIDCard
+  name: ID карта командира Эскадрона Смерти
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+    - state: idcaptain
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: job-title-omega_0
+    fullName: Командир Эскадрона Смерти
+    jobIcon: JobIconDeathSquadron
+  - type: Access
+    groups:
+    - AllAccess
+    - MTFLeader
+    - CentCom

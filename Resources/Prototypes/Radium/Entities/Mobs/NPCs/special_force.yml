@@ -1,9 +1,8 @@
 - type: entity
-  name: Spestnaz
-  suffix: Vova
-  parent: MobHumanCombine
-  description: Жалкая кучка спецназа.
-  id: MobHumanSpecialReAgent
+  name: DeathSquadOperative
+  suffix: DeathSquad
+  parent: MobHuman
+  id: DeathSquadOperative
   components:
   - type: Icon
     sprite: Markers/jobs.rsi
@@ -18,8 +17,8 @@
     allowSpeech: true
     makeSentient: true
     name: Оперативник спец войск
-    description: Элитный солдат отряда Omega - 0, напичканые импланты и курсы космического спецназа сделали из него бесчувственную машину.
-    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+    description: Элитный солдат отряда Omega - 0, импланты и особые курсы подготовки сделали из него бесчувственную машину.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач Центрального Командования.
     raffle:
       settings: default
     requirements:
@@ -44,11 +43,10 @@
   - type: AntagImmune
 
 - type: entity
-  name: SpestnazCommander
-  suffix: Vova
-  parent: MobHumanCombine
-  description: Жалкая кучка спецназа.
-  id: MobHumanSpecialReAgentCOM
+  name: DeathSquadCommander
+  suffix: DeathSquad
+  parent: MobHuman
+  id: DeathSquadCommander
   components:
   - type: Icon
     sprite: Markers/jobs.rsi
@@ -62,9 +60,9 @@
     allowMovement: true
     allowSpeech: true
     makeSentient: true
-    name: коммандер спец войск
-    description: Элитный коммандер отряда Omega - 0, напичканые импланты и курсы космического спецназа сделали из него бесчувственную машину с тактическим интеллектом.
-    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач центрального командования.
+    name: командир эскадрона смерти
+    description: Элитный коммандер отряда Omega - 0, импланты и особые курсы подготовки сделали из него бесчувственную машину с тактическим интеллектом.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач Центрального Командования.
     raffle:
       settings: default
     requirements:
@@ -89,24 +87,4 @@
     - NameSpets
   - type: RandomHumanoidAppearance
     randomizeName: False
-  - type: AntagImmune
-
-- type: entity
-  name: Spestnaz Super
-  suffix: Vova
-  parent: MobHumanSpecialReAgent
-  description: Жалкая кучка спецназа.
-  id: MobHumanSpecialReAgentInvisible
-  components:
-  - type: SpecForce
-    actionBssActionName: ActionCentcomFtlAction
-  - type: NpcFactionMember
-    factions:
-      - CentralCommand
-  - type: Loadout
-    prototypes: [SpecialForceAgentGearFull]
-  - type: Stealth
-  - type: StealthOnMove
-    passiveVisibilityRate: -0.37
-    movementVisibilityRate: 0.2
   - type: AntagImmune

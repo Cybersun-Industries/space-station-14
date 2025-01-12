@@ -73,7 +73,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
     back: ClothingBackpackERTJanitorFilledV2_1
-    shoes: ClothingShoesBootsSpetsnaz
+    shoes: ClothingShoesBootsNedoSpetsnaz
     mask: ClothingMaskGasERTV2_1
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitERTJanitor

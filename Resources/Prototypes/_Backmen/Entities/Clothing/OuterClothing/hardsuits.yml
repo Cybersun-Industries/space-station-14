@@ -5,7 +5,7 @@
   description: Самая лучшая броня, для самого лучшего мазилы!
   components:
   - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Armor/Hardsuits/hardsuit_berserk.rsi
+    sprite: Backmen/Clothing/OuterClothing/Hardsuits/hardsuit_berserk.rsi
   - type: Clothing
     sprite: Backmen/Clothing/OuterClothing/Hardsuits/hardsuit_berserk.rsi
   - type: PressureProtection
