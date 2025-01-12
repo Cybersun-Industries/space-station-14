@@ -93,20 +93,6 @@
           sprite: Backmen/Markers/jobs.rsi
 
 - type: entity
-  id: SpawnPointDelivery
-  parent: SpawnPointJobBase
-  name: Deliveryman
-  components:
-    - type: SpawnPoint
-      job_id: Deliveryman
-    - type: Sprite
-      sprite: Backmen/Markers/jobs.rsi
-      layers:
-        - state: green
-        - state: Delivery
-        - state: jobicon
-
-- type: entity
   id: SpawnPointBrigmedic
   parent: SpawnPointBKCCAssistant
   name: brigmedic
@@ -311,20 +297,6 @@
   components:
   - type: SpawnPoint
     job_id: SAIShip
-  - type: Sprite
-    layers:
-    - state: green
-    - state: ai
-    - state: jobicon
-      sprite: Backmen/Markers/jobs.rsi
-
-- type: entity
-  id: SpawnFreelancer
-  parent: SpawnPointJobBase
-  name: spawn point freelancer
-  components:
-  - type: SpawnPoint
-    job_id: Freelancer
   - type: Sprite
     layers:
     - state: green

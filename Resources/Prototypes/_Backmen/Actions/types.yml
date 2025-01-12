@@ -5,7 +5,7 @@
   components:
     - type: InstantAction
       useDelay: 10
-      icon: Backmen/Icons/verbiconfangs.png
+      icon: { sprite: Mobs/Animals/mouse.rsi, state: dead-0 }
       event: !type:EatMouseActionEvent
 
 - type: entity

@@ -17,7 +17,7 @@
         shader: "unshaded"
         visible: false
     - type: Pda
-      id: IdCardRO
+      id: IDCardStandard
       state: pda-orden
       penSlot:
         startingItem: EnergyDagger

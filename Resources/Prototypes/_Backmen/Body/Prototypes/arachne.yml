@@ -61,3 +61,19 @@
       part: RightLegSpider
     right hind leg:
       part: RightLegSpider
+
+- type: entity
+  id: OrganVampiricHumanoidStomach
+  parent: OrganHumanStomach
+  components:
+  - type: Metabolizer
+    # mm yummy
+    maxReagents: 3
+    metabolizerTypes: [Vampiric]
+    groups:
+    - id: Food
+    - id: Drink
+
+  - type: metabolizerType
+    id: Vampiric
+    name: vampiric

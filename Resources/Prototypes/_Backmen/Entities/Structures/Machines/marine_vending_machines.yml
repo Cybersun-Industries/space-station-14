@@ -37,7 +37,6 @@
     ClothingMedicalPounch: 40
     ClothingAmmoPounch: 40
     ClothingPounchMTF: 40
-    ClothingOuterNavyVest: 10
     ClothingOuterArmorBasic: 10
     ClothingOuterArmorBulletproof: 10
     ClothingHandsGlovesCombat: 10
@@ -208,31 +207,6 @@
     BattleMedipen: 10
     BoxBodyBag: 10
     CheapRollerBed: 10
-
-- type: entity
-  parent: VendingMachine
-  id: VendingMachineEGMCOfficer
-  name: Раздатчик офицерской формы
-  components:
-  - type: Sprite
-    sprite: Backmen/Structures/Machines/VendingMachines/Marine.rsi
-    layers:
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.Base"]
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
-      shader: unshaded
-    - state: panel
-      map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: VendingMachine
-    pack: EGMCDrobeInventoryMarineOfficer
-    offState: off
-    brokenState: broken
-    normalState: normal
-    ejectState: eject
-    denyState: deny-unshaded
-  - type: AccessReader
-    access: [["EarthGovCommand"]]
 
 - type: entity
   parent: VendingMachine

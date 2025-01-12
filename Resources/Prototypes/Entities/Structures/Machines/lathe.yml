@@ -920,7 +920,6 @@
       - SyringeBluespace
       - SyringeCryostasis
       # RADIUM-FIX:
-      - BluespacePillCanister
       - HandheldCrewMonitor
   - type: Machine
     board: MedicalTechFabCircuitboard
