@@ -60,7 +60,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
                     HorizontalAlignment = HAlignment.Center,
                     VerticalAlignment = VAlignment.Center,
                     SizeFlagsStretchRatio = 1,
-                    MinSize = new Vector2(340, 20),
+                    MinSize = new Vector2(440, 20),
                     ClipText = true,
                 };
 

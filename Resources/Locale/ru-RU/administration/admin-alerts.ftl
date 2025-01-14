@@ -1,1 +1,2 @@
 admin-alert-shared-connection = { $player } имеет общее интернет-соединение с { $otherCount } другим(-и) игроком(-ами): { $otherList }
+interaction-rate-limit-admin-announcement = { $player } совершает слишком много действий!
