@@ -15,7 +15,7 @@
       organs:
         heart: OrganHumanHeart
         lungs: OrganHumanLungs
-        stomach: OrganVampiricHumanoidStomach
+        stomach: OrganHumanStomach
         liver:  OrganHumanLiver
         kidneys: OrganHumanKidneys
       connections:
@@ -62,18 +62,14 @@
     right hind leg:
       part: RightLegSpider
 
-- type: entity
-  id: OrganVampiricHumanoidStomach
-  parent: OrganHumanStomach
-  components:
-  - type: Metabolizer
+#- type: entity
+ # id: OrganVampiricHumanoidStomach
+  #parent: OrganHumanStomach
+  #omponents:
+ #- type: Metabolizer
     # mm yummy
-    maxReagents: 3
-    metabolizerTypes: [ Bloodsucker ]
-    groups:
-    - id: Food
-    - id: Drink
-
-  - type: metabolizerType
-    id: Vampiric
-    name: vampiric
+ #  maxReagents: 3
+  # metabolizerTypes: [ Bloodsucker ]
+   #groups:
+   #- id: Food
+   #- id: Drink
