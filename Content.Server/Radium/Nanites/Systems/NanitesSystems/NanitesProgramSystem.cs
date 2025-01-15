@@ -11,7 +11,10 @@ using Content.Shared.Damage;
 using Content.Server.Body.Systems;
 using Content.Shared.Prototypes;
 using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.Radium.Nanites.Systems;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Weapons.Melee.Events;
 using FastAccessors;
 
 namespace Content.Server.Radium.Nanites.Programs;
@@ -28,10 +31,13 @@ public abstract class NanitesServerPrograms : SharedNanitesSystem
     [Dependency] private readonly DamageSpecifier _specifier = default!;
     [Dependency] private readonly NanitesComponent _component = default!;
     [Dependency] private readonly ISawmill _logger = default!;
+    [Dependency] private readonly NanitesSystem _fuck = default!; // I forgot to add separation in SHARED system and SERVER system
 
     public override void Initialize()
     {
         base.Initialize();
+
+        SubscribeLocalEvent<NanitesComponent, MeleeHitEvent>(ApplyNanitesResists);
     }
 
     private DamageSpecifier? _damageSpec;
@@ -99,20 +105,24 @@ public abstract class NanitesServerPrograms : SharedNanitesSystem
     }
 
     /// <summary>
-    ///     Depended on specifier, it returns damage types.
+    ///     Depending on specifier, it returns damage types.
     ///     if specifier is an array then parse through protoman
     ///     and index all damage groups/types
     /// </summary>
-    private DamageSpecifier CreateDamageSpecifier(float damage, string[]? specifier)
+    public DamageSpecifier CreateDamageSpecifier(float damage, string[]? specifier)
     {
+        // so i missed a thing that we're actually regenerating health. so damage should be < 0
+        // so we should invert damage. I hope this wont fuck things up
+
+        var healing = -damage;
         if (specifier == null)
         {
-            return new DamageSpecifier(_protoMan.Index<DamageGroupPrototype>("Brute"), damage);
+            return new DamageSpecifier(_protoMan.Index<DamageGroupPrototype>("Brute"), healing);
         }
         if (specifier == default)
         {
-            var damageSpec = new DamageSpecifier(_protoMan.Index<DamageGroupPrototype>("Brute"), damage / 2);
-            damageSpec += new DamageSpecifier(_protoMan.Index<DamageGroupPrototype>("Physical"), damage / 2);
+            var damageSpec = new DamageSpecifier(_protoMan.Index<DamageGroupPrototype>("Brute"), healing / 2);
+            damageSpec += new DamageSpecifier(_protoMan.Index<DamageGroupPrototype>("Physical"), healing / 2);
             return damageSpec;
         }
 
@@ -130,4 +140,19 @@ public abstract class NanitesServerPrograms : SharedNanitesSystem
         }
         return damageSpecifier;
     }
+
+    private DamageModifierSet? _damageModifierSet;
+    public bool SetNanitesResists(EntityUid uid, NanitesComponent component)
+    {
+        // TODO: I left it. I spent 5 hours doing this and I left it. Now after all this time it's your turn to figure out what i was thinking at this time. GL!
+        return true;
+    }
+    public void ApplyNanitesResists(EntityUid uid, NanitesComponent component, MeleeHitEvent args)
+    {
+        var activeNanites = _fuck.GetActiveNanites(uid, component);
+        if (activeNanites == null)
+            return;
+
+    }
+
 }

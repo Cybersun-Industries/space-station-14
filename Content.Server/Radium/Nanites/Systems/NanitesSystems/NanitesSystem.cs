@@ -4,7 +4,6 @@ using Content.Shared.Radium.Nanites.Components;
 using Content.Shared.Radium.Nanites.Events;
 using Content.Server.GameTicking;
 using Content.Shared.Alert;
-
 using System.Numerics;
 using Content.Server.Preferences.Managers;
 using Content.Shared.Examine;
@@ -77,5 +76,23 @@ public sealed class NanitesSystem : EntitySystem
             }
             _power.UpdateAlert(uid, true, nanites.NanitesLevel);
         }
+    }
+
+    private Dictionary<byte, string>? _activeNanites = NanitesComponent.ActiveNanites;
+    private List<string> _outnanites = [];
+
+    // could be a subject to change. prob should implement as bool and out var _outnanites
+    public List<string> GetActiveNanites(EntityUid uid, NanitesComponent component)
+    {
+        if (_activeNanites != null)
+        {
+            foreach (var (_, nanite) in _activeNanites)
+            {
+                _outnanites.Add(nanite);
+            }
+
+            return _outnanites;
+        }
+        return [];
     }
 }

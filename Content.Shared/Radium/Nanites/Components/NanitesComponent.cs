@@ -76,6 +76,9 @@ public sealed partial class NanitesComponent : Component
         { NanitesThreshold.Min, 0.0f },
     };
 
+    [ViewVariables(VVAccess.ReadWrite)]
+    public static Dictionary<byte, string>? ActiveNanites { get; set; } = new();
+
 
 }
 
