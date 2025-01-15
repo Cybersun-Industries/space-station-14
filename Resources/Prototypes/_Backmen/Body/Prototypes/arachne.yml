@@ -69,7 +69,7 @@
   - type: Metabolizer
     # mm yummy
     maxReagents: 3
-    metabolizerTypes: [Vampiric]
+    metabolizerTypes: [ Bloodsucker ]
     groups:
     - id: Food
     - id: Drink
