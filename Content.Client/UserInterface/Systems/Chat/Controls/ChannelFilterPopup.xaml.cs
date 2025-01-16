@@ -22,8 +22,9 @@ public sealed partial class ChannelFilterPopup : Popup
         ChatChannel.Dead,
         ChatChannel.Admin,
         ChatChannel.AdminAlert,
+        ChatChannel.AdminFax,
         ChatChannel.AdminChat,
-        ChatChannel.Server
+        ChatChannel.Server,
     };
 
     private readonly Dictionary<ChatChannel, ChannelFilterCheckbox> _filterStates = new();

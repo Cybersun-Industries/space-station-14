@@ -51,6 +51,8 @@
         /// </summary>
         Admin = ChatChannel.AdminChat,
 
+        AdminFax = ChatChannel.AdminFax,
+
         Console = ChatChannel.Unspecified
     }
 }
