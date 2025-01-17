@@ -27,6 +27,12 @@
   storage:
     back:
     - ClothingNeckHeadphones
+    
+- type: loadout
+  id: ClothingHeadHatUshanka
+  storage:
+    back:
+    - ClothingHeadHatUshanka
 
 # Toys
 - type: loadout
