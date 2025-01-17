@@ -27,7 +27,7 @@
   storage:
     back:
     - ClothingNeckHeadphones
-    
+
 # Toys
 - type: loadout
   id: PlushieLizard
