@@ -630,7 +630,7 @@ public sealed class FaxSystem : EntitySystem
 
     private WebhookIdentifier? _webhookIdentifier;
 
-    private async void MakeDiscordNotification(string faxName, string message)
+    private async Task MakeDiscordNotification(string faxName, string message)
     {
         try
         {
@@ -645,7 +645,7 @@ public sealed class FaxSystem : EntitySystem
         }
         catch (Exception e)
         {
-            Log.Error("Blyat cant send discord message about faxes!!!\n");
+            Log.Error("Admin Fax couldn't send a webhook message to a discord server!\n");
         }
     }
 

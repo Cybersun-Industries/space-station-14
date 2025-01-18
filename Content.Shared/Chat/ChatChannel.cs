@@ -85,6 +85,9 @@ namespace Content.Shared.Chat
         /// </summary>
         Unspecified = 1 << 14,
 
+        /// <summary>
+        ///     Channel for incoming CC faxes.
+        /// </summary>
         AdminFax = 1 << 15,
 
         /// <summary>
