@@ -630,7 +630,7 @@ public sealed class FaxSystem : EntitySystem
 
     private WebhookIdentifier? _webhookIdentifier;
 
-    private async Task MakeDiscordNotification(string faxName, string message)
+    private async void MakeDiscordNotification(string faxName, string message)
     {
         try
         {
