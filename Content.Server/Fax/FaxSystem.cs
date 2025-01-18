@@ -86,6 +86,14 @@ public sealed class FaxSystem : EntitySystem
         SubscribeLocalEvent<FaxMachineComponent, FaxSendMessage>(OnSendButtonPressed);
         SubscribeLocalEvent<FaxMachineComponent, FaxRefreshMessage>(OnRefreshButtonPressed);
         SubscribeLocalEvent<FaxMachineComponent, FaxDestinationMessage>(OnDestinationSelected);
+
+        Subs.CVar(_configurationManager, CCVars.DiscordFaxMachineWebhook, value =>
+        {
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                _discord.GetWebhook(value, data => _webhookIdentifier = data.ToIdentifier());
+            }
+        }, true);
     }
 
     public override void Update(float frameTime)
@@ -621,23 +629,17 @@ public sealed class FaxSystem : EntitySystem
     }
 
     private WebhookIdentifier? _webhookIdentifier;
+
     private async void MakeDiscordNotification(string faxName, string message)
     {
         try
         {
-            var discordFaxMachineWebhookCvar = _configurationManager.GetCVar(CCVars.DiscordFaxMachineWebhook);
-            if (!_webhookIdentifier.HasValue && discordFaxMachineWebhookCvar != string.Empty)
-            {
-                _discord.GetWebhook(discordFaxMachineWebhookCvar,
-                    data => _webhookIdentifier = data.ToIdentifier());
-            }
-
-            if (_webhookIdentifier == null || !_webhookIdentifier.HasValue)
+            if (_webhookIdentifier == null || !_webhookIdentifier.HasValue) // we get value from "init" section (Subs.Cvar)
                 return;
 
             var content = "Пришло сообщение на факс ЦК от: " + faxName + "\nСообщение: \n ```" + message + "```";
 
-            var payload = new WebhookPayload{ Content = content.ToString() };
+            var payload = new WebhookPayload { Content = content.ToString() };
 
             await _discord.CreateMessage(_webhookIdentifier.Value, payload);
         }
@@ -646,5 +648,6 @@ public sealed class FaxSystem : EntitySystem
             Log.Error("Blyat cant send discord message about faxes!!!\n");
         }
     }
+
 
 }
