@@ -171,7 +171,7 @@ internal sealed partial class ChatManager : IChatManager
         }).Select(p => p.Channel);
 
         var wrappedMessage = Loc.GetString("chat-manager-send-admin-announcement-wrap-message",
-            ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")), ("message", FormattedMessage.EscapeText(message)));
+            ("adminChannelName", Loc.GetString("chat-manager-admin-fax-channel-name")), ("message", FormattedMessage.EscapeText(message)));
 
         ChatMessageToMany(ChatChannel.AdminFax, message, wrappedMessage, default, false, true, clients);
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Admin Fax announcement: {message}");
