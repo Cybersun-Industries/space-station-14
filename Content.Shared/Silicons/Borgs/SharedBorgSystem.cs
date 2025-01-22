@@ -1,14 +1,27 @@
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Coordinates;
+using Content.Shared.Doors.Components;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Power.Components;
 using Content.Shared.PowerCell.Components;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Silicons.StationAi;
 using Content.Shared.UserInterface;
 using Content.Shared.Wires;
+using Content.Shared.Power.Components;
+using Content.Shared.Power.EntitySystems;
+using Content.Shared.Verbs;
 using Robust.Shared.Containers;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Silicons.Borgs;
 
@@ -21,11 +34,24 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] protected readonly ItemSlotsSystem ItemSlots = default!;
     [Dependency] protected readonly ItemToggleSystem Toggle = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] private readonly SharedContainerSystem _containers = default!;
+    [Dependency] protected readonly SharedMapSystem Maps = default!;
+    [Dependency] private readonly StationAiVisionSystem _vision = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
+    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly SharedStationAiSystem _sharedStationAi = default!;
+
+    private EntityQuery<BroadphaseComponent> _broadphaseQuery;
+    private EntityQuery<MapGridComponent> _gridQuery;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
+
+        SubscribeLocalEvent<BorgChassisComponent, AccessibleOverrideEvent>(OnBorgAccessible);
+        SubscribeLocalEvent<BorgChassisComponent, InRangeOverrideEvent>(OnBorgInRange);
 
         SubscribeLocalEvent<BorgChassisComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BorgChassisComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsertAttempt);
@@ -37,6 +63,47 @@ public abstract partial class SharedBorgSystem : EntitySystem
         SubscribeLocalEvent<TryGetIdentityShortInfoEvent>(OnTryGetIdentityShortInfo);
 
         InitializeRelay();
+    }
+
+
+    // I wrote it myself. If you have found any bugs here, mail me. I wont respond or make any changes, but you could try to make me do so.
+    private void OnBorgInRange(Entity<BorgChassisComponent> ent, ref InRangeOverrideEvent args)
+    {
+        if (ent == null || args.Target == null)
+            return;
+        var range = 1f;
+        args.Handled = true;
+        if (_interaction.InRangeUnobstructed(ent, args.Target.ToCoordinates(), 1f)) // magic float number
+            args.InRange = true;
+        if (!_power.IsPowered(args.Target))
+            return;
+
+        if (!HasComp<StationAiWhitelistComponent>(args.Target))
+        {
+            return;
+        }
+
+
+        args.InRange = true; // TODO: StationAI somehow can alt-interact with doors. make the same thing you nerdo
+    }
+
+    // same as before. i dont know what this does. copy-pasta code.
+    private void OnBorgAccessible(Entity<BorgChassisComponent> ent, ref AccessibleOverrideEvent args)
+    {
+        args.Handled = true;
+
+        // Hopefully AI never needs storage
+        if (_containers.TryGetContainingContainer(args.Target, out var targetContainer))
+        {
+            return;
+        }
+
+        if (!_containers.IsInSameOrTransparentContainer(args.User, args.Target, otherContainer: targetContainer))
+        {
+            return;
+        }
+
+        args.Accessible = true;
     }
 
     private void OnTryGetIdentityShortInfo(TryGetIdentityShortInfoEvent args)
