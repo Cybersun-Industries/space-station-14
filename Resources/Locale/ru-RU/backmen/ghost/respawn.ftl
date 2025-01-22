@@ -1,5 +1,13 @@
 ﻿ghost-gui-return-to-round-button = Вернуться в раунд
-ghost-respawn-time-left = Осталось до возможности вернуться в раунд - { $time }.
+ghost-respawn-time-left = Осталось до возможности вернуться в раунд - { $minutes } { $minutes ->
+    [one] минута
+    [few] минуты
+    *[other] минут
+}, { $seconds } { $seconds ->
+    [one] секунда
+    [few] секунды
+    *[other] секунд
+}.
 ghost-respawn-max-players = Функция недоступна, игроков на сервере должно быть меньше { $players }.
 ghost-respawn-window-request-button-timer = Принять ({ $time }сек.)
 ghost-respawn-window-request-button = Принять
