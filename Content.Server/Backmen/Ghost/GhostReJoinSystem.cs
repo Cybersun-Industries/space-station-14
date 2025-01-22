@@ -107,8 +107,7 @@ public sealed class GhostReJoinSystem : SharedGhostReJoinSystem
         }
         var timeOffset = _gameTiming.CurTime - ent.Comp.TimeOfDeath;
         var timeLeft = _ghostRespawnTime - timeOffset;
-        var timeOffsetMinutes = timeLeft.Minutes.ToString();
-        var timeOffsetSeconds = timeLeft.Seconds.ToString();
+        var (timeOffsetMinutes, timeOffsetSeconds) = GetFormattedTimeLeft(timeOffset);
         if (timeOffset < _ghostRespawnTime)
         {
             SendChatMsg(ui.Player,
@@ -296,8 +295,7 @@ public sealed class GhostReJoinSystem : SharedGhostReJoinSystem
 
         var timeOffset = _gameTiming.CurTime - deathTime;
         var timeLeft = _ghostRespawnTime - timeOffset;
-        var timeOffsetMinutes = timeLeft.Minutes.ToString();
-        var timeOffsetSeconds = timeLeft.Seconds.ToString();
+        var (timeOffsetMinutes, timeOffsetSeconds) = GetFormattedTimeLeft(timeOffset);
 
         if (timeOffset >= _ghostRespawnTime)
         {
@@ -356,5 +354,15 @@ public sealed class GhostReJoinSystem : SharedGhostReJoinSystem
             _ghostSystem.SetTimeOfDeath(ghost, _deathTime[mindSession.UserId], ghostComponent);
             Dirty(ghost, ghostComponent);
         }
+    }
+
+    private (string minutes, string seconds) GetFormattedTimeLeft(TimeSpan timeOffset)
+    {
+        var timeLeft = _ghostRespawnTime - timeOffset;
+        if (timeLeft.TotalSeconds < 0)
+        {
+            return ("0", "0");
+        }
+        return (timeLeft.Minutes.ToString(), timeLeft.Seconds.ToString()); // god have mercy
     }
 }
