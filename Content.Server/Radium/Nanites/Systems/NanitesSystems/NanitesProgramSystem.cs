@@ -37,7 +37,7 @@ public abstract class NanitesServerPrograms : SharedNanitesSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<NanitesComponent, MeleeHitEvent>(ApplyNanitesResists);
+        SubscribeLocalEvent<NanitesComponent, DamageModifyEvent>(ApplyNanitesResists);
     }
 
     private DamageSpecifier? _damageSpec;
@@ -142,17 +142,22 @@ public abstract class NanitesServerPrograms : SharedNanitesSystem
     }
 
     private DamageModifierSet? _damageModifierSet;
-    public bool SetNanitesResists(EntityUid uid, NanitesComponent component)
+    public void SetNanitesResists(EntityUid uid, NanitesComponent component, DamageModifierSet modifier)
     {
-        // TODO: I left it. I spent 5 hours doing this and I left it. Now after all this time it's your turn to figure out what i was thinking at this time. GL!
-        return true;
+        if (_damageModifierSet == null)
+            return;
+        _damageModifierSet = modifier;
     }
-    public void ApplyNanitesResists(EntityUid uid, NanitesComponent component, MeleeHitEvent args)
+    public void ApplyNanitesResists(EntityUid uid, NanitesComponent component, DamageModifyEvent args)
     {
+
         var activeNanites = _fuck.GetActiveNanites(uid, component);
         if (activeNanites == null)
             return;
-
+        if (_damageModifierSet != null)
+            args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, _damageModifierSet);
+        _damageModifierSet = new DamageModifierSet();
+        args.Damage = args.Damage;
     }
 
 }
