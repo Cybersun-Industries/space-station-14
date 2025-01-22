@@ -152,6 +152,7 @@
 
   defaultModules:
   - BorgModuleTreatment
+  - BorgModuleSurgery
 
   radioChannels:
   - Science
