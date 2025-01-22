@@ -34,7 +34,7 @@ surgery-eyeOperation-desc = Эта процедура устраняет все 
 surgery-eyeBlindOperation-name = Ослепление
 surgery-eyeBlindOperation-desc = Эта процедура перманентно ослепляет пациента.
 
-surgery-revivalOperation-name = Продвиутая реанимация
+surgery-revivalOperation-name = Продвинутая реанимация
 surgery-revivalOperation-desc = Реанимирует любой труп. Если труп слишком сильно повреждён то пациент умрёт сразу же.
 
 surgery-filterOperation-name = Фильтрация крови
@@ -135,4 +135,4 @@ surgery-window-title = Начать операцию
 surgery-target-shouldBuckled = Цель должна быть пристёгнута.
 surgery-target-begin = Начинаю операцию.
 
-surgery-bleeding = Кровь сочится из вашей груди
+surgery-bleeding = Вы теряете кровь!

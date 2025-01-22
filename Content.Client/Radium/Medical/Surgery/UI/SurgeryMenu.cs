@@ -316,7 +316,9 @@ public sealed class SurgeryMenu : DefaultWindow
         {
             case "Head":
                 index = 0;
-                foreach (var operation in HeadOperationsList.Where(operation => !operation.IsHidden))
+                foreach (var operation in HeadOperationsList
+                             .Where(operation => !operation.IsHidden)
+                             .OrderBy(operation => operation.LocalizedName))
                 {
                     SurgeryOptions.Add(new ItemList.Item(SurgeryOptions)
                     {
@@ -331,7 +333,9 @@ public sealed class SurgeryMenu : DefaultWindow
                 break;
             case "Mouth":
                 index = 0;
-                foreach (var operation in MouthOperationsList.Where(operation => !operation.IsHidden))
+                foreach (var operation in MouthOperationsList
+                             .Where(operation => !operation.IsHidden)
+                             .OrderBy(operation => operation.LocalizedName))
                 {
                     SurgeryOptions.Add(new ItemList.Item(SurgeryOptions)
                     {
@@ -394,7 +398,9 @@ public sealed class SurgeryMenu : DefaultWindow
                 else
                 {
                     index = 0;
-                    foreach (var operation in ArmsOperationsList.Where(operation => !operation.IsHidden))
+                    foreach (var operation in ArmsOperationsList
+                                 .Where(operation => !operation.IsHidden)
+                                 .OrderBy(operation => operation.LocalizedName))
                     {
                         SurgeryOptions.Add(new ItemList.Item(SurgeryOptions)
                         {
@@ -429,7 +435,9 @@ public sealed class SurgeryMenu : DefaultWindow
                 else
                 {
                     index = 0;
-                    foreach (var operation in ArmsOperationsList.Where(operation => !operation.IsHidden))
+                    foreach (var operation in ArmsOperationsList
+                                 .Where(operation => !operation.IsHidden)
+                                 .OrderBy(operation => operation.LocalizedName))
                     {
                         SurgeryOptions.Add(new ItemList.Item(SurgeryOptions)
                         {
@@ -445,7 +453,9 @@ public sealed class SurgeryMenu : DefaultWindow
                 break;
             case "Torso":
                 index = 0;
-                foreach (var operation in BodyOperationsList.Where(operation => !operation.IsHidden))
+                foreach (var operation in BodyOperationsList
+                             .Where(operation => !operation.IsHidden)
+                             .OrderBy(operation => operation.LocalizedName))
                 {
                     SurgeryOptions.Add(new ItemList.Item(SurgeryOptions)
                     {
@@ -479,7 +489,9 @@ public sealed class SurgeryMenu : DefaultWindow
                 else
                 {
                     index = 0;
-                    foreach (var operation in LegsOperationsList.Where(operation => !operation.IsHidden))
+                    foreach (var operation in LegsOperationsList
+                                 .Where(operation => !operation.IsHidden)
+                                 .OrderBy(operation => operation.LocalizedName))
                     {
                         SurgeryOptions.Add(new ItemList.Item(SurgeryOptions)
                         {
@@ -514,7 +526,9 @@ public sealed class SurgeryMenu : DefaultWindow
                 else
                 {
                     index = 0;
-                    foreach (var operation in LegsOperationsList.Where(operation => !operation.IsHidden))
+                    foreach (var operation in LegsOperationsList
+                                 .Where(operation => !operation.IsHidden)
+                                 .OrderBy(operation => operation.LocalizedName))
                     {
                         SurgeryOptions.Add(new ItemList.Item(SurgeryOptions)
                         {
