@@ -1,6 +1,7 @@
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Coordinates;
 using Content.Shared.Doors.Components;
+using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -17,6 +18,7 @@ using Content.Shared.UserInterface;
 using Content.Shared.Wires;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
+using Content.Shared.Tools.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Map.Components;
@@ -56,6 +58,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
         SubscribeLocalEvent<BorgChassisComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BorgChassisComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsertAttempt);
         SubscribeLocalEvent<BorgChassisComponent, ItemSlotEjectAttemptEvent>(OnItemSlotEjectAttempt);
+        SubscribeLocalEvent<StationAiWhitelistComponent, InteractUsingEvent>(OnBorgInteraction);
         SubscribeLocalEvent<BorgChassisComponent, EntInsertedIntoContainerMessage>(OnInserted);
         SubscribeLocalEvent<BorgChassisComponent, EntRemovedFromContainerMessage>(OnRemoved);
         SubscribeLocalEvent<BorgChassisComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
@@ -67,24 +70,41 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
 
     // I wrote it myself. If you have found any bugs here, mail me. I wont respond or make any changes, but you could try to make me do so.
+    private void OnBorgInteraction(Entity<StationAiWhitelistComponent> ent, ref InteractUsingEvent args)
+    {
+        if (args.Target == ent.Owner)
+            return;
+
+        /*
+        if (_interaction.TryGetUsedEntity(ent.Owner, out var used) == true)
+        {
+            if (TryComp<ToolComponent>(args.Used, out var _))
+                _interaction.InteractHand(ent.Owner, args.Target);
+        }
+        */
+        // _interaction.InteractHand(ent.Owner, args.);
+        args.Handled = true;
+        return;
+    }
+
     private void OnBorgInRange(Entity<BorgChassisComponent> ent, ref InRangeOverrideEvent args)
     {
         if (ent == null || args.Target == null)
             return;
+
         var range = 1f;
         args.Handled = true;
-        if (_interaction.InRangeUnobstructed(ent, args.Target.ToCoordinates(), 1f)) // magic float number
+
+        if (_interaction.InRangeUnobstructed(ent, args.Target.ToCoordinates(), range))
             args.InRange = true;
+
         if (!_power.IsPowered(args.Target))
             return;
 
         if (!HasComp<StationAiWhitelistComponent>(args.Target))
-        {
             return;
-        }
 
-
-        args.InRange = true; // TODO: StationAI somehow can alt-interact with doors. make the same thing you nerdo
+        args.InRange = true; // TODO: StationAI can alt-interact with doors. make the same thing you nerdo
     }
 
     // same as before. i dont know what this does. copy-pasta code.
