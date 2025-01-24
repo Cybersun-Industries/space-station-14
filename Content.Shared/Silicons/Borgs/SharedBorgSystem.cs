@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Coordinates;
 using Content.Shared.Doors.Components;
@@ -9,6 +10,7 @@ using Content.Shared.Item.ItemToggle;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Power.Components;
 using Content.Shared.PowerCell.Components;
@@ -21,8 +23,10 @@ using Content.Shared.Power.EntitySystems;
 using Content.Shared.Tools.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Silicons.Borgs;
@@ -44,9 +48,17 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedStationAiSystem _sharedStationAi = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
 
     private EntityQuery<BroadphaseComponent> _broadphaseQuery;
     private EntityQuery<MapGridComponent> _gridQuery;
+
+
+    /*
+    const float MaxRaycastRange = 50f;
+    private const CollisionGroup InRangeUnobstructedMask = CollisionGroup.FullTileMask;
+    */
+
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -92,6 +104,57 @@ public abstract partial class SharedBorgSystem : EntitySystem
     }
     */
 
+    private bool CustomBorgRangeCheck(EntityUid user, EntityUid target, float range, out float? distance)
+    {
+        if (user == target)
+        {
+            distance = 0f;
+            return true;
+        }
+
+        // var userCoords = _transform.ToMapCoordinates(user.ToCoordinates());
+        var targetCoords = _transform.ToMapCoordinates(target.ToCoordinates());
+
+        /*
+        var dir = targetCoords.Position - userCoords.Position;
+        var lenght = dir.Length();
+        */
+
+
+
+        if (_physics.TryGetNearest(user, targetCoords, out var _, out var dist))
+        {
+
+
+            distance = dist;
+            /*
+            if (lenght > range)
+                return false;
+
+            if (lenght > MaxRaycastRange)
+            {
+                Log.Warning("InRangeUnobstructed check performed over extreme range. Limiting CollisionRay size.");
+                lenght = MaxRaycastRange;
+            }
+
+            CollisionGroup collisionMask = InRangeUnobstructedMask;
+            var ray = new CollisionRay(userCoords.Position, dir.Normalized(), (int) collisionMask);
+            var rayResults = _physics.IntersectRay(userCoords.MapId, ray, lenght, null, true).ToList();
+            if (rayResults.Count != 0)
+            {
+                return false;
+            }
+            */
+
+            if (dist < range)
+            {
+                return true;
+            }
+        }
+        distance = null;
+        return false;
+    }
+
     private void OnBorgInRange(Entity<BorgChassisComponent> ent, ref InRangeOverrideEvent args)
     {
         if (ent == null || args.Target == null)
@@ -100,16 +163,21 @@ public abstract partial class SharedBorgSystem : EntitySystem
         var range = 1f;
         args.Handled = true;
 
+        args.InRange = CustomBorgRangeCheck(args.User, args.Target, range, out float? _);
         /*
-        var userCoords = _transform.ToMapCoordinates(args.User.ToCoordinates());
-        var targetCoords = _transform.ToMapCoordinates(args.Target.ToCoordinates());
-        */
-
         if (_interaction.InRangeUnobstructed(ent, args.Target.ToCoordinates(), range))
             args.InRange = true;
+        */
 
         if (!TryComp<HandsComponent>(args.User, out var hands))
             return;
+
+        /*if (HasComp<AirlockComponent>(args.Target) &&
+            _physics.TryGetNearest(ent, targetCoords, out var _, out var distance))
+        {
+            if (distance < range * 1.2f) // magic float go boom
+                args.InRange = true;
+        }*/
 
         if (hands.ActiveHandEntity != null)
             return;
@@ -119,6 +187,8 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
         if (!HasComp<StationAiWhitelistComponent>(args.Target))
             return;
+
+
 
         args.InRange = true; // TODO: StationAI can alt-interact with doors. make the same thing you nerdo
     }
