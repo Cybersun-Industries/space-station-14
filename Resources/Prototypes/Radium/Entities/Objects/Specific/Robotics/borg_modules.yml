@@ -6,7 +6,7 @@
   - type: Sprite
     layers:
     - state: medical
-    - state: icon-treatment
+    - state: icon-diagnosis
   - type: ItemBorgModule
     items:
     - HandheldHealthAnalyzerUnpowered
@@ -14,8 +14,10 @@
     - Hemostat
     - Cautery
     - Retractor
+    - BoneMeshBorg
     - Saw
     - Drill
     - Drapes
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: diagnosis-module }
+    

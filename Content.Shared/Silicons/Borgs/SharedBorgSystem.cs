@@ -41,34 +41,25 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] protected readonly ItemToggleSystem Toggle = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
     [Dependency] private readonly SharedContainerSystem _containers = default!;
-    [Dependency] protected readonly SharedMapSystem Maps = default!;
-    [Dependency] private readonly StationAiVisionSystem _vision = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
+    // radium start (i hope)
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedStationAiSystem _sharedStationAi = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-
-    private EntityQuery<BroadphaseComponent> _broadphaseQuery;
-    private EntityQuery<MapGridComponent> _gridQuery;
-
-
-    /*
-    const float MaxRaycastRange = 50f;
-    private const CollisionGroup InRangeUnobstructedMask = CollisionGroup.FullTileMask;
-    */
+    [Dependency] private readonly StationAiVisionSystem _vision = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
+    // radium end
 
 
     /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
-
+        // radium start
         SubscribeLocalEvent<BorgChassisComponent, AccessibleOverrideEvent>(OnBorgAccessible);
         SubscribeLocalEvent<BorgChassisComponent, InRangeOverrideEvent>(OnBorgInRange);
-        // SubscribeLocalEvent<StationAiWhitelistComponent, InteractUsingEvent>(OnBorgInteraction);
-
+        // radium end
         SubscribeLocalEvent<BorgChassisComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BorgChassisComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsertAttempt);
         SubscribeLocalEvent<BorgChassisComponent, ItemSlotEjectAttemptEvent>(OnItemSlotEjectAttempt);
@@ -81,29 +72,9 @@ public abstract partial class SharedBorgSystem : EntitySystem
         InitializeRelay();
     }
 
-
-    /*
-    // I wrote it myself. If you have found any bugs here, mail me. I wont respond or make any changes, but you could try to make me do so.
-    private void OnBorgInteraction(EntityUid ent, StationAiWhitelistComponent comp, InteractUsingEvent args)
-    {
-        if (args.Target == args.User)
-            return;
-        if (!HasComp<BorgChassisComponent>(args.User))
-            return;
-
-        /*
-        if (_interaction.TryGetUsedEntity(ent.Owner, out var used) == true)
-        {
-            if (TryComp<ToolComponent>(args.Used, out var _))
-                _interaction.InteractHand(ent.Owner, args.Target);
-        }
-        #1#
-        // _interaction.InteractHand(ent.Owner, args.);
-        args.Handled = true;
-        return;
-    }
-    */
-
+    //                    ***********************************
+    //                    **          radium start         **
+    //                    ***********************************
     private bool CustomBorgRangeCheck(EntityUid user, EntityUid target, float range, out float? distance)
     {
         if (user == target)
@@ -112,39 +83,11 @@ public abstract partial class SharedBorgSystem : EntitySystem
             return true;
         }
 
-        // var userCoords = _transform.ToMapCoordinates(user.ToCoordinates());
         var targetCoords = _transform.ToMapCoordinates(target.ToCoordinates());
-
-        /*
-        var dir = targetCoords.Position - userCoords.Position;
-        var lenght = dir.Length();
-        */
-
-
 
         if (_physics.TryGetNearest(user, targetCoords, out var _, out var dist))
         {
-
-
             distance = dist;
-            /*
-            if (lenght > range)
-                return false;
-
-            if (lenght > MaxRaycastRange)
-            {
-                Log.Warning("InRangeUnobstructed check performed over extreme range. Limiting CollisionRay size.");
-                lenght = MaxRaycastRange;
-            }
-
-            CollisionGroup collisionMask = InRangeUnobstructedMask;
-            var ray = new CollisionRay(userCoords.Position, dir.Normalized(), (int) collisionMask);
-            var rayResults = _physics.IntersectRay(userCoords.MapId, ray, lenght, null, true).ToList();
-            if (rayResults.Count != 0)
-            {
-                return false;
-            }
-            */
 
             if (dist < range)
             {
@@ -164,20 +107,9 @@ public abstract partial class SharedBorgSystem : EntitySystem
         args.Handled = true;
 
         args.InRange = CustomBorgRangeCheck(args.User, args.Target, range, out float? _);
-        /*
-        if (_interaction.InRangeUnobstructed(ent, args.Target.ToCoordinates(), range))
-            args.InRange = true;
-        */
 
         if (!TryComp<HandsComponent>(args.User, out var hands))
             return;
-
-        /*if (HasComp<AirlockComponent>(args.Target) &&
-            _physics.TryGetNearest(ent, targetCoords, out var _, out var distance))
-        {
-            if (distance < range * 1.2f) // magic float go boom
-                args.InRange = true;
-        }*/
 
         if (hands.ActiveHandEntity != null)
             return;
@@ -187,8 +119,6 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
         if (!HasComp<StationAiWhitelistComponent>(args.Target))
             return;
-
-
 
         args.InRange = true; // TODO: StationAI can alt-interact with doors. make the same thing you nerdo
     }
@@ -211,6 +141,9 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
         args.Accessible = true;
     }
+    //                    **********************************
+    //                    **          radium end          **
+    //                    **********************************
 
     private void OnTryGetIdentityShortInfo(TryGetIdentityShortInfoEvent args)
     {
