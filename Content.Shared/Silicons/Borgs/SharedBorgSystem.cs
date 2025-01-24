@@ -43,6 +43,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedStationAiSystem _sharedStationAi = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private EntityQuery<BroadphaseComponent> _broadphaseQuery;
     private EntityQuery<MapGridComponent> _gridQuery;
@@ -54,11 +55,11 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
         SubscribeLocalEvent<BorgChassisComponent, AccessibleOverrideEvent>(OnBorgAccessible);
         SubscribeLocalEvent<BorgChassisComponent, InRangeOverrideEvent>(OnBorgInRange);
+        // SubscribeLocalEvent<StationAiWhitelistComponent, InteractUsingEvent>(OnBorgInteraction);
 
         SubscribeLocalEvent<BorgChassisComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BorgChassisComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsertAttempt);
         SubscribeLocalEvent<BorgChassisComponent, ItemSlotEjectAttemptEvent>(OnItemSlotEjectAttempt);
-        SubscribeLocalEvent<StationAiWhitelistComponent, InteractUsingEvent>(OnBorgInteraction);
         SubscribeLocalEvent<BorgChassisComponent, EntInsertedIntoContainerMessage>(OnInserted);
         SubscribeLocalEvent<BorgChassisComponent, EntRemovedFromContainerMessage>(OnRemoved);
         SubscribeLocalEvent<BorgChassisComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
@@ -69,10 +70,13 @@ public abstract partial class SharedBorgSystem : EntitySystem
     }
 
 
+    /*
     // I wrote it myself. If you have found any bugs here, mail me. I wont respond or make any changes, but you could try to make me do so.
-    private void OnBorgInteraction(Entity<StationAiWhitelistComponent> ent, ref InteractUsingEvent args)
+    private void OnBorgInteraction(EntityUid ent, StationAiWhitelistComponent comp, InteractUsingEvent args)
     {
-        if (args.Target == ent.Owner)
+        if (args.Target == args.User)
+            return;
+        if (!HasComp<BorgChassisComponent>(args.User))
             return;
 
         /*
@@ -81,11 +85,12 @@ public abstract partial class SharedBorgSystem : EntitySystem
             if (TryComp<ToolComponent>(args.Used, out var _))
                 _interaction.InteractHand(ent.Owner, args.Target);
         }
-        */
+        #1#
         // _interaction.InteractHand(ent.Owner, args.);
         args.Handled = true;
         return;
     }
+    */
 
     private void OnBorgInRange(Entity<BorgChassisComponent> ent, ref InRangeOverrideEvent args)
     {
@@ -95,8 +100,19 @@ public abstract partial class SharedBorgSystem : EntitySystem
         var range = 1f;
         args.Handled = true;
 
+        /*
+        var userCoords = _transform.ToMapCoordinates(args.User.ToCoordinates());
+        var targetCoords = _transform.ToMapCoordinates(args.Target.ToCoordinates());
+        */
+
         if (_interaction.InRangeUnobstructed(ent, args.Target.ToCoordinates(), range))
             args.InRange = true;
+
+        if (!TryComp<HandsComponent>(args.User, out var hands))
+            return;
+
+        if (hands.ActiveHandEntity != null)
+            return;
 
         if (!_power.IsPowered(args.Target))
             return;
