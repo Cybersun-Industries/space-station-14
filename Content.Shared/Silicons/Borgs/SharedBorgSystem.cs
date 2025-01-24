@@ -41,7 +41,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] protected readonly ItemToggleSystem Toggle = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
     [Dependency] private readonly SharedContainerSystem _containers = default!;
-    // radium start (i hope)
+    // Radium start: Borg tweaks
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedStationAiSystem _sharedStationAi = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -49,17 +49,17 @@ public abstract partial class SharedBorgSystem : EntitySystem
     [Dependency] private readonly StationAiVisionSystem _vision = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
-    // radium end
+    // Radium end: Borg tweaks
 
 
     /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
-        // radium start
+        // Radium start: Borg tweaks
         SubscribeLocalEvent<BorgChassisComponent, AccessibleOverrideEvent>(OnBorgAccessible);
         SubscribeLocalEvent<BorgChassisComponent, InRangeOverrideEvent>(OnBorgInRange);
-        // radium end
+        // Radium end: Borg tweaks
         SubscribeLocalEvent<BorgChassisComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BorgChassisComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsertAttempt);
         SubscribeLocalEvent<BorgChassisComponent, ItemSlotEjectAttemptEvent>(OnItemSlotEjectAttempt);
@@ -72,9 +72,9 @@ public abstract partial class SharedBorgSystem : EntitySystem
         InitializeRelay();
     }
 
-    //                    ***********************************
-    //                    **          radium start         **
-    //                    ***********************************
+    //                    ************************************************
+    //                    **          Radium start: Borg tweaks         **
+    //                    ************************************************
     private bool CustomBorgRangeCheck(EntityUid user, EntityUid target, float range, out float? distance)
     {
         if (user == target)
@@ -141,9 +141,9 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
         args.Accessible = true;
     }
-    //                    **********************************
-    //                    **          radium end          **
-    //                    **********************************
+    //                    **********************************************
+    //                    **          Radium end: Borg tweaks         **
+    //                    **********************************************
 
     private void OnTryGetIdentityShortInfo(TryGetIdentityShortInfoEvent args)
     {
@@ -204,7 +204,7 @@ public abstract partial class SharedBorgSystem : EntitySystem
 
     private void OnUIOpenAttempt(EntityUid uid, BorgChassisComponent component, ActivatableUIOpenAttemptEvent args)
     {
-        // borgs can't view their own ui
+        // Borgs can't view their own ui
         if (args.User == uid)
             args.Cancel();
     }
