@@ -17,7 +17,7 @@
         shader: "unshaded"
         visible: false
     - type: Pda
-      id: IDCardStandard
+      id: PrisonerIDCard
       state: pda-orden
       penSlot:
         startingItem: EnergyDagger
@@ -38,6 +38,7 @@
   description: Clear, so you can make sure there's nothing being smuggled inside.
   components:
     - type: Pda
+    
       id: PrisonerIDCard
       state: pda-clear
     - type: Icon
