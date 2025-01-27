@@ -29,6 +29,9 @@
       "name": "light_overlay"
     },
     {
+      "name": "Flashlight"
+    },
+    {
       "name": "pda"
     },
     {
@@ -225,6 +228,9 @@
     },
     {
       "name": "pda-seniorofficer"
+    },
+    {
+      "name": "pda-surgeon"
     },
     {
       "name": "equipped-IDCARD",

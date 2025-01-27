@@ -59,7 +59,7 @@
   - type: Appearance
   - type: WarpPoint
     follow: true
-    location: singularity
+    location: Оранжевая звезда
   - type: Sprite
     sprite: Radium/Gigantic/suns.rsi
     shader: unshaded
@@ -106,3 +106,6 @@
     sound:
       path: /Audio/Effects/tesla.ogg
   - type: GhostRoleAntagSpawner
+  - type: WarpPoint
+    follow: true
+    location: Красная звезда

@@ -188,6 +188,9 @@
       "name": "pirate"
     },
     {
+      "name": "black"
+    },
+    {
       "name": "prisoner_001"
     },
     {
@@ -227,10 +230,13 @@
       "name": "idseniorphysician"
     },
     {
-        "name": "idseniorofficer"
+      "name": "idseniorofficer"
     },
     {
       "name": "idpilot"
+    },
+    {
+      "name": "idsurgeon"
     },
     {
       "name": "gold-inhand-left",
