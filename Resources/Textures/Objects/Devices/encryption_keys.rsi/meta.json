@@ -7,6 +7,7 @@
     "y": 32
   },
   "states": [
+    {"name": "ai_label"},
     {"name": "crypt_gray"},
     {"name": "crypt_rusted"},
     {"name": "crypt_gold"},
@@ -34,8 +35,6 @@
     {"name": "sci_label"},
     {"name": "sec_label"},
     {"name": "service_label"},
-    {"name": "synd_label"},
-    {"name": "borg_label"},
-    {"name": "ai_label"}
+    {"name": "synd_label"}
   ]
 }
