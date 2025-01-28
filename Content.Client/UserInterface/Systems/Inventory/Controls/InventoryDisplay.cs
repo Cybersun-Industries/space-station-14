@@ -7,19 +7,18 @@ namespace Content.Client.UserInterface.Systems.Inventory.Controls;
 
 public sealed class InventoryDisplay : LayoutContainer
 {
-    private int Columns = 0;
-    private int Rows = 0;
-    private const int MarginThickness = 10;
+    private int _columns;
+    private int _rows;
     private const int ButtonSpacing = 5;
     private const int ButtonSize = 75;
-    private readonly Control resizer;
+    private readonly Control _resizer;
 
     private readonly Dictionary<string, (SlotControl, Vector2i)> _buttons = new();
 
     public InventoryDisplay()
     {
-        resizer = new Control();
-        AddChild(resizer);
+        _resizer = new Control();
+        AddChild(_resizer);
     }
 
     public SlotControl AddButton(SlotControl newButton, Vector2i buttonOffset)
@@ -29,7 +28,7 @@ public sealed class InventoryDisplay : LayoutContainer
         VerticalExpand = true;
         InheritChildMeasure = true;
         if (!_buttons.TryAdd(newButton.SlotName, (newButton, buttonOffset)))
-            Logger.Warning("Tried to add button without a slot!");
+            Logger.GetSawmill("InventoryDisplay").Warning("Tried to add button without a slot!");
         SetPosition(newButton, buttonOffset * ButtonSize + new Vector2(ButtonSpacing, ButtonSpacing));
         UpdateSizeData(buttonOffset);
         return newButton;
@@ -43,13 +42,13 @@ public sealed class InventoryDisplay : LayoutContainer
     private void UpdateSizeData(Vector2i buttonOffset)
     {
         var (x, _) = buttonOffset;
-        if (x > Columns)
-            Columns = x;
+        if (x > _columns)
+            _columns = x;
         var (_, y) = buttonOffset;
-        if (y > Rows)
-            Rows = y;
-        resizer.SetHeight = (Rows + 1) * (ButtonSize + ButtonSpacing);
-        resizer.SetWidth = (Columns + 1) * (ButtonSize + ButtonSpacing);
+        if (y > _rows)
+            _rows = y;
+        _resizer.SetHeight = (_rows + 1) * (ButtonSize + ButtonSpacing);
+        _resizer.SetWidth = (_columns + 1) * (ButtonSize + ButtonSpacing);
     }
 
     public bool TryGetButton(string slotName, out SlotControl? button)
@@ -64,14 +63,13 @@ public sealed class InventoryDisplay : LayoutContainer
         if (!_buttons.Remove(slotName))
             return;
         //recalculate the size of the control when a slot is removed
-        Columns = 0;
-        Rows = 0;
+        _columns = 0;
+        _rows = 0;
         foreach (var (_, (_, buttonOffset)) in _buttons)
         {
             UpdateSizeData(buttonOffset);
         }
     }
-
     public void ClearButtons()
     {
         Children.Clear();

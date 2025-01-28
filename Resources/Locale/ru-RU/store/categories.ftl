@@ -1,6 +1,6 @@
 # Uplink
-store-category-debug = debug category
-store-category-debug2 = debug category 2
+store-category-debug = дебаг категория 1
+store-category-debug2 = дебаг категория 2
 store-category-weapons = Вооружение
 store-category-ammo = Боеприпасы
 store-category-explosives = Взрывчатка
@@ -21,3 +21,7 @@ store-caregory-spellbook-defensive = Защитные заклинания
 store-caregory-spellbook-utility = Вспомогательные заклинания
 store-caregory-spellbook-equipment = Волшебное снаряжение
 store-caregory-spellbook-events = Заклинания событий
+# Changeling
+store-ling-category-combat = Бой
+store-ling-category-sting = Ужаливания
+store-ling-category-utility = Утилиты

@@ -1,0 +1,31 @@
+﻿- type: entity
+  id: ActionEatMouse
+  name: action-name-eat-mouse
+  description: action-description-eat-mouse
+  components:
+    - type: InstantAction
+      useDelay: 10
+      icon: Backmen/Icons/verbiconfangs.png
+      event: !type:EatMouseActionEvent
+
+- type: entity
+  id: ActionSpinWeb
+  name: action-name-spin-web
+  description: action-desc-spin-web
+  components:
+    - type: WorldTargetAction
+      icon: { sprite: Backmen/Structures/web.rsi, state: web1 }
+      event: !type:SpinWebActionEvent
+      range: 1.5
+
+- type: entity
+  id: ActionHairball
+  name: hairball-action
+  description: hairball-action-desc
+  components:
+    - type: InstantAction
+#      icon: { sprite: Backmen/Structures/web.rsi, state: web1 }
+      priority: -10
+      event: !type:HairballActionEvent
+      charges: 1
+      useDelay: 30

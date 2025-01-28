@@ -16,5 +16,3 @@ ent-FoamedIronMetal = foamed iron metal
     .desc = For sealing hull breaches.
 ent-FoamedAluminiumMetal = foamed aluminium metal
     .desc = For sealing hull breaches.
-ent-ReactionFlash = { "" }
-    .desc = { "" }

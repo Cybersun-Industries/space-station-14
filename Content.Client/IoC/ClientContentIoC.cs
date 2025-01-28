@@ -1,7 +1,9 @@
 ﻿using Content.Client.Administration.Managers;
+using Content.Client.Backmen.Sponsors;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
+using Content.Client.Corvax;
 using Content.Client.Corvax.TTS;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
@@ -21,6 +23,9 @@ using Content.Client.Voting;
 using Content.Shared.Administration.Logs;
 using Content.Client.Lobby;
 using Content.Client.Players.RateLimiting;
+using Content.Client.Radium.Medical.Surgery.UI.Widgets.Systems;
+using Content.Corvax.Interfaces.Client;
+using Content.Corvax.Interfaces.Shared;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
@@ -33,7 +38,13 @@ namespace Content.Client.IoC
         public static void Register()
         {
             var collection = IoCManager.Instance!;
-
+            // corvax & backmen start?
+            collection.Register<Content.Corvax.Interfaces.Shared.ISharedSponsorsManager,Backmen.Sponsors.SponsorsManager>(); // Corvax-Sponsors
+            collection.Register<Content.Corvax.Interfaces.Client.ISponsorWindowCreator,Backmen.Sponsors.SponsorWindowCreator>(); // Corvax-Sponsors
+            collection.Register<Content.Corvax.Interfaces.Client.IClientJoinQueueManager,Backmen.JoinQueue.JoinQueueManager>(); // Corvax-Queue
+            collection.Register<IClientDiscordAuthManager,Radium.DiscordAuth.DiscordAuthManager>(); // Corvax-DiscordAuth
+            collection.Register<Content.Corvax.Interfaces.Shared.ISharedLoadoutsManager, Backmen.Sponsors.LoadoutsManager>(); // Corvax-Sponsors
+            // corvax & backmen end?
             collection.Register<IParallaxManager, ParallaxManager>();
             collection.Register<IChatManager, ChatManager>();
             collection.Register<ISharedChatManager, ChatManager>();
@@ -56,6 +67,10 @@ namespace Content.Client.IoC
             collection.Register<ContentReplayPlaybackManager>();
             collection.Register<ISharedPlaytimeManager, JobRequirementsManager>();
             collection.Register<MappingManager>();
+            // radium start
+            // collection.Register<ISharedSponsorsManager, SponsorsManager>();
+            collection.Register<ClientDamagePartsSystem, ClientDamagePartsSystem>();
+            // radium end
             collection.Register<DebugMonitorManager>();
             collection.Register<PlayerRateLimitManager>();
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();

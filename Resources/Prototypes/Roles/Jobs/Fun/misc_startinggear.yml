@@ -1,6 +1,6 @@
 #Misc outfit startingGear definitions.
 
-#Skeleton Biker - Just a skeleton now
+#Skeleton Biker - NoT Just a skeleton now
 - type: startingGear
   id: SkeletonBiker
   equipment:
@@ -13,6 +13,8 @@
     shoes: ClothingShoesBootsJack
     id: PassengerPDA
     ears: ClothingHeadsetGrey
+    pocket1: VehicleSkeletonMotorcycle #Radium Vehicle return extended
+    pocket2: VehicleKeySkeletonMotorcycle #Radium Vehicle return extended
   storage:
     back:
     - BoxSurvival

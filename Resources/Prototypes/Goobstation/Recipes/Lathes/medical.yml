@@ -1,0 +1,6 @@
+- type: latheRecipe
+  id: VehicleWheelchairFolded
+  result: VehicleWheelchairFolded
+  materials:
+    Plastic: 500
+    Steel: 500

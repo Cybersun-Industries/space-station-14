@@ -37,9 +37,12 @@ public sealed class TTSManager
     private readonly HttpClient _httpClient = new();
 
     private ISawmill _sawmill = default!;
-    private readonly Dictionary<string, byte[]> _cache = new();
-    private readonly List<string> _cacheKeysSeq = new();
-    private int _maxCachedCount = 200;
+    // ReSharper disable once InconsistentNaming
+    public readonly Dictionary<string, byte[]> _cache = new();
+    // ReSharper disable once InconsistentNaming
+    public readonly List<string> _cacheKeysSeq = new();
+    // ReSharper disable once InconsistentNaming
+    public int _maxCachedCount = 200;
     private string _apiUrl = string.Empty;
     private string _apiToken = string.Empty;
 

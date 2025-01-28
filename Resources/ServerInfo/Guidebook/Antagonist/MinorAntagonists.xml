@@ -5,11 +5,6 @@
 
   # Ревенант
 
-  <Box>
-    <GuideEntityEmbed Entity="MobRevenant" Caption=""/>
-    <GuideEntityEmbed Entity="Ectoplasm" Caption=""/>
-  </Box>
-
   Ревенант наделён способностью преследовать членов экипажа и красть у них жизненную энергию.
 
   ## Эссенция

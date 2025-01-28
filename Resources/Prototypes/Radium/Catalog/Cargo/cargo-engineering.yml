@@ -1,0 +1,32 @@
+- type: cargoProduct
+  name: РИТЭГ
+  id: EngineeringGeneratorRTG
+  icon:
+    sprite: Structures/Power/Generation/rtg.rsi
+    state: rtg
+  product: GeneratorRTG
+  cost: 10000
+  category: cargoproduct-category-name-engineering
+  group: market
+
+- type: cargoProduct
+  name: ящик улучшенного коллектора радиации
+  id: EngineeringAdvancedRadiationCollectorFlatpack
+  icon:
+    sprite: Structures/Power/Generation/Singularity/collector.rsi
+    state: ca_on
+  product: CrateEngineeringAdvancedCollector
+  cost: 9000
+  category: cargoproduct-category-name-engineering
+  group: market
+
+- type: cargoProduct
+  name: ящик с энергоэмиттером
+  id: EngineeringEnergyEmitterFlatpack
+  icon:
+    sprite: Structures/Power/Generation/Tesla/energy_miniball.rsi
+    state: tesla_projectile
+  product: CrateEngineeringEnergyEmitter
+  cost: 8000
+  category: cargoproduct-category-name-engineering
+  group: market

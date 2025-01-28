@@ -1,6 +1,7 @@
 # Available to everybody
 - Commands:
     - echo
+    - reloadui
     - disconnect
     - help
     - list

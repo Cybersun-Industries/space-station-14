@@ -1,0 +1,86 @@
+- type: entityTable
+  id: BasicBackmenEventsTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - id: EvilTwinSpawn
+    - id: FugitiveSpawn
+    - id: BlobSpawn
+    - id: BluespaceGoat
+    - id: SpiderSpiderVampireSpawn
+
+- type: entity
+  id: EvilTwinSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 10
+    earliestStart: 15
+    minimumPlayers: 5
+  - type: EvilTwinRule
+
+- type: entity
+  id: FugitiveSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      weight: 2
+      earliestStart: 20
+      minimumPlayers: 15
+    - type: FugitiveRule
+
+- type: entity
+  id: WageScheduler
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: WageSchedulerRule
+
+- type: entity
+  id: BlobSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 6.5
+    duration: 1
+    earliestStart: 50
+    minimumPlayers: 20
+    maxOccurrences: 2 # can only happen once per round
+  - type: BlobSpawnRule
+    carrierBlobProtos:
+    - SpawnPointGhostBlobRat
+    playersPerCarrierBlob: 30
+    maxCarrierBlob: 2
+
+- type: entity
+  id: BluespaceGoat
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 5
+    earliestStart: 30
+    duration: 35
+  - type: BluespaceGoatRule
+
+- type: entity
+  id: SpiderSpiderVampireSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: StationEvent
+      startAnnouncement: station-event-vent-creatures-start-announcement
+      startAudio:
+        path: /Audio/Announcements/attention.ogg
+      earliestStart: 20
+      minimumPlayers: 15
+      weight: 2
+      duration: 60
+    - type: VentCrittersRule
+      entries:
+        - id: MobGiantSpiderVampireAngry
+          prob: 0.02
+        - id: MobGiantSpiderVampireBoss
+          prob: 0.001

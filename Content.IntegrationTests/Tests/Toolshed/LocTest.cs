@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Reflection;
 using Robust.Shared.Localization;
 using Robust.Shared.Toolshed;
+using Robust.UnitTesting.Shared.Toolshed;
 
 namespace Content.IntegrationTests.Tests.Toolshed;
 

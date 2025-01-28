@@ -1,0 +1,20 @@
+- type: entity
+  id: CrateEngineeringAdvancedCollector
+  parent: CrateEngineeringSecure
+  name: Advanced radiation collector crate
+  description: An advanced radiation collector, best used for stars. Plasma is included.
+  components:
+  - type: StorageFill
+    contents:
+      - id: AdvancedRadiationCollectorFlatpack
+      - id: ExtendedPlasmaTankFilled
+
+- type: entity
+  id: CrateEngineeringEnergyEmitter
+  parent: CrateEngineeringSecure
+  name: energy emitter crate
+  description: 
+  components:
+  - type: StorageFill
+    contents:
+      - id: EnergyEmitterFlatpack

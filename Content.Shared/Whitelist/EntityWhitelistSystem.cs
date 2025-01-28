@@ -57,9 +57,9 @@ public sealed class EntityWhitelistSystem : EntitySystem
             }
         }
 
-        if (list.MindRoles != null)
+        if (list.Components != null)
         {
-            var regs = StringsToRegs(list.MindRoles);
+            var regs = StringsToRegs(list.Components);
 
             foreach (var role in regs)
             {

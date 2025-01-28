@@ -73,7 +73,7 @@
   - type: BorgSwitchableType
     selectedBorgType: medical
   - type: TTS # Corvax-TTS
-    voice: TrainingRobot
+    voice: Oleg #TrainingRobot
 
 - type: entity
   id: BorgChassisService

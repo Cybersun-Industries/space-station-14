@@ -134,6 +134,7 @@ public enum WinCondition : byte
     NukeExplodedOnCorrectStation,
     NukeExplodedOnNukieOutpost,
     NukeExplodedOnIncorrectLocation,
+    NukeExplodedOnCentComLocation, // backmen: centcom
     NukeActiveInStation,
     NukeActiveAtCentCom,
     NukeDiskOnCentCom,

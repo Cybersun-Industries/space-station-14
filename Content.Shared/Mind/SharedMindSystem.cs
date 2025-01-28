@@ -154,8 +154,11 @@ public abstract class SharedMindSystem : EntitySystem
             return;
 
         var dead = _mobState.IsDead(uid);
-        var hasUserId = CompOrNull<MindComponent>(mindContainer.Mind)?.UserId;
-        var hasSession = CompOrNull<MindComponent>(mindContainer.Mind)?.Session;
+
+        var mind = CompOrNull<MindComponent>(mindContainer.Mind);
+
+        var hasUserId = mind?.UserId;
+        var hasSession = mind?.Session;
 
         if (dead && hasUserId == null)
             args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-dead-and-irrecoverable", ("ent", uid))}[/color]");
@@ -481,6 +484,19 @@ public abstract class SharedMindSystem : EntitySystem
 
         mindId = default;
         return false;
+    }
+
+    /// <summary>
+    /// Gets a role component from a player's mind.
+    /// </summary>
+    /// <returns>Whether a role was found</returns>
+    public bool TryGetRole<T>(EntityUid user, [NotNullWhen(true)] out T? role) where T : IComponent
+    {
+        role = default;
+        if (!TryComp<MindContainerComponent>(user, out var mindContainer) || mindContainer.Mind == null)
+            return false;
+
+        return TryComp(mindContainer.Mind, out role);
     }
 
     /// <summary>
