@@ -31,6 +31,9 @@
         {
             "name": "pda-surgeon"
         },
+	{
+	    "name": "pda"
+	},
         {
             "name": "equipped-IDCARD",
             "directions": 4

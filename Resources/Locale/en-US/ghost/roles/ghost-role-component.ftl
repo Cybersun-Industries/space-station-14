@@ -324,7 +324,3 @@ ghost-role-information-gingerbread-name = Gingerbread Man
 ghost-role-information-gingerbread-description = A being of pure holiday spirit.
                                      Spread molassesy goodness and to all good cheer.
 
-ghost-role-information-gingerbread-name = Gingerbread Man
-ghost-role-information-gingerbread-description = A being of pure holiday spirit.
-                                     Spread molassesy goodness and to all good cheer.
-
