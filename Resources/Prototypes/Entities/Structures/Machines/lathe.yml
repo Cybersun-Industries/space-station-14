@@ -151,6 +151,7 @@
       - LightBulb
       - LedLightBulb
       - DimLightBulb
+      - WarmLightBulb
       - Bucket
       - DrinkMug
       - DrinkMugMetal
@@ -351,11 +352,6 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
-      - ArtificialBluespaceCrystal
-      # RADIUM-FIX:
-      - WeaponGrapplingGun
-      - HandTeleporter1
-      - CoreSilver
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -456,7 +452,6 @@
     - SodaDispenserMachineCircuitboard
     - SpaceHeaterMachineCircuitBoard
     - CutterMachineCircuitboard
-    - StationAnchorCircuitboard
     - SalvageMagnetMachineCircuitboard
     dynamicRecipes:
       - ThermomachineFreezerMachineCircuitBoard
@@ -480,7 +475,6 @@
       - SolarControlComputerCircuitboard
       - SolarTrackerElectronics
       - TurboItemRechargerCircuitboard
-      - PowerComputerCircuitboard
       - AutolatheHyperConvectionMachineCircuitboard
       - ProtolatheHyperConvectionMachineCircuitboard
       - CircuitImprinterHyperConvectionMachineCircuitboard
@@ -527,11 +521,8 @@
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
       - SMESAdvancedMachineCircuitboard
+      - HolopadMachineCircuitboard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
-      - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
-      - MachineBluespaceTransitorCircuitboard # Corvax-Next-BluespaceHarvester
-      - EnergyEmitterCircuitboard #Radium-stars
-      - StationAnchorCircuitboard #Radium-stars
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
@@ -622,8 +613,6 @@
     - HamtrLLeg
     - HamtrRLeg
     - VimHarness
-    # RADIUM-FIX:
-    - MechEquipmentDrill
   - type: MaterialStorage
     whitelist:
       tags:
@@ -921,9 +910,6 @@
       - BluespaceBeaker
       - SyringeBluespace
       - SyringeCryostasis
-      # RADIUM-FIX:
-      - BluespacePillCanister
-      - HandheldCrewMonitor
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
@@ -1099,6 +1085,25 @@
       - CarpetPurple
       - CarpetCyan
       - CarpetWhite
+      # Bedsheets
+      - BedsheetBlack
+      - BedsheetBlue
+      - BedsheetBrown
+      - BedsheetGreen
+      - BedsheetGrey
+      - BedsheetOrange
+      - BedsheetPurple
+      - BedsheetRed
+      - BedsheetWhite
+      - BedsheetYellow
+      - BedsheetClown
+      - BedsheetCosmos
+      - BedsheetIan
+      - BedsheetMedical
+      - BedsheetMime
+      - BedsheetNT
+      - BedsheetRainbow
+      - BedsheetBrigmedic
       # Corvax-Clothing-Start
       - ClothingHeadHatCapHoS
       - ClothingHeadHatBeretSecurityMedic
@@ -1114,6 +1119,7 @@
       # Corvax-Clothing-End
   - type: EmagLatheRecipes
     emagStaticRecipes:
+      # Clothing
       - ClothingHeadHatCentcomcap
       - ClothingHeadHatCentcom
       - ClothingUniformJumpsuitCentcomAgent
@@ -1136,6 +1142,8 @@
       - ClothingOuterWinterCentcom
       - ClothingOuterWinterSyndie
       - ClothingOuterWinterSyndieCap
+      # Bedsheets
+      - BedsheetSyndie
   - type: MaterialStorage
     whitelist:
       tags:

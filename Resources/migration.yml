@@ -444,9 +444,9 @@ ClothingBeltSuspenders: ClothingBeltSuspendersRed
 ClothingNeckShockCollar: ClothingBackpackElectropack
 
 # 2024-08-22
-# ComputerShuttleSalvage: null # Corvax reverted
-# SalvageShuttleConsoleCircuitboard: null
-# SalvageShuttleCircuitboardStealObjective: null
+ComputerShuttleSalvage: null
+SalvageShuttleConsoleCircuitboard: null
+SalvageShuttleCircuitboardStealObjective: null
 
 # 2024-08-28
 ClothingBackpackDuffelSyndicateCostumeCentcom: null
@@ -568,50 +568,5 @@ LightTree04: LightTree
 LightTree05: LightTree
 LightTree06: LightTree
 
-# 2024-11-11 - Radium
-Shower: null
-RandomPsionicPowerPool: null
-PsionicsDisabled: null
-PsionicallyInsulated: null
-SeeAll: null
-ActionMetapsionicPulse: null
-ActionPsionicInvisibility: null
-ActionPsionicInvisibilityOff: null
-ActionMindSwap: null
-ActionMindSwapReturn: null
-ActionDispel: null
-ActionMassSleep: null
-ActionTelegnosis: null
-ActionTelegnosisReturn: null
-ActionPsionicRegeneration: null
-ActionNoosphericZap: null
-ActionPyrokinesis: null
-ActionPsychokinesis: null
-PsionicRegenerationEssence: null
-LotophagoiOil: null
-SoulbreakerToxin: null
-CreateNormalityCrystal: null
-Ectoplasm: null
-TableWoodReinforced: null
-ComfyDarkChair: null
-chairDarkComfy: null
-ClothingHeadCage: null
-MetempsychoticMachineCircuitboard: null
-AntiPsychicKnife: null
-ClothingHeadHelmetInsulated: null
-ProtolatheCashMachineCircuitboard: null
-LightningNoospheric: null
-
-Eftpos: null
-EftposCargo: null
-EftposCivilian: null
-EftposCommand: null
-EftposEngineering: null
-EftposMedical: null
-EftposSecurity: null
-EftposScience: null
-EftposSpecific: null
-# 2024-12-11 - Radium
-Food3DOrange: null
-3DOrangeSeeds: null
-3Dorange: null
+#2024-12-28
+DrinkIrishCarBomb: DrinkIrishSlammer

@@ -51,13 +51,14 @@
   result: LedLightBulb
 
 - type: latheRecipe
+  parent: BaseLightRecipe
   id: DimLightBulb
   result: DimLightBulb
-  category: Lights
-  completetime: 2
-  materials:
-    Steel: 50
-    Glass: 50
+
+- type: latheRecipe
+  parent: BaseLightRecipe
+  id: WarmLightBulb
+  result: WarmLightBulb
 
 - type: latheRecipe
   parent: BaseLightRecipe
