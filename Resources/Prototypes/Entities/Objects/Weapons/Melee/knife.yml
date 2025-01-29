@@ -47,6 +47,9 @@
     guides:
     - Chef
     - FoodRecipes
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Incise
+    modifier: 0.7
 
 - type: entity
   name: butcher's cleaver
@@ -111,6 +114,9 @@
     malus: 0.225
   - type: ThrowingAngle
     angle: 225
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Incise
+    modifier: 0.9
 
 - type: entity
   name: survival knife
@@ -126,6 +132,9 @@
     storedSprite:
       state: storage
       sprite: Objects/Weapons/Melee/survival_knife.rsi
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Incise
+    modifier: 1.1
 
 - type: entity
   name: kukri knife
@@ -210,6 +219,9 @@
     sprite: Objects/Weapons/Melee/shiv.rsi
   - type: DisarmMalus
     malus: 0.225
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Incise
+    modifier: 0.4
 
 - type: entity
   name: reinforced shiv
@@ -229,6 +241,9 @@
     sprite: Objects/Weapons/Melee/reinforced_shiv.rsi
   - type: Sprite
     sprite: Objects/Weapons/Melee/reinforced_shiv.rsi
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Incise
+    modifier: 0.6
 
 - type: entity
   name: plasma shiv
@@ -248,6 +263,9 @@
     sprite: Objects/Weapons/Melee/plasma_shiv.rsi
   - type: Sprite
     sprite: Objects/Weapons/Melee/plasma_shiv.rsi
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Incise
+    modifier: 0.9
 
 - type: entity
   name: uranium shiv

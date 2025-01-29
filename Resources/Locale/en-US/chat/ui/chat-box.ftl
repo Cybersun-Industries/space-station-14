@@ -33,3 +33,4 @@ hud-chatbox-channel-CollectiveMind = Collective Mind
 hud-chatbox-channel-Visual = Actions
 hud-chatbox-channel-Damage = Damage
 hud-chatbox-channel-Unspecified = Unspecified
+hud-chatbox-channel-AdminFax = AdminFax

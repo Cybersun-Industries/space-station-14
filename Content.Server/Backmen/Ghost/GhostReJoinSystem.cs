@@ -106,10 +106,12 @@ public sealed class GhostReJoinSystem : SharedGhostReJoinSystem
             return;
         }
         var timeOffset = _gameTiming.CurTime - ent.Comp.TimeOfDeath;
+        var timeLeft = _ghostRespawnTime - timeOffset;
+        var (timeOffsetMinutes, timeOffsetSeconds) = GetFormattedTimeLeft(timeOffset);
         if (timeOffset < _ghostRespawnTime)
         {
             SendChatMsg(ui.Player,
-                Loc.GetString("ghost-respawn-time-left", ("time", (_ghostRespawnTime - timeOffset).ToString()))
+                Loc.GetString("ghost-respawn-time-left", ("minutes", timeOffsetMinutes), ("seconds", timeOffsetSeconds))
             );
             return;
         }
@@ -150,10 +152,13 @@ public sealed class GhostReJoinSystem : SharedGhostReJoinSystem
             return;
         }
         var timeOffset = _gameTiming.CurTime - ent.Comp.TimeOfDeath;
+        var timeLeft = _ghostRespawnTime - timeOffset;
+        var timeOffsetMinutes = timeLeft.Minutes.ToString();
+        var timeOffsetSeconds = timeLeft.Seconds.ToString();
         if (timeOffset < _ghostRespawnTime)
         {
             SendChatMsg(ui.Player,
-                Loc.GetString("ghost-respawn-time-left", ("time", (_ghostRespawnTime - timeOffset).ToString()))
+                Loc.GetString("ghost-respawn-time-left", ("minutes", timeOffsetMinutes), ("seconds", timeOffsetSeconds))
             );
             return;
         }
@@ -289,6 +294,8 @@ public sealed class GhostReJoinSystem : SharedGhostReJoinSystem
         }
 
         var timeOffset = _gameTiming.CurTime - deathTime;
+        var timeLeft = _ghostRespawnTime - timeOffset;
+        var (timeOffsetMinutes, timeOffsetSeconds) = GetFormattedTimeLeft(timeOffset);
 
         if (timeOffset >= _ghostRespawnTime)
         {
@@ -305,7 +312,7 @@ public sealed class GhostReJoinSystem : SharedGhostReJoinSystem
         }
 
         SendChatMsg(shell.Player,
-            Loc.GetString("ghost-respawn-time-left", ("time", (_ghostRespawnTime - timeOffset).ToString()))
+            Loc.GetString("ghost-respawn-time-left", ("minutes", timeOffsetMinutes), ("seconds", timeOffsetSeconds))
         );
     }
 
@@ -347,5 +354,15 @@ public sealed class GhostReJoinSystem : SharedGhostReJoinSystem
             _ghostSystem.SetTimeOfDeath(ghost, _deathTime[mindSession.UserId], ghostComponent);
             Dirty(ghost, ghostComponent);
         }
+    }
+
+    private (string minutes, string seconds) GetFormattedTimeLeft(TimeSpan timeOffset)
+    {
+        var timeLeft = _ghostRespawnTime - timeOffset;
+        if (timeLeft.TotalSeconds < 0)
+        {
+            return ("0", "0");
+        }
+        return (timeLeft.Minutes.ToString(), timeLeft.Seconds.ToString()); // god have mercy
     }
 }
