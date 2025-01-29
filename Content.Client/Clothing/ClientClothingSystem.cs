@@ -104,23 +104,6 @@ public sealed class ClientClothingSystem : ClothingSystem
         }
     }
 
-    private void OnInventoryTemplateUpdated(Entity<ClothingComponent> ent, ref InventoryTemplateUpdated args)
-    {
-        UpdateAllSlots(ent.Owner, clothing: ent.Comp);
-    }
-
-    private void UpdateAllSlots(
-        EntityUid uid,
-        InventoryComponent? inventoryComponent = null,
-        ClothingComponent? clothing = null)
-    {
-        var enumerator = _inventorySystem.GetSlotEnumerator((uid, inventoryComponent));
-        while (enumerator.NextItem(out var item, out var slot))
-        {
-            RenderEquipment(uid, item, slot.Name, inventoryComponent, clothingComponent: clothing);
-        }
-    }
-
     private void OnGetVisuals(EntityUid uid, ClothingComponent item, GetEquipmentVisualsEvent args)
     {
         if (!TryComp(args.Equipee, out InventoryComponent? inventory))

@@ -86,4 +86,9 @@ public sealed partial class ToggleableGhostRoleComponent : Component
     /// </summary>
     [DataField("job")]
     public ProtoId<JobPrototype>? JobProto;
+
+    // start-backmen: whitelist
+    [DataField("whitelistRequired")]
+    public bool WhitelistRequired;
+    // end-backmen: whitelist
 }

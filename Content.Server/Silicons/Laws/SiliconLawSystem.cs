@@ -202,12 +202,6 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             _roles.MindTryRemoveRole<SubvertedSiliconRoleComponent>(mindId);
     }
 
-    private void RemoveSubvertedSiliconRole(EntityUid mindId)
-    {
-        if (_roles.MindHasRole<SubvertedSiliconRoleComponent>(mindId))
-            _roles.MindTryRemoveRole<SubvertedSiliconRoleComponent>(mindId);
-    }
-
     public SiliconLawset GetLaws(EntityUid uid, SiliconLawBoundComponent? component = null)
     {
         if (!Resolve(uid, ref component))
