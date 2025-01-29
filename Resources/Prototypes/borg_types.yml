@@ -152,6 +152,7 @@
 
   defaultModules:
   - BorgModuleTreatment
+  - BorgModuleSurgery # Radium: Borg tweaks
 
   radioChannels:
   - Science

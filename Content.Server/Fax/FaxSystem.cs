@@ -4,12 +4,15 @@ using Content.Server.Chat.Managers;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
+using Content.Server.Discord;
 using Content.Server.Labels;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Tools;
+using Content.Shared.CCVar;
 using Content.Shared.UserInterface;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Backmen.CCVar;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
@@ -30,6 +33,9 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.NameModifier.Components;
 using Content.Shared.Power;
+using FastAccessors;
+using Robust.Shared.Configuration;
+using CCVars = Content.Shared.CCVar.CCVars;
 
 namespace Content.Server.Fax;
 
@@ -50,6 +56,8 @@ public sealed class FaxSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly FaxecuteSystem _faxecute = default!;
+    [Dependency] private readonly DiscordWebhook _discord = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
 
     private const string PaperSlotId = "Paper";
 
@@ -78,6 +86,14 @@ public sealed class FaxSystem : EntitySystem
         SubscribeLocalEvent<FaxMachineComponent, FaxSendMessage>(OnSendButtonPressed);
         SubscribeLocalEvent<FaxMachineComponent, FaxRefreshMessage>(OnRefreshButtonPressed);
         SubscribeLocalEvent<FaxMachineComponent, FaxDestinationMessage>(OnDestinationSelected);
+
+        Subs.CVar(_configurationManager, CCVars.DiscordFaxMachineWebhook, value =>
+        {
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                _discord.GetWebhook(value, data => _webhookIdentifier = data.ToIdentifier());
+            }
+        }, true);
     }
 
     public override void Update(float frameTime)
@@ -564,7 +580,7 @@ public sealed class FaxSystem : EntitySystem
         _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Printing);
 
         if (component.NotifyAdmins)
-            NotifyAdmins(faxName);
+            NotifyAdmins(faxName, printout);
 
         component.PrintingQueue.Enqueue(printout);
     }
@@ -605,9 +621,33 @@ public sealed class FaxSystem : EntitySystem
         _adminLogger.Add(LogType.Action, LogImpact.Low, $"\"{component.FaxName}\" {ToPrettyString(uid):tool} printed {ToPrettyString(printed):subject}: {printout.Content}");
     }
 
-    private void NotifyAdmins(string faxName)
+    private void NotifyAdmins(string faxName, FaxPrintout printout)
     {
-        _chat.SendAdminAnnouncement(Loc.GetString("fax-machine-chat-notify", ("fax", faxName)));
+        _chat.SendAdminFaxAnnouncement(Loc.GetString("fax-machine-chat-notify", ("fax", faxName), ("contents", printout.Content)));
         _audioSystem.PlayGlobal("/Audio/Machines/high_tech_confirm.ogg", Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false, AudioParams.Default.WithVolume(-8f));
+        MakeDiscordNotification(faxName,  printout.Content);
     }
+
+    private WebhookIdentifier? _webhookIdentifier;
+
+    private async void MakeDiscordNotification(string faxName, string message)
+    {
+        try
+        {
+            if (_webhookIdentifier == null || !_webhookIdentifier.HasValue) // we get value from "init" section (Subs.Cvar)
+                return;
+
+            var content = "Пришло сообщение на факс ЦК от: " + faxName + "\nСообщение: \n ```" + message + "```";
+
+            var payload = new WebhookPayload { Content = content.ToString() };
+
+            await _discord.CreateMessage(_webhookIdentifier.Value, payload);
+        }
+        catch (Exception e)
+        {
+            Log.Error("Admin Fax couldn't send a webhook message to a discord server!\n");
+        }
+    }
+
+
 }

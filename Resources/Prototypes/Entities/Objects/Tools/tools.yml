@@ -43,6 +43,9 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Retract
+    modifier: 1.2
 
 - type: entity
   name: screwdriver
@@ -126,6 +129,9 @@
       Steel: 100
   - type: StaticPrice
     price: 22
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Clamp
+    modifier: 1.2
 
 - type: entity
   name: multitool

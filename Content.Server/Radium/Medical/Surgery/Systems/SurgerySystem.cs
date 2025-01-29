@@ -642,7 +642,7 @@ public sealed partial class SurgerySystem : EntitySystem
         var chance = 0;
         if (time > 20)
         {
-            chance = int.Parse(((time / 20 - 1) * 10).ToString(CultureInfo.InvariantCulture));
+            chance = (int)Math.Round((time / 20 - 1) * 10);
         }
 
         if (!_buckleSystem.IsBuckled(uid))

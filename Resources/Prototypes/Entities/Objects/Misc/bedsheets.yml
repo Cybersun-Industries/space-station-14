@@ -23,6 +23,11 @@
   - type: Tag
     tags:
     - Bedsheet
+  - type: Drapes
+    beginSound:
+      path: "/Audio/Items/Medical/ointment_begin.ogg"
+    endSound:
+      path: "/Audio/Items/Medical/ointment_end.ogg"
 
 - type: entity
   id: BedsheetBlack

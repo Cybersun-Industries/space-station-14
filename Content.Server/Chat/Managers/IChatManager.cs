@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Server.Database;
 using Content.Shared.Administration;
 using Content.Shared.Chat;
 using Content.Shared.Players.RateLimiting;
@@ -22,6 +23,7 @@ namespace Content.Server.Chat.Managers
 
         void SendHookOOC(string sender, string message);
         void SendAdminAnnouncement(string message, AdminFlags? flagBlacklist = null, AdminFlags? flagWhitelist = null);
+        void SendAdminFaxAnnouncement(string message, AdminFlags? flagBlacklist = null, AdminFlags? flagWhiteList = null);
         void SendAdminAnnouncementMessage(ICommonSession player, string message, bool suppressLog = true);
 
         void ChatMessageToOne(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat,
