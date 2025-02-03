@@ -32,7 +32,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Content.Shared.NameModifier.Components;
 using Content.Shared.Power;
-using FastAccessors;
 using Robust.Shared.Configuration;
 using CCVars = Content.Shared.CCVar.CCVars;
 
