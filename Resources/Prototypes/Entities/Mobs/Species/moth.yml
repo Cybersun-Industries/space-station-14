@@ -122,7 +122,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: FootprintVisualizer # Corvax-Next-Footprints
 
 
 

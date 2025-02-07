@@ -82,9 +82,6 @@
       types:
         Asphyxiation: -2.0
   - type: Wagging
-  - type: FootprintVisualizer # Corvax-Next-Footprints
-    leftBarePrint: "footprint-left-bare-lizard"
-    rightBarePrint: "footprint-right-bare-lizard"
 
 - type: entity
   save: false
