@@ -46,18 +46,6 @@
     exclusiveAntag: true
   - type: ChangelingRole
 
-# EvilTwin
-- type: entity
-  parent: BaseMindRoleAntag
-  id: MindRoleEvilTwin
-  name: Evil Twin Role
-  #  description: mind-role-evil-twin-description
-  components:
-  - type: MindRole
-    antagPrototype: EvilTwin
-    exclusiveAntag: true
-  - type: EvilTwinRole
-
 # Bank
 - type: entity
   parent: BaseMindRole
