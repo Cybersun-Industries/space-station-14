@@ -1,11 +1,3 @@
-- type: entityTable
-  id: BasicBackmenEventsTable
-  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
-    children:
-    - id: EvilTwinSpawn
-    - id: BlobSpawn
-    - id: BluespaceGoat
-
 - type: entity
   id: WageScheduler
   parent: BaseGameRule
