@@ -13,20 +13,6 @@
 
 - type: entity
   categories: [ HideSpawnMenu ]
-  parent: [BaseEvilTwinObjective, BaseKillObjective]
-  id: KillObjectiveEvilTwin
-  name: Убить оригинал и заменить!
-  description: Вы долджны скрытно заменить оригинал, и избавится от трупа так чтобы не было подозрений на вас!
-  components:
-    - type: Objective
-      unique: true
-      difficulty: 1
-    - type: TargetObjective
-      title: objective-condition-kill-person-title
-    - type: PickEvilTwinPerson
-
-- type: entity
-  categories: [ HideSpawnMenu ]
   parent: [BaseEvilTwinObjective, BaseLivingObjective]
   id: EscapeShuttleObjectiveEvilTwin
   name: Выживите до конца смены и улетите в Центком живым и свободным.
