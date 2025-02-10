@@ -97,23 +97,23 @@ public sealed class BloodSuckerSystem : SharedBloodSuckerSystem
         EnsureMindVampire(ent);
     }
 
-//    [ValidatePrototypeId<EntityPrototype>]
-//    private const string OrganVampiricHumanoidStomach = "OrganVampiricHumanoidStomach";
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string OrganVampiricHumanoidStomach = "OrganVampiricHumanoidStomach";
 
-//    [ValidatePrototypeId<ReagentPrototype>]
-//    private const string BloodSuckerToxin = "BloodSuckerToxin";
+    [ValidatePrototypeId<ReagentPrototype>]
+    private const string BloodSuckerToxin = "BloodSuckerToxin";
 
-//    [ValidatePrototypeId<EntityPrototype>]
-//    private const string EscapeObjective = "EscapeShuttleObjectiveBloodsucker";
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string EscapeObjective = "EscapeShuttleObjectiveBloodsucker";
 
-//    [ValidatePrototypeId<EntityPrototype>]
-//    private const string Objective1 = "BloodsuckerDrinkObjective";
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string Objective1 = "BloodsuckerDrinkObjective";
 
-//    [ValidatePrototypeId<EntityPrototype>]
-//    private const string Objective2 = "BloodsuckerConvertObjective";
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string Objective2 = "BloodsuckerConvertObjective";
 
-    //[ValidatePrototypeId<EntityPrototype>]
-  //  private const string VampireObjective = "VampireObjective";
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string VampireObjective = "VampireObjective";
 
     public void ConvertToVampire(EntityUid uid)
     {
