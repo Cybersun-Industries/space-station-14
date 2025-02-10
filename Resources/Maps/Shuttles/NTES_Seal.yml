@@ -8851,32 +8851,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -20.5,9.5
       parent: 60
-- proto: WeaponTurretLaserNanoTrasen
-  entities:
-  - uid: 1489
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,9.5
-      parent: 60
-  - uid: 1490
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 10.5,6.5
-      parent: 60
-  - uid: 1491
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -5.5,9.5
-      parent: 60
-  - uid: 1492
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -11.5,6.5
-      parent: 60
 - proto: WindoorBarLocked
   entities:
   - uid: 587
