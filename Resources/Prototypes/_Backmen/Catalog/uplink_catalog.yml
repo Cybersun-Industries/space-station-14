@@ -42,24 +42,6 @@
         - Chaplain
 
 - type: listing
-  id: InjectorBloodsuckerNocturine
-  name: uplink-nocturine-gland-injector-name
-  description: uplink-nocturine-gland-injector-desc
-  productEntity: InjectorBloodsuckerNocturine
-  cost:
-    Telecrystal: 8
-  categories:
-  - UplinkChemicals
-  conditions:
-    - !type:BuyerSpeciesCondition
-      whitelist:
-        - ArachneClassic
-    - !type:BuyerWhitelistCondition
-      blacklist:
-        components:
-          - SurplusBundle
-
-- type: listing
   id: UplinkCostumeMime
   name: uplink-costume-mime-name
   description: uplink-costume-mime-desc
