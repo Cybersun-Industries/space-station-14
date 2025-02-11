@@ -8,7 +8,11 @@
     state: pda-surgeon
   - type: Pda
     id: SurgeonIDCard
-    state: pda_surgeon
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-surgeon
   - type: PdaBorderColor
     borderColor: "#c8dfe9"
     accentVColor: "#407da3"
