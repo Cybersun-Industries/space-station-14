@@ -1,6 +1,6 @@
 using Content.Server.Power.Components;
 using Content.Shared.Audio;
-using Content.Shared.CorvaxNext.BluespaceHarvester;
+using Content.Shared._CorvaxNext.BluespaceHarvester;
 using Content.Shared.Destructible;
 using Content.Shared.Emag.Components;
 using Robust.Server.GameObjects;

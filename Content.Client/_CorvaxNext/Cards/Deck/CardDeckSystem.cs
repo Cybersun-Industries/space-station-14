@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Numerics;
-using Content.Shared.CorvaxNext.Cards.Deck;
-using Content.Shared.CorvaxNext.Cards.Stack;
+using Content.Shared._CorvaxNext.Cards.Deck;
+using Content.Shared._CorvaxNext.Cards.Stack;
 using Robust.Client.GameObjects;
 
 namespace Content.Client._CorvaxNext.Cards.Deck;

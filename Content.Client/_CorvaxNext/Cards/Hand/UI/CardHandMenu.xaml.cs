@@ -6,8 +6,8 @@ using Robust.Client.Player;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using System.Numerics;
-using Content.Shared.CorvaxNext.Cards.Card;
-using Content.Shared.CorvaxNext.Cards.Stack;
+using Content.Shared._CorvaxNext.Cards.Card;
+using Content.Shared._CorvaxNext.Cards.Stack;
 
 namespace Content.Client._CorvaxNext.Cards.Hand.UI;
 

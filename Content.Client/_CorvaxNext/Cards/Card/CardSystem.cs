@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared.CorvaxNext.Cards.Card;
+using Content.Shared._CorvaxNext.Cards.Card;
 using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
 

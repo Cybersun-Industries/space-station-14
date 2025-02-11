@@ -1,5 +1,5 @@
-using Content.Shared.CorvaxNext.Cards.Card;
-using Content.Shared.CorvaxNext.Cards.Stack;
+using Content.Shared._CorvaxNext.Cards.Card;
+using Content.Shared._CorvaxNext.Cards.Stack;
 using Content.Shared.Audio;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;

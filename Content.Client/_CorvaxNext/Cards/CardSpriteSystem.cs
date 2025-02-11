@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared.CorvaxNext.Cards.Stack;
+using Content.Shared._CorvaxNext.Cards.Stack;
 using Robust.Client.GameObjects;
 
 namespace Content.Client._CorvaxNext.Cards;

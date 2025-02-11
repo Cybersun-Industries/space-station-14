@@ -1,7 +1,7 @@
 using System.Linq;
-using Content.Shared.CorvaxNext.Cards.Card;
-using Content.Shared.CorvaxNext.Cards.Deck;
-using Content.Shared.CorvaxNext.Cards.Hand;
+using Content.Shared._CorvaxNext.Cards.Card;
+using Content.Shared._CorvaxNext.Cards.Deck;
+using Content.Shared._CorvaxNext.Cards.Hand;
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;

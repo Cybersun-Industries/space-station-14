@@ -1,4 +1,4 @@
-using Content.Shared.CorvaxNext.BluespaceHarvester;
+using Content.Shared._CorvaxNext.BluespaceHarvester;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 

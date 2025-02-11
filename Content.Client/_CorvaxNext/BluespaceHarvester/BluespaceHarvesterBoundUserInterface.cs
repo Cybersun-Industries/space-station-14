@@ -1,4 +1,4 @@
-using Content.Shared.CorvaxNext.BluespaceHarvester;
+using Content.Shared._CorvaxNext.BluespaceHarvester;
 using JetBrains.Annotations;
 
 namespace Content.Client._CorvaxNext.BluespaceHarvester;

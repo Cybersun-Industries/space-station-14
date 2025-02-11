@@ -1,5 +1,5 @@
 using System.Text.RegularExpressions;
-using Content.Server.CorvaxNext.Speech.Components;
+using Content.Server._CorvaxNext.Speech.Components;
 using Content.Server.Speech;
 using Robust.Shared.Random;
 

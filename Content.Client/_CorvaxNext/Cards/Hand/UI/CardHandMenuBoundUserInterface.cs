@@ -1,4 +1,4 @@
-using Content.Shared.CorvaxNext.Cards.Hand;
+using Content.Shared._CorvaxNext.Cards.Hand;
 using Content.Shared.RCD;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;

@@ -1,6 +1,6 @@
-using Content.Shared.CorvaxNext.Cards.Deck;
-using Content.Shared.CorvaxNext.Cards.Hand;
-using Content.Shared.CorvaxNext.Cards.Stack;
+using Content.Shared._CorvaxNext.Cards.Deck;
+using Content.Shared._CorvaxNext.Cards.Hand;
+using Content.Shared._CorvaxNext.Cards.Stack;
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;

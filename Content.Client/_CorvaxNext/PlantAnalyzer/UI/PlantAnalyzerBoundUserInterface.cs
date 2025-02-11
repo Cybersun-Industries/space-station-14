@@ -1,4 +1,4 @@
-using Content.Shared.CorvaxNext.PlantAnalyzer;
+using Content.Shared._CorvaxNext.PlantAnalyzer;
 using JetBrains.Annotations;
 
 namespace Content.Client._CorvaxNext.PlantAnalyzer.UI;

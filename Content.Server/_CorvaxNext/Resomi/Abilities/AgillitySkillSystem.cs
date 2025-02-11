@@ -4,10 +4,10 @@ using Content.Shared.Maps;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
-using Content.Shared.CorvaxNext.Resomi;
+using Content.Shared._CorvaxNext.Resomi;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared.CorvaxNext.Resomi.Abilities;
+using Content.Shared._CorvaxNext.Resomi.Abilities;
 using Content.Shared.Damage.Components;
 using Robust.Shared.Physics;
 

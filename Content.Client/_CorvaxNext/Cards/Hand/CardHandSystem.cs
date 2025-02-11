@@ -1,6 +1,6 @@
 using System.Numerics;
-using Content.Shared.CorvaxNext.Cards.Hand;
-using Content.Shared.CorvaxNext.Cards.Stack;
+using Content.Shared._CorvaxNext.Cards.Hand;
+using Content.Shared._CorvaxNext.Cards.Stack;
 using Robust.Client.GameObjects;
 
 namespace Content.Client._CorvaxNext.Cards.Hand;
