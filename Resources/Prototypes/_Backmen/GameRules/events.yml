@@ -7,13 +7,6 @@
     - id: BluespaceGoat
 
 - type: entity
-  id: WageScheduler
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: WageSchedulerRule
-
-- type: entity
   id: BlobSpawn
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
