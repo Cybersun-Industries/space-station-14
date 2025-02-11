@@ -45,13 +45,3 @@
     antagPrototype: Changeling
     exclusiveAntag: true
   - type: ChangelingRole
-
-# Bank
-- type: entity
-  parent: BaseMindRole
-  id: MindRoleBankMemory
-  name: Bank Memory
-  #  description: mind-role-fugitive-description
-  components:
-  - type: MindRole
-  - type: BankMemory
