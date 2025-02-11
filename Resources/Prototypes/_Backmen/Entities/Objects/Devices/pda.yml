@@ -25,6 +25,11 @@
         whitelist:
           tags:
           - Write
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-orden
     - type: PdaBorderColor
       borderColor: "#8b0000"
     - type: Icon
@@ -51,13 +56,17 @@
         visible: false
     - type: Pda
       id: DeliveryIDCard
-      state: pda-Delivery
       penSlot:
         startingItem: EnergyDagger
         priority: -1
         whitelist:
           tags:
           - Write
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-delivery
     - type: PdaBorderColor
       borderColor: "#00a000"
     - type: Icon
@@ -73,7 +82,11 @@
   components:
     - type: Pda
       id: PrisonerIDCard
-      state: pda-clear
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-clear
     - type: Icon
       state: pda-clear
 
