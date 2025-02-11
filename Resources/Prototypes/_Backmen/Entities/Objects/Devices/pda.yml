@@ -97,13 +97,17 @@
         visible: false
     - type: Pda
       id: RoboticistIDCard
-      state: pda-Roboticist
       penSlot:
         startingItem: Pen
         priority: -1
         whitelist:
           tags:
           - Write
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-roboticist
     - type: Icon
       sprite: Backmen/Objects/Devices/pda.rsi
       state: pda-Roboticist

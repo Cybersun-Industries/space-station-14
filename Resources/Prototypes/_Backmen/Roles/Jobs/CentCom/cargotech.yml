@@ -60,12 +60,16 @@
   components:
     - type: Pda
       id: IDCardCentComCargoBackmen
-      state: pda-centcomcargo
       penSlot:
         startingItem: PenCentcom
         whitelist:
           tags:
             - Write
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-centcomcargo
     - type: PdaBorderColor
       borderColor: "#00842e"
     - type: Icon
