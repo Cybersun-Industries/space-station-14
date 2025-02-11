@@ -146,25 +146,6 @@ namespace Content.Shared.Roles
         [DataField("extendedAccessGroups")]
         public IReadOnlyCollection<ProtoId<AccessGroupPrototype>> ExtendedAccessGroups { get; private set; } = Array.Empty<ProtoId<AccessGroupPrototype>>();
 
-// start-backmen: currency
-        [DataField("wageDepartment", customTypeSerializer: typeof(PrototypeIdSerializer<DepartmentPrototype>))]
-        public string? WageDepartment { get; private set; }
-
-        [DataField("minBankBalance")]
-        public int MinBankBalance { get; private set; } = 0;
-
-        [DataField("maxBankBalance")]
-        public int MaxBankBalance { get; private set; } = 0;
-        [DataField("wage")]
-        public FixedPoint2 Wage { get; private set; } = 0;
-// end-backmen: currency
-// start-backmen
-        /// <summary>
-        /// For e.g. prisoners, they'll never use their latejoin spawner.
-        /// </summary>
-        [DataField("alwaysUseSpawner")]
-        public bool AlwaysUseSpawner { get; private set; } = false;
-// end-backmen
         [DataField]
         public bool Whitelisted;
 
