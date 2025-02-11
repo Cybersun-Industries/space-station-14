@@ -38,7 +38,7 @@
   description: Clear, so you can make sure there's nothing being smuggled inside.
   components:
     - type: Pda
-    
+
       id: PrisonerIDCard
       state: pda-clear
     - type: Icon
@@ -63,7 +63,7 @@
         shader: "unshaded"
         visible: false
     - type: Pda
-      id: RoboticistIDCard
+      id: PassengerIDCard #Radium . Change this when you add a roboticist#
       state: pda-Roboticist
       penSlot:
         startingItem: Pen
