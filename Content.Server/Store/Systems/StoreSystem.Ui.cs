@@ -157,37 +157,6 @@ public sealed partial class StoreSystem
         if (!IsOnStartingMap(uid, component))
             component.RefundAllowed = false;
 
-        if (!HandleBankTransaction(uid, component, msg, listing)) // backmen: currency
-        {
-            //check that we have enough money
-            foreach (var currency in listing.Cost)
-            {
-                if (!component.Balance.TryGetValue(currency.Key, out var balance) || balance < currency.Value)
-                {
-                    return;
-                }
-            }
-
-            //subtract the cash
-            foreach (var (currency, value) in listing.Cost)
-            {
-                component.Balance[currency] -= value;
-
-                component.BalanceSpent.TryAdd(currency, FixedPoint2.Zero);
-
-                component.BalanceSpent[currency] += value;
-            }
-        // start-backmen: currency
-        }
-        else
-        {
-            foreach (var (currency, value) in listing.Cost)
-            {
-                component.BalanceSpent.TryAdd(currency, FixedPoint2.Zero);
-                component.BalanceSpent[currency] += value;
-            }
-        }
-         // end-backmen: currency
 
         //spawn entity
         if (listing.ProductEntity != null)
@@ -284,16 +253,6 @@ public sealed partial class StoreSystem
         listing.PurchaseAmount++; //track how many times something has been purchased
         _audio.PlayEntity(component.BuySuccessSound, msg.Actor, uid); //cha-ching!
 
-        _PlayEject(uid); // backmen: currency
-        var buyFinished = new StoreBuyFinishedEvent
-        {
-            PurchasedItem = listing,
-            StoreUid = uid
-        };
-        RaiseLocalEvent(ref buyFinished);
-
-        UpdateUserInterface(buyer, uid, component);
-    }
 
     /// <summary>
     /// Handles dispensing the currency you requested to be withdrawn.
