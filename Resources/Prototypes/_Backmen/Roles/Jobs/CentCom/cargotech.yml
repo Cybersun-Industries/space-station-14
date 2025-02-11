@@ -39,10 +39,6 @@
           factions:
             - CentralCommand
         - type: AntagImmune
-  minBankBalance: 200
-  maxBankBalance: 300
-  wageDepartment: CentCom
-  wage: 50
 
 - type: jobIcon
   parent: JobIcon

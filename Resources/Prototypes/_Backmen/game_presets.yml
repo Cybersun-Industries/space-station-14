@@ -8,7 +8,6 @@
   rules:
   - BlobGameMode
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - SubGamemodesRule
   - MeteorSwarmScheduler
@@ -24,7 +23,6 @@
   rules:
   - FleshCult
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - SubGamemodesRule
   - MeteorSwarmScheduler
@@ -41,7 +39,6 @@
   - FleshCult
   - Traitor
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
 
@@ -57,7 +54,6 @@
     - Nukeops
     - FleshCult
     - BasicStationEventScheduler
-    - WageScheduler #backmen: currency
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
 
@@ -75,7 +71,6 @@
     - Revolutionary
     - BasicStationEventScheduler
     - Traitor
-    - WageScheduler #backmen: currency
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
 
@@ -93,7 +88,6 @@
     - Revolutionary
     - BasicStationEventScheduler
     - Nukeops
-    - WageScheduler #backmen: currency
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
 
@@ -112,7 +106,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - Traitor
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -132,7 +125,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - Nukeops
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -150,7 +142,6 @@
     - Nukeops
     - FleshCult
     - BasicStationEventScheduler
-    - WageScheduler #backmen: currency
     - Traitor
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
@@ -166,7 +157,6 @@
   description: survival-nukeops-description
   rules:
     - RampingStationEventScheduler
-    - WageScheduler #backmen: currency
     - Nukeops
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
@@ -183,7 +173,6 @@
   rules:
   - ExtendedThief
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
 
@@ -200,6 +189,5 @@
   - ExtendedThief
   - Traitor
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
