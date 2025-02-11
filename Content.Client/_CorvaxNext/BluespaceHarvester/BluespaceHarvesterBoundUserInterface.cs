@@ -46,7 +46,7 @@ public sealed class BluespaceHarvesterBoundUserInterface : BoundUserInterface
         SendMessage(new BluespaceHarvesterTargetLevelMessage(level));
     }
 
-    public void SendBuy(Shared.CorvaxNext.BluespaceHarvester.BluespaceHarvesterCategory category)
+    public void SendBuy(Shared._CorvaxNext.BluespaceHarvester.BluespaceHarvesterCategory category)
     {
         SendMessage(new BluespaceHarvesterBuyMessage(category));
     }
