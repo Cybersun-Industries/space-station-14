@@ -4791,13 +4791,6 @@ entities:
     - type: Transform
       pos: 7.7802086,-0.578509
       parent: 1
-- proto: WeaponTurretSpetsnaz
-  entities:
-  - uid: 409
-    components:
-    - type: Transform
-      pos: 3.5,-0.5
-      parent: 1
 - proto: WindoorSecureSecurityLocked
   entities:
   - uid: 708
