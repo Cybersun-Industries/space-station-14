@@ -2671,18 +2671,6 @@ entities:
       pos: 32.5,-5.5
       parent: 2
     - type: ArrivalsProtect
-- proto: ATM
-  entities:
-  - uid: 223
-    components:
-    - type: Transform
-      pos: 13.5,-2.5
-      parent: 2
-  - uid: 228
-    components:
-    - type: Transform
-      pos: 5.5,-2.5
-      parent: 2
 - proto: AtmosDeviceFanTiny
   entities:
   - uid: 1311
@@ -15351,15 +15339,7 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.5,33.5
-      parent: 2
-- proto: ComputerWage
-  entities:
-  - uid: 3850
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,-15.5
-      parent: 2
+      parent:
 - proto: ConveyorBelt
   entities:
   - uid: 16
