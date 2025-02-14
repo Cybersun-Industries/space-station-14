@@ -52,7 +52,7 @@
     jumpsuit: ClothingUniformJumpsuitERTLeader
     id: OBRGavnaLeaderIDCard2
     back: WeaponRifleG36
-    shoes: ClothingShoesBootsNedoSpetsnaz
+    shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesCombat
     neck: CombatKnifeSpetsnaz
     head: ClothingHeadHelmetERTLeader
@@ -70,7 +70,7 @@
     jumpsuit: ClothingUniformJumpsuitERTEngineer
     id: OBRGavnaEngineerIDCard2
     back: WeaponShotgun39
-    shoes: ClothingShoesBootsNedoSpetsnaz
+    shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesCombat
     neck: CombatKnifeSpetsnaz
     head: ClothingHeadHelmetERTEngineer
@@ -87,7 +87,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: WeaponRifleG36
-    shoes: ClothingShoesBootsNedoSpetsnaz
+    shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesCombat
     neck: CombatKnifeSpetsnaz
     head: ClothingHeadHelmetERTSecurity
@@ -105,7 +105,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: WeaponRifleG36
-    shoes: ClothingShoesBootsNedoSpetsnaz
+    shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesCombat
     neck: CombatKnifeSpetsnaz
     head: ClothingHeadHelmetERTMedic

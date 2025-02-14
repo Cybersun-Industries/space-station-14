@@ -354,8 +354,6 @@
       - ArtificialBluespaceCrystal
       # RADIUM-FIX:
       - WeaponGrapplingGun
-      - HandTeleporter1
-      - CoreSilver
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -922,7 +920,6 @@
       - SyringeBluespace
       - SyringeCryostasis
       # RADIUM-FIX:
-      - BluespacePillCanister
       - HandheldCrewMonitor
   - type: Machine
     board: MedicalTechFabCircuitboard

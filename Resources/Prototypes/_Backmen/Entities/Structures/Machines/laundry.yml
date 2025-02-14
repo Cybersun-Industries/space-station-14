@@ -188,12 +188,6 @@
     - type: StorageFill
       contents:
         - id: Soap
-          prob: 0.3
-        - id: ClothingNeckBelovOPG
-          prob: 0.5
-        - id: ClothingNeckCloakarbitr
-          prob: 0.3
-        - id: ClothingNeckLeatherCoat
           prob: 0.2
         - id: ClothingHeadBandSkull
           prob: 0.2

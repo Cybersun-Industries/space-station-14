@@ -34,9 +34,10 @@
   description: A simple, stylish EVA helmet. Designed for maximum humble space-badassery.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/eva_syndicate.rsi
+    sprite: Backmen/Clothing/Head/Helmets/eva_syndicate.rsi
   - type: Clothing
-    sprite: Clothing/Head/Helmets/eva_syndicate.rsi
+    sprite: Backmen/Clothing/Head/Helmets/eva_syndicate.rsi
+#Wizard's file interruption, but this sprite looks better#
 
 #Cosmonaut Helmet
 - type: entity

@@ -220,7 +220,7 @@
       - id: WeaponAS2Ultra9000
       - id: WeaponShotgunEnforcer9000
       - id: JawsOfLife
-      - id: DedSquadronGavnaIDCardMarauder
+      - id: DeathSquadIDCardMarauder
       - id: WeaponLauncherMultipleRocket9000
       - id: WeaponPulseRifle9000
   - type: Sprite
@@ -330,8 +330,8 @@
 
 - type: entity
   name: id карта Броне-Пехотного Коммандера Спецвойск
-  id: DedSquadronGavnaIDCardSeraph
-  parent: DedSquadronGavnaIDCard
+  id: DeathSquadIDCardSeraph
+  parent: DeathSquadIDCard
   components:
   - type: IdCard
     jobTitle: job-title-omicron_3
@@ -350,7 +350,7 @@
       - id: WeaponPulseRifle9000
       - id: WeaponBFG9000
       - id: JawsOfLife
-      - id: DedSquadronGavnaIDCardSeraph
+      - id: DeathSquadIDCardSeraph
       - id: WeaponLauncherRocket9000
       - id: WeaponGrenadeFragLauncher9000
   - type: Sprite
@@ -493,7 +493,7 @@
       - id: WeaponLaserCHPS9000
       - id: WeaponGrenadeLauncher9000
       - id: JawsOfLife
-      - id: DedSquadronGavnaIDCardMarauder
+      - id: DeathSquadIDCardMarauder
       - id: WeaponLauncherMultipleRocket9000
       - id: WeaponAS2Ultra9000
   - type: Sprite

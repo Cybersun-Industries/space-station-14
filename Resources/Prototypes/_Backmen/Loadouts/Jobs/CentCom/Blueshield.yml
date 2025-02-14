@@ -30,22 +30,7 @@
   equipment:
     head: ClothingHeadHatUshankaBlueShield
 
-- type: loadout
-  id: ClothingHeadHelmetEGov
-  equipment:
-    head: ClothingHeadHelmetEGov
-
 #outerClothing
-- type: loadout
-  id: ClothingOuterNavyVest
-  equipment:
-    outerClothing: ClothingOuterNavyVest
-
-- type: loadout
-  id: ClothingOuterXenonautenLight
-  equipment:
-    outerClothing: ClothingOuterXenonautenLight
-
 - type: loadout
   id: ClothingOuterCoatArmorBlueShield
   equipment:

@@ -44,14 +44,11 @@
   - ClothingHeadHatBeretBlueShield
   - ClothingHeadHatBlueShieldCap
   - ClothingHeadHatUshankaBlueShield
-  - ClothingHeadHelmetEGov
 
 - type: loadoutGroup
   id: ClothingOuterBlueShield
   name: loadout-group-BlueShield-outer
   loadouts:
-  - ClothingOuterNavyVest
-  - ClothingOuterXenonautenLight
   - ClothingOuterCoatArmorBlueShield
   - ClothingOuterCoatArmorBlueShieldAlt
 

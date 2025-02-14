@@ -8,6 +8,7 @@
     sprite: Backmen/Clothing/OuterClothing/Misc/witchhunterbelov.rsi
   - type: Clothing
     sprite: Backmen/Clothing/OuterClothing/Misc/witchhunterbelov.rsi
+#Put your name into files instead of meta? Gay#
 
 - type: entity
   parent: ClothingOuterBase
@@ -19,32 +20,4 @@
     sprite: Backmen/Clothing/OuterClothing/Misc/magistratenaki.rsi
   - type: Clothing
     sprite: Backmen/Clothing/OuterClothing/Misc/magistratenaki.rsi
-
-- type: entity
-  parent: ClothingOuterPlagueSuit
-  id: ClothingOuterPlagueSuitUnremoveable
-  suffix: Unremoveable
-  components:
-  - type: Unremoveable
-  
-- type: entity
-  parent: ClothingOuterBase
-  id: ClothingGlavaKylt
-  name: Чёрная накидка старшего 
-  description: Странная чёрная накидка старшего последователя, пахнет мистикой.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Misc/glava.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Misc/glava.rsi
-
-- type: entity
-  parent: ClothingOuterBase
-  id: ClothingPosledKylt
-  name: Чёрная накидка последователя
-  description: Странная чёрная накидка последователя, пахнет мистикой.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Misc/posledov.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Misc/posledov.rsi
+    #Why not#

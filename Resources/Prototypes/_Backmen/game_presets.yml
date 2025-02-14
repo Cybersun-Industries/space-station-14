@@ -1,33 +1,3 @@
-#- type: gamePreset
-#  id: Shipwrecked
-#  alias:
-#    - schiffbruch
-#  name: shipwrecked-title
-#  description: shipwrecked-description
-#  minPlayers: 1
-#  maxPlayers: 40
-#  showInVote: true
-#  isMiniGame: true
-#  supportedMaps: ShipwreckedPool
-#  rules:
-#    - Shipwrecked
-
-- type: gamePreset
-  id: Vampires
-  alias:
-  - vamp
-  - bloodsucker
-  name: vampires-title
-  description: vampires-description
-  showInVote: false
-  rules:
-  - VampiresGameRule
-  - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
-  - SubGamemodesRule
-  - BasicRoundstartVariation
-  - MeteorSwarmScheduler
-
 - type: gamePreset
   id: Blob
   alias:
@@ -38,7 +8,6 @@
   rules:
   - BlobGameMode
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - SubGamemodesRule
   - MeteorSwarmScheduler
@@ -54,7 +23,6 @@
   rules:
   - FleshCult
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - SubGamemodesRule
   - MeteorSwarmScheduler
@@ -71,7 +39,6 @@
   - FleshCult
   - Traitor
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
 
@@ -87,7 +54,6 @@
     - Nukeops
     - FleshCult
     - BasicStationEventScheduler
-    - WageScheduler #backmen: currency
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
 
@@ -105,7 +71,6 @@
     - Revolutionary
     - BasicStationEventScheduler
     - Traitor
-    - WageScheduler #backmen: currency
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
 
@@ -123,7 +88,6 @@
     - Revolutionary
     - BasicStationEventScheduler
     - Nukeops
-    - WageScheduler #backmen: currency
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
 
@@ -142,7 +106,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - Traitor
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -162,7 +125,6 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - Nukeops
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
@@ -180,7 +142,6 @@
     - Nukeops
     - FleshCult
     - BasicStationEventScheduler
-    - WageScheduler #backmen: currency
     - Traitor
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
@@ -196,7 +157,6 @@
   description: survival-nukeops-description
   rules:
     - RampingStationEventScheduler
-    - WageScheduler #backmen: currency
     - Nukeops
     - BasicRoundstartVariation
     - MeteorSwarmScheduler
@@ -213,7 +173,6 @@
   rules:
   - ExtendedThief
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - MeteorSwarmScheduler
 
@@ -230,6 +189,5 @@
   - ExtendedThief
   - Traitor
   - BasicStationEventScheduler
-  - WageScheduler #backmen: currency
   - BasicRoundstartVariation
   - MeteorSwarmScheduler

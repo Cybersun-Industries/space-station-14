@@ -11,9 +11,6 @@
 - type: roleLoadout
   id: JobBrigmedic
   groups:
-  - Werx #backmen
-  - Niz #backmen
-  - Socks #backmen
   - ClothingUniformJumpsuitBrigmedic
   - ClothingBackpackBrigmedic
   - ClothingHeadHatBrigmedic
@@ -36,6 +33,3 @@
   - Survival
   - Medals #backmen
   - Inventory # Corvax-Loadouts
-  - Werx #backmen
-  - Niz #backmen
-  - Socks #backmen

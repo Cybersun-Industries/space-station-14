@@ -11,18 +11,6 @@
 
 - type: entity
   parent: IDCardStandard
-  id: RoboticistIDCard
-  name: Roboticist ID Card
-  components:
-    - type: Sprite
-      layers:
-        - state: default
-        - state: idroboticist
-    - type: PresetIdCard
-      job: Roboticist
-
-- type: entity
-  parent: IDCardStandard
   id: UnaffiliatedIDCard
   name: unaffiliated ID card
   description: A card displaying a name and other identifying details.
@@ -35,100 +23,6 @@
         - state: unaffiliated
     - type: Clothing
       sprite: Backmen/Objects/Misc/id_cards.rsi
-
-- type: entity
-  parent: UnaffiliatedIDCard
-  id: ExplorerIDCard
-  name: explorer ID card
-  components:
-    - type: Sprite
-      layers:
-        - state: unaffiliated
-        - state: idexplorer
-    - type: PresetIdCard
-      job: Explorer
-
-- type: entity
-  parent: UnaffiliatedIDCard
-  id: StudentIDCard
-  name: student ID card
-  components:
-    - type: Sprite
-      layers:
-        - state: unaffiliated
-        - state: idstudent
-    - type: PresetIdCard
-      job: Student
-
-- type: entity
-  parent: UnaffiliatedIDCard
-  id: FreelancerIDCard
-  name: freelancer ID card
-  components:
-    - type: Sprite
-      layers:
-        - state: unaffiliated
-        - state: idfreelancer
-    - type: PresetIdCard
-      job: Freelancer
-
-- type: entity
-  parent: CentcomIDCardDeathsquad
-  id: IDCardMOG
-  name: ID карта МОГ
-  components:
-  - type: Sprite
-    sprite: Backmen/Objects/Misc/id_cards.rsi
-    layers:
-    - state: black
-    - state: idcardmog
-  - type: Item
-    heldPrefix: black
-  - type: IdCard
-    jobTitle: job-title-mobile_group_employee
-
-- type: entity
-  parent: CentcomIDCardDeathsquad
-  id: IdCardIOG
-  name: ID карта ИОГ
-  components:
-  - type: Sprite
-    sprite: Backmen/Objects/Misc/id_cards.rsi
-    layers:
-    - state: black
-    - state: idcardiog
-  - type: Item
-    heldPrefix: black
-  - type: IdCard
-    jobTitle: job-title-research_group_employee
-
-- type: entity
-  parent: CentcomIDCardDeathsquad
-  id: IdCardRO
-  name: ID карта RO
-  components:
-  - type: Sprite
-    sprite: Backmen/Objects/Misc/id_cards.rsi
-    layers:
-    - state: black
-    - state: idcardro
-  - type: Item
-    heldPrefix: black
-  - type: IdCard
-    jobTitle: job-title-red_order_agent
-
-- type: entity
-  parent: IDCardStandard
-  id: DeliveryIDCard
-  name: ID карта доставщика
-  components:
-    - type: Sprite
-      sprite: Backmen/Objects/Misc/id_cards.rsi
-      layers:
-        - state: default
-        - state: iddelivery
-    - type: PresetIdCard
-      job: Deliveryman
 
 - type: entity
   parent: IDCardStandard
@@ -166,8 +60,8 @@
 
 - type: entity
   name: ID карта Броне-Пехотного Оперативника Спецвойск
-  id: DedSquadronGavnaIDCardMarauder
-  parent: DedSquadronGavnaIDCard
+  id: DeathSquadIDCardMarauder
+  parent: DeathSquadIDCard
   components:
   - type: IdCard
     jobTitle: job-title-omicron_3
@@ -290,50 +184,6 @@
   components:
   - type: IdCard
     jobTitle: job-title-tay_39
-
-- type: entity
-  parent: CentcomIDCard
-  id: DedSquadronGavnaIDCard
-  name: ID карта оперативника специальных операций
-  components:
-  - type: Sprite
-    layers:
-    - state: syndie
-    - state: idcaptain
-    - state: idcentcom
-  - type: Item
-    heldPrefix: blue
-  - type: IdCard
-    jobTitle: job-title-omega_0
-    fullName: Оперативник СпецВойск
-    jobIcon: JobIconDeathSquadron
-  - type: Access
-    groups:
-    - AllAccess
-    - MTFLeader
-    - CentCom
-
-- type: entity
-  parent: CentcomIDCard
-  id: DedSquadronLeaderGavnaIDCard
-  name: ID карта Коммандера Специальных Операций
-  components:
-  - type: Sprite
-    layers:
-    - state: syndie
-    - state: idcaptain
-    - state: idcentcom
-  - type: Item
-    heldPrefix: blue
-  - type: IdCard
-    jobTitle: job-title-omega_0
-    fullName: Коммандер СпецВойск
-    jobIcon: JobIconDeathSquadron
-  - type: Access
-    groups:
-    - AllAccess
-    - MTFLeader
-    - CentCom
 
 - type: entity
   parent: CentcomIDCard

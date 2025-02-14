@@ -165,7 +165,7 @@
   suffix: спавнер спецсил
   components:
     - type: GhostRoleMobSpawner
-      prototype: MobHumanSpecialReAgentCOM
+      prototype: DeathSquadCommander
 
 - type: entity
   id: SpawnMobHumanSpecialReAgent
@@ -175,7 +175,7 @@
   suffix: спавнер спецсил
   components:
     - type: GhostRoleMobSpawner
-      prototype: MobHumanSpecialReAgent
+      prototype: DeathSquadOperative
 
 - type: entity
   id: SpawnMobHumanERTLeaderEpsilon

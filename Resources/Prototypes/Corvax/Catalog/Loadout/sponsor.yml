@@ -105,12 +105,6 @@
   whitelistJobs: [HeadOfSecurity, IAA]
 
 - type: bkmloadout
-  id: OldUSSPJumpsuitLoadout
-  entity: ClothingUniformJumpsuitUSSPBlack
-  sponsorOnly: true
-  whitelistJobs: [HeadOfSecurity, IAA]
-
-- type: bkmloadout
   id: OldUSSPShoesLoadout
   entity: ClothingShoesUSSPBlack
   sponsorOnly: true

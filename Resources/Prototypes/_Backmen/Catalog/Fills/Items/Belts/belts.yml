@@ -9,15 +9,6 @@
       - id: Katana
 
 - type: entity
-  id: ClothingBeltSheathFilledOrd
-  parent: ClothingBeltOrden
-  suffix: Filled
-  components:
-  - type: StorageFill
-    contents:
-      - id: OrdenSabre
-
-- type: entity
   id: ClothingBeltSheathFilledRapier
   parent: ClothingBeltRapier
   suffix: Filled

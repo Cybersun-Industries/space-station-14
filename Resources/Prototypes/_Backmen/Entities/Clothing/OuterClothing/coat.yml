@@ -1,47 +1,3 @@
-- type: entity
-  parent: ClothingOuterWinterCoat
-  id: Clothinghoscoat
-  name: Пальто ГСБ
-  description: Обычное пальто главы СБ, ничего примечательного.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Coats/coathosbelov.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Coats/coathosbelov.rsi
-
-- type: entity
-  parent: ClothingOuterWinterCoat
-  id: ClothingSovietCoat
-  name: Пальто СССП
-  description: Пальто которые носят высокие чины в СССП
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Coats/ssspcoatbelov.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Coats/ssspcoatbelov.rsi
-
-- type: entity
-  parent: [ClothingOuterCoatSecurityOvercoat, AllowSuitStorageClothing]
-  id: ClothingOuterCoatSecurityOfficerOvercoat
-  name: шинель офицер СБ
-  description: Легкобронированная кожаная шинель, предназначенная для повседневной носки офицерами. Имеет логотип компании Nanotrasen Security.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Coats/sec_greatcoat.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Coats/sec_greatcoat.rsi
-
-- type: entity
-  parent: ClothingOuterWinterCoat
-  id: ClothingOuterWinterCoatBomber
-  name: куртка-бомбер
-  description: Толстая, поношенная кожаная куртка-бомбер периода Второй мировой войны.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Coats/bomber.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Coats/bomber.rsi
-
 - type: entity #backmen
   parent: ClothingOuterCoatSecurityOvercoat
   id: ClothingOuterCoatBlackdmc
@@ -120,17 +76,6 @@
     sprite: Backmen/Clothing/OuterClothing/Coats/snow.rsi
 
 - type: entity #backmen
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterCoatBlackViF
-  name: Чёрный бомбер
-  description: Удобный чёрный бомбер.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Coats/blackViF.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Coats/blackViF.rsi
-
-- type: entity #backmen
   parent: ClothingOuterWinterCoat
   id: ClothingOuterCoatJacket
   name: Куртка милитарист
@@ -141,22 +86,11 @@
   - type: Clothing
     sprite: Backmen/Clothing/OuterClothing/Coats/jacket.rsi
 
-- type: entity #backmen
-  parent: ClothingOuterStorageBase
-  id: ClothingOuterCoatNT
-  name: Бомбер NT
-  description: Удобный бомбер с эмблемой Nanotrasen.
-  components:
-  - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Coats/NT.rsi
-  - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Coats/NT.rsi
-
 - type: entity
   parent: [ClothingOuterCoatHoSTrench, AllowSuitStorageClothing]
   id: ClothingOuterCoatArmorBlueShield
-  name: броне-плащ Синего Щита
-  description: Бронированный кожанный плащ, предназначенная для повседневной носки офицерами. Имеет нашивки компании Blue Shield Security.
+  name: бронеплащ Синего Щита
+  description: Бронированный кожаный плащ, предназначенная для повседневной носки офицерами. Имеет нашивки компании Blue Shield Security.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/OuterClothing/Coats/bluecoat.rsi
@@ -166,8 +100,8 @@
 - type: entity
   parent: ClothingOuterCoatArmorBlueShield
   id: ClothingOuterCoatArmorBlueShieldAlt
-  name: броне-плащ Синего Щита
-  description: Бронированный кожанный плащ, предназначенная для повседневной носки офицерами. Имеет нашивки компании Blue Shield Security.
+  name: бронеплащ Синего Щита
+  description: Бронированный кожаный плащ, предназначенная для повседневной носки офицерами. Имеет нашивки компании Blue Shield Security.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/OuterClothing/Coats/bluecoat-alt.rsi

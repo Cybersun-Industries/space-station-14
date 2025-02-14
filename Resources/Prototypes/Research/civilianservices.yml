@@ -213,7 +213,6 @@
   cost: 10000
   recipeUnlocks:
   - ClothingShoesBootsSpeed
-  - HandTeleporter1
 
 - type: technology
   id: BluespaceChemistry
@@ -227,5 +226,3 @@
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
-  - BluespacePillCanister
-  - CoreSilver

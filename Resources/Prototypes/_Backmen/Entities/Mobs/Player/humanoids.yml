@@ -42,18 +42,6 @@
       - NanoTrasen
 #      - Clown
 
-- type: entity
-  parent: MobHuman
-  id: MobHumanFugitive
-  name: Fugitive
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Loadout
-      prototypes: [FugitiveStartingGear]
-    - type: Fugitive
-    - type: FugitiveCountdown
-    - type: RandomHumanoidAppearance
-
 # Wizard
 - type: entity
   name: Urist McWizard

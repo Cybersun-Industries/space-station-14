@@ -8,12 +8,6 @@
   },
   "states": [
     {
-      "name": "idcardmog"
-    },
-    {
-      "name": "idcardiog"
-    },
-    {
       "name": "idblueshield"
     },
     {
@@ -23,13 +17,7 @@
       "name": "black"
     },
     {
-      "name": "idcardro"
-    },
-    {
       "name": "idbrigmedic"
-    },
-    {
-      "name": "iddelivery"
     },
     {
       "name": "black-inhand-left",
@@ -46,15 +34,6 @@
     {
       "name": "default-inhand-right",
       "directions": 4
-    },
-    {
-      "name": "idexplorer"
-    },
-    {
-      "name": "idfreelancer"
-    },
-    {
-      "name": "idstudent"
     },
     {
       "name": "unaffiliated"

@@ -31,7 +31,7 @@
   parent: ClothingEyesGlassesSecurity
   id: ClothingEyesGlassesBlueShield
   name: очки Синего Щита
-  description: Улучшенный солнце защитные очки с охранной системой HUD.
+  description: Улучшенные солнцезащитные очки с охранным интерфейсом.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Eyes/Glasses/blueglasses.rsi
@@ -46,7 +46,7 @@
   parent: ClothingEyesGlassesSecurity
   id: ClothingEyeslensesBlueShield
   name: линзы Синего Щита
-  description: Новейшие линзы с исскуственным интелектом, способным вычеслять яркость окружения и затемнять линзы, так же с внедремной системой HUD охраны.
+  description: Новейшие линзы с алгоритмом, способным вычислять яркость окружения и затемнять линзы, спасая носителя от ярких вспышек. Также с внедренным охранным интерфейсом.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Eyes/Glasses/blueeyes.rsi

@@ -9,22 +9,6 @@
       key_slots:
       - EncryptionKeyCentCom
       - EncryptionKeyStationMaster
-      - EncryptionKeyFleet
-  - type: Sprite
-    sprite: Clothing/Ears/Headsets/centcom.rsi
-  - type: Clothing
-    sprite: Clothing/Ears/Headsets/centcom.rsi
-
-- type: entity
-  parent: ClothingHeadset
-  id: ClothingHeadsetFleet
-  name: Fleet headset
-  description: A headset used by the upper echelons of Nanotrasen.
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyFleet
   - type: Sprite
     sprite: Clothing/Ears/Headsets/centcom.rsi
   - type: Clothing

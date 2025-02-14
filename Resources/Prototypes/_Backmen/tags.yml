@@ -20,9 +20,6 @@
   id: FleshBlocker
 
 - type: Tag
-  id: CoreSilver
-
-- type: Tag
   id: NormalityCrystal
 
 - type: Tag

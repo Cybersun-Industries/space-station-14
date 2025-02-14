@@ -1,0 +1,90 @@
+- type: entity
+  name: DeathSquadOperative
+  suffix: DeathSquad
+  parent: MobHuman
+  id: DeathSquadOperative
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ai
+  - type: GhostTakeoverAvailable
+  - type: AutoImplant
+    implants:
+    - MindShieldImplant
+    - FreedomImplant
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: Оперативник спец войск
+    description: Элитный солдат отряда Omega - 0, импланты и особые курсы подготовки сделали из него бесчувственную машину.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач Центрального Командования.
+    raffle:
+      settings: default
+    requirements:
+      - !type:DepartmentTimeRequirement
+        department: Security
+        time: 18000
+      - !type:OverallPlaytimeRequirement
+        time: 36000
+  - type: SpecForce
+    actionBssActionName: ActionCentcomFtlAction
+  - type: NpcFactionMember
+    factions:
+      - CentralCommand
+  - type: Loadout
+    prototypes: [SpecialForceGearFull]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsOperative
+    - NameSpets
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+  - type: AntagImmune
+
+- type: entity
+  name: DeathSquadCommander
+  suffix: DeathSquad
+  parent: MobHuman
+  id: DeathSquadCommander
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: ai
+  - type: GhostTakeoverAvailable
+  - type: AutoImplant
+    implants:
+    - MindShieldImplant
+    - FreedomImplant
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: командир эскадрона смерти
+    description: Элитный коммандер отряда Omega - 0, импланты и особые курсы подготовки сделали из него бесчувственную машину с тактическим интеллектом.
+    rules: Выполняйте различные приказы, ваша задача будет варьироваться от задач Центрального Командования.
+    raffle:
+      settings: default
+    requirements:
+      - !type:DepartmentTimeRequirement
+        department: Security
+        time: 18000
+      - !type:OverallPlaytimeRequirement
+        time: 36000
+      - !type:DepartmentTimeRequirement
+        department: Command
+        time: 18000
+  - type: SpecForce
+    actionBssActionName: ActionCentcomFtlAction
+  - type: NpcFactionMember
+    factions:
+      - CentralCommand
+  - type: Loadout
+    prototypes: [SpecialForceGearCommanderFull]
+  - type: RandomMetadata
+    nameSegments:
+    - NameSpetsCommander
+    - NameSpets
+  - type: RandomHumanoidAppearance
+    randomizeName: False
+  - type: AntagImmune
