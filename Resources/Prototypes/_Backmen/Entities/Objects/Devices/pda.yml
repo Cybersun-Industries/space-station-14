@@ -70,7 +70,7 @@
       borderColor: "#00a000"
     - type: Icon
       sprite: Backmen/Objects/Devices/pda.rsi
-      state: pda-Delivery
+      state: pda-delivery
 
 
 - type: entity
@@ -122,7 +122,7 @@
           pda-roboticist
     - type: Icon
       sprite: Backmen/Objects/Devices/pda.rsi
-      state: pda-Roboticist
+      state: pda-roboticist
 
 - type: entity
   parent: BasePDA
