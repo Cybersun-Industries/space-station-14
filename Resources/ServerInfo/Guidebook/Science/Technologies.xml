@@ -1,4 +1,8 @@
 <Document>
+  # В разработке
+</Document>
+<!-- Radium upstream_painful: commented until resolved issue: https://github.com/Cybersun-Industries/space-station-14/actions/runs/13324250766/job/37214188188
+<Document>
 # Технологии
 
 Все технологии имеют определенную стоимость и требования к уровню для их изучения. Их открытие расширяет ассортимент рецептов, доступных для печати на фабрикаторах и станках.
@@ -21,3 +25,4 @@
 <GuideTechDisciplineEmbed Discipline="CivilianServices"/>
 
 </Document>
+-->
