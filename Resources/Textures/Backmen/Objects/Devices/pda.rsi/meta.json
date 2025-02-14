@@ -36,13 +36,13 @@
       "name": "pda-orden"
     },
 	{
-      "name": "pda-Delivery"
+      "name": "pda-delivery"
     },
     {
       "name": "pda-blue"
     },
 	{
-	  "name": "pda-Roboticist"
+	  "name": "pda-roboticist"
 	},
     {
       "name": "equipped-BELT",
