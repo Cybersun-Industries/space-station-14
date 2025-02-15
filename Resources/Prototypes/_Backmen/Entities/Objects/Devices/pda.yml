@@ -1,5 +1,6 @@
 - type: entity
   parent: BasePDA
+  abstract: true
   id: OrdenPDA
   name: PDA of the Red Order
   description: An unusual variation of the PDA that draws energy from redspace crystals inside.
@@ -37,6 +38,7 @@
 
 - type: entity
   parent: BasePDA
+  abstract: true
   id: DeliveryPDA
   name: КПК доставщика
   description: Пахнет пиццой
@@ -91,6 +93,7 @@
 
 - type: entity
   parent: BasePDA
+  abstract: true
   id: RoboticistPDA
   name: Roboticist PDA
   description:  An old black PDA with machine oil stains, scratches and other signs of age
@@ -126,6 +129,7 @@
 
 - type: entity
   parent: BasePDA
+  abstract: true
   id: BlueShieldPDA
   name: Blue Shield PDA
   description: Standart PDA of Blue Shield officers.

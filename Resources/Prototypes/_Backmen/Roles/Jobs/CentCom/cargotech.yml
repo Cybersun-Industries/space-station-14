@@ -54,6 +54,7 @@
 
 - type: entity
   parent: OrdenPDA
+  abstract: true
   id: CCCargoPDA
   name: Centcom Cargo PDA
   description: Light green sign of walking bureaucracy.

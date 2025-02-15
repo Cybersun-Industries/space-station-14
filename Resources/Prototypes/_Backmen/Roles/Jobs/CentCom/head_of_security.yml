@@ -73,6 +73,7 @@
 
 - type: entity
   parent: OrdenPDA
+  abstract: true
   id: CCOfficerPDA
   name: Centcom Officer PDA
   description: Black with green lines, sign of the walking protection of the bureaucracy.
