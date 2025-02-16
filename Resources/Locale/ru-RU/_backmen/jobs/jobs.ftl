@@ -29,7 +29,4 @@ job-title-special_operations_officer = Офицер Специальный Оп�
 job-title-theta_9 = Theta-9
 job-title-chrono_legionnaire = Легионер Таймлайна
 job-title-sierra_6_chemical_troops = Войска РХБЗЗ Sierra-6
-job-title-visitor = Посетитель
-job-title-cluwne = Клувень
-job-title-universal = Универсал
 job-title-junior_unter_officer = Младший Унтер-офицер

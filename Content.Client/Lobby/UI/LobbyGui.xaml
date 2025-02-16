@@ -54,7 +54,7 @@
         </PanelContainer>
         <!-- LHS Controls -->
         <PanelContainer Name="RightSidePanel" HorizontalAlignment="Right" HorizontalExpand="True">
-            <BoxContainer Name="RightSide" Orientation="Vertical" SeparationOverride="4" HorizontalExpand="True">
+            <BoxContainer Name="RightSide" Orientation="Vertical" SeparationOverride="4" HorizontalExpand="True" Access="Public">
                 <Control Name="DefaultState" VerticalExpand="True" HorizontalAlignment="Right">
                     <BoxContainer Name="TopLeft" Orientation="Vertical">
                         <!-- Left Top Panel -->

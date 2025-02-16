@@ -19,7 +19,15 @@ namespace Content.Shared.Fluids.Components
 
         [DataField("solution")] public string SolutionName = "puddle";
 
-        [DataField("solutionRef")]
+        [ViewVariables]
         public Entity<SolutionComponent>? Solution;
+
+        // Corvax-Next-Footprints-Start
+        [DataField]
+        public bool AffectsMovement = true;
+
+        [DataField]
+        public bool AffectsSound = true;
+        // Corvax-Next-Footprints-End
     }
 }

@@ -83,7 +83,6 @@
   - PortableGeneratorPacmanMachineCircuitboard
   - PortableGeneratorSuperPacmanMachineCircuitboard
   - PortableGeneratorJrPacmanMachineCircuitboard
-  - PowerComputerCircuitboard #the actual solar panel itself should be in here
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
   - EmitterCircuitboard
@@ -227,14 +226,15 @@
   technologyPrerequisites:
   - AdvancedPowercells
 
-- type: technology
-  id: AdvancedShuttlecraft
-  name: research-technology-advanced-shuttlecraft
-  icon:
-    sprite: Structures/Shuttles/gyroscope.rsi
-    state: base
-  discipline: Industrial
-  tier: 3
-  cost: 20000
-  recipeUnlocks:
-  - StationAnchorCircuitboard
+# Radium upstream_painful: corvax-next did this. let's do the same
+#- type: technology
+#  id: AdvancedShuttlecraft
+#  name: research-technology-advanced-shuttlecraft
+#  icon:
+#    sprite: Structures/Shuttles/gyroscope.rsi
+#    state: base
+#  discipline: Industrial
+#  tier: 3
+#  cost: 20000
+#  recipeUnlocks:
+#  - StationAnchorCircuitboard

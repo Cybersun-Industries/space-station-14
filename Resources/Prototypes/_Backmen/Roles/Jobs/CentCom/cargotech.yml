@@ -5,7 +5,8 @@
   playTimeTracker: JobCentralCommandCargo
   setPreference: true
   startingGear: CCCargo
-  icon: JobIconCCCargoTech
+#  icon: JobIconCCCargoTech
+  icon: JobIconCargoTechnician
   supervisors: job-supervisors-hoh
   canBeAntag: false
   weight: 1
@@ -44,33 +45,38 @@
   wageDepartment: CentCom
   wage: 50
 
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconCCCargoTech
-  icon:
-    sprite: /Textures/Backmen/Icons/jobicon.rsi
-    state: CargoTechnician
+#- type: jobIcon
+#  parent: JobIcon
+#  id: JobIconCCCargoTech
+#  icon:
+#    sprite: /Textures/Backmen/Icons/jobicon.rsi
+#    state: CargoTechnician
 
 
 - type: entity
-  parent: OrdenPDA
+#  parent: OrdenPDA
+  parent: BasePDA
   id: CCCargoPDA
   name: Centcom Cargo PDA
   description: Light green sign of walking bureaucracy.
   components:
     - type: Pda
       id: IDCardCentComCargoBackmen
-      state: pda-centcomcargo
       penSlot:
         startingItem: PenCentcom
         whitelist:
           tags:
             - Write
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-centcom
     - type: PdaBorderColor
       borderColor: "#00842e"
     - type: Icon
-      sprite: Backmen/Objects/Devices/pda.rsi
-      state: pda-centcomcargo
+      sprite: Objects/Devices/pda.rsi
+      state: pda-centcom
 
 - type: entity
   parent: CentcomIDCardDeathsquad

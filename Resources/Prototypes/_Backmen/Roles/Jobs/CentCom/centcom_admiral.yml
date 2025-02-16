@@ -57,12 +57,16 @@
   components:
     - type: Pda
       id: IDCardCentComAdmiral
-      state: pda-centcom
       penSlot:
         startingItem: PenCentcom
         whitelist:
           tags:
             - Write
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-centcom
     - type: PdaBorderColor
       borderColor: "#00842e"
     - type: Icon

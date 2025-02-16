@@ -6,7 +6,7 @@
 
 - files: ["barratry.yml"]
   authors: Emogarbage, Scribbles0
- 
+
 - files: ["box.yml"]
   authors: ACJM, Emisse
 
@@ -15,6 +15,9 @@
 
 - files: ["cluster.yml"]
   authors: Scribbles0
+
+- files: ["elkridge.yml"]
+  authors: Deerstop
 
 - files: ["fland.yml"]
   authors: Emisse
@@ -39,9 +42,6 @@
 
 - files: ["omega.yml"]
   authors: Emisse
-
-- files: ["origin.yml"]
-  authors: brainfood1183
 
 - files: ["saltern.yml"]
   authors: deltanedas, Emisse, PJB

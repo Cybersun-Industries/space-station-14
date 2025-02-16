@@ -62,23 +62,28 @@
   #duffelbag: ClothingBackpackDuffelSecurityFilled
 
 - type: entity
-  parent: OrdenPDA
+  #  parent: OrdenPDA
+  parent: BasePDA
   id: CentComPrivateOfficerPDA
   name: Centcom Private Officer PDA
   description: Black with green lines, sign of the walking protection of the bureaucracy.
   components:
     - type: Pda
       id: IDCardCentComPrivateOfficer
-      state: pda-centcomsec
       penSlot:
         startingItem: PenCentcom
         whitelist:
           tags:
             - Write
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-centcom
     - type: PdaBorderColor
       borderColor: "#5B5B5B"
     - type: Icon
-      state: pda-centcomsec
+      state: pda-centcom
 
 - type: entity
   parent: CentcomIDCardDeathsquad
