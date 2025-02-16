@@ -39,7 +39,6 @@
 #
 - type: entity
   parent: BasePDA
-  abstract: true
   id: DeliveryPDA
   name: КПК доставщика
   description: Пахнет пиццой
@@ -68,12 +67,12 @@
       appearanceDataInit:
         enum.PdaVisuals.PdaType:
           !type:String
-          pda-delivery
+          pda-cargo
     - type: PdaBorderColor
       borderColor: "#00a000"
     - type: Icon
-#      sprite: Backmen/Objects/Devices/pda.rsi
-      state: pda-delivery
+      sprite: Objects/Devices/pda.rsi
+      state: pda-cargo
 #
 #
 - type: entity
@@ -94,7 +93,6 @@
 #
 - type: entity
   parent: BasePDA
-  abstract: true
   id: RoboticistPDA
   name: Roboticist PDA
   description:  An old black PDA with machine oil stains, scratches and other signs of age
@@ -125,12 +123,11 @@
           !type:String
           pda-roboticist
     - type: Icon
-#      sprite: Backmen/Objects/Devices/pda.rsi
+      sprite: Objects/Devices/pda.rsi
       state: pda-roboticist
 #
 - type: entity
   parent: BasePDA
-  abstract: true
   id: BlueShieldPDA
   name: Blue Shield PDA
   description: Standart PDA of Blue Shield officers.
@@ -161,5 +158,5 @@
           !type:String
           pda-ert
     - type: Icon
-#      sprite: Backmen/Objects/Devices/pda.rsi
+      sprite: Objects/Devices/pda.rsi
       state: pda-ert
