@@ -5,7 +5,8 @@
   playTimeTracker: JobCentralCommandCargo
   setPreference: true
   startingGear: CCCargo
-  icon: JobIconCCCargoTech
+#  icon: JobIconCCCargoTech
+  icon: JobIconCargoTechnician
   supervisors: job-supervisors-hoh
   canBeAntag: false
   weight: 1
@@ -44,12 +45,12 @@
   wageDepartment: CentCom
   wage: 50
 
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconCCCargoTech
-  icon:
-    sprite: /Textures/Backmen/Icons/jobicon.rsi
-    state: CargoTechnician
+#- type: jobIcon
+#  parent: JobIcon
+#  id: JobIconCCCargoTech
+#  icon:
+#    sprite: /Textures/Backmen/Icons/jobicon.rsi
+#    state: CargoTechnician
 
 
 - type: entity
@@ -74,7 +75,7 @@
     - type: PdaBorderColor
       borderColor: "#00842e"
     - type: Icon
-#      sprite: Backmen/Objects/Devices/pda.rsi
+      sprite: Backmen/Objects/Devices/pda.rsi
       state: pda-centcom
 
 - type: entity
