@@ -1,0 +1,10 @@
+- type: entity
+  parent: MobVox
+  id: MobThiefVox
+  categories: [ HideSpawnMenu ]
+  name: Thief Vox
+  components:
+  - type: RandomHumanoidAppearance
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
