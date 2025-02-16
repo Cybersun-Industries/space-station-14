@@ -71,8 +71,8 @@
     - type: PdaBorderColor
       borderColor: "#00a000"
     - type: Icon
-#      sprite: Backmen/Objects/Devices/pda.rsi
-      state: pda-delivery
+      sprite: Objects/Devices/pda.rsi
+      state: pda-cargo
 #
 #
 - type: entity
@@ -123,7 +123,7 @@
           !type:String
           pda-roboticist
     - type: Icon
-#      sprite: Backmen/Objects/Devices/pda.rsi
+      sprite: Objects/Devices/pda.rsi
       state: pda-roboticist
 #
 - type: entity
@@ -158,5 +158,5 @@
           !type:String
           pda-ert
     - type: Icon
-#      sprite: Backmen/Objects/Devices/pda.rsi
+      sprite: Objects/Devices/pda.rsi
       state: pda-ert
