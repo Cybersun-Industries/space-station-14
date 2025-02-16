@@ -75,7 +75,7 @@
     - type: PdaBorderColor
       borderColor: "#00842e"
     - type: Icon
-      sprite: Backmen/Objects/Devices/pda.rsi
+      sprite: Objects/Devices/pda.rsi
       state: pda-centcom
 
 - type: entity
