@@ -39,7 +39,6 @@
 #
 - type: entity
   parent: BasePDA
-  abstract: true
   id: DeliveryPDA
   name: КПК доставщика
   description: Пахнет пиццой
@@ -68,7 +67,7 @@
       appearanceDataInit:
         enum.PdaVisuals.PdaType:
           !type:String
-          pda-delivery
+          pda-cargo
     - type: PdaBorderColor
       borderColor: "#00a000"
     - type: Icon
@@ -94,7 +93,6 @@
 #
 - type: entity
   parent: BasePDA
-  abstract: true
   id: RoboticistPDA
   name: Roboticist PDA
   description:  An old black PDA with machine oil stains, scratches and other signs of age
@@ -130,7 +128,6 @@
 #
 - type: entity
   parent: BasePDA
-  abstract: true
   id: BlueShieldPDA
   name: Blue Shield PDA
   description: Standart PDA of Blue Shield officers.
