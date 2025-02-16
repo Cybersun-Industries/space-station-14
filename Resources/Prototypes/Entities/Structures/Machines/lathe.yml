@@ -352,6 +352,14 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
+      # RADIUM-FIX:
+      - WeaponGrapplingGun
+      - HandTeleporter1
+      - CoreSilver
+      - ArtificialBluespaceCrystal
+      - MechEquipmentDrill
+      - BluespacePillCanister
+      - HandheldCrewMonitor
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -523,6 +531,10 @@
       - SMESAdvancedMachineCircuitboard
       - HolopadMachineCircuitboard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
+      # RADIUM FIX:
+      - MachineBluespaceHarvesterCircuitboard
+      - EnergyEmitterCircuitboard
+      - MachineBluespaceTransitorCircuitboard
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
