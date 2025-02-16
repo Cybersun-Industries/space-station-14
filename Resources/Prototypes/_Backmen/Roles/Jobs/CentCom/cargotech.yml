@@ -53,8 +53,8 @@
 
 
 - type: entity
-  parent: OrdenPDA
-  abstract: true
+#  parent: OrdenPDA
+  parent: BasePDA
   id: CCCargoPDA
   name: Centcom Cargo PDA
   description: Light green sign of walking bureaucracy.
@@ -70,12 +70,12 @@
       appearanceDataInit:
         enum.PdaVisuals.PdaType:
           !type:String
-          pda-centcomcargo
+          pda-centcom
     - type: PdaBorderColor
       borderColor: "#00842e"
     - type: Icon
       sprite: Backmen/Objects/Devices/pda.rsi
-      state: pda-centcomcargo
+      state: pda-centcom
 
 - type: entity
   parent: CentcomIDCardDeathsquad
