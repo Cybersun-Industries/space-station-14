@@ -81,14 +81,14 @@ public sealed partial class ToggleableGhostRoleComponent : Component
     [DataField]
     public string StopSearchVerbPopup = string.Empty;
 
+    // start-backmen: whitelist
+    [DataField("whitelistRequired")]
+    public bool WhitelistRequired = false;
+    // end-backmen: whitelist
+
     /// /// <summary>
     /// The prototype ID of the job that will be given to the controlling mind
     /// </summary>
     [DataField("job")]
     public ProtoId<JobPrototype>? JobProto;
-
-    // start-backmen: whitelist
-    [DataField("whitelistRequired")]
-    public bool WhitelistRequired;
-    // end-backmen: whitelist
 }

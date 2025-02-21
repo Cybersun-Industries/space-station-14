@@ -108,9 +108,9 @@ public sealed partial class GhostRoleComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [Access(typeof(GhostRoleSystem), Other = AccessPermissions.ReadWriteExecute)] // FIXME Friends
     [DataField("whitelistRequired")]
-    public bool WhitelistRequired = false;
+    public bool WhitelistRequired;
     // end-backmen: whitelist
-    
+
     /// <summary>
     /// Job the entity will receive after adding the mind.
     /// </summary>
