@@ -25,6 +25,11 @@
                 ExpandBackwards="True"
                 Columns="6"
                 HorizontalExpand="False"/>
+            <inventory:ItemStatusPanel
+                Name="StatusPanelRight"
+                HorizontalAlignment="Center" Margin="0 0 -2 2"
+                SetWidth="125"
+                SetHeight="60"/>
             <hands:HandsContainer
                 Name="HandContainer"
                 Access="Public"

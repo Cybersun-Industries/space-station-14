@@ -69,26 +69,32 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnAfterSpawning);
     }
 
-    protected override void AppendRoundEndText(EntityUid uid, ShipVsShipGameComponent rule, GameRuleComponent gameRule,
+    protected override void AppendRoundEndText(EntityUid uid,
+        ShipVsShipGameComponent rule,
+        GameRuleComponent gameRule,
         ref RoundEndTextAppendEvent args)
     {
-        args.AddLine(Loc.GetString($"svs-team-{rule.Winner ?? StationTeamMarker.Neutral}-lose", ("target",rule.WinnerTarget ?? EntityUid.Invalid)));
+        args.AddLine(Loc.GetString($"svs-team-{rule.Winner ?? StationTeamMarker.Neutral}-lose",
+            ("target", rule.WinnerTarget ?? EntityUid.Invalid)));
     }
 
     private void SetFlag(EntityUid ent, StationTeamMarker team)
     {
-        _teamSystem.SetFaction((ent,EnsureComp<TdmMemberComponent>(ent)), team);
+        _teamSystem.SetFaction((ent, EnsureComp<TdmMemberComponent>(ent)), team);
     }
 
     [ValidatePrototypeId<EntityPrototype>]
-    private const string PlayerStationAi = "PlayerStationAi";
+    private const string PlayerStationAi = "PlayerStationAiSAI";
+
     [ValidatePrototypeId<EntityPrototype>]
     private const string StationAiBrain = "StationAiBrain";
+
     [ValidatePrototypeId<JobPrototype>]
     private const string StationAiJob = "SAIShip";
+
     private EntityUid FixStationAi(EntityUid mob)
     {
-        if(Prototype(mob)?.ID != StationAiBrain)
+        if (Prototype(mob)?.ID != StationAiBrain)
             return mob;
 
         var xform = Transform(mob);
@@ -98,13 +104,13 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
         var uid = EntityUid.Invalid;
         foreach (var entityUid in _map.GetAnchoredEntities(xform.GridUid.Value, grid, xform.Coordinates))
         {
-            if(!HasComp<ContainerSpawnPointComponent>(entityUid))
+            if (!HasComp<ContainerSpawnPointComponent>(entityUid))
                 continue;
             uid = entityUid;
             break;
         }
 
-        if(!uid.Valid)
+        if (!uid.Valid)
             uid = SpawnAtPosition(PlayerStationAi, xform.Coordinates);
 
         var spawnPoint = EnsureComp<ContainerSpawnPointComponent>(uid);
@@ -113,6 +119,7 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
             QueueDel(uid);
             return mob;
         }
+
         if (!_container.Insert(mob, container))
         {
             QueueDel(uid);
@@ -125,7 +132,7 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
 
     private void OnAfterSpawning(PlayerSpawnCompleteEvent ev)
     {
-        if(!QueryActiveRules().MoveNext(out _, out var rule, out _))
+        if (!QueryActiveRules().MoveNext(out _, out var rule, out _))
             return;
 
         var mobEntity = ev.Mob;
@@ -158,8 +165,10 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
         {
             return;
         }
+
         var latejoin = (from s in EntityQuery<SpawnPointComponent, TransformComponent>()
-            where s.Item1.SpawnType == SpawnPointType.LateJoin && s.Item2.GridUid.HasValue && stationGrids.Contains(s.Item2.GridUid.Value)
+            where s.Item1.SpawnType == SpawnPointType.LateJoin && s.Item2.GridUid.HasValue &&
+                  stationGrids.Contains(s.Item2.GridUid.Value)
             select s.Item2.Coordinates).ToList();
         if (latejoin.Count == 0)
         {
@@ -169,7 +178,8 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
 
         var point = RobustRandom.Pick(latejoin);
         _transform.SetCoordinates(mobEntity, point);
-        Log.Warning($"Invalid spawning station {mobEntity:entity} on {xform.GridUid:entity} (team: {team}) do fixing, new grid = {point.EntityId:entity}");
+        Log.Warning(
+            $"Invalid spawning station {mobEntity:entity} on {xform.GridUid:entity} (team: {team}) do fixing, new grid = {point.EntityId:entity}");
     }
 
     private void CanUseArrivals(CanHandleWithArrival ev)
@@ -184,7 +194,7 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
 
     private void OnStartRound(RoundStartedEvent ev)
     {
-        if(!QueryActiveRules().MoveNext(out _, out var rule, out _))
+        if (!QueryActiveRules().MoveNext(out _, out var rule, out _))
             return;
 
         ScanForObjects(rule);
@@ -194,7 +204,9 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
     {
         var q = EntityQueryEnumerator<StationDataComponent, StationJobsComponent, StationTeamMarkerComponent>();
 
-        while (q.MoveNext(out var ent, out var stationDataComponent, out var stationJobsComponent,
+        while (q.MoveNext(out var ent,
+                   out var stationDataComponent,
+                   out var stationJobsComponent,
                    out var stationTeamMarkerComponent))
         {
             var stationGrids = stationDataComponent.Grids;
@@ -228,7 +240,7 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
 
     private void OnAfterFtl(ref FTLCompletedEvent ev)
     {
-        if(!QueryActiveRules().MoveNext(out _, out _, out _))
+        if (!QueryActiveRules().MoveNext(out _, out _, out _))
             return;
 
         EnsureComp<FTLComponent>(ev.Entity).StateTime = StartEndTime.FromCurTime(_gameTiming, 60 * 5);
@@ -246,10 +258,9 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
             _prototypeManager.TryIndex<GameMapPoolPrototype>(GameTicker.CurrentPreset.MapPool, out var pool) &&
             !pool.Maps.Contains(mainStationMap!.ID))
         {
-
             foreach (var map in pool.Maps)
             {
-                if(ev.Maps.Any(x=>x.ID == map))
+                if (ev.Maps.Any(x => x.ID == map))
                     continue;
 
                 ev.Maps.Clear();
@@ -272,19 +283,18 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
         if (team == StationTeamMarker.Neutral)
             return;
 
-                /*
-        if (TryComp<StationDataComponent>(rule.Team[team], out var stationDataComponent))
-        {
-            foreach (var grid in stationDataComponent.Grids)
-            {
-                QueueDel(grid);
-            }
-        }*/
+        /*
+if (TryComp<StationDataComponent>(rule.Team[team], out var stationDataComponent))
+{
+    foreach (var grid in stationDataComponent.Grids)
+    {
+        QueueDel(grid);
+    }
+}*/
 
         rule.Winner = team;
         rule.WinnerTarget = ent;
         _endSystem.EndRound();
-
     }
 
     private void OnChangeHealth(Entity<SVSTeamCoreComponent> ent, ref MobStateChangedEvent args)
@@ -302,7 +312,7 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
 
     private void OnBeforeSpawn(PlayerBeforeSpawnEvent ev)
     {
-        if(!QueryActiveRules().MoveNext(out var ruleUid, out var r1, out var rule, out var r3))
+        if (!QueryActiveRules().MoveNext(out var ruleUid, out var r1, out var rule, out var r3))
             return;
 
         var team = rule.Players.FirstOrDefault(x => x.Value.Contains(ev.Player.UserId)).Key;
@@ -319,11 +329,14 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
             _mind.SetUserId(newMind, ev.Player.UserId);
 
 
-            var job =  RobustRandom.Pick(rule.OverflowJobs[team]);
+            var job = RobustRandom.Pick(rule.OverflowJobs[team]);
             _roleSystem.MindAddRole(newMind, job.Id);
             _roleSystem.MindHasRole<JobRoleComponent>(newMind!, out var jobRole);
 
-            var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(rule.Team[team], jobRole?.Comp1.JobPrototype, ev.Profile);
+            var mobMaybe =
+                _stationSpawning.SpawnPlayerCharacterOnStation(rule.Team[team],
+                    jobRole?.Comp1.JobPrototype,
+                    ev.Profile);
             DebugTools.AssertNotNull(mobMaybe);
             var mob = mobMaybe!.Value;
             SetFlag(mob, team);
@@ -332,7 +345,9 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
         }
     }
 
-    protected override void Added(EntityUid uid, ShipVsShipGameComponent component, GameRuleComponent gameRule,
+    protected override void Added(EntityUid uid,
+        ShipVsShipGameComponent component,
+        GameRuleComponent gameRule,
         GameRuleAddedEvent args)
     {
         var activeRules = QueryActiveRules();
@@ -382,6 +397,7 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
                 .ToDictionary(x => x.Key, x => x.Value.Item1);
 
             #region required jobs
+
             foreach (var job in marker.RequireJobs)
             {
                 var user = assign.FirstOrNull(x => x.Value == job.Id);
@@ -390,7 +406,8 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
                     NetUserId? pickedUser = null;
                     {
                         var listPicks = ev.Profiles.Keys.Where(x =>
-                            !playerInRole.ContainsKey(x) && _whitelistSystem.IsInWhitelist(x)).ToList();
+                                !playerInRole.ContainsKey(x) && _whitelistSystem.IsInWhitelist(x))
+                            .ToList();
                         if (listPicks.Count > 0)
                         {
                             pickedUser = RobustRandom.Pick(listPicks);
@@ -399,7 +416,8 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
                     if (pickedUser == null)
                     {
                         var listPicks = ev.Profiles.Keys.Where(x =>
-                            !playerInRole.ContainsKey(x)).ToList();
+                                !playerInRole.ContainsKey(x))
+                            .ToList();
 
                         if (listPicks.Count == 0)
                         {
@@ -419,6 +437,7 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
                 playerInRole.Add(user.Value.Key, (job, stationUid));
                 assign.Remove(user.Value.Key);
             }
+
             #endregion
 
             var overflowJobs = jobs.OverflowJobs;
@@ -434,7 +453,7 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
 
         if (ct.Count == 0)
         {
-            GameTicker.EndGameRule(ruleId,ruleData);
+            GameTicker.EndGameRule(ruleId, ruleData);
             GameTicker.EndRound("не правильная карта!");
             return;
         }
@@ -451,10 +470,10 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
         }
 
         // ai fix
-        var aiQ = EntityQueryEnumerator<SpawnPointComponent,TransformComponent>();
-        while (aiQ.MoveNext(out var owner,out var container, out var xform))
+        var aiQ = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+        while (aiQ.MoveNext(out var owner, out var container, out var xform))
         {
-            if(container.Job != StationAiJob)
+            if (container.Job != StationAiJob)
                 continue;
 
             var stationUid = _station.GetOwningStation(owner, xform);
@@ -482,7 +501,10 @@ public sealed class ShipVsShipGame : GameRuleSystem<ShipVsShipGameComponent>
         }
     }
 
-    protected override void Started(EntityUid uid, ShipVsShipGameComponent rule, GameRuleComponent ruleGame, GameRuleStartedEvent args)
+    protected override void Started(EntityUid uid,
+        ShipVsShipGameComponent rule,
+        GameRuleComponent ruleGame,
+        GameRuleStartedEvent args)
     {
         ScanForObjects(rule);
     }

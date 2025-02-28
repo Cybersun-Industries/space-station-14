@@ -55,7 +55,7 @@
     layers:
       - state: red
       - sprite: Objects/Storage/boxes.rsi
-        state: shellslug
+        state: nitrile
   - type: RandomSpawner
     offset: 0
     prototypes:

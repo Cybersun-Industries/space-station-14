@@ -55,7 +55,6 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
         //GhostRoleComponent inherits custom settings from the ToggleableGhostRoleComponent
         ghostRole.RoleName = Loc.GetString(component.RoleName);
         ghostRole.RoleDescription = Loc.GetString(component.RoleDescription);
-        ghostRole.WhitelistRequired = component.WhitelistRequired; // backmen: whitelist
         ghostRole.RoleRules = Loc.GetString(component.RoleRules);
         ghostRole.JobProto = component.JobProto;
         ghostRole.MindRoles = component.MindRoles;
