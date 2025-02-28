@@ -1,5 +1,3 @@
-using Content.Corvax.Interfaces.Server;
-using Content.Corvax.Interfaces.Shared;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -7,7 +5,6 @@ using Content.Server.Administration.Notes;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
-using Content.Server.Corvax;
 using Content.Server.Corvax.TTS;
 using Content.Server.Database;
 using Content.Server.Discord;
@@ -70,13 +67,6 @@ namespace Content.Server.IoC
             IoCManager.Register<ServerInfoManager>();
             IoCManager.Register<PoissonDiskSampler>();
             IoCManager.Register<DiscordWebhook>();
-            // start-backmen: IoC
-            IoCManager.Register<ISharedSponsorsManager, Backmen.Sponsors.SponsorsManager>();
-            IoCManager.Register<IServerDiscordAuthManager, Radium.DiscordAuth.DiscordAuthManager>();
-            IoCManager.Register<IServerJoinQueueManager, Backmen.JoinQueue.JoinQueueManager>();
-            IoCManager
-                .Register<ISharedLoadoutsManager, Backmen.Sponsors.LoadoutsManager>();
-            // end-backmen: IoC
             IoCManager.Register<VoteWebhooks>();
             IoCManager.Register<ServerDbEntryManager>();
             IoCManager.Register<ISharedPlaytimeManager, PlayTimeTrackingManager>();
@@ -87,6 +77,7 @@ namespace Content.Server.IoC
             IoCManager.Register<MappingManager>();
             IoCManager.Register<IWatchlistWebhookManager, WatchlistWebhookManager>();
             IoCManager.Register<ConnectionManager>();
+            IoCManager.Register<MultiServerKickManager>();
         }
     }
 }

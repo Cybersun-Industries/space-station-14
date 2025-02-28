@@ -229,7 +229,7 @@
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
-    damage: 30
+    damage: 33
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
@@ -464,29 +464,6 @@
   # Short lifespan
   - type: TimedDespawn
     lifetime: 0.4
-
-- type: entity
-  id: BulletSpike
-  name: spike
-  parent: BaseBulletHighVelocity
-  categories: [ HideSpawnMenu ]
-  description:
-  components:
-    - type: Sprite
-      netsync: false
-      noRot: false
-      sprite: Objects/Weapons/Guns/Projectiles/spike.rsi
-      layers:
-        - state: spike
-          shader: unshaded
-    - type: Projectile
-      impactEffect: BulletImpactEffectKinetic
-      damage:
-        types:
-          Piercing: 19
-    # Short lifespan
-    - type: TimedDespawn
-      lifetime: 1
 
 - type: entity
   parent: BaseBullet
@@ -928,41 +905,6 @@
             - Impassable
             - HighImpassable
     - type: GrapplingProjectile
-
-#BackmenCultOfFlash-start
-- type: entity
-  id: BaseBulletHighVelocity
-  name: base bullet high-velocity
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Projectile
-      damage:
-        types:
-          Piercing: 17
-#BackmenCultOfFlash-end
-
-- type: entity
-  id: BulletRobotBall
-  name: rocket
-  parent: BaseBulletTrigger
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    layers:
-      - state: ball
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: DemolitionCharge
-    maxIntensity: 9
-    intensitySlope: 3
-    totalIntensity: 10
-    maxTileBreak: 0
-  - type: PointLight
-    radius: 1
-    color: orange
-    energy: 0.5
 
 - type: entity
   name : disabler bolt smg

@@ -34,3 +34,6 @@ ent-IntercomSupply = { ent-Intercom }
 ent-IntercomAll = { ent-Intercom }
     .suffix = All
     .desc = { ent-Intercom.desc }
+ent-IntercomFreelance = { ent-Intercom }
+    .suffix = Freelance
+    .desc = { ent-Intercom.desc }

@@ -302,7 +302,6 @@ MagazineBoxLightRifleRubber: MagazineBoxLightRifle
 MagazineBoxRifleRubber: MagazineBoxRifle
 MagazineBoxRifleBigRubber: MagazineBoxRifleBig
 MagazineBoxCaselessRifleRubber: MagazineBoxCaselessRifle
-MagazineBoxCaselessRifleBigRubber: MagazineBoxCaselessRifle10x24
 BoxMagazinePistolRubber: BoxMagazinePistol
 BoxMagazinePistolHighCapacityRubber: BoxMagazinePistolHighCapacity
 BoxMagazinePistolSubMachineGunRubber: BoxMagazinePistolSubMachineGun
@@ -312,7 +311,6 @@ BoxMagazineCaselessRifleRubber: BoxMagazinePistolCaselessRifle
 BoxMagazineMagnumSubMachineGunRubber: BoxMagazineMagnumSubMachineGun
 WeaponPistolMk58Nonlethal: WeaponPistolMk58
 WeaponPistolN1984Nonlethal: WeaponPistolN1984
-WeaponSubMachineGunVectorRubber: WeaponSubMachineGunVector
 WeaponSubMachineGunDrozdRubber: WeaponSubMachineGunDrozd
 WeaponRifleLecterRubber: WeaponRifleLecter
 
@@ -523,12 +521,6 @@ CrateSlimepersonLifeSupport: CrateNitrogenInternals
 # 2024-12-01
 DungeonMasterCircuitBoard: GameMasterCircuitBoard
 
-
-# 2024-12-11 - Radium
-Food3DOrange: null
-3DOrangeSeeds: null
-3Dorange: null
-
 # 2024-12-12
 FloraRockSolid01: FloraRockSolid
 FloraRockSolid02: FloraRockSolid
@@ -582,8 +574,25 @@ LightTree06: LightTree
 #2024-12-28
 DrinkIrishCarBomb: DrinkIrishSlammer
 
+#2025-01-06
+ClothingMaskSexyClown: ClothingMaskBlushingClown
+ClothingMaskSexyMime: ClothingMaskBlushingMime
+
+# 2025-01-27
+FoodCondimentPacketFrostoil: FoodCondimentPacketColdsauce
+
+#2025-02-05
+WeaponSubMachineGunVector: null
+WeaponSubMachineGunVectorRubber: null
+
 #2025-02-11 Radium upstream
 BkmSupermatter: null
 SupermatterFlatpack: null
 AirSensorSupermatterBase: null
 AirAlarmSupermatter: null
+
+# 2025-02-20
+MagazineBoxAntiMaterielBig: null
+MagazineBoxCaselessRifle10x24: null
+MagazineBoxCaselessRifleBig: null
+MagazinePistolHighCapacityRubber: null
