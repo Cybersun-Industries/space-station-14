@@ -21,6 +21,11 @@
                 <CheckBox Name="ViewportStretchCheckBox" Text="{Loc 'ui-options-vp-stretch'}" />
                 <ui:OptionSlider Name="ViewportScaleSlider" Title="{Loc ui-options-vp-scale}" />
                 <ui:OptionSlider Name="ViewportWidthSlider" Title="{Loc ui-options-vp-width}" />
+
+                <!-- START RADIUM: GENOCIDE OF HEIGHT LINES -->
+                <ui:OptionSlider Name="ViewportHeightSlider" Title="{Loc ui-options-vp-height}" />
+                <!-- END RADIUM: GENOCIDE OF HEIGHT LINES -->
+
                 <CheckBox Name="IntegerScalingCheckBox"
                           Text="{Loc 'ui-options-vp-integer-scaling'}"
                           ToolTip="{Loc 'ui-options-vp-integer-scaling-tooltip'}" />

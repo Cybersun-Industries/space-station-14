@@ -56,6 +56,16 @@ public sealed partial class GraphicsTab : Control
             (int)ViewportWidthSlider.Slider.MinValue,
             (int)ViewportWidthSlider.Slider.MaxValue);
 
+        //START RADIUM: GENOCIDE OF HEIGHT LINES
+
+        Control.AddOptionSlider(
+            CCVars.ViewportHeight,
+            ViewportHeightSlider,
+            (int)ViewportWidthSlider.Slider.MinValue,
+            (int)ViewportWidthSlider.Slider.MaxValue);
+
+        //END RADIUM: GENOCIDE OF HEIGHT LINES
+
         Control.AddOption(new OptionIntegerScaling(Control, _cfg, IntegerScalingCheckBox));
         Control.AddOptionCheckBox(CCVars.ViewportScaleRender, ViewportLowResCheckBox, invert: true);
         Control.AddOptionCheckBox(CCVars.ParallaxLowQuality, ParallaxLowQualityCheckBox);
@@ -65,6 +75,15 @@ public sealed partial class GraphicsTab : Control
 
         _cfg.OnValueChanged(CCVars.ViewportMinimumWidth, _ => UpdateViewportWidthRange());
         _cfg.OnValueChanged(CCVars.ViewportMaximumWidth, _ => UpdateViewportWidthRange());
+
+        //START RADIUM: GENOCIDE OF HEIGHT LINES
+
+        _cfg.OnValueChanged(CCVars.ViewportMinimumHeight, _ => UpdateViewportHeightRange());
+        _cfg.OnValueChanged(CCVars.ViewportMaximumHeight, _ => UpdateViewportHeightRange());
+
+        UpdateViewportHeightRange();
+
+        //END RADIUM: GENOCIDE OF HEIGHT LINES
 
         UpdateViewportWidthRange();
         UpdateViewportSettingsVisibility();
@@ -76,6 +95,8 @@ public sealed partial class GraphicsTab : Control
         IntegerScalingCheckBox.Visible = ViewportStretchCheckBox.Pressed;
         ViewportVerticalFitCheckBox.Visible = ViewportStretchCheckBox.Pressed;
         ViewportWidthSlider.Visible = !ViewportStretchCheckBox.Pressed || !ViewportVerticalFitCheckBox.Pressed;
+
+        ViewportHeightSlider.Visible = !ViewportStretchCheckBox.Pressed || !ViewportVerticalFitCheckBox.Pressed; //RADIUM: GENOCIDE OF HEIGHT LINES
     }
 
     private void UpdateViewportWidthRange()
@@ -87,6 +108,18 @@ public sealed partial class GraphicsTab : Control
         ViewportWidthSlider.Slider.MaxValue = max;
     }
 
+    //START RADIUM: GENOCIDE OF HEIGHT LINES
+
+    private void UpdateViewportHeightRange()
+    {
+        var min = _cfg.GetCVar(CCVars.ViewportMinimumHeight);
+        var max = _cfg.GetCVar(CCVars.ViewportMaximumHeight);
+
+        ViewportHeightSlider.Slider.MinValue = min;
+        ViewportHeightSlider.Slider.MaxValue = max;
+    }
+
+    //END RADIUM: GENOCIDE OF HEIGHT LINES
     private sealed class OptionLightingQuality : BaseOption
     {
         private readonly IConfigurationManager _cfg;

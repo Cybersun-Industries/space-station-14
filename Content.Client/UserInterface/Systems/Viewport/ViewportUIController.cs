@@ -29,6 +29,14 @@ public sealed class ViewportUIController : UIController
         _configurationManager.OnValueChanged(CCVars.ViewportWidth, _ => UpdateViewportRatio());
         _configurationManager.OnValueChanged(CCVars.ViewportVerticalFit, _ => UpdateViewportRatio());
 
+        //START RADIUM: GENOCIDE OF HEIGHT LINES
+
+        _configurationManager.OnValueChanged(CCVars.ViewportMinimumWidth, _ => UpdateViewportRatio());
+        _configurationManager.OnValueChanged(CCVars.ViewportMaximumWidth, _ => UpdateViewportRatio());
+        _configurationManager.OnValueChanged(CCVars.ViewportHeight, _ => UpdateViewportRatio());
+
+        //END RADIUM: GENOCIDE OF HEIGHT LINES
+
         var gameplayStateLoad = UIManager.GetUIController<GameplayStateLoadController>();
         gameplayStateLoad.OnScreenLoad += OnScreenLoad;
     }
@@ -45,21 +53,41 @@ public sealed class ViewportUIController : UIController
             return;
         }
 
-        var min = _configurationManager.GetCVar(CCVars.ViewportMinimumWidth);
-        var max = _configurationManager.GetCVar(CCVars.ViewportMaximumWidth);
+        var minWidth = _configurationManager.GetCVar(CCVars.ViewportMinimumWidth);
+        var maxWidth = _configurationManager.GetCVar(CCVars.ViewportMaximumWidth);
         var width = _configurationManager.GetCVar(CCVars.ViewportWidth);
-        var verticalfit = _configurationManager.GetCVar(CCVars.ViewportVerticalFit) && _configurationManager.GetCVar(CCVars.ViewportStretch);
+
+        //START RADIUM: GENOCIDE OF HEIGHT LINES
+
+        var minHeight = _configurationManager.GetCVar(CCVars.ViewportMinimumHeight);
+        var maxHeight = _configurationManager.GetCVar(CCVars.ViewportMaximumHeight);
+        var height = _configurationManager.GetCVar(CCVars.ViewportHeight);
+
+        //END RADIUM: GENOCIDE OF HEIGHT LINES
+
+        var verticalfit = _configurationManager.GetCVar(CCVars.ViewportVerticalFit) &&
+                          _configurationManager.GetCVar(CCVars.ViewportStretch);
 
         if (verticalfit)
         {
-            width = max;
+            width = maxWidth;
+            height = maxHeight; //RADIUM: GENOCIDE OF HEIGHT LINES
         }
-        else if (width < min || width > max)
+        else
         {
-            width = CCVars.ViewportWidth.DefaultValue;
+            if (width < minWidth || width > maxWidth)
+            {
+                width = CCVars.ViewportWidth.DefaultValue;
+            }
+
+            if (height < minHeight || height > maxHeight)
+            {
+                height = CCVars.ViewportHeight.DefaultValue; //RADIUM: GENOCIDE OF HEIGHT LINES
+            }
         }
 
-        Viewport.Viewport.ViewportSize = (EyeManager.PixelsPerMeter * width, EyeManager.PixelsPerMeter * ViewportHeight);
+        Viewport.Viewport.ViewportSize =
+            (EyeManager.PixelsPerMeter * width, EyeManager.PixelsPerMeter * height); //RADIUM: GENOCIDE OF HEIGHT LINES
         Viewport.UpdateCfg();
     }
 
@@ -104,6 +132,7 @@ public sealed class ViewportUIController : UIController
 
         // Currently, this shouldn't happen. This likely happened because the main eye was set to null. When this
         // does happen it can create hard to troubleshoot bugs, so lets print some helpful warnings:
-        Logger.Warning($"Main viewport's eye is in nullspace (main eye is null?). Attached entity: {_entMan.ToPrettyString(ent.Value)}. Entity has eye comp: {eye != null}");
+        Logger.Warning(
+            $"Main viewport's eye is in nullspace (main eye is null?). Attached entity: {_entMan.ToPrettyString(ent.Value)}. Entity has eye comp: {eye != null}");
     }
 }
