@@ -62,13 +62,12 @@
     radius: 10
   - type: Appearance
   - type: GuideHelp
-    guides: [ Singularity, Power ] # uhhh.. I would hoped they'd  have read the manual before ever getting in viewing distance...
+    guides: [ SingularityEngine, Power ] # uhhh.. I would hoped they'd  have read the manual before ever getting in viewing distance...
   - type: WarpPoint
     follow: true
     location: singularity
   - type: Sprite
     sprite: Radium/Structures/Power/Generation/Singularity/singularity_1-maxwell.rsi
-    shader: unshaded
     layers:
     - map: [ "VisualLevel" ]
       state: maxwell

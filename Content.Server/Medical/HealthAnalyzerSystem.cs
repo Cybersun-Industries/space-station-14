@@ -20,6 +20,7 @@ using Content.Shared.Popups;
 using Content.Shared.Radium.Medical.Surgery.Components;
 using Content.Shared.Radium.Medical.Surgery.Systems;
 using Content.Shared.Radium.Medical.Surgery.Prototypes;
+using Content.Shared.Traits.Assorted;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -232,7 +233,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             }
         }
 
-        if (HasComp<UnrevivableComponent>(target))
+        if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
 
         IReadOnlyDictionary<(BodyPartType, BodyPartSymmetry), (int, bool)>? damagedBodyParts = null;

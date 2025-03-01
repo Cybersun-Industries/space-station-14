@@ -43,9 +43,6 @@
       Steel: 100
   - type: StaticPrice
     price: 30
-  - type: SurgeryTool
-    action: enum.SurgeryTypeEnum.Retract
-    modifier: 1.2
 
 - type: entity
   name: screwdriver
@@ -129,9 +126,9 @@
       Steel: 100
   - type: StaticPrice
     price: 22
-  - type: SurgeryTool
-    action: enum.SurgeryTypeEnum.Clamp
-    modifier: 1.2
+  - type: GuideHelp
+    guides:
+    - Construction
 
 - type: entity
   name: multitool
@@ -180,6 +177,12 @@
       Plastic: 100
   - type: StaticPrice
     price: 56
+  - type: GuideHelp
+    guides:
+    - Networking
+    - WirePanels
+    - Airlocks
+    - InspectingPower
 
 - type: entity
   name: network configurator
@@ -230,7 +233,7 @@
       price: 56
     - type: GuideHelp
       guides:
-      - NetworkConfigurator
+      - Networking
 
 #Power tools
 #Later on these should switch probably switch damage when changing the tool behavior.

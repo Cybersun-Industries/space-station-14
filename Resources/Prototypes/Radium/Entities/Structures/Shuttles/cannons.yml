@@ -91,7 +91,7 @@
   - type: Machine
     board: EnergyEmitterCircuitboard
   - type: GuideHelp
-    guides: [ Singularity, Power ]
+    guides: [ SingularityEngine, Power ]
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice

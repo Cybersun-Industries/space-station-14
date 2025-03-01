@@ -6,6 +6,7 @@ using Content.Server.Store.Components;
 using Content.Server.Store.Systems;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Forensics;
+using Content.Shared.Forensics.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Implants;
 using Content.Shared.Implants.Components;
@@ -22,6 +23,7 @@ using System.Numerics;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Server.IdentityManagement;
+using Content.Server.DetailExaminable;
 using Content.Shared.Store.Components;
 using Robust.Shared.Collections;
 using Robust.Shared.Map.Components;
@@ -58,10 +60,11 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
         SubscribeLocalEvent<SubdermalImplantComponent, ActivateImplantEvent>(OnActivateImplantEvent);
         SubscribeLocalEvent<SubdermalImplantComponent, UseScramImplantEvent>(OnScramImplant);
         SubscribeLocalEvent<SubdermalImplantComponent, UseDnaScramblerImplantEvent>(OnDnaScramblerImplant);
-
     }
 
-    private void OnStoreRelay(EntityUid uid, StoreComponent store, ImplantRelayEvent<AfterInteractUsingEvent> implantRelay)
+    private void OnStoreRelay(EntityUid uid,
+        StoreComponent store,
+        ImplantRelayEvent<AfterInteractUsingEvent> implantRelay)
     {
         var args = implantRelay.Event;
 
@@ -76,19 +79,18 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
             return;
 
         // same as store code, but message is only shown to yourself
-        args.Handled = _store.TryAddCurrency(_store.GetCurrencyValue(args.Used, currency), uid, store);
-
-        if (!args.Handled)
+        if (!_store.TryAddCurrency(args.Used, uid, store, currency))
             return;
 
+        args.Handled = true;
         var msg = Loc.GetString("store-currency-inserted-implant", ("used", args.Used));
         _popup.PopupEntity(msg, args.User, args.User);
-        QueueDel(args.Used);
     }
 
     private void OnFreedomImplant(EntityUid uid, SubdermalImplantComponent component, UseFreedomImplantEvent args)
     {
-        if (!TryComp<CuffableComponent>(component.ImplantedEntity, out var cuffs) || cuffs.Container.ContainedEntities.Count < 1)
+        if (!TryComp<CuffableComponent>(component.ImplantedEntity, out var cuffs) ||
+            cuffs.Container.ContainedEntities.Count < 1)
             return;
 
         _cuffable.Uncuff(component.ImplantedEntity.Value, cuffs.LastAddedCuffs, cuffs.LastAddedCuffs);
@@ -114,7 +116,8 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
             _pullingSystem.TryStopPull(ent, pull);
 
         // Check if the user is pulling anything, and drop it if so
-        if (TryComp<PullerComponent>(ent, out var puller) && TryComp<PullableComponent>(puller.Pulling, out var pullable))
+        if (TryComp<PullerComponent>(ent, out var puller) &&
+            TryComp<PullableComponent>(puller.Pulling, out var pullable))
             _pullingSystem.TryStopPull(puller.Pulling.Value, pullable);
 
         var xform = Transform(ent);
@@ -160,7 +163,7 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
         {
             var valid = false;
 
-            var range = (float) Math.Sqrt(radius);
+            var range = (float)Math.Sqrt(radius);
             var box = Box2.CenteredAround(userCoords.Position, new Vector2(range, range));
             var tilesInRange = _mapSystem.GetTilesEnumerator(targetGrid.Value.Owner, targetGrid.Value.Comp, box, false);
             var tileList = new ValueList<Vector2i>();
@@ -174,7 +177,8 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
             {
                 var tile = tileList.RemoveSwap(_random.Next(tileList.Count));
                 valid = true;
-                foreach (var entity in _mapSystem.GetAnchoredEntities(targetGrid.Value.Owner, targetGrid.Value.Comp,
+                foreach (var entity in _mapSystem.GetAnchoredEntities(targetGrid.Value.Owner,
+                             targetGrid.Value.Comp,
                              tile))
                 {
                     if (!_physicsQuery.TryGetComponent(entity, out var body))
@@ -182,7 +186,7 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
 
                     if (body.BodyType != BodyType.Static ||
                         !body.Hard ||
-                        (body.CollisionLayer & (int) CollisionGroup.MobMask) == 0)
+                        (body.CollisionLayer & (int)CollisionGroup.MobMask) == 0)
                         continue;
 
                     valid = false;
@@ -197,7 +201,8 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
                 }
             }
 
-            if (valid || _targetGrids.Count == 0) // if we don't do the check here then PickAndTake will blow up on an empty set.
+            if (valid || _targetGrids.Count ==
+                0) // if we don't do the check here then PickAndTake will blow up on an empty set.
                 break;
 
             targetGrid = _random.GetRandom().PickAndTake(_targetGrids);
@@ -206,7 +211,9 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
         return targetCoords;
     }
 
-    private void OnDnaScramblerImplant(EntityUid uid, SubdermalImplantComponent component, UseDnaScramblerImplantEvent args)
+    private void OnDnaScramblerImplant(EntityUid uid,
+        SubdermalImplantComponent component,
+        UseDnaScramblerImplantEvent args)
     {
         if (component.ImplantedEntity is not { } ent)
             return;
@@ -215,7 +222,9 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
         {
             var newProfile = HumanoidCharacterProfile.RandomWithSpecies(humanoid.Species);
             _humanoidAppearance.LoadProfile(ent, newProfile, humanoid);
-            _metaData.SetEntityName(ent, newProfile.Name, raiseEvents: false); // raising events would update ID card, station record, etc.
+            _metaData.SetEntityName(ent,
+                newProfile.Name,
+                raiseEvents: false); // raising events would update ID card, station record, etc.
             if (TryComp<DnaComponent>(ent, out var dna))
             {
                 dna.DNA = _forensicsSystem.GenerateDNA();
@@ -223,10 +232,13 @@ public sealed class SubdermalImplantSystem : SharedSubdermalImplantSystem
                 var ev = new GenerateDnaEvent { Owner = ent, DNA = dna.DNA };
                 RaiseLocalEvent(ent, ref ev);
             }
+
             if (TryComp<FingerprintComponent>(ent, out var fingerprint))
             {
                 fingerprint.Fingerprint = _forensicsSystem.GenerateFingerprint();
             }
+
+            RemComp<DetailExaminableComponent>(ent); // remove MRP+ custom description if one exists
             _identity.QueueIdentityUpdate(ent); // manually queue identity update since we don't raise the event
             _popup.PopupEntity(Loc.GetString("scramble-implant-activated-popup"), ent, ent);
         }

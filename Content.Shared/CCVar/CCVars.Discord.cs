@@ -72,9 +72,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> DiscordWatchlistConnectionBufferTime =
         CVarDef.Create("discord.watchlist_connection_buffer_time", 5f, CVar.SERVERONLY);
-
-    // еще скажи что не умеешь по-английски читать.
-    // вебхук канала для того, чтобы выводились сообщения. я кстати не знаю че еще добавить надо лол
-    public static readonly CVarDef<string> DiscordFaxMachineWebhook =
-        CVarDef.Create("discord.fax_machine_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }

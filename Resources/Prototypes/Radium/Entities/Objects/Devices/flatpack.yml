@@ -10,7 +10,7 @@
     layers:
     - state: radiation-collector
   - type: GuideHelp
-    guides: [ Singularity, Power ]
+    guides: [ SingularityEngine, Power ]
 
 - type: entity
   parent: BaseFlatpack
@@ -24,4 +24,4 @@
     layers:
     - state: emitter
   - type: GuideHelp
-    guides: [ Singularity, Power ]
+    guides: [ SingularityEngine, Power ]

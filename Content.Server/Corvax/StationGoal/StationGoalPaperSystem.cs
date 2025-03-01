@@ -22,7 +22,6 @@ namespace Content.Server.Corvax.StationGoal
         [Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
 
-
         public override void Initialize()
         {
             SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);

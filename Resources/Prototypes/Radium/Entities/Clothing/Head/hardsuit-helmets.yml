@@ -17,7 +17,7 @@
   - type: Unremoveable
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetBondrewd
   categories: [ HideSpawnMenu ]
   name: cburn commander helmet
