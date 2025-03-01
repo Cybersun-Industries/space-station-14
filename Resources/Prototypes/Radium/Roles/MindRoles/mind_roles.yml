@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleThiefVoxes
+  name: Vox Thief Role
+  #  description: mind-role-thief-description
+  components:
+  - type: MindRole
+    antagPrototype: ThiefVoxes
+  - type: ThiefVoxesRole

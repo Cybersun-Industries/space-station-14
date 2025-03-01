@@ -1,0 +1,9 @@
+- type: entity
+  id: PowerCrossbow
+  parent: BaseBow
+  suffix: Vox
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: foamcrossbow
+
