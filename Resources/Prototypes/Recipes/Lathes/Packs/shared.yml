@@ -49,3 +49,11 @@
   - HandHeldMassScanner
   - ClothingMaskWeldingGas
   - SignallerAdvanced
+  # RADIUM-FIX:
+  - WeaponGrapplingGun
+  - HandTeleporter1
+  - CoreSilver
+  - ArtificialBluespaceCrystal
+  - MechEquipmentDrill
+  - BluespacePillCanister
+  - HandheldCrewMonitor

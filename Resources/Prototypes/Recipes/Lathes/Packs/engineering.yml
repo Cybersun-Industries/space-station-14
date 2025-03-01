@@ -87,3 +87,8 @@
   - TelecomServerCircuitboard
   - SMESAdvancedMachineCircuitboard
   - HolopadMachineCircuitboard
+  # RADIUM FIX:
+  - MachineBluespaceHarvesterCircuitboard
+  - EnergyEmitterCircuitboard
+  - MachineBluespaceTransitorCircuitboard
+  - ExosuitFabricatorMachineCircuitboard
