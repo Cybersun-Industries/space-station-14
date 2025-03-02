@@ -5,7 +5,7 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     public static readonly CVarDef<bool> ViewportStretch =
-        CVarDef.Create("viewport.stretch", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("viewport.stretch", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     public static readonly CVarDef<int> ViewportFixedScaleFactor =
         CVarDef.Create("viewport.fixed_scale_factor", 2, CVar.CLIENTONLY | CVar.ARCHIVE);
@@ -23,10 +23,10 @@ public sealed partial class CCVars
         CVarDef.Create("viewport.minimum_width", 15, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<int> ViewportMaximumWidth =
-        CVarDef.Create("viewport.maximum_width", 21, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("viewport.maximum_width", 39, CVar.REPLICATED | CVar.SERVER); //RADIUM: DEF VALUE CHANGED
 
     public static readonly CVarDef<int> ViewportWidth =
-        CVarDef.Create("viewport.width", 21, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("viewport.width", 39, CVar.CLIENTONLY | CVar.ARCHIVE); //RADIUM: DEF VALUE CHANGED
 
     public static readonly CVarDef<bool> ViewportVerticalFit =
         CVarDef.Create("viewport.vertical_fit", true, CVar.CLIENTONLY | CVar.ARCHIVE);
