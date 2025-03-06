@@ -117,7 +117,8 @@ namespace Content.Server.Flash
             float slowTo,
             bool displayPopup = true,
             bool melee = false,
-            TimeSpan? stunDuration = null)
+            TimeSpan? stunDuration = null,
+            bool forced = false)
         {
             var attempt = new FlashAttemptEvent(target, user, used);
             RaiseLocalEvent(target, attempt, true);
@@ -126,7 +127,7 @@ namespace Content.Server.Flash
                 return;
 
             // don't paralyze, slowdown or convert to rev if the target is immune to flashes
-            if (!_statusEffectsSystem.TryAddStatusEffect<FlashedComponent>(target, FlashedKey, TimeSpan.FromSeconds(flashDuration / 1000f), true))
+            if (forced || !_statusEffectsSystem.TryAddStatusEffect<FlashedComponent>(target, FlashedKey, TimeSpan.FromSeconds(flashDuration / 1000f), true))
                 return;
 
             if (stunDuration != null)

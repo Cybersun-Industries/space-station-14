@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Client.Stylesheets;
 using Content.Shared.CCVar;
 using Content.Shared.Dataset;
@@ -7,17 +6,20 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
-using Robust.Shared.IoC;
-using Robust.Shared.Timing;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Launcher
 {
     [GenerateTypedNameReferences]
     public sealed partial class LauncherConnectingGui : Control
     {
+        public static readonly SpriteSpecifier BackgroundSpriteSpecifier =
+            new SpriteSpecifier.Rsi(new ResPath("/Textures/Radium/Menu/maina.rsi"), "maina");
+
         private const float RedialWaitTimeSeconds = 15f;
         private readonly LauncherConnecting _state;
         private float _waitTime;
@@ -30,8 +32,11 @@ namespace Content.Client.Launcher
         private readonly IConfigurationManager _cfg;
         private readonly IClipboardManager _clipboard;
 
-        public LauncherConnectingGui(LauncherConnecting state, IRobustRandom random,
-            IPrototypeManager prototype, IConfigurationManager config, IClipboardManager clipboard)
+        public LauncherConnectingGui(LauncherConnecting state,
+            IRobustRandom random,
+            IPrototypeManager prototype,
+            IConfigurationManager config,
+            IClipboardManager clipboard)
         {
             _state = state;
             _random = random;
@@ -44,6 +49,11 @@ namespace Content.Client.Launcher
             LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
 
             Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSpace;
+
+            Background.SetFromSpriteSpecifier(BackgroundSpriteSpecifier);
+            Background.HorizontalAlignment = HAlignment.Stretch;
+            Background.VerticalAlignment = VAlignment.Stretch;
+            Background.DisplayRect.Stretch = TextureRect.StretchMode.KeepAspectCentered;
 
             ChangeLoginTip();
             RetryButton.OnPressed += ReconnectButtonPressed;
@@ -132,7 +142,6 @@ namespace Content.Client.Launcher
                 {
                     _waitTime = RedialWaitTimeSeconds;
                 }
-
             }
         }
 

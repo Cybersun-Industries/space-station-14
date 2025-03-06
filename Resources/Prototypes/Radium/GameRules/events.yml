@@ -1,0 +1,126 @@
+﻿#- type: entity
+#  id: ClownBadMigration
+#  parent: BaseGameRule
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: station-event-vent-creatures-badclown-start-announcement
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+#    startDelay: 10
+#    earliestStart: 5
+#    minimumPlayers: 10
+#    duration: 60
+#  - type: VentCrittersRule
+#   entries:
+#    - id: MobClownBad
+#      prob: 0.05
+
+#- type: entity
+#  id: ClownPepeMigration
+#  parent: BaseGameRule
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: station-event-vent-creatures-badclown-start-announcement
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+#    startDelay: 10
+#    earliestStart: 5
+#    minimumPlayers: 10
+#    duration: 60
+#  - type: VentCrittersRule
+#    entries:
+#    - id: MobClownPepe
+#      prob: 0.07
+
+#- type: entity
+#  id: ClownPepeBallMigration
+#  parent: BaseGameRule
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: station-event-vent-creatures-badclown-start-announcement
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+#    startDelay: 10
+#    earliestStart: 5
+#    minimumPlayers: 10
+#    duration: 60
+#  - type: VentCrittersRule
+#    entries:
+#    - id: MobClownPepeBall
+#      prob: 0.03
+
+#- type: entity
+#  id: RealTysonMigration
+#  parent: BaseGameRule
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: StationEvent
+#    startAnnouncement: station-event-vent-creatures-tyson-start-announcement
+#    startAudio:
+#      path: /Audio/Announcements/attention.ogg
+#    startDelay: 10
+#    earliestStart: 5
+#    minimumPlayers: 10
+#    duration: 60
+#  - type: VentCrittersRule
+#    entries:
+#    - id: MobTysonReal
+#      prob: 0.04
+
+- type: entity
+  id: ChangelingSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 10
+    minimumPlayers: 20
+  - type: ChangelingRule
+
+- type: entity
+  parent: BaseGameRule
+  id: StarSpawn
+  components:
+  - type: StationEvent
+    weight: 4.5
+    earliestStart: 30
+    reoccurrenceDelay: 6000
+    minimumPlayers: 5
+    duration: null
+    startAnnouncementColor: red
+    startAnnouncement: orange-star-appeared
+    startAudio:
+      path: /Audio/Misc/bluealert.ogg
+      params:
+        volume: -4
+  - type: SpaceSpawnRule
+    spawnDistance: 40
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: OrangeStar
+
+- type: entity
+  parent: StarSpawn
+  id: RedStarSpawn
+  components:
+  - type: StationEvent
+    weight: 1.5
+    earliestStart: 60
+    reoccurrenceDelay: 7000
+    minimumPlayers: 5
+    duration: null
+    startAnnouncementColor: violet
+    startAnnouncement: red-star-appeared
+    startAudio:
+      path: /Audio/Misc/gamma.ogg
+      params:
+        volume: -4
+  - type: SpaceSpawnRule
+    spawnDistance: 60
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: RedStar
+

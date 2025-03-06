@@ -189,6 +189,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUiKey.Key:
+        type: SurgeryBoundUserInterface
   - type: Puller
   - type: Speech
     speechSounds: Alto
