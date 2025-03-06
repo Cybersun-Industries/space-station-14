@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
+using Content.Shared.Radium.Medical.Surgery.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
@@ -7,7 +8,6 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Body.Part;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedBodySystem))]
 public sealed partial class BodyPartComponent : Component
 {
     // Need to set this on container changes as it may be several transform parents up the hierarchy.
@@ -42,6 +42,12 @@ public sealed partial class BodyPartComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public Dictionary<string, OrganSlot> Organs = new();
+
+    [DataField, AutoNetworkedField]
+    public List<PartWound> Wounds = [];
+
+    [DataField, AutoNetworkedField]
+    public float AccumulatedFrameTime;
 
     /// <summary>
     /// These are only for VV/Debug do not use these for gameplay/systems

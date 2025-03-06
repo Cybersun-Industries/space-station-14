@@ -1,0 +1,11 @@
+﻿- type: currency
+  id: ChangelingEvolution
+  displayName: store-currency-changeling-evolution-currency
+  canWithdraw: false
+#  currencySymbol: store-currency-changeling-evolution-currency-symbol
+
+# Actually backmen (probably) but who cares
+- type: currency
+  id: StolenMutationPoint
+  displayName: store-currency-display-stolen-mutation-points
+  canWithdraw: false

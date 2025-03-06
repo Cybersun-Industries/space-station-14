@@ -1,0 +1,30 @@
+- type: entity
+  id: AdvancedRadiationCollectorNoTank
+  suffix: No tank
+  parent: RadiationCollector
+  components:
+  - type: RadiationCollector
+    chargeModifier: 7500
+    radiationReactiveGases:
+    - reactantPrototype: Plasma
+      powerGenerationEfficiency: 2
+      reactantBreakdownRate: 0.000001
+  - type: ItemSlots
+    slots:
+      gas_tank:
+        whitelist:
+          components:
+          - GasTank
+
+- type: entity
+  id: AdvancedRadiationCollectorFullTank
+  suffix: Filled tank
+  parent: AdvancedRadiationCollectorNoTank
+  components:
+  - type: ItemSlots
+    slots:
+      gas_tank:
+        startingItem: ExtendedPlasmaTankFilled
+        whitelist:
+          components:
+          - GasTank

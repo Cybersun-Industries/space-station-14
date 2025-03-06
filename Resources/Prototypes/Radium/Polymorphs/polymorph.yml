@@ -1,0 +1,32 @@
+﻿- type: polymorph
+  id: WizardForcedMothroach
+  configuration:
+    entity: MobMothroach
+    forced: true
+    inventory: Drop
+    transferName: true
+    transferDamage: true
+    revertOnCrit: true
+    revertOnDeath: true
+    duration: 5
+
+- type: polymorph
+  id: SlugcatForced
+  configuration:
+    entity: MobSlugCat
+    forced: true
+    inventory: Drop
+    transferName: false
+    transferDamage: true
+    revertOnCrit: true
+    revertOnDeath: true
+    duration: 35
+
+- type: polymorph
+  id: ChangelingMonkey
+  configuration:
+    entity: MobMonkey
+    inventory: Drop
+    revertOnCrit: true
+    revertOnDeath: true
+    cooldown: 60
