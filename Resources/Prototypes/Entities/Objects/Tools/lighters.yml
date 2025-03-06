@@ -88,6 +88,11 @@
     radius: 1.1 #smallest possible
     color: orange
   - type: ItemTogglePointLight
+  # START RADIUM: SURGERY
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Burn
+    modifier: 1.1
+  # END RADIUM: SURGERY
 
 - type: entity
   name: cheap lighter
@@ -117,7 +122,12 @@
         - ReagentId: WeldingFuel
           Quantity: 4
         maxVol: 4 #uses less fuel than a welder, so this isnt as bad as it looks
-
+  # START RADIUM: SURGERY
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Burn
+    modifier: 0.6
+  # END RADIUM: SURGERY
+  -
 - type: entity
   name: flippo lighter
   parent: BaseItem
@@ -210,6 +220,11 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  # START RADIUM: SURGERY
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Burn
+    modifier: 1.6
+  # END RADIUM: SURGERY
 
 - type: entity
   name: flippo engraved lighter

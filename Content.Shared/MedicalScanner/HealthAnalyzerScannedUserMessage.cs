@@ -1,3 +1,5 @@
+using Content.Shared.Body.Part;
+using Content.Shared.Radium.Medical.Surgery.Components;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.MedicalScanner;
@@ -13,16 +15,19 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public float BloodLevel;
     public bool? ScanMode;
     public bool? Bleeding;
-    public bool? Unrevivable;
+    public bool? Unreviveable;
+    public SurgeryStepData? SurgeryData;
+    public IReadOnlyDictionary<(BodyPartType, BodyPartSymmetry), (int, bool)>? DamagedBodyParts;
 
-    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable)
+    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, SurgeryStepData? surgeryStep, IReadOnlyDictionary<(BodyPartType, BodyPartSymmetry), (int, bool)>? damagedBodyParts, bool? unreviveable)
     {
         TargetEntity = targetEntity;
         Temperature = temperature;
         BloodLevel = bloodLevel;
         ScanMode = scanMode;
         Bleeding = bleeding;
-        Unrevivable = unrevivable;
+        SurgeryData = surgeryStep;
+        DamagedBodyParts = damagedBodyParts;
+        Unreviveable = unreviveable;
     }
 }
-
