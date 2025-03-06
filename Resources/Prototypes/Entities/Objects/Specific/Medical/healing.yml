@@ -135,6 +135,11 @@
     count: 10
   - type: StackPrice
     price: 5
+  # START RADIUM: SURGERY
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Bandage
+    modifier: 2.5
+  # END RADIUM: SURGERY
 
 - type: entity
   id: Brutepack1
@@ -305,6 +310,11 @@
     count: 10
   - type: StackPrice
     price: 10
+  # START RADIUM: SURGERY
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Bandage
+    modifier: 1.5
+  # END RADIUM: SURGERY
 
 - type: entity
   id: Gauze1

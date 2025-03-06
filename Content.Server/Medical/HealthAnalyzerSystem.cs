@@ -1,7 +1,10 @@
 using Content.Server.Body.Components;
 using Content.Server.Medical.Components;
 using Content.Server.PowerCell;
+using Content.Server.Radium.Medical.Surgery.Components;
+using Content.Server.Radium.Medical.Surgery.Systems;
 using Content.Server.Temperature.Components;
+using Content.Shared.Body.Part;
 using Content.Shared.Traits.Assorted;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
@@ -14,9 +17,12 @@ using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
+using Content.Shared.Radium.Medical.Surgery.Components;
+using Content.Shared.Radium.Medical.Surgery.Prototypes;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Medical;
@@ -32,6 +38,9 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly ServerDamagePartsSystem _damageParts = default!;
 
     public override void Initialize()
     {
@@ -211,13 +220,40 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
 
-        _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
-            GetNetEntity(target),
-            bodyTemperature,
-            bloodAmount,
-            scanMode,
-            bleeding,
-            unrevivable
-        ));
+        SurgeryStepComponent? currentStep = null;
+        string? operationName = null;
+
+        if (TryComp<SurgeryInProgressComponent>(target, out var surgeryComponent))
+        {
+            currentStep = surgeryComponent.CurrentStep;
+            if (surgeryComponent.SurgeryPrototypeId != null)
+            {
+                if (_prototype.TryIndex<SurgeryOperationPrototype>(surgeryComponent.SurgeryPrototypeId,
+                        out var surgery))
+                {
+                    operationName = surgery.LocalizedName;
+                }
+            }
+        }
+
+        IReadOnlyDictionary<(BodyPartType, BodyPartSymmetry), (int, bool)>? damagedBodyParts = null;
+
+        if (HasComp<BodyPartComponent>(target))
+        {
+            damagedBodyParts = _damageParts.GetDamagedParts(target);
+        }
+
+        _uiSystem.ServerSendUiMessage(healthAnalyzer,
+            HealthAnalyzerUiKey.Key,
+            new HealthAnalyzerScannedUserMessage(
+                GetNetEntity(target),
+                bodyTemperature,
+                bloodAmount,
+                scanMode,
+                bleeding,
+                new SurgeryStepData(currentStep, operationName),
+                damagedBodyParts,
+                unrevivable
+            ));
     }
 }

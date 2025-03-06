@@ -105,6 +105,11 @@
     price: 40
   - type: IgnitionSource
     temperature: 700
+  # START RADIUM: SURGERY
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Burn
+    modifier: 1.8
+  # END RADIUM: SURGERY
 
 - type: entity
   name: industrial welding tool
@@ -200,3 +205,8 @@
     enabled: false
     radius: 1.0
     color: orange
+  # START RADIUM: SURGERY
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Burn
+    modifier: 1.1
+  # END RADIUM: SURGERY
