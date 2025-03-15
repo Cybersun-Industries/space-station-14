@@ -1,0 +1,13 @@
+# Tier 2
+
+- type: technology
+  id: AdvancedTreatment
+  name: research-technology-advanced-treatment
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: regenerative-mesh
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - BorgModuleDefibrillator

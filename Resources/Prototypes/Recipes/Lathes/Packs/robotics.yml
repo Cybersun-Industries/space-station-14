@@ -44,7 +44,6 @@
   - BorgModuleGardening
   - BorgModuleHarvesting
   - BorgModuleDefibrillator
-  - BorgModuleAdvancedTreatment
 
 - type: latheRecipePack
   id: MechParts
