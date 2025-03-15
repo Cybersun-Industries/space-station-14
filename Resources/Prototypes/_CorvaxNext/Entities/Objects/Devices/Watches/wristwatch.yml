@@ -98,7 +98,6 @@
     updateTargetName: true
     canRetarget: true
   - type: Pda
-    state: pda
     paiSlot:
       priority: -2
       whitelist:
@@ -140,14 +139,14 @@
         - NukeopsRole
     - label: corvax-hidden-desc-WristwatchSyndi-research
       jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
+      - ResearchAssistant
+      - ResearchDirector
+      - Scientist
+      - Borg
     - label: corvax-hidden-desc-WristwatchSyndi-detective
       jobRequired:
-        - Detective
+      - Detective
     - label: corvax-hidden-desc-WristwatchSyndi-security
       jobRequired:
-        - HeadOfSecurity
-        - Warden
+      - HeadOfSecurity
+      - Warden

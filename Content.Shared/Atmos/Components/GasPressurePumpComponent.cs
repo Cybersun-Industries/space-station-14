@@ -24,4 +24,10 @@ public sealed partial class GasPressurePumpComponent : Component
     [DataField]
     [GuidebookData]
     public float MaxTargetPressure = Atmospherics.MaxOutputPressure;
+
+    // Corvax-Next-AutoPipes-Start
+    [DataField]
+    public bool StartOnMapInit { get; set; }
+    // Corvax-Next-AutoPipes-End
+
 }

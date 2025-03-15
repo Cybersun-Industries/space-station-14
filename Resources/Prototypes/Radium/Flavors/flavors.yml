@@ -1,14 +1,4 @@
 - type: flavor
-  id: cucumber
-  flavorType: Complex
-  description: как огурец
-
-- type: flavor
-  id: cucumberjuice
-  flavorType: Complex
-  description: как огуречный сок
-
-- type: flavor
   id: moonlin
   flavorType: Complex
   description: как луна
