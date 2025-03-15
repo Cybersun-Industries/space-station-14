@@ -10,5 +10,15 @@
     BoxBottle: 3
     ClothingEyesHudMedical: 2
     ClothingEyesEyepatchHudMedical: 2
+    # START RADIUM: SURGERY
+    Hemostat: 5
+    SawElectric: 5
+    Cautery: 5
+    Retractor: 5
+    Scalpel: 5
+    Drapes: 8
+    BoneMesh: 10
+    RegenerativeMesh: 5
+    # END RADIUM: SURGERY
   contrabandInventory:
     FoodApple: 1
