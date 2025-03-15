@@ -228,36 +228,6 @@
   yield: 2
 
 - type: seed
-  id: cucumber
-  name: seeds-cucumber-name
-  noun: seeds-noun-seeds
-  displayName: seeds-cucumber-display-name
-  plantRsi: Radium/Objects/Specific/Hydroponics/cucumber.rsi
-  packetPrototype: CucumberSeeds
-  productPrototypes:
-    - FoodCucumber
-  lifespan: 45
-  maturation: 8
-  production: 5
-  potency: 2
-  yield: 4
-  idealLight: 8
-  waterConsumption: 0.60
-  chemicals:
-    Nutriment:
-      Min: 1
-      Max: 6
-      PotencyDivisor: 30
-    Vitamin:
-      Min: 1
-      Max: 5
-      PotencyDivisor: 20
-    Water:
-      Min: 1
-      Max: 10
-      PotencyDivisor: 40
-
-- type: seed
   id: bomblemon
   name: seeds-bomblemon-name
   noun: seeds-noun-seeds
