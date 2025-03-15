@@ -829,22 +829,6 @@
         amount: -5
 
 - type: reagent
-  id: CucumberJuice
-  name: reagent-name-cucumberjuice
-  group: Medicine
-  desc: reagent-desc-cucumberjuice
-  physicalDesc: reagent-physical-desc-aromatic
-  flavor: cucumberjuice
-  color: "#528415"
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:HealthChange
-        damage:
-          groups:
-            Airloss: -2
-
-- type: reagent
   id: Moonlin
   name: reagent-name-moonlin
   group: Narcotics

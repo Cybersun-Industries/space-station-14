@@ -325,6 +325,12 @@
   speaker: oleg
 
 - type: ttsVoice
+  id: Livsy
+  name: tts-voice-name-oleg
+  sex: Male
+  speaker: oleg
+
+- type: ttsVoice
   id: Dryad
   name: tts-voice-name-oleg
   sex: Male
