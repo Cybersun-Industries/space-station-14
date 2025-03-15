@@ -93,6 +93,11 @@
   - SyringeCryostasis
   - BluespaceBeaker
   - SyringeBluespace
+  # RADIUM START: FIX CORVAX-NEXT RECIPES
+  - NTBodyBag
+  - RadiationBodyBag
+  - BluespaceBodyBag
+  # RADIUM END: FIX CORVAX-NEXT RECIPES
 
 - type: latheRecipePack
   id: MedicalBoards

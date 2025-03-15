@@ -29,6 +29,9 @@
   - HoloprojectorField
   - SignallerAdvanced
   - DeviceQuantumSpinInverter
+  # RADIUM START: FIX CORVAX-NEXT RECIPES
+  - ArtificialBluespaceCrystal
+  # RADIUM END: FIX CORVAX-NEXT RECIPES
 
 - type: latheRecipePack
   id: ScienceClothing
@@ -94,6 +97,21 @@
   - APECircuitboard
   - ArtifactAnalyzerMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard
+  # RADIUM START: FIX CORVAX-NEXT RECIPES
+  - MachineBluespaceTransitorCircuitboard
+  - MachineBluespaceHarvesterCircuitboard
+  - AsimovCircuitBoard
+  - CorporateCircuitBoard
+  - NTDefaultCircuitBoard
+  - CommandmentCircuitBoard
+  - PaladinCircuitBoard
+  - LiveLetLiveCircuitBoard
+  - StationEfficiencyCircuitBoard
+  - RobocopCircuitBoard
+  - GameMasterCircuitBoard
+  - ArtistCircuitBoard
+  - NutimovCircuitBoard
+  # RADIUM END: FIX CORVAX-NEXT RECIPES
 
 - type: latheRecipePack
   id: CameraBoards
