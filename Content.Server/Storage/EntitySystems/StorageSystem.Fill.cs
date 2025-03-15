@@ -31,7 +31,7 @@ public sealed partial class StorageSystem
         }
     }
 
-    public void FillStorage(Entity<StorageFillComponent?, StorageComponent?> entity) // Corvax-Next-Cards
+    private void FillStorage(Entity<StorageFillComponent?, StorageComponent?> entity)
     {
         var (uid, component, storage) = entity;
 
