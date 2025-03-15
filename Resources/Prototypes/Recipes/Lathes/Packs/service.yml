@@ -44,6 +44,7 @@
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
   - MegaSprayBottle
+  - PlantAnalyzer # RADIUM: FIX CORVAX NEXT RECIPES
 
 - type: latheRecipePack
   id: Instruments

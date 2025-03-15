@@ -96,6 +96,7 @@
   - NTBodyBag
   - RadiationBodyBag
   - BluespaceBodyBag
+  - PrisonerBodyBag
   # RADIUM END: FIX CORVAX-NEXT RECIPES
 
 - type: latheRecipePack
