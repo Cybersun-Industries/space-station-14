@@ -6,7 +6,7 @@
   - type: StorageFill
     contents:
       - id: EmergencyMedipen
-        amount: 12
+        amount: 8
 
 - type: entity
   id: MedkitSurvivalMedipenFilled
@@ -16,4 +16,4 @@
   - type: StorageFill
     contents:
     - id: SurvivalMedipen
-      amount: 12
+      amount: 8
