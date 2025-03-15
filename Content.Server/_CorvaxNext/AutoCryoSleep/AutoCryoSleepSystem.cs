@@ -81,6 +81,15 @@ public sealed class AutoCryoSleepSystem : EntitySystem
     {
         if (!_enabled)
             return;
+        var metadata = MetaData(ent);
+        if (metadata.LifeStage is ComponentLifeStage.Removing
+            or ComponentLifeStage.Stopping
+            or ComponentLifeStage.Deleted
+            or ComponentLifeStage.Stopped)
+            return;
+        if (metadata.Deleted || metadata.EntityLifeStage is EntityLifeStage.Deleted
+                or EntityLifeStage.Terminating)
+            return;
 
         var comp = EnsureComp<AutoCryoSleepComponent>(ent);
         comp.Disconnected = _timing.CurTime;
