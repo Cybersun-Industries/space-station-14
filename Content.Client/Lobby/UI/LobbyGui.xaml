@@ -22,13 +22,6 @@
                               Name="HeaderContainer"
                               Access="Public"
                               SeparationOverride="4">
-                    <Label Margin="8 0 0 0" StyleClasses="LabelHeadingBigger"
-                           VAlign="Center"
-                           HorizontalExpand="True"
-                           HorizontalAlignment="Left"
-                           FontColorOverride="{x:Static style:StyleNano.NanoGold}"
-                           FontColorShadowOverride="{x:Static style:StyleNano.DisabledFore}"
-                           Text="{Loc 'ui-lobby-title'}" />
                     <Label Name="ServerName" Access="Public"
                            StyleClasses="LabelHeadingBigger"
                            VAlign="Center"
