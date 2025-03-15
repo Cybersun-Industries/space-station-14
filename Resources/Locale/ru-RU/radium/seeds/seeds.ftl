@@ -28,9 +28,6 @@ seeds-mimepod-display-name = мим-под
 seeds-honkplant-name = растение клаксона
 seeds-honkplant-display-name = куст клаксона
 
-seeds-cucumber-name = огурец
-seeds-cucumber-display-name = семечко огурца
-
 seeds-bomblemon-name = взрывной лимон
 seeds-bomblemon-display-name = взрывное лимонное дерево
 

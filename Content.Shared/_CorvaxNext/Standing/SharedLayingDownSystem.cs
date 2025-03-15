@@ -1,6 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared._CorvaxNext.NextVars;
-using Content.Shared._CorvaxNext.Targeting;
 using Content.Shared.Body.Components;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
@@ -320,7 +318,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
                 obj.Value,
                 uid,
                 PopupType.MediumCaution);
-            _damageable.TryChangeDamage(uid, new DamageSpecifier() { DamageDict = { { "Blunt", 5 } } }, ignoreResistances: true, canEvade: true, targetPart: TargetBodyPart.Head);
+            _damageable.TryChangeDamage(uid, new DamageSpecifier() { DamageDict = { { "Blunt", 5 } } }, ignoreResistances: true);
             _stun.TryStun(uid, TimeSpan.FromSeconds(2), true);
             _audioSystem.PlayPredicted(_bonkSound, uid, obj.Value);
             return false;

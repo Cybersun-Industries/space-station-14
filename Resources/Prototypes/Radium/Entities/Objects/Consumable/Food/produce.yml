@@ -164,36 +164,6 @@
     - Ambrosia
 
 - type: entity
-  name: огурец
-  parent: FoodProduceBase
-  id: FoodCucumber
-  description: Огурец даёт силы и воду.
-  components:
-  - type: FlavorProfile
-    flavors:
-      - cucumber
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 21
-        reagents:
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Water
-          Quantity: 10
-  - type: Sprite
-    sprite: Radium/Objects/Specific/Hydroponics/cucumber.rsi
-  - type: Produce
-    seedId: cucumber
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CucumberJuice
-        Quantity: 10
-
-- type: entity
   name: взрывной лимон
   parent: FoodProduceBase
   id: FoodBombLemon
