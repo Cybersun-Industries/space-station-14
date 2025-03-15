@@ -100,7 +100,7 @@
     action: enum.SurgeryTypeEnum.Incise
     modifier: 1.6
   # END RADIUM: SURGERY
-  -
+
 - type: entity
   name: shiv
   id: ScalpelShiv
@@ -131,7 +131,7 @@
     action: enum.SurgeryTypeEnum.Incise
     modifier: 2.1
   # END RADIUM: SURGERY
-  -
+
 - type: entity
   name: laser scalpel
   id: ScalpelLaser
