@@ -12,14 +12,14 @@
             <BoxContainer
                 Name="RootContainer"
                 Orientation="Vertical"
-                Margin="40 15 0 0">
-                <Label
-                    Name="NoPatientDataText"
-                    Text="{Loc health-analyzer-window-no-patient-data-text}" />
+                Margin="30 15 0 0">
                 <BoxContainer
                     Name="PatientDataContainer"
                     Orientation="Vertical"
-                    Margin="0 5 5 10">
+                    Margin="0 35 5 10">
+                    <Label
+                        Name="NoPatientDataText"
+                        Text="{Loc health-analyzer-window-no-patient-data-text}" />
                     <BoxContainer Name="ScanModePanel" HorizontalExpand="True" Visible="False" Margin="0 20 30 0">
                         <Label
                             Name="ScanMode"
@@ -42,7 +42,7 @@
                     <Label
                         Name="Bleeding"
                         Margin="0 5 0 0" />
-                    <controls:HLine Color="#113E1B" SetHeight="5" Margin="-37 5 0 0" SetWidth="605"></controls:HLine>
+                    <controls:HLine Color="#113E1B" SetHeight="5" Margin="-27 5 0 0" SetWidth="605"></controls:HLine>
                     <Label
                         Name="patientDamageAmount"
                         Margin="0 10 0 0" />
@@ -51,7 +51,7 @@
                     Name="GroupsContainer"
                     Orientation="Vertical">
                 </BoxContainer>
-                <controls:HLine Color="#113E1B" SetHeight="5" Margin="-40 0 0 0" SetWidth="605"></controls:HLine>
+                <controls:HLine Color="#113E1B" SetHeight="5" Margin="-31 -15 0 0" SetWidth="605"></controls:HLine>
                 <Label Name="SurgeryNameLabel" HorizontalAlignment="Left" Margin="0 24 0 0"/>
                         <!--<Label Name="BodyPartsDescription" Margin="0 10 0 0" HorizontalAlignment="Left"></Label> -->
 
