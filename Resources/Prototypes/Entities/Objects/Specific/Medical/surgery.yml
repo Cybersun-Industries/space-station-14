@@ -174,7 +174,11 @@
   - type: Item
     heldPrefix: hemostat
     storedRotation: 90
-
+  # START RADIUM: SURGERY
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Clamp
+    modifier: 2.2
+  # END RADIUM: SURGERY
   # - type: entity
   #   name: bone setter
   #   id: BoneSetter
