@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Content.Server.Cuffs;
-using Content.Server.DetailExaminable;
 using Content.Server.Emp;
 using Content.Server.Flash;
 using Content.Server.Flash.Components;
@@ -17,6 +16,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
+using Content.Shared.DetailExaminable;
 using Content.Shared.DoAfter;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
