@@ -24,6 +24,13 @@
                     Title="{Loc 'ui-options-highlights-color'}"
                     Example="{Loc 'ui-options-highlights-color-example'}"/>
                 <!-- Corvax-Highlights-End -->
+                <ui:OptionSlider Name="ChatWindowOpacitySlider" Title="{Loc 'ui-options-chat-window-opacity'}" />
+                <ui:OptionSlider Name="SpeechBubbleTextOpacitySlider" Title="{Loc 'ui-options-speech-bubble-text-opacity'}" />
+                <ui:OptionSlider Name="SpeechBubbleSpeakerOpacitySlider" Title="{Loc 'ui-options-speech-bubble-speaker-opacity'}" />
+                <ui:OptionSlider Name="SpeechBubbleBackgroundOpacitySlider" Title="{Loc 'ui-options-speech-bubble-background-opacity'}" />
+                <Label Text="{Loc 'ui-options-accessability-header-content'}"
+                       StyleClasses="LabelKeyText"/>
+                <CheckBox Name="CensorNudityCheckBox" Text="{Loc 'ui-options-censor-nudity'}" />
             </BoxContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />

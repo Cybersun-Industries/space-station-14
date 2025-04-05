@@ -2,6 +2,7 @@ using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using System.Linq;
+using Content.Client.VendingMachines.UI;
 using Content.Shared._CorvaxNext.Medical.SmartFridge;
 using SmartFridgeMenu = Content.Client._CorvaxNext.Medical.SmartFridge.UI.SmartFridgeMenu;
 

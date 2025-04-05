@@ -1,20 +1,20 @@
-using Robust.Server.GameObjects;
+using Content.Server._CorvaxNext.Ghostbar.Components;
+using Content.Server.Antag.Components;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
-using Content.Server.Station.Systems;
-using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
-using Robust.Server.Maps;
-using Robust.Shared.Random;
-using Content.Shared.Ghost;
-using Content.Server._CorvaxNext.Ghostbar.Components;
 using Content.Server.Mind;
+using Content.Server.Station.Systems;
+using Content.Shared.Ghost;
 using Content.Shared.Mind.Components;
-using Content.Shared.Roles;
-using Content.Server.Antag.Components;
-using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Players;
+using Content.Shared.Roles;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._CorvaxNext.Ghostbar;
 
@@ -28,9 +28,10 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
-    private const string MapPath = "Maps/Nonstations/ghostbar.yml";
-
-    private static readonly List<ProtoId<JobPrototype>> _jobComponents = ["Passenger", "Bartender", "Chef"];
+    private static readonly List<ProtoId<JobPrototype>> _jobComponents = new()
+    {
+        "Passenger", "Bartender", "Botanist", "Chef", "Janitor"
+    };
 
     public override void Initialize()
     {
@@ -39,13 +40,13 @@ public sealed class GhostBarSystem : EntitySystem
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(OnPlayerGhosted);
     }
 
+    const string MapPath = "Maps/_Goobstation/Nonstations/ghostbar.yml";
     private void OnRoundStart(RoundStartingEvent ev)
     {
-        _mapSystem.CreateMap(out var mapId);
-        var options = new MapLoadOptions { LoadMap = true };
+        var resPath = new ResPath(MapPath);
 
-        if (_mapLoader.TryLoad(mapId, MapPath, out _, options))
-            _mapSystem.SetPaused(mapId, false);
+        if (_mapLoader.TryLoadMap(resPath, out var map, out _, new DeserializationOptions { InitializeMaps = true }))
+            _mapSystem.SetPaused(map.Value.Comp.MapId, false);
     }
 
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
@@ -58,9 +59,15 @@ public sealed class GhostBarSystem : EntitySystem
             return;
         }
 
-        if (!_entityManager.HasComponent<GhostComponent>(player.AttachedEntity))
+        if (!_entityManager.TryGetComponent<GhostComponent>(player.AttachedEntity, out var ghost))
         {
             Log.Warning($"User {player.Name} tried to spawn at ghost bar without being a ghost.");
+            return;
+        }
+
+        if (!ghost.CanEnterGhostBar)
+        {
+            Log.Warning($"User {player.Name} tried to enter ghost bar while they cannot enter it.");
             return;
         }
 
@@ -106,3 +113,4 @@ public sealed class GhostBarSystem : EntitySystem
         _entityManager.DeleteEntity(uid);
     }
 }
+
