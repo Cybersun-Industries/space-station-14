@@ -39,7 +39,6 @@ public sealed class PrototypeSaveTest
 
         var server = pair.Server;
 
-        var mapManager = server.ResolveDependency<IMapManager>();
         var entityMan = server.ResolveDependency<IEntityManager>();
         var prototypeMan = server.ResolveDependency<IPrototypeManager>();
         var seriMan = server.ResolveDependency<ISerializationManager>();
