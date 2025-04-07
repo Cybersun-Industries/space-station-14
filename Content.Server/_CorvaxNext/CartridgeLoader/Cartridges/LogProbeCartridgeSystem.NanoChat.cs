@@ -1,12 +1,16 @@
+using Content.Server.Popups;
 using Content.Shared.Audio;
 using Content.Shared.CartridgeLoader;
 using Content.Shared._CorvaxNext.CartridgeLoader.Cartridges;
 using Content.Shared._CorvaxNext.NanoChat;
+using Robust.Server.Audio;
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 
 public sealed partial class LogProbeCartridgeSystem
 {
+    [Dependency] private readonly PopupSystem _popupSystem = null!;
+    [Dependency] private readonly AudioSystem _audioSystem = null!;
     private void InitializeNanoChat()
     {
         SubscribeLocalEvent<NanoChatRecipientUpdatedEvent>(OnRecipientUpdated);
