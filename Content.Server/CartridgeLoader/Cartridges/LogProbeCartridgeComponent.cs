@@ -34,10 +34,4 @@ public sealed partial class LogProbeCartridgeComponent : Component
     /// </summary>
     [DataField]
     public NanoChatData? ScannedNanoChatData;
-
-    /// <summary>
-    /// Corvax-Next-PDAChat: The last scanned NanoChat data, if any
-    /// </summary>
-    [DataField]
-    public NanoChatData? ScannedNanoChatData;
 }

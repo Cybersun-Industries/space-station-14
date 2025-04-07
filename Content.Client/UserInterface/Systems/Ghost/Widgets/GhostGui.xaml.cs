@@ -46,20 +46,26 @@ public sealed partial class GhostGui : UIWidget
         Visible = false;
     }
 
-    public void Update(int? roles, bool? canReturnToBody)
+    // Ghoob edit
+    public void Update(int? roles, bool? canReturnToBody, bool? canEnterGhostBar = true, bool? canTakeGhostRoles = true)
     {
         ReturnToBodyButton.Disabled = !canReturnToBody ?? true;
+        // Goobstation start
+        GhostBarButton.Disabled = !canEnterGhostBar ?? true;
+        GhostRolesButton.Disabled = !canTakeGhostRoles ?? true;
+        // Goobstation end
 
         if (roles != null)
         {
             GhostRolesButton.Text = Loc.GetString("ghost-gui-ghost-roles-button", ("count", roles));
-
-            if (roles > _prevNumberRoles)
+            if (roles > 0)
             {
                 GhostRolesButton.StyleClasses.Add(StyleBase.ButtonCaution);
             }
-
-            _prevNumberRoles = (int)roles;
+            else
+            {
+                GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonCaution);
+            }
         }
 
         TargetWindow.Populate();
