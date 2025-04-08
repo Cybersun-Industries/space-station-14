@@ -348,11 +348,11 @@ public abstract class SharedLayingDownSystem : EntitySystem
             standingState.CurrentState is not StandingState.Standing ||
             _buckle.IsBuckled(uid))
         {
-            if (behavior != DropHeldItemsBehavior.AlwaysDrop)
-                return false;
-
-            var ev = new DropHandItemsEvent();
-            RaiseLocalEvent(uid, ref ev);
+            if (behavior == DropHeldItemsBehavior.AlwaysDrop)
+            {
+                var ev = new DropHandItemsEvent();
+                RaiseLocalEvent(uid, ref ev);
+            }
 
             return false;
         }

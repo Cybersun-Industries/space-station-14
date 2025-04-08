@@ -19,6 +19,7 @@ using Content.Shared.Damage;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Damage.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Mobs;
@@ -37,6 +38,7 @@ using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Zombies;
 
@@ -61,6 +63,8 @@ public sealed partial class ZombieSystem
     [Dependency] private readonly NPCSystem _npc = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly NameModifierSystem _nameMod = default!;
+
+    private static readonly ProtoId<TagPrototype> InvalidForGlobalSpawnSpellTag = "InvalidForGlobalSpawnSpell";
 
     /// <summary>
     /// Handles an entity turning into a zombie when they die or go into crit
@@ -108,6 +112,7 @@ public sealed partial class ZombieSystem
         RemComp<ReproductivePartnerComponent>(target);
         RemComp<LegsParalyzedComponent>(target);
         RemComp<ComplexInteractionComponent>(target);
+        RemComp<SlowOnDamageComponent>(target);
 
         //funny voice
         var accentType = "zombie";
@@ -132,6 +137,16 @@ public sealed partial class ZombieSystem
         melee.Range = 1.2f;
         melee.Angle = 0.0f;
         melee.HitSound = zombiecomp.BiteSound;
+
+        DirtyFields(target, melee, null, fields:
+        [
+            nameof(MeleeWeaponComponent.Animation),
+            nameof(MeleeWeaponComponent.WideAnimation),
+            nameof(MeleeWeaponComponent.AltDisarm),
+            nameof(MeleeWeaponComponent.Range),
+            nameof(MeleeWeaponComponent.Angle),
+            nameof(MeleeWeaponComponent.HitSound),
+        ]);
 
         if (mobState.CurrentState == MobState.Alive)
         {
@@ -172,8 +187,8 @@ public sealed partial class ZombieSystem
                 DamageDict = new()
                 {
                     { "Slash", 13 },
-                    { "Piercing", 7 },
-                    { "Structural", 10 }
+                    { "Piercing", 8 },
+                    { "Structural", 20 }
                 }
             };
             melee.Damage = dspec;
@@ -185,6 +200,18 @@ public sealed partial class ZombieSystem
             pryComp.Force = true;
 
             Dirty(target, pryComp);
+
+            // Humanoid zombie now deals stamina damage! ye.
+            AddComp<StaminaDamageOnHitComponent>(target);
+            var staminDamage = EnsureComp<StaminaDamageOnHitComponent>(target);
+            staminDamage.Damage = 15f;
+
+            Dirty(target, staminDamage);
+
+            var staminaHp = EnsureComp<StaminaComponent>(target);
+            staminaHp.CritThreshold = 200f;
+
+            Dirty(target, staminaHp);
         }
 
         Dirty(target, melee);
@@ -281,6 +308,6 @@ public sealed partial class ZombieSystem
 
         //Need to prevent them from getting an item, they have no hands.
         // Also prevents them from becoming a Survivor. They're undead.
-        _tag.AddTag(target, "InvalidForGlobalSpawnSpell");
+        _tag.AddTag(target, InvalidForGlobalSpawnSpellTag);
     }
 }

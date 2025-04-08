@@ -26,7 +26,8 @@
     - type: Loadout
       prototypes: [PodClownGear]
     - type: RandomMetadata
-      nameSegments: [clown_basefun]
+      nameSegments:
+      - NamesClown
     - type: Clumsy
     - type: TriggerOnMobstateChange
       mobState:
@@ -57,7 +58,8 @@
   - type: Loadout
     prototypes: [PodMimeGear]
   - type: RandomMetadata
-    nameSegments: [mime_names]
+    nameSegments:
+    - NamesClown
   - type: TriggerOnMobstateChange
     mobState:
     - Dead

@@ -3,6 +3,9 @@
   id: ApiStorageImplant
   categories: [ HideSpawnMenu ]
   components:
+  - type: Storage
+    grid:
+    - 0,0,2,2
   - type: StorageFill
     contents:
     - id: ToolboxApi

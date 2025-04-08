@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Ghost;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedGhostSystem))]
-[AutoGenerateComponentState(true), AutoGenerateComponentPause]
+[AutoGenerateComponentState(true)]
 public sealed partial class GhostComponent : Component
 {
     // Actions
@@ -41,7 +41,7 @@ public sealed partial class GhostComponent : Component
 
     // End actions
 
-    [ViewVariables(VVAccess.ReadWrite), DataField, AutoPausedField]
+    [ViewVariables(VVAccess.ReadWrite), DataField]
     public TimeSpan TimeOfDeath = TimeSpan.Zero;
 
     [DataField("booRadius"), ViewVariables(VVAccess.ReadWrite)]
@@ -82,14 +82,6 @@ public sealed partial class GhostComponent : Component
         }
     }
 
-    // Goobstation start
-    [DataField]
-    public bool CanEnterGhostBar = true;
-
-    [DataField]
-    public bool CanTakeGhostRoles = true;
-    // Goobstation end
-
     /// <summary>
     /// Ghost color
     /// </summary>
@@ -99,6 +91,14 @@ public sealed partial class GhostComponent : Component
 
     [DataField("canReturnToBody"), AutoNetworkedField]
     private bool _canReturnToBody;
+
+    // Goobstation start
+    [DataField]
+    public bool CanEnterGhostBar = true;
+
+    [DataField]
+    public bool CanTakeGhostRoles = true;
+    // Goobstation end
 }
 
 public sealed partial class ToggleFoVActionEvent : InstantActionEvent { }
