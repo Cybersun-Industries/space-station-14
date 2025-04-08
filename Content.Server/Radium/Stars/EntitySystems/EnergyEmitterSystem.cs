@@ -12,7 +12,7 @@ using Content.Shared.Lock;
 using Content.Shared.Popups;
 using Content.Shared.Power;
 using Content.Shared.Projectiles;
-
+using Content.Server.DeviceLinking.Events;
 using Content.Shared.Radium.Stars.Components;
 using Content.Shared.Radium.Stars.EntitySystems;
 using Content.Shared.Verbs;
