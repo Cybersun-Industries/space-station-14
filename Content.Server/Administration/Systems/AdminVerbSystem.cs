@@ -236,7 +236,7 @@ namespace Content.Server.Administration.Systems
                     {
                         Priority = -1, // This is just so it doesn't change position in the menu between freeze/unfreeze.
                         Text = Loc.GetString("admin-verbs-freeze"),
-                        Category = VerbCategory.Admin,
+                        //Radium: remove category
                         Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/snow.svg.192dpi.png")),
                         Act = () =>
                         {
@@ -253,7 +253,7 @@ namespace Content.Server.Administration.Systems
                     {
                         Priority = -1, // This is just so it doesn't change position in the menu between freeze/unfreeze.
                         Text = Loc.GetString("admin-verbs-freeze-and-mute"),
-                        Category = VerbCategory.Admin,
+                        //Radium: remove category
                         Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/snow.svg.192dpi.png")),
                         Act = () =>
                         {
@@ -269,7 +269,7 @@ namespace Content.Server.Administration.Systems
                     {
                         Priority = -1, // This is just so it doesn't change position in the menu between freeze/unfreeze.
                         Text = Loc.GetString("admin-verbs-unfreeze"),
-                        Category = VerbCategory.Admin,
+                        //Radium: remove category
                         Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/snow.svg.192dpi.png")),
                         Act = () =>
                         {
