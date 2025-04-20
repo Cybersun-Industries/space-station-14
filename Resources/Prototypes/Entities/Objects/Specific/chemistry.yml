@@ -24,7 +24,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60
+        maxVol: 60 #RADIUM: CHEM-TWEAKS#
   - type: MixableSolution
     solution: beaker
   - type: FitsInDispenser
@@ -120,7 +120,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60
+        maxVol: 60 #RADIUM: CHEM-TWEAKS#
   - type: MixableSolution
     solution: beaker
   - type: FitsInDispenser
@@ -185,10 +185,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60
+        maxVol: 60 #RADIUM: CHEM-TWEAKS#
         reagents:
         - ReagentId: Cryoxadone
-          Quantity: 50
+          Quantity: 60 #RADIUM: CHEM-TWEAKS#
 
 - type: entity
   name: large beaker
@@ -211,7 +211,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 120
+        maxVol: 120 #RADIUM: CHEM-TWEAKS#
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
@@ -261,7 +261,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 300
+        maxVol: 300 #RADIUM: CHEM-TWEAKS#
 
 - type: entity
   name: dropper
@@ -473,7 +473,7 @@
   - type: SolutionContainerManager
     solutions:
       injector:
-        maxVol: 60
+        maxVol: 60 #RADIUM: CHEM-TWEAKS#
   - type: Injector
     delay: 2.5
     injectOnly: false
@@ -504,7 +504,7 @@
   - type: SolutionContainerManager
     solutions:
       injector:
-        maxVol: 15
+        maxVol: 15 #RADIUM: CHEM-TWEAKS#
         canReact: false
   - type: Injector
     injectOnly: false
