@@ -8,8 +8,7 @@
       difficulty: 1
     - type: RoleRequirement
       roles:
-        components:
-          - ChangelingRole
+      - ChangelingRole
 - type: entity
   categories: [ HideSpawnMenu ]
   parent:

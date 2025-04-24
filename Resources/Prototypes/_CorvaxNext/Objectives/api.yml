@@ -7,8 +7,7 @@
     issuer: objective-issuer-api
   - type: RoleRequirement
     roles:
-      mindRoles:
-      - ApiRole
+    - ApiRole
 
 - type: entity
   abstract: true
