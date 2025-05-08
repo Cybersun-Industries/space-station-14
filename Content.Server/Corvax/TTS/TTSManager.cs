@@ -161,16 +161,16 @@ public sealed class TTSManager
         public string Speaker { get; set; } = "";
 
         [JsonPropertyName("ssml")]
-        public bool SSML { get; private set; } = true;
+        public bool SSML { get; private set; } = false;
 
         [JsonPropertyName("word_ts")]
-        public bool WordTS { get; private set; } = false;
+        public bool WordTS { get; private set; } = true;
 
         [JsonPropertyName("put_accent")]
         public bool PutAccent { get; private set; } = true;
 
         [JsonPropertyName("put_yo")]
-        public bool PutYo { get; private set; } = false;
+        public bool PutYo { get; private set; } = true;
 
         [JsonPropertyName("sample_rate")]
         public int SampleRate { get; private set; } = 24000;
