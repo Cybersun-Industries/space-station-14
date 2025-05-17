@@ -1,6 +1,6 @@
-﻿using Content.Shared.Body.Components;
+﻿using Content.Radium.Common.Medical.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
-using Content.Shared.Radium.Medical.Surgery.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
@@ -44,7 +44,7 @@ public sealed partial class BodyPartComponent : Component
     public Dictionary<string, OrganSlot> Organs = new();
 
     [DataField, AutoNetworkedField]
-    public List<PartWound> Wounds = [];
+    public List<PartWound> Wounds = []; //Radium: surgery
 
     [DataField, AutoNetworkedField]
     public float AccumulatedFrameTime;

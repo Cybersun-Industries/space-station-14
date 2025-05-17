@@ -1,3 +1,5 @@
+using Content.Radium.Shared.Medical.Surgery.Components;
+using Content.Radium.Shared.Medical.Surgery.Prototypes;
 using Content.Server.Body.Components;
 using Content.Server.Medical.Components;
 using Content.Server.PowerCell;
@@ -17,8 +19,6 @@ using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
-using Content.Shared.Radium.Medical.Surgery.Components;
-using Content.Shared.Radium.Medical.Surgery.Prototypes;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
