@@ -1,6 +1,7 @@
 using Content.Radium.Common.Medical.Surgery;
+using Content.Radium.Common.Medical.Surgery.Components;
+using Content.Radium.Common.Medical.Surgery.Interfaces;
 using Content.Radium.Shared.Medical.Surgery.Components;
-using Content.Radium.Shared.Medical.Surgery.Prototypes;
 using Content.Server.Body.Components;
 using Content.Server.Medical.Components;
 using Content.Server.PowerCell;
@@ -219,10 +220,10 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
 
-        SurgeryStepComponent? currentStep = null;
+        Radium.Common.Medical.Surgery.Components.SurgeryStepComponent? currentStep = null;
         string? operationName = null;
 
-        if (TryComp<SurgeryInProgressComponent>(target, out var surgeryComponent))
+        if (TryComp<Radium.Common.Medical.Surgery.Components.SurgeryInProgressComponent>(target, out var surgeryComponent))
         {
             currentStep = surgeryComponent.CurrentStep;
             if (surgeryComponent.SurgeryPrototypeId != null)

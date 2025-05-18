@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Radium.Common.Medical.Surgery;
+using Content.Radium.Common.Medical.Surgery.Interfaces;
 using Content.Server.Body.Systems;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;

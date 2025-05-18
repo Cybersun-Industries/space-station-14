@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Audio;
 
-namespace Content.Radium.Server.Medical.Surgery.Components;
+namespace Content.Radium.Common.Medical.Surgery.Components;
 
 [RegisterComponent]
 public sealed partial class DrapesComponent : Component

@@ -2,7 +2,6 @@
 using Content.Radium.Common.Medical.Surgery;
 using Content.Radium.Shared.Medical.Surgery.Components;
 using Content.Radium.Shared.Medical.Surgery.Events;
-using Content.Radium.Shared.Medical.Surgery.Prototypes;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Buckle.Systems;
@@ -62,8 +61,8 @@ public sealed partial class SurgerySystem : EntitySystem
     {
         base.Initialize();
         SubscribeNetworkEvent<BeginSurgeryEvent>(OnSurgeryStarted);
-        SubscribeLocalEvent<SurgeryInProgressComponent, InteractUsingEvent>(OnSurgeryInteract);
-        SubscribeLocalEvent<SurgeryInProgressComponent, SurgeryDoAfterEvent>(OnSurgeryDoAfter);
+        SubscribeLocalEvent<Common.Medical.Surgery.Components.SurgeryInProgressComponent, InteractUsingEvent>(OnSurgeryInteract);
+        SubscribeLocalEvent<Common.Medical.Surgery.Components.SurgeryInProgressComponent, SurgeryDoAfterEvent>(OnSurgeryDoAfter);
         SubscribeLocalEvent<MeleeWeaponComponent, DamageChangedEvent>(OnMeleeEvent);
         SubscribeLocalEvent<BodyComponent, RejuvenateEvent>(OnRejuvenate);
         InitializePostActions();
@@ -440,13 +439,13 @@ public sealed partial class SurgerySystem : EntitySystem
 
 
     private void OnSurgeryDoAfter(EntityUid uid,
-        SurgeryInProgressComponent component,
+        Common.Medical.Surgery.Components.SurgeryInProgressComponent component,
         SurgeryDoAfterEvent args)
     {
         if (args.Cancelled || component.SurgeryPrototypeId == null ||
             !_prototypeManager.TryIndex<SurgeryOperationPrototype>(component.SurgeryPrototypeId,
                 out var surgeryOperationPrototype) || surgeryOperationPrototype.Steps == null ||
-            !TryComp<SurgeryInProgressComponent>(args.Target, out var surgery))
+            !TryComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(args.Target, out var surgery))
             return;
         _prototypeManager.TryIndex<SurgeryOperationPrototype>(component.SurgeryPrototypeId,
             out _);
@@ -465,7 +464,7 @@ public sealed partial class SurgerySystem : EntitySystem
             var ev = _dynamicTypeFactory.CreateInstance(type,
                 [uid, surgeryOperationPrototype.ID, component.Symmetry]);
             RaiseLocalEvent(ev);
-            if (!TryComp<SurgeryInProgressComponent>(uid, out var newComp))
+            if (!TryComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(uid, out var newComp))
                 return;
             if (newComp.CurrentStep is { Repeatable: false })
             {
@@ -506,7 +505,7 @@ public sealed partial class SurgerySystem : EntitySystem
 
             if (ev != null)
                 RaiseLocalEvent(ev);
-            RemComp<SurgeryInProgressComponent>(uid);
+            RemComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(uid);
             _bloodstreamSystem.TryModifyBleedAmount(args.Target.Value, -100);
             _drunkSystem.TryRemoveDrunkenness(args.Target.Value);
             return;
@@ -548,7 +547,7 @@ public sealed partial class SurgerySystem : EntitySystem
             }
         }
 
-        if (HasComp<SurgeryInProgressComponent>(uid))
+        if (HasComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(uid))
         {
             surgery.CurrentStep = nextStep;
         }
@@ -557,7 +556,7 @@ public sealed partial class SurgerySystem : EntitySystem
     }
 
 
-    private void OnSurgeryInteract(EntityUid uid, SurgeryInProgressComponent component, InteractUsingEvent args)
+    private void OnSurgeryInteract(EntityUid uid, Common.Medical.Surgery.Components.SurgeryInProgressComponent component, InteractUsingEvent args)
     {
         float time;
         if (!_prototypeManager.TryIndex<SurgeryOperationPrototype>(component.SurgeryPrototypeId!, out var operation))
@@ -657,7 +656,7 @@ public sealed partial class SurgerySystem : EntitySystem
             return;
         }
 
-        _entityManager.EnsureComponent<SurgeryInProgressComponent>(entity, out var surgeryComponent);
+        _entityManager.EnsureComponent<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(entity, out var surgeryComponent);
 
         surgeryComponent.CurrentStep = operationPrototype.Steps![0];
         surgeryComponent.Symmetry = ev.Symmetry;
@@ -666,7 +665,7 @@ public sealed partial class SurgerySystem : EntitySystem
         _popupSystem.PopupEntity(Loc.GetString("surgery-target-begin"), entity, PopupType.LargeCaution);
     }
 
-    private static void UpdateStepIcon(ref SurgeryInProgressComponent component)
+    private static void UpdateStepIcon(ref Common.Medical.Surgery.Components.SurgeryInProgressComponent component)
     {
         if (component.CurrentStep != null)
         {

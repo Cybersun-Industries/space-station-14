@@ -1,4 +1,5 @@
 using Content.Radium.Common.Medical.Surgery;
+using Content.Radium.Common.Medical.Surgery.Components;
 using Content.Shared.Body.Part;
 using Robust.Shared.Serialization;
 

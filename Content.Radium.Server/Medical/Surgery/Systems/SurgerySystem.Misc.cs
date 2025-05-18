@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Content.Radium.Shared.Medical.Surgery.Prototypes;
+using Content.Radium.Common.Medical.Surgery;
 using Content.Server.Body.Systems;
 
 namespace Content.Radium.Server.Medical.Surgery.Systems;

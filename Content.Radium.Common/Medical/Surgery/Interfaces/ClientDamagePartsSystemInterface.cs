@@ -1,4 +1,4 @@
-namespace Content.Radium.Common.Medical.Surgery;
+namespace Content.Radium.Common.Medical.Surgery.Interfaces;
 
 public interface IClientDamagePartsSystem
 {

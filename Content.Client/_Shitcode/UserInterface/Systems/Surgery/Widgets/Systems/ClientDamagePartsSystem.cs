@@ -84,8 +84,6 @@ public sealed class ClientDamagePartsSystem : EntitySystem
 
 
                 result.Add((partType, partSymmetry), (component.Wounds.Count, false));
-                result.TryAdd((partType, partSymmetry),
-                    (component.Wounds.Count, false)); //isDamaged
             }
             catch (Exception)
             {

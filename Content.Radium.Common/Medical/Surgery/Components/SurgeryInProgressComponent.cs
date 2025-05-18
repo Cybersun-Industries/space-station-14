@@ -1,4 +1,4 @@
-﻿namespace Content.Radium.Common.Medical.Surgery;
+﻿namespace Content.Radium.Common.Medical.Surgery.Components;
 
 [RegisterComponent]
 public sealed partial class SurgeryInProgressComponent : Component

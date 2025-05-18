@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Content.Radium.Common.Medical.Surgery;
 using Content.Radium.Shared.Medical.Surgery.Events;
-using Content.Radium.Shared.Medical.Surgery.Prototypes;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
@@ -51,7 +50,7 @@ public sealed partial class SurgerySystem
     {
         if (!TryGetOperationPrototype(ev.PrototypeId, out var operationPrototype))
             return;
-        if (!TryComp<SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent) ||
+        if (!TryComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent) ||
             surgeryInProgressComponent.CurrentStep == null)
             return;
 
@@ -113,7 +112,7 @@ public sealed partial class SurgerySystem
 
     private void OnPierceSurgeryPostAction(PierceSurgeryEvent ev)
     {
-        if (!TryComp<SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
+        if (!TryComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
             return;
         var operation = _prototypeManager.Index<SurgeryOperationPrototype>(ev.PrototypeId);
         var damagedParts = _bodySystem.GetBodyChildren(ev.Uid)
@@ -162,14 +161,14 @@ public sealed partial class SurgerySystem
             .ToList();
         if (damagedParts.ToList().Count == 0)
         {
-            if (!TryComp<SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
+            if (!TryComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
                 return;
             if (surgeryInProgressComponent.CurrentStep != null)
                 surgeryInProgressComponent.CurrentStep.Repeatable = false;
             _popupSystem.PopupEntity("Операция провалена!", ev.Uid, PopupType.LargeCaution);
             _damageableSystem.TryChangeDamage(ev.Uid,
                 new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>("Slash"), 20));
-            RemComp<SurgeryInProgressComponent>(ev.Uid);
+            RemComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid);
             return;
         }
 
@@ -202,14 +201,14 @@ public sealed partial class SurgerySystem
             .ToList();
         if (damagedParts.ToList().Count == 0)
         {
-            if (!TryComp<SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
+            if (!TryComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
                 return;
             if (surgeryInProgressComponent.CurrentStep != null)
                 surgeryInProgressComponent.CurrentStep.Repeatable = false;
             _popupSystem.PopupEntity("Операция провалена!", ev.Uid, PopupType.LargeCaution);
             _damageableSystem.TryChangeDamage(ev.Uid,
                 new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>("Slash"), 20));
-            RemComp<SurgeryInProgressComponent>(ev.Uid);
+            RemComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid);
             return;
         }
 
@@ -242,14 +241,14 @@ public sealed partial class SurgerySystem
             .ToList();
         if (damagedParts.ToList().Count == 0)
         {
-            if (!TryComp<SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
+            if (!TryComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid, out var surgeryInProgressComponent))
                 return;
             if (surgeryInProgressComponent.CurrentStep != null)
                 surgeryInProgressComponent.CurrentStep.Repeatable = false;
             _popupSystem.PopupEntity("Операция провалена!", ev.Uid, PopupType.LargeCaution);
             _damageableSystem.TryChangeDamage(ev.Uid,
                 new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>("Blunt"), 20));
-            RemComp<SurgeryInProgressComponent>(ev.Uid);
+            RemComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid);
             return;
         }
 
@@ -330,7 +329,7 @@ public sealed partial class SurgerySystem
 
     private void OnAmputationSurgeryPostAction(AmputationSurgeryEvent ev)
     {
-        RemComp<SurgeryInProgressComponent>(ev.Uid);
+        RemComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid);
         if (!TryGetOperationPrototype(ev.PrototypeId, out var operationPrototype))
             return;
         TryComp<BodyComponent>(ev.Uid, out var bodyComponent);
@@ -429,7 +428,7 @@ public sealed partial class SurgerySystem
     private void OnLumaSurgeryPostAction(LumaSurgeryEvent ev)
     {
         Logger.GetSawmill("DEBUG").Error("Luma event raised");
-        RemComp<SurgeryInProgressComponent>(ev.Uid);
+        RemComp<Common.Medical.Surgery.Components.SurgeryInProgressComponent>(ev.Uid);
     }
 
     #endregion

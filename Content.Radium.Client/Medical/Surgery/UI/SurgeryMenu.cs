@@ -3,7 +3,7 @@ using System.Numerics;
 using Content.Client.Body.Systems;
 using Content.Client.Guidebook.Richtext;
 using Content.Client.UserInterface.Controls;
-using Content.Radium.Shared.Medical.Surgery.Prototypes;
+using Content.Radium.Common.Medical.Surgery;
 using Content.Shared.Body.Part;
 using Content.Shared.Traits.Assorted;
 using Robust.Client.UserInterface.Controls;

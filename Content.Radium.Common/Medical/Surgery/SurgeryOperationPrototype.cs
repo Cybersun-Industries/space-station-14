@@ -1,7 +1,7 @@
 ﻿using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Radium.Shared.Medical.Surgery.Prototypes;
+namespace Content.Radium.Common.Medical.Surgery;
 
 [Prototype("surgeryOperation")]
 public sealed class SurgeryOperationPrototype : IPrototype
@@ -29,7 +29,7 @@ public sealed class SurgeryOperationPrototype : IPrototype
     public SpriteSpecifier? Icon { get; private set; }
 
     [DataField("steps")]
-    public List<Common.Medical.Surgery.SurgeryStepComponent>? Steps;
+    public List<Components.SurgeryStepComponent>? Steps;
 
     [DataField("key")]
     public string EventKey = string.Empty;
