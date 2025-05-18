@@ -42,6 +42,8 @@ public static class ServerPackaging
         "Content.Shared",
         "Content.Shared.Database",
         "Content.ModuleManager", // I cant be fucked to figure out how to this dynamically
+        "Content.Corvax.Interfaces.Shared", //Corvax
+        "Content.Corvax.Interfaces.Server", //Corvax
     };
 
     private static readonly List<string> ServerExtraAssemblies = new()
