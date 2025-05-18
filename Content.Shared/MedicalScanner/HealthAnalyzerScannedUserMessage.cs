@@ -1,5 +1,6 @@
+using Content.Radium.Common.Medical.Surgery;
+using Content.Radium.Common.Medical.Surgery.Components;
 using Content.Shared.Body.Part;
-using Content.Shared.Radium.Medical.Surgery.Components;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.MedicalScanner;
