@@ -1,5 +1,4 @@
-﻿using Content.Client.Radium.Medical.Surgery.UI;
-using Content.Radium.Shared.Medical.Surgery.Events;
+﻿using Content.Radium.Shared.Medical.Surgery.Events;
 using Content.Shared.Body.Part;
 using JetBrains.Annotations;
 
@@ -8,7 +7,7 @@ namespace Content.Radium.Client.Medical.Surgery.UI;
 [UsedImplicitly]
 public sealed class SurgeryBoundUserInterface: BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly IEntityManager _entityManager = null!;
 
     [ViewVariables]
     private readonly SurgeryMenu? _surgeryMenu;

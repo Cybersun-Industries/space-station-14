@@ -1,4 +1,4 @@
-﻿using Content.Radium.Common.Medical.Components;
+﻿using Content.Radium.Common.Medical.Surgery;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Robust.Shared.Containers;

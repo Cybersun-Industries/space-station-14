@@ -17,9 +17,6 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Content.Shared.Radium.Medical.Surgery.Events;
-using Content.Shared.Radium.Medical.Surgery.Systems;
-using Content.Client.Radium.Medical.Surgery.UI.Widgets.Systems;
 using Content.Shared.Body.Part;
 
 namespace Content.Client.HealthAnalyzer.UI

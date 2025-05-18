@@ -1,21 +1,20 @@
 ﻿using Content.Client.Gameplay;
 using Content.Client.Ghost;
-using Content.Client.Radium.Medical.Surgery.UI.Widgets;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Shared.Body.Part;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 
-namespace Content.Radium.Client.Medical.Surgery.UI.Widgets.Systems;
+namespace Content.Client._Shitcode.UserInterface.Systems.Surgery.Widgets.Systems;
+
 
 public sealed class DamagePartsUiController : UIController, IOnStateEntered<GameplayState>,
     IOnSystemChanged<ClientDamagePartsSystem>
 {
-    [UISystemDependency] private readonly ClientDamagePartsSystem? _partsSystem = default;
-    [UISystemDependency] private readonly GhostSystem? _ghost = default;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [UISystemDependency] private readonly ClientDamagePartsSystem? _partsSystem = null;
+    [UISystemDependency] private readonly GhostSystem? _ghost = null;
+    [Dependency] private readonly IPlayerManager _playerManager = null!;
     private DamagePartsUi? UI => UIManager.GetActiveUIWidgetOrNull<DamagePartsUi>();
 
     public void ClearAllControls(object? sender, EventArgs eventArgs)
@@ -29,22 +28,10 @@ public sealed class DamagePartsUiController : UIController, IOnStateEntered<Game
 
         var gameplayStateLoad = UIManager.GetUIController<GameplayStateLoadController>();
         gameplayStateLoad.OnScreenLoad += OnScreenLoad;
-        gameplayStateLoad.OnScreenUnload += OnScreenUnload;
-    }
-
-    private void OnScreenUnload()
-    {
-        //var widget = UI;
-        //if (widget != null)
-        //    widget.AlertPressed -= OnAlertPressed;
     }
 
     private void OnScreenLoad()
     {
-        //var widget = UI;
-        //if (widget != null)
-        //    widget.AlertPressed += OnAlertPressed;
-
         SyncParts(_playerManager.LocalSession?.AttachedEntity);
     }
     private void SystemOnSyncParts(object? sender, IReadOnlyDictionary<(BodyPartType, BodyPartSymmetry), (int, bool)> e)
@@ -85,3 +72,4 @@ public sealed class DamagePartsUiController : UIController, IOnStateEntered<Game
         system.Dispose -= ClearAllControls;
     }
 }
+

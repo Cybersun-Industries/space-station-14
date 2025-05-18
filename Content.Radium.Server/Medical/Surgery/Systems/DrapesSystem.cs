@@ -1,5 +1,5 @@
-﻿using Content.Radium.Common.Medical.Components;
-using Content.Radium.Shared.Medical.Surgery.Components;
+﻿using Content.Radium.Common.Medical.Surgery;
+using Content.Radium.Server.Medical.Surgery.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Popups;
 using Content.Shared.Damage;
@@ -26,20 +26,20 @@ public sealed class DrapesSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<Components.DrapesComponent, AfterInteractEvent>(OnDrapesAfterInteract);
+        SubscribeLocalEvent<DrapesComponent, AfterInteractEvent>(OnDrapesAfterInteract);
     }
 
 
-    private void OnDrapesAfterInteract(Entity<Components.DrapesComponent> entity, ref AfterInteractEvent args)
+    private void OnDrapesAfterInteract(Entity<DrapesComponent> entity, ref AfterInteractEvent args)
     {
-        if (args.Handled || !args.CanReach || args.Target == null || HasComp<Components.SurgeryInProgressComponent>(entity))
+        if (args.Handled || !args.CanReach || args.Target == null || HasComp<SurgeryInProgressComponent>(entity))
             return;
 
         if (ApplyDrapes(entity, args, entity.Comp))
             args.Handled = true;
     }
 
-    private bool ApplyDrapes(EntityUid uid, InteractEvent args, Components.DrapesComponent component)
+    private bool ApplyDrapes(EntityUid uid, InteractEvent args, DrapesComponent component)
     {
         if (args.Target == null)
         {
@@ -49,7 +49,7 @@ public sealed class DrapesSystem : EntitySystem
         var target = args.Target.Value;
         var user = args.User;
 
-        if (!TryComp<Components.DrapesComponent>(uid, out var drapes))
+        if (!TryComp<DrapesComponent>(uid, out var drapes))
         {
             return false;
         }

@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Serialization;
 
-namespace Content.Radium.Common.Medical.Components;
+namespace Content.Radium.Common.Medical.Surgery;
 
 [RegisterComponent]
 public sealed partial class SurgeryStepComponent : Component

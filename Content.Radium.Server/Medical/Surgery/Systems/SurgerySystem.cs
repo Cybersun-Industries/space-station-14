@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Content.Radium.Common.Medical.Components;
+using Content.Radium.Common.Medical.Surgery;
 using Content.Radium.Shared.Medical.Surgery.Components;
 using Content.Radium.Shared.Medical.Surgery.Events;
 using Content.Radium.Shared.Medical.Surgery.Prototypes;
@@ -56,13 +56,14 @@ public sealed partial class SurgerySystem : EntitySystem
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = null!;
     [Dependency] private readonly StackSystem _stackSystem = null!;
     [Dependency] private readonly IServerConsoleHost _consoleHost = null!;
+    [Dependency] private readonly BodySystem _bodySystem = null!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeNetworkEvent<BeginSurgeryEvent>(OnSurgeryStarted);
-        SubscribeLocalEvent<Components.SurgeryInProgressComponent, InteractUsingEvent>(OnSurgeryInteract);
-        SubscribeLocalEvent<Components.SurgeryInProgressComponent, SurgeryDoAfterEvent>(OnSurgeryDoAfter);
+        SubscribeLocalEvent<SurgeryInProgressComponent, InteractUsingEvent>(OnSurgeryInteract);
+        SubscribeLocalEvent<SurgeryInProgressComponent, SurgeryDoAfterEvent>(OnSurgeryDoAfter);
         SubscribeLocalEvent<MeleeWeaponComponent, DamageChangedEvent>(OnMeleeEvent);
         SubscribeLocalEvent<BodyComponent, RejuvenateEvent>(OnRejuvenate);
         InitializePostActions();
@@ -77,17 +78,19 @@ public sealed partial class SurgerySystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-
         var query = EntityQueryEnumerator<BodyComponent>();
         while (query.MoveNext(out var uid, out _))
         {
-            var a = _damageParts.GetDamagedParts(uid).Where(g => g.Value.Item1 != 0);
+            var a = _damageParts.GetDamagedParts(uid)
+                .Where(g => g.Value.Item1 != 0);
             var list = _bodySystem.GetBodyChildren(uid).ToList();
             foreach (var pair in a)
             {
+                Enum.TryParse<BodyPartType>(pair.Key.Item1.ToString(), out var partType);
+                Enum.TryParse<BodyPartSymmetry>(pair.Key.Item1.ToString(), out var partSymmetry);
                 var part = list.FirstOrNull(g =>
-                    g.Component.PartType == pair.Key.Item1 &&
-                    g.Component.Symmetry == pair.Key.Item2);
+                    g.Component.PartType == partType &&
+                    g.Component.Symmetry == partSymmetry);
                 if (part == null)
                 {
                     continue;
@@ -206,7 +209,8 @@ public sealed partial class SurgerySystem : EntitySystem
                             BodyPartSymmetry.Right => BodyPartSymmetry.Left,
                             _ => BodyPartSymmetry.None,
                         };
-                        var diffpart = list.FirstOrNull(g => g.Component.PartType == pair.Key.Item1 &&
+                        Enum.TryParse<BodyPartType>(pair.Key.Item1.ToString(), out var partTypeL);
+                        var diffpart = list.FirstOrNull(g => g.Component.PartType == partTypeL &&
                                                              g.Component.Symmetry == diffSymmetry);
 
                         switch (part.Value.Component.Wounds.Count)
@@ -239,15 +243,10 @@ public sealed partial class SurgerySystem : EntitySystem
                         break;
                     //Empty
                     case BodyPartType.Other:
-                        break;
                     case BodyPartType.Hand:
-                        break;
                     case BodyPartType.Foot:
-                        break;
                     case BodyPartType.Tail:
                         break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
                 }
             }
         }
@@ -325,26 +324,6 @@ public sealed partial class SurgerySystem : EntitySystem
             _ => SurgeryPartEnum.Leg
         };
     }
-/*
-    private bool ShouldDamageOrgan(EntityUid uid, WoundTypeEnum woundType)
-    {
-        var list = _bodySystem.GetBodyChildren(uid);
-        var chanceModifier = 0;
-        if (woundType == WoundTypeEnum.Piercing)
-        {
-            chanceModifier += 10;
-        }
-
-        foreach (var currentPart in list)
-        {
-            if (!TryComp<BodyPartComponent>(currentPart.Id, out var part))
-                continue;
-            chanceModifier += part.Wounds.Count;
-        }
-
-        return !(_random.NextFloat(0f, 100f) <= Math.Clamp(95f - chanceModifier * 5, 0f, 100f));
-    }
-    */
 
     public bool TryApplySurgeryDamage(EntityUid uid, WoundTypeEnum woundType)
     {
@@ -461,13 +440,13 @@ public sealed partial class SurgerySystem : EntitySystem
 
 
     private void OnSurgeryDoAfter(EntityUid uid,
-        Components.SurgeryInProgressComponent component,
+        SurgeryInProgressComponent component,
         SurgeryDoAfterEvent args)
     {
         if (args.Cancelled || component.SurgeryPrototypeId == null ||
             !_prototypeManager.TryIndex<SurgeryOperationPrototype>(component.SurgeryPrototypeId,
                 out var surgeryOperationPrototype) || surgeryOperationPrototype.Steps == null ||
-            !TryComp<Components.SurgeryInProgressComponent>(args.Target, out var surgery))
+            !TryComp<SurgeryInProgressComponent>(args.Target, out var surgery))
             return;
         _prototypeManager.TryIndex<SurgeryOperationPrototype>(component.SurgeryPrototypeId,
             out _);
@@ -486,7 +465,7 @@ public sealed partial class SurgerySystem : EntitySystem
             var ev = _dynamicTypeFactory.CreateInstance(type,
                 [uid, surgeryOperationPrototype.ID, component.Symmetry]);
             RaiseLocalEvent(ev);
-            if (!TryComp<Components.SurgeryInProgressComponent>(uid, out var newComp))
+            if (!TryComp<SurgeryInProgressComponent>(uid, out var newComp))
                 return;
             if (newComp.CurrentStep is { Repeatable: false })
             {
@@ -527,7 +506,7 @@ public sealed partial class SurgerySystem : EntitySystem
 
             if (ev != null)
                 RaiseLocalEvent(ev);
-            RemComp<Components.SurgeryInProgressComponent>(uid);
+            RemComp<SurgeryInProgressComponent>(uid);
             _bloodstreamSystem.TryModifyBleedAmount(args.Target.Value, -100);
             _drunkSystem.TryRemoveDrunkenness(args.Target.Value);
             return;
@@ -569,7 +548,7 @@ public sealed partial class SurgerySystem : EntitySystem
             }
         }
 
-        if (HasComp<Components.SurgeryInProgressComponent>(uid))
+        if (HasComp<SurgeryInProgressComponent>(uid))
         {
             surgery.CurrentStep = nextStep;
         }
@@ -578,7 +557,7 @@ public sealed partial class SurgerySystem : EntitySystem
     }
 
 
-    private void OnSurgeryInteract(EntityUid uid, Components.SurgeryInProgressComponent component, InteractUsingEvent args)
+    private void OnSurgeryInteract(EntityUid uid, SurgeryInProgressComponent component, InteractUsingEvent args)
     {
         float time;
         if (!_prototypeManager.TryIndex<SurgeryOperationPrototype>(component.SurgeryPrototypeId!, out var operation))
@@ -678,7 +657,7 @@ public sealed partial class SurgerySystem : EntitySystem
             return;
         }
 
-        _entityManager.EnsureComponent<Components.SurgeryInProgressComponent>(entity, out var surgeryComponent);
+        _entityManager.EnsureComponent<SurgeryInProgressComponent>(entity, out var surgeryComponent);
 
         surgeryComponent.CurrentStep = operationPrototype.Steps![0];
         surgeryComponent.Symmetry = ev.Symmetry;
@@ -687,7 +666,7 @@ public sealed partial class SurgerySystem : EntitySystem
         _popupSystem.PopupEntity(Loc.GetString("surgery-target-begin"), entity, PopupType.LargeCaution);
     }
 
-    private static void UpdateStepIcon(ref Components.SurgeryInProgressComponent component)
+    private static void UpdateStepIcon(ref SurgeryInProgressComponent component)
     {
         if (component.CurrentStep != null)
         {

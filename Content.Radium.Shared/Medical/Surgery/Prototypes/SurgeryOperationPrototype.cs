@@ -1,15 +1,14 @@
-﻿using Content.Radium.Common.Medical.Components;
-using Robust.Shared.Prototypes;
+﻿using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Radium.Shared.Medical.Surgery.Prototypes;
 
 [Prototype("surgeryOperation")]
-public sealed partial class SurgeryOperationPrototype : IPrototype
+public sealed class SurgeryOperationPrototype : IPrototype
 {
     [IdDataField]
     [ViewVariables]
-    public string ID { get; private set; } = default!;
+    public string ID { get; private set; } = null!;
 
     [DataField(required: true)]
     public LocId Name { get; set; }
@@ -30,7 +29,7 @@ public sealed partial class SurgeryOperationPrototype : IPrototype
     public SpriteSpecifier? Icon { get; private set; }
 
     [DataField("steps")]
-    public List<SurgeryStepComponent>? Steps;
+    public List<Common.Medical.Surgery.SurgeryStepComponent>? Steps;
 
     [DataField("key")]
     public string EventKey = string.Empty;

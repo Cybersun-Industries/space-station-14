@@ -14,7 +14,6 @@ public sealed class SurgerySystem: EntitySystem
 
     private void OnSurgeryBegin(BeginSurgeryEvent ev)
     {
-        //Don't ask me about that
         RaiseNetworkEvent(ev);
     }
 }

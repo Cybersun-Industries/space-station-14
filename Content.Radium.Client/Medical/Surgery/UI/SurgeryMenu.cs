@@ -15,13 +15,11 @@ namespace Content.Radium.Client.Medical.Surgery.UI;
 
 public sealed class SurgeryMenu : DefaultWindow
 {
-    //Fucking hell...
+    [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
 
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly EntityManager _entityManager = null!;
 
-    [Dependency] private readonly EntityManager _entityManager = default!;
-
-    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
+    [Dependency] private readonly IEntitySystemManager _entitySystemManager = null!;
 
     public TextureRect Surface = new()
     {
@@ -41,12 +39,12 @@ public sealed class SurgeryMenu : DefaultWindow
     public string CurrentSelection = "Nothing";
 
     public HashSet<SurgeryOperationPrototype>
-        HeadOperationsList = new(),
-        MouthOperationsList = new(),
-        EyesOperationsList = new(),
-        ArmsOperationsList = new(),
-        BodyOperationsList = new(),
-        LegsOperationsList = new();
+        HeadOperationsList = [],
+        MouthOperationsList = [],
+        EyesOperationsList = [],
+        ArmsOperationsList = [],
+        BodyOperationsList = [],
+        LegsOperationsList = [];
 
     public Dictionary<int, string>
         HeadEventIndexes = new(),
@@ -379,7 +377,7 @@ public sealed class SurgeryMenu : DefaultWindow
             case "RArm":
                 var parts3 = bodySystem.GetBodyChildren(_entityManager.GetEntity(Uid)).ToList();
                 var rArm = parts3.Where(i =>
-                        i.Component.Symmetry == BodyPartSymmetry.Right && i.Component.PartType == BodyPartType.Arm)
+                        i.Component is { Symmetry: BodyPartSymmetry.Right, PartType: BodyPartType.Arm })
                     .ToList();
                 if (rArm.Count == 0)
                 {
@@ -416,7 +414,7 @@ public sealed class SurgeryMenu : DefaultWindow
             case "LArm":
                 var parts2 = bodySystem.GetBodyChildren(_entityManager.GetEntity(Uid)).ToList();
                 var lArm = parts2.Where(i =>
-                        i.Component.Symmetry == BodyPartSymmetry.Left && i.Component.PartType == BodyPartType.Arm)
+                        i.Component is { Symmetry: BodyPartSymmetry.Left, PartType: BodyPartType.Arm })
                     .ToList();
                 if (lArm.Count == 0)
                 {
@@ -470,7 +468,7 @@ public sealed class SurgeryMenu : DefaultWindow
             case "RLeg":
                 var parts1 = bodySystem.GetBodyChildren(_entityManager.GetEntity(Uid)).ToList();
                 var rLeg = parts1.Where(i =>
-                        i.Component.Symmetry == BodyPartSymmetry.Right && i.Component.PartType == BodyPartType.Leg)
+                        i.Component is { Symmetry: BodyPartSymmetry.Right, PartType: BodyPartType.Leg })
                     .ToList();
                 if (rLeg.Count == 0)
                 {
@@ -508,7 +506,8 @@ public sealed class SurgeryMenu : DefaultWindow
 
                 var parts = bodySystem.GetBodyChildren(_entityManager.GetEntity(Uid)).ToList();
                 var lLeg = parts.Where(i =>
-                    i.Component.Symmetry == BodyPartSymmetry.Left && i.Component.PartType == BodyPartType.Leg).ToList();
+                    i.Component is { Symmetry: BodyPartSymmetry.Left, PartType: BodyPartType.Leg })
+                    .ToList();
                 if (lLeg.Count == 0)
                 {
                     SurgeryOptions.Clear();

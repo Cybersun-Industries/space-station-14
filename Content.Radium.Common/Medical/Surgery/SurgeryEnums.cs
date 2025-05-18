@@ -1,11 +1,11 @@
 ﻿using Robust.Shared.Serialization;
 
-namespace Content.Radium.Common.Medical.Components;
+namespace Content.Radium.Common.Medical.Surgery;
 
 [NetSerializable, Serializable]
 public enum SurgeryUiKey : byte
 {
-    Key
+    Key,
 }
 
 [NetSerializable, Serializable]

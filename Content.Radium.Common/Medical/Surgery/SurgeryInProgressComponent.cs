@@ -1,7 +1,4 @@
-﻿using Content.Radium.Shared.Medical.Surgery.Components;
-using Content.Shared.Body.Part;
-
-namespace Content.Radium.Server.Medical.Surgery.Components;
+﻿namespace Content.Radium.Common.Medical.Surgery;
 
 [RegisterComponent]
 public sealed partial class SurgeryInProgressComponent : Component
@@ -12,5 +9,5 @@ public sealed partial class SurgeryInProgressComponent : Component
     [DataField(readOnly: true)]
     public string? SurgeryPrototypeId { get; set; }
 
-    public Enum Symmetry { get; set; } = BodyPartSymmetry.None;
+    public Enum Symmetry { get; set; }
 }
