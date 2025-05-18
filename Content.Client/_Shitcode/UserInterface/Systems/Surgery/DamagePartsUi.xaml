@@ -1,0 +1,7 @@
+﻿<surgery:DamagePartsUi xmlns="https://spacestation14.io"
+                        xmlns:surgery="clr-namespace:Content.Client._Shitcode.UserInterface.Systems.Surgery"
+                        MinSize="64 64">
+    <PanelContainer HorizontalAlignment="Right" VerticalAlignment="Bottom">
+        <BoxContainer Name="Surface" Access="Public" Orientation="Vertical" />
+    </PanelContainer>
+</surgery:DamagePartsUi>

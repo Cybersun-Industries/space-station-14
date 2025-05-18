@@ -1,8 +1,10 @@
+using Content.Radium.Common.Medical.Surgery;
+using Content.Radium.Common.Medical.Surgery.Components;
+using Content.Radium.Common.Medical.Surgery.Interfaces;
+using Content.Radium.Shared.Medical.Surgery.Components;
 using Content.Server.Body.Components;
 using Content.Server.Medical.Components;
 using Content.Server.PowerCell;
-using Content.Server.Radium.Medical.Surgery.Components;
-using Content.Server.Radium.Medical.Surgery.Systems;
 using Content.Server.Temperature.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Traits.Assorted;
@@ -17,8 +19,6 @@ using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
-using Content.Shared.Radium.Medical.Surgery.Components;
-using Content.Shared.Radium.Medical.Surgery.Prototypes;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -40,7 +40,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly ServerDamagePartsSystem _damageParts = default!;
+    [Dependency] private readonly IServerDamagePartsSystem _damageParts = null!;
 
     public override void Initialize()
     {
@@ -220,10 +220,10 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
 
-        SurgeryStepComponent? currentStep = null;
+        Radium.Common.Medical.Surgery.Components.SurgeryStepComponent? currentStep = null;
         string? operationName = null;
 
-        if (TryComp<SurgeryInProgressComponent>(target, out var surgeryComponent))
+        if (TryComp<Radium.Common.Medical.Surgery.Components.SurgeryInProgressComponent>(target, out var surgeryComponent))
         {
             currentStep = surgeryComponent.CurrentStep;
             if (surgeryComponent.SurgeryPrototypeId != null)
@@ -240,7 +240,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
         if (HasComp<BodyPartComponent>(target))
         {
-            damagedBodyParts = _damageParts.GetDamagedParts(target);
+            damagedBodyParts = _damageParts.GetDamagedParts(target) as IReadOnlyDictionary<(BodyPartType, BodyPartSymmetry), (int, bool)> ;
         }
 
         _uiSystem.ServerSendUiMessage(healthAnalyzer,

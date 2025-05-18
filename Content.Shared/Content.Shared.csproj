@@ -23,6 +23,7 @@
       <Private>false</Private>
     </ProjectReference>
     <ProjectReference Include="..\Corvax\Content.Corvax.Interfaces.Shared\Content.Corvax.Interfaces.Shared.csproj" />
+    <ProjectReference Include="..\Content.Radium.Common\Content.Radium.Common.csproj" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />
