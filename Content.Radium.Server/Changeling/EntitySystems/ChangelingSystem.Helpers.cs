@@ -173,13 +173,6 @@ public sealed partial class ChangelingSystem
             }
         }
 
-        if (!_handsSystem.TryForcePickupAnyHand(uid, item, false))
-        {
-            _popup.PopupEntity(Loc.GetString("changeling-fail-hands"), uid, uid);
-            Del(item);
-            return false;
-        }
-
         component.ChangelingEquipment[outEquipment] = (item, outItem.Item2);
         return true;
     }
