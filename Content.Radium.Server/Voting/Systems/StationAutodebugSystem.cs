@@ -67,12 +67,11 @@ public sealed class StationAutodebugSystem : EntitySystem
             .FirstOrNull(HasComp<StationEventEligibleComponent>);
 
         var batteryQuery = EntityQueryEnumerator<BatteryComponent>();
-        while (batteryQuery.MoveNext(out var uid, out var battery))
+        while (batteryQuery.MoveNext(out var uid, out _))
         {
             if (_stationSystem.GetOwningStation(uid) != baseStation)
                 continue;
 
-            var recharger = EnsureComp<BatterySelfRechargerComponent>(uid);
             var recharger = EnsureComp<BatterySelfRechargerComponent>(uid);
             var battery = EnsureComp<BatteryComponent>(uid);
 
