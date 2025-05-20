@@ -293,7 +293,14 @@ namespace Content.Server.Voting.Managers
                 msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Text);
             }
 
-            player.Channel.SendMessage(msg);
+            try
+            {
+                player.Channel.SendMessage(msg);
+            }
+            catch (NotImplementedException e) //Why DummyChannel has a NotImplementedException throw in their methods... :/
+            {
+                Logger.GetSawmill("VoteManager").Warning($"Caught exception while sending vote. Probably this is an integration test. Exception: {e}");
+            }
         }
 
         private void DirtyCanCallVoteAll()
