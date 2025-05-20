@@ -15,7 +15,9 @@ using Content.Shared.Database;
 using Content.Shared.Players;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Voting;
+using Robust.Server.Console;
 using Robust.Shared.Configuration;
+using Robust.Shared.Console;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
@@ -28,6 +30,8 @@ namespace Content.Server.Voting.Managers
         [Dependency] private readonly ILogManager _logManager = default!;
         [Dependency] private readonly IBanManager _bans = default!;
         [Dependency] private readonly VoteWebhooks _voteWebhooks = default!;
+
+        [Dependency] private readonly IServerConsoleHost _consoleHost = null!;
 
         private VotingSystem? _votingSystem;
         private RoleSystem? _roleSystem;
@@ -69,6 +73,11 @@ namespace Content.Server.Voting.Managers
                     timeoutVote = false; // Allows the timeout to be updated manually in the create method
                     CreateVotekickVote(initiator, args);
                     break;
+                //Radium start: autodebug
+                case StandardVoteType.Autodebug:
+                    _consoleHost.ExecuteCommand("spacemagic");
+                    break;
+                //Radium end: autodebug
                 default:
                     throw new ArgumentOutOfRangeException(nameof(voteType), voteType, null);
             }
