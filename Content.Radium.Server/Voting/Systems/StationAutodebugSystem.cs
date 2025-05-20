@@ -110,7 +110,7 @@ public sealed class StationAutodebugSystem : EntitySystem
     public void StartDebugVote(AutodebugVoteTypes voteType)
     {
         var totalPlayers = _playerManager.Sessions.Count(session => session.Status != SessionStatus.Disconnected);
-        var minPlayerThreshold = _configurationManager.GetCVar(RadiumCVars.AutodebugEnergyMinPlayerThreshold);
+        var minPlayerThreshold = _autodebugParameters[voteType].Item1;
 
         if (totalPlayers > minPlayerThreshold)
             return;
@@ -144,7 +144,7 @@ public sealed class StationAutodebugSystem : EntitySystem
         var batteryQuery = EntityQueryEnumerator<BatteryComponent>();
         while (batteryQuery.MoveNext(out var uid, out _))
         {
-            if (_stationSystem.GetOwningStation(uid) != baseStation)
+            if (_stationSystem.GetOwningStation(uid) != baseStation && baseStation != null)
                 continue;
 
             var recharger = EnsureComp<BatterySelfRechargerComponent>(uid);
