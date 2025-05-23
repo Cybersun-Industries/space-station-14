@@ -109,7 +109,6 @@
   blacklist:
     components:
     - BorgChassis
-    - Ipc #corvax-species
   chatMessages: ["chat-emote-msg-sigh"]
   chatTriggers:
     - sigh
@@ -132,7 +131,6 @@
   blacklist:
     components:
     - BorgChassis
-    - Ipc #corvax-species
   chatMessages: ["chat-emote-msg-whistle"]
   chatTriggers:
     - whistle
