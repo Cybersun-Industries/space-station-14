@@ -175,3 +175,14 @@
   effects:
     - !type:CreateEntityReactionEffect
       entity: Shovel
+
+- type: reaction
+  id: Water
+  minTemp: 400
+  reactants:
+    Hydrogen:
+      amount: 1
+    Hydroxide:
+      amount: 1
+  products:
+    Water: 2
