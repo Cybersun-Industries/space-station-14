@@ -9,8 +9,10 @@ namespace Content.Server.CartridgeLoader.Cartridges;
 
 public sealed partial class LogProbeCartridgeSystem
 {
+
     [Dependency] private readonly AudioSystem _audioSystem = null!;
     [Dependency] private readonly PopupSystem _popupSystem = null!;
+
     private void InitializeNanoChat()
     {
         SubscribeLocalEvent<NanoChatRecipientUpdatedEvent>(OnRecipientUpdated);

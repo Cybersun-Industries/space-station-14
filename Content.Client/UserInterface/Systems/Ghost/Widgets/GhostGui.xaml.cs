@@ -17,8 +17,9 @@ public sealed partial class GhostGui : UIWidget
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
+    
     private int _prevNumberRoles;
-	public event Action? GhostBarPressed; // Corvax-Next-GhostBar
+	  public event Action? GhostBarPressed; // Corvax-Next-GhostBar
 
     public GhostGui()
     {
@@ -26,14 +27,14 @@ public sealed partial class GhostGui : UIWidget
 
         TargetWindow = new GhostTargetWindow();
 
-		GhostBarWindow = new GhostBarRulesWindow(); // Corvax-Next-GhostBar
+        GhostBarWindow = new GhostBarRulesWindow(); // Corvax-Next-GhostBar
 
         MouseFilter = MouseFilterMode.Ignore;
 
         GhostWarpButton.OnPressed += _ => RequestWarpsPressed?.Invoke();
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
-		GhostBarButton.OnPressed += _ => GhostBarPressed?.Invoke(); // Corvax-Next-GhostBar
+	      GhostBarButton.OnPressed += _ => GhostBarPressed?.Invoke(); // Corvax-Next-GhostBar
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonCaution);
 
         GhostBarButton.OnPressed += _ => GhostBarPressed?.Invoke(); // Corvax-Next-GhostBar
@@ -42,7 +43,9 @@ public sealed partial class GhostGui : UIWidget
     public void Hide()
     {
         TargetWindow.Close();
-		GhostBarWindow.Close(); // Corvax-Next-GhostBar
+
+        GhostBarWindow.Close(); // Corvax-Next-GhostBar
+        
         Visible = false;
     }
 
@@ -78,7 +81,7 @@ public sealed partial class GhostGui : UIWidget
         if (disposing)
         {
             TargetWindow.Dispose();
-			GhostBarWindow.Dispose(); // Corvax-Next-GhostBar
+      			GhostBarWindow.Dispose(); // Corvax-Next-GhostBar
         }
     }
 }

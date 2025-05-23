@@ -135,6 +135,7 @@
       - id: Defibrillator
       - id: MedkitAdvancedFilled
         # Corvax-Brigmedic-End
+      - id: BoxBodyBagPrisoner # Corvax-Next-AdvancedBodyBags
 
 - type: entity
   id: LockerDetectiveFilled
