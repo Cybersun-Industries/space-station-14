@@ -28,7 +28,7 @@ public sealed partial class LogProbeUi : UIFragment
 
     public override void UpdateState(BoundUserInterfaceState state)
     {
-        if (state is not LogProbeUiState cast)
+        if (state is not LogProbeUiState logProbeUiState)
             return;
 
         _fragment?.UpdateState(logProbeUiState); // Corvax-Next-PDAChat - just take the state
