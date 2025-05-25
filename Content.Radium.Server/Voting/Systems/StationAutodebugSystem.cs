@@ -80,10 +80,10 @@ public sealed class StationAutodebugSystem : EntitySystem
     private void InitializeVoteParameters()
     {
         _autodebugParameters.Add(AutodebugVoteTypes.Energy,
-            (_configurationManager.GetCVar(RadiumCVars.AutodebugEnergyMinPlayerThreshold), OnEnergyDebug));
+            (_configurationManager.GetCVar(RadiumCVars.AutodebugEnergyMaxPlayerThreshold), OnEnergyDebug));
 
         _autodebugParameters.Add(AutodebugVoteTypes.Access,
-            (_configurationManager.GetCVar(RadiumCVars.AutodebugAccessMinPlayerThreshold), OnAccessDebug));
+            (_configurationManager.GetCVar(RadiumCVars.AutodebugAccessMaxPlayerThreshold), OnAccessDebug));
     }
 
     public override void Update(float frameTime)
@@ -110,9 +110,9 @@ public sealed class StationAutodebugSystem : EntitySystem
     public void StartDebugVote(AutodebugVoteTypes voteType)
     {
         var totalPlayers = _playerManager.Sessions.Count(session => session.Status != SessionStatus.Disconnected);
-        var minPlayerThreshold = _autodebugParameters[voteType].Item1;
+        var maxPlayerThreshold = _autodebugParameters[voteType].Item1;
 
-        if (totalPlayers > minPlayerThreshold)
+        if (totalPlayers > maxPlayerThreshold)
             return;
 
         var vote = _voteManager.CreateVote(_autodebugVoteOptions[voteType]);
