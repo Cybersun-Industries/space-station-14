@@ -37,3 +37,6 @@ preload_grids = false
 
 [admin]
 see_own_notes = true
+
+[autodebug]
+vote.roundstart = false
