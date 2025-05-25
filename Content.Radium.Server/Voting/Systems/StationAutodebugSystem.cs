@@ -124,6 +124,9 @@ public sealed class StationAutodebugSystem : EntitySystem
 
         foreach (var type in autodebugTypes)
         {
+            if (type == AutodebugVoteTypes.Custom)
+                continue;
+
             TryStartDebugVote(type);
         }
 
@@ -132,11 +135,11 @@ public sealed class StationAutodebugSystem : EntitySystem
     }
 
     public static bool ValidateCustomVoteArgs(
-        [NotNullWhen(true)] int? minPlayersThreshold,
+        [NotNullWhen(true)] int? maxPlayersThreshold,
         [NotNullWhen(true)] VoteOptions? voteOptions,
         [NotNullWhen(true)] VoteFinishedEventHandler? handler)
     {
-        return minPlayersThreshold != null && voteOptions != null && handler != null;
+        return maxPlayersThreshold != null && voteOptions != null && handler != null;
     }
 
     /// <summary>
@@ -144,15 +147,15 @@ public sealed class StationAutodebugSystem : EntitySystem
     /// Returns <c>true</c> if the vote was successfully started; otherwise, <c>false</c>.
     ///
     /// When <paramref name="voteType"/> is <see cref="AutodebugVoteTypes.Custom"/>, the parameters
-    /// <paramref name="minPlayersThreshold"/>, <paramref name="voteOptions"/>, and <paramref name="handler"/> must be non-null.
+    /// <paramref name="maxPlayersThreshold"/>, <paramref name="voteOptions"/>, and <paramref name="handler"/> must be non-null.
     /// If any of these are null, the method returns <c>false</c>.
     ///
     /// For all non-custom vote types, default parameters are already defined internally.
     /// </summary>
     ///
     /// <param name="voteType">The type of debug vote to start. Select <see cref="AutodebugVoteTypes.Custom"/> for custom vote</param>
-    /// <param name="minPlayersThreshold">
-    /// The minimum number of players required for the vote to execute <paramref name="handler"/>.
+    /// <param name="maxPlayersThreshold">
+    /// The maximum number of players required for the vote to execute <paramref name="handler"/>.
     /// Required only for <see cref="AutodebugVoteTypes.Custom"/>.
     /// </param>
     /// <param name="voteOptions">
@@ -166,18 +169,18 @@ public sealed class StationAutodebugSystem : EntitySystem
     /// <returns><c>true</c> if the vote was successfully started; otherwise, <c>false</c>.</returns>
     [PublicAPI]
     public bool TryStartDebugVote(AutodebugVoteTypes voteType,
-        int? minPlayersThreshold = null,
+        int? maxPlayersThreshold = null,
         VoteOptions? voteOptions = null,
         VoteFinishedEventHandler? handler = null)
     {
         var isCustom = voteType == AutodebugVoteTypes.Custom;
 
-        if (isCustom && !ValidateCustomVoteArgs(minPlayersThreshold, voteOptions, handler))
+        if (isCustom && !ValidateCustomVoteArgs(maxPlayersThreshold, voteOptions, handler))
             return false;
 
         var totalPlayers = _playerManager.Sessions.Count(session => session.Status != SessionStatus.Disconnected);
 
-        var maxPlayerThreshold = isCustom ? minPlayersThreshold : _autodebugParameters[voteType].Item1;
+        var maxPlayerThreshold = isCustom ? maxPlayersThreshold : _autodebugParameters[voteType].Item1;
 
         if (totalPlayers > maxPlayerThreshold)
             return false;
