@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Radium.Common.CCVar;
 using Content.Server.Access.Systems;
@@ -28,7 +29,10 @@ public sealed class StationAutodebugSystem : EntitySystem
     [Dependency] private readonly AccessSystem _accessSystem = null!;
 
     private readonly Dictionary<AutodebugVoteTypes, VoteOptions> _autodebugVoteOptions = new();
-    private readonly Dictionary<AutodebugVoteTypes, (int, VoteFinishedEventHandler)> _autodebugParameters = new();
+
+    private readonly Dictionary<AutodebugVoteTypes, (int, VoteFinishedEventHandler)>
+        _autodebugParameters = new();
+
     public TimeSpan DebugCooldownTime = TimeSpan.Zero;
 
     public override void Initialize()
@@ -38,6 +42,13 @@ public sealed class StationAutodebugSystem : EntitySystem
         InitializeVoteParameters();
         SubscribeLocalEvent<RulePlayerJobsAssignedEvent>(_ =>
         {
+            DebugCooldownTime = TimeSpan.Zero;
+
+            var isRoundstartVoteEnabled = _configurationManager.GetCVar(RadiumCVars.AutodebugRoundstartVoteEnabled);
+
+            if (!isRoundstartVoteEnabled)
+                return;
+
             StartBulkDebug();
         });
     }
@@ -80,10 +91,10 @@ public sealed class StationAutodebugSystem : EntitySystem
     private void InitializeVoteParameters()
     {
         _autodebugParameters.Add(AutodebugVoteTypes.Energy,
-            (_configurationManager.GetCVar(RadiumCVars.AutodebugEnergyMinPlayerThreshold), OnEnergyDebug));
+            (_configurationManager.GetCVar(RadiumCVars.AutodebugEnergyMaxPlayerThreshold), OnEnergyDebug));
 
         _autodebugParameters.Add(AutodebugVoteTypes.Access,
-            (_configurationManager.GetCVar(RadiumCVars.AutodebugAccessMinPlayerThreshold), OnAccessDebug));
+            (_configurationManager.GetCVar(RadiumCVars.AutodebugAccessMaxPlayerThreshold), OnAccessDebug));
     }
 
     public override void Update(float frameTime)
@@ -95,34 +106,95 @@ public sealed class StationAutodebugSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Starts all predefined debug votes listed in <see cref="AutodebugVoteTypes"/> simultaneously.
+    /// If the system is currently on cooldown, no votes will be started and the method returns <c>false</c>.
+    /// </summary>
+    ///
+    /// <returns>
+    /// <c>true</c> if the votes were successfully started; <c>false</c> if the system is on cooldown.
+    /// </returns>
     [PublicAPI]
-    public void StartBulkDebug()
+    public bool StartBulkDebug()
     {
         if (DebugCooldownTime.Ticks > 0)
-            return;
+            return false;
 
-        StartDebugVote(AutodebugVoteTypes.Energy);
-        StartDebugVote(AutodebugVoteTypes.Access);
+        var autodebugTypes = Enum.GetValues<AutodebugVoteTypes>();
+
+        foreach (var type in autodebugTypes)
+        {
+            if (type == AutodebugVoteTypes.Custom)
+                continue;
+
+            TryStartDebugVote(type);
+        }
+
         DebugCooldownTime = TimeSpan.FromSeconds(_configurationManager.GetCVar(RadiumCVars.AutodebugVoteCooldown));
+        return true;
     }
 
-    [PublicAPI]
-    public void StartDebugVote(AutodebugVoteTypes voteType)
+    public static bool ValidateCustomVoteArgs(
+        [NotNullWhen(true)] int? maxPlayersThreshold,
+        [NotNullWhen(true)] VoteOptions? voteOptions,
+        [NotNullWhen(true)] VoteFinishedEventHandler? handler)
     {
+        return maxPlayersThreshold != null && voteOptions != null && handler != null;
+    }
+
+    /// <summary>
+    /// Attempts to start a new debug vote.
+    /// Returns <c>true</c> if the vote was successfully started; otherwise, <c>false</c>.
+    ///
+    /// When <paramref name="voteType"/> is <see cref="AutodebugVoteTypes.Custom"/>, the parameters
+    /// <paramref name="maxPlayersThreshold"/>, <paramref name="voteOptions"/>, and <paramref name="handler"/> must be non-null.
+    /// If any of these are null, the method returns <c>false</c>.
+    ///
+    /// For all non-custom vote types, default parameters are already defined internally.
+    /// </summary>
+    ///
+    /// <param name="voteType">The type of debug vote to start. Select <see cref="AutodebugVoteTypes.Custom"/> for custom vote</param>
+    /// <param name="maxPlayersThreshold">
+    /// The maximum number of players required for the vote to execute <paramref name="handler"/>.
+    /// Required only for <see cref="AutodebugVoteTypes.Custom"/>.
+    /// </param>
+    /// <param name="voteOptions">
+    /// The options to display in the vote UI.
+    /// Required only for <see cref="AutodebugVoteTypes.Custom"/>.
+    /// </param>
+    /// <param name="handler">
+    /// The callback to invoke if the vote passes.
+    /// Required only for <see cref="AutodebugVoteTypes.Custom"/>.
+    /// </param>
+    /// <returns><c>true</c> if the vote was successfully started; otherwise, <c>false</c>.</returns>
+    [PublicAPI]
+    public bool TryStartDebugVote(AutodebugVoteTypes voteType,
+        int? maxPlayersThreshold = null,
+        VoteOptions? voteOptions = null,
+        VoteFinishedEventHandler? handler = null)
+    {
+        var isCustom = voteType == AutodebugVoteTypes.Custom;
+
+        if (isCustom && !ValidateCustomVoteArgs(maxPlayersThreshold, voteOptions, handler))
+            return false;
+
         var totalPlayers = _playerManager.Sessions.Count(session => session.Status != SessionStatus.Disconnected);
-        var minPlayerThreshold = _autodebugParameters[voteType].Item1;
 
-        if (totalPlayers > minPlayerThreshold)
-            return;
+        var maxPlayerThreshold = isCustom ? maxPlayersThreshold : _autodebugParameters[voteType].Item1;
 
-        var vote = _voteManager.CreateVote(_autodebugVoteOptions[voteType]);
+        if (totalPlayers > maxPlayerThreshold)
+            return false;
+
+        var vote = _voteManager.CreateVote((isCustom ? voteOptions : _autodebugVoteOptions[voteType])!);
+
         vote.OnFinished += (sender, args) =>
         {
             if (!IsVoteWon(args))
                 return;
 
-            _autodebugParameters[voteType].Item2.Invoke(sender, args);
+            (isCustom ? handler : _autodebugParameters[voteType].Item2)!.Invoke(sender, args);
         };
+        return true;
     }
 
     private static bool IsVoteWon(VoteFinishedEventArgs args)
@@ -136,6 +208,9 @@ public sealed class StationAutodebugSystem : EntitySystem
         return winner == AutodebugResponseTypes.Accept;
     }
 
+    /// <summary>
+    /// Default handler for <see cref="AutodebugVoteTypes.Energy"/>
+    /// </summary>
     private void OnEnergyDebug(IVoteHandle sender, VoteFinishedEventArgs args)
     {
         var baseStation = _stationSystem.GetStations()
@@ -156,6 +231,9 @@ public sealed class StationAutodebugSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Default handler for <see cref="AutodebugVoteTypes.Access"/>
+    /// </summary>
     private void OnAccessDebug(IVoteHandle sender, VoteFinishedEventArgs args)
     {
         var batteryQuery = EntityQueryEnumerator<AccessComponent>();

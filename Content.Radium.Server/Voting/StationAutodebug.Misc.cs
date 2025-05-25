@@ -4,6 +4,7 @@ public enum AutodebugVoteTypes
 {
     Energy,
     Access,
+    Custom,
 }
 public enum AutodebugResponseTypes
 {
