@@ -42,6 +42,8 @@ public sealed class StationAutodebugSystem : EntitySystem
         InitializeVoteParameters();
         SubscribeLocalEvent<RulePlayerJobsAssignedEvent>(_ =>
         {
+            DebugCooldownTime = TimeSpan.Zero;
+
             var isRoundstartVoteEnabled = _configurationManager.GetCVar(RadiumCVars.AutodebugRoundstartVoteEnabled);
 
             if (!isRoundstartVoteEnabled)
