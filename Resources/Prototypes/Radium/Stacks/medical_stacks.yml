@@ -1,7 +1,0 @@
-- type: stack
-  id: BoneMesh
-  name: regenerative-mesh
-  icon: {sprite: "/Textures/Radium/Objects/Specific/Medical/healing.rsi", state: bone_mesh}
-  spawn: BoneMesh
-  maxCount: 10
-  
