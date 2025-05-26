@@ -27,6 +27,9 @@ public sealed class CustomizableStampBoundUserInterface : BoundUserInterface
             if(!_entityManager.TryGetComponent<StampComponent>(Owner, out var stampComponent))
                 return;
 
+            if (string.IsNullOrWhiteSpace(_menu.Text))
+                return;
+
             stampComponent.StampedColor = _menu.Color;
             stampComponent.StampedName = _menu.Text;
 

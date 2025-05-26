@@ -1,5 +1,5 @@
 using Content.Radium.Common.CCVar;
-using Content.Radium.Common.Stamps;
+using Content.Radium.Shared.Stamps;
 using Content.Radium.Shared.Stamps.UI;
 using Content.Shared.Examine;
 using Content.Shared.Paper;
