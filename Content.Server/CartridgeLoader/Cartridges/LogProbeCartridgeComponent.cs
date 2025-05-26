@@ -1,6 +1,6 @@
-﻿using Content.Shared._CorvaxNext.CartridgeLoader.Cartridges;
+using Content.Shared._CorvaxNext.CartridgeLoader.Cartridges;
 using Content.Shared.CartridgeLoader.Cartridges;
-﻿using Content.Shared.Paper;
+using Content.Shared.Paper;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -27,7 +27,7 @@ public sealed partial class LogProbeCartridgeComponent : Component
     /// The sound to make when we scan something with access
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public SoundSpecifier SoundScan = new SoundPathSpecifier("/Audio/Machines/scan_finish.ogg");
+    public SoundSpecifier SoundScan = new SoundPathSpecifier("/Audio/Machines/scan_finish.ogg", AudioParams.Default.WithVariation(0.25f));
 
     /// <summary>
     /// Paper to spawn when printing logs.
