@@ -40,4 +40,13 @@ public sealed partial class RadiumCVars
         CVarDef.Create("autodebug.cooldown", 1800, CVar.SERVERONLY);
 
     #endregion
+
+    #region CustomizableStamps
+
+    /// <summary>
+    /// Max stamp text length
+    /// </summary>
+    public static readonly CVarDef<int> StampsMaxTextLength = CVarDef.Create("stamps.maxTextLength", 32, CVar.REPLICATED);
+
+    #endregion
 }

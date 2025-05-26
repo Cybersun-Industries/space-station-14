@@ -143,6 +143,7 @@
     - id: ClothingEyesHudCommand
     - id: ClothingOuterCoatHOP # Corvax-Resprite
     - id: PrinterDocFlatpack # Corvax-Printer
+    - id: BoxCustomizableStamps # Radium: customizable stamps
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
