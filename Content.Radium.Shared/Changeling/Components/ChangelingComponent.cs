@@ -34,7 +34,7 @@ public sealed partial class ChangelingComponent : Component
 
     [DataField("soundShriek")]
     public SoundSpecifier ShriekSound =
-        new SoundPathSpecifier("/Audio/Radium/Changeling/Effects/changeling_shriek.ogg");
+        new SoundPathSpecifier("/Audio/_Radium/Changeling/Effects/changeling_shriek.ogg");
 
     [DataField]
     public float ShriekPower = 2.5f;
@@ -69,7 +69,7 @@ public sealed partial class ChangelingComponent : Component
     public string EvolutionCurrencyPrototype = "ChangelingEvolution";
 
     [DataField]
-    public SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/Radium/Ambience/Antag/changeling_start.ogg");
+    public SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/_Radium/Ambience/Antag/changeling_start.ogg");
 
     [DataField]
     public ProtoId<NpcFactionPrototype> NanotrasenFactionId = "NanoTrasen";

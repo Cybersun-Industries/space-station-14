@@ -7,7 +7,7 @@
     Resizable="False">
     <ScrollContainer
         VerticalExpand="True">
-        <TextureRect Stretch="Scale" TexturePath="/Textures/Radium/Interface/Surgery/analyzer_template.png"
+        <TextureRect Stretch="Scale" TexturePath="/Textures/_Radium/Interface/Surgery/analyzer_template.png"
                      HorizontalExpand="True" VerticalExpand="True">
             <BoxContainer
                 Name="RootContainer"

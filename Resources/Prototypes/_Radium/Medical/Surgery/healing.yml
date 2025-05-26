@@ -1,0 +1,44 @@
+- type: entity
+  name: корректирующая сеть
+  description: Используется для корректировки положения костей при переломах.
+  parent: BaseHealingItem
+  id: BoneMesh
+  suffix: Full
+  components:
+  - type: Sprite
+    sprite: _Radium/Objects/Specific/Medical/healing.rsi
+    state: bone_mesh
+  - type: Item
+    sprite: _Radium/Objects/Specific/Medical/healing.rsi
+    heldPrefix: bone_mesh
+  - type: Stack
+    stackType: BoneMesh
+    count: 10
+  - type: StackPrice
+    price: 20
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Repair
+    modifier: 1.5
+
+- type: entity
+  name: корректирующая сеть борга
+  description: Используется для корректировки положения костей при переломах.
+  parent: BaseHealingItem
+  id: BoneMeshBorg
+  suffix: 10, Lingering
+  components:
+  - type: Sprite
+    sprite: _Radium/Objects/Specific/Medical/healing.rsi
+    state: bone_mesh
+  - type: Item
+    sprite: _Radium/Objects/Specific/Medical/healing.rsi
+    heldPrefix: bone_mesh
+  - type: Stack
+    stackType: BoneMesh
+    lingering: true
+    count: 10
+  - type: StackPrice
+    price: 20
+  - type: SurgeryTool
+    action: enum.SurgeryTypeEnum.Repair
+    modifier: 1.5
