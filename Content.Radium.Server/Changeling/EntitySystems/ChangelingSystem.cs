@@ -5,6 +5,7 @@ using Content.Radium.Shared.Changeling;
 using Content.Radium.Shared.Changeling.Components;
 using Content.Server.Actions;
 using Content.Server.Antag;
+using Content.Server.Damage.Systems;
 using Content.Server.Ghost.Roles.Events;
 using Content.Server.Humanoid;
 using Content.Server.Mind;
@@ -152,7 +153,8 @@ public sealed partial class ChangelingSystem : EntitySystem
                 return;
 
             var briefing = Loc.GetString("changeling-role-greeting");
-            _antag.SendBriefing(mind.Session!.AttachedEntity!.Value, briefing, Color.Yellow, component.BriefingSound);
+            if (mind.CurrentEntity != null)
+                _antag.SendBriefing(mind.CurrentEntity.Value, briefing, Color.Yellow, component.BriefingSound);
 
             _mindSystem.TransferTo(mindId.Value, null, true, false, mind);
             RemComp<MindContainerComponent>(changelingMob);
@@ -164,7 +166,12 @@ public sealed partial class ChangelingSystem : EntitySystem
             var station = _stationSystem.GetStations()
                 .FirstOrNull(HasComp<StationEventEligibleComponent>);
             {
-                var session = _mindSystem.GetSession(Comp<MindComponent>(mindId.Value));
+                if(!_mindSystem.TryGetMind(mindId.Value, out _, out var mindComponent ))
+                    return;
+
+                if(!_playerManager.TryGetSessionById(mindComponent.UserId, out var session))
+                    return;
+
                 if (station != null && session != null)
                 {
                     RaiseLocalEvent(new PlayerSpawnCompleteEvent(

@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Cargo.Components;
@@ -6,12 +7,15 @@ using Content.Server._CorvaxNext.Cargo.Components;
 using Content.Server._CorvaxNext.CartridgeLoader.Cartridges;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Cargo.Components;
+using Content.Shared.Cargo.Prototypes;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Content.Shared.Database;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -162,14 +166,14 @@ public sealed class StockMarketSystem : EntitySystem
         var totalValue = (int)Math.Round(company.CurrentPrice * amount);
 
         // See if we can afford it
-        if (bank.Balance < totalValue)
+        if (bank.Accounts.First().Value < totalValue)
             return false;
 
         if (!stockMarket.StockOwnership.TryGetValue(companyIndex, out var currentOwned))
             currentOwned = 0;
 
         // Update the bank account
-        _cargo.UpdateBankAccount(station, -totalValue);
+        _cargo.UpdateBankAccount(station, -totalValue, new ProtoId<CargoAccountPrototype>("Cargo"));
         stockMarket.StockOwnership[companyIndex] = currentOwned + amount;
 
         // Log the transaction
@@ -207,7 +211,7 @@ public sealed class StockMarketSystem : EntitySystem
             stockMarket.StockOwnership.Remove(companyIndex);
 
         // Update the bank account
-        _cargo.UpdateBankAccount(station, totalValue);
+        _cargo.UpdateBankAccount(station, totalValue, new ProtoId<CargoAccountPrototype>("Cargo"));
 
         // Log the transaction
         _adminLogger.Add(LogType.Action,

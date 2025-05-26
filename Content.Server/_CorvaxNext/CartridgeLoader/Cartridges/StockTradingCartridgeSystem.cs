@@ -5,8 +5,10 @@ using Content.Server._CorvaxNext.Cargo.Systems;
 using Content.Server.Station.Systems;
 using Content.Server.CartridgeLoader;
 using Content.Shared.Cargo.Components;
+using Content.Shared.Cargo.Prototypes;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.CartridgeLoader.Cartridges;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CorvaxNext.CartridgeLoader.Cartridges;
 
@@ -93,7 +95,7 @@ public sealed class StockTradingCartridgeSystem : EntitySystem
         var state = new StockTradingUiState(
             entries: entries,
             ownedStocks: stockMarket.StockOwnership,
-            balance: bankAccount.Balance
+            balance: bankAccount.Accounts[new ProtoId<CargoAccountPrototype>("Cargo")]
         );
 
         _cartridgeLoader.UpdateCartridgeUiState(loader, state);

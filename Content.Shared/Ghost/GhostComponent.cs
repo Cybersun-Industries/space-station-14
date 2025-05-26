@@ -94,9 +94,6 @@ public sealed partial class GhostComponent : Component
     [DataField, AutoNetworkedField]
     public Color Color = Color.White;
 
-    [DataField("canReturnToBody"), AutoNetworkedField]
-    private bool _canReturnToBody;
-
     // Goobstation start
     [DataField]
     public bool CanEnterGhostBar = true;

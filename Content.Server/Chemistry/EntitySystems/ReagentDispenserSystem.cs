@@ -19,6 +19,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Server.Labels;
 using Content.Shared.Verbs;
 using Content.Shared.Examine;
+using Content.Shared.Labels.EntitySystems;
 
 namespace Content.Server.Chemistry.EntitySystems
 {
