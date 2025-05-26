@@ -22,8 +22,9 @@
   - type: Damageable
     damageContainer: Inorganic
   - type: Slippery
-    paralyzeTime: 2
-    launchForwardsMultiplier: 1.5
+    slipData:
+      paralyzeTime: 2
+      launchForwardsMultiplier: 1.5
   - type: StepTrigger
     intersectRatio: 0.2
   - type: CollisionWake

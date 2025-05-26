@@ -12,5 +12,4 @@ materials-clockwork-glass = заводного стекла
 materials-artifact-fragment = НВ кабеля
 materials-silk = шёлк
 materials-meatsheet = мясо
-materials-cotton = хлопок
 materials-uraniumglass = урановое стекло

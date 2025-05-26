@@ -42,4 +42,9 @@ public sealed partial class GasVolumePumpComponent : Component
 
     [DataField]
     public float LastMolesTransferred;
+
+    /// Corvax-Next-AutoPipes-Start
+    [DataField]
+    public bool StartOnMapInit { get; set; } = false;
+    /// Corvax-Next-AutoPipes-End
 }

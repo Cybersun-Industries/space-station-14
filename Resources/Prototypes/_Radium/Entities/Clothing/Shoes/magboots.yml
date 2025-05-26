@@ -32,6 +32,5 @@
     moleUsage: 0.00065
   - type: CanMoveInAir
   - type: InputMover
-    toParent: true
   - type: StaticPrice
     price: 5000

@@ -34,6 +34,8 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
             SubscribeLocalEvent<GasVolumePumpComponent, AtmosDeviceDisabledEvent>(OnVolumePumpLeaveAtmosphere);
 
             SubscribeLocalEvent<GasVolumePumpComponent, DeviceNetworkPacketEvent>(OnPacketRecv);
+
+            SubscribeLocalEvent<GasVolumePumpComponent, MapInitEvent>(OnMapInit); // Corvax-Next-AutoPipes
         }
 
         private void OnVolumePumpUpdated(EntityUid uid, GasVolumePumpComponent pump, ref AtmosDeviceUpdateEvent args)
@@ -118,5 +120,18 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
                     return;
             }
         }
+
+        /// Corvax-Next-AutoPipes-Start
+        private void OnMapInit(EntityUid uid, GasVolumePumpComponent pump, MapInitEvent args)
+        {
+            if (pump.StartOnMapInit)
+            {
+                pump.Enabled = true;
+                UpdateAppearance(uid, pump);
+
+                _userInterfaceSystem.CloseUi(uid, GasVolumePumpUiKey.Key);
+            }
+        }
+        /// Corvax-Next-AutoPipes-End
     }
 }
