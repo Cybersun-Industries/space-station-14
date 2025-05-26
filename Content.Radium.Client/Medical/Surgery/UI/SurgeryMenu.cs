@@ -23,7 +23,7 @@ public sealed class SurgeryMenu : DefaultWindow
 
     public TextureRect Surface = new()
     {
-        TexturePath = "/Textures/Radium/Interface/Surgery/nanotrasen.png",
+        TexturePath = "/Textures/_Radium/Interface/Surgery/nanotrasen.png",
         Stretch = TextureRect.StretchMode.Scale
     };
 
@@ -95,7 +95,7 @@ public sealed class SurgeryMenu : DefaultWindow
         Surface.SetWidth = 430;
         Surface.SetHeight = 300;
         Surface.Stretch = TextureRect.StretchMode.KeepCentered;
-        DollContainer.TexturePath = "/Textures/Radium/Interface/Surgery/surgery_deactivated.png";
+        DollContainer.TexturePath = "/Textures/_Radium/Interface/Surgery/surgery_deactivated.png";
         DollContainer.SetSize = new Vector2(128, 128);
         DollContainer.HorizontalAlignment = HAlignment.Left;
         DollContainer.VerticalAlignment = VAlignment.Top;
@@ -107,7 +107,7 @@ public sealed class SurgeryMenu : DefaultWindow
         Bkg.HorizontalAlignment = HAlignment.Left;
         Bkg.VerticalAlignment = VAlignment.Top;
         Bkg.Stretch = TextureRect.StretchMode.Scale;
-        Bkg.TexturePath = "/Textures/Radium/Interface/Surgery/template.png";
+        Bkg.TexturePath = "/Textures/_Radium/Interface/Surgery/template.png";
         SurgeryOptions.SetWidth = 300;
         SurgeryOptions.Margin = new Thickness(0, 5);
         SurgeryOptions.ItemSeparation = 2;
@@ -224,17 +224,17 @@ public sealed class SurgeryMenu : DefaultWindow
                 {
                     case >= 21 and <= 26 when x is >= 52 and <= 57 or >= 62 and <= 67:
                         //eyes
-                        DollContainer.TexturePath = "/Textures/Radium/Interface/Surgery/surgery_eyes.png";
+                        DollContainer.TexturePath = "/Textures/_Radium/Interface/Surgery/surgery_eyes.png";
                         CurrentSelection = "Eyes";
                         break;
                     case >= 32 and <= 37 when x is >= 60 and <= 62:
                         //mouth
-                        DollContainer.TexturePath = "/Textures/Radium/Interface/Surgery/surgery_mouth.png";
+                        DollContainer.TexturePath = "/Textures/_Radium/Interface/Surgery/surgery_mouth.png";
                         CurrentSelection = "Mouth";
                         break;
                     default:
                         //head
-                        DollContainer.TexturePath = "/Textures/Radium/Interface/Surgery/surgery_head.png";
+                        DollContainer.TexturePath = "/Textures/_Radium/Interface/Surgery/surgery_head.png";
                         CurrentSelection = "Head";
                         break;
                 }
@@ -246,17 +246,17 @@ public sealed class SurgeryMenu : DefaultWindow
                 {
                     case >= 25 and <= 43:
                         //right arm
-                        DollContainer.TexturePath = "/Textures/Radium/Interface/Surgery/surgery_arm_right.png";
+                        DollContainer.TexturePath = "/Textures/_Radium/Interface/Surgery/surgery_arm_right.png";
                         CurrentSelection = "RArm";
                         break;
                     case >= 44 and <= 80:
                         //body
-                        DollContainer.TexturePath = "/Textures/Radium/Interface/Surgery/surgery_chest.png";
+                        DollContainer.TexturePath = "/Textures/_Radium/Interface/Surgery/surgery_chest.png";
                         CurrentSelection = "Torso";
                         break;
                     case >= 81 and <= 98:
                         //left arm
-                        DollContainer.TexturePath = "/Textures/Radium/Interface/Surgery/surgery_arm_left.png";
+                        DollContainer.TexturePath = "/Textures/_Radium/Interface/Surgery/surgery_arm_left.png";
                         CurrentSelection = "LArm";
                         break;
                 }
@@ -269,12 +269,12 @@ public sealed class SurgeryMenu : DefaultWindow
                 {
                     case >= 36 and <= 57:
                         //left leg
-                        DollContainer.TexturePath = "/Textures/Radium/Interface/Surgery/surgery_leg_left.png";
+                        DollContainer.TexturePath = "/Textures/_Radium/Interface/Surgery/surgery_leg_left.png";
                         CurrentSelection = "RLeg";
                         break;
                     case >= 63 and <= 88:
                         //right leg
-                        DollContainer.TexturePath = "/Textures/Radium/Interface/Surgery/surgery_leg_right.png";
+                        DollContainer.TexturePath = "/Textures/_Radium/Interface/Surgery/surgery_leg_right.png";
                         CurrentSelection = "LLeg";
                         break;
                 }

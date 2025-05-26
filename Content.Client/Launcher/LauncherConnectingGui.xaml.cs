@@ -18,7 +18,7 @@ namespace Content.Client.Launcher
     public sealed partial class LauncherConnectingGui : Control
     {
         public static readonly SpriteSpecifier BackgroundSpriteSpecifier =
-            new SpriteSpecifier.Rsi(new ResPath("/Textures/Radium/Menu/launcher.rsi"), "launcher");
+            new SpriteSpecifier.Rsi(new ResPath("/Textures/_Radium/Menu/launcher.rsi"), "launcher");
 
         private const float RedialWaitTimeSeconds = 15f;
         private readonly LauncherConnecting _state;
