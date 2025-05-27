@@ -58,8 +58,8 @@ public sealed partial class ChangelingSystem
     {
         if (comp.Mind == null)
             return;
-
-        var session = _mindSystem.GetSession(comp.Mind);
+        if(_playerManager.TryGetSessionById(comp.Mind.UserId, out var session))
+            return;
 
         if (session?.AttachedEntity == null)
             return;
