@@ -6,6 +6,8 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Hands.Controls;
 using Content.Client.Verbs.UI;
+using Content.Shared._EstacaoPirata.Cards.Hand;
+using Content.Shared.Access.Components;
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Ensnaring.Components;
@@ -66,7 +68,8 @@ namespace Content.Client.Inventory
 
             _strippingMenu = this.CreateWindowCenteredLeft<StrippingMenu>();
             _strippingMenu.OnDirty += UpdateMenu;
-            _strippingMenu.Title = Loc.GetString("strippable-bound-user-interface-stripping-menu-title", ("ownerName", Identity.Name(Owner, EntMan)));
+            _strippingMenu.Title = Loc.GetString("strippable-bound-user-interface-stripping-menu-title",
+                ("ownerName", Identity.Name(Owner, EntMan)));
         }
 
         protected override void Dispose(bool disposing)
@@ -166,11 +169,15 @@ namespace Content.Client.Inventory
             if (EntMan.TryGetComponent<VirtualItemComponent>(hand.HeldEntity, out var virt))
             {
                 button.Blocked = true;
-                if (EntMan.TryGetComponent<CuffableComponent>(Owner, out var cuff) && _cuffable.GetAllCuffs(cuff).Contains(virt.BlockingEntity))
+                if (EntMan.TryGetComponent<CuffableComponent>(Owner, out var cuff) &&
+                    _cuffable.GetAllCuffs(cuff).Contains(virt.BlockingEntity))
                     button.BlockedRect.MouseFilter = MouseFilterMode.Ignore;
             }
 
-            UpdateEntityIcon(button, hand.HeldEntity);
+            //Goobstation: Cards are always hidden. NO CHEATING FOR U.
+            var isCard = EntMan.HasComponent<IdCardComponent>(hand.HeldEntity) ||
+                         EntMan.HasComponent<CardHandComponent>(hand.HeldEntity);
+            UpdateEntityIcon(button, isCard ? _virtualHiddenEntity : hand.HeldEntity);
             _strippingMenu!.HandsContainer.AddChild(button);
         }
 
@@ -219,7 +226,8 @@ namespace Content.Client.Inventory
 
             UpdateEntityIcon(button, entity);
 
-            LayoutContainer.SetPosition(button, slotDef.StrippingWindowPos * (SlotControl.DefaultButtonSize + ButtonSeparation));
+            LayoutContainer.SetPosition(button,
+                slotDef.StrippingWindowPos * (SlotControl.DefaultButtonSize + ButtonSeparation));
         }
 
         private void UpdateEntityIcon(SlotControl button, EntityUid? entity)

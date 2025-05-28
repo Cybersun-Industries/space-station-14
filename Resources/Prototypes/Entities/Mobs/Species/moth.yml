@@ -24,7 +24,7 @@
     accent: zombieMoth
   - type: Speech
     speechVerb: Moth
-    allowedEmotes: ['Chitter', 'Squeak']
+    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] #flap is from goob
   - type: TypingIndicator
     proto: moth
   - type: Butcherable
@@ -48,9 +48,7 @@
       Female: UnisexMoth
       Unsexed: UnisexMoth
   - type: MovementSpeedModifier
-    weightlessAcceleration: 1.5 # Move around more easily in space.
-    weightlessFriction: 1
-    baseWeightlessModifier: 1
+    weightlessAcceleration: 3 # Goobstation value
   - type: Flammable
     damage:
       types:

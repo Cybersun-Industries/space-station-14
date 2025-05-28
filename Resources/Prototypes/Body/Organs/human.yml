@@ -64,6 +64,8 @@
         reagents:
         - ReagentId: GreyMatter
           Quantity: 5
+        - ReagentId: Cognizine # goob edit
+          Quantity: 5 # goob edit
   - type: FlavorProfile
     flavors:
       - people

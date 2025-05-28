@@ -48,6 +48,13 @@
         key: Drowsiness
         time: 10
         type: Remove
+      - !type:GenericStatusEffect # goob edit
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
+      - !type:RemoveComponentEffect # goob edit
+        component: DelayedKnockdown
+        locale: reagent-effect-guidebook-remove-delayed-knockdown
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -101,6 +108,13 @@
         messages: ["ephedrine-effect-tight-pain", "ephedrine-effect-heart-pounds"]
         type: Local
         probability: 0.05
+      - !type:GenericStatusEffect # goob edit
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
+      - !type:RemoveComponentEffect # goob edit
+        component: DelayedKnockdown
+        locale: reagent-effect-guidebook-remove-delayed-knockdown
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -164,6 +178,16 @@
         key: Drowsiness
         time: 10
         type: Remove
+       - !type:GenericStatusEffect # goob edit
+        key: Adrenaline
+        component: IgnoreSlowOnDamage
+        time: 5
+      - !type:RemoveComponentEffect # goob edit
+        component: DelayedKnockdown
+        locale: reagent-effect-guidebook-remove-delayed-knockdown
+      - !type:TakeStaminaDamage # goob edit
+        amount: -10
+        immediate: true
     Medicine:
       metabolismRate: 1.0
       effects:

@@ -4,6 +4,9 @@
   id: Stunprod
   description: A stun prod for illegal incapacitation.
   components:
+  - type: Tag # goob edit
+    tags:
+    - Stunbaton
   - type: Sprite
     sprite: Objects/Weapons/Melee/stunprod.rsi
     layers:
@@ -28,24 +31,39 @@
         Shock: 5
   - type: Stunbaton
     energyPerUse: 120
+    lightAttackEnergyMultiplier: 1.5 # Goob edit
   - type: MeleeWeapon
+    angle: 0
     wideAnimationRotation: -135
     damage:
       types:
         Blunt: 9
     angle: 60
     animation: WeaponArcThrust
-  - type: StaminaDamageOnHit
-    damage: 35
+  # it was ~35 now it's 55 so it's a buff ig
+  - type: StaminaDamageOnHit # goob edited
+    damage: 15
+    overtime: 40
+    lightAttackDamageMultiplier: 5
+    lightAttackOvertimeDamageMultiplier: 0
     sound: /Audio/Weapons/egloves.ogg
-  - type: StaminaDamageOnCollide
-    damage: 35
+  - type: StaminaDamageOnCollide # goob edited
+    damage: 15
+    overtime: 40
     sound: /Audio/Weapons/egloves.ogg
+  - type: DelayedKnockdownOnHit # Goobstation
+    useDelay: stunbaton
+  - type: UseDelayBlockMelee # Goobstation
+    delays:
+    - stunbaton
   - type: LandAtCursor # it deals stamina damage when thrown
   - type: Battery
     maxCharge: 360
     startingCharge: 360
   - type: UseDelay
+    delays: # Goobstation
+      stunbaton:
+        length: 2.5
   - type: Item
     heldPrefix: off
     size: Normal

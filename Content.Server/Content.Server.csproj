@@ -27,6 +27,7 @@
     <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />
     <ProjectReference Include="..\Corvax\Content.Corvax.Interfaces.Server\Content.Corvax.Interfaces.Server.csproj" />
     <ProjectReference Include="..\Content.Radium.Shared\Content.Radium.Shared.csproj" />
+    <ProjectReference Include="..\Content.Goobstation.Shared\Content.Goobstation.Shared.csproj" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 </Project>

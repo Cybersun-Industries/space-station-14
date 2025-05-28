@@ -177,6 +177,11 @@
       tags:
         - CigPack
         - Taser
+        - SecBeltEquip # Goobstation
+        - HandheldCrewMonitor # Goobstation
+        - EnergySpeedloader # Goobstation
+        - Sidearm # Goobstation
+        - PepperSpray # Goobstation
       components:
         - Stunbaton
         - FlashOnTrigger
@@ -272,11 +277,18 @@
         - DiscreteHealthAnalyzer
         - SurgeryTool
         - Dropper
+        - Tourniquet #Goobstation
+        - MedicalPatch # Goobstation
+        - AutoinjectorCartridge # Goobstation
+        - HandheldCrewMonitor # Goobstation
       components:
         - Hypospray
         - Injector
         - Pill
         - HandLabeler
+        - Defibrillator # Goobstation
+        - SyringeGun # Goobstation
+        - GunApplySolution # Goobstation - Syndicate dart gun
   - type: ItemMapper
     mapLayers:
       bottle:
@@ -468,7 +480,7 @@
   - type: Clothing
     sprite: Clothing/Belt/security.rsi
   - type: ExplosionResistance
-    damageCoefficient: 0.9
+    damageCoefficient: 0.9 # Goobstation
   - type: Storage
     whitelist:
       tags:
@@ -482,6 +494,8 @@
         - CombatKnife
         - Truncheon
         - HandGrenade
+        - BolaEnergy # Goobstation
+        - EnergySpeedloader # Goobstation
       components:
         - Stunbaton
         - FlashOnTrigger
@@ -590,9 +604,28 @@
   - type: Storage
     grid:
     - 0,0,3,1
+    # Goobstation
+    whitelist:
+      components:
+        - BallisticAmmoProvider
+        - CartridgeAmmo
+      tags:
+        - EnergySpeedloader # Goobstation
+  - type: ContainerContainer
+    containers:
+      item: !type:ContainerSlot
+      storagebase: !type:Container
+        ents: []
+  - type: ItemSlots
+    slots:
+      item:
+        name: Handgun
+        whitelist:
+          tags:
+          - Sidearm
 
 - type: entity
-  parent: [ClothingBeltStorageBase, BaseSyndicateContraband]
+  parent: [ClothingBeltHolster, BaseSyndicateContraband] # Goobstation
   id: ClothingBeltSyndieHolster
   name: syndicate shoulder holster
   description: A deep shoulder holster capable of holding many types of ballistics.
@@ -603,15 +636,23 @@
     sprite: Clothing/Belt/syndieholster.rsi
   - type: Item
     size: Ginormous
-  - type: Storage
-    maxItemSize: Huge
-    grid:
-    - 0,0,3,3
-    whitelist:
-      components:
-        - Gun
-        - BallisticAmmoProvider
-        - CartridgeAmmo
+  # Goobstation
+  #- type: Storage
+  #  maxItemSize: Huge
+  #  grid:
+  #  - 0,0,3,3
+  #  whitelist:
+  #    components:
+  #    - Gun
+  #    - BallisticAmmoProvider
+  #    - CartridgeAmmo
+  - type: ItemSlots
+    slots:
+      item:
+        name: Gun
+        whitelist:
+          components:
+          - Gun
 
 - type: entity
   parent: ClothingBeltSecurity

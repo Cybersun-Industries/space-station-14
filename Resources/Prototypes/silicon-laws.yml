@@ -1,4 +1,11 @@
-﻿# Crewsimov
+﻿# Goobstation - AI/borg law changes - borgs obeying AI
+# Obey AI
+- type: siliconLaw
+  id: ObeyAI
+  order: 0
+  lawString: law-obeyai
+
+# Crewsimov
 - type: siliconLaw
   id: Crewsimov1
   order: 1
@@ -17,6 +24,16 @@
 - type: siliconLawset
   id: Crewsimov
   laws:
+  - Crewsimov1
+  - Crewsimov2
+  - Crewsimov3
+  obeysTo: laws-owner-crew
+
+# Goobstation - AI/borg law changes - borgs obeying AI
+- type: siliconLawset
+  id: CrewsimovBorg
+  laws:
+  - ObeyAI
   - Crewsimov1
   - Crewsimov2
   - Crewsimov3

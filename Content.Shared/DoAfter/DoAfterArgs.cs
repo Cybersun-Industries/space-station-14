@@ -46,6 +46,20 @@ public sealed partial class DoAfterArgs
     [DataField]
     public bool Hidden;
 
+    /// <summary>
+    /// Goobstation
+    /// Whether the delay multiplier event should be raised
+    /// </summary>
+    [DataField]
+    public bool MultiplyDelay = true;
+
+    /// <summary>
+    /// Goobstation
+    /// If not null, progress bar will use this color.
+    /// </summary>
+    [DataField]
+    public Color? ColorOverride;
+
     #region Event options
     /// <summary>
     ///     The event that will get raised when the DoAfter has finished. If null, this will simply raise a <see cref="SimpleDoAfterEvent"/>

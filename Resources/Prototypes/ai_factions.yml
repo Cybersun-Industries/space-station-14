@@ -8,7 +8,11 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+  friendly: # Goobstation
   - Wizard
+  - PirateFaction # goob - pirates
 
 - type: npcFaction
   id: NanoTrasen
@@ -20,15 +24,16 @@
   - Revolutionary
   - Dragon
   - AllHostile
+  - Changeling
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
   - Wizard
+  - PirateFaction # goob - pirates
   - Xenoborg
 
 - type: npcFaction
   id: Mouse
-  hostile:
-  - PetsNT
-  - AllHostile
-  - Wizard
+  # Goobstation - not hostile to anything so they don't attack things
 
 - type: npcFaction
   id: Passive
@@ -43,6 +48,7 @@
   - AllHostile
   - Wizard
   - Dragon
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: SimpleHostile
@@ -56,8 +62,12 @@
   - Dragon
   - Xeno
   - AllHostile
-  - Wizard
   - Xenoborg
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+  - PirateFaction # goob - pirates
+  friendly: # Goobstation
+  - Wizard
 
 - type: npcFaction
   id: SimpleNeutral
@@ -74,6 +84,11 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Changeling
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+  - Wizard # goob edit - wizard
+  - PirateFaction # goob - pirates
 
 - type: npcFaction
   id: Xeno
@@ -85,9 +100,13 @@
   - Zombie
   - Revolutionary
   - AllHostile
-  - Wizard
   - Dragon
   - Xenoborg
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+  - PirateFaction # goob - pirates
+  - friendly: # Goobstation
+  - Wizard
 
 - type: npcFaction
   id: Zombie
@@ -103,6 +122,11 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - Changeling
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+  - Wizard # goob edit - wizard
+  - PirateFaction # goob - pirates
 
 - type: npcFaction
   id: Revolutionary
@@ -114,6 +138,9 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Blob # Goobstation - Blob
+  - Wizard # Goobstation - wizard
+  - PirateFaction # goob - pirates
 
 - type: npcFaction
   id: AllHostile
@@ -131,6 +158,11 @@
   - Revolutionary
   - Wizard
   - Xenoborg
+  - Changeling # goob edit - changelings
+  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+  - Wizard # goob edit - wizard
+  - PirateFaction # goob - pirates
 
 - type: npcFaction
   id: Wizard
@@ -162,5 +194,5 @@
   - Xeno # rivalry
 
   # cause they are hostile to them
-  - SimpleHostile 
+  - SimpleHostile
   - AllHostile

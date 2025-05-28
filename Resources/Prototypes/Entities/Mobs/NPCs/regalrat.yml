@@ -4,6 +4,7 @@
   parent: [ SimpleMobBase, MobCombat ]
   description: He's da rat. He make da roolz.
   components:
+  - type: VentCrawler # goobstation - Ventcrawl
   - type: CombatMode
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.00
@@ -95,6 +96,9 @@
     - MindRoleGhostRoleFreeAgent
     raffle:
       settings: default
+    requirements: # Goobstation - ghost roles requirements
+    - !type:OverallPlaytimeRequirement
+      time: 18000 #5 hours
   - type: GhostTakeoverAvailable
   - type: Tag
     tags:
@@ -104,6 +108,7 @@
   - type: RatKing
     hungerPerArmyUse: 25
     hungerPerDomainUse: 50
+  - type: Rummager # DeltaV: Make rummaging a generic component
   - type: MobsterAccent
   - type: Speech
     speechVerb: SmallMob
@@ -127,6 +132,14 @@
   - type: Sharp
   - type: TTS # Corvax-TTS
     voice: Rat
+    - type: NightVision # Goobstation - Nigthvision
+    color: "#d14343"
+    activateSound: null
+    deactivateSound: null
+  - type: Insulated # Goobstation
+    coefficient: 0.5
+  - type: CombatPower # Goobstation
+    factor: 2
 
 - type: entity
   id: MobRatKingBuff
@@ -172,6 +185,7 @@
   description: He's da mini rat. He don't make da roolz.
   categories: [ HideSpawnMenu ] #Must be configured to a King or the AI breaks.
   components:
+  - type: VentCrawler # goobstation - Ventcrawl
   - type: CombatMode
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.5
@@ -204,6 +218,7 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
       state: eyes
       shader: unshaded
+  - type: Insulated # Goobstation
 
   - type: SpriteMovement
     movementLayers:
@@ -297,13 +312,22 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+    - type: FelinidFood # Nyanotrasen - Felinid, ability to eat rat, see Content.Server/Nyanotrasen/Abilities/Felinid/FelinidSystem.cs
+  - type: Food
+  - type: Item
+    size: Tiny # Delta V - Make them edible and pickable.
+  - type: NightVision # Goobstation - Nigthvision
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 - type: weightedRandomEntity
   id: RatKingLoot
-  weights:
-    RandomSpawner100: 66 #garbage
-    FoodCheese: 28 #food
-    IngotGold1: 5 #loot
+  weights: # DeltaV: Rebalanced for Rodentia rummaging because we don't have Rat King
+    RandomSpawner100: 70 #garbage
+    FoodCheeseSlice: 15 #food
+    RandomSnacks: 10
+    RandomFoodSingle: 5
 
 - type: entity
   id: ActionRatKingRaiseArmy

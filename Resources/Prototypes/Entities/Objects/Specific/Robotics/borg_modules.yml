@@ -465,6 +465,7 @@
     - Wirecutter
     - WelderIndustrial
     - Multitool
+    - MeleeHammer # Goobstation
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: tool-module }
 
@@ -540,7 +541,8 @@
     - WeaponGrapplingGun
     - BorgFireExtinguisher
     - BorgHandheldGPSBasic
-    - HandHeldMassScannerBorg
+    - LavalandJaunterRecharging # Goobstation
+    #- HandHeldMassScannerBorg - Removed by Lavaland
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: grappling-module }
 
@@ -585,6 +587,22 @@
     - FloorTileItemSteelLingering0
     - FloorTileItemWhiteLingering0
     - FloorTileItemDarkLingering0
+    # goobstation
+    - SheetPlasteelLingering0
+  # Frontier: droppable borg items
+  - type: DroppableBorgModule
+    moduleId: Construction
+    items:
+    - id: APCElectronics
+      whitelist:
+        components:
+        - Electronics
+        - MachineBoard
+    - id: CapacitorStockPart
+      whitelist:
+        components:
+        - StockPart
+  # End Frontier: droppable borg items
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: construction-module }
 
@@ -600,6 +618,7 @@
   - type: ItemBorgModule
     items:
     - RCDRecharging
+    - RPDRecharging # Goobstation
     - BorgFireExtinguisher
     - BorgHandheldGPSBasic
     - GasAnalyzer
@@ -757,9 +776,18 @@
     - HandheldHealthAnalyzerUnpowered
     - BorgHypo
     - Syringe
-    - BorgDropper
-    - BorgBeaker
-    - BorgBeaker
+#    - Beaker # Frontier
+#    - Beaker # Frontier
+#    - BorgDropper # Frontier
+  # Frontier: droppable borg items
+  - type: DroppableBorgModule
+    moduleId: AdvancedTreatment
+    items:
+    - id: Beaker
+      whitelist:
+        components:
+        - FitsInDispenser
+  # End Frontier: droppable borg items
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-chem-module }
 
@@ -824,6 +852,15 @@
     - RubberStampDenied
     - BorgDropper
     - BorgVial
+  # Frontier: droppable borg items
+  - type: DroppableBorgModule
+    moduleId: Service
+    items:
+    - id: DrinkShaker
+      whitelist:
+        components:
+        - FitsInDispenser
+  # End Frontier: droppable borg items
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: service-module }
 
@@ -859,6 +896,15 @@
     - HydroponicsToolSpade
     - HydroponicsToolClippers
     - Bucket
+  # Frontier: droppable borg items
+  - type: DroppableBorgModule
+    moduleId: Gardening
+    items:
+    - id: AppleSeeds
+      whitelist:
+        components:
+        - Seed
+  # End Frontier: droppable borg items
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: gardening-module }
 
@@ -950,7 +996,7 @@
   id: BorgModuleOperative
   parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
   name: operative cyborg module
-  description: A module that comes with a crowbar, an Emag, an Access Breaker and a syndicate pinpointer.
+  description: A module that comes with a pair of syndicate jaws of life, an Emag, an Access Breaker and a syndicate pinpointer. # Goobstation
   components:
     - type: Sprite
       layers:
@@ -958,7 +1004,7 @@
       - state: icon-syndicate
     - type: ItemBorgModule
       items:
-      - Crowbar
+      - SyndicateJawsOfLife # - Crowbar # Goobstation
       - Emag
       - AccessBreaker
       - PinpointerSyndicateNuclear

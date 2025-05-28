@@ -111,7 +111,7 @@
     groups:
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
-      Acidic: [Touch, Ingestion]
+      Acidic: [Touch, Ingestion, Eyes] # Goobstation
     reactions:
     - reagents: [Water, SpaceCleaner]
       methods: [Touch]
@@ -137,7 +137,10 @@
     - Flashed
     - RadiationProtection
     - Drowsiness
+    - Vulgarity # Goobstation - add Profanol
     - Adrenaline
+    - Brainrotted # Goobstation - skibidi rizz ohio update
+    - Dementia # Goobstation - Amnestic spray!
   - type: Body
     prototype: Human
     requiredLegs: 2
@@ -183,6 +186,8 @@
     - NanoTrasen
   - type: CreamPied
   - type: Stripping
+  - type: AccessReader # Goobstation-WantedMenu
+    access: [["Security"]]
   - type: UserInterface
     interfaces:
       enum.HumanoidMarkingModifierKey.Key:
@@ -191,6 +196,13 @@
         type: StrippableBoundUserInterface
       enum.SurgeryUiKey.Key: # RADIUM: SURGERY
         type: SurgeryBoundUserInterface
+      enum.SetWantedVerbMenu.Key: # Goobstation-WantedMenu
+        type: WantedMenuBoundUserInterface
+      enum.HereticLivingHeartKey.Key: # goob edit - heretics
+        type: LivingHeartMenuBoundUserInterface
+      enum.WizardTeleportUiKey.Key: # Goobstation - wizard
+        type: WizardTeleportBoundUserInterface
+        requireInputValidation: false
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -217,6 +229,11 @@
     - AnomalyHost
   - type: LayingDown # _CorvaxNext: LayingDown Laying Down
   - type: AutoCryoSleepable # Corvax-Next-AutoCryo
+  - type: CanEscapeInventory # GoobStation - Escape being picked up by players
+  - type: Penetratable # Goobstation - Better snipers
+    penetrateDamage: 50
+    damagePenalty: 0.2
+  - type: ExaminableCharacter # WWDP
 
 - type: entity
   save: false
@@ -287,6 +304,8 @@
   - type: FireVisuals
     alternateState: Standing
   - type: FootprintOwner # Corvax-Next-Footprints
+  - type: Carriable # Goobstation
+  - type: CPRTraining # Goobstation - Just give to everyone! This ain't MRP.
 
 - type: entity
   save: false

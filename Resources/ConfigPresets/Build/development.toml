@@ -42,5 +42,8 @@ see_own_notes = true
 random_characters = true
 random_species_weights = ""
 
-[autodebug]
+[autodebug] # Autodebug
 vote.roundstart = false
+
+[lavaland] # Lavaland Change
+enabled = false

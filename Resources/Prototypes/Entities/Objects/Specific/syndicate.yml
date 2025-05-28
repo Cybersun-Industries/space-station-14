@@ -3,7 +3,8 @@
   name: telecrystal
   parent: [BaseItem, BaseSyndicateContraband]
   id: Telecrystal
-  suffix: 20 TC
+  # Goobstation - Telecrystal rework
+  suffix: 100 TC
   description: It seems to be pulsing with suspiciously enticing energies.
   components:
   - type: Sprite
@@ -13,15 +14,25 @@
     sprite: Objects/Specific/Syndicate/telecrystal.rsi
     size: Tiny
   - type: Stack
-    count: 20
+    count: 100
     stackType: Telecrystal
+  # Goobstation - Custom stack splitting dialog
+  - type: UserInterface
+    interfaces:
+      enum.StackCustomSplitUiKey.Key:
+        type: StackCustomSplitBoundUserInterface
   - type: StaticPrice
     price: 0
   - type: StackPrice
-    price: 200
+    price: 1000
   - type: Currency
     price:
       Telecrystal: 1
+  # Goobstation
+  - type: Tag
+    tags:
+    - Telecrystal
+
 # Corvax-HiddenDesc-Start
   - type: HiddenDescription
     entries:
@@ -90,49 +101,58 @@
     balance:
       Telecrystal: 0
 
+# goobstation - duke nukies
 - type: entity
   parent: BaseUplinkRadio
-  id: BaseUplinkRadio20TC
-  suffix: 20 TC
+  id: BaseUplinkRadio50TC
+  suffix: 50 TC
   components:
   - type: Store
     balance:
-      Telecrystal: 20
+      Telecrystal: 50
 
 - type: entity
   parent: BaseUplinkRadio
-  id: BaseUplinkRadio25TC
-  suffix: 25 TC
+  id: BaseUplinkRadio50TCNukeOps
+  suffix: 50 TC, NukeOps reinforcement
   components:
   - type: Store
     balance:
-      Telecrystal: 25
-
-#this uplink MUST be used for nukeops, as it has the tag for filtering the listing.
-- type: entity
-  parent: BaseUplinkRadio
-  id: BaseUplinkRadio40TC
-  suffix: 40 TC, NukeOps
-  components:
-  - type: Store
-    balance:
-      Telecrystal: 40
+      Telecrystal: 50
   - type: Tag
     tags:
     - NukeOpsUplink
+    - NukeOpsReinforcementUplink
 
 - type: entity
   parent: BaseUplinkRadio
-  id: BaseUplinkRadio60TC
-  suffix: 60 TC, LoneOps
+  # Goobstation - Telecrystal rework
+  id: BaseUplinkRadio100TC
+  suffix: 100 TC
   components:
   - type: Store
     balance:
-      Telecrystal: 60
-  - type: Tag
-    tags:
-    - NukeOpsUplink
+      Telecrystal: 100
 
+- type: entity
+  parent: BaseUplinkRadio
+  # Goobstation - Telecrystal rework
+  id: BaseUplinkRadio125TC
+  suffix: 125 TC
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 125
+
+- type: entity
+  parent: BaseUplinkRadio
+  # Goobstation - Telecrystal rework
+  id: BaseUplinkRadio200TC
+  suffix: 200 TC
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 200
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadioDebug
@@ -140,4 +160,5 @@
   components:
   - type: Store
     balance:
-      Telecrystal: 99999
+      # Goobstation - Telecrystal rework
+      Telecrystal: 999999

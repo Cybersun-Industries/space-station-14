@@ -70,7 +70,7 @@
       projectile:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.1,-0.1,0.1,0.1"
+          bounds: "-0.1,-0.10,0.1,0.30" # Goobstation - Fast Bullets
         hard: false
         mask:
         - Impassable
@@ -209,8 +209,7 @@
           bounds: "-0.15,-0.45,0.15,0.15"
         hard: false
         mask:
-          - Impassable
-          - BulletImpassable
+        - Opaque # Goobstation
       fly-by: *flybyfixture
   - type: Ammo
   - type: Projectile
@@ -252,8 +251,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Impassable
-        - BulletImpassable
+        - Opaque # Goobstation
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
@@ -331,6 +329,9 @@
         mask:
         - Opaque
       fly-by: *flybyfixture
+  - type: Reflective # Goobstation - Make emitter bolts reflect as energy
+    reflective:
+    - Energy
   - type: Projectile
 #   soundHit:  Waiting on serv3
     damage:
@@ -378,11 +379,11 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Cold: 0
+        Cold: 10 # goob - to account for lower firerate and projectile speed. low dmg because nothing resists cold
   - type: TimedDespawn
     lifetime: 3
   - type: ChangeTemperatureOnCollide
-    heat: -50000
+    heat: -15000 # Lavaland Change
 
 - type: entity
   name: freezing bolt
@@ -395,11 +396,11 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Cold: 10
+        Cold: 15 # Lavaland Change
   - type: TimedDespawn
     lifetime: 3
   - type: ChangeTemperatureOnCollide
-    heat: -100000
+    heat: -300000 # Lavaland Change
 
 - type: entity
   name: magmawing watcher bolt
@@ -418,9 +419,9 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 0
+        Heat: 30 # goob - to account for lower firerate and projectile speed. also so you can't just stand there and tank
   - type: ChangeTemperatureOnCollide
-    heat: 50000
+    heat: 20000 # Lavaland Change
 
 - type: entity
   name: scorching bolt
@@ -433,9 +434,9 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 10
+        Heat: 30 # Lavaland Change
   - type: ChangeTemperatureOnCollide
-    heat: 100000 #This may be a bit underpowered, but in testing, 130000 was RIDICULOUS and killed in seconds.
+    heat: 110000 #This may be a bit underpowered, but in testing, 130000 was RIDICULOUS and killed in seconds.
 
 - type: entity
   id: BulletKinetic
@@ -457,8 +458,8 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 25
-        Structural: 30
+        Blunt: 40 # Lavaland Change - TOTAL PKA VICTORY
+       # Structural: 30 Lavaland Change - No easy break-ins :)
   # Short lifespan
   - type: TimedDespawn
     lifetime: 0.22 # roughly 5.5 tiles
@@ -479,8 +480,8 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 30
-        Structural: 35
+        Blunt: 80 # Goobstation edit
+        # Structural: 35 # Goobstation edit
   - type: Ammo
     muzzleFlash: HitscanEffect
   - type: TimedDespawn
@@ -509,6 +510,7 @@
         shader: unshaded
   - type: GatheringProjectile
   - type: DamageMarkerOnCollide
+    onlyWorkOnFauna: true # Lavaland Change
     whitelist:
       components:
         - MobState
@@ -759,6 +761,7 @@
       path: /Audio/Effects/gen_hit.ogg
   - type: StaminaDamageOnCollide
     damage: 80
+    overtime: 50 # Goobstation
 
 - type: entity
   id: BulletGrenadeBlast
@@ -794,6 +797,8 @@
   - type: ActiveTimerTrigger
     timeRemaining: 0.3
   - type: DeleteOnTrigger
+  - type: Flashbang # Goobstation
+    minProtectionRange: 7 # Can't stun/knockdown people wearing any ear protection
 
 # This is supposed to spawn shrapnel and stuff so uhh... TODO?
 - type: entity
@@ -854,8 +859,8 @@
     layers:
       - state: frag
   - type: EmpOnTrigger
-    range: 5
-    energyConsumption: 50000
+    range: 3 # Goobstation
+    energyConsumption: 360 # Goobstation
     disableDuration: 10
   - type: Ammo
     muzzleFlash: null
@@ -1147,6 +1152,8 @@
   - type: Tag
     tags:
       - HideContextMenu
+  - type: Ammo # Goobstation
+    muzzleFlash: null
 
 - type: entity
   name: laser bolt
@@ -1176,8 +1183,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-        - Impassable
-        - BulletImpassable
+        - Opaque # Goob edit
       fly-by: *flybyfixture
   - type: Ammo
   - type: Projectile

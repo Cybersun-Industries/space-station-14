@@ -46,6 +46,11 @@
   - type: RequireProjectileTarget
     active: False
   - type: AnimatedEmotes # Corvax-Next-AutoAnimate
+  - type: Fart
+  - type: CollectiveMind # Goobstation - Starlight collective mind port
+  - type: Penetratable # Goobstation - Better snipers
+    penetrateDamage: 15 # Kill million mices
+    damagePenalty: 0.05
 
 - type: entity
   save: false
@@ -204,7 +209,7 @@
     canResistFire: true
     damage: #per second, scales with number of fire 'stacks'
       types:
-        Heat: 1.5
+        Heat: 0.5 # goob edit - ash heretic must weep
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Generic_mob_burning

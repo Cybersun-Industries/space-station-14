@@ -15,10 +15,17 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+    - GasMask # goob edit
+    - GasMaskFullDefault # goob edit
+    - Mask # goob edit
   - type: HideLayerClothing
     layers:
       Snout: Mask
     hideOnToggle: true
+  - type: Construction # Goobstation
+    graph: GasMaskHalf
+    node: start
+    deconstructionTarget: null
 
 - type: entity
   parent: [ClothingMaskGas, BaseSecurityContraband]
@@ -39,6 +46,14 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+  - type: Tag # Goobstation - For survial boxes
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+    - SecurityBreathMask
+  - type: Hailer # Goobstation - Hailer
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: [ClothingMaskGas, BaseSyndicateContraband]
@@ -59,6 +74,13 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+  - type: Tag  # Goobstation - For survial boxes
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+    - SyndicateBreathMask
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGas
@@ -74,6 +96,12 @@
     modifiers:
       coefficients:
         Heat: 0.80
+  - type: Tag # Goobstation
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - GasMask
+    - Mask
 
 - type: entity
   parent: [ClothingMaskGasAtmos, BaseCommandContraband]
@@ -118,6 +146,12 @@
         Slash: 0.90
         Piercing: 0.95
         Heat: 0.95
+  - type: Tag # Goobstation
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - GasMask
+    - Mask
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -137,10 +171,11 @@
     tags:
     - PetWearable
     - WhitelistChameleon
+    - BreathMask  # Goobstation - For survial boxes
   - type: PhysicalComposition
     materialComposition:
-      Steel: 50
-      Plastic: 50
+      Steel: 15
+      Plastic: 15
 
 - type: entity
   parent: ClothingMaskBreathMedical
@@ -180,10 +215,11 @@
     tags:
     - PetWearable
     - WhitelistChameleon
-  - type: PhysicalComposition
+    - BreathMask # Goobstation - For survial boxes
+  - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
-      Steel: 50
-      Plastic: 100
+      Cloth: 25
+      Plastic: 25
   - type: StaticPrice
     price: 30 # increases in price after decomposed into raw materials
 
@@ -204,6 +240,8 @@
     tags:
     - ClownMask
     - WhitelistChameleon
+    - IPCMaskWearable # EE - IPCs
+    - Mask
   - type: HideLayerClothing
     slots:
     - Snout
@@ -220,6 +258,9 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: Tag
+    tags:
+    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskClown
@@ -284,6 +325,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+    - IPCMaskWearable # EE - IPCs
   - type: HideLayerClothing
     slots:
     - Snout
@@ -303,9 +345,9 @@
     size: Tiny
   - type: IdentityBlocker
     coverage: MOUTH
-  - type: PhysicalComposition
+  - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
-      Plastic: 25
+      Cloth: 25
 
 - type: entity
   parent: ClothingMaskBase
@@ -327,6 +369,9 @@
   - type: Construction
     graph: Muzzle
     node: muzzle
+  - type: Tag # Goobstation
+    tags:
+    - Muzzle
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -386,6 +431,8 @@
         Slash: 0.90
         Piercing: 0.95
         Heat: 0.95
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: [ ClothingMaskGas, BaseSecurityCargoContraband ]
@@ -404,6 +451,14 @@
         Slash: 0.90
         Piercing: 0.95
         Heat: 0.95
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
+  - type: Tag # Goobstation
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - GasMask
+    - Mask
 
 - type: entity
   parent: [ ClothingMaskGas, BaseCentcommContraband ]
@@ -432,6 +487,8 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasERT
@@ -450,6 +507,8 @@
         Slash: 0.80
         Piercing: 0.90
         Heat: 0.90
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
 
 - type: entity
   parent: ClothingMaskBase
@@ -465,11 +524,14 @@
   - type: Tag
     tags:
     - HamsterWearable
+    - CursedAnimalMask # Goobstation
     - WhitelistChameleon
-  - type: HideLayerClothing
+    - IPCMaskWearable # EE - IPCs  - type: HideLayerClothing
     slots:
     - Snout
   - type: IdentityBlocker
+  - type: AddAccentClothing # Goobstation
+    accent: RatAccent
 
 - type: entity
   parent: ClothingMaskBase
@@ -486,6 +548,13 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: Tag
+    tags:
+    - CursedAnimalMask # Goobstation
+    - WhitelistChameleon # Goobstation
+    - IPCMaskWearable # EE - IPCs
+  - type: AddAccentClothing # Goobstation
+    accent: FoxAccent
 
 - type: entity
   parent: ClothingMaskBase
@@ -502,6 +571,13 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: Tag
+    tags:
+    - CursedAnimalMask # Goobstation
+    - WhitelistChameleon # Goobstation
+    - IPCMaskWearable # EE - IPCs
+  - type: AddAccentClothing # Goobstation
+    accent: BeeAccent
 
 - type: entity
   parent: ClothingMaskBase
@@ -518,6 +594,13 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: Tag
+    tags:
+    - CursedAnimalMask # Goobstation
+    - WhitelistChameleon # Goobstation
+    - IPCMaskWearable # EE - IPCs
+  - type: AddAccentClothing # Goobstation
+    accent: BearAccent
 
 - type: entity
   parent: ClothingMaskBase
@@ -534,6 +617,13 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: Tag
+    tags:
+    - CursedAnimalMask # Goobstation
+    - WhitelistChameleon # Goobstation
+    - IPCMaskWearable # EE - IPCs
+  - type: AddAccentClothing # Goobstation
+    accent: RavenAccent
 
 - type: entity
   parent: ClothingMaskBase
@@ -550,6 +640,13 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: Tag
+    tags:
+    - CursedAnimalMask # Goobstation
+    - WhitelistChameleon # Goobstation
+    - IPCMaskWearable # EE - IPCs
+  - type: AddAccentClothing # Goobstation
+    accent: JackalAccent
 
 - type: entity
   parent: ClothingMaskBase
@@ -566,6 +663,13 @@
   - type: HideLayerClothing
     slots:
     - Snout
+  - type: Tag
+    tags:
+    - CursedAnimalMask # Goobstation
+    - WhitelistChameleon # Goobstation
+    - IPCMaskWearable # EE - IPCs
+  - type: AddAccentClothing # Goobstation
+    accent: BatAccent
 
 - type: entity
   parent: ClothingMaskBase
@@ -582,6 +686,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskNeckGaiter
@@ -668,6 +773,9 @@
   - type: EyeProtection
   - type: BreathMask
   - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskGas
@@ -682,10 +790,10 @@
     sprite: Clothing/Mask/welding-gas.rsi
   - type: FlashImmunity
   - type: EyeProtection
-  - type: PhysicalComposition
+  - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
-      Steel: 200
-      Glass: 100
+      Steel: 150
+      Glass: 50
   - type: StaticPrice
     price: 100
   - type: Tag

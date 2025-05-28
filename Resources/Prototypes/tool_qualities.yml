@@ -47,6 +47,13 @@
   spawn: KitchenKnife
   icon: { sprite: Objects/Weapons/Melee/kitchen_knife.rsi, state: icon }
 
+- type: tool #Goob
+  id: Ignition
+  name: tool-quality-ignition-name
+  toolName: tool-quality-ignition-tool-name
+  spawn: Matchstick
+  icon: { sprite: Objects/Tools/matches.rsi, state: match_lit }
+
 - type: tool
   id: Sawing
   name: tool-quality-sawing-name

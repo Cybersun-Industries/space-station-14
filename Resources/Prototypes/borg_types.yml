@@ -159,6 +159,9 @@
   - BorgModuleChemical
   - BorgModuleTopicals
   - BorgModuleRescue
+  - BorgModuleLollypop # Goobstation
+  - BorgModuleSurgery # Goobstation
+  - BorgModuleDefibrillator # Goobstation
 
   radioChannels:
   - Science
@@ -203,6 +206,7 @@
     tags:
     - BorgModuleGeneric
     - BorgModuleService
+    - BorgModuleLollypop # Goobstation
 
   defaultModules:
   - BorgModuleTool

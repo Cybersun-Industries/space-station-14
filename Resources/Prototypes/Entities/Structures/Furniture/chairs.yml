@@ -49,6 +49,9 @@
           collection: MetalBreak
   - type: StaticPrice
     price: 50
+  - type: Tag # goob edit
+    tags:
+    - Chair
 
 #Starts unanchored, cannot be rotated while anchored
 - type: entity

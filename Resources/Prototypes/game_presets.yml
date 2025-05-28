@@ -6,11 +6,12 @@
   showInVote: true # Corvax-Next-Democracy
   description: survival-description
   rules:
-    - MeteorSwarmScheduler
+  #  - MeteorSwarmScheduler Goobstation - nuh uh
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: KesslerSyndrome
@@ -22,10 +23,11 @@
   showInVote: true # Corvax-Next-Democracy
   description: kessler-syndrome-description
   rules:
-    - KesslerSyndromeScheduler
+  #  - KesslerSyndromeScheduler Goobstation - nuh uh
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: AllAtOnce
@@ -40,10 +42,11 @@
     - Revolutionary
     - Zombie
     - Wizard
-    - KesslerSyndromeScheduler
+  #  - KesslerSyndromeScheduler Goobstation - nuh uh
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: AllerAtOnce
@@ -62,9 +65,9 @@
     - Zombie
     - Wizard
     - BasicStationEventScheduler
-    - KesslerSyndromeScheduler
-    - MeteorSwarmMildScheduler
-    - MeteorSwarmScheduler
+   # - KesslerSyndromeScheduler Goobstation - nuh uh
+   # - MeteorSwarmMildScheduler Goobstation - nuh uh
+   # - MeteorSwarmScheduler Goobstation - nuh uh
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - SpaceTrafficControlFriendlyEventScheduler
@@ -80,9 +83,10 @@
   description: extended-description
   rules:
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+  # - MeteorSwarmScheduler Goobstation - nuh uh
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Greenshift
@@ -95,6 +99,7 @@
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Secret
@@ -116,9 +121,10 @@
   description: secret-description
   rules:
     - BasicStationEventScheduler
-    - MeteorSwarmScheduler
+   # - MeteorSwarmScheduler Goobstation - nuh uh
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
@@ -130,6 +136,7 @@
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Sandbox
@@ -155,9 +162,10 @@
   - Traitor
   - SubGamemodesRule
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+  # - MeteorSwarmScheduler Goobstation - nuh uh
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Deathmatch
@@ -184,9 +192,10 @@
   - DummyNonAntagChance
   - SubGamemodesRule
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+  #  - MeteorSwarmScheduler Goobstation - nuh uh
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Revolutionary
@@ -202,9 +211,10 @@
   - Revolutionary
   - SubGamemodesRule
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+  #  - MeteorSwarmScheduler Goobstation - nuh uh
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Wizard
@@ -218,9 +228,10 @@
   - DummyNonAntagChance
   - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+  # - MeteorSwarmScheduler Goobstation - nuh uh
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombie
@@ -236,9 +247,10 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+  # - MeteorSwarmScheduler Goobstation - nuh uh
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombieteors
@@ -252,6 +264,7 @@
   rules:
   - Zombie
   - BasicStationEventScheduler
-  - KesslerSyndromeScheduler
+  # - KesslerSyndromeScheduler Goobstation - nuh uh
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change

@@ -24,6 +24,10 @@
       prob: 0.5
     - id: SubWizard
       prob: 0.05
+    - id: Heretic # goob edit
+      prob: 0.2
+    - id: Devil # Goob
+      prob: 0.1 
 
 - type: entity
   parent: BaseGameRule
@@ -157,8 +161,8 @@
     - prefRoles: [ Nukeops ]
       fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
       spawnerPrototype: SpawnPointNukeopsOperative
-      max: 3
-      playerRatio: 10
+      max: 10 # Goobstation / 古布空间站 - 没有限制的核特工
+      playerRatio: 16 # Goobstation
       startingGear: SyndicateOperativeGearFull
       roleLoadout:
       - RoleSurvivalNukie
@@ -375,7 +379,7 @@
       playerRatio: 30
 
 # event schedulers
-
+# goob edit - separate event schedulers
 - type: entityTable
   id: BasicGameRulesTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
@@ -390,6 +394,28 @@
         tableId: CalmPestEventsTable
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
+
+- type: entityTable
+  id: BasicGameRulesTableNoAntag
+  table: !type:AllSelector
+    children:
+      - !type:NestedSelector
+        tableId: BasicCalmEventsTable
+      - !type:NestedSelector
+        tableId: CargoGiftsTable
+      - !type:NestedSelector
+        tableId: CalmPestEventsTable
+      - !type:NestedSelector
+        tableId: SpicyPestEventsTable
+
+- type: entityTable
+  id: AllGameRulesTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: BasicGameRulesTableNoAntag
+    - !type:NestedSelector
+      tableId: BasicAntagEventsTable
 
 - type: entityTable
   id: SpaceTrafficControlTable
@@ -411,6 +437,17 @@
       tableId: BasicGameRulesTable
 
 - type: entity
+  id: AntagStationEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicAntagEventsTable
+    minMaxEventTiming:
+      min: 600
+      max: 900
+
+- type: entity
   id: RampingStationEventScheduler
   parent: BaseGameRule
   components:
@@ -418,6 +455,15 @@
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
 
+- type: entity
+  id: BasicStationEventSchedulerNoAntag
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicGameRulesTableNoAntag
+# goob edit end
+      
 - type: entity
   id: SpaceTrafficControlEventScheduler # iff we make a selector for EntityTables that can respect StationEventComp restrictions, or somehow impliment them otherwise in said tables,
   parent: BaseGameRule                  # we can remerge this with the other schedulers, but it will silently fail due to that limitation without a separate scheduler to balance atm.

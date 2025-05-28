@@ -139,12 +139,12 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 15
+        maxVol: 20 # Goobstation
   - type: ExaminableSolution
     solution: pen
   - type: Hypospray
     solutionName: pen
-    transferAmount: 15
+    transferAmount: 20 # Goobstation
     onlyAffectsMobs: false
     injectOnly: true
   - type: Appearance
@@ -152,9 +152,9 @@
     maxFillLevels: 1
     changeColor: false
     emptySpriteName: firstaid_empty
-  - type: PhysicalComposition
+  - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
-      Plastic: 50
+      Plastic: 25
   - type: SpaceGarbage
   - type: StaticPrice
     price: 75 # These are limited supply items.
@@ -165,7 +165,7 @@
   name: emergency medipen
   parent: ChemicalMedipen
   id: EmergencyMedipen
-  description: A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Beware, as it's easy to overdose on epinephrine and tranexamic acid.
+  description: A rapid and safe way to heal minor damage, stop bleeding, and stabilize patients for personnel without advanced medical knowledge. # goobstation
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -179,12 +179,17 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 15
+        maxVol: 20 # goobstation
         reagents:
-        - ReagentId: Epinephrine
-          Quantity: 12
-        - ReagentId: TranexamicAcid
-          Quantity: 3
+        - ReagentId: Tirimol # Goobstation
+          Quantity: 10
+        - ReagentId: Ibuprofen # Goobstation
+          Quantity: 5
+        - ReagentId: Omnizine # Goobstation
+          Quantity: 5
+  - type: Tag
+    tags:
+    - EmergencyMedipen
 
 - type: entity
   name: poison auto-injector
@@ -219,9 +224,11 @@
         maxVol: 15
         reagents:
         - ReagentId: Ultravasculine
-          Quantity: 10
-        - ReagentId: Epinephrine
-          Quantity: 5
+          Quantity: 15
+       # - ReagentId: Epinephrine
+       #   Quantity: 5
+  - type: Tag
+    tags: []
 
 - type: entity
   name: brute auto-injector
@@ -252,24 +259,30 @@
     emptySpriteName: bicpen_empty
   - type: Hypospray
     solutionName: pen
-    transferAmount: 20
+    transferAmount: 25 # Goobstation
     onlyAffectsMobs: false
     injectOnly: true
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 20
+        maxVol: 25
         reagents:
-        - ReagentId: Bicaridine
-          Quantity: 15
+        - ReagentId: SalicylicAcid # goobstation
+          Quantity: 10
+        - ReagentId: Bicaridine # goobstation
+          Quantity: 5
         - ReagentId: TranexamicAcid
           Quantity: 5
+        - ReagentId: Tramadol # goobstation
+          Quantity: 5
+  - type: Tag
+    tags: []
 
 - type: entity
   name: burn auto-injector
   parent: ChemicalMedipen
   id: BurnAutoInjector
-  description: A rapid dose of dermaline and leporazine, intended for combat applications.
+  description: A rapid dose of oxandrolone, leporazine, and tramadol, intended for combat applications. # goobstation
   components:
   - type: Item
     inhandVisuals:
@@ -294,18 +307,22 @@
     emptySpriteName: dermpen_empty
   - type: Hypospray
     solutionName: pen
-    transferAmount: 20
+    transferAmount: 25 # Goobstation
     onlyAffectsMobs: false
     injectOnly: true
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 20
+        maxVol: 25
         reagents:
-        - ReagentId: Dermaline
+        - ReagentId: Oxandrolone # Goobstation
           Quantity: 10
         - ReagentId: Leporazine
           Quantity: 10
+        - ReagentId: Tramadol # goobstation
+          Quantity: 5
+  - type: Tag
+    tags: []
 
 - type: entity
   name: rad auto-injector
@@ -348,6 +365,8 @@
           Quantity: 15
         - ReagentId: Bicaridine
           Quantity: 5
+  - type: Tag
+    tags: []
 
 - type: entity
   name: puncturase auto-injector
@@ -395,7 +414,7 @@
   name: pyrazine auto-injector
   parent: ChemicalMedipen
   id: PyraAutoInjector
-  description: A rapid dose of pyrazine and dermaline, intended for combat applications.
+  description: A rapid dose of pyrazine and oxandrolone, intended for combat applications. # goobstation
   components:
   - type: Item
     inhandVisuals:
@@ -430,8 +449,10 @@
         reagents:
         - ReagentId: Pyrazine
           Quantity: 10
-        - ReagentId: Dermaline
+        - ReagentId: Oxandrolone # Goobstation
           Quantity: 10
+  - type: Tag
+    tags: []
 
 - type: entity
   name: airloss auto-injector
@@ -474,12 +495,14 @@
           Quantity: 20
         - ReagentId: DexalinPlus
           Quantity: 20
+  - type: Tag
+    tags: []
 
 - type: entity
-  name: space medipen
+  name: environmental stabilization medipen # goobstation
   parent: ChemicalMedipen
   id: SpaceMedipen
-  description: Contains a mix of chemicals that protect you from the deadly effects of space.
+  description: Contains a mix of chemicals that will temporarily protect you from low pressure environments, and stabilizes your body temperature. # goobstation
   components:
   - type: Item
     inhandVisuals:
@@ -631,19 +654,21 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 30
+        maxVol: 35 # goobstation
         reagents:
         - ReagentId: Omnizine
-          Quantity: 25
+          Quantity: 30 # goobstation
         - ReagentId: TranexamicAcid
           Quantity: 5
   - type: Hypospray
     solutionName: pen
-    transferAmount: 30
+    transferAmount: 35
     onlyAffectsMobs: false
     injectOnly: true
   - type: StaticPrice
     price: 500
+  - type: Tag
+    tags: []
 
 - type: entity
   name: pen

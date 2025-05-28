@@ -5,6 +5,7 @@
   abstract: true
   description: It looks so much like jelly. I wonder what it tastes like?
   components:
+  - type: VentCrawler # goobstation - Ventcrawl
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/slimes.rsi
@@ -84,7 +85,7 @@
         scaleByQuantity: true
         damage:
           types:
-            Heat: 0.15
+            Caustic: 5 # Goobstation
       - !type:PopupMessage
         type: Local
         messages: [ "slime-hurt-by-water-popup" ]

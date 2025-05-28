@@ -407,7 +407,7 @@
     accent-cowboy-words-93: accent-cowboy-replacement-93
     accent-cowboy-words-94: accent-cowboy-replacement-94
     accent-cowboy-words-95: accent-cowboy-replacement-95
-    accent-cowboy-words-96: accent-cowboy-replacement-96
+#    accent-cowboy-words-96: accent-cowboy-replacement-96 -GoobStation
     accent-cowboy-words-97: accent-cowboy-replacement-97
     accent-cowboy-words-98: accent-cowboy-replacement-98
     accent-cowboy-words-99: accent-cowboy-replacement-99
@@ -697,6 +697,12 @@
     corvax-chatsan-word-124: corvax-chatsan-replacement-124
     corvax-chatsan-word-125: corvax-chatsan-replacement-125
 # Corvax-ChatSanitize-End
+    # goob start
+    chatsan-word-68: chatsan-replacement-68
+    chatsan-word-69: chatsan-replacement-69
+    chatsan-word-70: chatsan-replacement-70
+    chatsan-word-71: chatsan-replacement-71
+    # goob end
 
 - type: accent
   id: liar

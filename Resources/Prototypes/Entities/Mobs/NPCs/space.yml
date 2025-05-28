@@ -110,6 +110,7 @@
     interactFailureString: petting-failure-bear
     interactSuccessSound:
       path: /Audio/Animals/sloth_squeak.ogg
+  - type: Fauna # Lavaland Change
 
 - type: entity
   id: MobBearSpaceSalvage
@@ -171,6 +172,9 @@
     spawned:
     - id: FoodMeat
       amount: 1
+  - type: Fauna # Lavaland Change
+  - type: CombatPower # Goobstation
+    factor: 1 # times more dangerous than a crew-member
 
 - type: entity
   id: MobKangarooSpaceSalvage
@@ -185,6 +189,7 @@
   parent: MobSpaceBasic
   description: It's so glowing, it looks dangerous.
   components:
+  - type: VentCrawler # goobstation - Ventcrawl
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Animals/spacespider.rsi
@@ -269,6 +274,9 @@
       Unsexed: UnisexArachnid
   - type: TypingIndicator
     proto: spider
+  - type: Fauna # Lavaland Change
+  - type: CombatPower # Goobstation
+    factor: 1.5 # times more dangerous than a crew-member
 
 - type: entity
   id: MobSpiderSpaceSalvage
@@ -373,6 +381,7 @@
   suffix: "Salvage Ruleset"
   components:
     - type: SalvageMobRestrictions
+    - type: Fauna # Lavaland Change
 
 - type: entity
   parent: SimpleSpaceMobBase

@@ -198,6 +198,9 @@
   - type: Construction
     graph: Table
     node: Table
+  - type: Tag # goob edit
+    tags:
+    - Table
 
 - type: entity
   id: TableReinforced
@@ -645,9 +648,12 @@
   - type: Tag
     tags:
     - Wooden
+    - Table
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepCarpet
+  - type: CosmicCorruptible # DeltaV - Cosmic Cult
+    convertTo: CosmicTable
 
 - type: entity
   id: TableFancyBlue
@@ -796,6 +802,7 @@
   - type: Tag
     tags:
       - Debug
+      - Table
   - type: Sprite
     sprite: Structures/Furniture/Tables/debug.rsi
   - type: Icon

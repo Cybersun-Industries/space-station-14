@@ -9,8 +9,31 @@
     size: Small
   - type: Clothing
     slots: [mask]
+  - type: Tag # goob edit
+    tags:
+    - Mask
   - type: StaticPrice
     price: 25
+  - type: AltClothingLayer # Goobstation
+    defaultLayer: mask
+    altLayer: maskalt
+    changeToAltMessage: alt-clothing-component-mask-alt
+    changeToDefaultMessage: alt-clothing-component-mask-default
+  - type: Armor # provide minimal covering to your head
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+    traumaDeductions:
+      Dismemberment: 0
+      OrganDamage: 0.05
+      BoneDamage: 0.05
+      VeinsDamage: 0
+      NerveDamage: 0
+
 
 - type: entity
   abstract: true

@@ -21,6 +21,7 @@
   - type: Item
     size: Ginormous
   - type: MeleeWeapon
+    heavyStaminaCost: 10 # goob edit
     damage:
       types:
         Blunt: 12
@@ -29,6 +30,7 @@
   - type: Tag
     tags:
     - Toolbox
+    - DroneUsable # Goobstation
   - type: GenericVisualizer
     visuals:
       enum.StorageVisuals.Open:
@@ -36,6 +38,9 @@
           True: { state: icon-open }
           False: { state: icon }
   - type: Appearance
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Steel: 125
 
 - type: entity
   name: emergency toolbox
@@ -141,6 +146,8 @@
     grid:
     - 0,0,7,3
   - type: MeleeWeapon
+    flipAnimation: false # Horizontally symetrical sprites dont need this. neither does
+    heavyStaminaCost: 10 # goob edit
     damage:
       types:
         Blunt: 20
