@@ -138,7 +138,7 @@ namespace Content.Client.Atmos.Overlays
             for (var i = 0; i < _gasCount; i++)
             {
                 var delays = _frameDelays[i];
-                if (delays.Length == 0)
+                if (delays == null || delays.Length == 0) //WHY delays ARE NULL?
                     continue;
 
                 var frameCount = _frameCounter[i];
