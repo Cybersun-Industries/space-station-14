@@ -806,6 +806,10 @@
       {
         "name": "longwithbangs",
         "directions": 4
+      },
+      {
+          "name": "shoulderlengthovereye",
+          "directions": 4
       }
     ]
   }

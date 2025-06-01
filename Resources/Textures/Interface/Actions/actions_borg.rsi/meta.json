@@ -153,6 +153,12 @@
         },
         {
             "name": "select-type"
+        },
+        {
+            "name": "surgery-module"
+        },
+        {
+            "name": "adv-surgery-module"
         }
     ]
 }
