@@ -1,0 +1,13 @@
+ent-ClothingModsuitResponsoryMedical = Управление медицинским скафандром быстрого реагирования
+    .desc = Главный контроллер для медицинского комбинезона Responsory modsuit.
+ent-ClothingModsuitGauntletsResponsoryMedical = Рукавицы для медицинского костюма быстрого реагирования
+    .desc = Пара перчаток, сшитых для модного костюма медицинского персонала.
+ent-ClothingModsuitHelmetResponsoryMedical = Шлем медицинского спасательного костюма modsuit
+    .desc = Ультрасовременный шлем, разработанный компанией NanoTrasen для медицинского костюма Responsory modsuit. Он оснащен встроенным дисплеем HUD.
+ent-ClothingModsuitChestplateResponsoryMedical = Нагрудный щиток медицинского защитного костюма modsuit
+    .desc = Современный нагрудный щиток, разработанный компанией NanoTrasen для медицинского костюма Responsory Modsuit. Он оснащен приводимыми в действие сервоприводами для снижения нагрузки на оборудование.
+ent-ClothingModsuitBootsResponsoryMedical = Спортивные ботинки медицинского назначения modsuit boots
+    .desc = Ультрасовременная пара ботинок для медицинского костюма Responsory modsuit.
+ent-SuitStorageResponsoryMedical = { ent-SuitStorageBase }
+    .suffix = Спортивный костюм для медицинского обслуживания
+    .desc = { ent-SuitStorageBase.desc }

@@ -1,0 +1,14 @@
+reagent-name-fentanyl = фентанил
+reagent-desc-fentanyl = Ужасающе токсичный уличный наркотик с целым списком побочных эффектов. Если вы принимаете наркотики, то попадете в ад раньше, чем умрете!
+reagent-name-blind-toxin = токсин слепоты
+reagent-desc-blind-toxin = Густой химикат, который при метаболизме лишает пользователя зрения и повреждает его глаза.
+reagent-name-tirizene = тиризен
+reagent-desc-tirizene = Несмертельный яд, вызывающий сильную усталость и слабость у жертвы.
+reagent-name-aranesp = анаресп
+reagent-name-amnestizine = dimtrimethic-neuramincyl acid
+reagent-desc-amnestizine = Commonly referred to as "Amnestizine", it's a milky white chemical capable of causing retrograde & anterograde amnesia. It's derived from a certain trees bark.
+reagent-desc-aranesp = Сложный в синтезе усилитель производительности, наиболее известный своими мощными возможностями восстановления энергии.
+reagent-name-mousebites = мышиные укусы
+reagent-desc-mousebites = Вы пробовали это лекарственное средство?
+reagent-name-oleoresin-capsaicin = Oleoresin Capsaicin
+reagent-desc-oleoresin-capsaicin = An oily resin derived from Capsaicin. Causes severe irritation when touching the eyes or mouth.

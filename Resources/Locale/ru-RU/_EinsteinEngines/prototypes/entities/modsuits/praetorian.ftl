@@ -1,0 +1,13 @@
+ent-ClothingModsuitPraetorian = Управление модкостюмом преторианца
+    .desc = Главный контроллер для модкостюма преторианцев.
+ent-ClothingModsuitGauntletsPraetorian = Перчатки из модного преторианского костюма
+    .desc = Пара перчаток, сшитых для модного костюма преторианцев.
+ent-ClothingModsuitHelmetPraetorian = Преторианский спортивный шлем
+    .desc = Ультрасовременный шлем, разработанный компанией NanoTrasen для модного костюма Praetorian.
+ent-ClothingModsuitChestplatePraetorian = Нагрудник преторианского модного костюма
+    .desc = Современный нагрудный щиток, разработанный компанией NanoTrasen для модного костюма Praetorian. Он оснащен приводимыми в действие сервоприводами для снижения нагрузки на снаряжение.
+ent-ClothingModsuitBootsPraetorian = Ботинки в стиле преторианского модного костюма
+    .desc = Ультрасовременная пара ботинок для преторианского модного костюма.
+ent-SuitStoragePraetorian = { ent-SuitStorageBase }
+    .suffix = Спортивный костюм преторианца
+    .desc = { ent-SuitStorageBase.desc }

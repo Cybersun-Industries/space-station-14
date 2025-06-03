@@ -1,0 +1,13 @@
+ent-ClothingModsuitResponsoryJanitorial = Контроль модного костюма для уборки помещений
+    .desc = Основной контроллер для модного костюма для уборки помещений.
+ent-ClothingModsuitGauntletsResponsoryJanitorial = Защитные перчатки для уборки помещений modsuit
+    .desc = Пара перчаток, сшитых для модного костюма уборщика.
+ent-ClothingModsuitHelmetResponsoryJanitorial = Спортивный шлем для уборки помещений
+    .desc = Ультрасовременный шлем, разработанный компанией NanoTrasen для модного костюма уборщика Responsory. Он оснащен встроенным дисплеем HUD.
+ent-ClothingModsuitChestplateResponsoryJanitorial = Нагрудный щиток модного костюма для уборки помещений
+    .desc = Современный нагрудный щиток, разработанный компанией NanoTrasen для костюма уборщика Responsory Modsuit. Он оснащен приводимыми в действие сервоприводами для снижения нагрузки на оборудование.
+ent-ClothingModsuitBootsResponsoryJanitorial = Рабочие ботинки для уборки помещений modsuit boots
+    .desc = Ультрасовременная пара ботинок magboots для модного костюма для уборки помещений. Пока костюм включен, они не будут мешать его владельцу.
+ent-SuitStorageResponsoryJanitorial = { ent-SuitStorageBase }
+    .suffix = Модный костюм для уборки помещений
+    .desc = { ent-SuitStorageBase.desc }

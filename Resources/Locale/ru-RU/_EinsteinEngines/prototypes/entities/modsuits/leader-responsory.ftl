@@ -1,0 +1,13 @@
+ent-ClothingModsuitResponsoryLeader = Контроль модельного костюма Leader Responsory
+    .desc = Основной контроллер для модного костюма Leader Responsory.
+ent-ClothingModsuitGauntletsResponsoryLeader = Перчатки модного костюма Leader Responsory
+    .desc = Пара перчаток, сшитых для модного костюма Leader Responsory.
+ent-ClothingModsuitHelmetResponsoryLeader = Шлем модного костюма Leader Responsory
+    .desc = Ультрасовременный шлем, разработанный компанией NanoTrasen для модного костюма Leader Responsory. Он оснащен встроенным дисплеем HUD.
+ent-ClothingModsuitChestplateResponsoryLeader = Нагрудный щиток модного костюма Leader Responsory
+    .desc = Современный нагрудный щиток, разработанный компанией NanoTrasen для модного костюма Leader Responsory. Он оснащен приводимыми в действие сервоприводами для снижения нагрузки на оборудование.
+ent-ClothingModsuitBootsResponsoryLeader = Ботинки модного костюма Leader Responsory
+    .desc = Ультрасовременная пара магнитных ботинок для модного костюма Leader Responsory. Пока костюм работает, они не будут мешать его владельцу.
+ent-SuitStorageResponsoryLeader = { ent-SuitStorageBase }
+    .suffix = Модный костюм для ответственных руководителей
+    .desc = { ent-SuitStorageBase.desc }

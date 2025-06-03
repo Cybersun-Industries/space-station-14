@@ -1,0 +1,13 @@
+ent-ClothingModsuitResponsorySecurity = Контроль модального костюма для обеспечения безопасности
+    .desc = Основной контроллер для модулятора безопасности Responsory modsuit.
+ent-ClothingModsuitGauntletsResponsorySecurity = Защитные рукавицы для защитного костюма Modsory
+    .desc = Пара перчаток, сшитых для модного костюма службы безопасности.
+ent-ClothingModsuitHelmetResponsorySecurity = Шлем защитного костюма для обеспечения безопасности
+    .desc = Ультрасовременный шлем, разработанный компанией NanoTrasen для модного костюма Security Responsory. Он оснащен встроенным дисплеем HUD.
+ent-ClothingModsuitChestplateResponsorySecurity = Нагрудный щиток модного костюма службы безопасности
+    .desc = Современный нагрудный щиток, разработанный компанией NanoTrasen для костюма Security Responsory Modsuit. Он оснащен приводимыми в действие сервоприводами для снижения нагрузки на оборудование.
+ent-ClothingModsuitBootsResponsorySecurity = Защитные комбинезоны для сотрудников службы безопасности modsuit boots
+    .desc = Ультрасовременная пара ботинок для модного костюма службы безопасности.
+ent-SuitStorageResponsorySecurity = { ent-SuitStorageBase }
+    .suffix = Защитный костюм для обеспечения безопасности
+    .desc = { ent-SuitStorageBase.desc }
