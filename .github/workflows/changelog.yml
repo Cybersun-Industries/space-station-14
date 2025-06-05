@@ -19,7 +19,7 @@ env:
 
 jobs:
   changelog:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 #    if: github.event.pull_request.merged == true TODO: UNCOMMENT
     permissions:
       contents: write
