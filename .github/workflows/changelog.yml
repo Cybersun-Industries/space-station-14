@@ -19,7 +19,6 @@ env:
 
 jobs:
   changelog:
-    runs-on: self-hosted
     if: github.event.pull_request.merged == true
     permissions:
       contents: write
