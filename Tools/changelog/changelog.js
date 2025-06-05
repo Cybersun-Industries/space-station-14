@@ -21,7 +21,7 @@ const CommentRegex = /<!--.*?-->/gs; // HTML comments
 // Main function
 async function main() {
     // Get PR details
-    const pr = await axios.get(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}`);
+    const pr = await axios.get(`https://api.github.com/repos/${process.env.REPOSITORY}/pulls/${process.env.PR_NUMBER}`);
     const { merged_at, body, user } = pr.data;
 
     // Remove comments from the body

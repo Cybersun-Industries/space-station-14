@@ -13,7 +13,7 @@ on:
 
 env:
   GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-  GITHUB_REPOSITORY: ${{ vars.REPOSITORY }}
+  REPOSITORY: ${{ vars.REPOSITORY }}
   CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
   PR_NUMBER: ${{ github.event.number }}
 
