@@ -23,7 +23,7 @@ async function main() {
     // Get PR details
     const pr = await axios.get(`https://api.github.com/repos/${process.env.REPOSITORY}/pulls/${process.env.PR_NUMBER}`);
     const { merged_at, body, user } = pr.data;
-
+    console.log(pr);
     // Remove comments from the body
     commentlessBody = body.replace(CommentRegex, '');
 
