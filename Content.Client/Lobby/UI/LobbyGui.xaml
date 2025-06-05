@@ -54,8 +54,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                         <PanelContainer StyleClasses="AngleRect" HorizontalAlignment="Left" Name="LeftSideTop"
                                         VerticalAlignment="Top">
                             <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" MaxWidth="1200">
-                                <info:LinkBanner Name="LinkBanner" VerticalExpand="false" HorizontalAlignment="Center"
-                                                 Margin="3 3 3 3" />
+                                <!-- Radium: disable discord banner. <info:LinkBanner Name="LinkBanner" VerticalExpand="false" HorizontalAlignment="Center"
+                                                 Margin="3 3 3 3" /> -->
                                 <controls:StripeBack>
                                     <BoxContainer Orientation="Horizontal" SeparationOverride="6" Margin="3 3 3 3">
                                         <cc:UICommandButton Command="observe" Name="ObserveButton" Access="Public"
