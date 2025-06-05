@@ -264,7 +264,6 @@ figurines-mouse-4 = Ииии!
 figurines-mouse-5 = Пип!
 figurines-mouse-6 = Уиип!
 figurines-mouse-7 = Иип!
-figurines-mouse-8 = Чел это ПГ. Так нельз. # Reserve Mouse figurine meme phrases
 figurines-slime-1 = Блюмп.
 figurines-slime-2 = Блимпаф?
 figurines-slime-4 = Squish!

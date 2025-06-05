@@ -77,16 +77,28 @@ reagent-effect-guidebook-health-change =
                *[both] изменяют здоровье на
             }
     } { $changes }
+reagent-effect-guidebook-even-health-change =
+    { $chance ->
+        [1]
+            { $healsordeals ->
+                [heals] Evenly heals
+                [deals] Evenly deals
+               *[both] Evenly modifies health by
+            }
+       *[other]
+            { $healsordeals ->
+                [heals] evenly heal
+                [deals] evenly deal
+               *[both] evenly modify health by
+            }
+    } { $changes }
 reagent-effect-guidebook-status-effect =
     { $type ->
         [add]
             { $chance ->
                 [1] Вызывает
                *[other] вызывают
-            } { LOC($key) } по крайней мере { NATURALFIXED($time, 3) } { MANY("second", $time) } { $refresh ->
-                [false] с
-               *[true] без
-            } накопление
+            } { LOC($key) } минимум на { NATURALFIXED($time, 3) }, эффект накапливается
        *[set]
             { $chance ->
                 [1] Вызывает
@@ -228,6 +240,11 @@ reagent-effect-guidebook-drunk =
         [1] Вызывает
        *[other] вызывают
     } опьянение
+reagent-effect-guidebook-emote =
+    { $chance ->
+        [1] Will force
+       *[other] force
+    } the metabolizer to [bold][color=white]{ $emote }[/color][/bold]
 reagent-effect-guidebook-electrocute =
     { $chance ->
         [1] Бьёт током
@@ -337,6 +354,11 @@ reagent-effect-guidebook-area-reaction =
         [few] секунды
        *[other] секунд
     }
+reagent-effect-guidebook-artifact-unlock =
+    { $chance ->
+        [1] Helps
+       *[other] help
+    } unlock an alien artifact.
 reagent-effect-guidebook-add-to-solution-reaction =
     { $chance ->
         [1] Заставляет
@@ -379,17 +401,16 @@ reagent-effect-guidebook-plant-seeds-remove =
     } семена из растения
 reagent-effect-guidebook-add-to-chemicals =
     { $chance ->
-        [1]
-            { $deltasign ->
-                [1] Добавляет
-               *[-1] Удаляет
+        [1] { $deltasign ->
+                [1] Adds
+                *[-1] Removes
             }
-       *[other]
+        *[other]
             { $deltasign ->
-                [1] добавить
-               *[-1] удалить
+                [1] add
+                *[-1] remove
             }
-    } { NATURALFIXED($amount, 2) }u of { $reagent } { $deltasign ->
-        [1] to
-       *[-1] от
-    } решение
+        } {NATURALFIXED($amount, 2)}u of {$reagent} { $deltasign ->
+            [1] to
+            *[-1] from
+        } the solution

@@ -55,13 +55,24 @@ reagent-effect-condition-guidebook-has-tag =
         [true] не имеет
        *[false] имеет
     } метку { $tag }
+reagent-effect-condition-guidebook-this-reagent = этот реагент
+reagent-effect-condition-guidebook-breathing =
+    the metabolizer is { $isBreathing ->
+        [true] breathing normally
+       *[false] suffocating
+    }
+reagent-effect-condition-guidebook-internals =
+    the metabolizer is { $usingInternals ->
+        [true] using internals
+       *[false] breathing atmospheric air
+    }
+
 reagent-effect-condition-guidebook-blood-reagent-threshold =
     { $max ->
-        [2147483648] есть по крайней мере { NATURALFIXED($min, 2) }u из { $reagent }
-       *[other]
-            { $min ->
-                [0] существует не более { NATURALFIXED($max, 2) }u из { $reagent }
-               *[other] существует между { NATURALFIXED($min, 2) }u и { NATURALFIXED($max, 2) }u из { $reagent }
-            }
-    }
-reagent-effect-condition-guidebook-this-reagent = этот реагент
+    [2147483648] есть по крайней мере { NATURALFIXED($min, 2) }u из { $reagent }
+    *[other]
+                { $min ->
+    [0] существует не более { NATURALFIXED($max, 2) }u из { $reagent }
+    *[other] существует между { NATURALFIXED($min, 2) }u и { NATURALFIXED($max, 2) }u из { $reagent }
+                }
+        }

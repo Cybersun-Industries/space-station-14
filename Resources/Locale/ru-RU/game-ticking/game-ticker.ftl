@@ -50,7 +50,3 @@ preset-no-one-ready = Не удалось запустить режим { $prese
 game-run-level-PreRoundLobby = Предраундовое лобби
 game-run-level-InRound = В раунде
 game-run-level-PostRound = После раунда
-#Reserve edit
-player-first-join-date =  первый заход: { $firstSeenTime }
-player-first-join-account-date = Дата создания аккаунта: { $creationDate }
-player-first-join-message-webhook = { $name } зашёл на сервер недавно/впервые.

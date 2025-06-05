@@ -1,7 +1,3 @@
-ent-BaseWizardRule = { ent-BaseGameRule }
-    .desc = { ent-BaseGameRule.desc }
-ent-Wizard = { ent-BaseWizardRule }
-    .desc = { ent-BaseWizardRule.desc }
 ent-WizardMidround = { ent-BaseWizardRule }
     .desc = { ent-BaseWizardRule.desc }
 ent-WizardDynamic = { ent-BaseWizardRule }

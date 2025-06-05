@@ -141,16 +141,12 @@ uplink-syringe-pistol-desc = Пистолет, который используе
 
 # Implants
 
-uplink-fake-mindshield-name = Фейковый имплант защиты разума
-uplink-fake-mindshield-desc = Имплантат, который может имитировать сигналы настоящего имплантата защиты разума.
 uplink-smoke-implant-name = Дымовой имплант
 uplink-smoke-implant-desc = Выпускает облако дыма при активации.
 uplink-krav-maga-implant-name = Krav Maga Implanter
 uplink-krav-maga-implant-desc = Allows the user to perform various Krav Maga moves.
 uplink-nutriment-implant-name = Имплант Помпы питательных веществ
 uplink-nutriment-implant-desc = Устраняет потребность пользователей в еде и/или напитках.
-uplink-radio-implanter-name = Имплант радио
-uplink-radio-implanter-desc = Имплантирует радио Синдиката, позволяя пользоваться скрытой связью без гарнитуры.
 uplink-jaunter-implanter-name = Имплант смены места
 uplink-jaunter-implanter-desc = Имплант смены места, позволяет носителю меняться местами с случайной целью.
 
@@ -172,11 +168,6 @@ uplink-smugglers-satchel-desc = Прочная сумка, который мож
 
 uplink-syndicate-weapon-module-advanced-name = Продвинутый оружейный модуль
 uplink-syndicate-weapon-module-advanced-desc = Улучшает киборга энергетическим мечом и пистолетом Анаконда
-
-# Utility
-
-uplink-access-breaker-name = Взломщик доступов
-uplink-access-breaker-desc = Устройство для взлома доступа. Может открывать пожарные шлюзы и удалять требования к доступу из оборудования станции. Автоматически перезаряжается.
 
 # Martial Arts
 

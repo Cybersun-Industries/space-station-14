@@ -99,7 +99,6 @@ loadout-group-station-engineer-backpack = Инженер, рюкзак
 loadout-group-station-engineer-outerclothing = Инженер, верхняя одежда
 loadout-group-station-engineer-shoes = Инженер, обувь
 loadout-group-station-engineer-id = Инженер, ID
-loadout-group-atmospheric-technician-head = Atmospheric Technician head
 loadout-group-atmospheric-technician-jumpsuit = Атмосферный техник, комбинезон
 loadout-group-atmospheric-technician-backpack = Атмосферный техник, рюкзак
 loadout-group-atmospheric-technician-outerclothing = Атмосферный техник, верхняя одежда
@@ -162,6 +161,7 @@ loadout-group-paramedic-head = Парамедик, голова
 loadout-group-paramedic-jumpsuit = Парамедик, комбинезон
 loadout-group-paramedic-outerclothing = Парамедик, верхняя одежда
 loadout-group-paramedic-shoes = Парамедик, обувь
+loadout-group-medical-glasses = Medical glasses
 # Wildcards
 loadout-group-reporter-jumpsuit = Репортёр, комбинезон
 loadout-group-psychologist-jumpsuit = Психолог, комбинезон
