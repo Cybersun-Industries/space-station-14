@@ -30,7 +30,7 @@ GITHUB_API_URL = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 DISCORD_SPLIT_LIMIT = 2000
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
-CHANGELOG_FILE = "Resources/Changelog/GoobChangelog.yml"
+CHANGELOG_FILES = ["Resources/Changelog/GoobChangelog.yml", "Resources/Changelog/CybersunChangelog.yml"]
 
 TYPES_TO_EMOJI = {"Fix": "🐛", "Add": "🆕", "Remove": "❌", "Tweak": "⚒️"}
 
@@ -52,12 +52,13 @@ def main():
         last_changelog_stream = get_last_changelog()
 
     last_changelog = yaml.safe_load(last_changelog_stream)
-    with open(CHANGELOG_FILE, "r") as f:
-        cur_changelog = yaml.safe_load(f)
+    for file in CHANGELOG_FILES:
+        with open(file, "r") as f:
+            cur_changelog = yaml.safe_load(f)
 
-    diff = diff_changelog(last_changelog, cur_changelog)
-    message_lines = changelog_entries_to_message_lines(diff)
-    send_message_lines(message_lines)
+        diff = diff_changelog(last_changelog, cur_changelog)
+        message_lines = changelog_entries_to_message_lines(diff)
+        send_message_lines(message_lines)
 
 
 def get_most_recent_workflow(
