@@ -8,19 +8,18 @@
 name: PR Changelogs
 concurrency: commit_action
 on:
-  workflow_dispatch: #TODO: Remove; for testing only.
   pull_request_target:
     types: [closed]
 
 env:
   GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
   CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
-  PR_NUMBER: 0 # ${{ github.event.number }} TODO: UNCOMMENT
+  PR_NUMBER: ${{ github.event.number }}
 
 jobs:
   changelog:
     runs-on: ubuntu-latest
-#    if: github.event.pull_request.merged == true TODO: UNCOMMENT
+    if: github.event.pull_request.merged == true
     permissions:
       contents: write
     steps:
