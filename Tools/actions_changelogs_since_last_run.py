@@ -42,17 +42,18 @@ def main():
         print("No discord webhook URL found, skipping discord send")
         return
 
-    if DEBUG:
-        # to debug this script locally, you can use
-        # a separate local file as the old changelog
-        last_changelog_stream = DEBUG_CHANGELOG_FILE_OLD.read_text()
-    else:
-        # when running this normally in a GitHub actions workflow,
-        # it will get the old changelog from the GitHub API
-        last_changelog_stream = get_last_changelog()
-
-    last_changelog = yaml.safe_load(last_changelog_stream)
     for file in CHANGELOG_FILES:
+        if DEBUG:
+            # to debug this script locally, you can use
+            # a separate local file as the old changelog
+            last_changelog_stream = DEBUG_CHANGELOG_FILE_OLD.read_text()
+        else:
+            # when running this normally in a GitHub actions workflow,
+            # it will get the old changelog from the GitHub API
+            last_changelog_stream = get_last_changelog(file)
+
+        last_changelog = yaml.safe_load(last_changelog_stream)
+
         with open(file, "r") as f:
             cur_changelog = yaml.safe_load(f)
 
@@ -94,7 +95,7 @@ def get_past_runs(sess: requests.Session, current_run: Any) -> Any:
     return resp.json()
 
 
-def get_last_changelog() -> str:
+def get_last_changelog(file: str) -> str:
     github_repository = os.environ["GITHUB_REPOSITORY"]
     github_run = os.environ["GITHUB_RUN_ID"]
     github_token = os.environ["GITHUB_TOKEN"]
@@ -108,14 +109,14 @@ def get_last_changelog() -> str:
     last_sha = most_recent["head_commit"]["id"]
     print(f"Last successful publish job was {most_recent['id']}: {last_sha}")
     last_changelog_stream = get_last_changelog_by_sha(
-        session, last_sha, github_repository
+        file, session, last_sha, github_repository
     )
 
     return last_changelog_stream
 
 
 def get_last_changelog_by_sha(
-    sess: requests.Session, sha: str, github_repository: str
+    file:str, sess: requests.Session, sha: str, github_repository: str
 ) -> str:
     """
     Use GitHub API to get the previous version of the changelog YAML (Actions builds are fetched with a shallow clone)
@@ -126,7 +127,7 @@ def get_last_changelog_by_sha(
     headers = {"Accept": "application/vnd.github.raw"}
 
     resp = sess.get(
-        f"{GITHUB_API_URL}/repos/{github_repository}/contents/{CHANGELOG_FILE}",
+        f"{GITHUB_API_URL}/repos/{github_repository}/contents/{file}",
         headers=headers,
         params=params,
     )
