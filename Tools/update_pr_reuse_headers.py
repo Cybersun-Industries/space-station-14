@@ -372,7 +372,7 @@ def create_header(authors, license_id, comment_style):
                 if not author.startswith("Unknown <"):
                     lines.append(f"{prefix} SPDX-FileCopyrightText: {year} {author}")
         else:
-            lines.append(f"{prefix} SPDX-FileCopyrightText: Contributors to the GoobStation14 project")
+            lines.append(f"{prefix} SPDX-FileCopyrightText: Contributors to the Radium SpaceStation14 project")
 
         # Add separator
         lines.append(f"{prefix}")
@@ -390,7 +390,7 @@ def create_header(authors, license_id, comment_style):
                 if not author.startswith("Unknown <"):
                     lines.append(f"SPDX-FileCopyrightText: {year} {author}")
         else:
-            lines.append(f"SPDX-FileCopyrightText: Contributors to the GoobStation14 project")
+            lines.append(f"SPDX-FileCopyrightText: Contributors to the Radium SpaceStation14 project")
 
         # Add separator
         lines.append("")
