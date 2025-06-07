@@ -1,0 +1,9 @@
+- type: entity
+  id: LoadoutDummyFoamCrossbow
+  categories: [ HideSpawnMenu ]
+  name: foam crossbow
+  description: A foam crossbow that came with a box of 40 darts! Be careful with the free space!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: foamcrossbow

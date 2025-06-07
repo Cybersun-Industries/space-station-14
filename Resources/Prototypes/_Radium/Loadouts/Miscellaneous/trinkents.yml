@@ -1,0 +1,54 @@
+# Winter
+- type: loadout
+  id: Ushanka
+  storage:
+    back:
+    - ClothingHeadHatUshanka
+
+- type: loadout
+  id: Trench
+  storage:
+    back:
+    - ClothingOuterCoatTrench
+
+# Gentleman
+- type: loadout
+  id: Tophat
+  storage:
+    back:
+    - ClothingHeadHatTophat
+
+- type: loadout
+  id: FlippoLighter
+  storage:
+    back:
+    - FlippoLighter
+
+# Balloons
+- type: loadout
+  id: BalloonNT
+  storage:
+    back:
+    - BalloonNT
+
+- type: loadout
+  id: BalloonCorgi
+  storage:
+    back:
+    - BalloonCorgi
+
+# Misc
+- type: loadout
+  id: SpaceMedipen
+  storage:
+    back:
+    - SpaceMedipen
+
+- type: loadout
+  dummyEntity: LoadoutDummyFoamCrossbow
+  id: FoamCrossbow
+  storage:
+    back:
+    - FoamCrossbow
+    - BoxDonkSoftBox
+

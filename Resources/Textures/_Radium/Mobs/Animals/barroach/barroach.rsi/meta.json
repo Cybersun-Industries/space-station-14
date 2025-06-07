@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": null,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "barroach",
+      "directions": 4
+    },
+    {
+      "name": "barroach_dead",
+      "directions": 4
+    }
+  ]
+}

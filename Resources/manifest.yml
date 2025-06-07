@@ -7,8 +7,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-defaultWindowTitle: Space Station 14
-windowIconSet: /Textures/Logo/icon
-splashLogo: /Textures/Logo/logo.png
+defaultWindowTitle: Space Station 14 - Radium Station [RU] # Radium: Theme
+windowIconSet: /Textures/Logo/icon-ru # Radium: Theme
+splashLogo: /Textures/Logo/logo-ru.png # Radium: Theme
 
 # PJB PLEASE

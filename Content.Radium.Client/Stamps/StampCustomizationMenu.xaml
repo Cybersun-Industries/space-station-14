@@ -1,0 +1,15 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:paper="clr-namespace:Content.Client.Paper.UI;assembly=Content.Client"
+               Title="{Loc 'stamp-customization-menu-title'}"
+               MinWidth="800">
+    <BoxContainer Orientation="Vertical" Margin="4">
+        <paper:StampCollection Name="StampDisplay" VerticalAlignment="Bottom" Margin="6" />
+        <TextEdit Name="TextField" Margin="0 40" MinHeight="20"
+                  HorizontalExpand="True" HorizontalAlignment="Stretch" VerticalExpand="True"/>
+        <BoxContainer Orientation="Vertical">
+            <ColorSelectorSliders Name="ColorPicker" IsAlphaVisible="True" />
+            <Button Margin="0 10" Name="PickerOpen" Text="{Loc 'decal-placer-window-palette'}" />
+        </BoxContainer>
+        <Button Name="ApplyButton" Text="{Loc 'stamp-customization-window-apply'}"></Button>
+    </BoxContainer>
+</DefaultWindow>

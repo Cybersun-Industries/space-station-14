@@ -1,0 +1,70 @@
+- type: entity
+  save: false
+  name: Репликант
+  parent: BaseMobReplicant
+  id: MobReplicant
+
+- type: entity
+  save: false
+  name: Репликант
+  parent: BaseMobReplicantGhostRole
+  id: MobReplicantGhostRole
+
+- type: entity
+  parent: MobHuman
+  id: HumanReplicaClown
+  name: Клоун репликант
+  components:
+    - type: Icon
+      sprite: Markers/jobs.rsi
+      state: clown
+    - type: GhostRole
+      name: ghost-role-information-replica-clown-name
+      description: ghost-role-information-replica-clown-description
+      rules: ghost-role-information-replica-clown-rules
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [PodClownGear]
+    - type: RandomMetadata
+      nameSegments:
+      - NamesClown
+    - type: Clumsy
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Dead
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: SadTrombone
+        params:
+          variation: 0.125
+    - type: NpcFactionMember
+      factions:
+      - NanoTrasen
+#     - Clown
+
+- type: entity
+  parent: MobHuman
+  id: HumanReplicaMime
+  name: Мим репликант
+  components:
+  - type: Icon
+    sprite: Markers/jobs.rsi
+    state: mime
+  - type: GhostRole
+    name: ghost-role-information-replica-mime-name
+    description: ghost-role-information-replica-mime-description
+    rules: ghost-role-information-replica-mime-rules
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [PodMimeGear]
+  - type: RandomMetadata
+    nameSegments:
+    - NamesClown
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: MimePowers
+  - type: FrenchAccent
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

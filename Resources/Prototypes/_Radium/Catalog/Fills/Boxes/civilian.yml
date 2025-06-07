@@ -1,0 +1,14 @@
+- type: entity
+  name: customizable stamps box
+  parent: BoxCardboard
+  id: BoxCustomizableStamps
+  description: A box full of customizable stamps.
+  components:
+  - type: StorageFill
+    contents:
+    - id: CustomizableStamp
+      amount: 6
+  - type: Sprite
+    layers:
+    - state: internals
+    - state: heart

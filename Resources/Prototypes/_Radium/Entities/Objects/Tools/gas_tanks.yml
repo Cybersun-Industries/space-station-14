@@ -1,0 +1,36 @@
+- type: entity
+  # it's a square so no rolling dough
+  parent: PlasmaTank
+  id: ExtendedPlasmaTank
+  name: extended plasma tank
+  description: Contains dangerous plasma. Do not inhale. Extremely flammable. It can hold 25 L of gas.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/plasma.rsi
+  - type: Item
+    sprite: Objects/Tanks/plasma.rsi
+  - type: GasTank
+    outputPressure: 101.3
+  - type: Clothing
+    sprite: Objects/Tanks/plasma.rsi
+    slots:
+    - Belt
+    - suitStorage
+
+- type: entity
+  id: ExtendedPlasmaTankFilled
+  parent: ExtendedPlasmaTank
+  name: extended plasma tank
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 101.3
+    air:
+      # 6 minutes of agony
+      volume: 25
+      moles:
+      - 0           # oxygen
+      - 0           # nitrogen
+      - 0           # CO2
+      - 20.51379050 # plasma
+      temperature: 293.15

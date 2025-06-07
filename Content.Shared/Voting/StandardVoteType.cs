@@ -30,7 +30,13 @@ public enum StandardVoteType : byte
     /// <summary>
     /// Vote to kick a player.
     /// </summary>
-    Votekick
+    Votekick,
+
+    /// <summary>
+    /// RADIUM
+    /// Vote to enable battery selfrecharge or give access to all cards.
+    /// </summary>
+    Autodebug,
 }
 
 /// <summary>

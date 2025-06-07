@@ -1,0 +1,4 @@
+﻿- type: storeCategory
+  id: UplinkBundles
+  name: store-category-bundles
+  priority: 11 

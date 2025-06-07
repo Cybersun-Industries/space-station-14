@@ -1,0 +1,19 @@
+- type: entity
+  id: MedkitMedipenFilled
+  suffix: Filled
+  parent: Medkit
+  components:
+  - type: StorageFill
+    contents:
+      - id: EmergencyMedipen
+        amount: 8
+
+- type: entity
+  id: MedkitSurvivalMedipenFilled
+  suffix: Заполненная
+  parent: Medkit
+  components:
+  - type: StorageFill
+    contents:
+    - id: SurvivalMedipen
+      amount: 8

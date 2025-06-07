@@ -41,6 +41,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <ProjectReference Include="..\RobustToolbox\Robust.Shared.Maths\Robust.Shared.Maths.csproj" />
     <ProjectReference Include="..\RobustToolbox\Robust.Shared\Robust.Shared.csproj" />
     <ProjectReference Include="..\RobustToolbox\Robust.UnitTesting\Robust.UnitTesting.csproj" />
+    <ProjectReference Include="..\Content.Radium.Client\Content.Radium.Client.csproj" />
+    <ProjectReference Include="..\Content.Radium.Server\Content.Radium.Server.csproj" />
+    <ProjectReference Include="..\Content.Radium.Shared\Content.Radium.Shared.csproj" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />

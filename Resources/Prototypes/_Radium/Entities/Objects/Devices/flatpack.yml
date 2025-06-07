@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseFlatpack
+  id: AdvancedRadiationCollectorFlatpack
+  name: advanced radiation collector flatpack
+  description: A flatpack used for constructing a advanced radiation collector.
+  components:
+  - type: Flatpack
+    entity: AdvancedRadiationCollectorNoTank
+  - type: Sprite
+    layers:
+    - state: radiation-collector
+  - type: GuideHelp
+    guides: [ SingularityEngine, Power ]
+
+- type: entity
+  parent: BaseFlatpack
+  id: EnergyEmitterFlatpack
+  name: energy emitter flatpack
+  description: A flatpack used for constructing an energy emitter.
+  components:
+  - type: Flatpack
+    entity: EnergyEmitter
+  - type: Sprite
+    sprite: Structures/Power/Generation/Singularity/emitter.rsi
+    layers:
+    - state: emitter2
+  - type: GuideHelp
+    guides: [ SingularityEngine, Power ]

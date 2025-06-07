@@ -1,0 +1,28 @@
+﻿- type: entity
+  parent: BasePDA
+  id: SurgeonPDA
+  name: КПК хирурга
+  components:
+  - type: Sprite
+    sprite: _Radium/Objects/Devices/pda.rsi
+    state: pda-surgeon
+  - type: Pda
+    id: SurgeonIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-surgeon
+  - type: PdaBorderColor
+    borderColor: "#c8dfe9"
+    accentVColor: "#407da3"
+  - type: Icon
+    sprite: _Radium/Objects/Devices/pda.rsi
+    state: pda-surgeon
+  - type: GuideHelp
+    guides:
+    - Medical Doctor
+  - type: HealthAnalyzer
+    scanDelay: 1
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"

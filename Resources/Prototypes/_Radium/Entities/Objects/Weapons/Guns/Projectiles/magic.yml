@@ -1,0 +1,13 @@
+﻿- type: entity
+  id: ProjectilePolyboltMothroach
+  parent: ProjectilePolyboltBase
+  name: полизаряд таракамоли
+  description: Нееет, я не хочу быть таракамолью!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PolymorphOnTrigger
+    polymorph: WizardForcedMothroach
+  - type: TriggerWhitelist
+    whitelist:
+      components:
+      - Body

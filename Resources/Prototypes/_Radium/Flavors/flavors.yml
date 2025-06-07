@@ -1,0 +1,4 @@
+- type: flavor
+  id: moonlin
+  flavorType: Complex
+  description: как луна

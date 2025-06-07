@@ -1,0 +1,22 @@
+- type: entity
+  name: customizable stamp
+  parent: [RubberStampBase]
+  id: CustomizableStamp
+  description: A customizable stamp with changeable text and color.
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedColor: '#72BCD4'
+    stampedName: customizable-stamp-component-coffee
+    stampState: "paper_stamp-wizard"
+  - type: Sprite
+    state: stamp-trader
+  - type: CustomizableStamp
+  - type: ActivatableUI
+    key: enum.CustomizableStampUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.CustomizableStampUiKey.Key:
+        type: CustomizableStampBoundUserInterface

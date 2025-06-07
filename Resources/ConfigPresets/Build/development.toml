@@ -53,5 +53,8 @@ preload_grids = false
 [admin]
 see_own_notes = true
 
+[autodebug]
+vote.roundstart = false
+
 [lavaland] # Lavaland Change
 enabled = false
