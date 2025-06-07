@@ -7,35 +7,47 @@
 #
 # SPDX-License-Identifier: MIT
 # Non-fungible apes, anyone?
+
 - type: nameIdentifierGroup
   id: Monkey
-  prefix: MK
+  prefix: ОБ # Corvax-Localization
 
 - type: nameIdentifierGroup
   id: Kobold
-  prefix: KB
+  prefix: КБ # Corvax-Localization
 
 - type: nameIdentifierGroup
   id: Holoparasite
-  prefix: HOLO
+  prefix: ГОЛО # Corvax-Localization
 
 - type: nameIdentifierGroup
   id: MMI
-  prefix: MMI
+  prefix: ЧМИ # Corvax-Localization
   minValue: 100
   maxValue: 999
 
 - type: nameIdentifierGroup
   id: PositronicBrain
-  prefix: PB
+  prefix: ПМ # Corvax-Localization
   minValue: 10
   maxValue: 99
 
 - type: nameIdentifierGroup
   id: Silicon
-  prefix: Si
+  prefix: Кр # Corvax-Localization
   minValue: 1000
   maxValue: 9999
+
+- type: nameIdentifierGroup
+  id: StationAi
+  prefix: AI
+  minValue: 100
+  maxValue: 999
+
+- type: nameIdentifierGroup
+  id: XenoArtifactNode
+  minValue: 0
+  maxValue: 999
 
 # Used to suffix a number to any mob to identify player controlled mob griefing.
 - type: nameIdentifierGroup

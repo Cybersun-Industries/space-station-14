@@ -59,9 +59,15 @@ namespace Content.IntegrationTests.Tests.Preferences
   - Aaliyah
 
 - type: dataset
-  id: sqlite_test_names_last
+  id: sqlite_test_names_last_male
   values:
-  - Ackerley";
+  - Ackerley
+
+- type: dataset
+  id: sqlite_test_names_last_female
+  values:
+  - Ackerla";  // Corvax-LastnameGender
+
 
         private static HumanoidCharacterProfile CharlieCharlieson()
         {

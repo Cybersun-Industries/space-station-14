@@ -17,7 +17,8 @@
   skinColoration: AnimalFur
   maleFirstNames: NamesTajaranFirst
   femaleFirstNames: NamesTajaranFirst
-  lastNames: NamesTajaranLast
+  maleLastNames: NamesTajaranLast # Corvax-LastnameGender
+  femaleLastNames: NamesTajaranLast # Corvax-LastnameGender
 
 - type: markingPoints
   id: MobTajaranMarkingLimits
