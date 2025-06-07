@@ -17,7 +17,7 @@ public sealed partial class RadiumCVars
     /// May irritate during developing.
     /// </summary>
     public static readonly CVarDef<bool> AutodebugRoundstartVoteEnabled =
-        CVarDef.Create("autodebug.vote.roundstart", true, CVar.SERVERONLY);
+        CVarDef.Create("autodebug.vote.roundstart", false, CVar.SERVERONLY);
 
     /// <summary>
     /// Maximum players count for energy vote to appear.

@@ -23,22 +23,10 @@ public sealed class CustomizableStampsSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CustomizableStampComponent, ComponentStartup>(OnComponentStartup);
         SubscribeLocalEvent<StampComponent, CustomizableStampMessage>(OnStampCustomization);
         SubscribeLocalEvent<CustomizableStampComponent, BeforeActivatableUIOpenEvent>(OnMenuOpen);
 
         SubscribeLocalEvent<CustomizableStampComponent, ExaminedEvent>(OnExamine);
-    }
-
-    private void OnComponentStartup(EntityUid uid, CustomizableStampComponent component, ComponentStartup args)
-    {
-        if (!TryComp<StampComponent>(uid, out var stampComponent))
-            return;
-
-        if (!Loc.TryGetString(stampComponent.StampedName, out var localizedName))
-            return;
-
-        stampComponent.StampedName = localizedName;
     }
 
     private void OnExamine(EntityUid uid, CustomizableStampComponent component, ExaminedEvent args)
