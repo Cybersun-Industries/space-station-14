@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 freeze2222 <opop1094@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Radium.Common.CCVar;
 using Content.Radium.Shared.Stamps;
 using Content.Radium.Shared.Stamps.UI;
