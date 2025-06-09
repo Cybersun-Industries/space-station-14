@@ -20,3 +20,7 @@ ent-LeftFootHuman = левая стопа человека
     .desc = { ent-PartHuman.desc }
 ent-RightFootHuman = правая стопа человека
     .desc = { ent-PartHuman.desc }
+ent-GroinHuman = пах человека
+    .desc = { ent-PartHuman.desc }
+ent-ChestHuman = грудь человека
+    .desc = { ent-PartHuman.desc }
