@@ -12,6 +12,8 @@ hud-chatbox-select-channel-Whisper = Шёпот
 hud-chatbox-select-channel-LOOC = LOOC
 hud-chatbox-select-channel-OOC = OOC
 hud-chatbox-select-channel-Damage = Повреждения
+# Goobstation - Starlight collective mind port
+hud-chatbox-select-channel-CollectiveMind = Коллективный разум
 hud-chatbox-select-channel-Visual = Действия
 hud-chatbox-select-channel-Radio = Рация
 hud-chatbox-channel-Admin = Админ Разное
