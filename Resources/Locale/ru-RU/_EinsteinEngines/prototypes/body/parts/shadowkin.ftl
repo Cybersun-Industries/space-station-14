@@ -1,6 +1,6 @@
 ent-PartShadowkin = Часть тела Теневика
     .desc = { ent-BaseItem.desc }
-ent-ChestShadowkin = Сундук Теневика
+ent-ChestShadowkin = Грудь Теневика
     .desc = { ent-PartShadowkin.desc }
 ent-GroinShadowkin = Пах подобия тени
     .desc = { ent-PartShadowkin.desc }
