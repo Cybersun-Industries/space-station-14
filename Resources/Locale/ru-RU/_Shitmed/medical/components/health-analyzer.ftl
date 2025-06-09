@@ -30,3 +30,6 @@ condition-body-bleeding-LeftHand = - Левая рука { $entity } крово�
 condition-body-bleeding-RightHand = - Правая рука { $entity } кровоточит.
 condition-body-bleeding-LeftFoot = - Левая нога { $entity } кровоточит.
 condition-body-bleeding-RightFoot = - Правая нога { $entity } кровоточит.
+group-body = Тело
+group-organ = Органы
+group-solution = Жидкости

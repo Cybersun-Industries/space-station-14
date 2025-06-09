@@ -30,25 +30,24 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             Margin="8 10 8 10">
             <Button
                 Name="BodyButton"
-                Text="Body"
+                Text="{Loc 'group-body'}"
                 MinWidth="130"
                 MinHeight="30"
                 HorizontalExpand="True"
-                StyleClasses="OpenRight"/>
+                StyleClasses="OpenRight"/> <!-- Wtf no locale? Radium: fix locale -->
             <Button
                 Name="OrgansButton"
-                Text="Organs"
+                Text="{Loc 'group-organ'}"
                 MinWidth="130"
                 MinHeight="30"
                 HorizontalExpand="True"
-                StyleClasses="OpenBoth"/>
+                StyleClasses="OpenBoth"/> <!-- Wtf no locale? Radium: fix locale -->
             <Button
                 Name="ChemicalsButton"
-                Text="Chemicals"
-                MinWidth="130"
+                Text="{Loc 'group-solution'}" MinWidth="130"
                 MinHeight="30"
                 HorizontalExpand="True"
-                StyleClasses="OpenLeft"/>
+                StyleClasses="OpenLeft"/> <!-- Wtf no locale? Radium: fix locale -->
         </BoxContainer>
         <PanelContainer StyleClasses="LowDivider"/>
         <BoxContainer Orientation="Horizontal" VerticalExpand="True">
