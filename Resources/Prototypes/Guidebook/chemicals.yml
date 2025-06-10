@@ -11,7 +11,7 @@
 - type: guideEntry
   id: Chemicals
   name: guide-entry-chemicals
-  text: "/ServerInfo/Guidebook/Chemicals.xml"
+  text: "/ServerInfo/Guidebook/ChemicalTabs/Elements.xml"
   children:
   - Elements
   - Medicine
