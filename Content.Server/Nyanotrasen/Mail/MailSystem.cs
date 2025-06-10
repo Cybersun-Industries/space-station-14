@@ -60,6 +60,7 @@ using Robust.Shared.Audio.Systems;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Server._DV.Cargo.Systems;
 using Content.Shared.Chat;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Content.Server.Mail
 {
@@ -229,7 +230,12 @@ namespace Content.Server.Mail
                 if (!_accessSystem.IsAllowed(uid, args.User))
                 {
                     _popupSystem.PopupEntity(Loc.GetString("mail-invalid-access"), uid, args.User);
+                    // RADIUM START
+                    // Radium mail access check removal
+                    /*
                     return;
+                    */
+                    // RADIUM END
                 }
             }
 
