@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 AwareFoxy <135021509+AwareFoxy@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._CorvaxNext.OfferItem;
 using Content.Shared._CorvaxNext.NextVars;
 using Robust.Client.Graphics;
