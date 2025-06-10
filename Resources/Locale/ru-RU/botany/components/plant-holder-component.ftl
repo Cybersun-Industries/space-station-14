@@ -4,14 +4,14 @@ plant-holder-component-plant-success-message = Вы сажаете { $seedName }
 plant-holder-component-already-seeded-message = { CAPITALIZE($name) } уже содержит семена!
 plant-holder-component-remove-weeds-message = Вы пропалываете { $name } от сорняков.
 plant-holder-component-remove-weeds-others-message = { $otherName } начинает пропалывать сорняки.
-plant-holder-component-no-weeds-message = На этом участке нет сорняков! Его не нужно пропалывать.
+plant-holder-component-no-weeds-message = Здесь нет сорняков!
 plant-holder-component-remove-plant-message = Вы удаляете растение из { $name }.
 plant-holder-component-remove-plant-others-message = { $name } удаляет растение.
-plant-holder-component-no-plant-message = Отсутствует растение для удаления.
+plant-holder-component-no-plant-message = Нет растения для удаления.
 plant-holder-component-transfer-message = Вы перемещаете { $amount } ед. в { $owner }.
-plant-holder-component-nothing-to-sample-message = Из этого не извлечь семян!
+plant-holder-component-nothing-to-sample-message = Отсюда не извлечь семян!
 plant-holder-component-already-sampled-message = Из этого растения уже извлекли семена.
-plant-holder-component-dead-plant-message = Это растение мертво.
+plant-holder-component-dead-plant-message = Растение мертво.
 plant-holder-component-take-sample-message = Вы извлекаете семена из { $seedName }.
 plant-holder-component-compost-message = Вы компостируете { $usingItem } в { $owner }.
 plant-holder-component-compost-others-message = { $user } компостирует { $usingItem } в { $owner }.
@@ -30,5 +30,5 @@ plant-holder-component-light-improper-warning = Мигает [color=yellow]пр�
 plant-holder-component-heat-improper-warning = Мигает [color=orange]предупреждение о неподходящем уровне температуры[/color].
 plant-holder-component-pressure-improper-warning = Мигает [color=lightblue]предупреждение о неподходящем атмосферном давлении[/color].
 plant-holder-component-gas-missing-warning = Мигает [color=cyan]предупреждение о неподходящем атмосферном составе[/color].
-plant-holder-component-early-sample-message = Растение ещё не выросло настолько, чтобы извлечь семена.
-plant-holder-component-ligneous-cant-harvest-message = Растение слишком прочное, чтобы собрать его голыми руками.
+plant-holder-component-early-sample-message = Растение ещё не выросло достаточно, чтобы извлечь семена.
+plant-holder-component-ligneous-cant-harvest-message = Растение слишком твёрдое, чтобы собрать его голыми руками.
