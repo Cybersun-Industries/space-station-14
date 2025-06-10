@@ -78,6 +78,10 @@ namespace Content.Client.Info
             AddInfoButton("server-info-telegram-button", CCVars.InfoLinksTelegram);
             AddInfoButton("rmc-ui-patreon", CCVars.InfoLinksPatreon);
 
+
+            // RADIUM START
+            // Radium: Remove discord link button
+            /*
             var linkAccount = UserInterfaceManager.GetUIController<LinkAccountUIController>();
             var linkAccountButton = new Button
             {
@@ -85,6 +89,9 @@ namespace Content.Client.Info
             };
             linkAccountButton.OnPressed += _ => linkAccount.ToggleWindow();
             buttons.AddChild(linkAccountButton);
+            */
+            // RADIUM END
+
 
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
             var guidebookButton = new Button() { Text = Loc.GetString("server-info-guidebook-button") };
