@@ -1,0 +1,15 @@
+# This prob should be in /Specific/Science folder but who cares at this time
+
+- type: entity
+  name: void shifter
+  suffix: Адмемы
+  description: A drive to shift people to void dimension
+  parent: BaseItem
+  id: VoidShifter
+  components:
+  - type: UseDelay
+    delay: 0.5
+  - type: VoidShifter
+  - type: Sprite
+    sprite: _Radium/Objects/Specific/voidshifter.rsi
+    state: icon
