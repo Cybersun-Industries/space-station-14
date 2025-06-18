@@ -5,7 +5,7 @@ roundend-prepend-devil-contracts = Кто-то заключил [color=red]{ $nu
 roundend-prepend-devil-contracts-named = [color=white]{ $name }[/color] совершил [color=red]{ $number }[/color] успешных контрактов.
 devil-component-examined = [color=darkred]{ CAPITALIZE(POSS-ADJ($target)) } глаза светятся слабым красным светом.[/color]
 condemned-component-examined = [color=chartreuse]Глаза { CAPITALIZE($target) } пустые и бездушные.[/color]
-devil-role-greeting = Вы - дъявол из адских глубин,
+devil-role-greeting = Вы - дьявол из адских глубин,
   завладевший смертным телом {$playerName}
   Развращайте смертных и собирайте души при помощи контрактов.
   Не в ваших интересах вмешиваться в дела станции, не связанные с вашими сделками, - это ниже вас.
