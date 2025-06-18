@@ -1,15 +1,15 @@
-cosmicability-generic-fail = Твоё влияние не может удерживаться..
+cosmicability-generic-fail = Твоё влияние не может закрепиться.
 
 cosmicability-glare-confirm = Нажмите повторно чтобы активировать Блеск Пустоты.
 
-cosmicability-siphon-cultist-success = Твои попытки набрать Энтропию охлаждают {CAPITALIZE(THE($target))}
-cosmicability-siphon-success = Ты тихо набираешь Энтропию из {CAPITALIZE(THE($target))}.
+cosmicability-siphon-cultist-success = Твои попытки сбора Энтропии охлаждают {CAPITALIZE(THE($target))}
+cosmicability-siphon-success = Ты тихо собираешь Энтропию из {CAPITALIZE(THE($target))}.
 cosmicability-siphon-fail = Ты не можешь откачать Энтропию из {CAPITALIZE(THE($target))}.
-cosmicability-siphon-full = Ты не можешь вместить больше Энтропии!
+cosmicability-siphon-full = Твоё тело не может вместить больше Энтропии!
 
-cosmicability-blank-begin = {CAPITALIZE(THE($target))} пытается удержатся за вас!
-cosmicability-blank-success = Ты отделяешь разум {CAPITALIZE(THE($target))} и отправляешь его в пустотную тьму.
-cosmicability-blank-transfer = Пустотная сила отделяет твой разум от твоего тела!
+cosmicability-blank-begin = {CAPITALIZE(THE($target))} пытается схватиться за вас!
+cosmicability-blank-success = Ты отсекаешь разум от {CAPITALIZE(THE($target))} и отправляешь его в пустоту.
+cosmicability-blank-transfer = Пустотная сила отделяет твой разум от тела!
 cosmicability-blank-return = Твой разум вернулся назад в твоё тело.
 
 cosmicability-lapse-success = Ты делаешь пробел в телесной форме {CAPITALIZE(THE($target))}.
