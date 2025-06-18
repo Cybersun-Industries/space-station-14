@@ -1,5 +1,6 @@
 ﻿- type: entity
   parent: ClothingShoesClown
   id: UnremoveableClothingShoesClown
+  categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
