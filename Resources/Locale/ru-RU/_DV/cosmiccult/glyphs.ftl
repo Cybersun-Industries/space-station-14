@@ -1,6 +1,6 @@
 cult-glyph-target-dead = Влияние глифа не оказывает никакого эффекта на усопшего..
 cult-glyph-not-enough-cultists = Недостаточно культистов для пробуждения глифы!
-cult-glyph-conditions-not-met = Нет подходящих целей в радиусе глифи!
+cult-glyph-conditions-not-met = Нет подходящих целей в радиусе глифы!
 cult-glyph-too-many-targets = Слишком много целей на глифе!
 cult-glyph-target-mindshield = Ментальная защита предотвращает влияние глифы от укоренения!
 cult-glyph-target-chaplain = Искра священной мощи предотвращает укоренение влияния глифы!
