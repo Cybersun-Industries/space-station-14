@@ -1,4 +1,9 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2025 Mnwa282 <167712034+Mnwa282@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 freeze2222 <46649391+freeze2222@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   parent: ClothingShoesClown
   id: UnremoveableClothingShoesClown
   categories: [ HideSpawnMenu ]
