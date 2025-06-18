@@ -1,22 +1,22 @@
-cosmicability-siphon-full = Вы больше не можете удерживать энтропию!
-cosmicability-blank-begin = { CAPITALIZE(THE($target)) } пытается схватить тебя!
-cosmicability-blank-success = Вы отправляете разум { CAPITALIZE(THE($target)) } в космическую тьму.
-cosmicability-blank-transfer = Космическая сила изгоняет ваш разум из вашего тела!
-cosmicability-blank-return = Ваш разум возвращается в ваше тело.
-cosmicability-lapse-success = Вы теряете материальную форму { CAPITALIZE(THE($target)) }.
-cosmicability-monument-move-confirm = ЭТО ДЕЙСТВИЕ МОЖНО ВЫПОЛНИТЬ ТОЛЬКО ОДИН РАЗ! Повторите его для подтверждения.
-cosmicability-monument-spawn-confirm = ЭТО ДЕЙСТВИЕ МОЖНО ВЫПОЛНИТЬ ТОЛЬКО ОДИН РАЗ! Повторите его для подтверждения.
-cosmicability-monument-spawn-error-grid = Недопустимое местоположение! Монумент должен располагаться на устойчивой поверхности.
-cosmicability-monument-spawn-error-station = Недопустимое местоположение! Монумент должен быть установлен на станции.
-cosmicability-monument-spawn-error-intersection = Слишком мало места! Для установки монумента требуется пустая площадка размером 3х1.
-cosmicability-monument-spawn-error-space = Слишком близко к космосу! Памятник должен находиться на расстоянии не менее { $DISTANCE } метра.
+cosmicability-generic-fail = Твоё влияние не может удерживаться..
 
-cosmicability-generic-fail = Вашему влиянию не удается закрепиться..
+cosmicability-glare-confirm = Нажмите повторно чтобы активировать Блеск Пустоты.
 
-cosmicability-glare-confirm = Нажмите еще раз, чтобы активировать Ошеломляющий Взгляд.
+cosmicability-siphon-cultist-success = Твои попытки набрать Энтропию охлаждают {CAPITALIZE(THE($target))}
+cosmicability-siphon-success = Ты тихо набираешь Энтропию из {CAPITALIZE(THE($target))}.
+cosmicability-siphon-fail = Ты не можешь откачать Энтропию из {CAPITALIZE(THE($target))}.
+cosmicability-siphon-full = Ты не можешь вместить больше Энтропии!
 
-cosmicability-siphon-cultist-success = Ваши попытки привлечь энтропию охлаждают { CAPITALIZE(THE($target)) }
+cosmicability-blank-begin = {CAPITALIZE(THE($target))} пытается удержатся за вас!
+cosmicability-blank-success = Ты отделяешь разум {CAPITALIZE(THE($target))} и отправляешь его в пустотную тьму.
+cosmicability-blank-transfer = Пустотная сила отделяет твой разум от твоего тела!
+cosmicability-blank-return = Твой разум вернулся назад в твоё тело.
 
-cosmicability-siphon-success = Вы молча черпаете энтропию из { CAPITALIZE(THE($target)) }.
+cosmicability-lapse-success = Ты делаешь пробел в телесной форме {CAPITALIZE(THE($target))}.
 
-cosmicability-siphon-fail = Похоже, вы не можете выкачать энтропию из { CAPITALIZE(THE($target)) }.
+cosmicability-monument-move-confirm = ВЫ МОЖЕТЕ СДЕЛАТЬ ЭТО ЛИШЬ РАЗ! Нажмите повторно для подтверждения.
+cosmicability-monument-spawn-confirm = ВЫ МОЖЕТЕ СДЕЛАТЬ ЭТО ЛИШЬ РАЗ! Нажмите повторно для подтверждения.
+cosmicability-monument-spawn-error-grid = Неверное расположение! Монумент должен быть призван на устойчивой поверхности.
+cosmicability-monument-spawn-error-station = Неверное расположение! Монумент должен быть призван на станции.
+cosmicability-monument-spawn-error-intersection = Мало места! Монументу нужно свободное место 3x1 чтобы быть призванным.
+cosmicability-monument-spawn-error-space = Слишком близко к космосу! Монумент должен быть хотя-бы в {$DISTANCE} метрах дальше.
