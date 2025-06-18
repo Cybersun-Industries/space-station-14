@@ -1,11 +1,13 @@
 ﻿- type: entity
   parent: ClothingUniformJumpsuitClown
   id: UnremoveableClothingUniformJumpsuitClown
+  categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
 
 - type: entity
   parent: ClothingUniformJumpsuitMime
   id: UnremoveableClothingUniformJumpsuitMime
+  categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
