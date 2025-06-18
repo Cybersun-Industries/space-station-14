@@ -1,8 +1,12 @@
 light_mode unshaded;
+
 uniform sampler2D SCREEN_TEXTURE;
 
 void fragment() {
+
     highp vec4 color = zTextureSpec(SCREEN_TEXTURE, UV);
+
+/*
 
     highp mat3 m = mat3(
         vec3(1.000,0.900,0.900),
@@ -10,9 +14,12 @@ void fragment() {
         vec3(0.000,0.400,1.000)
     );
     
+*/
+
     highp vec3 resultt = (vec3(1.0) - color.rgb * 20);
 
     highp vec3 result = vec3(0.000);
+
 
     highp float whiteThreshold = 0.7;
 	if (resultt.r > whiteThreshold &&
@@ -27,8 +34,8 @@ void fragment() {
 	}
 
 	
+	COLOR = vec4(result, 1);
 
-	
 
-    COLOR = vec4(result * m, 1);
+//	COLOR = color;
 }
