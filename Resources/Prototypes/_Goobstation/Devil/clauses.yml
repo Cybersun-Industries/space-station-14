@@ -196,3 +196,195 @@
   - type: DelayedDeath
     deathTime: 300
     deathMessageId: devil-deal-time-ran-out
+
+#Radium:Devil tranlation | Radium:Russian clauses #
+#При первой возможности стоит перенести эту хуету в отдельный файл#
+- type: clause
+  id: душа
+  clauseWeight: 25
+  event: !type:DevilContractSoulOwnershipEvent
+
+- type: clause
+  id: слабости
+  clauseWeight: -35
+  damageModifierSet: DevilDealPositive
+
+- type: clause
+  id: страхогня
+  clauseWeight: -20
+  damageModifierSet: HellSpawn
+  addedComponents:
+  - type: SpecialHighTempImmunity
+
+- type: clause
+  id: несчастье
+  clauseWeight: -20
+  spawnedItems:
+  - ClothingShoesRealJordansAutographed
+
+- type: clause
+  id: страхсмерти
+  clauseWeight: -25
+  addedComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      201: Dead
+
+- type: clause
+  id: светочувствительность
+  clauseWeight: -15
+  addedComponents:
+  - type: FlashImmunity
+
+- type: clause
+  id: страхэлектричества
+  clauseWeight: -15
+  addedComponents:
+  - type: Insulated
+
+- type: clause
+  id: чревоугодие
+  clauseWeight: -10
+  removedComponents:
+  - type: Hunger
+  - type: Thirst
+
+- type: clause
+  id: дыхание
+  clauseWeight: -10
+  addedComponents:
+  - type: SpecialBreathingImmunity
+
+- type: clause
+  id: сминаемость
+  clauseWeight: -10
+  addedComponents:
+  - type: SpecialPressureImmunity
+
+- type: clause
+  id: страхобморожения
+  clauseWeight: -10
+  addedComponents:
+  - type: SpecialLowTempImmunity
+
+- type: clause
+  id: алчность
+  clauseWeight: -10
+  spawnedItems:
+  - SpaceCash30000
+
+- type: clause
+  id: боль
+  clauseWeight: -5
+  addedComponents:
+  - type: PainNumbness
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 1
+      80: 1
+
+- type: clause
+  id: шанс
+  clauseWeight: -20
+  event: !type:DevilContractChanceEvent
+
+- type: clause
+  id: тени
+  clauseWeight: -25
+  addedComponents:
+  - type: Stealth
+  - type: StealthOnMove
+
+- type: clause
+  id: человечность
+  clauseWeight: 25
+  polymorph: MobFrogPolymorph
+
+- type: clause
+  id: сила
+  clauseWeight: 30
+  damageModifierSet: DevilDealNegative
+
+- type: clause
+  id: жестокость
+  clauseWeight: 60
+  addedComponents:
+  - type: Pacified
+
+- type: clause
+  id: зрение
+  clauseWeight: 60
+  addedComponents:
+  - type: PermanentBlindness
+
+- type: clause
+  id: согласованность
+  clauseWeight: 30
+  addedComponents:
+  - type: BackwardsAccent
+  - type: Clumsy
+
+- type: clause
+  id: голос
+  clauseWeight: 20
+  addedComponents:
+  - type: Muted
+
+- type: clause
+  id: нога
+  clauseWeight: 30
+  event: !type:DevilContractLoseLegEvent
+
+- type: clause
+  id: рука
+  clauseWeight: 30
+  event: !type:DevilContractLoseHandEvent
+
+- type: clause
+  id: бодрость
+  clauseWeight: 40
+  addedComponents:
+  - type: Narcolepsy
+    timeBetweenIncidents: 300, 600
+    durationOfIncident: 10, 30
+
+- type: clause
+  id: внутренность
+  clauseWeight: 45
+  event: !type:DevilContractLoseOrganEvent
+
+- type: clause
+  id: ноги
+  clauseWeight: 40
+  addedComponents:
+  - type: LegsParalyzed
+
+- type: clause
+  id: беспокойство
+  clauseWeight: 5
+  addedComponents:
+  - type: TileMovement
+
+- type: clause
+  id: смерть
+  clauseWeight: -25
+  addedComponents:
+  - type: CheatDeath
+    reviveAmount: 1
+
+- type: clause
+  id: смертность
+  clauseWeight: -135
+  addedComponents:
+  - type: CheatDeath
+    infiniteRevives: true
+
+- type: clause
+  id: время
+  clauseWeight: 150
+  addedComponents:
+  - type: DelayedDeath
+    deathTime: 300
+    deathMessageId: devil-deal-time-ran-out
