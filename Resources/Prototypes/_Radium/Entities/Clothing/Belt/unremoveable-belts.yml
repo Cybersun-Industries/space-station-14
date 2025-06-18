@@ -1,5 +1,6 @@
 ﻿- type: entity
   parent: ClothingBeltSuspendersRed
   id: UnremoveableClothingBeltSuspenders
+  categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
