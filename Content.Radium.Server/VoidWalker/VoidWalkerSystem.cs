@@ -1,6 +1,7 @@
 using Content.Radium.Shared.VoidWalker;
 using Content.Server.Popups;
 using Content.Server.Stealth;
+using Content.Shared.Coordinates;
 using Content.Shared.Eye;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Components;
@@ -30,7 +31,8 @@ public class VoidShifterSystem : SharedVoidShifterSystem
 
     private List<EntityUid> _savedEntities = new();
     private bool _shifted = false;
-    private VoidWalkerComponent? voidwalkcomp;
+    private int _walkerCollisionLayer = (int) CollisionGroup.MobLayer & ~(int) CollisionGroup.BulletImpassable;
+    private Fixture? _fix1;
 
 
     public override void Initialize()
@@ -42,7 +44,7 @@ public class VoidShifterSystem : SharedVoidShifterSystem
     {
         if (args.Shifted == null)
         {
-            Log.Error("[VoidWalker] Received Shifted == null as event parameter, used on {0}", args.User);
+            Log.Error("[VoidWalker] Received <Shifted == null> as event parameter, used on {0}", args.User);
             return;
         }
 
@@ -85,13 +87,19 @@ public class VoidShifterSystem : SharedVoidShifterSystem
 
         var stealth = TryComp<StealthComponent>(uid, out var stealthComp);
 
+        if (_fix1 == null || _fixture.GetFixtureOrNull(uid, "fix1") != _fix1)
+                        _fix1 = _fixture.GetFixtureOrNull(uid, "fix1");
+
         if (!shifted)
         {
             if (stealth)
                 _stealth.SetEnabled(uid, false);
-            // var fix1 = _fixture.GetFixtureOrNull(uid, "fix1");
-            // var fixture = _serialization.CopyTo(fix1);
-            // _physics.SetCollisionLayer(uid, "voidWalker", );
+
+            if (_fix1 != null)
+                _physics.SetCollisionLayer(uid, "fix1", _fix1, _fix1.CollisionLayer & ~(int) CollisionGroup.BulletImpassable);
+            else
+                Log.Error("[VoidWalker] What the fuck, I got no fixture from a fucking Entity: {0}", uid, uid.ToCoordinates());
+
             _eye.SetVisibilityMask(uid, eye.VisibilityMask | (int) VisibilityFlags.VoidWalker, eye);
             // _eye.RefreshVisibilityMask(entEye); for some reason this causes an entity to set its eye vis mask back to normal (1)
             _visibility.AddLayer(ent, (ushort) VisibilityFlags.VoidWalker, false);
@@ -102,6 +110,12 @@ public class VoidShifterSystem : SharedVoidShifterSystem
         {
             if (stealth)
                 _stealth.SetEnabled(uid, true);
+
+            if (_fix1 != null)
+                _physics.SetCollisionLayer(uid, "fix1", _fix1, _fix1.CollisionLayer | (int) CollisionGroup.BulletImpassable);
+            else
+                Log.Error("[VoidWalker] Couldnt revert collision, there's no fixture in this Entity: {0}", uid);
+
             _eye.SetVisibilityMask(uid, eye.VisibilityMask & ~(int) VisibilityFlags.VoidWalker, eye);
             _eye.RefreshVisibilityMask(entEye);
             _visibility.RemoveLayer(ent, (ushort) VisibilityFlags.VoidWalker, false);
