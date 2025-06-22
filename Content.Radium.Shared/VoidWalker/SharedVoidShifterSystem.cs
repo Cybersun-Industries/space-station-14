@@ -15,6 +15,7 @@ public class SharedVoidShifterSystem : EntitySystem
 
         SubscribeLocalEvent<VoidShifterComponent, UseInHandEvent>(OnUseInHand);
         // SubscribeLocalEvent<VoidWalkerComponent, AccessibleOverrideEvent>(InteractVoidWalker); // for future
+        SubscribeLocalEvent<VoidWalkerComponent, BeforeRangedInteractEvent>(OnShiftedInteraction); // An attempt on blocking interactions while shifted
     }
 
     private bool InUse = true;
@@ -48,4 +49,11 @@ public class SharedVoidShifterSystem : EntitySystem
     */
 
 
+    private void OnShiftedInteraction(EntityUid uid, VoidWalkerComponent comp, ref BeforeRangedInteractEvent args)
+    {
+        if (comp.IsActive)
+            args.Handled = true;
+        else
+            args.Handled = false;
+    }
 }

@@ -1,4 +1,6 @@
-﻿using Robust.Shared.GameStates;
+﻿using Content.Shared.Physics;
+using Robust.Shared.GameStates;
+using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Serialization;
 
 namespace Content.Radium.Shared.VoidWalker;
@@ -11,6 +13,9 @@ public partial class VoidWalkerComponent : Component
     // For future development of seamless void shifting
     [DataField]
     public bool IsActive;
+
+    [DataField]
+    public int Collision = (int) CollisionGroup.Impassable;
 
 }
 

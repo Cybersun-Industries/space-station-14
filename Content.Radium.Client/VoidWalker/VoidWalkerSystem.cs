@@ -47,12 +47,13 @@ public sealed class VoidWalkerSystem : EntitySystem
     private void OnPlayerAttached(EntityUid uid, VoidWalkerComponent component, LocalPlayerAttachedEvent args)
     {
         _overlayMan.AddOverlay(_overlay);
-
+        _lightManager.DrawLighting = false;
     }
 
     private void OnPlayerDetached(EntityUid uid, VoidWalkerComponent component, LocalPlayerDetachedEvent args)
     {
         _overlayMan.RemoveOverlay(_overlay);
+        _lightManager.DrawLighting = true;
     }
 
 
