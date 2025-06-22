@@ -1,7 +1,8 @@
-tiles-cosmiccult-floor-glyph = злокачественная глифическая поверхность
-tiles-cosmiccult-floor-smooth = злокачественная гладкая поверхность
-tiles-cosmiccult-floor-half = злокачественная поверхность с половинчатым рисунком
-tiles-cosmiccult-floor-notched = поверхность со злокачественными насечками
-tiles-cosmiccult-floor-split = злокачественная поверхность с расщепленным рисунком
-tiles-cosmiccult-floor-void = пустая поверхность пола
-tiles-cosmiccult-floor-malign = злокачественная поверхность
+tiles-cosmiccult-floor-glyph = зловещая глифовая поверхность
+tiles-cosmiccult-floor-smooth = зловещая гладкая поверхность
+tiles-cosmiccult-floor-half = зловещая полу-начертанная поверхность
+tiles-cosmiccult-floor-notched = зловещая узорно-начертанная поверхность
+tiles-cosmiccult-floor-split = зловещая раздельно начертанная поверхность
+
+tiles-cosmiccult-floor-void = пустотная поверхность
+tiles-cosmiccult-floor-malign = зловещая поверхность
