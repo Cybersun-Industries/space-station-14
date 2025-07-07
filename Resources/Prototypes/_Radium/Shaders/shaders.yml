@@ -7,3 +7,8 @@
   id: VoidShader
   kind: source
   path: "/Textures/_Radium/Shaders/void.swsl"
+
+- type: shader
+  id: TransparencyShader
+  kind: source
+  path: "/Textures/_Radium/Shaders/transparency.swsl"

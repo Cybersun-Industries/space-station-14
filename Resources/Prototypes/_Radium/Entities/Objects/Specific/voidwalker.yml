@@ -8,7 +8,7 @@
   id: VoidShifter
   components:
   - type: UseDelay
-    delay: 0.5
+    delay: 3
   - type: VoidShifter
   - type: Sprite
     sprite: _Radium/Objects/Specific/voidshifter.rsi

@@ -1,59 +1,119 @@
-﻿using Content.Radium.Shared.VoidWalker;
+﻿using System.Linq;
+using Content.Radium.Shared.VoidWalker;
+using Content.Shared.Item;
+using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.RCD.Components;
+using Content.Shared.Stealth.Components;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Radium.Client.VoidWalker;
 
-public sealed class VoidWalkerSystem : EntitySystem
+public sealed class VoidWalkerSystem : SharedVoidShifterSystem
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly ISharedPlayerManager _playerMan = default!;
     [Dependency] private readonly ILightManager _lightManager = default!;
+    [Dependency] private readonly EntityManager _entMan = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
     private VoidWalkerOverlay _overlay = default!;
+    protected IEnumerable<EntityUid>? _entityUids;
+    protected List<EntityUid> _eligeableEnts = new();
+    private ShaderInstance? _shader;
+
     public override void Initialize()
     {
-        base.Initialize();
+        // base.Initialize();
 
-        SubscribeLocalEvent<VoidWalkerComponent, ComponentInit>(OnVoidWalkerInit);
-        SubscribeLocalEvent<VoidWalkerComponent, ComponentShutdown>(OnVoidWalkerShutdown);
-        SubscribeLocalEvent<VoidWalkerComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
-        SubscribeLocalEvent<VoidWalkerComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
+        // SubscribeLocalEvent<VoidWalkerComponent, ComponentInit>(OnVoidWalkerInit);
+        // SubscribeLocalEvent<VoidWalkerComponent, ComponentShutdown>(OnVoidWalkerShutdown);
+        // SubscribeLocalEvent<VoidWalkerComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
+        // SubscribeLocalEvent<VoidWalkerComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
+        SubscribeLocalEvent<VoidWalkerComponent, VoidShiftingEvent>(OnVoidShift); // TODO: this doesnt work most prob because voidwalker gets applied after sub???
 
+        _shader = _protoMan.Index<ShaderPrototype>("TransparencyShader").Instance();
         _overlay = new();
     }
 
 
+    /*
     private void OnVoidWalkerInit(EntityUid uid, VoidWalkerComponent component, ComponentInit args)
     {
         if (uid != _playerMan.LocalEntity)
             return;
-
-        _lightManager.DrawLighting = false;
-        _overlayMan.AddOverlay(_overlay);
-
     }
 
     private void OnVoidWalkerShutdown(EntityUid uid, VoidWalkerComponent component, ComponentShutdown args)
     {
         if (uid != _playerMan.LocalEntity)
             return;
-
-        _lightManager.DrawLighting = true;
-        _overlayMan.RemoveOverlay(_overlay);
-
     }
 
     private void OnPlayerAttached(EntityUid uid, VoidWalkerComponent component, LocalPlayerAttachedEvent args)
     {
-        _overlayMan.AddOverlay(_overlay);
-        _lightManager.DrawLighting = false;
+        if (uid != _playerMan.LocalEntity)
+            return;
     }
 
     private void OnPlayerDetached(EntityUid uid, VoidWalkerComponent component, LocalPlayerDetachedEvent args)
     {
-        _overlayMan.RemoveOverlay(_overlay);
-        _lightManager.DrawLighting = true;
+        if (uid != _playerMan.LocalEntity)
+            return;
+    }
+
+    */
+
+    private void OnVoidShift(EntityUid uid, VoidWalkerComponent comp, ref VoidShiftingEvent args)
+    {
+        if (comp.IsActive)
+        {
+            _overlayMan.AddOverlay(_overlay);
+            _lightManager.DrawLighting = false;
+            HideAllEntities(uid);
+        }
+        else
+        {
+            _overlayMan.RemoveOverlay(_overlay);
+            _lightManager.DrawLighting = true;
+            ShowAllEntities(uid);
+        }
+    }
+
+    protected void HideAllEntities(EntityUid user)
+    {
+        _entityUids = _entMan.GetEntities();
+        _eligeableEnts.Clear();
+        foreach (var uid in _entMan.GetEntities())
+        {
+            if (// HasComp<ItemComponent>(uid) meow!
+                /*|| */HasComp<ItemComponent>(uid) && TryComp<SpriteComponent>(uid, out var sprite)
+                && uid != user)
+            {
+                _eligeableEnts.Add(uid);
+                sprite.PostShader = _shader;
+            }
+        }
+    }
+
+    protected void ShowAllEntities(EntityUid user)
+    {
+        if (_entityUids == null)
+        {
+            Log.Error("[VoidWalker] WTF I GET NO ENTITES FROM ENTMAN DAMN!!!");
+            return;
+        }
+
+        foreach (var uid in _eligeableEnts)
+        {
+            if (TryComp<SpriteComponent>(uid, out var sprite))
+            {
+                sprite.PostShader = null;
+            }
+        }
     }
 
 

@@ -16,17 +16,17 @@ void fragment() {
     
 */
 
-    highp vec3 resultt = (vec3(1.0) - color.rgb * 20);
+    highp vec3 resultt = (vec3(1.0) - color.rgb * 15);
 
     highp vec3 result = vec3(0.000);
 
 
-    highp float whiteThreshold = 0.7;
+    highp float whiteThreshold = 0.9;
 	if (resultt.r > whiteThreshold &&
     	resultt.g > whiteThreshold &&
     	resultt.b > whiteThreshold)
 	{
-    	result = clamp(result, 0.000, 0.500); // Dim white pixels
+    	result = clamp(resultt, 0.005, 0.400); // Dim white pixels
 	}
 	else
 	{

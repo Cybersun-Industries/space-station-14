@@ -9,7 +9,9 @@ using Content.Shared.Item;
 using Content.Shared.Physics;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Storage;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Dynamics;
@@ -28,6 +30,7 @@ public class VoidShifterSystem : SharedVoidShifterSystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private FixtureSystem _fixture = default!;
     [Dependency] private ISerializationManager _serialization = default!;
+    [Dependency] private AudioSystem _audio = default!;
 
     private List<EntityUid> _savedEntities = new();
     private bool _shifted = false;
@@ -37,11 +40,19 @@ public class VoidShifterSystem : SharedVoidShifterSystem
 
     public override void Initialize()
     {
+
         SubscribeLocalEvent<VoidShifterComponent, VoidShiftingEvent>(OnVoidShift);
+
     }
 
     private void OnVoidShift(EntityUid uid, VoidShifterComponent comp, VoidShiftingEvent args)
     {
+
+        if (!TryComp<VoidWalkerComponent>(args.User, out var walker))
+        {
+            Log.Error("[VoidWalker] We got user {0} who doesnt have voidwalker component but tried to use voidshifter!", args.User);
+            return;
+        }
         if (args.Shifted == null)
         {
             Log.Error("[VoidWalker] Received <Shifted == null> as event parameter, used on {0}", args.User);
@@ -57,20 +68,22 @@ public class VoidShifterSystem : SharedVoidShifterSystem
             return;
         }
 
-        _shifted = (bool) args.Shifted;
-        ApplyVoidWalkerComponent(args.User, (bool) args.Shifted);
+        _shifted = (bool) args.Shifted; // praise the shitcode!
+        ApplyVoidWalkerComponent(args.User, walker, (bool) args.Shifted);
         ApplyUnremovableComponent(args.User, xForm, (bool) args.Shifted);
         ApplyVisibilityComponent(args.User, (bool) args.Shifted);
+        ApplyShiftingFX(args.User);
     }
 
-    private void ApplyVoidWalkerComponent(EntityUid uid, bool shifted)
+    private void ApplyVoidWalkerComponent(EntityUid uid, VoidWalkerComponent walker, bool shifted)
     {
         if (shifted)
         {
-            RemComp<VoidWalkerComponent>(uid);
+            walker.IsActive = false;
             return;
         }
-        EnsureComp<VoidWalkerComponent>(uid);
+
+        walker.IsActive = true;
     }
 
     private void ApplyVisibilityComponent(EntityUid uid, bool shifted)
@@ -162,5 +175,11 @@ public class VoidShifterSystem : SharedVoidShifterSystem
 
         // TODO: Write some code here for preventing interactions you dumb ass!!!
 
+    }
+
+    private void ApplyShiftingFX(EntityUid uid)
+    {
+        _audio.PlayPvs(new SoundPathSpecifier("/Audio/_DV/CosmicCult/ability_glare.ogg"), uid);
+        Spawn("CosmicGlareAbilityVFX", Transform(uid).Coordinates);
     }
 }

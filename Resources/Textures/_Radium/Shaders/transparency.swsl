@@ -1,0 +1,18 @@
+light_mode unshaded;
+
+uniform sampler2D SCREEN_TEXTURE;
+
+const lowp float time_scale = 0.5;
+const lowp float alpha = 0.1;
+
+
+void fragment() {
+
+
+	highp vec4 color = zTextureSpec(SCREEN_TEXTURE, FRAGCOORD.xy * SCREEN_PIXEL_SIZE);
+
+
+	if (COLOR.a > 0.0) {
+		COLOR.a *= alpha;
+	}
+}
