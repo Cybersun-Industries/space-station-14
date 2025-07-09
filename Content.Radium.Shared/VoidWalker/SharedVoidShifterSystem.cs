@@ -54,6 +54,15 @@ public class SharedVoidShifterSystem : EntitySystem
 
         var ev = new VoidShiftingEvent(args.User, null);
 
+        // Okay some bullshittery up ahead that i NEED to fix. TODO: Xo6a, fix this.
+        // We have two things that track whether a user is in void dimension:
+        // A voidshifter component "in use" which indicates whether it was used to go to void dimension,
+        // A voidwalker component "is active" which indicates, whether a user is IN the void dimension.
+        // It is a quirky thing because we either check for voidshifter, or voidwalker components
+        // to be active/in use, and it's also desynced (code quality moment, check code below).
+        // I had a though that voidshifter should be "bound" to a user once it's used,
+        // but this is a bullshit idea which came up with a mistake.
+
         if (!component.InUse)
         {
             ev.Shifted = false;
@@ -72,23 +81,6 @@ public class SharedVoidShifterSystem : EntitySystem
             component.InUse = false;
 
         }
-    }
-
-
-    /*
-    private void InteractVoidWalker(EntityUid uid, VoidWalkerComponent comp, ref AccessibleOverrideEvent args)
-    {
-        args.Handled = true;
-    }
-    */
-
-
-    private void InteractVoidWalker(EntityUid uid, VoidWalkerComponent comp, ref BeforeRangedInteractEvent args)
-    {
-        if (comp.IsActive)
-            args.Handled = true;
-        else
-            args.Handled = false;
     }
 
     private void InteractVoidWalker(EntityUid uid, VoidWalkerComponent comp, ref InRangeOverrideEvent args)
@@ -112,17 +104,9 @@ public class SharedVoidShifterSystem : EntitySystem
             args.Handled = false;
     }
 
-    private void InteractVoidWalker(EntityUid uid, VoidWalkerComponent comp, ref InteractEvent args)
-    {
-        if (comp.IsActive)
-        {
-            args.Handled = true;
-        }
-        else
-            args.Handled = false;
-    }
-
-    private void InteractVoidWalker(EntityUid uid, VoidWalkerComponent comp, ref BeforeInteractHandEvent args)
+    // HandledEntityEventArgs all have the same parameter "Handled". I need to enable/disable all of them so...
+    // Unfortunately I cant do the same with record structs because they use other custom-named vars :(
+    private void InteractVoidWalker<T>(EntityUid uid, VoidWalkerComponent comp, ref T args) where T : HandledEntityEventArgs
     {
         if (comp.IsActive)
         {
@@ -132,3 +116,4 @@ public class SharedVoidShifterSystem : EntitySystem
             args.Handled = false;
     }
 }
+

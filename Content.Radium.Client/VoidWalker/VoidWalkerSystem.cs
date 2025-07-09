@@ -22,52 +22,19 @@ public sealed class VoidWalkerSystem : SharedVoidShifterSystem
 
     private VoidWalkerOverlay _overlay = default!;
     protected IEnumerable<EntityUid>? _entityUids;
-    protected List<EntityUid> _eligeableEnts = new();
+    protected List<EntityUid> _eligibleEnts = new(); // fixed typo i made while underslept
     private ShaderInstance? _shader;
 
     public override void Initialize()
     {
-        // base.Initialize();
 
-        // SubscribeLocalEvent<VoidWalkerComponent, ComponentInit>(OnVoidWalkerInit);
-        // SubscribeLocalEvent<VoidWalkerComponent, ComponentShutdown>(OnVoidWalkerShutdown);
-        // SubscribeLocalEvent<VoidWalkerComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
-        // SubscribeLocalEvent<VoidWalkerComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<VoidWalkerComponent, VoidShiftingEvent>(OnVoidShift); // TODO: this doesnt work most prob because voidwalker gets applied after sub???
 
         _shader = _protoMan.Index<ShaderPrototype>("TransparencyShader").Instance();
         _overlay = new();
     }
 
-
-    /*
-    private void OnVoidWalkerInit(EntityUid uid, VoidWalkerComponent component, ComponentInit args)
-    {
-        if (uid != _playerMan.LocalEntity)
-            return;
-    }
-
-    private void OnVoidWalkerShutdown(EntityUid uid, VoidWalkerComponent component, ComponentShutdown args)
-    {
-        if (uid != _playerMan.LocalEntity)
-            return;
-    }
-
-    private void OnPlayerAttached(EntityUid uid, VoidWalkerComponent component, LocalPlayerAttachedEvent args)
-    {
-        if (uid != _playerMan.LocalEntity)
-            return;
-    }
-
-    private void OnPlayerDetached(EntityUid uid, VoidWalkerComponent component, LocalPlayerDetachedEvent args)
-    {
-        if (uid != _playerMan.LocalEntity)
-            return;
-    }
-
-    */
-
-    private void OnVoidShift(EntityUid uid, VoidWalkerComponent comp, ref VoidShiftingEvent args)
+    private void OnVoidShift(EntityUid uid, VoidWalkerComponent comp, VoidShiftingEvent args)
     {
         if (comp.IsActive)
         {
@@ -86,14 +53,14 @@ public sealed class VoidWalkerSystem : SharedVoidShifterSystem
     protected void HideAllEntities(EntityUid user)
     {
         _entityUids = _entMan.GetEntities();
-        _eligeableEnts.Clear();
+        _eligibleEnts.Clear();
         foreach (var uid in _entMan.GetEntities())
         {
             if (// HasComp<ItemComponent>(uid) meow!
                 /*|| */HasComp<ItemComponent>(uid) && TryComp<SpriteComponent>(uid, out var sprite)
                 && uid != user)
             {
-                _eligeableEnts.Add(uid);
+                _eligibleEnts.Add(uid);
                 sprite.PostShader = _shader;
             }
         }
@@ -107,7 +74,7 @@ public sealed class VoidWalkerSystem : SharedVoidShifterSystem
             return;
         }
 
-        foreach (var uid in _eligeableEnts)
+        foreach (var uid in _eligibleEnts)
         {
             if (TryComp<SpriteComponent>(uid, out var sprite))
             {

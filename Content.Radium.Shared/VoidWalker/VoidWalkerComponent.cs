@@ -10,12 +10,9 @@ namespace Content.Radium.Shared.VoidWalker;
 
 public partial class VoidWalkerComponent : Component
 {
-    // For future development of seamless void shifting
-    [DataField]
-    public bool IsActive;
 
     [DataField]
-    public int Collision = (int) CollisionGroup.Impassable;
+    public bool IsActive;
 
 }
 
