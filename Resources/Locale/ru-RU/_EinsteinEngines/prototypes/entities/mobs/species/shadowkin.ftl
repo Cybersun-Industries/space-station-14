@@ -1,4 +1,4 @@
-ent-MobShadowkinBase = Урист Макшэдоу
+ent-MobShadowkinBase = Урист МакАзулит
     .desc = { ent-BaseMobSpeciesOrganic.desc }
 ent-MobShadowkinDummy = { ent-MobHumanDummy }
-    .desc = Фиктивный тенекин, предназначенный для использования при настройке персонажа.
+    .desc = Фиктивный азулит, предназначенный для использования при настройке персонажа.
