@@ -1,6 +1,6 @@
-marking-RobotAntennaTv = Тв
+marking-RobotAntennaTv = Телевизор
 marking-RobotAntennaTesla = Тесла
-marking-RobotAntennaLightb = Свет (альтернативный)
+marking-RobotAntennaLightb = Свет (альт)
 marking-RobotAntennaLight = Свет
 marking-RobotAntennaCyberhead = Киберголова
 marking-RobotAntennaSidelights = Боковые фонарики
