@@ -169,7 +169,7 @@ namespace Content.Client.Stylesheets
 
                 Element<PanelContainer>().Class(ClassAngleRect)
                     .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#202030B3")), //Radium: menu background opacity
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#202030d2")), //Radium: menu background opacity
 
                 Child()
                     .Parent(Element<Button>().Class(ContainerButton.StylePseudoClassDisabled))
