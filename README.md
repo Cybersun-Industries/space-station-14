@@ -8,15 +8,6 @@
 [![Wiki](https://img.shields.io/badge/Wiki-SS14%20RADIUM-blue)](https://radium-station.space)
 [![GitHub](https://img.shields.io/github/stars/Cybersun-Industries/space-station-14?style=social)](https://github.com/Cybersun-Industries/space-station-14)
 
-> **NOTE**:
->
-> This repository is archived from 29.07.2025. <br /><br />
-> If you wish to continue to develop this code yourself, we recommend you to fork it. <br />
-> Huge thanks to all participants! You are the best, guys! <br />
-
-
----
-
 # Space Station 14 - RADIUM
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/Cybersun-Industries/space-station-14)
