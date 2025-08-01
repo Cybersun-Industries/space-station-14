@@ -284,6 +284,7 @@
 
 - type: entity
   parent: BaseSpeciesDummy
+  categories: [ HideSpawnMenu ]
   id: MobResomiDummy
   save: false
   description: A dummy resomi meant to be used in character setup.
