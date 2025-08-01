@@ -35,6 +35,6 @@ ent-FishSilver-desc = на 5% из серебра!
 ent-FishToxic = мерзкая рыба
 ent-FishToxic-desc = Так вот о чем говорили экозактивисты.
 ent-FishTropicalSun = тропическая рыба
-ent-FishToxic-desc = Эта рыба слишком долго загорала.
+ent-FishTropicalSun-desc = Эта рыба слишком долго загорала.
 ent-FishingSpotWater = подозрительная лужа
 ent-FishingSpotWater-desc = Там что-то плавает...
