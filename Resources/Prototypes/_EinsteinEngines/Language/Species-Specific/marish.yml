@@ -12,27 +12,28 @@
     !type:SyllableObfuscation
     minSyllables: 2
     maxSyllables: 5
+    #RADIUM REPLACEMENTS
     replacement:
-    - mar
-    - mwrrr
-    - maaAr
-    - aarrr
-    - wrurrl
-    - mmar
-    - mwar
-    - mlar
-    - mlwar
-    - mwaarr
-    - mAaAr
-    - lmwar
-    - wlurrl
-    - wlmwar
-    - arrmaw
-    - mwAlwar
-    - wrlurll
-    - wlarrul
-    - wlAmur
-    - AlwuRm
-    - mrrrAw
-    - wurlMur
-    - uuRlmmr
+    - мар
+    - мррр
+    - мааАр
+    - ааррр
+    - вруррл
+    - ммар
+    - мвар
+    - млар
+    - млвар
+    - мвар
+    - мАаАр
+    - лмвар
+    - вруррл
+    - влмвар
+    - аррмав
+    - мвАлвар
+    - врурлл
+    - враррул
+    - влАмур
+    - Алвурм
+    - мррАв
+    - вурлМур
+    - ууРлммр

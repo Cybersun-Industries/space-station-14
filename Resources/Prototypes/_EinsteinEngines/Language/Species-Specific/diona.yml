@@ -10,9 +10,10 @@
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 5
+    #RADIUM REPLACEMENTS
     replacement:
-    - hs
-    - zt
-    - kr
-    - st
-    - sh
+    - хс
+    - зт
+    - кр
+    - ст
+    - сш

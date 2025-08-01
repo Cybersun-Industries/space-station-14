@@ -9,8 +9,9 @@
     !type:SyllableObfuscation
     minSyllables: 1 # Replacements are really short
     maxSyllables: 2
+    #RADIUM REPLACEMENTS
     replacement:
-    - click
-    - clack
-    - buzz
-    - bizz
+    - клик
+    - клак
+    - бузз
+    - бизз
