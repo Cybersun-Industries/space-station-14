@@ -1,8 +1,8 @@
 ent-ClothingModsuitApocryphal = Апокрафический МОД
     .desc = Контроллер Апокрафического МОД костюма.
-ent-ClothingModsuitGauntletsApocryphal = Апокрифические модкостюмные перчатки
+ent-ClothingModsuitGauntletsApocryphal = Апокрафические модкостюмные перчатки
     .desc = Пара перчаток, сделанных для Апокрафического МОДа.
-ent-ClothingModsuitHelmetApocryphal = Апокрифический шлем МОДа
+ent-ClothingModsuitHelmetApocryphal = Апокрафический шлем МОДа
     .desc = Ультрасовременный шлем, разработанный NanoTrasen для Апокрафического МОДа. Он оснащен встроенным дисплеем HUD.
 ent-ClothingModsuitChestplateApocryphal = Нагрудник Апокрафического МОДа
     .desc = Современный нагрудник, разработанный NanoTrasen для Апокрафического МОДа. Он оснащен приводимыми в действие сервоприводами для снижения нагрузки на оборудование.
