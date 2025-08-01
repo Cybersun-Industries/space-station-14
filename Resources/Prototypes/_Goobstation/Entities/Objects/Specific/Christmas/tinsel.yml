@@ -72,6 +72,7 @@
     - ChristmasTinselBlue6
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselWhite1
   description: Some white tinsel. It's a bit sparkly.
   components:
@@ -87,6 +88,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselWhite2
   description: Some white tinsel. It's a bit sparkly.
   components:
@@ -102,6 +104,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselWhite3
   description: Some white tinsel. It's a bit sparkly.
   components:
@@ -117,6 +120,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselWhite4
   description: Some white tinsel. It's a bit sparkly.
   components:
@@ -132,6 +136,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselWhite5
   description: Some white tinsel. It's a bit sparkly.
   components:
@@ -147,6 +152,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselWhite6
   description: Some white tinsel. It's a bit sparkly.
   components:
@@ -162,6 +168,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselRed1
   description: Some red tinsel. It's a bit sparkly.
   components:
@@ -178,6 +185,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselRed2
   description: Some red tinsel. It's a bit sparkly.
   components:
@@ -194,6 +202,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselRed3
   description: Some red tinsel. It's a bit sparkly.
   components:
@@ -210,6 +219,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselRed4
   description: Some red tinsel. It's a bit sparkly.
   components:
@@ -226,6 +236,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselRed5
   description: Some red tinsel. It's a bit sparkly.
   components:
@@ -242,6 +253,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselRed6
   description: Some red tinsel. It's a bit sparkly.
   components:
@@ -258,6 +270,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselBlue1
   description: Some blue tinsel. It's a bit sparkly.
   components:
@@ -274,6 +287,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselBlue2
   description: Some blue tinsel. It's a bit sparkly.
   components:
@@ -290,6 +304,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselBlue3
   description: Some blue tinsel. It's a bit sparkly.
   components:
@@ -306,6 +321,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselBlue4
   description: Some blue tinsel. It's a bit sparkly.
   components:
@@ -322,6 +338,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselBlue5
   description: Some blue tinsel. It's a bit sparkly.
   components:
@@ -338,6 +355,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   id: ChristmasTinselBlue6
   description: Some blue tinsel. It's a bit sparkly.
   components:

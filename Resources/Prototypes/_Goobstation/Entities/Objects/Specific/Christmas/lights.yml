@@ -72,6 +72,7 @@
     - ChristmasLightsBlue6
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite1
   description: Some white Christmas lights.
   components:
@@ -87,6 +88,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite2
   description: Some white Christmas lights.
   components:
@@ -102,6 +104,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite3
   description: Some white Christmas lights.
   components:
@@ -117,6 +120,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite4
   description: Some white Christmas lights.
   components:
@@ -132,6 +136,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite5
   description: Some white Christmas lights.
   components:
@@ -147,6 +152,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite6
   description: Some white Christmas lights.
   components:
@@ -162,6 +168,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsRed1
   description: Some red Christmas lights.
   components:
@@ -178,6 +185,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsRed2
   description: Some red Christmas lights.
   components:
@@ -194,6 +202,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsRed3
   description: Some red Christmas lights.
   components:
@@ -210,6 +219,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsRed4
   description: Some red Christmas lights.
   components:
@@ -226,6 +236,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsRed5
   description: Some red Christmas lights.
   components:
@@ -242,6 +253,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsRed6
   description: Some red Christmas lights.
   components:
@@ -258,6 +270,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue1
   description: Some blue Christmas lights.
   components:
@@ -274,6 +287,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue2
   description: Some blue Christmas lights.
   components:
@@ -290,6 +304,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue3
   description: Some blue Christmas lights.
   components:
@@ -306,6 +321,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue4
   description: Some blue Christmas lights.
   components:
@@ -322,6 +338,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue5
   description: Some blue Christmas lights.
   components:
@@ -338,6 +355,7 @@
     mask: /Textures/Effects/LightMasks/sparklemask.png
 
 - type: entity
+  categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue6
   description: Some blue Christmas lights.
   components:
