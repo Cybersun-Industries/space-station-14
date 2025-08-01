@@ -1,9 +1,9 @@
-ent-ClothingModsuitResponsorySecurity = Контроль МОДа безопасности
+ent-ClothingModsuitResponsorySecurity = Контроллер МОДа безопасности
     .desc = Основной контроллер для МОДа службы безопасности ОБР.
 ent-ClothingModsuitGauntletsResponsorySecurity = Перчатки МОДа безопасности
     .desc = Пара перчаток, сшитых для МОДа службы безопасности ОБР.
 ent-ClothingModsuitHelmetResponsorySecurity = Шлем МОДа безопасности
-    .desc = Ультрасовременный шлем, разработанный NanoTrasen для МОДа службы безопасности ОБР. Он оснащен встроенным дисплеем HUD.
+    .desc = Ультрасовременный шлем, разработанный NanoTrasen для МОДа службы безопасности ОБР. Он оснащен встроенным HUD-дисплеем.
 ent-ClothingModsuitChestplateResponsorySecurity = Нагрудник МОДа безопасности
     .desc = Современный нагрудник, разработанный NanoTrasen для МОДа службы безопасности ОБР. Он оснащен приводимыми в действие сервоприводами для снижения нагрузки на оборудование.
 ent-ClothingModsuitBootsResponsorySecurity = Защитные ботинки МОДа безопасности
