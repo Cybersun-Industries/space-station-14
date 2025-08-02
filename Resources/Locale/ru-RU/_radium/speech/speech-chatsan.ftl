@@ -256,5 +256,3 @@ radium-chatsan-word-128 = интернет
 radium-chatsan-replacement-128 = галанет
 radium-chatsan-word-129 = гайдбук
 radium-chatsan-replacement-129 = книга знаний
-radium-chatsan-word-130 = интернет
-radium-chatsan-replacement-130 = галанет
