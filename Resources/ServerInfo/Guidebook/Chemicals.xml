@@ -9,39 +9,39 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Chemicals
+# Химикаты
 
-Chemicals are a powerful tool that can cause a variety of effects when consumed. Some can be found in plants, purchased from cargo, or be synthesized through combination with other chemicals.
+Химические вещества - это мощный инструмент, который может вызвать различные эффекты при употреблении. Некоторые из них можно найти в растениях, купить у грузоперевозчиков или синтезировать путем соединения с другими химическими веществами.
 
-Knowing different types of chemicals and their effects is important for being able to manage injury and danger.
+Знание различных типов химических веществ и их воздействия важно для того, чтобы уметь справляться с травмами и другими опасностями.
 
-## Elements
+## Элементы
 <GuideReagentGroupEmbed Group="Elements"/>
 
-## Medicine
+## Медицина
 <GuideReagentGroupEmbed Group="Medicine"/>
 
-## Narcotics
+## Наркотики
 <GuideReagentGroupEmbed Group="Narcotics"/>
 
-## Pyrotechnics
+## Пиротехника
 <GuideReagentGroupEmbed Group="Pyrotechnic"/>
 
-## Toxins
+## Токсины
 <GuideReagentGroupEmbed Group="Toxins"/>
 
-## Foods
+## Пищевые
 <GuideReagentGroupEmbed Group="Foods"/>
 
-## Botanical
+## Ботанические
 <GuideReagentGroupEmbed Group="Botanical"/>
 
-## Biological
+## Биологические
 <GuideReagentGroupEmbed Group="Biological"/>
 
-## Special
+## Специальное
 <GuideReagentGroupEmbed Group="Special"/>
 
-## Other
+## Остальное
 <GuideReagentGroupEmbed Group="Unknown"/>
 </Document>
