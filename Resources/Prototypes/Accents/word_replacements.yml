@@ -609,6 +609,10 @@
     radium-chatsan-word-127: radium-chatsan-replacement-127
     radium-chatsan-word-128: radium-chatsan-replacement-128
     radium-chatsan-word-129: radium-chatsan-replacement-129
+    radium-chatsan-word-130: radium-chatsan-replacement-130
+    radium-chatsan-word-131: radium-chatsan-replacement-131
+    radium-chatsan-word-132: radium-chatsan-replacement-132
+    radium-chatsan-word-133: radium-chatsan-replacement-133
 
 - type: accent
   id: liar
