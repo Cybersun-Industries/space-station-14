@@ -1,7 +1,7 @@
 ent-ClothingShoesBootsChrono = футуристические ботинки
     .desc = Усовершенствованная футуристическая обувь, гарантирующая комфорт и полное сцепление с любой поверхностью.
 ent-ClothingShoesBootsChronoUnremoveable = { ent-ClothingShoesBootsChrono }
-    .suffix = Неустранимый
+    .suffix = Неснимаемый
     .desc = { ent-ClothingShoesBootsChrono.desc }
 ent-ClothingShoesBootsMagEmergencyResponseTeam = магнитные сапоги отряда быстрого реагирования
     .desc = Смотри! ОБР, мы спасены!
