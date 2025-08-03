@@ -6,56 +6,51 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# The Captains and the Clowns
-This is a guide for editing your character's appearance. Make sure you read Character Creation first.
-Upon creating your character, you may be intimidated by your vast range of options.
+# Капитаны и Клоуны
+Это руководство по редактированию внешности вашего персонажа. Сначала обязательно прочитайте «Создание персонажа».
+При создании персонажа вы можете быть напуганы огромным количеством вариантов.
   
-It's okay to make your first character [color=#a4885c]randomized[/color] and roll with it, even experienced players do it.
-Making your first character doesn't have to be precise, either. You can [color=#a4885c]wing it[/color] and see what happens.
+Ничего страшного в том, чтобы сделать своего первого персонажа [color=#a4885c]рандомизированным[/color], и смириться с этим, так поступают даже опытные игроки.
+Создание первого персонажа не обязательно должно быть муторным. Вы можете [color=#a4885c]сымпровизировать[/color] и посмотреть, что получится.
   
-If you'd like to be [color=#a4885c]methodical[/color], though, creating a character is easy to do one step at a time.
+Если же вы хотите быть [color=#a4885c]методичным[/color], то создание персонажа легко сделать шаг за шагом.
 
-## Choosing a Species
-Most species have minor differences, which you can read about under the [color=#a4885c]Species[/color] entry.
-However, you may find that it's easier to make your first character as a human, moth, dwarf or reptilian.
+## Выбор вида
+Большинство видов имеют незначительные различия, о которых вы можете прочитать в разделе [color=#a4885c]Виды[/color].
+Однако вы можете обнаружить, что вам проще сделать своего первого персонажа человеком, ниан, дворфом или унатхом.
 
-This shouldn't discourage you from getting creative with your character, though.
+Несмотря на это, подходите творчески к созданию персонажа.
 
-This guide will assume you are creating a human, but the process is similar across all species.
+В этом руководстве предполагается, что вы создаете человека, но процесс похож для всех видов.
 
-## Minor Characteristics
-These include:
-- Age (18-29 for young, 30-59 for middle-aged, 60+ for old)
-- Sex (your sprite, as seen by toggling "Show clothing")
-- Pronouns (what the game will refer to you as)
-- Skin color (may be a slider or RGB depending on species)
-- Eye color (RGB)
-- Hair color (RGB)
+## Второстепенные характеристики
+К ним относятся:
+- Возраст (18-29 лет для молодых, 30-59 лет для средних, 60+ для старых).
+- Пол (ваш спрайт, который можно увидеть, переключив "Показать одежду")
+- Местоимения (то, как игра будет обращаться к вам)
+- Цвет кожи (может быть ползунком или RGB в зависимости от вида)
+- Цвет глаз (RGB)
+- Цвет волос (RGB)
 
-These are minor changes and have little effect on gameplay. This is what players will read when they [color=#a4885c]examine you[/color]. ("young man")
+Это незначительные изменения, которые мало влияют на игровой процесс. Это то, что игроки будут читать, когда будут вас [color=#a4885c]осматривать[/color]. ("молодой человек")
 
-## Hair and Facial Hair
-Again, you may be intimidated by the vast range of options. That's okay.
+## Волосы и лицевая растительность
+И снова вас может испугать огромное количество вариантов. Ничего страшного.
 
-[color=#a4885c]Take your time with it.[/color] You can skim or click through each of the options and find which one you like.
-Sometimes it's easier to set your desired hair color before looking at the options.
+[color=#a4885c]Не торопитесь.[/color] Вы можете подобрать тот, который вам нравится.
+Проще установить желаемый цвет волос, прежде чем просматривать варианты.
 
-If you really can't decide, some popular haircut options include Floorlength Bedhead, Modern, Buisness, CIA or simply bald.
-Alternatively, [color=#a4885c]randomize[/color] a separate character and see what kind of haircuts they're rocking with. Suprise yourself.
-
-Don't feel obligated to use any of these, though.
+Как вариант, [color=#a4885c]случайно выберите[/color] отдельного игрока и посмотрите, с какими стрижками он ходит.
   
-## Markings
-Markings range from [color=#a4885c]scars and snouts[/color] to [color=#a4885c]tattoos and tails[/color].
-Think of them like [color=#a4885c]accessories[/color] that are a part of your body, for giving your character some extra flair and uniqueness. They cannot be changed during the round.
+## Отметины
+Отметины варьируются от [color=#a4885c]шрамов и рыл[/color] до [color=#a4885c]татуировок и хвостов[/color].
+Воспринимайте их как [color=#a4885c]аксессуары[/color], которые являются частью вашего тела и придают вашему персонажу дополнительную изюминку и уникальность. Они не могут быть изменены в течение раунда.
 
-Some species have more marking options than others. Humans are more limited in terms of markings than moths or reptilians.
+Некоторые виды имеют больше возможностей для кастомизации, чем другие. Люди более ограничены в выборе меток, чем ниан или унатхи.
 
-You can have a set number of markings in each '[color=#a4885c]category[/color]', as seen at the top. For example, reptilians can have one chest marking but two markings on the top of their heads.
-These are [color=#a4885c]cosmetic[/color] and have no effect on gameplay.
+Вы можете иметь определенное количество маркировок в каждой „[color=#a4885c]категории[/color]“, как сказано вверху. Например, у рептилий может быть одна отметка на груди, но две отметки на голове.
+Они являются [color=#a4885c]косметическими[/color] и не влияют на игровой процесс.
 
-## How to stand out
-Memorable characters are usually remembered for their personality, their deeds and their [color=#a4885c]robustness[/color], but that doesn't mean you have to be some sort of hotshot.
-
-Don't sweat having a big, flashy and memorable character. Make your own story that you'll be remembered for.
+## Как выделиться
+Запоминающиеся персонажи обычно запоминаются своей индивидуальностью, поступками и [color=#a4885c]робастностью[/color], но это не значит, что вы должны быть каким-то кислотным дворфом.
 </Document>
