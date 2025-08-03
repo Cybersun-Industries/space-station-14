@@ -476,9 +476,9 @@
     accent-southern-words-6: accent-southern-words-replace-6
 
 # For the chat sanitization system
-#radium chatsan
 - type: accent
   id: chatsanitize
+# Radium start: chatsan.
   wordReplacements:
     radium-chatsan-word-1: radium-chatsan-replacement-1
     radium-chatsan-word-2: radium-chatsan-replacement-2
@@ -613,6 +613,7 @@
     radium-chatsan-word-131: radium-chatsan-replacement-131
     radium-chatsan-word-132: radium-chatsan-replacement-132
     radium-chatsan-word-133: radium-chatsan-replacement-133
+#radium end
 
 - type: accent
   id: liar
