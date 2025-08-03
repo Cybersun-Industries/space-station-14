@@ -613,7 +613,7 @@
     radium-chatsan-word-131: radium-chatsan-replacement-131
     radium-chatsan-word-132: radium-chatsan-replacement-132
     radium-chatsan-word-133: radium-chatsan-replacement-133
-#radium end
+# Radium end.
 
 - type: accent
   id: liar
