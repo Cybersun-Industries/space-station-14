@@ -206,8 +206,8 @@ ghost-role-information-lost-challenge-commander-rules =
     Вы не помните ничего из своей предыдущей жизни и не помните ничего из того, что узнали, будучи призраком.
     Вам разрешается помнить знания об игре в целом, например, как готовить, как использовать предметы и т.д.
     Вам [color=red]НЕ[/color] разрешается помнить, имя, внешность и т.д. вашего предыдущего персонажа.
-ghost-role-information-lost-challenge-cargo-technican-name = Грузовой шофер
-ghost-role-information-lost-challenge-cargo-technican-description = Вы - грузовой техник, получивший отпуск на берег вместе с одним из своих командиров.
+ghost-role-information-lost-challenge-cargo-technican-name = Грузчик
+ghost-role-information-lost-challenge-cargo-technican-description = Вы - грузчик, получивший отпуск вместе с одним из своих командиров.
 ghost-role-information-lost-challenge-cargo-technican-rules =
     Вы не враждебны станции и делаете то, что должны, чтобы обеспечить собственное выживание.
     Вы не помните ничего из своей предыдущей жизни и не помните ничего из того, что узнали, будучи призраком.
@@ -239,3 +239,7 @@ ghost-role-information-gingerbread-description =
     Распространяйте паточную вкуснятину и хорошее настроение.
 ghost-role-information-wizard-name = Волшебник
 ghost-role-information-wizard-desc = ТЫ ВОЛШЕБНИК! Покажи станции, из чего сделана твоя магия.
+ghost-role-information-space-goldfish-name = Золотая косморыбка
+ghost-role-information-space-goldfish-description = Бесцельно плавайте по воздуху и кусайте глупцов…
+ghost-role-information-squackroach-name = Убожество
+ghost-role-information-squackroach-description = Болеет Альцгеймером, не опасен

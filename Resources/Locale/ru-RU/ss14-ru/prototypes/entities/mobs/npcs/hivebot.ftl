@@ -1,7 +1,7 @@
-ent-MobHivebot = hivebot
-    .desc = Agitating, mechanized pests.
-ent-MobHivebotRanged = hivebot
-    .desc = Agitating, mechanized pests. This one has a gun.
-    .suffix = Ranged
-ent-MobHivebotStrong = strong hivebot
-    .desc = Agitating, mechanized pests. This one looks much stronger then normal.
+ent-MobHivebot = хайвбот
+    .desc = Механизированный вредитель.
+ent-MobHivebotRanged = хайвбот
+    .desc = Механизированный вредитель. У этого пушка.
+    .suffix = Дальний бой
+ent-MobHivebotStrong = усиленный хайвбот
+    .desc = Механизированный вредитель. Выглидит сильнее обычного.
