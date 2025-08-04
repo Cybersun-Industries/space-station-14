@@ -7,7 +7,7 @@ ent-ClothingOuterHardsuitBlueshield = скафандр офицера синег
     .desc = Скафандр синего щита.
 ent-ClothingOuterHardsuitCybersunStealth = стелс-костюм cybersun
     .desc = Скафандр с специальным покрытием для стелс-операций. Не работает без шлема!
-    .suffix = Стеллс
+    .suffix = Стелс
 
 # BSO
 

@@ -1,2 +1,2 @@
-ent-DubiousOrganSpawner = Сомнительный размножитель органов
+ent-DubiousOrganSpawner = Спавнер сомнительных органов
     .desc = { ent-MarkerBase.desc }

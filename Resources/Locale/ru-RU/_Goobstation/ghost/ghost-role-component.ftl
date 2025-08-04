@@ -1,7 +1,7 @@
 ghost-role-information-nukie-reinforcement-name = Ядерный оперативник
 ghost-role-information-nukie-reinforcement-description = Ядерным оперативникам нужно подкрепление. Вы, резервный агент, поможете им.
 ghost-role-information-nukie-reinforcement-rules = Вы являетесь [color=red][bold]командным антагонистом[/bold][/color] с вызвавшими вас ядерными оперативниками.
-ghost-role-information-SyndiRoach-name = SyndiMaggot
+ghost-role-information-SyndiRoach-name = Синди личинка
 ghost-role-information-SyndiRoach-description = Вы - верный дрессированный питомец ядерных оперативников с микробомбой. Служите своему хозяину до смерти!
 ghost-role-information-SyndiRoach-rules = Вы являетесь [color=red][bold]командным антагонистом[/bold][/color] с агентом, который вас вызвал.
 ghost-role-information-skibidi-toilet-name = Скибиди Туалет
@@ -13,8 +13,8 @@ ghost-role-information-Hecu-rules = Вы обязаны подчиняться �
 ghost-role-information-lootbug-name = Лут-Жук
 ghost-role-information-lootbug-description = Постарайтесь не быть зарезанным тайдерами.
 ghost-role-information-c4-name = C-4
-ghost-role-information-homunculus-name = homunculus
-ghost-role-information-homunculus-description = Obey the one who has created you, if there are nowhere to be found, do as you will.
+ghost-role-information-homunculus-name = гомункул
+ghost-role-information-homunculus-description = Поклоняйтесь своему творцу, если его нет - найдите.
 ghost-role-information-c4-description = Помогите пользователю с бомбометанием.
 ghost-role-information-derelict-cyborg-syndicate-name = Старый киборг Синдиката
 ghost-role-information-derelict-cyborg-syndicate-description = Вы потерялись во время нападения на станцию. После многих лет воздействия ионных бурь вы оказываетесь рядом с космической станцией.
@@ -37,6 +37,10 @@ ghost-role-information-inspector-description = Проведите инспекц
 ghost-role-information-greytider-name = Грейтайдер
 ghost-role-information-greytider-description = Будь робастным.
 ghost-role-information-sentient-shark-name = Разумная акула
+ghost-role-information-space-goldfish-name = Золотая косморыбка
+ghost-role-information-space-goldfish-description = Бесцельно плавайте по воздуху и кусайте глупцов…
+ghost-role-information-squackroach-name = Убожество
+ghost-role-information-squackroach-description = Болеет Альцгеймером, не опасен
 
 # Халфлайф
 
@@ -54,6 +58,11 @@ ghost-role-information-alien-tourist-description = Осматривайте ст
 ghost-role-information-conquest-name = Завоеватель
 ghost-role-information-conquest-description = Этой станции были отданы приказы, им было дано время. Им было предоставлено больше свободы действий, чем остальным.
 ghost-role-information-conquest-rules = Подготовьте эту станцию к прибытию империи Вилтрум.
+
+# Персона правосудия (спамеры гооол)
+
+justice-role-name = Персона правосудия
+justice-role-description = Помогайте ГСБ при проведении арестов, выкрикивая за него фразы во время правосудия..
 
 # Токен роли
 

@@ -239,7 +239,3 @@ ghost-role-information-gingerbread-description =
     Распространяйте паточную вкуснятину и хорошее настроение.
 ghost-role-information-wizard-name = Волшебник
 ghost-role-information-wizard-desc = ТЫ ВОЛШЕБНИК! Покажи станции, из чего сделана твоя магия.
-ghost-role-information-space-goldfish-name = Золотая косморыбка
-ghost-role-information-space-goldfish-description = Бесцельно плавайте по воздуху и кусайте глупцов…
-ghost-role-information-squackroach-name = Убожество
-ghost-role-information-squackroach-description = Болеет Альцгеймером, не опасен

@@ -16,7 +16,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 Более подробные руководства по [italic]конкретным заданиям[/italic] и [italic]механикам[/italic] можно найти [textlink="здесь." link="SS14"/].
 
-Это руководство можно открыть в любое время, используя [color=yellow][bold][keybind=«OpenGuidebook»][/bold][/color].
+Это руководство можно открыть в любое время, используя [color=yellow][bold][keybind="OpenGuidebook"][/bold][/color].
 
 ## Основные элементы управления
 Ниже перечислены элементы управления, которые понадобятся вам в обычной игре:
@@ -35,7 +35,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 - Тяните и отпускайте предметы с помощью [color=yellow][bold][keybind="TryPullObject"][/bold][/color] и [color=yellow][bold][keybind="ReleasePulledObject"][/bold][/color].
 
-Более полный список можно найти на странице [textlink=«controls» link="Controls"].
+Более полный список можно найти на странице [textlink="управление" link="Controls"].
 
 ## Что такое SS14?
 Space Station 14 - это многопользовательская игра о паранойе и хаосе на космической станции и ремейк культовой классической Space Station 13.
