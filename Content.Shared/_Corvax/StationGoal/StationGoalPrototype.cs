@@ -6,12 +6,12 @@
 
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Corvax.StationGoal
+namespace Content.Shared._Corvax.StationGoal
 {
-    [Serializable, Prototype("stationGoal")]
-    public sealed class StationGoalPrototype : IPrototype
+    [Serializable, Prototype]
+    public sealed partial class StationGoalPrototype : IPrototype
     {
-        [IdDataFieldAttribute]
+        [IdDataField]
         public string ID { get; } = default!;
 
         [DataField]

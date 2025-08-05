@@ -7,6 +7,7 @@
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.Commands;
+using Content.Shared._Corvax.StationGoal;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;

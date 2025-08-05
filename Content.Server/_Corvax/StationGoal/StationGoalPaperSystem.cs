@@ -7,6 +7,7 @@
 using Content.Server._Corvax.GameTicking;
 using Content.Server.Fax;
 using Content.Server.Station.Systems;
+using Content.Shared._Corvax.StationGoal;
 using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Fax.Components;
 using Content.Shared.GameTicking;
