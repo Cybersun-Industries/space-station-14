@@ -6,11 +6,11 @@ trait-bogan-name = Боганский акцент
 trait-bogan-desc = Вы научились этому у мифического существа.
 trait-maoist-accent-name = Маоистский акцент
 trait-maoist-accent-desc = SShit$$eKKK mu$$t be de$$troyed. Death to KKKommand.
-trait-medieval-accent-name = Medieval accent
-trait-medieval-accent-desc = Hark! Thy manner o' speech, 'tis most unusual!
-trait-tile-movement-name = Inner peace
-trait-tile-movement-desc = You are always in touch with your roots. And by your roots, I mean the center of the tile you're standing on.
-trait-movement-impaired-name = Movement Impaired
-trait-movement-impaired-desc = You can't quite seem to walk very well without some assistance. Cane included.
-movement-impaired-trait-examined = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } seems to walk with a slight limp. It doesn't seem like { SUBJECT($target) } can walk very well without assistance[/color]
+trait-medieval-accent-name = Средневековый акцент
+trait-medieval-accent-desc = Внимай! Твой стиль изреченья сврехм меры идиотичен!
+trait-tile-movement-name = Внутренний покой
+trait-tile-movement-desc = Ты очен сильно привязан к своим корням. И под корнями я имею ввиду центр тайла, на котором ты стоишь.
+trait-movement-impaired-name = Затруднённая ходьба
+trait-movement-impaired-desc = Ты не можешь полноценно передвигаться без некоторой помощи. Трость в комплекте.
+movement-impaired-trait-examined = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } выглядит хромающим. Не похоже, что { SUBJECT($target) } может полноценно ходить без опоры[/color]
 poor-vision-trait-examined = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } глаза расфокусированы. Не похоже, что { SUBJECT($target) } хорошо видит вас без очков...[/color]
