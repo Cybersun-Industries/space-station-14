@@ -70,6 +70,7 @@
 // SPDX-FileCopyrightText: 2024 wrexbe <wrexbe@protonmail.com>
 // SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
 // SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilysha998 <sukhachew.ilya@gmail.com>
 // SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
