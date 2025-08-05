@@ -1,15 +1,27 @@
-// SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
-// SPDX-FileCopyrightText: 2025 Ilysha998 <sukhachew.ilya@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Corvax.StationGoal
 {
-    /// <summary>
-    ///     Paper with a written station goal in it.
-    /// </summary>
-    [RegisterComponent]
-    public sealed partial class StationGoalPaperComponent : Component
+    [Serializable, Prototype("stationGoal")]
+    public sealed class StationGoalPrototype : IPrototype
     {
+        [IdDataFieldAttribute]
+        public string ID { get; } = default!;
+
+        [DataField]
+        public string Text { get; set; } = string.Empty;
+
+        [DataField]
+        public int? MinPlayers;
+
+        [DataField]
+        public int? MaxPlayers;
+
+        /// <summary>
+        /// Goal may require certain items to complete. These items will appear near the receving fax machine at the start of the round.
+        /// TODO: They should be spun up at the tradepost instead of at the fax machine, but I'm too lazy to do that right now. Maybe in the future.
+        /// </summary>
+        [DataField]
+        public List<EntProtoId> Spawns = new();
     }
 }
