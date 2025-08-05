@@ -1,26 +1,26 @@
 # Robotic Arm
 
-signal-port-name-input-machine = Сигнальный порт: Входной порт
+signal-port-name-input-machine = Входной порт
 signal-port-description-input-machine = Слот для автоматизации машины, из которого можно брать предметы, вместо того чтобы брать их с пола.
-signal-port-name-output-machine = Сигнальный порт: Выходной порт
+signal-port-name-output-machine = Выходной порт
 signal-port-description-output-machine = Слот автоматизации машины, в который можно вставлять предметы, вместо того чтобы класть их на пол.
-signal-port-name-item-moved = Сигнальный порт: Перемещенный предмет
+signal-port-name-item-moved = Перемещенный предмет
 signal-port-description-item-moved = Сигнальный порт, который получает импульс после перемещения предмета этим манипулятором.
-signal-port-name-automation-slot-filter = Сигнальный порт: Слот фильтра
+signal-port-name-automation-slot-filter = Слот фильтра
 signal-port-description-automation-slot-filter = Слот для фильтра автоматической машины.
 
 # Измельчитель реагентов
 
-signal-port-name-automation-slot-beaker = Элемент: Слот для мензурки
+signal-port-name-automation-slot-beaker = Слот для мензурки
 signal-port-description-automation-slot-beaker = Слот автоматизации для мензурки машины для обработки жидкостей.
-signal-port-name-automation-slot-input = Элемент: Входные элементы
+signal-port-name-automation-slot-input = Входные элементы
 signal-port-description-automation-slot-input = Слот автоматизации для хранения входных элементов машины.
 
 # Flatpacker
 
-signal-port-name-automation-slot-board = Элемент: Слот для платы
+signal-port-name-automation-slot-board = Слот для платы
 signal-port-description-automation-slot-board = Слот автоматизации для печатной платы плоского упаковщика.
-signal-port-name-automation-slot-materials = Элемент: Хранилище материалов
+signal-port-name-automation-slot-materials = Хранилище материалов
 signal-port-description-automation-slot-materials = Слот автоматизации для вставки материалов в хранилище машины.
 
 # Disposal Unit
@@ -34,7 +34,7 @@ signal-port-description-ready = Сигнальный порт, на которы
 
 # Storage Bin
 
-signal-port-name-automation-slot-storage = Предмет: Хранилище
+signal-port-name-automation-slot-storage = Хранилище
 signal-port-description-automation-slot-storage = Слот автоматизации для инвентаря буфера хранения.
 signal-port-name-storage-inserted = Вставлено
 signal-port-description-storage-inserted = Сигнальный порт, который получает импульсы после того, как предмет вставляется в буфер хранения.
@@ -43,7 +43,7 @@ signal-port-description-storage-removed = Сигнальный порт, кот�
 
 # Fax Machine
 
-signal-port-name-automation-slot-paper = Элемент: Бумага
+signal-port-name-automation-slot-paper = Бумага
 signal-port-description-automation-slot-paper = Слот автоматизации для лотка для бумаги в факсе.
 signal-port-name-fax-copy = Копирование - факс
 signal-port-description-fax-copy = Сигнальный порт для копирования бумаги в факсе аппарата.
@@ -63,17 +63,17 @@ signal-port-description-machine-failed = Сигнальный порт, кото
 
 # Interactor
 
-signal-port-name-automation-slot-tool = Предмет: инструмент
+signal-port-name-automation-slot-tool = Слот инструмент
 signal-port-description-automation-slot-tool = Слот автоматизации для инструмента, которым владеет интерактор.
 
 # Autodoc
 
-signal-port-name-automation-slot-autodoc-hand = Предмет: Рука Автодока
+signal-port-name-automation-slot-autodoc-hand = Рука Автодока
 signal-port-description-automation-slot-autodoc-hand = Слот автоматизации для удерживаемого органа/части/и т.д. автодока из инструкций STORE ITEM / GRAB ITEM.
 
 # Газовый баллон
 
-signal-port-name-automation-slot-gas-tank = Предмет: Газовый баллон
+signal-port-name-automation-slot-gas-tank = Газовый баллон
 signal-port-description-automation-slot-gas-tank = Слот автоматизации для газового баллона.
 
 # Radiation Collector
