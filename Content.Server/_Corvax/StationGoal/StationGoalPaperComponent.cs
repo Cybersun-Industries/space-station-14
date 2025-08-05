@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Server.Corvax.StationGoal
+namespace Content.Server._Corvax.StationGoal
 {
     /// <summary>
     ///     Paper with a written station goal in it.

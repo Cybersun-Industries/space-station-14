@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Shared.GameTicking;
+namespace Content.Server._Corvax.GameTicking;
 
 public sealed class RoundStartedEvent : EntityEventArgs
 {

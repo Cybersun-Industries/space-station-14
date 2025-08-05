@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Corvax.GameTicking;
 using Content.Server.Fax;
 using Content.Server.Station.Systems;
 using Content.Shared.Corvax.CCCVars;
@@ -13,7 +14,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server.Corvax.StationGoal
+namespace Content.Server._Corvax.StationGoal
 {
     /// <summary>
     ///     System to spawn paper with station goal.
