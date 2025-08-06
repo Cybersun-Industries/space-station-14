@@ -15,6 +15,5 @@ public sealed class VoidShiftingEvent : EntityEventArgs
     public VoidShiftingEvent(EntityUid user, bool? shifted)
     {
         User = user;
-        Shifted = shifted;
     }
 }

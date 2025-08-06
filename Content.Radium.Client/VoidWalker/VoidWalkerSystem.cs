@@ -6,6 +6,7 @@ using Content.Shared.RCD.Components;
 using Content.Shared.Stealth.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Client.Player;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
@@ -14,19 +15,19 @@ namespace Content.Radium.Client.VoidWalker;
 public sealed class VoidWalkerSystem : SharedVoidShifterSystem
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
-    [Dependency] private readonly ISharedPlayerManager _playerMan = default!;
     [Dependency] private readonly ILightManager _lightManager = default!;
     [Dependency] private readonly EntityManager _entMan = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly IPlayerManager _playerMan = default!;
 
     private VoidWalkerOverlay _overlay = default!;
-    protected IEnumerable<EntityUid>? _entityUids;
-    protected List<EntityUid> _eligibleEnts = new(); // fixed typo i made while underslept
+    private IEnumerable<EntityUid>? _entityUids;
+    private List<EntityUid> _eligibleEnts = new(); // fixed typo i made while underslept
     private ShaderInstance? _shader;
 
     public override void Initialize()
     {
+        base.Initialize();
 
         SubscribeLocalEvent<VoidWalkerComponent, VoidShiftingEvent>(OnVoidShift); // TODO: this doesnt work most prob because voidwalker gets applied after sub???
 
@@ -36,6 +37,12 @@ public sealed class VoidWalkerSystem : SharedVoidShifterSystem
 
     private void OnVoidShift(EntityUid uid, VoidWalkerComponent comp, VoidShiftingEvent args)
     {
+        if (args.User != _playerMan.LocalEntity)
+        {
+            Log.Warning("[Voidwalker] Got wrong args.User ({0}), ignoring void shifting!", args.User);
+            return;
+        }
+
         if (comp.IsActive)
         {
             _overlayMan.AddOverlay(_overlay);
@@ -50,7 +57,7 @@ public sealed class VoidWalkerSystem : SharedVoidShifterSystem
         }
     }
 
-    protected void HideAllEntities(EntityUid user)
+    private void HideAllEntities(EntityUid user)
     {
         _entityUids = _entMan.GetEntities();
         _eligibleEnts.Clear();
@@ -66,7 +73,7 @@ public sealed class VoidWalkerSystem : SharedVoidShifterSystem
         }
     }
 
-    protected void ShowAllEntities(EntityUid user)
+    private void ShowAllEntities(EntityUid user)
     {
         if (_entityUids == null)
         {

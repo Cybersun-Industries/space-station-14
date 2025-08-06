@@ -20,7 +20,7 @@ using Robust.Shared.Serialization.Manager;
 
 namespace Content.Radium.Server.VoidWalker;
 
-public class VoidShifterSystem : SharedVoidShifterSystem
+public sealed class VoidShifterSystem : SharedVoidShifterSystem
 {
 
     [Dependency] private PopupSystem _popup = default!;
@@ -29,17 +29,15 @@ public class VoidShifterSystem : SharedVoidShifterSystem
     [Dependency] private StealthSystem _stealth = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private FixtureSystem _fixture = default!;
-    [Dependency] private ISerializationManager _serialization = default!;
     [Dependency] private AudioSystem _audio = default!;
 
     private List<EntityUid> _savedEntities = new();
-    private bool _shifted = false;
-    private int _walkerCollisionLayer = (int) CollisionGroup.MobLayer & ~(int) CollisionGroup.BulletImpassable;
     private Fixture? _fix1;
 
 
     public override void Initialize()
     {
+        base.Initialize();
 
         SubscribeLocalEvent<VoidShifterComponent, VoidShiftingEvent>(OnVoidShift);
 
@@ -68,11 +66,11 @@ public class VoidShifterSystem : SharedVoidShifterSystem
             return;
         }
 
-        _shifted = (bool) args.Shifted; // praise the shitcode!
         ApplyVoidWalkerComponent(args.User, walker, (bool) args.Shifted);
         ApplyUnremovableComponent(args.User, xForm, (bool) args.Shifted);
         ApplyVisibilityComponent(args.User, (bool) args.Shifted);
         ApplyShiftingFX(args.User);
+        RaiseLocalEvent(args.User, args, false);
     }
 
     private void ApplyVoidWalkerComponent(EntityUid uid, VoidWalkerComponent walker, bool shifted)
@@ -84,6 +82,8 @@ public class VoidShifterSystem : SharedVoidShifterSystem
         }
 
         walker.IsActive = true;
+
+
     }
 
     private void ApplyVisibilityComponent(EntityUid uid, bool shifted)

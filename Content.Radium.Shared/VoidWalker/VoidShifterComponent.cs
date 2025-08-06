@@ -11,4 +11,7 @@ public sealed partial class VoidShifterComponent : Component
     [AutoNetworkedField]
     public bool InUse = false;
 
+    [DataField]
+    [AutoNetworkedField]
+    public EntityUid? User;
 }

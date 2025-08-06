@@ -1,4 +1,5 @@
-﻿using Content.Shared.Hands.Components;
+﻿using Content.Shared.Hands;
+using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
@@ -11,43 +12,52 @@ using Robust.Shared.Map;
 
 namespace Content.Radium.Shared.VoidWalker;
 
-public class SharedVoidShifterSystem : EntitySystem
+public abstract partial class SharedVoidShifterSystem : EntitySystem // <-- void shitter
 {
     [Dependency] private UseDelaySystem _delay = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
+        InitializeInteractionBlockers();
+
         SubscribeLocalEvent<VoidShifterComponent, UseInHandEvent>(OnUseInHand);
-        SubscribeLocalEvent<VoidWalkerComponent, InRangeOverrideEvent>(InteractVoidWalker);
-        SubscribeLocalEvent<VoidWalkerComponent, BeforeRangedInteractEvent>(InteractVoidWalker);
-        SubscribeLocalEvent<VoidWalkerComponent, AccessibleOverrideEvent>(InteractVoidWalker);
-        SubscribeLocalEvent<VoidWalkerComponent, InteractEvent>(InteractVoidWalker);
-        SubscribeLocalEvent<VoidWalkerComponent, BeforeInteractHandEvent>(InteractVoidWalker);
-        SubscribeLocalEvent<VoidShifterComponent, GettingPickedUpAttemptEvent>(OnPickup);
-        SubscribeLocalEvent<VoidShifterComponent, DroppedEvent>(OnDrop);
+        SubscribeLocalEvent<VoidShifterComponent, GotEquippedHandEvent>(OnEquip);
+        SubscribeLocalEvent<VoidShifterComponent, GotUnequippedHandEvent>(OnUnequip); // BUG: this function raises when switching item from one hand to other
     }
 
-    private bool InUse = true;
-
-    private void OnPickup(EntityUid uid, VoidShifterComponent comp, GettingPickedUpAttemptEvent args)
+    private void OnEquip(EntityUid uid, VoidShifterComponent comp, GotEquippedHandEvent args)
     {
-        if (!TryComp<MindContainerComponent>(args.User, out var mind) || !mind.HasMind || HasComp<VoidWalkerComponent>(args.User))
+        if (!TryComp<MindContainerComponent>(args.User, out var mind))
             return;
+
+        if (!mind.HasMind)
+            return;
+
+        if (HasComp<VoidWalkerComponent>(args.User))
+            return;
+
         var walkerComp = EnsureComp<VoidWalkerComponent>(args.User);
         walkerComp.IsActive = false;
     }
 
-    private void OnDrop(EntityUid uid, VoidShifterComponent comp, DroppedEvent args)
+    private void OnUnequip(EntityUid uid, VoidShifterComponent comp, UnequippedHandEvent args)
     {
+        if (!TryComp<VoidWalkerComponent>(args.User, out var walker))
+        {
+            Log.Error("[Voidwalker] An entity {0} does not have voidwalker component! It should have one because it's getting applied when you pick up voidshifter", args.User);
+        }
         RemComp<VoidWalkerComponent>(args.User);
     }
 
     private void OnUseInHand(EntityUid uid, VoidShifterComponent component, UseInHandEvent args)
     {
+        if (args.Handled)
+            return;
 
         if (!TryComp(uid, out UseDelayComponent? useDelay) || _delay.IsDelayed((uid, useDelay)))
-            return; // shit doesnt work so i wont care anymore. TODO: finish this shit up
+            return;
 
         if (!TryComp<VoidWalkerComponent>(args.User, out var walker))
             return;
@@ -66,54 +76,24 @@ public class SharedVoidShifterSystem : EntitySystem
         if (!component.InUse)
         {
             ev.Shifted = false;
-            walker.IsActive = true;
-            RaiseLocalEvent(uid, ev);
+            // walker.IsActive = true;
+            RaiseLocalEvent(uid, ev, true);
 
             component.InUse = true;
+            component.User = args.User;
 
         }
         else
         {
             ev.Shifted = true;
-            walker.IsActive = false;
-            RaiseLocalEvent(uid, ev);
+            // walker.IsActive = false;
+            RaiseLocalEvent(uid, ev, true);
 
             component.InUse = false;
+            component.User = null;
 
         }
     }
 
-    private void InteractVoidWalker(EntityUid uid, VoidWalkerComponent comp, ref InRangeOverrideEvent args)
-    {
-        if (comp.IsActive)
-        {
-            args.Handled = true;
-            args.InRange = false;
-        }
-        else
-            args.Handled = false;
-    }
-    private void InteractVoidWalker(EntityUid uid, VoidWalkerComponent comp, ref AccessibleOverrideEvent args)
-    {
-        if (comp.IsActive)
-        {
-            args.Handled = true;
-            args.Accessible = false;
-        }
-        else
-            args.Handled = false;
-    }
-
-    // HandledEntityEventArgs all have the same parameter "Handled". I need to enable/disable all of them so...
-    // Unfortunately I cant do the same with record structs because they use other custom-named vars :(
-    private void InteractVoidWalker<T>(EntityUid uid, VoidWalkerComponent comp, ref T args) where T : HandledEntityEventArgs
-    {
-        if (comp.IsActive)
-        {
-            args.Handled = true;
-        }
-        else
-            args.Handled = false;
-    }
 }
 
