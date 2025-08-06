@@ -80,6 +80,7 @@
 // SPDX-FileCopyrightText: 2025 Ilysha998 <sukhachew.ilya@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 freeze2222 <opop1094@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
