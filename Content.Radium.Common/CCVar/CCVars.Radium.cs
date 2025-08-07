@@ -54,4 +54,10 @@ public sealed partial class RadiumCVars
     public static readonly CVarDef<int> StampsMaxTextLength = CVarDef.Create("stamps.maxTextLength", 32, CVar.REPLICATED);
 
     #endregion
+
+    #region BwoinkSounds
+
+    public static readonly CVarDef<bool> EnableBwoinkForAdmins = CVarDef.Create("audio.EnableBwoinkForMyself", true, CVar.CLIENTONLY);
+
+    #endregion
 }

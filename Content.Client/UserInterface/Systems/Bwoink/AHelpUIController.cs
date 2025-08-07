@@ -32,6 +32,7 @@ using Content.Client.Lobby.UI;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
+using Content.Radium.Common.CCVar;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Input;
@@ -70,6 +71,9 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     private bool _bwoinkSoundEnabled;
     private string? _aHelpSound;
 
+    // Radium (AHelp mute button)
+    private bool _adminSoundsEnabled;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -80,6 +84,9 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
         _config.OnValueChanged(CCVars.AHelpSound, v => _aHelpSound = v, true);
         _config.OnValueChanged(CCVars.BwoinkSoundEnabled, v => _bwoinkSoundEnabled = v, true);
+
+        // Radium (AHelp mute button)
+        _config.OnValueChanged(RadiumCVars.EnableBwoinkForAdmins, v => _adminSoundsEnabled = v, true);
     }
 
     public void UnloadButton()
@@ -159,7 +166,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         }
         if (message.PlaySound && localPlayer.UserId != message.TrueSender)
         {
-            if (_aHelpSound != null && (_bwoinkSoundEnabled || !_adminManager.IsActive()))
+            if (_aHelpSound != null && (_bwoinkSoundEnabled || !_adminManager.IsActive()) && _adminSoundsEnabled) // Radium (AHelp mute button): added _adminSoundsEnabled
                 _audio.PlayGlobal(_aHelpSound, Filter.Local(), false);
             _clyde.RequestWindowAttention();
         }
