@@ -18,6 +18,9 @@ admin-ahelp-admin-only-tooltip =
     Если отмечено, сообщение не будет видно игроку,
     но будет видно админам и будет отправлено в Дискорд.
 admin-bwoink-play-sound = Бвоинк?
+# Radium Start (AHelp mute button)
+admin-bwoink-play-sound-for-admin = Заткнуть себе уши?
+# Radium End (AHelp mute button)
 bwoink-title-none-selected = Ничего не выбрано
 bwoink-system-rate-limited = Система: вы отправляете сообщения слишком быстро.
 bwoink-system-player-disconnecting = отключился.

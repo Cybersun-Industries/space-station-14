@@ -1,4 +1,6 @@
 // SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
+// SPDX-FileCopyrightText: 2025 XO6bl4 <49454110+XO6bl4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 freeze2222 <46649391+freeze2222@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 freeze2222 <opop1094@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -52,6 +54,12 @@ public sealed partial class RadiumCVars
     /// Max stamp text length
     /// </summary>
     public static readonly CVarDef<int> StampsMaxTextLength = CVarDef.Create("stamps.maxTextLength", 32, CVar.REPLICATED);
+
+    #endregion
+
+    #region BwoinkSounds
+
+    public static readonly CVarDef<bool> EnableBwoinkForAdmins = CVarDef.Create("audio.EnableBwoinkForMyself", true, CVar.CLIENTONLY);
 
     #endregion
 }
