@@ -25,7 +25,9 @@ namespace Content.Radium.Client.Audio.Jukebox;
 public sealed class RadiumJukeboxBoundUserInterface : BoundUserInterface
 {
     [Dependency] private readonly IPrototypeManager _protoManager = null!;
-    [Dependency] private readonly SharedAudioSystem _audio = null!;
+    [Dependency] private readonly IEntityManager _entMan = null!;
+
+    private SharedAudioSystem? _audio;
 
     [ViewVariables]
     private RadiumJukeboxMenu? _menu;
@@ -81,6 +83,11 @@ public sealed class RadiumJukeboxBoundUserInterface : BoundUserInterface
         {
             _menu.SetSelectedSong(string.Empty, 0f);
             return;
+        }
+
+        if (_audio == null)
+        {
+            _audio = _entMan.System<SharedAudioSystem>();
         }
 
         var resolvedSound = _audio.ResolveSound(new SoundPathSpecifier(songProto.Path.Path));

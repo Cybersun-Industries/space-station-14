@@ -74,11 +74,6 @@ public sealed partial class RadiumJukeboxMenu : FancyWindow
         SetPlayPauseButton(_audioSystem.IsPlaying(_audio), force: true);
     }
 
-    public RadiumJukeboxMenu(AudioSystem audioSystem)
-    {
-        _audioSystem = audioSystem;
-    }
-
     public void SetAudioStream(EntityUid? audio)
     {
         _audio = audio;
