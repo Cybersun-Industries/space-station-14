@@ -42,6 +42,7 @@
 // SPDX-FileCopyrightText: 2025 Fildrance <fildrance@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 XO6bl4 <49454110+XO6bl4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 freeze2222 <opop1094@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
