@@ -58,8 +58,8 @@ using Robust.Shared.Prototypes;
 namespace Content.Radium.Server.Audio.Jukebox;
 public sealed class JukeboxSystem : Content.Shared.Audio.Jukebox.SharedJukeboxSystem
 {
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly AppearanceSystem _appearanceSystem = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = null!;
+    [Dependency] private readonly AppearanceSystem _appearanceSystem = null!;
 
     public override void Initialize()
     {
@@ -114,11 +114,11 @@ public sealed class JukeboxSystem : Content.Shared.Audio.Jukebox.SharedJukeboxSy
 
     private void OnJukeboxSetTime(EntityUid uid, RadiumJukeboxComponent component, RadiumJukeboxSetTimeMessage args)
     {
-        if (TryComp(args.Actor, out ActorComponent? actorComp))
-        {
-            var offset = actorComp.PlayerSession.Channel.Ping * 1.5f / 1000f;
-            Audio.SetPlaybackPosition(component.AudioStream, args.SongTime + offset);
-        }
+        if (!TryComp(args.Actor, out ActorComponent? actorComp))
+            return;
+
+        var offset = actorComp.PlayerSession.Channel.Ping * 1.5f / 1000f;
+        Audio.SetPlaybackPosition(component.AudioStream, args.SongTime + offset);
     }
 
     private void OnJukeboxSetVolume(EntityUid uid, RadiumJukeboxComponent comp, RadiumJukeboxSetVolumeMessage args)
@@ -169,17 +169,18 @@ public sealed class JukeboxSystem : Content.Shared.Audio.Jukebox.SharedJukeboxSy
         var query = EntityQueryEnumerator<RadiumJukeboxComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.Selecting)
-            {
-                comp.SelectAccumulator += frameTime;
-                if (comp.SelectAccumulator >= 0.5f)
-                {
-                    comp.SelectAccumulator = 0f;
-                    comp.Selecting = false;
+            if (!comp.Selecting)
+                continue;
 
-                    TryUpdateVisualState(uid, comp);
-                }
-            }
+            comp.SelectAccumulator += frameTime;
+
+            if (!(comp.SelectAccumulator >= 0.5f))
+                continue;
+
+            comp.SelectAccumulator = 0f;
+            comp.Selecting = false;
+
+            TryUpdateVisualState(uid, comp);
         }
     }
 

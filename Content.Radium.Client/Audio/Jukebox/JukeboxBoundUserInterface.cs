@@ -10,16 +10,21 @@
 
 using Content.Radium.Shared.Audio.Jukebox;
 using Content.Shared.Audio.Jukebox;
+using JetBrains.Annotations;
 using Robust.Client.Audio;
 using Robust.Client.UserInterface;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Radium.Client.Audio.Jukebox;
 
+[UsedImplicitly]
 public sealed class RadiumJukeboxBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = null!;
+    [Dependency] private readonly SharedAudioSystem _audio = null!;
 
     [ViewVariables]
     private RadiumJukeboxMenu? _menu;
@@ -71,15 +76,15 @@ public sealed class RadiumJukeboxBoundUserInterface : BoundUserInterface
 
         _menu.SetAudioStream(jukebox.AudioStream);
 
-        if (_protoManager.TryIndex(jukebox.SelectedSongId, out var songProto))
-        {
-            var length = EntMan.System<AudioSystem>().GetAudioLength(songProto.Path.Path.ToString());
-            _menu.SetSelectedSong(songProto.Name, (float) length.TotalSeconds);
-        }
-        else
+        if (!_protoManager.TryIndex(jukebox.SelectedSongId, out var songProto))
         {
             _menu.SetSelectedSong(string.Empty, 0f);
+            return;
         }
+
+        var resolvedSound = _audio.ResolveSound(new SoundPathSpecifier(songProto.Path.Path));
+        var length = EntMan.System<AudioSystem>().GetAudioLength(resolvedSound);
+        _menu.SetSelectedSong(songProto.Name, (float) length.TotalSeconds);
     }
 
     public void PopulateMusic()
@@ -94,32 +99,34 @@ public sealed class RadiumJukeboxBoundUserInterface : BoundUserInterface
 
     public void SetVolume(float volume)
     {
-        var sentVolume = volume;
-
         if (EntMan.TryGetComponent(Owner, out RadiumJukeboxComponent? jukebox) &&
             EntMan.TryGetComponent(jukebox.AudioStream, out AudioComponent? audioComp))
         {
             audioComp.Volume = volume;
         }
-        SendMessage(new RadiumJukeboxSetVolumeMessage(sentVolume));
+        SendMessage(new RadiumJukeboxSetVolumeMessage(volume));
     }
 
     public void SetTime(float time)
     {
-        var sentTime = time;
-
         // You may be wondering, what the fuck is this
         // Well we want to be able to predict the playback slider change, of which there are many ways to do it
         // We can't just use SendPredictedMessage because it will reset every tick and audio updates every frame
         // so it will go BRRRRT
         // Using ping gets us close enough that it SHOULD, MOST OF THE TIME, fall within the 0.1 second tolerance
         // that's still on engine so our playback position never gets corrected.
+        //
+        // Maintainer's note:
+        // I'm not even trying to fix midi predictions cause I want to keep my sanity.. For now.
+        // That *probably* works.
+        // LGTM! ^w^
+
         if (EntMan.TryGetComponent(Owner, out RadiumJukeboxComponent? jukebox) &&
             EntMan.TryGetComponent(jukebox.AudioStream, out AudioComponent? audioComp))
         {
             audioComp.PlaybackPosition = time;
         }
 
-        SendMessage(new RadiumJukeboxSetTimeMessage(sentTime));
+        SendMessage(new RadiumJukeboxSetTimeMessage(time));
     }
 }

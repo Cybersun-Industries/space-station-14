@@ -118,12 +118,12 @@ public sealed class RadiumJukeboxSystem : RadiumSharedJukeboxSystem
         if (string.IsNullOrEmpty(state))
             return;
 
-        if (!_animationPlayer.HasRunningAnimation(uid, state))
-        {
-            var animation = GetAnimation(layer, state, animationTime);
-            _sprite.LayerSetVisible((uid, sprite), layer, true);
-            _animationPlayer.Play(uid, animation, state);
-        }
+        if (_animationPlayer.HasRunningAnimation(uid, state))
+            return;
+
+        var animation = GetAnimation(layer, state, animationTime);
+        _sprite.LayerSetVisible((uid, sprite), layer, true);
+        _animationPlayer.Play(uid, animation, state);
     }
 
     private static Animation GetAnimation(RadiumJukeboxVisualLayers layer, string state, float animationTime)
@@ -138,10 +138,10 @@ public sealed class RadiumJukeboxSystem : RadiumSharedJukeboxSystem
                         LayerKey = layer,
                         KeyFrames =
                         {
-                            new AnimationTrackSpriteFlick.KeyFrame(state, 0f)
-                        }
-                    }
-                }
+                            new AnimationTrackSpriteFlick.KeyFrame(state, 0f),
+                        },
+                    },
+                },
         };
     }
 

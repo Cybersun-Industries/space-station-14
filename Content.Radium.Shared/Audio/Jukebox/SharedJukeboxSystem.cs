@@ -13,5 +13,5 @@ namespace Content.Radium.Shared.Audio.Jukebox;
 
 public abstract class RadiumSharedJukeboxSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedAudioSystem Audio = default!;
+    [Dependency] protected readonly SharedAudioSystem Audio = null!;
 }

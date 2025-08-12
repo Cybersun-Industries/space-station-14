@@ -79,7 +79,7 @@ public sealed class RadiumJukeboxSetTimeMessage(float songTime) : BoundUserInter
 [Serializable, NetSerializable]
 public enum RadiumJukeboxVisuals : byte
 {
-    VisualState
+    VisualState,
 }
 
 [Serializable, NetSerializable]
@@ -92,5 +92,5 @@ public enum RadiumJukeboxVisualState : byte
 
 public enum RadiumJukeboxVisualLayers : byte
 {
-    Base
+    Base,
 }
