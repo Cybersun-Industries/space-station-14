@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 MorDast1 <morgit1488@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Interaction.Events;
 
 namespace Content.Server.Radium.AddComponentsOnUse;
