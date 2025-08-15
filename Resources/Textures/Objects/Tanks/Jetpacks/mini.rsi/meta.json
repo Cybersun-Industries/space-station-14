@@ -8,8 +8,7 @@
   },
   "states": [
     {
-      "name": "icon",
-      "directions": 1
+      "name": "icon"
     },
     {
       "name": "icon-on",
@@ -17,7 +16,6 @@
       "delays": [
         [
           0.5,
-          0.1,
           0.1
         ]
       ]
