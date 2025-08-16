@@ -1663,7 +1663,7 @@
 - type: tile
   id: FloorAsphalt
   name: tiles-asphalt
-  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/asphalt.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Planet/Concrete/asphalt.png
   variants: 10
   placementVariants:
   - 1.0
