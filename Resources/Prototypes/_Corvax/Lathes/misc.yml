@@ -7,3 +7,4 @@
   id: PrinterDocMachineCircuitboard
   parent: BaseCircuitboardRecipe
   result: PrinterDocMachineCircuitboard
+# This board currently cannot be crafted due the changed list of craftable, so use printers from drobes and lockers
