@@ -2,36 +2,10 @@
 # SPDX-FileCopyrightText: 2025 Mnwa282 <167712034+Mnwa282@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
-- type: entity
-  parent: Paper
-  id: SheetPrinter
-  suffix: Full
-  components:
-  - type: Material
-  - type: PhysicalComposition
-    materialComposition:
-      Paper: 100
-  - type: Stack
-    stackType: SheetPrinter
-    baseLayer: base
-    layerStates:
-    - paper
-    - paper
-    - paper
-  - type: Sprite
-    state: paper
-    layers:
-    - state: paper
-      map: ["base"]
-  - type: Tag
-    tags:
-    - Document
-
-- type: entity
-  parent: SheetPrinter
-  id: SheetPrinter1
-  suffix: Single
-  components:
-  - type: Stack
-    count: 1
+# I copied that file from Corvax repo, it used to be much bigger so... Do they optimize their files?
+- type: stack
+  id: PrinterPage
+  name: stack-paper
+  icon: { sprite: Objects/Misc/bureaucracy.rsi, state: paper }
+  spawn: Paper
+  maxCount: 1
