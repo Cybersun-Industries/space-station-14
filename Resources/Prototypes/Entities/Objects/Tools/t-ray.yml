@@ -11,6 +11,9 @@
 # SPDX-FileCopyrightText: 2024 Magnus Larsen <i.am.larsenml@gmail.com>
 # SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
+# SPDX-FileCopyrightText: 2025 Mnwa282 <167712034+Mnwa282@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -21,13 +24,13 @@
   description: A high-tech scanning device that uses Terahertz Radiation to detect subfloor infrastructure.
   components:
   - type: Sprite
-    sprite: Objects/Tools/t-ray.rsi
+    sprite: _Corvax/Objects/Tools/t-ray.rsi #Radium:Corvax sprite migration
     layers:
     - state: tray-off
       map: ["base"]
   - type: TrayScanner
   - type: Item
-    sprite: Objects/Tools/t-ray.rsi
+    sprite: _Corvax/Objects/Tools/t-ray.rsi #Radium:Corvax sprite migration
   - type: Appearance
   - type: GenericVisualizer
     visuals:

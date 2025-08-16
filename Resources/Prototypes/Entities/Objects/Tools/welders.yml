@@ -86,12 +86,16 @@
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
 # SPDX-FileCopyrightText: 2025 Eagle <lincoln.mcqueen@gmail.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 Mnwa282 <167712034+Mnwa282@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Samuka-C <47865393+Samuka-C@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
 # SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
@@ -112,7 +116,7 @@
     sound:
       path: /Audio/Items/welder_drop.ogg
   - type: Sprite
-    sprite: Objects/Tools/welder.rsi
+    sprite: _Corvax/Objects/Tools/welder.rsi #Radium:Corvax sprite migration
     layers:
     - state: icon
     - state: welder_flame
@@ -127,7 +131,7 @@
           False: { visible: false }
   - type: Item
     size: Small
-    sprite: Objects/Tools/welder.rsi
+    sprite: _Corvax/Objects/Tools/welder.rsi #Radium:Corvax sprite migration
   - type: ItemToggle
     predictable: false
     soundActivate:
@@ -244,9 +248,9 @@
   description: "An industrial welder with over double the fuel capacity."
   components:
   - type: Sprite
-    sprite: Objects/Tools/welder_industrial.rsi
+    sprite: _Corvax/Objects/Tools/welder_industrial.rsi #Radium:Corvax sprite migration
   - type: Item
-    sprite: Objects/Tools/welder_industrial.rsi
+    sprite: _Corvax/Objects/Tools/welder_industrial.rsi #Radium:Corvax sprite migration
   - type: SolutionContainerManager
     solutions:
       Welder:
@@ -262,9 +266,9 @@
   description: "An advanced industrial welder with over double the fuel capacity and hotter flame."
   components:
   - type: Sprite
-    sprite: Objects/Tools/welder_industrialadv.rsi
+    sprite: _Corvax/Objects/Tools/welder_industrialadv.rsi #Radium:Corvax sprite migration
   - type: Item
-    sprite: Objects/Tools/welder_industrialadv.rsi
+    sprite: _Corvax/Objects/Tools/welder_industrialadv.rsi #Radium:Corvax sprite migration
   - type: SolutionContainerManager
     solutions:
       Welder:
@@ -282,9 +286,9 @@
   description: "An experimental welder capable of self-fuel generation and less harmful to the eyes."
   components:
   - type: Sprite
-    sprite: Objects/Tools/welder_experimental.rsi
+    sprite: _Corvax/Objects/Tools/welder_experimental.rsi #Radium:Corvax sprite migration
   - type: Item
-    sprite: Objects/Tools/welder_experimental.rsi
+    sprite: _Corvax/Objects/Tools/welder_experimental.rsi #Radium:Corvax sprite migration
   - type: SolutionContainerManager
     solutions:
       Welder:

@@ -134,12 +134,14 @@
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Booblesnoot42 <108703193+Booblesnoot42@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
 # SPDX-FileCopyrightText: 2025 Eagle <lincoln.mcqueen@gmail.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 # SPDX-FileCopyrightText: 2025 Lenny <187471588+Bynnel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Mnwa282 <167712034+Mnwa282@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Nox <nebulousnox38@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
@@ -284,12 +286,12 @@
     - Wrench
     - DroneUsable # Goobstation
   - type: Sprite
-    sprite: Objects/Tools/wrench.rsi
+    sprite: _Corvax/Objects/Tools/wrench.rsi #Radium:Corvax sprite migration
     state: icon
   - type: Item
-    sprite: Objects/Tools/wrench.rsi
+    sprite: _Corvax/Objects/Tools/wrench.rsi #Radium:Corvax sprite migration
     storedSprite:
-      sprite: Objects/Tools/wrench.rsi
+      sprite: _Corvax/Objects/Tools/wrench.rsi #Radium:Corvax sprite migration
       state: storage
   - type: MeleeWeapon
     animationRotation: 225 # WWDP
@@ -324,7 +326,7 @@
     sound:
       path: /Audio/Items/multitool_drop.ogg
   - type: Sprite
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _Corvax/Objects/Tools/multitool.rsi #Radium:Corvax sprite migration
     layers:
     - state: icon
     - state: green-unlit
@@ -332,7 +334,7 @@
   - type: Item
     size: Small
   - type: Clothing
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _Corvax/Objects/Tools/multitool.rsi #Radium:Corvax sprite migration
     quickEquip: false
     slots:
     - Belt

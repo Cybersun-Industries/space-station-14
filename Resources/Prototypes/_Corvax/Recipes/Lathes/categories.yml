@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
+# SPDX-FileCopyrightText: 2025 Mnwa282 <167712034+Mnwa282@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheCategory
+  id: Reports
+  name: lathe-category-reports
+
+- type: latheCategory
+  id: Statements
+  name: lathe-category-statements
+
+- type: latheCategory
+  id: InquiriesAndAppeals
+  name: lathe-category-inquiries-and-appeals
+
+- type: latheCategory
+  id: Complaintst
+  name: lathe-category-complaints
+
+- type: latheCategory
+  id: Permissions
+  name: lathe-category-permissions
+
+- type: latheCategory
+  id: OrdersAndInstructions
+  name: lathe-category-orders-and-instructions
+
+- type: latheCategory
+  id: Orders
+  name: lathe-category-orders
+
+- type: latheCategory
+  id: Evidence
+  name: lathe-category-evidence
+
+- type: latheCategory
+  id: ConclusionsAndDecisions
+  name: lathe-category-conclusions-and-decisions
+
+- type: latheCategory
+  id: ErrorDocument
+  name: lathe-category-error
