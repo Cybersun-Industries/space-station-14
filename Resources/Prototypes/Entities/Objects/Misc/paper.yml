@@ -195,10 +195,14 @@
   #    Paper: 25
   # Corvax-Printer-Start
   - type: Material
+  - type: Stack
+    stackType: PrinterPage
+    count: 1
   - type: PhysicalComposition
     materialComposition:
-      Paper: 100
-# Corvax-Printer-End
+      PrinterPaper: 100
+  # We have two different types of paper materials, i'll try to merge them into one later
+  # Corvax-Printer-End
 
 - type: entity
   name: paper
