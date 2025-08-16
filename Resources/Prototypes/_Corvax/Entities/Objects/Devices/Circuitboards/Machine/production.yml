@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-- type: entity
+﻿- type: entity
   id: PrinterDocMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: document printer machine board
@@ -12,6 +12,5 @@
     - type: MachineBoard
       prototype: PrinterDoc
       stackRequirements:
-        MatterBin: 3
-        Manipulator: 1
+        Manipulator: 4
         Glass: 1
