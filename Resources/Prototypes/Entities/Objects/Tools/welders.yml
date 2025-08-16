@@ -112,7 +112,7 @@
     sound:
       path: /Audio/Items/welder_drop.ogg
   - type: Sprite
-    sprite: Objects/Tools/welder.rsi
+    sprite: _Corvax/Objects/Tools/welder.rsi #Radium:Corvax sprite migration
     layers:
     - state: icon
     - state: welder_flame
@@ -127,7 +127,7 @@
           False: { visible: false }
   - type: Item
     size: Small
-    sprite: Objects/Tools/welder.rsi
+    sprite: _Corvax/Objects/Tools/welder.rsi #Radium:Corvax sprite migration
   - type: ItemToggle
     predictable: false
     soundActivate:
@@ -244,9 +244,9 @@
   description: "An industrial welder with over double the fuel capacity."
   components:
   - type: Sprite
-    sprite: Objects/Tools/welder_industrial.rsi
+    sprite: _Corvax/Objects/Tools/welder_industrial.rsi #Radium:Corvax sprite migration
   - type: Item
-    sprite: Objects/Tools/welder_industrial.rsi
+    sprite: _Corvax/Objects/Tools/welder_industrial.rsi #Radium:Corvax sprite migration
   - type: SolutionContainerManager
     solutions:
       Welder:
@@ -262,9 +262,9 @@
   description: "An advanced industrial welder with over double the fuel capacity and hotter flame."
   components:
   - type: Sprite
-    sprite: Objects/Tools/welder_industrialadv.rsi
+    sprite: _Corvax/Objects/Tools/welder_industrialadv.rsi #Radium:Corvax sprite migration
   - type: Item
-    sprite: Objects/Tools/welder_industrialadv.rsi
+    sprite: _Corvax/Objects/Tools/welder_industrialadv.rsi #Radium:Corvax sprite migration
   - type: SolutionContainerManager
     solutions:
       Welder:
@@ -282,9 +282,9 @@
   description: "An experimental welder capable of self-fuel generation and less harmful to the eyes."
   components:
   - type: Sprite
-    sprite: Objects/Tools/welder_experimental.rsi
+    sprite: _Corvax/Objects/Tools/welder_experimental.rsi #Radium:Corvax sprite migration
   - type: Item
-    sprite: Objects/Tools/welder_experimental.rsi
+    sprite: _Corvax/Objects/Tools/welder_experimental.rsi #Radium:Corvax sprite migration
   - type: SolutionContainerManager
     solutions:
       Welder:

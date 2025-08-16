@@ -284,12 +284,12 @@
     - Wrench
     - DroneUsable # Goobstation
   - type: Sprite
-    sprite: Objects/Tools/wrench.rsi
+    sprite: _Corvax/Objects/Tools/wrench.rsi #Radium:Corvax sprite migration
     state: icon
   - type: Item
-    sprite: Objects/Tools/wrench.rsi
+    sprite: _Corvax/Objects/Tools/wrench.rsi #Radium:Corvax sprite migration
     storedSprite:
-      sprite: Objects/Tools/wrench.rsi
+      sprite: _Corvax/Objects/Tools/wrench.rsi #Radium:Corvax sprite migration
       state: storage
   - type: MeleeWeapon
     animationRotation: 225 # WWDP
@@ -324,7 +324,7 @@
     sound:
       path: /Audio/Items/multitool_drop.ogg
   - type: Sprite
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _Corvax/Objects/Tools/multitool.rsi #Radium:Corvax sprite migration
     layers:
     - state: icon
     - state: green-unlit
@@ -332,7 +332,7 @@
   - type: Item
     size: Small
   - type: Clothing
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _Corvax/Objects/Tools/multitool.rsi #Radium:Corvax sprite migration
     quickEquip: false
     slots:
     - Belt

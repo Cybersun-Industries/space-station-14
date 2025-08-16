@@ -119,7 +119,7 @@
 - type: tile
   id: FloorSteel
   name: tiles-steel-floor
-  sprite: /Textures/Tiles/steel.png
+  sprite: /Textures/_Corvax/Tiles/steel.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -138,7 +138,7 @@
 - type: tile
   id: FloorSteelCheckerLight
   name: tiles-steel-floor-checker-light
-  sprite: /Textures/Tiles/cafeteria.png
+  sprite: /Textures/_Corvax/Tiles/cafeteria.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -157,7 +157,7 @@
 - type: tile
   id: FloorSteelCheckerDark
   name: tiles-steel-floor-checker-dark
-  sprite: /Textures/Tiles/checker_dark.png
+  sprite: /Textures/_Corvax/Tiles/checker_dark.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -176,7 +176,7 @@
 - type: tile
   id: FloorSteelMini
   name: tiles-steel-floor-mini
-  sprite: /Textures/Tiles/steel_mini.png
+  sprite: /Textures/_Corvax/Tiles/steel_mini.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -195,7 +195,7 @@
 - type: tile
   id: FloorSteelPavement
   name: tiles-steel-floor-pavement
-  sprite: /Textures/Tiles/steel_pavement.png
+  sprite: /Textures/_Corvax/Tiles/steel_pavement.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -214,7 +214,7 @@
 - type: tile
   id: FloorSteelDiagonal
   name: tiles-steel-floor-diagonal
-  sprite: /Textures/Tiles/steel_diagonal.png
+  sprite: /Textures/_Corvax/Tiles/steel_diagonal.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -233,7 +233,7 @@
 - type: tile
   id: FloorSteelOffset
   name: tiles-steel-floor-offset
-  sprite: /Textures/Tiles/steel_offset.png
+  sprite: /Textures/_Corvax/Tiles/steel_offset.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -246,7 +246,7 @@
 - type: tile
   id: FloorSteelMono
   name: tiles-steel-floor-mono
-  sprite: /Textures/Tiles/steel_mono.png
+  sprite: /Textures/_Corvax/Tiles/steel_mono.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -265,7 +265,7 @@
 - type: tile
   id: FloorSteelPavementVertical
   name: tiles-steel-floor-pavement-vertical
-  sprite: /Textures/Tiles/steel_pavement_vertical.png
+  sprite: /Textures/_Corvax/Tiles/steel_pavement_vertical.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -284,7 +284,7 @@
 - type: tile
   id: FloorSteelHerringbone
   name: tiles-steel-floor-herringbone
-  sprite: /Textures/Tiles/steel_herringbone.png
+  sprite: /Textures/_Corvax/Tiles/steel_herringbone.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -303,7 +303,7 @@
 - type: tile
   id: FloorSteelDiagonalMini
   name: tiles-steel-floor-diagonal-mini
-  sprite: /Textures/Tiles/steel_diagonal_mini.png
+  sprite: /Textures/_Corvax/Tiles/steel_diagonal_mini.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -322,7 +322,7 @@
 - type: tile
   id: FloorBrassFilled
   name: tiles-brass-floor-filled
-  sprite: /Textures/Tiles/Misc/clockwork/clockwork_floor_filled.png
+  sprite: /Textures/_Corvax/Tiles/Misc/clockwork/clockwork_floor_filled.png #Radium:Corvax sprite migration
   baseTurf: PlatingBrass
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -335,7 +335,7 @@
 - type: tile
   id: FloorBrassReebe
   name: tiles-brass-floor-reebe
-  sprite: /Textures/Tiles/Misc/clockwork/reebe.png
+  sprite: /Textures/_Corvax/Tiles/Misc/clockwork/reebe.png #Radium:Corvax sprite migration
   baseTurf: PlatingBrass
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -348,7 +348,7 @@
 - type: tile
   id: FloorPlastic
   name: tiles-plastic-floor
-  sprite: /Textures/Tiles/plastic.png
+  sprite: /Textures/_Corvax/Tiles/plastic.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -367,7 +367,7 @@
 - type: tile
   id: FloorWood
   name: tiles-wood
-  sprite: /Textures/Tiles/wood.png
+  sprite: /Textures/_Corvax/Tiles/wood.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -388,7 +388,7 @@
 - type: tile
   id: FloorWhite
   name: tiles-white-floor
-  sprite: /Textures/Tiles/white.png
+  sprite: /Textures/_Corvax/Tiles/white.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -407,7 +407,7 @@
 - type: tile
   id: FloorWhiteMini
   name: tiles-white-floor-mini
-  sprite: /Textures/Tiles/white_mini.png
+  sprite: /Textures/_Corvax/Tiles/white_mini.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -426,7 +426,7 @@
 - type: tile
   id: FloorWhitePavement
   name: tiles-white-floor-pavement
-  sprite: /Textures/Tiles/white_pavement.png
+  sprite: /Textures/_Corvax/Tiles/white_pavement.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -445,7 +445,7 @@
 - type: tile
   id: FloorWhiteDiagonal
   name: tiles-white-floor-diagonal
-  sprite: /Textures/Tiles/white_diagonal.png
+  sprite: /Textures/_Corvax/Tiles/white_diagonal.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -464,7 +464,7 @@
 - type: tile
   id: FloorWhiteOffset
   name: tiles-white-floor-offset
-  sprite: /Textures/Tiles/white_offset.png
+  sprite: /Textures/_Corvax/Tiles/white_offset.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -477,7 +477,7 @@
 - type: tile
   id: FloorWhiteMono
   name: tiles-white-floor-mono
-  sprite: /Textures/Tiles/white_mono.png
+  sprite: /Textures/_Corvax/Tiles/white_mono.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -496,7 +496,7 @@
 - type: tile
   id: FloorWhitePavementVertical
   name: tiles-white-floor-pavement-vertical
-  sprite: /Textures/Tiles/white_pavement_vertical.png
+  sprite: /Textures/_Corvax/Tiles/white_pavement_vertical.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -515,7 +515,7 @@
 - type: tile
   id: FloorWhiteHerringbone
   name: tiles-white-floor-herringbone
-  sprite: /Textures/Tiles/white_herringbone.png
+  sprite: /Textures/_Corvax/Tiles/white_herringbone.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -534,7 +534,7 @@
 - type: tile
   id: FloorWhiteDiagonalMini
   name: tiles-white-floor-diagonal-mini
-  sprite: /Textures/Tiles/white_diagonal_mini.png
+  sprite: /Textures/_Corvax/Tiles/white_diagonal_mini.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -553,7 +553,7 @@
 - type: tile
   id: FloorWhitePlastic
   name: tiles-plastic-white-floor
-  sprite: /Textures/Tiles/white_plastic.png
+  sprite: /Textures/_Corvax/Tiles/white_plastic.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -572,7 +572,7 @@
 - type: tile
   id: FloorDark
   name: tiles-dark-floor
-  sprite: /Textures/Tiles/dark.png
+  sprite: /Textures/_Corvax/Tiles/dark.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -591,7 +591,7 @@
 - type: tile
   id: FloorDarkMini
   name: tiles-dark-floor-mini
-  sprite: /Textures/Tiles/dark_mini.png
+  sprite: /Textures/_Corvax/Tiles/dark_mini.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -610,7 +610,7 @@
 - type: tile
   id: FloorDarkPavement
   name: tiles-dark-floor-pavement
-  sprite: /Textures/Tiles/dark_pavement.png
+  sprite: /Textures/_Corvax/Tiles/dark_pavement.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -629,7 +629,7 @@
 - type: tile
   id: FloorDarkDiagonal
   name: tiles-dark-floor-diagonal
-  sprite: /Textures/Tiles/dark_diagonal.png
+  sprite: /Textures/_Corvax/Tiles/dark_diagonal.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -648,7 +648,7 @@
 - type: tile
   id: FloorDarkOffset
   name: tiles-dark-floor-offset
-  sprite: /Textures/Tiles/dark_offset.png
+  sprite: /Textures/_Corvax/Tiles/dark_offset.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -661,7 +661,7 @@
 - type: tile
   id: FloorDarkMono
   name: tiles-dark-floor-mono
-  sprite: /Textures/Tiles/dark_mono.png
+  sprite: /Textures/_Corvax/Tiles/dark_mono.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -680,7 +680,7 @@
 - type: tile
   id: FloorDarkPavementVertical
   name: tiles-dark-floor-pavement-vertical
-  sprite: /Textures/Tiles/dark_pavement_vertical.png
+  sprite: /Textures/_Corvax/Tiles/dark_pavement_vertical.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -699,7 +699,7 @@
 - type: tile
   id: FloorDarkHerringbone
   name: tiles-dark-floor-herringbone
-  sprite: /Textures/Tiles/dark_herringbone.png
+  sprite: /Textures/_Corvax/Tiles/dark_herringbone.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -718,7 +718,7 @@
 - type: tile
   id: FloorDarkDiagonalMini
   name: tiles-dark-floor-diagonal-mini
-  sprite: /Textures/Tiles/dark_diagonal_mini.png
+  sprite: /Textures/_Corvax/Tiles/dark_diagonal_mini.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -737,7 +737,7 @@
 - type: tile
   id: FloorDarkPlastic
   name: tiles-plastic-dark-floor
-  sprite: /Textures/Tiles/dark_plastic.png
+  sprite: /Textures/_Corvax/Tiles/dark_plastic.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -756,7 +756,7 @@
 - type: tile
   id: FloorTechMaint
   name: tiles-techmaint-floor
-  sprite: /Textures/Tiles/tech_maint.png
+  sprite: /Textures/_Corvax/Tiles/tech_maint.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -769,7 +769,7 @@
 - type: tile
   id: FloorReinforced
   name: tiles-reinforced-floor
-  sprite: /Textures/Tiles/reinforced.png
+  sprite: /Textures/_Corvax/Tiles/reinforced.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -782,7 +782,7 @@
 - type: tile
   id: FloorMono
   name: tiles-mono-floor
-  sprite: /Textures/Tiles/mono.png
+  sprite: /Textures/_Corvax/Tiles/mono.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -795,7 +795,7 @@
 - type: tile
   id: FloorLino
   name: tiles-linoleum-floor
-  sprite: /Textures/Tiles/lino.png
+  sprite: /Textures/_Corvax/Tiles/lino.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -808,7 +808,13 @@
 - type: tile
   id: FloorSteelDirty
   name: tiles-dirty-steel-floor
-  sprite: /Textures/Tiles/steel_dirty.png
+  sprite: /Textures/_Corvax/Tiles/steel_dirty.png #Radium:Corvax sprite migration
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -821,7 +827,7 @@
 - type: tile
   id: FloorElevatorShaft
   name: tiles-elevator-shaft
-  sprite: /Textures/Tiles/elevator_shaft.png
+  sprite: /Textures/_Corvax/Tiles/elevator_shaft.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -834,7 +840,7 @@
 - type: tile
   id: FloorMetalDiamond
   name: tiles-diamond-plate-floor
-  sprite: /Textures/Tiles/metaldiamond.png
+  sprite: /Textures/_Corvax/Tiles/metaldiamond.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -847,7 +853,7 @@
 - type: tile
   id: FloorRockVault
   name: tiles-rock-floor
-  sprite: /Textures/Tiles/rock_vault.png
+  sprite: /Textures/_Corvax/Tiles/rock_vault.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -860,7 +866,7 @@
 - type: tile
   id: FloorBlue
   name: tiles-blue-tile
-  sprite: /Textures/Tiles/blue.png
+  sprite: /Textures/_Corvax/Tiles/blue.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -873,7 +879,7 @@
 - type: tile
   id: FloorSteelLime
   name: tiles-lime-floor
-  sprite: /Textures/Tiles/lime.png
+  sprite: /Textures/_Corvax/Tiles/lime.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -892,7 +898,7 @@
 - type: tile
   id: FloorMining
   name: tiles-mining-tile
-  sprite: /Textures/Tiles/mining_floor.png
+  sprite: /Textures/_Corvax/Tiles/mining_floor.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -905,7 +911,7 @@
 - type: tile
   id: FloorMiningDark
   name: tiles-mining-dark-tile
-  sprite: /Textures/Tiles/mining_floor_dark.png
+  sprite: /Textures/_Corvax/Tiles/mining_floor_dark.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -918,7 +924,7 @@
 - type: tile
   id: FloorMiningLight
   name: tiles-mining-light-tile
-  sprite: /Textures/Tiles/mining_floor_light.png
+  sprite: /Textures/_Corvax/Tiles/mining_floor_light.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -932,7 +938,7 @@
 - type: tile
   id: FloorFreezer
   name: tiles-freezer
-  sprite: /Textures/Tiles/freezer.png
+  sprite: /Textures/_Corvax/Tiles/freezer.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -945,7 +951,7 @@
 - type: tile
   id: FloorShowroom
   name: tiles-showroom-floor
-  sprite: /Textures/Tiles/showroom.png
+  sprite: /Textures/_Corvax/Tiles/showroom.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -958,7 +964,7 @@
 - type: tile
   id: FloorHydro
   name: tiles-hydro-floor
-  sprite: /Textures/Tiles/hydro.png
+  sprite: /Textures/_Corvax/Tiles/hydro.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -971,7 +977,7 @@
 - type: tile
   id: FloorBar
   name: tiles-bar-floor
-  sprite: /Textures/Tiles/bar.png
+  sprite: /Textures/_Corvax/Tiles/bar.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -990,7 +996,7 @@
 - type: tile
   id: FloorClown
   name: tiles-clown-floor
-  sprite: /Textures/Tiles/clown.png
+  sprite: /Textures/_Corvax/Tiles/clown.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1003,7 +1009,7 @@
 - type: tile
   id: FloorMime
   name: tiles-mime-floor
-  sprite: /Textures/Tiles/mime.png
+  sprite: /Textures/_Corvax/Tiles/mime.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1016,7 +1022,7 @@
 - type: tile
   id: FloorKitchen
   name: tiles-kitchen-floor
-  sprite: /Textures/Tiles/kitchen.png
+  sprite: /Textures/_Corvax/Tiles/kitchen.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1029,7 +1035,7 @@
 - type: tile
   id: FloorLaundry
   name: tiles-laundry-floor
-  sprite: /Textures/Tiles/laundry.png
+  sprite: /Textures/_Corvax/Tiles/laundry.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1042,7 +1048,7 @@
 - type: tile
   id: FloorSteelDamaged
   name: tiles-steel-floor
-  sprite: /Textures/Tiles/steel_damaged.png
+  sprite: /Textures/_Corvax/Tiles/steel_damaged.png #Radium:Corvax sprite migration
   variants: 5
   placementVariants:
   - 1.0
@@ -1080,7 +1086,7 @@
 - type: tile
   id: FloorConcrete
   name: tiles-concrete-tile
-  sprite: /Textures/Tiles/Planet/Concrete/concrete.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/concrete.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1100,7 +1106,7 @@
 - type: tile
   id: FloorConcreteMono
   name: tiles-concrete-slab
-  sprite: /Textures/Tiles/Planet/Concrete/concrete_mono.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/concrete_mono.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1120,7 +1126,7 @@
 - type: tile
   id: FloorConcreteSmooth
   name: tiles-concrete-smooth
-  sprite: /Textures/Tiles/Planet/Concrete/concrete_smooth.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/concrete_smooth.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1140,7 +1146,7 @@
 - type: tile
   id: FloorGrayConcrete
   name: tiles-gray-concrete-tile
-  sprite: /Textures/Tiles/Planet/Concrete/grayconcrete.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/grayconcrete.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1160,7 +1166,7 @@
 - type: tile
   id: FloorGrayConcreteMono
   name: tiles-gray-concrete-slab
-  sprite: /Textures/Tiles/Planet/Concrete/grayconcrete_mono.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/grayconcrete_mono.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1180,7 +1186,7 @@
 - type: tile
   id: FloorGrayConcreteSmooth
   name: tiles-gray-concrete-smooth
-  sprite: /Textures/Tiles/Planet/Concrete/grayconcrete_smooth.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/grayconcrete_smooth.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1200,7 +1206,7 @@
 - type: tile
   id: FloorOldConcrete
   name: tiles-old-concrete-tile
-  sprite: /Textures/Tiles/Planet/Concrete/oldconcrete.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/oldconcrete.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1220,7 +1226,7 @@
 - type: tile
   id: FloorOldConcreteMono
   name: tiles-old-concrete-slab
-  sprite: /Textures/Tiles/Planet/Concrete/oldconcrete_mono.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/oldconcrete_mono.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1240,7 +1246,7 @@
 - type: tile
   id: FloorOldConcreteSmooth
   name: tiles-old-concrete-smooth
-  sprite: /Textures/Tiles/Planet/Concrete/oldconcrete_smooth.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/oldconcrete_smooth.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1261,7 +1267,7 @@
 - type: tile
   id: FloorArcadeBlue
   name: tiles-blue-arcade-floor
-  sprite: /Textures/Tiles/arcadeblue.png
+  sprite: /Textures/_Corvax/Tiles/arcadeblue.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1277,7 +1283,7 @@
 - type: tile
   id: FloorArcadeBlue2
   name: tiles-blue-arcade-floor
-  sprite: /Textures/Tiles/arcadeblue2.png
+  sprite: /Textures/_Corvax/Tiles/arcadeblue2.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1293,7 +1299,7 @@
 - type: tile
   id: FloorArcadeRed
   name: tiles-red-arcade-floor
-  sprite: /Textures/Tiles/arcadered.png
+  sprite: /Textures/_Corvax/Tiles/arcadered.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1309,7 +1315,7 @@
 - type: tile
   id: FloorEighties
   name: tiles-eighties-floor
-  sprite: /Textures/Tiles/eighties.png
+  sprite: /Textures/_Corvax/Tiles/eighties.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1325,7 +1331,7 @@
 - type: tile
   id: FloorCarpetClown
   name: tiles-clown-carpet-floor
-  sprite: /Textures/Tiles/carpetclown.png
+  sprite: /Textures/_Corvax/Tiles/carpetclown.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1341,7 +1347,7 @@
 - type: tile
   id: FloorCarpetOffice
   name: tiles-office-carpet-floor
-  sprite: /Textures/Tiles/carpetoffice.png
+  sprite: /Textures/_Corvax/Tiles/carpetoffice.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1357,7 +1363,7 @@
 - type: tile
   id: FloorBoxing
   name: tiles-boxing-ring-floor
-  sprite: /Textures/Tiles/boxing.png
+  sprite: /Textures/_Corvax/Tiles/boxing.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1377,7 +1383,7 @@
 - type: tile
   id: FloorGym
   name: tiles-gym-floor
-  sprite: /Textures/Tiles/gym.png
+  sprite: /Textures/_Corvax/Tiles/gym.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1398,7 +1404,7 @@
 - type: tile
   id: FloorShuttleWhite
   name: tiles-white-shuttle-floor
-  sprite: /Textures/Tiles/shuttlewhite.png
+  sprite: /Textures/_Corvax/Tiles/shuttlewhite.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1417,7 +1423,13 @@
 - type: tile
   id: FloorShuttleGrey
   name: tiles-grey-shuttle-floor
-  sprite: /Textures/Tiles/shuttlegrey.png
+  sprite: /Textures/_Corvax/Tiles/shuttlegrey.png #Radium:Corvax sprite migration
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1430,7 +1442,13 @@
 - type: tile
   id: FloorShuttleBlack
   name: tiles-black-shuttle-floor
-  sprite: /Textures/Tiles/shuttleblack.png
+  sprite: /Textures/_Corvax/Tiles/shuttleblack.png #Radium:Corvax sprite migration
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1443,7 +1461,7 @@
 - type: tile
   id: FloorShuttleBlue
   name: tiles-blue-shuttle-floor
-  sprite: /Textures/Tiles/shuttleblue.png
+  sprite: /Textures/_Corvax/Tiles/shuttleblue.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1462,7 +1480,7 @@
 - type: tile
   id: FloorShuttleOrange
   name: tiles-orange-shuttle-floor
-  sprite: /Textures/Tiles/shuttleorange.png
+  sprite: /Textures/_Corvax/Tiles/shuttleorange.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1481,7 +1499,13 @@
 - type: tile
   id: FloorShuttlePurple
   name: tiles-purple-shuttle-floor
-  sprite: /Textures/Tiles/shuttlepurple.png
+  sprite: /Textures/_Corvax/Tiles/shuttlepurple.png #Radium:Corvax sprite migration
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1494,7 +1518,13 @@
 - type: tile
   id: FloorShuttleRed
   name: tiles-red-shuttle-floor
-  sprite: /Textures/Tiles/shuttlered.png
+  sprite: /Textures/_Corvax/Tiles/shuttlered.png #Radium:Corvax sprite migration
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1509,7 +1539,7 @@
 - type: tile
   id: FloorGold
   name: tiles-gold-tile
-  sprite: /Textures/Tiles/gold.png
+  sprite: /Textures/_Corvax/Tiles/gold.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1522,7 +1552,7 @@
 - type: tile
   id: FloorSilver
   name: tiles-silver-tile
-  sprite: /Textures/Tiles/silver.png
+  sprite: /Textures/_Corvax/Tiles/silver.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1535,7 +1565,7 @@
 - type: tile
   id: FloorGlass
   name: tiles-glass-floor
-  sprite: /Textures/Tiles/glass.png
+  sprite: /Textures/_Corvax/Tiles/glass.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1554,7 +1584,7 @@
 - type: tile
   id: FloorRGlass
   name: tiles-reinforced-glass-floor
-  sprite: /Textures/Tiles/rglass.png
+  sprite: /Textures/_Corvax/Tiles/rglass.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1573,7 +1603,7 @@
 - type: tile
   id: FloorMetalFoam
   name: tiles-metal-foam
-  sprite: /Textures/Tiles/foammetal.png
+  sprite: /Textures/_Corvax/Tiles/foammetal.png #Radium:Corvax sprite migration
   variants: 1
   placementVariants:
   - 1.0
@@ -1628,7 +1658,7 @@
 - type: tile
   id: FloorAsphalt
   name: tiles-asphalt
-  sprite: /Textures/Tiles/Planet/Concrete/asphalt.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Concrete/asphalt.png #Radium:Corvax sprite migration
   variants: 10
   placementVariants:
   - 1.0
@@ -1651,7 +1681,13 @@
 - type: tile
   id: FloorGrass
   name: tiles-planet-grass-floor
-  sprite: /Textures/Tiles/grass.png
+  sprite: /Textures/_Corvax/Tiles/grass.png #Radium:Corvax sprite migration
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: FloorDirt
   isSubfloor: true
   footstepSounds:
@@ -1663,7 +1699,13 @@
 - type: tile
   id: FloorGrassJungle
   name: tiles-jungle-grass-floor
-  sprite: /Textures/Tiles/grassjungle.png
+  sprite: /Textures/_Corvax/Tiles/grassjungle.png #Radium:Corvax sprite migration
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: FloorDirt
   isSubfloor: true
   footstepSounds:
@@ -1675,7 +1717,7 @@
 - type: tile
   id: FloorGrassDark
   name: tiles-dark-grass-floor
-  sprite: /Textures/Tiles/grassdark.png
+  sprite: /Textures/_Corvax/Tiles/grassdark.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1692,7 +1734,7 @@
 - type: tile
   id: FloorGrassLight
   name: tiles-light-grass-floor
-  sprite: /Textures/Tiles/grasslight.png
+  sprite: /Textures/_Corvax/Tiles/grasslight.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1709,7 +1751,7 @@
 - type: tile
   id: FloorDirt
   name: tiles-dirt-floor
-  sprite: /Textures/Tiles/dirt.png
+  sprite: /Textures/_Corvax/Tiles/dirt.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -1728,7 +1770,7 @@
 - type: tile
   id: FloorAsteroidSandBorderless
   name: tiles-asteroid-sand-borderless
-  sprite: /Textures/Tiles/Asteroid/asteroid.png
+  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid.png #Radium:Corvax sprite migration
   variants: 13
   placementVariants:
   - 0.8
@@ -1757,19 +1799,19 @@
   name: tiles-asteroid-sand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    NorthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    SouthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    South: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    East: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    North: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    West: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    SouthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png #Radium:Corvax sprite migration
+    NorthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png #Radium:Corvax sprite migration
 
 - type: tile
   id: FloorAsteroidSandDugBorderless
   name: tiles-asteroid-sand-borderless
-  sprite: /Textures/Tiles/Asteroid/asteroid_dug.png
+  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid_dug.png #Radium:Corvax sprite migration
   baseTurf: Space
   isSubfloor: true
   footstepSounds:
@@ -1783,19 +1825,19 @@
   name: tiles-asteroid-sand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    NorthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    SouthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    South: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    East: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    North: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    West: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    SouthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png #Radium:Corvax sprite migration
+    NorthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png #Radium:Corvax sprite migration
 
 - type: tile
   id: FloorAsteroidSandRedBorderless
   name: tiles-asteroid-sand-borderless
-  sprite: /Textures/Tiles/Asteroid/asteroid_red.png
+  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid_red.png #Radium:Corvax sprite migration
   variants: 13
   placementVariants:
   - 0.8
@@ -1824,19 +1866,19 @@
   name: tiles-asteroid-sand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    NorthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    SouthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    South: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    East: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    North: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    West: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    SouthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png #Radium:Corvax sprite migration
+    NorthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png #Radium:Corvax sprite migration
 
 - type: tile
   id: FloorAsteroidTile
   name: tiles-asteroid-tile
-  sprite: /Textures/Tiles/Asteroid/asteroid_tile.png
+  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid_tile.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1879,19 +1921,19 @@
   name: tiles-asteroid-ironsand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/Tiles/Asteroid/iron_single_edge.png
-    NorthEast: /Textures/Tiles/Asteroid/iron_single_edge.png
-    NorthWest: /Textures/Tiles/Asteroid/iron_single_edge.png
-    SouthWest: /Textures/Tiles/Asteroid/iron_single_edge.png
-    South: /Textures/Tiles/Asteroid/iron_double_edge.png
-    East: /Textures/Tiles/Asteroid/iron_double_edge.png
-    North: /Textures/Tiles/Asteroid/iron_double_edge.png
-    West: /Textures/Tiles/Asteroid/iron_double_edge.png
+    SouthEast: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png #Radium:Corvax sprite migration
+    NorthEast: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
+    NorthWest: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
+    SouthWest: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
+    South: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
+    East: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
+    North: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
+    West: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png #Radium:Corvax sprite migration
 
 - type: tile
   id: FloorAsteroidSandUnvariantizedBorderless
   name: tiles-asteroid-sand-borderless
-  sprite: /Textures/Tiles/Asteroid/asteroid0.png
+  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid0.png #Radium:Corvax sprite migration
   baseTurf: Space
   isSubfloor: true
   footstepSounds:
@@ -1905,19 +1947,19 @@
   name: tiles-asteroid-sand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    NorthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    SouthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
-    South: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    East: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    North: /Textures/Tiles/Asteroid/asteroid_double_edge.png
-    West: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    SouthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png #Radium:Corvax sprite migration
+    NorthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png #Radium:Corvax sprite migration
 
 - type: tile
   id: FloorAsteroidIronsandUnvariantizedBorderless
   name: tiles-asteroid-ironsand-borderless
-  sprite: /Textures/Tiles/Asteroid/ironsand0.png
+  sprite: /Textures/_Corvax/Tiles/Asteroid/ironsand0.png #Radium:Corvax sprite migration
   baseTurf: Space
   isSubfloor: true
   footstepSounds:
@@ -1931,20 +1973,20 @@
   name: tiles-asteroid-ironsand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/Tiles/Asteroid/iron_single_edge.png
-    NorthEast: /Textures/Tiles/Asteroid/iron_single_edge.png
-    NorthWest: /Textures/Tiles/Asteroid/iron_single_edge.png
-    SouthWest: /Textures/Tiles/Asteroid/iron_single_edge.png
-    South: /Textures/Tiles/Asteroid/iron_double_edge.png
-    East: /Textures/Tiles/Asteroid/iron_double_edge.png
-    North: /Textures/Tiles/Asteroid/iron_double_edge.png
-    West: /Textures/Tiles/Asteroid/iron_double_edge.png
+    SouthEast: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png #Radium:Corvax sprite migration
+    NorthEast: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
+    NorthWest: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
+    SouthWest: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
+    South: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
+    East: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
+    North: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
+    West: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png #Radium:Corvax sprite migration
 
 # Caves
 - type: tile
   id: FloorCave
   name: tiles-cave
-  sprite: /Textures/Tiles/cave.png
+  sprite: /Textures/_Corvax/Tiles/cave.png
   variants: 7
   placementVariants:
   - 1.0
@@ -1963,7 +2005,7 @@
 - type: tile
   id: FloorCaveDrought
   name: tiles-cave-drought
-  sprite: /Textures/Tiles/cavedrought.png
+  sprite: /Textures/_Corvax/Tiles/cavedrought.png #Radium:Corvax sprite migration
   variants: 8
   placementVariants:
   - 1.0
@@ -1983,7 +2025,7 @@
 - type: tile
   id: FloorFlesh
   name: tiles-flesh-floor
-  sprite: /Textures/Tiles/meat.png
+  sprite: /Textures/_Corvax/Tiles/meat.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -2003,7 +2045,7 @@
 - type: tile
   id: FloorTechMaint2
   name: tiles-techmaint2-floor
-  sprite: /Textures/Tiles/steel_maint.png
+  sprite: /Textures/_Corvax/Tiles/steel_maint.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -2016,7 +2058,7 @@
 - type: tile
   id: FloorTechMaint3
   name: tiles-techmaint3-floor
-  sprite: /Textures/Tiles/grating_maint.png
+  sprite: /Textures/_Corvax/Tiles/grating_maint.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -2035,7 +2077,7 @@
 - type: tile
   id: FloorWoodTile
   name: tiles-wood2
-  sprite: /Textures/Tiles/wood_tile.png
+  sprite: /Textures/_Corvax/Tiles/wood_tile.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -2056,7 +2098,7 @@
 - type: tile
   id: FloorBrokenWood
   name: tiles-wood3
-  sprite: /Textures/Tiles/wood_broken.png
+  sprite: /Textures/_Corvax/Tiles/wood_broken.png #Radium:Corvax sprite migration
   variants: 7
   placementVariants:
   - 1.0
@@ -2080,7 +2122,7 @@
 - type: tile
   id: FloorWebTile
   name: tiles-web
-  sprite: /Textures/Tiles/Misc/Web/web_tile.png
+  sprite: /Textures/_Corvax/Tiles/Misc/Web/web_tile.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -2095,7 +2137,7 @@
 - type: tile
   id: FloorChromite
   name: tiles-chromite
-  sprite: /Textures/Tiles/chromite.png
+  sprite: /Textures/_Corvax/Tiles/chromite.png #Radium:Corvax sprite migration
   variants: 7
   placementVariants:
   - 1.0
@@ -2115,7 +2157,7 @@
 - type: tile
   id: FloorHull
   name: tiles-hull
-  sprite: /Textures/Tiles/hull.png
+  sprite: /Textures/_Corvax/Tiles/hull.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   footstepSounds:
@@ -2127,7 +2169,7 @@
 - type: tile
   id: FloorHullReinforced
   name: tiles-hull-reinforced
-  sprite: /Textures/Tiles/hull_reinforced.png
+  sprite: /Textures/_Corvax/Tiles/hull_reinforced.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   footstepSounds:
@@ -2140,7 +2182,7 @@
 - type: tile
   id: FloorReinforcedHardened
   name: tiles-super-reinforced-floor
-  sprite: /Textures/Tiles/super_reinforced.png
+  sprite: /Textures/_Corvax/Tiles/super_reinforced.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   footstepSounds:
@@ -2153,7 +2195,7 @@
 - type: tile
   id: FloorAstroGrass
   name: tiles-astro-grass
-  sprite: /Textures/Tiles/Planet/Grass/grass.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Grass/grass.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
@@ -2162,14 +2204,14 @@
   - 1.0
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
-    NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png
-    NorthWest: /Textures/Tiles/Planet/Grass/single_edge.png
-    SouthWest: /Textures/Tiles/Planet/Grass/single_edge.png
-    South: /Textures/Tiles/Planet/Grass/double_edge.png
-    East: /Textures/Tiles/Planet/Grass/double_edge.png
-    North: /Textures/Tiles/Planet/Grass/double_edge.png
-    West: /Textures/Tiles/Planet/Grass/double_edge.png
+    SouthEast: /Textures/_Corvax/Tiles/Planet/Grass/single_edge.png #Radium:Corvax sprite migration
+    NorthEast: /Textures/_Corvax/Tiles/Planet/Grass/single_edge.png
+    NorthWest: /Textures/_Corvax/Tiles/Planet/Grass/single_edge.png
+    SouthWest: /Textures/_Corvax/Tiles/Planet/Grass/single_edge.png
+    South: /Textures/_Corvax/Tiles/Planet/Grass/double_edge.png
+    East: /Textures/_Corvax/Tiles/Planet/Grass/double_edge.png
+    North: /Textures/_Corvax/Tiles/Planet/Grass/double_edge.png
+    West: /Textures/_Corvax/Tiles/Planet/Grass/double_edge.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Cutting ]
@@ -2203,7 +2245,7 @@
 - type: tile
   id: FloorAstroIce
   name: tiles-astro-ice
-  sprite: /Textures/Tiles/Planet/Snow/ice.png
+  sprite: /Textures/_Corvax/Tiles/Planet/Snow/ice.png #Radium:Corvax sprite migration
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -2248,7 +2290,7 @@
 - type: tile
   id: FloorWoodLarge
   name: tiles-wood-large
-  sprite: /Textures/Tiles/wood_large.png
+  sprite: /Textures/_Corvax/Tiles/wood_large.png #Radium:Corvax sprite migration
   variants: 4
   placementVariants:
   - 1.0
