@@ -65,7 +65,7 @@ language-Sign-name = Язык жестов
 language-Sign-description =
     Язык жестов.
 
-language-Marish-name = Мар!
+language-Marish-name = Мариш
 language-Marish-description =  Язык Азулитов, невозможен к воспроизведению другими речевыми аппаратами.
 
 language-ValyrianStandard-name = Валирианский Стандартный
@@ -83,49 +83,49 @@ language-Xeeplian-description =
 
 # Animal Languages
 
-language-Cat-name = Кот
+language-Cat-name = Кошачий
 language-Cat-description = Мяу
 
-language-Deer-name = Олень
+language-Deer-name = Олений
 language-Deer-description = Ni!
 
-language-Dog-name = Собака
+language-Dog-name = Собачий
 language-Dog-description = Гав!
 
-language-Fox-name = Лиса
+language-Fox-name = Лисий
 language-Fox-description = Yeeps!
 
 language-Xeno-name = Ксено
 language-Xeno-description = Хсссс!
 
-language-Monkey-name = Обезьяна
+language-Monkey-name = Обезьяний
 language-Monkey-description = УУГ Ууук!
 
-language-Mouse-name = Мышь
+language-Mouse-name = Мышиный
 language-Mouse-description = Писк!
 
-language-Chicken-name = Курица
+language-Chicken-name = Куриный
 language-Chicken-description = Куд-куда!
 
-language-Duck-name = Утка
+language-Duck-name = Утячий
 language-Duck-description = Ква!
 
 language-Cow-name = Коровий
 language-Cow-description = Муууу!
 
-language-Sheep-name = Овца
+language-Sheep-name = Овечий
 language-Sheep-description = бееее!
 
-language-Kangaroo-name = Кенгуру
+language-Kangaroo-name = Кенгурячий
 language-Kangaroo-description = Чуу!
 
-language-Pig-name = Свин
+language-Pig-name = Свиной
 language-Pig-description = Хрю!
 
-language-Crab-name = Краб
+language-Crab-name = Крабий
 language-Crab-description = Клик!
 
-language-Kobold-name = Кобольд
+language-Kobold-name = Кобольдовый
 language-Kobold-description = Хссс!
 
 language-Hissing-name = Шипение
@@ -135,10 +135,10 @@ language-Eldritch-name = Древний
 language-Eldritch-description =
     Язык последователей Нар'Си.
 
-language-Penguin-name = Пингвин
+language-Penguin-name = Пингвиний
 language-Penguin-description = Bwaaa
 
-language-DroneTalk-name = Дроновый
+language-DroneTalk-name = ДроноРечь
 language-DroneTalk-description = 0001 1001 1011!
 
 # Tajaran and Shadow stuffs

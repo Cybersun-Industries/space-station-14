@@ -14,8 +14,11 @@
 // SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 dffdff2423 <57052305+dffdff2423@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 XO6bl4 <49454110+XO6bl4@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 c4llv07e <igor@c4llv07e.xyz>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -32,6 +35,7 @@ using Content.Client.Lobby.UI;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
+using Content.Radium.Common.CCVar;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Input;
@@ -70,6 +74,9 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     private bool _bwoinkSoundEnabled;
     private string? _aHelpSound;
 
+    // Radium (AHelp mute button)
+    private bool _adminSoundsEnabled;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -80,6 +87,9 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
         _config.OnValueChanged(CCVars.AHelpSound, v => _aHelpSound = v, true);
         _config.OnValueChanged(CCVars.BwoinkSoundEnabled, v => _bwoinkSoundEnabled = v, true);
+
+        // Radium (AHelp mute button)
+        _config.OnValueChanged(RadiumCVars.EnableBwoinkForAdmins, v => _adminSoundsEnabled = v, true);
     }
 
     public void UnloadButton()
@@ -159,7 +169,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         }
         if (message.PlaySound && localPlayer.UserId != message.TrueSender)
         {
-            if (_aHelpSound != null && (_bwoinkSoundEnabled || !_adminManager.IsActive()))
+            if (_aHelpSound != null && (_bwoinkSoundEnabled || !_adminManager.IsActive()) && _adminSoundsEnabled) // Radium (AHelp mute button): added _adminSoundsEnabled
                 _audio.PlayGlobal(_aHelpSound, Filter.Local(), false);
             _clyde.RequestWindowAttention();
         }

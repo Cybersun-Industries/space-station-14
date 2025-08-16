@@ -306,11 +306,13 @@
     - chat-speech-verb-sign-3
   obfuscation:
     !type:ReplacementObfuscation
+# Radium start: language localization.
     replacement:
-    - something
-    - a cryptic message
-    - a signal
-    - a message
+    - что-то
+    - неизвестные знаки
+    - знаки
+    - сигналы
+# Radium end.
 
     #Used for Xenoglossy, and anything else with the UniversalLanguageSpeaker component
 - type: language

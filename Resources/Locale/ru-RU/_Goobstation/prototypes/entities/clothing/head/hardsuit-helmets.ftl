@@ -4,4 +4,4 @@ ent-ClothingHeadHelmetHardsuitBlueshield = шлем офицера синего 
     .desc = Шлем скафандра офицера синего щита.
 ent-ClothingHeadHelmetHardsuitCybersunStealth = шлем стелс костюма cybersun
     .desc = Шлем с обшивкой для скрытных операций..
-    .suffix = СТЭЛС
+    .suffix = Стелс

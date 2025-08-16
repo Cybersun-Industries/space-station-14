@@ -1,13 +1,13 @@
-chat-sign-language-message-wrap = [italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] [BubbleContent]{$verb} "[font="{$fontType}" size={$fontSize}][color={$color}]{$message}[/color][/font]"[/italic][/BubbleContent]
-chat-sign-language-whisper-wrap = [italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] [BubbleContent]едва заметно жестикулирует "[font="{$fontType}" size={$fontSize}][color={$color}]{$message}[/color][/font]"[/italic][/BubbleContent]
+chat-sign-language-message-wrap = [italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] [BubbleContent]{$verb} "[font="{$fontType}" size={$fontSize}][color={$color}]{ $message }[/color][/font]"[/italic][/BubbleContent]
+chat-sign-language-whisper-wrap = [italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] [BubbleContent]едва заметно жестикулирует "[font="{$fontType}" size={$fontSize}][color={$color}]{ $message }[/color][/font]"[/italic][/BubbleContent]
 
 chat-speech-verb-sign-1 = жестикулирует
 chat-speech-verb-sign-2 = показывает
 chat-speech-verb-sign-3 = машет
 
 # Tajaran stuffs
-chat-sign-tajaran-language-message-wrap = [italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] [BubbleContent]{$verb} "[font="{$fontType}" size={$fontSize}][color={$color}]{$message}[/color][/font]"[/italic][/BubbleContent]
-chat-sign-tajaran-language-whisper-wrap = [italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] [BubbleContent]едва заметно {$verb} "[font="{$fontType}" size={$fontSize}][color={$color}]{$message}[/color][/font]"[/italic][/BubbleContent]
+chat-sign-tajaran-language-message-wrap = [italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] [BubbleContent]{$verb} "[font="{$fontType}" size={$fontSize}][color={$color}]{ $message }[/color][/font]"[/italic][/BubbleContent]
+chat-sign-tajaran-language-whisper-wrap = [italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] [BubbleContent]едва заметно {$verb} "[font="{$fontType}" size={$fontSize}][color={$color}]{ $message }[/color][/font]"[/italic][/BubbleContent]
 
 # Did I ever tell you the definition of insanity?
 # Basically we have to get around the message formatter, и unless we decide to make an entire new system just for this language, we can't do anything else.
