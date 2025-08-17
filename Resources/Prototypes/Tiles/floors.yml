@@ -327,7 +327,7 @@
 - type: tile
   id: FloorBrassFilled
   name: tiles-brass-floor-filled
-  sprite: /Textures/_Corvax/Tiles/Misc/clockwork/clockwork_floor_filled.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Misc/clockwork/clockwork_floor_filled.png
   baseTurf: PlatingBrass
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -340,7 +340,7 @@
 - type: tile
   id: FloorBrassReebe
   name: tiles-brass-floor-reebe
-  sprite: /Textures/_Corvax/Tiles/Misc/clockwork/reebe.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Misc/clockwork/reebe.png
   baseTurf: PlatingBrass
   isSubfloor: false
   deconstructTools: [ Prying ]
