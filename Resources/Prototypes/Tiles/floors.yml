@@ -1775,7 +1775,7 @@
 - type: tile
   id: FloorAsteroidSandBorderless
   name: tiles-asteroid-sand-borderless
-  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Asteroid/asteroid.png 
   variants: 13
   placementVariants:
   - 0.8
@@ -1804,19 +1804,19 @@
   name: tiles-asteroid-sand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png #Radium:Corvax sprite migration
-    NorthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    NorthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    SouthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    South: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    East: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    North: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    West: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png #Radium:Corvax sprite migration
+    SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/Tiles/Asteroid/asteroid_double_edge.png
 
 - type: tile
   id: FloorAsteroidSandDugBorderless
   name: tiles-asteroid-sand-borderless
-  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid_dug.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Asteroid/asteroid_dug.png 
   baseTurf: Space
   isSubfloor: true
   footstepSounds:
@@ -1830,19 +1830,19 @@
   name: tiles-asteroid-sand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png #Radium:Corvax sprite migration
-    NorthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    NorthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    SouthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    South: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    East: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    North: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    West: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png #Radium:Corvax sprite migration
+    SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/Tiles/Asteroid/asteroid_double_edge.png
 
 - type: tile
   id: FloorAsteroidSandRedBorderless
   name: tiles-asteroid-sand-borderless
-  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid_red.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Asteroid/asteroid_red.png
   variants: 13
   placementVariants:
   - 0.8
@@ -1871,19 +1871,19 @@
   name: tiles-asteroid-sand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png #Radium:Corvax sprite migration
-    NorthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    NorthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    SouthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    South: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    East: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    North: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    West: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png #Radium:Corvax sprite migration
+    SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/Tiles/Asteroid/asteroid_double_edge.png
 
 - type: tile
   id: FloorAsteroidTile
   name: tiles-asteroid-tile
-  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid_tile.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Asteroid/asteroid_tile.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -1926,19 +1926,19 @@
   name: tiles-asteroid-ironsand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png #Radium:Corvax sprite migration
-    NorthEast: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
-    NorthWest: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
-    SouthWest: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
-    South: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
-    East: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
-    North: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
-    West: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png #Radium:Corvax sprite migration
+    SouthEast: /Textures/Tiles/Asteroid/iron_single_edge.png
+    NorthEast: /Textures/Tiles/Asteroid/iron_single_edge.png
+    NorthWest: /Textures/Tiles/Asteroid/iron_single_edge.png
+    SouthWest: /Textures/Tiles/Asteroid/iron_single_edge.png
+    South: /Textures/Tiles/Asteroid/iron_double_edge.png
+    East: /Textures/Tiles/Asteroid/iron_double_edge.png
+    North: /Textures/Tiles/Asteroid/iron_double_edge.png
+    West: /Textures/Tiles/Asteroid/iron_double_edge.png
 
 - type: tile
   id: FloorAsteroidSandUnvariantizedBorderless
   name: tiles-asteroid-sand-borderless
-  sprite: /Textures/_Corvax/Tiles/Asteroid/asteroid0.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Asteroid/asteroid0.png
   baseTurf: Space
   isSubfloor: true
   footstepSounds:
@@ -1952,19 +1952,19 @@
   name: tiles-asteroid-sand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png #Radium:Corvax sprite migration
-    NorthEast: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    NorthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    SouthWest: /Textures/_Corvax/Tiles/Asteroid/asteroid_single_edge.png
-    South: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    East: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    North: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png
-    West: /Textures/_Corvax/Tiles/Asteroid/asteroid_double_edge.png #Radium:Corvax sprite migration
+    SouthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthEast: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    NorthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    SouthWest: /Textures/Tiles/Asteroid/asteroid_single_edge.png
+    South: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    East: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    North: /Textures/Tiles/Asteroid/asteroid_double_edge.png
+    West: /Textures/Tiles/Asteroid/asteroid_double_edge.png
 
 - type: tile
   id: FloorAsteroidIronsandUnvariantizedBorderless
   name: tiles-asteroid-ironsand-borderless
-  sprite: /Textures/_Corvax/Tiles/Asteroid/ironsand0.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Asteroid/ironsand0.png
   baseTurf: Space
   isSubfloor: true
   footstepSounds:
@@ -1978,14 +1978,14 @@
   name: tiles-asteroid-ironsand
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png #Radium:Corvax sprite migration
-    NorthEast: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
-    NorthWest: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
-    SouthWest: /Textures/_Corvax/Tiles/Asteroid/iron_single_edge.png
-    South: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
-    East: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
-    North: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png
-    West: /Textures/_Corvax/Tiles/Asteroid/iron_double_edge.png #Radium:Corvax sprite migration
+    SouthEast: /Textures/Tiles/Asteroid/iron_single_edge.png
+    NorthEast: /Textures/Tiles/Asteroid/iron_single_edge.png
+    NorthWest: /Textures/Tiles/Asteroid/iron_single_edge.png
+    SouthWest: /Textures/Tiles/Asteroid/iron_single_edge.png
+    South: /Textures/Tiles/Asteroid/iron_double_edge.png
+    East: /Textures/Tiles/Asteroid/iron_double_edge.png
+    North: /Textures/Tiles/Asteroid/iron_double_edge.png
+    West: /Textures/Tiles/Asteroid/iron_double_edge.png
 
 # Caves
 - type: tile
@@ -2127,7 +2127,7 @@
 - type: tile
   id: FloorWebTile
   name: tiles-web
-  sprite: /Textures/_Corvax/Tiles/Misc/Web/web_tile.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Misc/Web/web_tile.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
@@ -2200,7 +2200,7 @@
 - type: tile
   id: FloorAstroGrass
   name: tiles-astro-grass
-  sprite: /Textures/_Corvax/Tiles/Planet/Grass/grass.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Planet/Grass/grass.png
   variants: 4
   placementVariants:
   - 1.0
@@ -2209,14 +2209,14 @@
   - 1.0
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/_Corvax/Tiles/Planet/Grass/single_edge.png #Radium:Corvax sprite migration
-    NorthEast: /Textures/_Corvax/Tiles/Planet/Grass/single_edge.png
-    NorthWest: /Textures/_Corvax/Tiles/Planet/Grass/single_edge.png
-    SouthWest: /Textures/_Corvax/Tiles/Planet/Grass/single_edge.png
-    South: /Textures/_Corvax/Tiles/Planet/Grass/double_edge.png
-    East: /Textures/_Corvax/Tiles/Planet/Grass/double_edge.png
-    North: /Textures/_Corvax/Tiles/Planet/Grass/double_edge.png
-    West: /Textures/_Corvax/Tiles/Planet/Grass/double_edge.png #Radium:Corvax sprite migration
+    SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
+    NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png
+    NorthWest: /Textures/Tiles/Planet/Grass/single_edge.png
+    SouthWest: /Textures/Tiles/Planet/Grass/single_edge.png
+    South: /Textures/Tiles/Planet/Grass/double_edge.png
+    East: /Textures/Tiles/Planet/Grass/double_edge.png
+    North: /Textures/Tiles/Planet/Grass/double_edge.png
+    West: /Textures/Tiles/Planet/Grass/double_edge.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Cutting ]
@@ -2250,7 +2250,7 @@
 - type: tile
   id: FloorAstroIce
   name: tiles-astro-ice
-  sprite: /Textures/_Corvax/Tiles/Planet/Snow/ice.png #Radium:Corvax sprite migration
+  sprite: /Textures/Tiles/Planet/Snow/ice.png
   baseTurf: Plating
   isSubfloor: false
   deconstructTools: [ Prying ]
