@@ -13,7 +13,7 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentReportStation
+  id: PrintedDocumenttStation
   name: Report on the situation at the station
   components:
     - type: Paper
@@ -29,7 +29,7 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentReporDepartment
+  id: PrintedDocumentReportDepartment
   name: Report on the work of the department
   components:
     - type: Paper
@@ -45,52 +45,52 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentReportOnTheChaptersMeeting
+  id: PrintedDocumenttOnTheChaptersMeeting
   name: Report on chapter meeting
   components:
     - type: Paper
-      content: doc-text-printer-report-on-the-chapters-meeting
+      content: doc-text-printer-t-on-the-chapters-meeting
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentInternalAffairsAgentsReport
-  name: Internal Investigation Report
+  id: PrintedDocumentInternalAffairsAgentst
+  name: Internal Investigation t
   components:
     - type: Paper
-      content: doc-text-printer-internal-affairs-agents-report
+      content: doc-text-printer-internal-affairs-agents-t
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentConditionReport
-  name: Report on technical condition
+  id: PrintedDocumentConditiont
+  name: t on technical condition
   components:
     - type: Paper
-      content: doc-text-printer-condition-report
+      content: doc-text-printer-condition-t
 
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentReportStudyObject
-  name: Report on object Investigation
+  id: PrintedDocumenttStudyObject
+  name: t on object Investigation
   components:
     - type: Paper
-      content: doc-text-printer-Report-study-object
+      content: doc-text-printer-t-study-object
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentExperimentReport
-  name: Experiment report
+  id: PrintedDocumentExperimentt
+  name: Experiment t
   components:
     - type: Paper
-      content: doc-text-printer-experiment-report
+      content: doc-text-printer-experiment-t
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentDisposalReport
-  name: Disposal report
+  id: PrintedDocumentDisposalt
+  name: Disposal t
   components:
     - type: Paper
-      content: doc-text-printer-disposal-report
+      content: doc-text-printer-disposal-t
 
 - type: entity
   parent: PrintedDocument
@@ -463,7 +463,7 @@
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentStatementHealth
-  name: Health report
+  name: Health t
   components:
     - type: Paper
       content: doc-text-printer-statement-health
@@ -510,8 +510,8 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentReportAccomplishmentGoals
-  name: REPORT ACCOMPLISHMENT GOALS
+  id: PrintedDocumenttAccomplishmentGoals
+  name: T ACCOMPLISHMENT GOALS
   components:
     - type: Paper
-      content: doc-text-printer-report-accomplishment-goals
+      content: doc-text-printer-t-accomplishment-goals
