@@ -515,7 +515,3 @@
   components:
     - type: Paper
       content: doc-text-printer-report-accomplishment-goals
-  name: T ACCOMPLISHMENT GOALS
-  components:
-    - type: Paper
-      content: doc-text-printer-t-accomplishment-goals
