@@ -9,6 +9,8 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilysha998 <sukhachew.ilya@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ko4ergaPunk <nikitako4erga3i5@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -78,6 +80,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite1
   description: Some white Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -94,6 +97,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite2
   description: Some white Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -110,6 +114,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite3
   description: Some white Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -126,6 +131,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite4
   description: Some white Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -142,6 +148,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite5
   description: Some white Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -158,6 +165,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsWhite6
   description: Some white Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -174,6 +182,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsRed1
   description: Some red Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -191,6 +200,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsRed2
   description: Some red Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -208,6 +218,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsRed3
   description: Some red Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -225,6 +236,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsRed4
   description: Some red Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -242,6 +254,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsRed5
   description: Some red Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -259,6 +272,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsRed6
   description: Some red Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -276,6 +290,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue1
   description: Some blue Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -293,6 +308,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue2
   description: Some blue Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -310,6 +326,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue3
   description: Some blue Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -327,6 +344,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue4
   description: Some blue Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -344,6 +362,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue5
   description: Some blue Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"
@@ -361,6 +380,7 @@
   categories: [ HideSpawnMenu]
   id: ChristmasLightsBlue6
   description: Some blue Christmas lights.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: "/Textures/_Goobstation/Objects/Specific/Christmas/lights.rsi"

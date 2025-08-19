@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 // SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -22,7 +23,7 @@ public abstract partial class BaseCapoeiraEvent : EntityEventArgs
     public virtual float MinPower { get; set; } = 1f;
 
     [DataField]
-    public virtual float MaxPower { get; set; } = 5f;
+    public virtual float MaxPower { get; set; } = 2.5f;
 
     [DataField]
     public virtual float MinVelocity { get; set; }

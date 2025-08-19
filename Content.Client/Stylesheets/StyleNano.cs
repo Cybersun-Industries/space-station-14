@@ -122,6 +122,9 @@
 // SPDX-FileCopyrightText: 2025 Ciarán Walsh <github@ciaranwal.sh>
 // SPDX-FileCopyrightText: 2025 CybersunBot <cybersunbot@proton.me>
 // SPDX-FileCopyrightText: 2025 Ilysha998 <sukhachew.ilya@gmail.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ciarán Walsh <github@ciaranwal.sh>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Rane <60792108+Elijahrane@users.noreply.github.com>
@@ -1805,6 +1808,24 @@ namespace Content.Client.Stylesheets
 
                 Element<LineEdit>().Class("PaperLineEdit")
                     .Prop(LineEdit.StylePropertyStyleBox, new StyleBoxEmpty()),
+
+                // Goobstation-EsColorPicker-Start
+                Element<Button>().Class("SecretButton")
+                    .Prop(Control.StylePropertyModulateSelf, Color.Transparent),
+
+                Element<Button>().Class("SecretButton").Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, Color.Transparent),
+
+                Element<Button>().Class("SecretButton").Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, Color.Transparent),
+
+                Element<Button>().Class("SecretButton").Pseudo(ContainerButton.StylePseudoClassPressed)
+                    .Prop(Control.StylePropertyModulateSelf, Color.Transparent),
+
+                Element<TextureRect>().Class("SyndicateLogo")
+                    .Prop(TextureRect.StylePropertyTexture, resCache.GetTexture("/Textures/_Goobstation/Interface/syndicate_logo_white.svg.96dpi.png"))
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#757575")),
+                // Goobstation-EsColorPicker-End
 
                 // Red Button ---
                 Element<Button>().Class("ButtonColorRed")
