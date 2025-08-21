@@ -64,7 +64,8 @@ namespace Content.Shared.Humanoid
                         ("last", GetLastName(speciesProto, gender))); // Corvax-LastnameGender
                 case SpeciesNaming.LastFirst: // DeltaV: Rodentia name scheme
                     return Loc.GetString("namepreset-lastfirst",
-                        ("last", GetLastName(speciesProto, gender), ("first", GetFirstName(speciesProto, gender)))); // Corvax-LastnameGender
+                        ("last", GetLastName(speciesProto, gender),
+                        ("first", GetFirstName(speciesProto, gender))); // Corvax-LastnameGender
                 case SpeciesNaming.FirstRoman: // EE Plasmeme Change
                     return Loc.GetString("namepreset-firstlast",
                         ("first", GetFirstName(speciesProto, gender)), ("last", _romanNamingSystem.GenerateRomanNumeral()));
